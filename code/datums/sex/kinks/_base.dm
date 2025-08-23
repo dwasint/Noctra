@@ -31,9 +31,9 @@ GLOBAL_LIST_INIT(available_kinks, generate_kink_list())
 	var/list/sexing_mobs = list()
 	for(var/datum/sex_session/session in GLOB.sex_sessions)
 		if(session.user in tracked_mobs)
-			sexing_mobs |= user
+			sexing_mobs |= session.user
 		if(session.target in tracked_mobs)
-			sexing_mobs |= target
+			sexing_mobs |= session.target
 
 	for(var/mob/living/mob in sexing_mobs)
 		on_process(mob)

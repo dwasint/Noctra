@@ -19,4 +19,5 @@
 			continue
 		seen_by_people = TRUE
 		break
-	target.add_stress(/datum/stressevent/public_thrill)
+	if(outside || seen_by_people)
+		target.add_stress(/datum/stressevent/public_thrill)
