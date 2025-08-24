@@ -48,9 +48,9 @@
 	/// Whether this action can continue indefinitely
 	var/continous = TRUE
 	/// How long each iteration takes
-	var/do_time = 30
+	var/do_time = 3.3 SECONDS
 	/// Stamina cost per iteration
-	var/stamina_cost = 5
+	var/stamina_cost = 0.5
 	/// Whether to check if user is incapacitated
 	var/check_incapacitated = TRUE
 	/// Whether participants must be on same tile
@@ -73,6 +73,10 @@
 	var/list/datum/storage_tracking_entry/tracked_storage = list()
 	///this is a list of locks we created to prevent penis portal powers
 	var/list/datum/sex_session_lock/sex_locks = list()
+	///this is the priority of our action for the target so when ejaculate messages are looked at its highest priority
+	var/target_priority = 10
+	///this is the priority of our action for the user
+	var/user_priority = 10
 
 /datum/sex_action/Destroy()
 	// Clean up any tracked storage entries
@@ -256,3 +260,6 @@
 	for(var/datum/sex_session_lock/lock as anything in sex_locks)
 		qdel(lock)
 	sex_locks.Cut()
+
+/datum/sex_action/proc/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	return

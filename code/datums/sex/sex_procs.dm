@@ -129,3 +129,47 @@
 	if(has_mouth())
 		data += "<div>...have a mouth, which is [mouth_is_free() ? "uncovered" : "covered"].</div>"
 	return data
+
+/mob/living/proc/get_active_precise_hand()
+	var/active_hand = BODY_ZONE_PRECISE_L_HAND
+	if(active_hand_index != 1)
+		active_hand = BODY_ZONE_PRECISE_R_HAND
+	return active_hand
+
+/mob/proc/check_handholding()
+	return
+
+/mob/living/carbon/human/check_handholding()
+	if(pulledby && pulledby != src)
+		var/obj/item/bodypart/LH
+		var/obj/item/bodypart/RH
+		LH = get_bodypart(BODY_ZONE_PRECISE_L_HAND)
+		RH = get_bodypart(BODY_ZONE_PRECISE_R_HAND)
+		if(LH || RH)
+			for(var/obj/item/grabbing/G in src.grabbedby)
+				if(G.limb_grabbed == LH || G.limb_grabbed == RH)
+					return TRUE
+
+/proc/return_sessions_with_user(mob/living/carbon/human/user)
+	var/list/sessions = list()
+	for(var/datum/sex_session/session in GLOB.sex_sessions)
+		if(user != session.target && user != session.user)
+			continue
+		sessions |= session
+	return sessions
+
+/proc/return_highest_priority_action(list/sessions = list(), mob/living/carbon/human/user)
+	var/datum/sex_session/highest_session
+	for(var/datum/sex_session/session in sessions)
+		if(!highest_session)
+			highest_session = session
+			continue
+		if(user == session.target)
+			if(session.current_action.target_priority > highest_session.current_action.target_priority)
+				highest_session = session
+				continue
+		if(user == session.user)
+			if(session.current_action.user_priority > highest_session.current_action.user_priority)
+				highest_session = session
+				continue
+	return highest_session

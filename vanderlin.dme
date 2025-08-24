@@ -1248,6 +1248,8 @@
 #include "code\datums\sex\actions\oral.dm"
 #include "code\datums\sex\actions\penetrate.dm"
 #include "code\datums\sex\actions\toy.dm"
+#include "code\datums\sex\actions\masturbation\_base.dm"
+#include "code\datums\sex\actions\masturbation\anus.dm"
 #include "code\datums\sex\kinks\_base.dm"
 #include "code\datums\sex\kinks\bondage.dm"
 #include "code\datums\sex\kinks\domination.dm"

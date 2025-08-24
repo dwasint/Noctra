@@ -13,12 +13,8 @@
 	var/force = SEX_FORCE_MID
 	/// Makes genital arousal automatic by default
 	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
-	/// Our charge gauge
-	var/charge = SEX_MAX_CHARGE
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
-	/// Last ejaculation time
-	var/last_ejaculation_time = 0
 	///inactivity bumps
 	var/inactivity = 0
 	/// Reference to the collective this session belongs to
@@ -179,6 +175,28 @@
 /datum/sex_session/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
 	SEND_SIGNAL(action_target, COMSIG_SEX_RECEIVE_ACTION, arousal_amt, pain_amt, giving, force, speed)
 
+/datum/sex_session/proc/handle_passive_ejaculation()
+	var/list/arousal_data = list()
+	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data)
+	var/arousal_multiplier = arousal_data["arousal_multiplier"]
+	var/arousal_value = arousal_data["arousal"]
+
+	if(arousal_multiplier > 1.5 && user.check_handholding())
+		if(prob(5))
+			SEND_SIGNAL(user, COMSIG_SEX_RECEIVE_ACTION, 3, 0, 1, 0)
+		if(arousal_value < 70)
+			SEND_SIGNAL(user, COMSIG_SEX_ADJUST_AROUSAL, 0.2)
+
+		if(user.handcuffed)
+			if(prob(8))
+				var/chaffepain = pick(10,10,10,10,20,20,30)
+				SEND_SIGNAL(user, COMSIG_SEX_RECEIVE_ACTION, 3, chaffepain, 1, 0)
+				user.visible_message(("<span class='love_mid'>[user] squirms uncomfortably in [user.p_their()] restraints.</span>"), \
+					("<span class='love_extreme'>I feel [user.handcuffed] rub uncomfortably against my skin.</span>"))
+			if(arousal_value < ACTIVE_EJAC_THRESHOLD)
+				SEND_SIGNAL(user, COMSIG_SEX_ADJUST_AROUSAL, 0.25)
+
+
 /datum/sex_session/proc/get_speed_multiplier()
 	switch(speed)
 		if(SEX_SPEED_LOW)
@@ -210,59 +228,8 @@
 /datum/sex_session/proc/finished_check()
 	if(!do_until_finished)
 		return FALSE
-	if(!just_ejaculated())
-		return FALSE
 	return TRUE
 
-/datum/sex_session/proc/just_ejaculated()
-	return (last_ejaculation_time + 2 SECONDS >= world.time)
-
-/datum/sex_session/proc/handle_climax(climax_type)
-	switch(climax_type)
-		if("onto")
-			log_combat(user, target, "Came onto the target")
-			//playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-			var/turf/turf = get_turf(target)
-			turf.add_liquid(/datum/reagent/consumable/milk, 5)
-		if("into")
-			log_combat(user, target, "Came inside the target")
-			//playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
-		if("self")
-			log_combat(user, user, "Ejaculated")
-			user.visible_message(span_love("[user] makes a mess!"))
-			//playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-			var/turf/turf = get_turf(target)
-			turf.add_liquid(/datum/reagent/consumable/milk, 5)
-
-	after_ejaculation(climax_type == "into" || climax_type == "oral")
-
-/datum/sex_session/proc/after_ejaculation(intimate = FALSE)
-	SEND_SIGNAL(user, COMSIG_SEX_SET_AROUSAL, 20)
-	charge = max(0, charge - CHARGE_FOR_CLIMAX)
-
-	user.add_stress(/datum/stressevent/cumok)
-	user.emote("sexmoanhvy", forced = TRUE)
-	//user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
-	last_ejaculation_time = world.time
-
-	if(intimate)
-		after_intimate_climax()
-
-/datum/sex_session/proc/after_intimate_climax()
-	if(user == target)
-		return
-	/*
-	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-		if(!user.mob_timers["cumtri"])
-			user.mob_timers["cumtri"] = world.time
-			user.adjust_triumphs(1)
-			to_chat(user, span_love("Our loving is a true TRIUMPH!"))
-	if(HAS_TRAIT(user, TRAIT_GOODLOVER))
-		if(!target.mob_timers["cumtri"])
-			target.mob_timers["cumtri"] = world.time
-			target.adjust_triumphs(1)
-			to_chat(target, span_love("Our loving is a true TRIUMPH!"))
-	*/
 
 
 /datum/sex_session/proc/get_force_string()
