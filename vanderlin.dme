@@ -1233,6 +1233,7 @@
 #include "code\datums\runeword\word_combos\_base.dm"
 #include "code\datums\runeword\word_combos\flamebrand.dm"
 #include "code\datums\runeword\word_combos\scattershot.dm"
+#include "code\datums\sex\collective_message.dm"
 #include "code\datums\sex\organs.dm"
 #include "code\datums\sex\sex_procs.dm"
 #include "code\datums\sex\sex_session.dm"
