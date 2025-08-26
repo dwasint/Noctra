@@ -2,6 +2,9 @@
 	abstract_type = /datum/sex_action/masturbate/other
 
 /datum/sex_action/masturbate/other/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	. = ..()
+	if(!.)
+		return FALSE
 	var/locked = user.get_active_precise_hand()
 	if(check_sex_lock(user, locked))
 		return FALSE
