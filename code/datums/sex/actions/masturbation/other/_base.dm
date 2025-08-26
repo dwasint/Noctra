@@ -1,5 +1,6 @@
 /datum/sex_action/masturbate/other
 	abstract_type = /datum/sex_action/masturbate/other
+	flipped = TRUE
 
 /datum/sex_action/masturbate/other/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()

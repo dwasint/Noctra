@@ -49,7 +49,5 @@
 	sex_locks |= new /datum/sex_session_lock(user, BODY_ZONE_PRECISE_MOUTH)
 
 /datum/sex_action/blowjob/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user != target)
-		return
 	target.visible_message(span_love("[target] cums into [user]'s mouth!"))
 	return "into"

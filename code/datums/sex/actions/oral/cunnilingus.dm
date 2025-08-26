@@ -40,8 +40,6 @@
 	sex_session.perform_sex_action(target, 2, 3, TRUE)
 
 /datum/sex_action/cunnilingus/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user != target)
-		return
 	target.visible_message(span_love("[target] cums into [user]'s mouth!"))
 	return "into"
 

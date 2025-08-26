@@ -81,6 +81,8 @@
 	var/knot_on_finish = FALSE
 	/// Whether this action can trigger knots
 	var/can_knot = FALSE
+	///basically for actions being done by the user where the target is the inserter set this to true
+	var/flipped = FALSE
 
 /datum/sex_action/Destroy()
 	// Clean up any tracked storage entries
@@ -250,8 +252,12 @@
 /datum/sex_action/proc/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	SHOULD_CALL_PARENT(TRUE)
 	if(requires_hole_storage)
-		if(!try_store_in_hole(user, target))
-			return FALSE
+		if(flipped)
+			if(!try_store_in_hole(target, user))
+				return FALSE
+		else
+			if(!try_store_in_hole(user, target))
+				return FALSE
 	lock_sex_object(user, target)
 	return TRUE
 
@@ -261,7 +267,10 @@
 /datum/sex_action/proc/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	SHOULD_CALL_PARENT(TRUE)
 	if(requires_hole_storage)
-		remove_from_hole(user, target)
+		if(flipped)
+			remove_from_hole(target, user)
+		else
+			remove_from_hole(user, target)
 	unlock_sex_object(user, target)
 	return
 

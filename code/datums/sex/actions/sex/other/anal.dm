@@ -18,6 +18,8 @@
 		return FALSE
 	if(user == target)
 		return FALSE
+	if(check_sex_lock(target, ORGAN_SLOT_PENIS))
+		return FALSE
 	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
 	if(!check_location_accessible(user, target, BODY_ZONE_PRECISE_GROIN, TRUE))
@@ -47,8 +49,6 @@
 
 
 /datum/sex_action/sex/other/anal/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user != target)
-		return
 	target.visible_message(span_love("[target] cums into [user]'s butt!"))
 	target.virginity = FALSE
 	return "into"

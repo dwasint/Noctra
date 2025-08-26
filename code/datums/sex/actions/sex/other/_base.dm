@@ -1,5 +1,8 @@
 /datum/sex_action/sex/other
 	abstract_type = /datum/sex_action/sex/other
+	target_priority = 100
+	user_priority = 0
+	flipped = TRUE
 
 /datum/sex_action/sex/other/try_knot_on_climax(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(!knot_on_finish)
