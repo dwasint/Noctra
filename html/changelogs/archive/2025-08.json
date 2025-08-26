@@ -769,6 +769,135 @@
             {
                 "bugfix": "Fixed an issue where printing press was not printing correct books"
             }
+<<<<<<< HEAD
+=======
+        ],
+        "Wouju": [
+            {
+                "rscadd": "Master of Nerves logs and text display has been improved"
+            },
+            {
+                "rscadd": "Clerics, both Ten and Inhumen, had their loadouts overhauled"
+            },
+            {
+                "rscadd": "Made the Forgefiend a hammer, you can craft and smith with it now"
+            },
+            {
+                "rscadd": "Wooden mallet can now be used to smith with"
+            },
+            {
+                "code_imp": "hammers use defines for their force and integrity, set some maces integrity to use their defines"
+            }
+        ],
+        "grungussuss": [
+            {
+                "bugfix": "fixed seeing no name in the disconnected important role admin message"
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "rscadd": "You can label bottles with parchment and a feather again. Middle-click to remove the label."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "balance": "Potence now gets a minor STR buff for weapon attacks"
+            },
+            {
+                "qol": "Death Knight and Steal the sun commands now tells the user the amount of vitae needed for these actions if they lack enough."
+            },
+            {
+                "bugfix": "Ritual of Ascension now works."
+            },
+            {
+                "bugfix": "Vampire Lord can ascend at their last Ritual of Ascension"
+            },
+            {
+                "bugfix": "Vampire Lord can acess their Tome Souls after their first ascension"
+            },
+            {
+                "code_imp": "Ritual of Ascension was renamed together with their stages and descriptions."
+            },
+            {
+                "rscadd": "Add a Like, Dislike and Ask Again Feature to Mentor"
+            },
+            {
+                "rscadd": "Voices got an unique name in the meditates that is consistent like the Meditates"
+            },
+            {
+                "rscadd": "Medidates names can't be repeated anymore"
+            },
+            {
+                "rscadd": "Mentor Statistics at the Admin Tab"
+            },
+            {
+                "rscadd": "Mentors can gain 1 Triumph from every 7 likes (it has a limit of 5 Triumphs per round)"
+            }
+        ]
+    },
+    "2025-08-26": {
+        "Wouju": [
+            {
+                "bugfix": "Tavern Brawler special works properly now"
+            },
+            {
+                "code_imp": "Special traits now use stat defines properly"
+            },
+            {
+                "rscadd": "biggest shelves aka racks are now climbable and are dense"
+            },
+            {
+                "balance": "Cleaning people with normal soap applies the clean mood effect, which will remove the stink of horcs. Cleaning yourself with herbal soap applies a greater effect, and being cleaned by someone with herbal soap will apply the clean buff"
+            },
+            {
+                "balance": "Soaps now lose a bit of use when dilluted in a bucket of water, it is still way better than using it to clean floors directly"
+            }
+        ],
+        "Wabberspace": [
+            {
+                "rscadd": "A new forest garrison role, Ruffian, a youngling role primarily built around being an aide to the Forest Garrison, with a mixture of Orphan and Ranger skills."
+            },
+            {
+                "rscadd": "A unique orphan halt used only by Ruffians."
+            },
+            {
+                "balance": "Renames Forest Infantry to Forest Ravager, and replaces their Axe skills with Whips & Flails, and gives them a heater shield and military flail, as well as rearranging their stats to be far slower, and far more durable/enduring, and gives them the critical resistance perk."
+            },
+            {
+                "rscadd": "A new belt type used by the Forest Garrison that includes their key and a needle."
+            },
+            {
+                "balance": "Allows forrester armour to be sew-repaired."
+            },
+            {
+                "balance": "Gives Forest Reaver a +1 speed statline, bringing them to parity with adults."
+            },
+            {
+                "bugfix": "Allows Aasimar to be Wardens."
+            },
+            {
+                "balance": "Replaces the Forest Guard's steel coifs with iron bevors."
+            },
+            {
+                "balance": "Prevents the Forest Guard from taking on apprentices."
+            },
+            {
+                "balance": "Raises Forest Guard slots to 4 to coincide with Ruffian influxes."
+            }
+        ],
+        "Somniworld": [
+            {
+                "rscadd": "The town elder role is now accessible to Medicators, Tritons, and Harpies, these species do not have access to the Mayor subclass, however, as it is reserved for nobles."
+            }
+        ],
+        "PotatoTomahto": [
+            {
+                "balance": "fire servant requires objects to burn to ash"
+            },
+            {
+                "balance": "closed turfs can burn"
+            }
+>>>>>>> vanderlin/main
         ]
     }
 }
