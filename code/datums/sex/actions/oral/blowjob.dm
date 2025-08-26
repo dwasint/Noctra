@@ -10,6 +10,9 @@
 	target_priority = 100
 
 /datum/sex_action/blowjob/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	. = ..()
+	if(!.)
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(check_sex_lock(target, ORGAN_SLOT_PENIS))

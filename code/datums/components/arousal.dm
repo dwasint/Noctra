@@ -124,6 +124,9 @@
 	else
 		var/return_type = highest_priority.current_action.handle_climax_message(highest_priority.user, highest_priority.target)
 		handle_climax(return_type, highest_priority.user, highest_priority.target)
+		if(highest_priority.current_action.knot_on_finish)
+			highest_priority.current_action.try_knot_on_climax(mob, highest_priority.target)
+
 	after_ejaculation(FALSE, parent)
 
 /datum/component/arousal/proc/handle_climax(climax_type, mob/living/carbon/human/user, mob/living/carbon/human/target)

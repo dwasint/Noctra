@@ -77,6 +77,10 @@
 	var/target_priority = 10
 	///this is the priority of our action for the user
 	var/user_priority = 10
+	/// Whether this action supports knotting on climax
+	var/knot_on_finish = FALSE
+	/// Whether this action can trigger knots
+	var/can_knot = FALSE
 
 /datum/sex_action/Destroy()
 	// Clean up any tracked storage entries
@@ -94,11 +98,22 @@
 	return TRUE
 
 /datum/sex_action/proc/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	// Check hole storage requirements if this action needs it
+	SHOULD_CALL_PARENT(TRUE)
 	if(requires_hole_storage)
 		if(!check_hole_storage_available(target, user))
 			return FALSE
 	return TRUE
+
+/datum/sex_action/proc/try_knot_on_climax(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(!knot_on_finish)
+		return FALSE
+	if(!can_knot)
+		return FALSE
+
+	var/datum/sex_session/session = get_sex_session(user, target)
+	if(!session)
+		return FALSE
+	return SEND_SIGNAL(user, COMSIG_SEX_TRY_KNOT, target, session.force)
 
 /datum/sex_action/proc/check_location_accessible(mob/living/carbon/human/user, mob/living/carbon/human/target, location = BODY_ZONE_CHEST, grabs = FALSE, skipundies = TRUE)
 	var/obj/item/bodypart/bodypart = target.get_bodypart(location)

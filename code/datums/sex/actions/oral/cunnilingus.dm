@@ -10,6 +10,9 @@
 	return TRUE
 
 /datum/sex_action/cunnilingus/can_perform(mob/living/user, mob/living/target)
+	. = ..()
+	if(!.)
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(check_sex_lock(target, ORGAN_SLOT_VAGINA))

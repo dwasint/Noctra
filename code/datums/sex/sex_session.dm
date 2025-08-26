@@ -98,6 +98,14 @@
 		return
 	desire_stop = TRUE
 
+/datum/sex_session/proc/considered_limp(mob/limper)
+	var/list/arousal_data = list()
+	SEND_SIGNAL(limper, COMSIG_SEX_GET_AROUSAL, arousal_data)
+	var/arousal_value = arousal_data["arousal"]
+	if(arousal_value >= AROUSAL_HARD_ON_THRESHOLD)
+		return FALSE
+	return TRUE
+
 /datum/sex_session/proc/sex_action_loop()
 	var/performed_action_type = current_action
 	var/datum/sex_action/action = SEX_ACTION(current_action)

@@ -7,6 +7,9 @@
 	return TRUE
 
 /datum/sex_action/armpit_nuzzle/can_perform(mob/living/user, mob/living/target)
+	. = ..()
+	if(!.)
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(check_sex_lock(user, BODY_ZONE_PRECISE_MOUTH))

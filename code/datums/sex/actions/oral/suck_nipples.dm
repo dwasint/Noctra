@@ -10,6 +10,9 @@
 	return TRUE
 
 /datum/sex_action/suck_nipples/can_perform(mob/living/user, mob/living/target)
+	. = ..()
+	if(!.)
+		return FALSE
 	if(user == target)
 		return FALSE
 	if(!check_location_accessible(user, target, BODY_ZONE_CHEST, TRUE))
