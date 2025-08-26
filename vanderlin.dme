@@ -1246,7 +1246,6 @@
 #include "code\datums\sex\sex_session.dm"
 #include "code\datums\sex\sex_stress.dm"
 #include "code\datums\sex\actions\_base_action.dm"
-#include "code\datums\sex\actions\penetrate.dm"
 #include "code\datums\sex\actions\toy.dm"
 #include "code\datums\sex\actions\masturbation\_base.dm"
 #include "code\datums\sex\actions\masturbation\anus.dm"
