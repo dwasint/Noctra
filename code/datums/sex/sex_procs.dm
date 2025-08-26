@@ -79,17 +79,6 @@
 		return session
 	return null
 
-/proc/check_sex_lock(mob/locked, organ_slot, obj/item/item)
-	if(!organ_slot && !item)
-		return FALSE
-	for(var/datum/sex_session_lock/lock as anything in GLOB.locked_sex_objects)
-		if(lock.locked_host != locked)
-			continue
-		if(lock.locked_item != item && lock.locked_organ_slot != organ_slot)
-			continue
-		return TRUE
-	return FALSE
-
 /mob/living/proc/has_hands()
 	return TRUE
 

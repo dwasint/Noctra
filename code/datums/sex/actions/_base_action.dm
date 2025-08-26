@@ -251,7 +251,11 @@
 	return
 
 /datum/sex_action/proc/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	var/datum/sex_session/sex_session = get_sex_session(user, target)
+	if(sex_session.finished_check())
+		return TRUE
 	return FALSE
+
 
 /datum/sex_action/proc/lock_sex_object(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return FALSE
@@ -263,3 +267,16 @@
 
 /datum/sex_action/proc/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return
+
+/datum/sex_action/proc/check_sex_lock(mob/locked, organ_slot, obj/item/item)
+	if(!organ_slot && !item)
+		return FALSE
+	for(var/datum/sex_session_lock/lock as anything in GLOB.locked_sex_objects)
+		if(lock in sex_locks)
+			continue
+		if(lock.locked_host != locked)
+			continue
+		if(lock.locked_item != item && lock.locked_organ_slot != organ_slot)
+			continue
+		return TRUE
+	return FALSE
