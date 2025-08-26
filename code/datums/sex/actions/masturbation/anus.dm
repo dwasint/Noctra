@@ -12,6 +12,8 @@
 		return FALSE
 	if(user != target)
 		return FALSE
+	if(check_sex_lock(user, ORGAN_SLOT_ANUS))
+		return FALSE
 	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
 	return TRUE
@@ -31,9 +33,3 @@
 /datum/sex_action/masturbate/anus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	user.visible_message(span_warning("[user] stops fingering [user.p_their()] butt."))
-
-/datum/sex_action/masturbate/anus/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	var/datum/sex_session/sex_session = get_sex_session(user, target)
-	if(sex_session.finished_check())
-		return TRUE
-	return FALSE

@@ -33,7 +33,7 @@
 	user.make_sucking_noise()
 	do_thrust_animate(user, target)
 
-	var/datum/sex_session/sex_session = get_sex_session(target, user)
+	var/datum/sex_session/sex_session = get_sex_session(user, target)
 
 	sex_session.perform_sex_action(target, 2, 0, TRUE)
 

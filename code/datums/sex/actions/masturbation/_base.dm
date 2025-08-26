@@ -9,4 +9,10 @@
 
 /datum/sex_action/masturbate/lock_sex_object(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/locked = user.get_active_precise_hand()
-	sex_locks |= new /datum/sex_session_lock(target, locked)
+	sex_locks |= new /datum/sex_session_lock(user, locked)
+
+/datum/sex_action/masturbate/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	var/datum/sex_session/sex_session = get_sex_session(user, target)
+	if(sex_session.finished_check())
+		return TRUE
+	return FALSE

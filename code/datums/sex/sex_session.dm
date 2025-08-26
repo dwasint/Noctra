@@ -175,26 +175,28 @@
 /datum/sex_session/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
 	SEND_SIGNAL(action_target, COMSIG_SEX_RECEIVE_ACTION, arousal_amt, pain_amt, giving, force, speed)
 
-/datum/sex_session/proc/handle_passive_ejaculation()
+/datum/sex_session/proc/handle_passive_ejaculation(mob/living/carbon/human/handler)
+	if(!handler)
+		handler = user
 	var/list/arousal_data = list()
-	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data)
+	SEND_SIGNAL(handler, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	var/arousal_multiplier = arousal_data["arousal_multiplier"]
 	var/arousal_value = arousal_data["arousal"]
 
 	if(arousal_multiplier > 1.5 && user.check_handholding())
 		if(prob(5))
-			SEND_SIGNAL(user, COMSIG_SEX_RECEIVE_ACTION, 3, 0, 1, 0)
+			SEND_SIGNAL(handler, COMSIG_SEX_RECEIVE_ACTION, 3, 0, 1, 0)
 		if(arousal_value < 70)
-			SEND_SIGNAL(user, COMSIG_SEX_ADJUST_AROUSAL, 0.2)
+			SEND_SIGNAL(handler, COMSIG_SEX_ADJUST_AROUSAL, 0.2)
 
-		if(user.handcuffed)
+		if(handler.handcuffed)
 			if(prob(8))
 				var/chaffepain = pick(10,10,10,10,20,20,30)
-				SEND_SIGNAL(user, COMSIG_SEX_RECEIVE_ACTION, 3, chaffepain, 1, 0)
-				user.visible_message(("<span class='love_mid'>[user] squirms uncomfortably in [user.p_their()] restraints.</span>"), \
-					("<span class='love_extreme'>I feel [user.handcuffed] rub uncomfortably against my skin.</span>"))
+				SEND_SIGNAL(handler, COMSIG_SEX_RECEIVE_ACTION, 3, chaffepain, 1, 0)
+				handler.visible_message(("<span class='love_mid'>[handler] squirms uncomfortably in [handler.p_their()] restraints.</span>"), \
+					("<span class='love_extreme'>I feel [handler.handcuffed] rub uncomfortably against my skin.</span>"))
 			if(arousal_value < ACTIVE_EJAC_THRESHOLD)
-				SEND_SIGNAL(user, COMSIG_SEX_ADJUST_AROUSAL, 0.25)
+				SEND_SIGNAL(handler, COMSIG_SEX_ADJUST_AROUSAL, 0.25)
 
 
 /datum/sex_session/proc/get_speed_multiplier()
