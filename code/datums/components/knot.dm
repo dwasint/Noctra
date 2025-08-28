@@ -82,7 +82,7 @@
 		knot_remove(keep_btm_status = user_was_bottom, keep_top_status = (user_was_top && repeated_customer))
 
 		// Apply fucked stupid status if target was previously bottom
-		if(user_was_bottom && knotted_owner && !target.has_status_effect(/datum/status_effect/knot_fucked_stupid))
+		if(user_was_top && knotted_owner && !target.has_status_effect(/datum/status_effect/knot_fucked_stupid))
 			target.apply_status_effect(/datum/status_effect/knot_fucked_stupid)
 
 	var/mob/living/carbon/human/other_knotter = find_knotter_for_target(target)
