@@ -162,3 +162,63 @@
 				highest_session = session
 				continue
 	return highest_session
+
+/mob/proc/get_erp_pref(pref_type)
+	if(!client?.prefs)
+		return FALSE
+
+	if(!ispath(pref_type, /datum/erp_preference))
+		return FALSE
+
+	var/datum/erp_preference/pref = new pref_type()
+	return pref.get_value(client.prefs)
+
+/mob/proc/set_erp_pref(pref_type, value)
+	if(!client?.prefs)
+		return FALSE
+
+	if(!ispath(pref_type, /datum/erp_preference))
+		return FALSE
+
+	var/datum/erp_preference/pref = new pref_type()
+	pref.set_value(client.prefs, value)
+	client.prefs.save_preferences()
+	return TRUE
+
+/mob/proc/has_erp_pref(pref_type)
+	return get_erp_pref(pref_type) == TRUE
+
+/mob/proc/get_all_erp_prefs()
+	if(!client?.prefs)
+		return list()
+
+	var/list/prefs_by_category = list()
+
+	for(var/pref_type in subtypesof(/datum/erp_preference))
+		var/datum/erp_preference/pref = new pref_type()
+		var/category = pref.category
+		var/value = pref.get_value(client.prefs)
+
+		if(!prefs_by_category[category])
+			prefs_by_category[category] = list()
+
+		prefs_by_category[category][pref_type] = list(
+			"name" = pref.name,
+			"description" = pref.description,
+			"value" = value,
+			"pref_object" = pref
+		)
+
+	return prefs_by_category
+
+/proc/any_has_erp_pref(list/mobs, pref_type)
+	for(var/mob/M in mobs)
+		if(M.has_erp_pref(pref_type))
+			return TRUE
+	return FALSE
+
+/proc/all_have_erp_pref(list/mobs, pref_type)
+	for(var/mob/M in mobs)
+		if(!M.has_erp_pref(pref_type))
+			return FALSE
+	return TRUE
