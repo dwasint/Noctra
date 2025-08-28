@@ -558,7 +558,15 @@
 	to_chat(src, "<span class='info'>I grab [target].</span>")
 
 /mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
-	return //rtd fix not updating because no dirchange
+	if(istype(M))
+		if(grab_state == GRAB_PASSIVE)
+			M.set_mob_offsets("pull", _x = (src.x - M.x) * 8, _y = (src.y - M.y) * 8)
+		else if(grab_state == GRAB_AGGRESSIVE)
+			M.set_mob_offsets("pull", _x = (src.x - M.x) * 16, _y = (src.y - M.y) * 16)
+	return
+
+/mob/living/proc/reset_pull_offsets()
+	reset_offsets("pull")
 
 /mob/living/proc/set_mob_offsets(index, _x = 0, _y = 0)
 	if(index)
@@ -2251,19 +2259,30 @@
 	. = usable_legs
 	usable_legs = new_value
 
-	if(new_value > .) // Gained leg usage.
+	update_limbless_locomotion()
+	update_limbless_movespeed_mod()
+
+/// Updates whether the mob is floored or immobilized based on how many limbs they have or are missing.
+/mob/living/proc/update_limbless_locomotion()
+	if(usable_legs > 0 || (movement_type & (FLYING|FLOATING)) || COUNT_TRAIT_SOURCES(src, TRAIT_NO_LEG_AID) >= 2) // Gained leg usage
 		REMOVE_TRAIT(src, TRAIT_FLOORED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
 		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
-	else if(!(movement_type & (FLYING | FLOATING))) //Lost leg usage, not flying.
-		if(!usable_legs)
-			ADD_TRAIT(src, TRAIT_FLOORED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
-			if(!usable_hands)
-				ADD_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
+		return
+	// No legs, not flying
+	ADD_TRAIT(src, TRAIT_FLOORED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
+	if(usable_hands == 0)
+		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
 
+/// Updates the mob's movespeed based on how many limbs they have or are missing.
+/mob/living/proc/update_limbless_movespeed_mod()
 	if(usable_legs < default_num_legs)
 		var/limbless_slowdown = (default_num_legs - usable_legs) * 3
 		if(!usable_legs && usable_hands < default_num_hands)
 			limbless_slowdown += (default_num_hands - usable_hands) * 3
+		var/list/slowdown_mods = list()
+		SEND_SIGNAL(src, COMSIG_LIVING_LIMBLESS_MOVESPEED_UPDATE, slowdown_mods)
+		for(var/num in slowdown_mods)
+			limbless_slowdown *= num
 		add_movespeed_modifier(MOVESPEED_ID_LIVING_LIMBLESS, update=TRUE, priority=100, override=TRUE, multiplicative_slowdown=limbless_slowdown, movetypes=GROUND)
 	else
 		remove_movespeed_modifier(MOVESPEED_ID_LIVING_LIMBLESS, update=TRUE)
@@ -2282,10 +2301,9 @@
 	. = usable_hands
 	usable_hands = new_value
 
-	if(new_value > .) // Gained hand usage.
-		REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
-	else if(!(movement_type & (FLYING | FLOATING)) && !usable_hands && !usable_legs) //Lost a hand, not flying, no hands left, no legs.
-		ADD_TRAIT(src, TRAIT_IMMOBILIZED, LACKING_LOCOMOTION_APPENDAGES_TRAIT)
+	if(usable_legs < default_num_legs)
+		update_limbless_locomotion()
+		update_limbless_movespeed_mod()
 
 /// Changes the value of the [living/body_position] variable.
 /mob/living/proc/set_body_position(new_value)
@@ -2573,6 +2591,9 @@
 	for(var/hand in hud_used?.hand_slots)
 		var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
 		H?.update_appearance()
+
+	if(isnull(new_pulledby))
+		reset_pull_offsets()
 
 /// Proc for giving a mob a new 'friend', generally used for AI control and targeting. Returns false if already friends.
 /mob/living/proc/befriend(mob/living/new_friend)
