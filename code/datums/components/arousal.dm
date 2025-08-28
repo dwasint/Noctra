@@ -121,7 +121,7 @@
 		mob.visible_message(span_love("[mob] makes a mess!"))
 		var/turf/turf = get_turf(parent)
 		turf.add_liquid(/datum/reagent/consumable/milk, 5)
-		highest_priority.handle_climax(FALSE, parent, highest_priority.target)
+		after_ejaculation(FALSE, parent)
 	else
 		var/return_type = highest_priority.current_action.handle_climax_message(highest_priority.user, highest_priority.target)
 		handle_climax(return_type, highest_priority.user, highest_priority.target)
