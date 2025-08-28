@@ -8,16 +8,24 @@
 	dat += ".tab-button.active { background: #8B0000; }" // Dark red to match your character sheet
 	dat += ".tab-content { display: none; }"
 	dat += ".tab-content.active { display: block; }"
+	dat += ".search-container { margin-bottom: 15px; text-align: center; }"
+	dat += ".search-box { width: 300px; padding: 8px; font-size: 14px; border: 2px solid #333; border-radius: 4px; }"
+	dat += ".hidden { display: none !important; }"
 	dat += "</style>"
 
 	// Tab buttons
 	dat += "<div class='tab-container'>"
-	dat += "<button class='tab-button active' onclick='showTab(\"general\")'>General ERP</button>"
-	dat += "<button class='tab-button' onclick='showTab(\"kinks\")'>Kinks</button>"
+	dat += "<button class='tab-button' id='general-tab' onclick='showTab(\"general\")'>General ERP</button>"
+	dat += "<button class='tab-button' id='kinks-tab' onclick='showTab(\"kinks\")'>Kinks</button>"
+	dat += "</div>"
+
+	// Search bar
+	dat += "<div class='search-container'>"
+	dat += "<input type='text' class='search-box' id='searchBox' placeholder='Search preferences...' onkeyup='searchPreferences()'>"
 	dat += "</div>"
 
 	// Tab contents
-	dat += "<div id='general' class='tab-content active'>"
+	dat += "<div id='general' class='tab-content'>"
 	dat += print_erp_preferences_page()
 	dat += "</div>"
 
@@ -26,14 +34,66 @@
 	dat += "</div>"
 
 	dat += "<script>"
+	// Cookie functions
+	dat += "function setCookie(name, value, days) {"
+	dat += "  var expires = '';"
+	dat += "  if (days) {"
+	dat += "    var date = new Date();"
+	dat += "    date.setTime(date.getTime() + (days*24*60*60*1000));"
+	dat += "    expires = '; expires=' + date.toUTCString();"
+	dat += "  }"
+	dat += "  document.cookie = name + '=' + (value || '') + expires + '; path=/';"
+	dat += "}"
+	dat += "function getCookie(name) {"
+	dat += "  var nameEQ = name + '=';"
+	dat += "  var ca = document.cookie.split(';');"
+	dat += "  for(var i=0;i < ca.length;i++) {"
+	dat += "    var c = ca\[i\];"
+	dat += "    while (c.charAt(0)==' ') c = c.substring(1,c.length);"
+	dat += "    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);"
+	dat += "  }"
+	dat += "  return null;"
+	dat += "}"
+	// Tab switching
 	dat += "function showTab(tabName) {"
 	dat += "  var tabs = document.querySelectorAll('.tab-content');"
 	dat += "  tabs.forEach(function(tab) { tab.classList.remove('active'); });"
 	dat += "  var buttons = document.querySelectorAll('.tab-button');"
 	dat += "  buttons.forEach(function(btn) { btn.classList.remove('active'); });"
 	dat += "  document.getElementById(tabName).classList.add('active');"
-	dat += "  event.target.classList.add('active');"
+	dat += "  document.getElementById(tabName + '-tab').classList.add('active');"
+	dat += "  setCookie('erp_active_tab', tabName, 30);"
 	dat += "}"
+	// Search functionality
+	dat += "function searchPreferences() {"
+	dat += "  var input = document.getElementById('searchBox');"
+	dat += "  var filter = input.value.toLowerCase();"
+	dat += "  var tables = document.querySelectorAll('.tab-content table');"
+	dat += "  tables.forEach(function(table) {"
+	dat += "    var rows = table.querySelectorAll('tr');"
+	dat += "    rows.forEach(function(row) {"
+	dat += "      if (row.querySelector('h3')) return;" // Skip category headers
+	dat += "      var nameCell = row.cells\[0\];"
+	dat += "      if (nameCell) {"
+	dat += "        var text = nameCell.textContent || nameCell.innerText;"
+	dat += "        if (text.toLowerCase().indexOf(filter) > -1) {"
+	dat += "          row.style.display = '';"
+	dat += "        } else {"
+	dat += "          row.style.display = 'none';"
+	dat += "        }"
+	dat += "      }"
+	dat += "    });"
+	dat += "  });"
+	dat += "}"
+	// Load saved tab on page load
+	dat += "window.onload = function() {"
+	dat += "  var savedTab = getCookie('erp_active_tab');"
+	dat += "  if (savedTab && (savedTab === 'general' || savedTab === 'kinks')) {"
+	dat += "    showTab(savedTab);"
+	dat += "  } else {"
+	dat += "    showTab('general');"
+	dat += "  }"
+	dat += "};"
 	dat += "</script>"
 
 	var/datum/browser/popup = new(user, "erp_preferences", "<div align='center'>ERP Preferences</div>", 630, 730)
