@@ -10,6 +10,8 @@
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
 	anvilrepair = /datum/skill/craft/blacksmithing
+	melting_material = /datum/material/iron
+	melt_amount = 20
 	tool_behaviour = TOOL_SUTURE
 
 	grid_width = 32
@@ -78,10 +80,10 @@
 			return ..()
 		if(!I.ontable() || !I.sewrepair)
 			return ..()
-		if(!I.max_integrity || I.obj_broken)
+		if(!I.uses_integrity || I.obj_broken)
 			to_chat(user, span_warning("[I] can't be repaired!"))
 			return ..()
-		if(I.obj_integrity == I.max_integrity)
+		if(I.get_integrity() >= I.max_integrity)
 			return ..()
 		if(stringamt < 1)
 			to_chat(user, span_warning("[src] has no thread left!"))
@@ -99,14 +101,14 @@
 			return TRUE
 		if((armor_value == 0 && skill_level > 0) || (armor_value > 0 && skill_level > 1)) //If not armor but skill level at least 1 or Armor and skill level at least 2
 			user.visible_message(span_info("[user] repairs [I]!"))
-			I.obj_integrity = min(I.obj_integrity + skill_multiplied, I.max_integrity)
+			I.repair_damage(skill_multiplied)
 		else
 			if(prob(20 - user.STALUC)) //Unlucky here!
 				I.take_damage(150, BRUTE, "slash")
 				user.visible_message(span_warning("[user] was extremely unlucky and ruined [I] while futilely trying to repair it!"))
 				playsound(src, 'sound/foley/cloth_rip.ogg', 50, TRUE)
 			else if(prob(user.STALUC)) //Lucky here!
-				I.obj_integrity = min(I.obj_integrity + 50, I.max_integrity)
+				I.repair_damage(50)
 				playsound(src, 'sound/magic/ahh2.ogg', 50, TRUE)
 				user.visible_message(span_info("A miracle! [user] somehow managed to repair [I] while not having a single clue what [user.p_they()] [user.p_were()] doing!"))
 			else
@@ -185,6 +187,7 @@
 	stringamt = 5
 	maxstring = 5
 	anvilrepair = null
+	melting_material = null
 
 /obj/item/needle/blessed
 	name = "blessed needle"
