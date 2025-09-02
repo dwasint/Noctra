@@ -27,7 +27,6 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 	density = FALSE
 	blade_dulling = DULLING_BASH
 	integrity_failure = 0.5
-	max_integrity = 0
 	anchored = TRUE
 	var/mode = MODE_NONE
 	var/datum/weakref/throne_weakref
@@ -470,7 +469,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 	if(obj_broken)
 		return
 
-	var/sanitized_message = sanitize_hear_message(original_message)
+	var/sanitized_message = SANITIZE_HEAR_MESSAGE(original_message)
 
 	if(findtext(sanitized_message, "nevermind") || findtext(sanitized_message, "cancel"))
 		reset_mode()
