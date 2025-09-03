@@ -54,12 +54,13 @@
 	max_integrity = INTEGRITY_STRONGEST
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 3.2 * IRON_MULTIPLIER
+	stand_speed_reduction = 1.15
 
 /obj/item/clothing/armor/brigandine/Initialize()
 	. = ..()
 	AddComponent(/datum/component/item_equipped_movement_rustle, custom_sounds = SFX_PLATE_COAT_STEP)
 
-/obj/item/clothing/armor/captain
+/obj/item/clothing/armor/brigandine/captain
 	name = "captain's brigandine"
 	desc = "A coat with plates specifically tailored and forged for the captain of Vanderlin."
 	icon_state = "capplate"
@@ -82,8 +83,9 @@
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 7 * STEEL_MULTIPLIER
 	uses_lord_coloring = LORD_PRIMARY
+	stand_speed_reduction = 1.15
 
-/obj/item/clothing/armor/captain/Initialize()
+/obj/item/clothing/armor/brigandine/captain/Initialize()
 	. = ..()
 	AddComponent(/datum/component/item_equipped_movement_rustle, custom_sounds = SFX_PLATE_COAT_STEP)
 
@@ -97,6 +99,7 @@
 	sellprice = VALUE_SNOWFLAKE_STEEL
 	armor = ARMOR_PLATE_BAD
 	// add armor plate bad from defines
+	stand_speed_reduction = 1.05
 
 	max_integrity = INTEGRITY_STRONG
 

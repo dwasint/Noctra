@@ -221,12 +221,11 @@
 		var/obj/item/I = hud.mymob.get_item_by_slot(slot_id)
 		if(I)
 			icon_state = icon_full
-			if(I.max_integrity)
-				if(I.obj_integrity < I.max_integrity)
+			if(I.uses_integrity)
+				if(I.obj_broken)
+					icon_state = "slotbroke"
+				else if(I.get_integrity() < I.max_integrity)
 					icon_state = "slotdmg"
-					if(I.integrity_failure)
-						if((I.obj_integrity / I.max_integrity) <= I.integrity_failure)
-							icon_state = "slotbroke"
 		else
 			icon_state = icon_empty
 	return ..()
@@ -1369,10 +1368,10 @@
 	member_key = mob.ckey
 	var/display_name = mob.real_name || mob.name
 
-	maptext = {"<div style="text-align: left; font-family: 'Small Fonts'; font-size: 7px; color: #FFFFFF; text-shadow: 1px 1px 0px #000000;">
-		<div style="color: #FFFFFF;">[display_name]</div>
-		<div style="color: #FFD700; margin-top: 1px;">[rank]</div>
-	</div>"}
+	maptext = MAPTEXT({"<div style="text-align: left; font-family: 'Small Fonts'; font-size: 7px; color: #FFFFFF; text-shadow: 1px 1px 0px #000000;">\
+		<div style="color: #FFFFFF;">[display_name]</div>\
+		<div style="color: #FFD700; margin-top: 1px;">[rank]</div>\
+	</div>"})
 
 /atom/movable/screen/party_member_name/Destroy()
 	member = null

@@ -286,14 +286,14 @@
 /obj/item/reagent_containers/food/snacks/stale_bread
 	name = "stale bread"
 	desc = "Old. Is that mold? Not fit for slicing, just eating in sullen silence."
-	icon_state = "loaf6"
+	icon_state = "loaf"
 	color = "#92908a"
 	dropshrink = 0.8
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("stale bread" = 1)
-	faretype = FARE_NEUTRAL
+	faretype = FARE_POOR
 
 /obj/item/reagent_containers/food/snacks/stale_bread/raisin
 	icon_state = "raisinbread6"
@@ -375,8 +375,6 @@
 	base_icon_state = "grenzbun"
 	faretype = FARE_NEUTRAL
 	foodtype = GRAIN | MEAT
-	plateable = TRUE
-	foodbuff_skillcheck = TRUE
 	rotprocess = SHELFLIFE_DECENT
 	bitesize = 5
 
@@ -605,7 +603,6 @@
 	tastes = list("cake"=1, "pear" = 1, "delicious honeyfrosting"=1)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	rotprocess = SHELFLIFE_DECENT
-	plateable = TRUE
 	faretype = FARE_FINE
 
 // -------------- CHEESECAKE -----------------
@@ -656,7 +653,6 @@
 	foodtype = GRAIN | DAIRY | SUGAR
 	eat_effect = /datum/status_effect/buff/foodbuff
 	rotprocess = SHELFLIFE_DECENT
-	plateable = TRUE
 	faretype = FARE_FINE
 
 /obj/item/reagent_containers/food/snacks/cheesecake_poison_cooked
@@ -690,7 +686,6 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY | SUGAR
 	rotprocess = SHELFLIFE_DECENT
-	plateable = TRUE
 	faretype = FARE_FINE
 
 /*	.................   STRAWBERRY CAKE   ................... */
