@@ -151,13 +151,45 @@
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	minstr = 6
 
 	sellprice = 20
 
 /obj/item/weapon/axe/iron/getonmobprop(tag)
 	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = -10,"nx" = 12,"ny" = -10,"wx" = -8,"wy" = -7,"ex" = 3,"ey" = -9,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -90,"eturn" = 90,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = 3,"nx" = 12,"ny" = 2,"wx" = -8,"wy" = 2,"ex" = 4,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
+/obj/item/weapon/axe/nsapo/iron
+	force = DAMAGE_AXE
+	force_wielded = DAMAGE_AXE_WIELD
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	name = "iron kasuyu"
+	desc = "An iron axe hailing from the nation of Lakkari. Great for felling trees and foes alike."
+	icon = 'icons/roguetown/weapons/lakkari.dmi'
+	icon_state = "nsapo_iron"
+	max_blade_int = 200
+	max_integrity = INTEGRITY_STANDARD
+	melting_material = /datum/material/iron
+	melt_amount = 75
+	parrysound = "sword"
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+
+	wdefense = MEDIOCRE_PARRY
+	minstr = 6
+
+	sellprice = 20
+
+/obj/item/weapon/axe/nsapo/getonmobprop(tag)
+
 	if(tag)
 		switch(tag)
 			if("gen")
@@ -192,7 +224,7 @@
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	minstr = 6
 	sellprice = 60
 
@@ -235,7 +267,7 @@
 	resistance_flags = FIRE_PROOF
 	parrysound = list('sound/combat/parry/wood/parrywood (1).ogg', 'sound/combat/parry/wood/parrywood (2).ogg', 'sound/combat/parry/wood/parrywood (3).ogg')
 	swingsound = BLADEWOOSH_MED
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	minstr = 6
 	sellprice = 50
 	pickmult = 1.2 // It's a pick...
@@ -263,6 +295,38 @@
 	axe_cut = 15 // Better than iron
 
 /obj/item/weapon/axe/steel/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = -10,"nx" = 12,"ny" = -10,"wx" = -8,"wy" = -7,"ex" = 3,"ey" = -9,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -90,"eturn" = 90,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = 3,"nx" = 12,"ny" = 2,"wx" = -8,"wy" = 2,"ex" = 4,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
+/obj/item/weapon/axe/nsapo
+	force = DAMAGE_AXE
+	force_wielded = DAMAGE_AXE_WIELD
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	name = "steel kasuyu"
+	desc = "An steel axe hailing from the nation of Lakkari. Great for felling trees and foes alike."
+	icon = 'icons/roguetown/weapons/lakkari.dmi'
+	icon_state = "nsapo_steel"
+	max_blade_int = 300
+	max_integrity = INTEGRITY_STANDARD
+	melting_material = /datum/material/iron
+	melt_amount = 75
+	parrysound = "sword"
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+
+	wdefense = GOOD_PARRY
+	minstr = 8
+	sellprice = 45
+	axe_cut = 15
+
+/obj/item/weapon/axe/nsapo/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		switch(tag)
@@ -307,13 +371,14 @@
 	name = "bone axe"
 	desc = "A rough axe made of bones"
 	icon_state = "boneaxe"
-	force = 18
-	force_wielded = 22
+	force = DAMAGE_AXE - 2
+	force_wielded =	DAMAGE_AXE_WIELD - 3
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop)
+	smeltresult = /obj/item/fertilizer/ash
 	max_blade_int = 100
 	minstr = 8
-	wdefense = 1
+	wdefense = MEDIOCRE_PARRY
 	wlength = WLENGTH_SHORT
 	pickup_sound = 'sound/foley/equip/rummaging-03.ogg'
 
