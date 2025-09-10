@@ -1141,6 +1141,10 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
+"eN" = (
+/obj/structure/redstone/dust,
+/turf/open/floor/churchbrick,
+/area/rogue/indoors/town/manor)
 "eO" = (
 /obj/machinery/anvil,
 /turf/open/floor/cobble,
@@ -1568,6 +1572,7 @@
 	pixel_y = 16;
 	pixel_x = -9
 	},
+/obj/structure/redstone/dust,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor)
 "nG" = (
@@ -2124,16 +2129,6 @@
 /obj/structure/hotspring/border/nine,
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/mountains/decap)
-"wx" = (
-/obj/effect/landmark/house_spot{
-	template_z = 2;
-	template_x = 6;
-	template_y = 6;
-	link_id = "test";
-	house_id = "test"
-	},
-/turf/open/floor/grass/yel,
-/area/rogue/outdoors)
 "wD" = (
 /obj/structure/bridge_stakes{
 	dir = 8
@@ -2203,6 +2198,10 @@
 /obj/structure/bridge_stakes,
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
+"xP" = (
+/obj/structure/redstone/dust,
+/turf/open/floor/wood,
+/area/rogue/indoors/town/manor)
 "yr" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/dirt/road,
@@ -2777,6 +2776,7 @@
 /obj/effect/landmark/start/lord{
 	dir = 8
 	},
+/obj/structure/redstone/dust,
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/manor)
 "Ix" = (
@@ -3053,6 +3053,10 @@
 /obj/structure/sprinkler,
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
+"QG" = (
+/obj/structure/redstone/pressure_plate,
+/turf/open/floor/churchbrick,
+/area/rogue/indoors/town/manor)
 "QN" = (
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
@@ -3112,12 +3116,6 @@
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
-"SN" = (
-/obj/structure/sign/property_claim{
-	link_id = "test"
-	},
-/turf/closed/wall/mineral/stone,
-/area/rogue/indoors/town/manor)
 "SS" = (
 /obj/structure/stairs/stone{
 	dir = 8
@@ -15182,10 +15180,10 @@ tL
 QN
 jN
 oe
-Rq
-MJ
-MJ
-MJ
+xP
+eN
+eN
+eN
 jf
 Wr
 ew
@@ -15442,7 +15440,7 @@ Vu
 nC
 kJ
 Iu
-MJ
+eN
 Qq
 ew
 XL
@@ -15696,7 +15694,7 @@ QN
 Wr
 uc
 DL
-Rq
+xP
 MJ
 MJ
 Ra
@@ -15953,7 +15951,7 @@ Wr
 Wr
 jN
 jN
-MJ
+QG
 Ht
 Ta
 jN
@@ -16732,7 +16730,7 @@ jN
 jN
 hA
 jN
-wx
+QN
 aF
 pD
 zF
@@ -16989,7 +16987,7 @@ iC
 sE
 jq
 ZT
-SN
+jN
 ai
 Wr
 pD
