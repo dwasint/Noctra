@@ -110,6 +110,9 @@
 /mob/living/carbon/human/Initialize()
 	. = ..()
 	AddComponent(/datum/component/arousal)
+	add_hole(ORGAN_SLOT_ANUS, /datum/component/storage/concrete/grid/hole/ass)
+	add_hole(ORGAN_SLOT_BREASTS, /datum/component/storage/concrete/grid/hole/mouth)
+
 
 /mob/living/proc/return_character_information()
 	var/list/data = list()
@@ -150,6 +153,8 @@
 /proc/return_highest_priority_action(list/sessions = list(), mob/living/carbon/human/user)
 	var/datum/sex_session/highest_session
 	for(var/datum/sex_session/session in sessions)
+		if(!session.current_action)
+			continue
 		if(!highest_session)
 			highest_session = session
 			continue
