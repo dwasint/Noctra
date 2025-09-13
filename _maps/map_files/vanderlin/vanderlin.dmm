@@ -23656,6 +23656,10 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
+"oue" = (
+/obj/structure/fake_machine/scomm,
+/turf/open/floor/carpet/green,
+/area/rogue/indoors/town)
 "oum" = (
 /obj/structure/fluff/walldeco/bath/wallpipes/innie{
 	dir = 1;
@@ -38773,12 +38777,6 @@
 "xSf" = (
 /turf/open/floor/ruinedwood/turned/darker,
 /area/rogue/indoors/town/theatre)
-"xSA" = (
-/obj/structure/water_vent{
-	dir = 8
-	},
-/turf/open/floor/blocks/stonered/tiny,
-/area/rogue/under/town/basement)
 "xSI" = (
 /obj/structure/chair/stool{
 	dir = 1
@@ -65114,7 +65112,7 @@ jYU
 nCG
 nVr
 nVr
-xSA
+vzn
 bUM
 tHe
 nCG
@@ -102988,7 +102986,7 @@ elp
 elp
 gpj
 rnJ
-feg
+oue
 pBa
 pBa
 pBa

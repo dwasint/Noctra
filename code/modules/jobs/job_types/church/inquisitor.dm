@@ -101,6 +101,9 @@
 		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to The Holy Bishop. Spend your favors wisely.")
 		)
 	H.mind?.teach_crafting_recipe(/datum/repeatable_crafting_recipe/reading/confessional)
+	if(H.dna?.species.id == SPEC_ID_HUMEN)
+		H.dna.species.native_language = "Old Psydonic"
+		H.dna.species.accent_language = H.dna.species.get_accent(H.dna.species.native_language)
 
 /mob/living/carbon/human/proc/torture_victim()
 	set name = "Extract Confession"
@@ -257,6 +260,8 @@
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
 					else if(victim_patron.type == /datum/patron/psydon/progressive)
 						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
+					else if(victim_patron.type == /datum/patron/godless/naivety)
+						interrogator.add_stress(/datum/stressevent/torture_small_penalty)
 					else if(victim_patron.type == /datum/patron/psydon)
 						interrogator.add_stress(/datum/stressevent/torture_large_penalty)
 
@@ -322,8 +327,20 @@
 					if(/datum/patron/inhumen/graggar)
 						held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
 						held_confession.antag = "worshiper of " + initial(antag_type:name)
-					if(/datum/patron/godless)
+					if(/datum/patron/godless/godless)
 						held_confession.bad_type = "A DAMNED ANTI-THEIST"
+						held_confession.antag = "worshiper of nothing"
+					if(/datum/patron/godless/autotheist)
+						held_confession.bad_type = "A DELUSIONAL SELF-PROCLAIMED GOD"
+						held_confession.antag = "worshiper of nothing"
+					if(/datum/patron/godless/defiant) //need better desc
+						held_confession.bad_type = "A DAMNED CHAINBREAKER"
+						held_confession.antag = "worshiper of nothing"
+					if( /datum/patron/godless/dystheist) //need better desc
+						held_confession.bad_type = "A SPURNER OF THE DIVINE"
+						held_confession.antag = "worshiper of nothing"
+					if( /datum/patron/godless/naivety)
+						held_confession.bad_type = "A IGNORANT FOOL"
 						held_confession.antag = "worshiper of nothing"
 					if(/datum/patron/inhumen/baotha)
 						held_confession.bad_type = "A FOLLOWER OF THE REMORSELESS RUINER"
