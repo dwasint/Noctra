@@ -26,7 +26,7 @@
 	cloak = pick(/obj/item/clothing/cloak/half/guard, /obj/item/clothing/cloak/half/guardsecond)
 	pants = /obj/item/clothing/pants/trou/leather
 	wrists = /obj/item/rope/chain
-	shoes = /obj/item/clothing/shoes/boots
+	shoes = /obj/item/clothing/shoes/boots/leather/advanced/watch
 	belt = /obj/item/storage/belt/leather
 	gloves = /obj/item/clothing/gloves/leather
 	if(H.dna && !(H.dna.species.id in RACES_PLAYER_NONDISCRIMINATED)) // to prevent examine stress

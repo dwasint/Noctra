@@ -88,6 +88,7 @@
 	)
 	finished_smell = /datum/pollutant/food/meat_stew
 	crafting_time = 45 SECONDS
+	craft_priority = FALSE
 
 /datum/container_craft/cooking/truffle_stew
 	name = "Truffle Stew"

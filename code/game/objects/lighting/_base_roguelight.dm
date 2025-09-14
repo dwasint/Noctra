@@ -12,7 +12,7 @@
 	var/crossfire = TRUE
 	var/can_damage = FALSE
 
-	var/temperature_change = 25
+	var/temperature_change = 20
 	var/temperature_weight = 1
 	var/temperature_falloff = 0.9
 

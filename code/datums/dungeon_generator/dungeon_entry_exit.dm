@@ -161,6 +161,9 @@ GLOBAL_LIST_INIT(dungeon_exits, list())
 		break
 
 /obj/structure/dungeon_exit/Destroy()
+	for(var/obj/structure/dungeon_entry/listed as anything in GLOB.dungeon_entries)
+		listed.dungeon_exits -= src
+
 	entry = null
 	GLOB.dungeon_exits -= src
 	return ..()

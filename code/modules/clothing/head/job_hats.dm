@@ -5,6 +5,7 @@
 			no creecher shall dare make a sound on thy presence. \
 			Thou wilt be alone on these barren lands."
 	icon_state = "fisherhat"
+	max_heat_protection_temperature = 60
 
 /obj/item/clothing/head/stewardtophat
 	name = "top hat"

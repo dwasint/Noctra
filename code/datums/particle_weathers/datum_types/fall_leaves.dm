@@ -22,7 +22,6 @@
 
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = null
 
 	minSeverity = 5
 	maxSeverity = 100

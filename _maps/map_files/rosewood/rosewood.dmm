@@ -4654,6 +4654,10 @@
 /obj/structure/window/solid,
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/magician)
+"czb" = (
+/obj/structure/stockpile_storage/metal,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "czk" = (
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/indoors/town)
@@ -7333,7 +7337,6 @@
 /area/rogue/indoors/town)
 "dYe" = (
 /obj/structure/fluff/statue/astrata{
-	pixel_x = -16;
 	pixel_y = 1
 	},
 /obj/effect/decal/cobbleedge{
@@ -8609,6 +8612,10 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
+"eJn" = (
+/obj/structure/stockpile_storage,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "eJo" = (
 /obj/structure/window/solid,
 /obj/structure/bars/alt,
@@ -9083,6 +9090,10 @@
 /obj/machinery/light/fueled/torchholder/hotspring/standing,
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/outdoors/town/roofs)
+"eYz" = (
+/obj/structure/stockpile_storage/food,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "eYK" = (
 /obj/effect/landmark/tram/queued_path{
 	platform_code = "cargo_return_1";
@@ -16991,6 +17002,14 @@
 /obj/structure/flora/newtree/snow,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/rtfield)
+"jAc" = (
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/obj/structure/door/viewport{
+	dir = 4;
+	name = "Food and Materials"
+	},
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "jAl" = (
 /obj/structure/closet/crate/chest/crafted,
 /turf/open/floor/carpet,
@@ -28142,6 +28161,14 @@
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /turf/open/floor/grass/cold,
 /area/rogue/indoors/town)
+"pxn" = (
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/obj/structure/door/viewport{
+	dir = 1;
+	name = "Metals"
+	},
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "pxs" = (
 /obj/structure/door/red{
 	name = "sheriff's office door"
@@ -30693,6 +30720,14 @@
 /obj/structure/fluff/walldeco/painting,
 /turf/closed/wall/mineral/craftstone,
 /area/rogue/indoors/town/church/inquisition)
+"qVR" = (
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/obj/structure/door/viewport{
+	dir = 1;
+	name = "Stockpiles"
+	},
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "qVT" = (
 /turf/open/floor/carpet/green,
 /area/rogue/indoors/town/steward)
@@ -35155,7 +35190,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/indoors/town/clocktower)
 "tmG" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /obj/structure/spider/stickyweb{
 	dir = 8
 	},
@@ -40721,9 +40756,7 @@
 /area/rogue/outdoors/town/roofs)
 "wnc" = (
 /obj/structure/fluff/railing/border,
-/obj/machinery/light/fueledstreet/blue/midlamp{
-	pixel_x = 0
-	},
+/obj/machinery/light/fueledstreet/blue/midlamp,
 /turf/open/floor/snow/rough,
 /area/rogue/outdoors/town)
 "wnd" = (
@@ -103141,7 +103174,7 @@ ehP
 ehP
 qJl
 qJl
-qJl
+pHB
 cwv
 cwv
 cwv
@@ -103343,13 +103376,13 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+nZD
+jyq
+fPS
+jyq
+veg
+jyq
 dqz
 hqJ
 jyq
@@ -103545,14 +103578,14 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
 dqz
+czb
+jyq
+pxn
+jyq
+jyq
+jyq
+qVR
 jyq
 jyq
 jyq
@@ -103747,13 +103780,13 @@ ehP
 ehP
 ehP
 qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+jyq
+jyq
+fPS
+jyq
+jyq
+jyq
 dqz
 jyq
 fap
@@ -103949,11 +103982,11 @@ ehP
 ehP
 ehP
 qJl
-qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+dqz
+fPS
+dqz
+jAc
 dqz
 dqz
 dqz
@@ -104152,10 +104185,10 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+eYz
+jyq
+jyq
 dqz
 mEI
 mTv
@@ -104354,10 +104387,10 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+nZD
+jyq
+jyq
 dqz
 bCi
 lTg
@@ -104556,10 +104589,10 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
-qJl
+dqz
+jyq
+jyq
+eJn
 dqz
 lTg
 lTg
@@ -104758,9 +104791,9 @@ ehP
 ehP
 qJl
 qJl
-qJl
-qJl
-qJl
+dqz
+dqz
+dqz
 dqz
 dqz
 dqz

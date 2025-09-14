@@ -724,8 +724,7 @@ GLOBAL_LIST_EMPTY(custom_fermentation_recipes)
 	var/turf/north_turf = get_step(src, NORTH)
 	input = locate(/obj/structure/water_pipe) in north_turf
 
-/obj/structure/fermentation_keg/distiller/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 96
+/obj/structure/fermentation_keg/distiller/return_rotation_chat()
 	if(!input)
 		return "NO INPUT"
 

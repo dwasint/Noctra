@@ -3,6 +3,7 @@
 	var/datum/hud/our_hud
 	var/actiontooltipstyle = ""
 	screen_loc = null
+	no_over_text = FALSE
 
 	/// The icon state of our active overlay, used to prevent re-applying identical overlays
 	var/active_overlay_icon_state
@@ -81,15 +82,6 @@
 
 	last_hovored_ref = WEAKREF(over_object)
 	over_object?.MouseEntered(over_location, over_control, params)
-
-/atom/movable/screen/movable/action_button/MouseEntered(location, control, params)
-	. = ..()
-	if(!QDELETED(src))
-		handle_mouseover(location, control, params)
-
-/atom/movable/screen/movable/action_button/MouseExited(location, control, params)
-	handle_mouseexit(params)
-	return ..()
 
 /atom/movable/screen/movable/action_button/MouseDrop(over_object)
 	last_hovored_ref = null

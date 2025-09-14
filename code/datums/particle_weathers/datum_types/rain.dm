@@ -23,7 +23,6 @@
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The rain cools your skin.")
 
 	minSeverity = 1
 	maxSeverity = 15
@@ -34,9 +33,7 @@
 	target_trait = PARTICLEWEATHER_RAIN
 	forecast_tag = "rain"
 
-//Makes you a little chilly
-/datum/particle_weather/rain_gentle/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(1,3))
+	temperature_modification = -3
 
 /datum/particle_weather/rain_storm
 	name = "Rain"
@@ -46,7 +43,6 @@
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/storm)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = list("The rain cools your skin.", "The storm is really picking up!")
 
 	minSeverity = 4
 	maxSeverity = 100
@@ -56,6 +52,8 @@
 	probability = 1
 	target_trait = PARTICLEWEATHER_RAIN
 	forecast_tag = "rain"
+
+	temperature_modification = -5
 
 	COOLDOWN_DECLARE(thunder)
 
@@ -97,7 +95,3 @@
 		var/turf/lightning_turf = get_turf(lightning_destination)
 		new /obj/effect/temp_visual/target/lightning(lightning_turf)
 		COOLDOWN_START(src, thunder, rand(5, 40) * 1 SECONDS)
-
-//Makes you a bit chilly
-/datum/particle_weather/rain_storm/weather_act(mob/living/L)
-	L.adjust_bodytemperature(-rand(3,5))

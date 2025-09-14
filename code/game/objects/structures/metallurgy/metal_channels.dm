@@ -19,6 +19,13 @@
 
 	try_find_group(TRUE)
 
+	// Notify nearby channel connectors that a new channel was built
+	for(var/direction in GLOB.cardinals)
+		var/turf/cardinal_turf = get_step(src, direction)
+		for(var/obj/structure/channel_connector/connector in cardinal_turf)
+			if(direction in connector.connected_dirs)
+				connector.on_channel_built_nearby()
+
 /obj/structure/metal_channel/Destroy()
 	var/turf/old_turf = get_turf(src)
 	. = ..()
@@ -157,6 +164,8 @@
 		new_reagents.maximum_volume = 1000000
 
 		for(var/datum/reagents/reagents as anything in reagents_found)
+			if(!istype(reagents))
+				continue
 			reagents.trans_to(new_reagents, reagents.total_volume, preserve_data = TRUE)
 
 	var/datum/metal_channel_info/new_info = new

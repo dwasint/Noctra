@@ -87,7 +87,8 @@
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_VOICE = /obj/item/organ/vocal_cords/harpy,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail,
+		ORGAN_SLOT_TAIL = /obj/item/organ/tail/harpy,
+		ORGAN_SLOT_WINGS = /obj/item/organ/wings/flight/harpy,
 	)
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/poultry/cutlet

@@ -81,10 +81,9 @@
 		last_provided_pressure = 0
 		stop_spray()
 
-/obj/structure/water_pump/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
+/obj/structure/water_pump/return_rotation_chat()
 	if(!rotation_network)
 		return
-	mouseover.maptext_height = 144
 
 	return "Pressure: [last_provided_pressure]\n\
 			Fluid: [pumping_from ? initial(pumping_from.water_reagent.name) : "Nothing"]\n\

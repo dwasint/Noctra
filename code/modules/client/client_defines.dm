@@ -129,8 +129,6 @@
 	///When set to true, user will be autokicked if they trip the keysends in a second limit again
 	var/keysend_tripped = FALSE
 
-	var/atom/movable/screen/movable/mouseover/mouseovertext
-	var/atom/movable/screen/movable/mouseover/mouseoverbox
 	///custom movement keys for this client
 	var/list/movement_keys = list()
 

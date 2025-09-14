@@ -60,8 +60,8 @@
 	contents += "<BR>"
 
 	for(var/datum/stock/stockpile/R in SStreasury.stockpile_datums)
-		var/message = "[R.name] - Payout: [R.get_payout_price()] - Stockpiled: [R.held_items] - Oversupply at: [R.oversupply_amount]"
-		if(R.held_items >= R.oversupply_amount)
+		var/message = "[R.name] - Payout: [R.get_payout_price()] - Stockpiled: [R.get_held_count()] - Oversupply at: [R.oversupply_amount]"
+		if(R.get_held_count() >= R.oversupply_amount)
 			message += " - !OVERSUPPLIED!"
 		contents += message
 		contents += "<BR>"
@@ -96,30 +96,34 @@
 				if(istype(R, /datum/stock/stockpile))
 					for(var/i in 1 to B.amount)
 						amt += R.get_payout_price(I)
-						R.held_items++
 				else
 					amt = R.get_payout_price(I)
-				qdel(B)
-				if(message == TRUE)
-					stock_announce("[B.amount] units of [R.name] has been stockpiled.")
-				if(sound == TRUE)
-					playsound(loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
-				if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty") && message == TRUE)
-					say("No account found. Submit your fingers to a Meister for inspection.")
-				record_round_statistic(STATS_STOCKPILE_EXPANSES, amt)
-				return amt
+
+				// Move to stockpile instead of deleting
+				if(R.add_item_to_stockpile(B))
+					if(message == TRUE)
+						stock_announce("[B.amount] units of [R.name] has been stockpiled.")
+					if(sound == TRUE)
+						playsound(loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+					if(!SStreasury.give_money_account(amt, H, "+[amt] from [R.name] bounty") && message == TRUE)
+						say("No account found. Submit your fingers to a Meister for inspection.")
+					record_round_statistic(STATS_STOCKPILE_EXPANSES, amt)
+					return amt
 			continue
 		else if(I.type == R.item_type)
 			if(!R.check_item(I))
 				continue
 			var/amt = R.get_payout_price(I)
 			if(!R.transport_item)
-				R.held_items += 1 //stacked logs need to check for multiple
-				qdel(I)
-				if(message == TRUE)
-					stock_announce("[R.name] has been stockpiled.")
-				if(sound == TRUE)
-					playsound(loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+				// Move to stockpile instead of deleting
+				if(R.add_item_to_stockpile(I))
+					if(message == TRUE)
+						stock_announce("[R.name] has been stockpiled.")
+					if(sound == TRUE)
+						playsound(loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+				else
+					say("Stockpile area not accessible.")
+					return
 			else
 				var/area/A = GLOB.areas_by_type[R.transport_item]
 				if(!A && message == TRUE)
@@ -192,7 +196,7 @@
 	if(compact)
 		for(var/datum/stock/stockpile/A in SStreasury.stockpile_datums)
 			if(!A.withdraw_disabled)
-				contents += "<b>[A.name]:</b> <a href='byond://?src=[REF(parent_structure)];withdraw=[REF(A)]'>AMT: [A.held_items] at [A.withdraw_price]m</a><BR>"
+				contents += "<b>[A.name]:</b> <a href='byond://?src=[REF(parent_structure)];withdraw=[REF(A)]'>AMT: [A.get_held_count()] at [A.withdraw_price]m</a><BR>"
 
 			else
 				contents += "<b>[A.name]:</b> Withdrawing Disabled..."
@@ -201,7 +205,7 @@
 		for(var/datum/stock/stockpile/A in SStreasury.stockpile_datums)
 			contents += "[A.name]<BR>"
 			contents += "[A.desc]<BR>"
-			contents += "Stockpiled Amount: [A.held_items]<BR>"
+			contents += "Stockpiled Amount: [A.get_held_count()]<BR>"
 			if(!A.withdraw_disabled)
 				contents += "<a href='byond://?src=[REF(parent_structure)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\] </a><BR>"
 			else
@@ -219,16 +223,20 @@
 			return FALSE
 		if(D.withdraw_disabled)
 			return FALSE
-		if(D.held_items <= 0)
+		if(D.get_held_count() <= 0)
 			parent_structure.say("Insufficient stock.")
 		else if(total_price > budget)
 			parent_structure.say("Insufficient mammon.")
 		else
-			D.held_items--
+			var/obj/item/I = D.withdraw_item()
+			if(!I)
+				parent_structure.say("Could not retrieve item from stockpile.")
+				return FALSE
+
 			budget -= total_price
 			record_round_statistic(STATS_STOCKPILE_REVENUE, total_price)
 			SStreasury.give_money_treasury(D.withdraw_price, "stockpile withdraw")
-			var/obj/item/I = new D.item_type(parent_structure.loc)
+
 			var/mob/user = usr
 			if(!user.put_in_hands(I))
 				I.forceMove(get_turf(user))

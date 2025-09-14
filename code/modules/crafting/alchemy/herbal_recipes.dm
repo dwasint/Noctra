@@ -402,7 +402,7 @@
 
 /datum/reagent/medicine/herbal/mentha_oil/on_mob_life(mob/living/carbon/M)
 	M.adjust_stamina(1.5)
-	M.adjust_bodytemperature(-5)
+	M.adjust_bodytemperature(-0.3, BODYTEMP_NORMAL - 2)
 
 	for(var/obj/item/bodypart/BP in M.bodyparts)
 		if(BP.status == BODYPART_ROBOTIC)

@@ -182,7 +182,7 @@
 	var/icon_full = "genslot"
 	/// The overlay when hovering over with an item in your hand
 	plane = HUD_PLANE
-	nomouseover = FALSE
+	no_over_text = FALSE
 
 
 /atom/movable/screen/inventory/Click(location, control, params)
@@ -262,7 +262,7 @@
 
 
 /atom/movable/screen/inventory/hand
-	nomouseover =  TRUE
+	no_over_text =  TRUE
 	var/mutable_appearance/handcuff_overlay
 	var/static/mutable_appearance/blocked_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "blocked")
 	var/static/mutable_appearance/fingerless_overlay = mutable_appearance('icons/mob/screen_gen.dmi', "fingerless")
@@ -1506,30 +1506,6 @@
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "aimbg"
 	plane = HUD_PLANE
-
-/atom/movable/screen/aim/boxaim
-	name = "tile selection indicator"
-	icon_state = "boxoff"
-
-/atom/movable/screen/aim/boxaim/Click()
-	if(ismob(usr))
-		var/mob/M = usr
-		if(M.boxaim == TRUE)
-			M.boxaim = FALSE
-			if(M.client)
-				M.client.mouseoverbox.screen_loc = null
-		else
-			M.boxaim = TRUE
-		update_appearance(UPDATE_ICON_STATE)
-
-/atom/movable/screen/aim/boxaim/update_icon_state()
-	. = ..()
-	if(ismob(usr))
-		var/mob/living/M = usr
-		if(M.boxaim == TRUE)
-			icon_state = "boxon"
-		else
-			icon_state = "boxoff"
 
 /atom/movable/screen/stress
 	name = "sanity"

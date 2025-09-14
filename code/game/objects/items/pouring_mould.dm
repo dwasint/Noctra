@@ -14,6 +14,10 @@
 	var/cooling = FALSE
 	var/cooling_progress = 0
 
+	// Quality tracking variables
+	var/total_quality_points = 0  // Sum of (amount * quality) for weighted average
+	var/average_quality = 0       // Current weighted average quality
+
 /obj/item/mould/Initialize()
 	. = ..()
 	main_material = pick(typesof(/datum/material/clay))
@@ -32,7 +36,9 @@
 
 	if(fufilled_metal)
 		var/reagent_color = initial(filling_metal.color)
-		. += "[src] has [fufilled_metal] [UNIT_FORM_STRING(fufilled_metal)] of <font color=[reagent_color]> Molten [initial(filling_metal.name)]</font> out of [round(required_metal / 3, 1)] oz.</font>"
+		. += "[src] has [fufilled_metal] [UNIT_FORM_STRING(fufilled_metal)] of <font color=[reagent_color]> Molten [initial(filling_metal.name)]</font> out of [required_metal] [UNIT_FORM_STRING(required_metal)].</font>"
+		if(average_quality > 0)
+			. += "The metal quality appears to be [average_quality]."
 	else
 		. += "[src] requires [required_metal] [UNIT_FORM_STRING(fufilled_metal)] of Molten Metal to form.</font>"
 
@@ -70,6 +76,19 @@
 	var/metal_amount = metal.data[filling_metal]
 	if(metal_amount > required_metal - fufilled_metal)
 		metal_amount = required_metal - fufilled_metal
+
+	var/pour_quality = metal.recipe_quality
+
+	// Update weighted average quality
+	if(fufilled_metal > 0)
+		// Calculate new weighted average: (old_total + new_contribution) / new_total_amount
+		total_quality_points += metal_amount * pour_quality
+		average_quality = total_quality_points / (fufilled_metal + metal_amount)
+	else
+		// First pour - set initial quality
+		total_quality_points = metal_amount * pour_quality
+		average_quality = pour_quality
+
 	metal.data[filling_metal] -= metal_amount
 	if(!metal.data[filling_metal])
 		metal.data -= filling_metal
@@ -114,11 +133,27 @@
 
 /obj/item/mould/proc/create_item()
 	if(output_atom)
-		new output_atom(get_turf(src))
+		var/obj/item/new_item = new output_atom(get_turf(src))
+
+		if(average_quality > 0)
+			var/datum/quality_calculator/metallurgy/metal_calc = new(
+				base_qual = 0,
+				mat_qual = average_quality, // Use the stored weighted average quality
+				skill_qual = 1, // Could add blacksmithing skill here but I'd need to track from start of the process
+				perf_qual = 0,
+				diff_mod = 0,
+				components = 1
+			)
+			metal_calc.apply_quality_to_item(new_item, TRUE)
+			qdel(metal_calc)
+
+	// Reset all variables
 	fufilled_metal = 0
 	filling_metal = null
 	cooling = FALSE
 	cooling_progress = 0
+	total_quality_points = 0
+	average_quality = 0
 	update_appearance(UPDATE_OVERLAYS)
 
 
@@ -138,8 +173,26 @@
 	to_create = initial(filling_metal.ingot_type)
 	if(filling_metal.ingot_type == /obj/item/ingot/blacksteel)
 		record_round_statistic(STATS_BLACKSTEEL_SMELTED)
-	new to_create(get_turf(src))
+
+	var/obj/item/new_item = new to_create(get_turf(src))
+
+	if(average_quality > 0)
+		var/datum/quality_calculator/metallurgy/metal_calc = new(
+			base_qual = 0,
+			mat_qual = average_quality,
+			skill_qual = 1,
+			perf_qual = 0,
+			diff_mod = 0,
+			components = 1
+		)
+		metal_calc.apply_quality_to_item(new_item, TRUE)
+		qdel(metal_calc)
+
+	// Reset all variables
 	fufilled_metal = 0
 	filling_metal = null
 	cooling = FALSE
+	cooling_progress = 0
+	total_quality_points = 0
+	average_quality = 0
 	update_appearance(UPDATE_OVERLAYS)

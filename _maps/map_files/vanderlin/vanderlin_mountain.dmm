@@ -127,8 +127,8 @@
 /turf/open/floor/blocks,
 /area/rogue/under/mountains/anvil/lower/building)
 "cT" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/cobblerock,
@@ -359,7 +359,7 @@
 /turf/open/floor/wood/nosmooth/saiga,
 /area/rogue/outdoors/mountains/anvil/snowyforest)
 "ga" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -427,7 +427,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower)
 "gK" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower)
 "gL" = (
@@ -439,7 +439,7 @@
 /turf/open/floor/blocks,
 /area/rogue/under/mountains/anvil/lower/building)
 "gP" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/under/mountains/anvil/lower/building)
 "gT" = (
@@ -559,7 +559,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower/building)
 "iz" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/under/mountains/anvil/lower)
 "iE" = (
@@ -573,7 +573,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "iP" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/cobblerock,
@@ -582,10 +582,10 @@
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "iU" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower/building)
 "iW" = (
@@ -817,13 +817,13 @@
 /turf/open/floor/cobble,
 /area/rogue/outdoors/mountains/anvil/snowyforest)
 "mG" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/lower/building)
 "mH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/cobblerock,
@@ -1054,7 +1054,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/under/mountains/anvil/lower)
 "pH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/item/natural/glass/shard,
@@ -1232,7 +1232,7 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/mountains/anvil/lavaexposed)
 "su" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/twig,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "sx" = (
@@ -1317,7 +1317,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower/building)
 "tH" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower/building)
 "tI" = (
@@ -1844,10 +1844,10 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "CN" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower/building)
 "CP" = (
@@ -2230,7 +2230,7 @@
 /turf/closed/mineral/random/high_valuable,
 /area/rogue/under/mountains/anvil/lower)
 "IF" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/lower/building)
 "IH" = (
@@ -2339,7 +2339,7 @@
 /turf/open/floor/tile/masonic/spiral,
 /area/rogue/under/mountains/anvil/lower/building)
 "Kn" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/cobblerock,
@@ -2509,7 +2509,7 @@
 /turf/open/floor/blocks,
 /area/rogue/under/mountains/anvil/lower/building)
 "MH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/snow,
@@ -2727,10 +2727,10 @@
 /turf/open/floor/church,
 /area/rogue/under/mountains/anvil/lower)
 "PL" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/cobblerock,
@@ -2897,10 +2897,10 @@
 /turf/open/floor/tile/kitchen,
 /area/rogue/under/mountains/anvil/lower/building)
 "Sn" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/under/mountains/anvil/lower/building)
 "Sq" = (
@@ -2979,7 +2979,7 @@
 /turf/open/floor/wood/nosmooth/saiga,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "TE" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass/cold,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "TJ" = (
@@ -3327,7 +3327,7 @@
 /turf/open/floor/churchrough,
 /area/rogue/under/mountains/anvil/lower)
 "YK" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt,
@@ -3396,7 +3396,7 @@
 /turf/closed/mineral/gemeralds,
 /area/rogue/under/mountains/anvil/lower)
 "ZI" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass/cold,

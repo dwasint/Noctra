@@ -84,6 +84,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/fur
+	min_cold_protection_temperature = -20
 
 /obj/item/clothing/cloak/raincloak/furcloak/Initialize()
 	. = ..()

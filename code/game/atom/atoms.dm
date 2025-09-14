@@ -125,7 +125,7 @@
 	var/xyoverride = FALSE //so we can 'face' a click catcher even though it doesn't have an x or a y
 
 	/// This means that the mouse over text will not be displayed when the mouse is over this atom
-	var/nomouseover = FALSE
+	var/no_over_text = FALSE
 	var/hover_color = "#a1bac4"
 
 	///this is the path to the enchantment not the actual enchantment

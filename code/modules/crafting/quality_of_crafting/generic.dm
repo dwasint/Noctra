@@ -100,7 +100,7 @@
 
 
 /datum/repeatable_crafting_recipe/bee_treatment
-	name = "General Bee Treatment"
+	name = "general bee treatment"
 	output = /obj/item/bee_treatment
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
@@ -111,7 +111,7 @@
 	category = "Bees"
 
 /datum/repeatable_crafting_recipe/bee_treatment/antiviral
-	name = "Antiviral Bee Treatment"
+	name = "antiviral bee treatment"
 	output = /obj/item/bee_treatment/antiviral
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
@@ -121,7 +121,7 @@
 	starting_atom = /obj/item/alch/herb/rosa
 
 /datum/repeatable_crafting_recipe/bee_treatment/miticide
-	name = "Miticide Bee Treatment"
+	name = "miticide bee treatment"
 	output = /obj/item/bee_treatment/miticide
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
@@ -131,7 +131,7 @@
 	starting_atom = /obj/item/alch/herb/salvia
 
 /datum/repeatable_crafting_recipe/bee_treatment/insecticide
-	name = "Insecticide Bee Treatment"
+	name = "insecticide bee treatment"
 	output = /obj/item/bee_treatment/miticide
 	requirements = list(
 		/obj/item/grown/log/tree/small = 1,
@@ -139,3 +139,48 @@
 	)
 	attacked_atom = /obj/item/grown/log/tree/small
 	starting_atom = /obj/item/alch/herb/paris
+
+/datum/repeatable_crafting_recipe/wood_d6
+	name = "wooden die"
+	output = /obj/item/dice/d6/wood
+	requirements = list(
+		/obj/item/grown/log/tree/stick = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list(span_notice("starts to whittle"), span_notice("start to whittle"), 'sound/items/wood_sharpen.ogg'),
+	)
+	attacked_atom = /obj/item/grown/log/tree/stick
+	starting_atom = /obj/item/weapon/knife
+	craft_time = 5 SECONDS
+	craftdiff = 0
+	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/bone_d6
+	name = "bone die"
+	output = /obj/item/dice/d6/bone
+	requirements = list(
+		/obj/item/alch/bone = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list(span_notice("starts to whittle"), span_notice("start to whittle"), 'sound/items/wood_sharpen.ogg'),
+	)
+	attacked_atom = /obj/item/alch/bone
+	starting_atom = /obj/item/weapon/knife
+	craft_time = 5 SECONDS
+	craftdiff = 0
+	subtypes_allowed = TRUE
+
+/datum/repeatable_crafting_recipe/wood_dice_cup
+	name = "wooden dice cup"
+	output = /obj/item/dice_cup/wooden
+	requirements = list(
+		/obj/item/reagent_containers/glass/cup/wooden = 1,
+	)
+	tool_usage = list(
+		/obj/item/weapon/knife = list(span_notice("starts to whittle"), span_notice("start to whittle"), 'sound/items/wood_sharpen.ogg'),
+	)
+	attacked_atom = /obj/item/reagent_containers/glass/cup/wooden
+	starting_atom = /obj/item/weapon/knife
+	craft_time = 5 SECONDS
+	craftdiff = 1
+	subtypes_allowed = TRUE

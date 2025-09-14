@@ -41,6 +41,7 @@ GLOBAL_LIST_INIT(container_craft_to_singleton, init_container_crafts())
 	var/max_optionals = 0
 
 	var/crafting_time = 0
+	var/craft_priority = TRUE
 
 	///this is literally just for html
 	var/atom/movable/required_container

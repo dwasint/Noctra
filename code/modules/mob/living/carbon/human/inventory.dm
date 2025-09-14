@@ -263,6 +263,7 @@
 		return
 	if(index && !QDELETED(src) && dna.species.mutanthands) //hand freed, fill with claws, skip if we're getting deleted.
 		put_in_hand(new dna.species.mutanthands(), index)
+	I.screen_loc = null
 	if(I == wear_armor)
 		if(wear_armor.breakouttime) //when unequipping a straightjacket
 			REMOVE_TRAIT(src, TRAIT_RESTRAINED, SUIT_TRAIT)
@@ -328,11 +329,6 @@
 			update_inv_mouth()
 	check_armor_class()
 	update_reflection()
-//	if(!QDELETED(src))
-//		if(I.eweight)
-//			encumbrance -= I.eweight
-//			if(encumbrance < 0)
-//				encumbrance = 0
 
 /mob/living/carbon/human/wear_mask_update(obj/item/I, toggle_off = 1)
 	if((I.flags_inv & (HIDEHAIR|HIDEFACIALHAIR)) || (initial(I.flags_inv) & (HIDEHAIR|HIDEFACIALHAIR)))

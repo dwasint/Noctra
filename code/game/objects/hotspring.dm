@@ -22,7 +22,7 @@
 	name = "hot spring"
 	icon = 'icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring"
-	nomouseover = TRUE
+	no_over_text = TRUE
 	plane = FLOOR_PLANE
 	object_slowdown = 5
 

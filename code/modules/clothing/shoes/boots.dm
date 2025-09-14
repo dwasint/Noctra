@@ -100,6 +100,7 @@
 	salvage_result = /obj/item/natural/fur
 	salvage_amount = 1
 	item_weight = 3
+	min_cold_protection_temperature = -20
 
 /obj/item/clothing/shoes/boots/furlinedanklets
 	name = "fur lined anklets"
@@ -112,6 +113,7 @@
 	is_barefoot = TRUE
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/fur
+	min_cold_protection_temperature = -20
 
 /obj/item/clothing/shoes/boots/clothlinedanklets
 	name = "cloth lined anklets"
@@ -166,3 +168,15 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // See above comment
+
+/obj/item/clothing/shoes/boots/leather/advanced/watch
+	name = "watch boots"
+	color = "#d5c2aa"
+	desc = "These boots are reinforced with iron padding, designed not just for protection but for presence, announcing the approach of the city watch long before they're seen."
+	gender = PLURAL
+	icon_state = "nobleboots"
+	item_state = "nobleboots"
+
+/obj/item/clothing/shoes/boots/leather/advanced/watch/Initialize()
+	. = ..()
+	AddComponent(/datum/component/squeak, custom_sounds = list(SFX_WATCH_BOOT_STEP))

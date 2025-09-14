@@ -660,19 +660,16 @@
 /obj/structure/soul
 	name = "soul"
 	desc = "The soul of the dead"
-
 	icon = 'icons/roguetown/misc/mana.dmi'
 	icon_state = "soul"
-
 	plane = LEYLINE_PLANE
 	invisibility = INVISIBILITY_LEYLINES
 	anchored = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	no_over_text = TRUE
 
-	var/mana_amount = 75
-
+	var/mana_amount = 7
 	var/datum/weakref/drainer
-
 	var/qdel_timer
 
 /obj/structure/soul/Initialize(mapload)

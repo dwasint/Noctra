@@ -11,7 +11,7 @@
 	icon = 'icons/mob/afterlife.dmi'
 	icon_state = "skull"
 	screen_loc = "WEST-4,SOUTH+6"
-	nomouseover = FALSE
+	no_over_text = FALSE
 
 /atom/movable/screen/ghost/orbit/rogue/Click(location, control, params)
 	var/mob/dead/observer/G = usr

@@ -40,9 +40,7 @@
 		src.visible_message(span_notice("[placed_atom] is fully charged."))
 		remove_placed()
 
-/obj/structure/steam_recharger/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 128
-
+/obj/structure/steam_recharger/return_rotation_chat()
 	if(!input || !ispath(input.carrying_reagent, /datum/reagent/steam))
 		return "NO STEAM INPUT"
 

@@ -96,8 +96,7 @@
 
 
 
-/obj/structure/water_vent/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 96
+/obj/structure/water_vent/return_rotation_chat()
 	var/datum/reagent/reagent = input.carrying_reagent
 	return "Input Pressure: [input ? input.water_pressure : "0"]\n\
 			Fluid: [reagent ? initial(reagent.name) : "Nothing"]"

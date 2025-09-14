@@ -272,9 +272,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 /obj/item/reagent_containers/glass/bottle/teapot/Initialize()
 	. = ..()
 	icon_state = "world"
-
-/obj/item/reagent_containers/glass/bottle/teapot/Initialize()
-	. = ..()
 	AddComponent(/datum/component/storage/concrete/grid/teapot)
 	AddComponent(/datum/component/container_craft, subtypesof(/datum/container_craft/cooking/tea), TRUE)
 

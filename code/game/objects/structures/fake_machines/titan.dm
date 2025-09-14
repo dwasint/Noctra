@@ -49,8 +49,9 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 		"Cancel",
 	)
 
-/obj/structure/fake_machine/titan/Initialize()
+/obj/structure/fake_machine/titan/Initialize(mapload)
 	. = ..()
+	REGISTER_REQUIRED_MAP_ITEM(1, INFINITY)
 	become_hearing_sensitive()
 	set_light(5)
 	return INITIALIZE_HINT_LATELOAD

@@ -1939,7 +1939,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			H.forcesay(GLOB.hit_appends)	//forcesay checks stat already.
 	return TRUE
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, flashes = TRUE)
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = 1
 	damage = max(damage - (blocked),0)
@@ -1978,12 +1978,13 @@ GLOBAL_LIST_EMPTY(patreon_races)
 				if(damage_amount > 10 && !HAS_TRAIT(H, TRAIT_NOPAINSTUN))
 					H.Slowdown(clamp(damage_amount/10, 1, 5))
 					shake_camera(H, 1, 1)
-				if(damage_amount < 10)
-					H.flash_fullscreen("redflash1")
-				else if(damage_amount < 20)
-					H.flash_fullscreen("redflash2")
-				else if(damage_amount >= 20)
-					H.flash_fullscreen("redflash3")
+				if(flashes)
+					if(damage_amount < 10)
+						H.flash_fullscreen("redflash1")
+					else if(damage_amount < 20)
+						H.flash_fullscreen("redflash2")
+					else if(damage_amount >= 20)
+						H.flash_fullscreen("redflash3")
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0))
 					H.update_damage_overlays()
@@ -1994,14 +1995,15 @@ GLOBAL_LIST_EMPTY(patreon_races)
 			damage_amount = forced ? damage : damage * hit_percent * H.physiology.burn_mod
 			if(damage_amount > 10 && prob(damage_amount))
 				H.emote("pain")
-			if(damage_amount < 10)
-				H.flash_fullscreen("redflash1")
-			else if(damage_amount < 20)
-				H.flash_fullscreen("redflash2")
-			else if(damage_amount >= 20)
-				H.flash_fullscreen("redflash3")
+			if(flashes)
+				if(damage_amount < 10)
+					H.flash_fullscreen("redflash1")
+				else if(damage_amount < 20)
+					H.flash_fullscreen("redflash2")
+				else if(damage_amount >= 20)
+					H.flash_fullscreen("redflash3")
 			if(BP)
-				if(BP.receive_damage(0, damage_amount))
+				if(BP.receive_damage(0, damage_amount, flashes = flashes))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage_amount)
@@ -2034,86 +2036,254 @@ GLOBAL_LIST_EMPTY(patreon_races)
 	return
 
 /datum/species/proc/handle_environment(mob/living/carbon/human/H)
-	var/loc_temp = BODYTEMP_NORMAL //TODO VANDERLIN: make proximity based temperature
-	//Body temperature is adjusted in two parts: first there my body tries to naturally preserve homeostasis (shivering/sweating), then it reacts to the surrounding environment
-	//Thermal protection (insulation) has mixed benefits in two situations (hot in hot places, cold in hot places)
-	if(!H.on_fire) //If you're on fire, you do not heat up or cool down based on surrounding gases
-		var/natural = 0
-		if(H.stat != DEAD)
-			natural = H.natural_bodytemperature_stabilization()
-		var/thermal_protection = 1
-		if(loc_temp < H.bodytemperature) //Place is colder than we are
-			thermal_protection -= H.get_cold_protection(loc_temp) //This returns a 0 - 1 value, which corresponds to the percentage of protection based on what you're wearing and what you're exposed to.
-			if(H.bodytemperature < BODYTEMP_NORMAL) //we're cold, insulation helps us retain body heat and will reduce the heat we lose to the environment
-				H.adjust_bodytemperature((thermal_protection+1)*natural + max(thermal_protection * (loc_temp - H.bodytemperature) / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX))
-			else //we're sweating, insulation hinders our ability to reduce heat - and it will reduce the amount of cooling you get from the environment
-				H.adjust_bodytemperature(natural*(1/(thermal_protection+1)) + max((thermal_protection * (loc_temp - H.bodytemperature) + BODYTEMP_NORMAL - H.bodytemperature) / BODYTEMP_COLD_DIVISOR , BODYTEMP_COOLING_MAX)) //Extra calculation for hardsuits to bleed off heat
-	if (loc_temp > H.bodytemperature) //Place is hotter than we are
-		var/natural = 0
-		if(H.stat != DEAD)
-			natural = H.natural_bodytemperature_stabilization()
-		var/thermal_protection = 1
-		thermal_protection -= H.get_heat_protection(loc_temp) //This returns a 0 - 1 value, which corresponds to the percentage of protection based on what you're wearing and what you're exposed to.
-		if(H.bodytemperature < BODYTEMP_NORMAL) //and we're cold, insulation enhances our ability to retain body heat but reduces the heat we get from the environment
-			H.adjust_bodytemperature((thermal_protection+1)*natural + min(thermal_protection * (loc_temp - H.bodytemperature) / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX))
-		else //we're sweating, insulation hinders out ability to reduce heat - but will reduce the amount of heat we get from the environment
-			H.adjust_bodytemperature(natural*(1/(thermal_protection+1)) + min(thermal_protection * (loc_temp - H.bodytemperature) / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX))
+	if(!H.client) //I cannot be assed to balance random npcs freezing
+		return
+	var/turf/T = get_turf(H)
+	var/loc_temp = T ? T.return_temperature() : AMBIENT_COMFORT_MIN + 5 // Default to comfortable
 
-	// +/- 50 degrees from 310K is the 'safe' zone, where no damage is dealt.
+	// Only start affecting body temperature outside comfort zone
+	var/should_affect_body_temp = FALSE
+
+	if(loc_temp < AMBIENT_COMFORT_MIN)
+		should_affect_body_temp = TRUE
+	else if(loc_temp > AMBIENT_COMFORT_MAX)
+		should_affect_body_temp = TRUE
+
+	// Natural body temperature regulation
+	if(H.stat != DEAD && !H.on_fire)
+		var/natural_adjustment = round(H.natural_bodytemperature_stabilization(), 0.1)
+
+		if(should_affect_body_temp)
+			var/thermal_protection = calculate_thermal_protection(H, loc_temp)
+			var/temp_change = calculate_temperature_change(H, loc_temp, thermal_protection, natural_adjustment)
+			H.adjust_bodytemperature(temp_change)
+		else
+			// Just natural regulation in comfort zone
+			H.adjust_bodytemperature(natural_adjustment)
+
+	// Apply temperature damage and effects
+	handle_temperature_effects(H)
+
+/datum/species/proc/calculate_thermal_protection(mob/living/carbon/human/H, loc_temp)
+	if(loc_temp < H.bodytemperature)
+		return 1 - H.get_cold_protection(loc_temp)
+	else
+		return 1 - H.get_heat_protection(loc_temp)
+
+
+/datum/species/proc/calculate_temperature_change(mob/living/carbon/human/H, loc_temp, thermal_protection, natural_adjustment)
+	var/temp_diff = loc_temp - H.bodytemperature
+	var/environmental_effect = 0
+
+	if(loc_temp < H.bodytemperature) // Environment is colder
+		if(H.bodytemperature < BODYTEMP_NORMAL) // We're cold, insulation helps retain heat
+			environmental_effect = max(thermal_protection * temp_diff / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX)
+			// Reduce natural warming when exposed (thermal_protection = 1 means fully exposed)
+			var/adjusted_natural = natural_adjustment * (1 - thermal_protection * 0.8) // 80% reduction when fully exposed
+			return round(adjusted_natural + environmental_effect, 0.1)
+		else // We're warm, insulation hinders cooling
+			environmental_effect = max((thermal_protection * temp_diff + BODYTEMP_NORMAL - H.bodytemperature) / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX)
+			// Natural regulation is hindered by exposure
+			var/adjusted_natural = natural_adjustment * (1 - thermal_protection * 0.5) // 50% reduction when fully exposed
+			return round(adjusted_natural + environmental_effect, 0.1)
+	else if(loc_temp > H.bodytemperature) // Environment is hotter
+		if(H.bodytemperature < BODYTEMP_NORMAL) // We're cold, insulation helps but reduces environmental heating
+			environmental_effect = min(thermal_protection * temp_diff / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX)
+			// Natural warming is hindered by heat exposure
+			var/adjusted_natural = natural_adjustment * (1 - thermal_protection * 0.3) // 30% reduction when fully exposed
+			return round(adjusted_natural + environmental_effect, 0.1)
+		else // We're warm, insulation hinders heat dissipation
+			environmental_effect = min(thermal_protection * temp_diff / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX)
+			// Natural regulation is hindered by exposure
+			var/adjusted_natural = natural_adjustment * (1 - thermal_protection * 0.6) // 60% reduction when fully exposed
+			return round(adjusted_natural + environmental_effect, 0.1)
+	return natural_adjustment
+
+/datum/species/proc/handle_temperature_effects(mob/living/carbon/human/H)
+	var/debuff_level = 0
+	// Heat damage and effects
 	if(H.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
-		//Body temperature is too hot.
+		H.remove_stress(list(/datum/stressevent/cold_mild, /datum/stressevent/cold_moderate, /datum/stressevent/cold_severe))
 
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
+		var/heat_excess = H.bodytemperature - BODYTEMP_HEAT_DAMAGE_LIMIT
+		apply_heat_stress(H, heat_excess)
 
 		H.remove_movespeed_modifier(MOVESPEED_ID_COLD)
-
-		var/burn_damage
-		var/firemodifier = (H.fire_stacks + H.divine_fire_stacks) / 50
-		if (H.on_fire)
-			burn_damage = 20
-			if((H.fire_stacks + H.divine_fire_stacks) >= HUMAN_FIRE_STACK_ICON_NUM)
-				burn_damage = 200
-		else
-			firemodifier = min(firemodifier, 0)
-			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5
-		if (burn_damage)
-			switch(burn_damage)
-				if(0 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 1)
-				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 2)
-				else
-					H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 3)
-		burn_damage = burn_damage * H.physiology.heat_mod
-		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			H.emote("pain")
-		var/final_damage = CLAMP(burn_damage, 0, CONFIG_GET(number/per_tick/max_fire_damage))
-		H.apply_damage(final_damage, BURN, spread_damage = TRUE)
-		if(!H.has_smoke_protection())
-			H.apply_damage(final_damage/4, OXY) // simulating smoke inhalation
-
+		var/burn_damage = calculate_heat_damage(H, heat_excess)
+		debuff_level = calculate_heat_debuff_level(heat_excess)
+		// Apply damage
+		if(burn_damage > 0)
+			var/final_damage = CLAMP(burn_damage * H.physiology.heat_mod, 0, CONFIG_GET(number/per_tick/max_fire_damage))
+			H.apply_damage(final_damage, BURN, spread_damage = TRUE, flashes = FALSE)
+			if(!H.has_smoke_protection())
+				H.apply_damage(final_damage/4, OXY, flashes = FALSE) // Smoke inhalation
+			if(H.stat < UNCONSCIOUS && prob(burn_damage * 10 / 4))
+				H.emote("pain")
+		// Apply building heat debuffs
+		apply_heat_debuffs(H, debuff_level)
+	// Cold damage and effects
 	else if(H.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
-		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "cold", /datum/mood_event/cold)
-		//Sorry for the nasty oneline but I don't want to assign a variable on something run pretty frequently
-		H.add_movespeed_modifier(MOVESPEED_ID_COLD, override = TRUE, multiplicative_slowdown = ((BODYTEMP_COLD_DAMAGE_LIMIT - H.bodytemperature) / COLD_SLOWDOWN_FACTOR), blacklisted_movetypes = FLOATING)
-		switch(H.bodytemperature)
-			if(200 to BODYTEMP_COLD_DAMAGE_LIMIT)
-				H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 1)
-				H.apply_damage(COLD_DAMAGE_LEVEL_1*H.physiology.cold_mod, BURN)
-			if(120 to 200)
-				H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 2)
-				H.apply_damage(COLD_DAMAGE_LEVEL_2*H.physiology.cold_mod, BURN)
-			else
-				H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 3)
-				H.apply_damage(COLD_DAMAGE_LEVEL_3*H.physiology.cold_mod, BURN)
+		H.remove_stress(list(/datum/stressevent/hot_mild, /datum/stressevent/hot_moderate, /datum/stressevent/hot_severe))
 
+		var/cold_deficit = BODYTEMP_COLD_DAMAGE_LIMIT - H.bodytemperature
+		apply_cold_stress(H, cold_deficit)
+
+		var/cold_damage = calculate_cold_damage(cold_deficit)
+		debuff_level = calculate_cold_debuff_level(cold_deficit)
+		// Apply damage
+		if(cold_damage > 0)
+			H.apply_damage(cold_damage * H.physiology.cold_mod, BURN, flashes = FALSE)
+		// Apply building cold debuffs
+		apply_cold_debuffs(H, debuff_level, cold_deficit)
+	// Clear effects when in safe range
 	else
 		H.clear_alert("temp")
 		H.remove_movespeed_modifier(MOVESPEED_ID_COLD)
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
-		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "hot")
+		H.remove_stress(list(/datum/stressevent/cold_mild, /datum/stressevent/cold_moderate, /datum/stressevent/cold_severe,
+							/datum/stressevent/hot_mild, /datum/stressevent/hot_moderate, /datum/stressevent/hot_severe))
+		clear_temperature_debuffs(H)
+
+/datum/species/proc/apply_heat_stress(mob/living/carbon/human/H, heat_excess)
+	if(heat_excess < 0)
+		return
+	switch(heat_excess)
+		if(0 to 5) // Mild heat
+			H.add_stress(/datum/stressevent/hot_mild)
+		if(5 to 15) // Moderate heat
+			H.add_stress(/datum/stressevent/hot_moderate)
+		else // Severe heat
+			H.add_stress(/datum/stressevent/hot_severe)
+
+/datum/species/proc/apply_cold_stress(mob/living/carbon/human/H, cold_deficit)
+	if(cold_deficit < 0)
+		return
+	switch(cold_deficit)
+		if(0 to 5) // Mild cold
+			H.add_stress(/datum/stressevent/cold_mild)
+		if(5 to 15) // Moderate cold
+			H.add_stress(/datum/stressevent/cold_moderate)
+		else // Severe cold
+			H.add_stress(/datum/stressevent/cold_severe)
+
+// Heat stress events
+/datum/stressevent/hot_mild
+	timer = 60 SECONDS
+	stressadd = 1
+	desc = "<span class='warning'>It's getting warm in here.</span>"
+
+/datum/stressevent/hot_moderate
+	timer = 60 SECONDS
+	stressadd = 3
+	desc = "<span class='red'>This heat is becoming unbearable.</span>"
+
+/datum/stressevent/hot_severe
+	timer = 60 SECONDS
+	stressadd = 6
+	desc = "<span class='boldred'>I'm burning up!</span>"
+
+// Cold stress events
+/datum/stressevent/cold_mild
+	timer = 60 SECONDS
+	stressadd = 1
+	desc = "<span class='notice'>It's getting chilly.</span>"
+
+/datum/stressevent/cold_moderate
+	timer = 60 SECONDS
+	stressadd = 3
+	desc = "<span class='blue'>This cold is really getting to me.</span>"
+
+/datum/stressevent/cold_severe
+	timer = 60 SECONDS
+	stressadd = 6
+	desc = "<span class='boldblue'>I'm freezing to death!</span>"
+
+/datum/species/proc/calculate_heat_damage(mob/living/carbon/human/H, heat_excess)
+	var/firemodifier = (H.fire_stacks + H.divine_fire_stacks) / 50
+
+	if(H.on_fire)
+		if((H.fire_stacks + H.divine_fire_stacks) >= HUMAN_FIRE_STACK_ICON_NUM)
+			return 200
+		return 20
+	else
+		firemodifier = min(firemodifier, 0)
+		return max(log(2-firemodifier, (H.bodytemperature-BODYTEMP_NORMAL))-5, 0)
+
+/datum/species/proc/calculate_cold_damage(cold_deficit)
+	switch(cold_deficit)
+		if(0 to 60) // Mild cold
+			return COLD_DAMAGE_LEVEL_1
+		if(60 to 140) // Moderate cold
+			return COLD_DAMAGE_LEVEL_2
+		else // Severe cold
+			return COLD_DAMAGE_LEVEL_3
+
+/datum/species/proc/calculate_heat_debuff_level(heat_excess)
+	switch(heat_excess)
+		if(0 to 20)
+			return 1
+		if(20 to 50)
+			return 2
+		else
+			return 3
+
+/datum/species/proc/calculate_cold_debuff_level(cold_deficit)
+	switch(cold_deficit)
+		if(0 to 80)
+			return 1
+		if(80 to 140)
+			return 2
+		else
+			return 3
+
+/datum/species/proc/apply_heat_debuffs(mob/living/carbon/human/H, level)
+	switch(level)
+		if(1)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 1)
+			// Mild heat stress - slight stamina drain
+			if(!H.temp_debuff_level || H.temp_debuff_level < 1)
+				H.temp_debuff_level = 1
+				H.adjust_hydration(-HUNGER_FACTOR * 0.5)
+		if(2)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 2)
+			// Moderate heat stress - stamina drain + slight slowdown
+			if(!H.temp_debuff_level || H.temp_debuff_level < 2)
+				H.temp_debuff_level = 2
+				H.adjust_hydration(-HUNGER_FACTOR)
+		if(3)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/hot, 3)
+			// Severe heat stress - major stamina drain + significant slowdown
+			if(!H.temp_debuff_level || H.temp_debuff_level < 3)
+				H.temp_debuff_level = 3
+				H.adjust_hydration(-HUNGER_FACTOR * 2)
+
+/datum/species/proc/apply_cold_debuffs(mob/living/carbon/human/H, level, cold_deficit)
+	switch(level)
+		if(1)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 1)
+			// Mild cold - slight movement slowdown
+			H.add_movespeed_modifier(MOVESPEED_ID_COLD, override = TRUE,
+				multiplicative_slowdown = (cold_deficit / COLD_SLOWDOWN_FACTOR) * 0.5,
+				blacklisted_movetypes = FLOATING)
+			H.temp_debuff_level = 1
+		if(2)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 2)
+			// Moderate cold - movement slowdown + reduced dexterity
+			H.add_movespeed_modifier(MOVESPEED_ID_COLD, override = TRUE,
+				multiplicative_slowdown = (cold_deficit / COLD_SLOWDOWN_FACTOR) * 0.8,
+				blacklisted_movetypes = FLOATING)
+			H.temp_debuff_level = 2
+		if(3)
+			H.throw_alert("temp", /atom/movable/screen/alert/status_effect/debuff/cold, 3)
+			// Severe cold - major slowdown + hypothermia effects
+			H.add_movespeed_modifier(MOVESPEED_ID_COLD, override = TRUE,
+				multiplicative_slowdown = cold_deficit / COLD_SLOWDOWN_FACTOR,
+				blacklisted_movetypes = FLOATING)
+			H.temp_debuff_level = 3
+
+/datum/species/proc/clear_temperature_debuffs(mob/living/carbon/human/H)
+	if(H.temp_debuff_level)
+		H.remove_movespeed_modifier("heat_stress")
+		H.temp_debuff_level = null
 
 //////////
 // FIRE //
@@ -2173,7 +2343,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		if(thermal_protection >= 30000 && !no_protection)
 			return
 		if(thermal_protection >= 30000 && !no_protection)
-			H.adjust_bodytemperature(11)
+			H.adjust_bodytemperature(5)
 		else
 			H.adjust_bodytemperature(BODYTEMP_HEATING_MAX + ((H.fire_stacks + H.divine_fire_stacks)* 12))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "on_fire", /datum/mood_event/on_fire)

@@ -190,7 +190,7 @@
 /turf/open/floor/carpet,
 /area/rogue/under/mountains/anvil/dungeon)
 "dX" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/cobblerock,
@@ -815,7 +815,7 @@
 /turf/open/floor/dirt/road,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "lQ" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "lX" = (
@@ -1553,10 +1553,10 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "uA" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/cobblerock,
@@ -1754,10 +1754,10 @@
 /turf/open/floor/carpet/stellar,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "xr" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/churchrough,
 /area/rogue/under/mountains/anvil/dungeon)
 "xv" = (
@@ -2520,10 +2520,10 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Ie" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "Ig" = (
@@ -2651,13 +2651,13 @@
 /turf/open/floor/carpet,
 /area/rogue/under/mountains/anvil/dungeon)
 "Js" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/cobblerock,
@@ -2801,7 +2801,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
 "Lf" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/cobblerock,
@@ -2980,7 +2980,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon)
 "No" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/structure/bed/sleepingbag,
@@ -3011,7 +3011,7 @@
 /turf/open/floor/carpet,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "NY" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood,
@@ -3206,7 +3206,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Qo" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /obj/structure/fluff/walldeco/skullspike,
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon)
@@ -3669,10 +3669,10 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "WJ" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/cobblerock,

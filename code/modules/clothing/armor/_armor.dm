@@ -28,6 +28,9 @@
 
 	sellprice = VALUE_COMMON_GOODS
 
+	min_cold_protection_temperature = 0 ///this is kinda just a balance thing
+	max_heat_protection_temperature = 0 ///this is kinda just a balance thing
+
 	grid_width = 64
 	grid_height = 96
 	item_weight = 7

@@ -267,6 +267,13 @@
 	createditem_extra = 2
 	craftdiff = 0
 
+/datum/anvil_recipe/tools/iron/dice_cups
+	name = "3x Metal Dice Cups"
+	recipe_name = "three Dice Cups"
+	created_item = /obj/item/dice_cup
+	createditem_extra = 2
+	craftdiff = 0
+
 /datum/anvil_recipe/tools/iron/scissors
 	name = "Scissors"
 	created_item = /obj/item/weapon/knife/scissors

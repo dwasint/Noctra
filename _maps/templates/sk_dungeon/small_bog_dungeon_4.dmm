@@ -177,7 +177,7 @@
 /turf/closed/wall/mineral/craftstone,
 /area/rogue/outdoors/caves)
 "Q" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/naturalstone,
 /area/rogue/outdoors/caves)
 "R" = (
@@ -185,7 +185,7 @@
 /turf/open/floor/blocks,
 /area/rogue/outdoors/caves)
 "S" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/blocks,
 /area/rogue/outdoors/caves)
 "T" = (
@@ -216,7 +216,7 @@
 /turf/open/floor/blocks,
 /area/rogue/outdoors/caves)
 "Z" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/naturalstone,

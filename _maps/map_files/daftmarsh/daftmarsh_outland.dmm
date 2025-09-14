@@ -73,7 +73,7 @@
 /turf/open/floor/hexstone,
 /area/rogue/under/mountains/anvil/lower)
 "bc" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -278,8 +278,8 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "cO" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -650,7 +650,7 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/woods)
 "fE" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -916,7 +916,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/under/mountains/anvil/lower)
 "iS" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,
@@ -1250,7 +1250,7 @@
 /obj/structure/bridge_stakes{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "mw" = (
@@ -1768,7 +1768,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "sD" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -1894,7 +1894,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods_safe)
 "tF" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/structure/fluff/statue/tdummy,
@@ -2024,7 +2024,7 @@
 /area/rogue/outdoors/bog)
 "uT" = (
 /obj/structure/flora/newtree,
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods_safe)
 "vf" = (
@@ -2064,10 +2064,10 @@
 /turf/open/water/marsh,
 /area/rogue/outdoors/woods)
 "vT" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
 "vW" = (
@@ -2115,7 +2115,7 @@
 /turf/open/floor/twig,
 /area/rogue/indoors)
 "wQ" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/woods_safe)
 "wR" = (
@@ -2514,7 +2514,7 @@
 /turf/closed,
 /area/rogue)
 "Bl" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "Bo" = (
@@ -2552,7 +2552,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/woods_safe)
 "BM" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods_safe)
 "BO" = (
@@ -3553,7 +3553,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/mountains/anvil/lower)
 "LW" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/grass,
@@ -4069,7 +4069,7 @@
 /turf/closed/mineral,
 /area/rogue/outdoors/woods)
 "RD" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
 "RH" = (
@@ -4125,10 +4125,10 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/mountains/anvil/lower)
 "Sc" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods_safe)
 "Sd" = (
@@ -4219,7 +4219,7 @@
 /turf/closed,
 /area/rogue)
 "SL" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/item/weapon/mace/woodclub/train_sword,
@@ -4666,7 +4666,7 @@
 /turf/open/floor/wood,
 /area/rogue/indoors)
 "XK" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/naturalstone,

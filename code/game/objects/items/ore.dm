@@ -7,6 +7,25 @@
 	grid_width = 32
 	grid_height = 32
 	melt_amount = 120
+	var/atom/mill_result // What this ore becomes when milled
+	var/mill_yield_bonus = 0 // Extra yield from milling
+
+/obj/item/ore/set_quality(quality)
+	. = ..()
+	// Quality affects melt amount
+	var/quality_multiplier = 1.0
+	switch(recipe_quality)
+		if(2)
+			quality_multiplier = 1.15
+		if(3)
+			quality_multiplier = 1.3
+		if(4)
+			quality_multiplier = 1.5
+
+	melt_amount = round(initial(melt_amount) * quality_multiplier)
+
+	// Update mill yield bonus
+	mill_yield_bonus = (recipe_quality - 1) * 0.2
 
 /obj/item/ore/gold
 	name = "raw gold"
@@ -15,6 +34,7 @@
 	sellprice = 10
 	melting_material = /datum/material/gold
 	item_weight = 6.2 * GOLD_MULITPLIER
+	mill_result = /obj/item/ore/dust/gold
 
 /obj/item/ore/gold/Initialize(mapload)
 	. = ..()
@@ -27,6 +47,7 @@
 	sellprice = 8
 	melting_material = /datum/material/silver
 	item_weight = 6.2 * SILVER_MULTIPLIER
+	mill_result = /obj/item/ore/dust/silver
 
 /obj/item/ore/silver/Initialize(mapload)
 	. = ..()
@@ -40,6 +61,7 @@
 	sellprice = 5
 	melting_material = /datum/material/iron
 	item_weight = 6.2 * IRON_MULTIPLIER
+	mill_result = /obj/item/ore/dust/iron
 
 /obj/item/ore/iron/Initialize(mapload)
 	. = ..()
@@ -52,6 +74,7 @@
 	sellprice = 2
 	melting_material = /datum/material/copper
 	item_weight = 6.2 * COPPER_MULTIPLIER
+	mill_result = /obj/item/ore/dust/copper
 
 /obj/item/ore/copper/Initialize(mapload)
 	. = ..()
@@ -65,6 +88,7 @@
 	sellprice = 4
 	melting_material = /datum/material/tin
 	item_weight = 6.2 * TIN_MULTIPLIER
+	mill_result = /obj/item/ore/dust/tin
 
 /obj/item/ore/tin/Initialize(mapload)
 	. = ..()

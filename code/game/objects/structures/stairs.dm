@@ -8,7 +8,7 @@
 	anchored = TRUE
 	layer = 2
 	obj_flags = CAN_BE_HIT | IGNORE_SINK
-	nomouseover = TRUE
+	no_over_text = TRUE
 	var/should_sink = FALSE
 
 /obj/structure/stairs/Initialize(mapload)

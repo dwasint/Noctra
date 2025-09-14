@@ -121,10 +121,10 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "uC" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,
@@ -149,7 +149,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/bog)
 "wK" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
@@ -181,7 +181,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "AT" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -191,10 +191,10 @@
 /turf/open/floor/herringbone,
 /area/rogue/outdoors/bog)
 "BI" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
@@ -211,7 +211,7 @@
 /turf/open/floor/blocks,
 /area/rogue/outdoors/bog)
 "CZ" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/grass,
@@ -266,10 +266,10 @@
 /turf/open/floor/blocks/paving,
 /area/rogue/outdoors/bog)
 "OE" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
@@ -288,16 +288,16 @@
 /turf/open/floor/blocks,
 /area/rogue/outdoors/bog)
 "Pw" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "PC" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,

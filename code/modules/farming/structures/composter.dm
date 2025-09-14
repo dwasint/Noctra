@@ -144,7 +144,25 @@
 		return TRUE
 	if(try_handle_adding_compost(attacking_item, user))
 		return TRUE
+	if(istype(attacking_item, /obj/item/weapon/shovel))
+		if(try_handle_bulk_compost_removal(attacking_item, user, params))
+			return TRUE
 	. = ..()
+
+/obj/structure/composter/proc/try_handle_bulk_compost_removal(obj/item/attacking_item, mob/living/user, params)
+	if(ready_compost < COMPOST_PER_PRODUCED_ITEM)
+		to_chat(user, span_warning("There's not enough processed compost!"))
+		return FALSE
+	var/amount = FLOOR(ready_compost / COMPOST_PER_PRODUCED_ITEM, 1)
+	if(!amount)
+		return FALSE
+	if(!do_after(user, 3 SECONDS, src))
+		return FALSE
+	to_chat(user, span_notice("I take out some ready compost."))
+	for(var/i = 1 to amount)
+		apply_farming_fatigue(user, 5)
+		take_out_compost()
+	return TRUE
 
 /obj/structure/composter/attack_hand(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)

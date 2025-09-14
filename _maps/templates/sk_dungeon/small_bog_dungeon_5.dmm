@@ -28,7 +28,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "dY" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "ed" = (
@@ -68,13 +68,13 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "hU" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "iN" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -104,7 +104,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "lX" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt,
@@ -140,10 +140,10 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "pa" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -153,10 +153,10 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "pk" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -174,11 +174,11 @@
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/bog)
 "qv" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "qH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /obj/structure/table/wood/treestump,
@@ -197,7 +197,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "sh" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /obj/structure/flora/grass,
@@ -216,7 +216,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "tm" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -231,10 +231,10 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "uf" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "vX" = (
@@ -247,29 +247,29 @@
 /obj/structure/fluff/railing/wood{
 	pixel_y = -4
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "wC" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "wG" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "xf" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /obj/structure/fluff/railing/wood{
@@ -289,7 +289,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "yC" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt,
@@ -376,7 +376,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "FH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/water/swamp,
@@ -399,7 +399,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "Hk" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/water/swamp,
@@ -460,7 +460,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "No" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/cobblerock,
@@ -496,7 +496,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "TV" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -529,7 +529,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "YQ" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "Zr" = (
@@ -539,7 +539,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "ZI" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/water/swamp,

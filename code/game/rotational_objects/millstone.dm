@@ -34,6 +34,13 @@
 			millable_contents += S
 			S.forceMove(src)
 			return
+	else if(istype(W, /obj/item/ore))
+		var/obj/item/ore/ore = W
+		if(ore.mill_result)
+			millable_contents += ore
+			ore.forceMove(src)
+			to_chat(user, span_notice("You add [ore] to [src] for milling."))
+			return
 	..()
 
 /obj/structure/fluff/millstone/attack_hand_secondary(mob/living/carbon/human/user, params)
@@ -114,10 +121,22 @@
 
 	if(mill_progress >= 100)
 		mill_progress -= 100
-		var/obj/item/reagent_containers/food/snacks/S = millable_contents[1]
-		var/obj/item/mill_result = new S.mill_result(get_turf(loc))
-		mill_result.set_quality(S.recipe_quality)
-		millable_contents -= S
-		qdel(S)
+		var/obj/item/millable_item = millable_contents[1]
+		var/result_type
+		var/quality = millable_item.recipe_quality
+
+		if(istype(millable_item, /obj/item/reagent_containers/food/snacks))
+			var/obj/item/reagent_containers/food/snacks/S = millable_item
+			result_type = S.mill_result
+		else if(istype(millable_item, /obj/item/ore))
+			var/obj/item/ore/ore = millable_item
+			result_type = ore.mill_result
+
+		if(result_type)
+			var/obj/item/mill_result = new result_type(get_turf(loc))
+			mill_result.set_quality(quality)
+
+		millable_contents -= millable_item
+		qdel(millable_item)
 
 	return TRUE

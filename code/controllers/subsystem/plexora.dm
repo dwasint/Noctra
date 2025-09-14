@@ -791,9 +791,6 @@ SUBSYSTEM_DEF(plexora)
 	/// The view of the client, similar to /client/var/view.
 	var/view = "15x15"
 
-	/// View data of the client, similar to /client/var/view_size.
-	var/datum/view_data/view_size
-
 	/// Objects on the screen of the client
 	var/list/screen = list()
 

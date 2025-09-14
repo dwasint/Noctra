@@ -10,7 +10,7 @@
 /turf/open/floor/grass,
 /area/template_noop)
 "h" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /obj/structure/soil,
@@ -25,7 +25,7 @@
 	},
 /area/template_noop)
 "u" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/grass,
 /area/template_noop)
 "w" = (
@@ -51,7 +51,7 @@
 	},
 /area/template_noop)
 "Q" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 10
 	},
 /obj/structure/soil,

@@ -16,7 +16,7 @@
 
 	var/obj/effect/hotspot/active_hotspot
 
-	nomouseover = TRUE
+	no_over_text = TRUE
 
 	appearance_flags = LONG_GLIDE | TILE_BOUND
 	/// Pollution of this turf
@@ -184,8 +184,10 @@
 
 /turf/proc/return_temperature()
 	var/ambient_temperature = SSParticleWeather.selected_forecast.current_ambient_temperature
+	if(SSParticleWeather.runningWeather)
+		ambient_temperature += SSParticleWeather.runningWeather?.temperature_modification
 	if(ambient_temperature < 15 && (outdoor_effect?.weatherproof || !outdoor_effect))
-		ambient_temperature += 5
+		ambient_temperature += 10
 	if(!("[z]" in GLOB.cellar_z))
 		if(SSmapping.level_has_any_trait(z, list(ZTRAIT_CELLAR_LIKE)))
 			GLOB.cellar_z |= "[z]"

@@ -102,6 +102,21 @@
 	var/list/data = list()
 	data |= item.melting_material
 	data[item.melting_material] = item.melt_amount
+
+	// Get quality from the item
+	var/item_quality = 1
+	if(istype(item, /obj/item/ore))
+		var/obj/item/ore/ore_item = item
+		item_quality = ore_item.recipe_quality
+	else if(istype(item, /obj/item/natural/rock))
+		var/obj/item/natural/rock/rock_item = item
+		item_quality = rock_item.recipe_quality
+	else if(item.recipe_quality)
+		item_quality = item.recipe_quality
+
+	// Set quality in the data for the reagent system
+	data["quality"] = item_quality
+
 	reagents.add_reagent(/datum/reagent/molten_metal, item.melt_amount, data, crucible_temperature)
 	melting_pot -= item
 	qdel(item)

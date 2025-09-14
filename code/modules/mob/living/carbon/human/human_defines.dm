@@ -146,6 +146,8 @@
 
 	var/datum/family_member/family_member_datum
 
+	var/temp_debuff_level = null
+
 	fovangle = FOV_DEFAULT // our fov
 
 //Checking the highest armor class worn

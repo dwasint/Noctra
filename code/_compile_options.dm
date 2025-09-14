@@ -87,6 +87,8 @@
 
 //#define NO_DUNGEON //comment this to load dungeons.
 
+//#define USES_PQ
+
 #ifdef LOWMEMORYMODE
 #define FORCE_MAP "_maps/roguetest.json"
 #endif
@@ -113,6 +115,8 @@
 #define DO_NOT_DEFER_ASSETS
 //Test at full capacity, the extra cost doesn't matter
 #define TIMER_DEBUG
+///this saves like alot of time
+#define NO_DUNGEON
 #endif
 
 //Update this whenever you need to take advantage of more recent byond features

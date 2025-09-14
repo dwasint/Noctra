@@ -123,8 +123,7 @@
 
 	return TRUE
 
-/obj/structure/sprinkler/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 128
+/obj/structure/sprinkler/return_rotation_chat()
 	var/status = active ? "Active" : "Inactive"
 	var/reagent_name = current_reagent ? initial(current_reagent.name) : "None"
 

@@ -252,7 +252,7 @@
 /turf/closed/basic,
 /area/rogue/under/cave)
 "ej" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/snow,
@@ -835,7 +835,7 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/woods)
 "rX" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/woods)
 "si" = (
@@ -1080,8 +1080,8 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/woods)
 "yp" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass/cold,
@@ -1388,10 +1388,10 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/mountains)
 "FH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass/cold,
@@ -1858,7 +1858,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/under/cave)
 "Qo" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass/cold,
@@ -1884,7 +1884,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/outdoors/woods)
 "QJ" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/grass/cold,
@@ -2104,10 +2104,10 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave)
 "Wv" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass/cold,
@@ -2123,7 +2123,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/outdoors/woods)
 "WT" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass/cold,
@@ -2134,8 +2134,8 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/woods)
 "Xd" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/snow/patchy,

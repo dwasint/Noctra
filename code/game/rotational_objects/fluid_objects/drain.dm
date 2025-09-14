@@ -178,9 +178,7 @@
 	var/obj/effect/temp_visual/drain_swirl/effect = new(T)
 	effect.appearance = drain_effect
 
-/obj/structure/fluid_drain/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 128
-
+/obj/structure/fluid_drain/return_rotation_chat()
 	var/primary_fluid = "None"
 	var/primary_volume = 0
 	for(var/datum/reagent/R in collected_fluids.reagent_list)

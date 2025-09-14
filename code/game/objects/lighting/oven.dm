@@ -7,7 +7,7 @@
 	base_state = "oven"
 	density = FALSE
 	on = FALSE
-	temperature_change = 45
+	temperature_change = 30
 	var/lastsmoke = 0
 	soundloop = /datum/looping_sound/fireloop
 

@@ -39,6 +39,7 @@
 	allowed_race = SPECIES_BASE_BODY
 	sellprice = 50
 	nodismemsleeves = TRUE
+	min_cold_protection_temperature = -20
 
 /obj/item/clothing/cloak/tribal
 	name = "tribal pelt"

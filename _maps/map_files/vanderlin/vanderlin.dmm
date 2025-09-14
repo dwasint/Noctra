@@ -7856,6 +7856,14 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor/captain)
+"eDu" = (
+/obj/structure/door/viewport{
+	dir = 4;
+	name = "Metals"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "eDF" = (
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/clocktower)
@@ -8869,7 +8877,7 @@
 /area/rogue/indoors/town/manor/garrison)
 "fhm" = (
 /obj/structure/flora/newtree,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 4
 	},
 /turf/open/floor/cobble/mossy,
@@ -9481,7 +9489,7 @@
 /turf/open/floor/tile,
 /area/rogue/indoors/town/manor/feast)
 "fzl" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/safe)
 "fzt" = (
@@ -10130,7 +10138,7 @@
 /turf/open/floor/tile/masonic,
 /area/rogue/indoors/town/manor/throne)
 "fRv" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /obj/structure/flora/grass,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
@@ -11314,7 +11322,7 @@
 /turf/open/floor/blocks,
 /area/rogue/under/town/basement)
 "gCX" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -13162,7 +13170,7 @@
 /turf/closed/wall/mineral/decorstone,
 /area/rogue/indoors/town/manor/halls)
 "hIZ" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -15449,7 +15457,7 @@
 /turf/open/floor/cobble,
 /area/rogue/outdoors/town)
 "jdU" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,
@@ -15689,7 +15697,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/town/basement)
 "jmr" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -16726,7 +16734,7 @@
 /turf/closed/wall/mineral/pipe,
 /area/rogue/indoors/town)
 "jVF" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/cobble,
@@ -18876,7 +18884,7 @@
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/manor/library)
 "luj" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 1
 	},
 /obj/machinery/light/fueled/firebowl/stump,
@@ -19139,10 +19147,10 @@
 /area/rogue/indoors/town/magician)
 "lDu" = (
 /obj/machinery/light/fueled/firebowl/stump,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 1
 	},
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -19908,10 +19916,10 @@
 /area/rogue/indoors/town/manor/hand)
 "mfC" = (
 /obj/structure/flora/grass,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/town)
 "mfF" = (
@@ -20789,6 +20797,10 @@
 /obj/machinery/light/fueled/torchholder,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
+"mIa" = (
+/obj/structure/bars,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "mIk" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -20898,7 +20910,7 @@
 /turf/open/floor/ruinedwood/spiralfade,
 /area/rogue/indoors/town)
 "mLz" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /obj/item/natural/stone{
@@ -24168,10 +24180,10 @@
 /area/rogue/outdoors/town)
 "oJr" = (
 /obj/structure/flora/ausbushes/brflowers,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
 "oJA" = (
@@ -24494,7 +24506,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/rtfield/safe)
 "oUa" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /obj/structure/flora/grass,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/town)
@@ -25495,6 +25507,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
+"pBY" = (
+/obj/structure/stockpile_storage/metal,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "pCd" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/dirt,
@@ -27383,6 +27399,14 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors/town)
+"qNH" = (
+/obj/structure/door/viewport{
+	dir = 8;
+	name = "Stockpiles"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/turf/open/floor/tile,
+/area/rogue/indoors/town/vault)
 "qOe" = (
 /obj/structure/table/wood/counter/end{
 	dir = 1
@@ -30716,7 +30740,7 @@
 "sNM" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/grass,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -31206,6 +31230,14 @@
 /obj/machinery/light/fueled/torchholder{
 	dir = 4
 	},
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
+"teP" = (
+/obj/structure/door/viewport{
+	dir = 8;
+	name = "Food and Materials"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
 /turf/open/floor/cobble,
 /area/rogue/under/town/basement)
 "tfe" = (
@@ -32418,7 +32450,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "tOM" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
@@ -35564,6 +35596,10 @@
 	},
 /turf/open/floor/cobble,
 /area/rogue/indoors/dungeon)
+"vSh" = (
+/obj/structure/stockpile_storage,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "vSJ" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/natural/cloth,
@@ -36319,6 +36355,10 @@
 "wpK" = (
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor/garrison)
+"wpQ" = (
+/obj/structure/stockpile_storage/food,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "wqd" = (
 /obj/machinery/light/fueled/firebowl,
 /turf/open/floor/blocks,
@@ -38205,7 +38245,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
 "xBv" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 1
 	},
 /turf/open/floor/cobblerock,
@@ -38989,10 +39029,10 @@
 /area/rogue/indoors/town/dwarfin)
 "xYH" = (
 /obj/structure/flora/grass,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
 "xYL" = (
@@ -39004,10 +39044,10 @@
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors/town/roofs)
 "xZg" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 1
 	},
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 8
 	},
 /turf/open/floor/cobble/mossy,
@@ -42234,7 +42274,7 @@ vtv
 vtv
 vtv
 vtv
-vtv
+nyB
 vtv
 vtv
 vtv
@@ -59644,10 +59684,10 @@ fkZ
 vgJ
 vgJ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+tHe
+tHe
+tHe
 aLp
 aLp
 aLp
@@ -59846,10 +59886,10 @@ fkZ
 vgJ
 vgJ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+wpQ
+jKy
+iRT
 aLp
 epm
 jvD
@@ -60048,10 +60088,10 @@ fkZ
 vgJ
 vgJ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+iRT
+iRT
+iRT
 aLp
 rjZ
 jvD
@@ -60250,10 +60290,10 @@ fkZ
 vgJ
 vgJ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+iRT
+iRT
+vSh
 aLp
 mwG
 cZh
@@ -60450,12 +60490,12 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+tHe
+tHe
+mIa
+teP
+mIa
 aLp
 aLp
 aLp
@@ -60652,14 +60692,14 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+iRT
+iRT
+iRT
+iRT
+iRT
+jKy
+iRT
 tHe
 dFX
 bET
@@ -60854,14 +60894,14 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+iRT
+iRT
+iRT
+iRT
+uyK
+iRT
+iRT
 tHe
 dFX
 iRT
@@ -61056,13 +61096,13 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+mIa
+eDu
+mIa
 mcU
 mcU
-mcU
+qNH
 mcU
 mcU
 mcU
@@ -61258,10 +61298,10 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+iRT
+iRT
+iRT
 mcU
 jAE
 xaU
@@ -61460,10 +61500,10 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+uyK
+pBY
+iRT
 mcU
 xaU
 vqr
@@ -61662,10 +61702,10 @@ jZh
 jUb
 fkZ
 vgJ
-vgJ
-vgJ
-vgJ
-vgJ
+tHe
+tHe
+tHe
+tHe
 mcU
 mRh
 gye

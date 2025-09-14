@@ -169,11 +169,19 @@
 	supports_directions = TRUE
 	craftdiff = 0
 
-/datum/blueprint_recipe/carpentry/fence
+/datum/blueprint_recipe/carpentry/palisade
 	name = "palisade"
 	desc = "A wooden defensive palisade."
-	result_type = /obj/structure/fluff/railing/fence
+	result_type = /obj/structure/fluff/railing/tall/palisade
 	required_materials = list(/obj/item/grown/log/tree/stake = 2)
+	supports_directions = TRUE
+	craftdiff = 0
+
+/datum/blueprint_recipe/carpentry/fence
+	name = "fence"
+	desc = "A tall wooden fence."
+	result_type = /obj/structure/fluff/railing/tall
+	required_materials = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/wood/plank = 2)
 	supports_directions = TRUE
 	craftdiff = 0
 

@@ -99,9 +99,11 @@
 		if(total_slots_occupied >= maximum_possible_slots)
 			return FALSE
 
+	#ifdef USES_PQ
 	if(min_pq != -100) // If someone sets this we actually do the check.
 		if(!(get_playerquality(H.client.ckey) >= min_pq))
 			return FALSE
+	#endif
 
 	var/pq_prob = pickprob + max((get_playerquality(H.client.ckey))/2, 0) // Takes the base pick rate of the rare class and adds the client's pq divided by 2 or 0, whichever is higher. Allows a maximum of 65 pick probability at 100 pq
 	if(prob(pq_prob))

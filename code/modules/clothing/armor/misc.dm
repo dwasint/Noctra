@@ -34,6 +34,7 @@
 	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_EXCEPT_BLUNT
 	item_weight = 7 * IRON_MULTIPLIER
+	min_cold_protection_temperature = 5 //this is like fur but also its a fucking bikini like???
 
 //................ Brigandine ............... //
 /obj/item/clothing/armor/brigandine

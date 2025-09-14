@@ -107,6 +107,16 @@
 	if(!quality_data)
 		return FALSE
 
+	var/name_prefix = quality_data["name_prefix"]
+	var/description_prefix = quality_data["description"]
+	// Apply name prefix
+	if(name_prefix && name_prefix != "")
+		target.name = "[name_prefix] [target.name]"
+
+	// Apply description prefix
+	if(description_prefix && description_prefix != "")
+		target.desc += "\n[description_prefix]"
+
 	apply_brewing_quality_modifiers(target, quality_data)
 
 	// Track masterworks if enabled (quality 4)

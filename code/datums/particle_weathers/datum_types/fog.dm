@@ -83,7 +83,6 @@
 	scale_vol_with_severity = TRUE
 	weather_sounds = list(/datum/looping_sound/rain)
 	indoor_weather_sounds = list(/datum/looping_sound/indoor_rain)
-	weather_messages = null
 
 	weather_duration_upper = 10 MINUTES
 	minSeverity = 5

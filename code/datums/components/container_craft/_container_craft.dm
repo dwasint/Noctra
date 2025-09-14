@@ -1,6 +1,9 @@
+
 /datum/component/container_craft
 	/// Recipe types that can be used with this container
 	var/list/viable_recipe_types = list()
+	/// Low priority recipes (craft_priority = FALSE)
+	var/list/fallback_recipe_types = list()
 	/// Callback when craft starts
 	var/datum/callback/on_craft_start
 	/// Callback when craft fails
@@ -15,7 +18,22 @@
 	. = ..()
 	if(!length(recipes))
 		return COMPONENT_INCOMPATIBLE
-	viable_recipe_types = recipes
+
+	viable_recipe_types = list()
+	fallback_recipe_types = list()
+
+	for(var/datum/container_craft/recipe as anything in recipes)
+		var/datum/container_craft/singleton = GLOB.container_craft_to_singleton[recipe]
+		if(!singleton)
+			continue
+		if(is_abstract(singleton))
+			continue
+
+		if(singleton.craft_priority)
+			viable_recipe_types += recipe
+		else
+			fallback_recipe_types += recipe
+
 	on_craft_start = start
 	on_craft_failed = fail
 	on_craft_finished = success
@@ -31,13 +49,14 @@
 	INVOKE_ASYNC(src, PROC_REF(attempt_crafts), source, user)
 
 /**
- * Attempt to craft all possible recipes
+ * Attempt to craft all possible recipes - try normal priority first, then fallbacks
  */
 /datum/component/container_craft/proc/attempt_crafts(datum/source, mob/user)
 	var/list/stored_items = list()
 	var/obj/item/host = parent
 	if(!length(host.contents))
 		return
+
 	for(var/obj/item/item in host.contents)
 		stored_items |= item.type
 		stored_items[item.type]++
@@ -49,7 +68,7 @@
 				if(stored_items[path] <= 0)
 					stored_items -= path
 
-	// If no active crafts, try to start new ones
+	// First try normal priority recipes
 	for(var/datum/container_craft/recipe as anything in viable_recipe_types)
 		var/datum/container_craft/singleton = GLOB.container_craft_to_singleton[recipe]
 		if(!singleton)
@@ -57,13 +76,14 @@
 
 		// Try to start the craft
 		if(singleton.try_craft(host, stored_items.Copy(), user, on_craft_start, on_craft_failed))
-			stored_items.Cut()
-			for(var/obj/item/item in host.contents)
-				stored_items |= item.type
-				stored_items[item.type]++
-				for(var/datum/container_craft_operation/op in GLOB.active_container_crafts)
-					if(op.crafter == host)
-						for(var/path in op.stored_items)
-							stored_items[path] -= op.stored_items[path]
-							if(stored_items[path] <= 0)
-								stored_items -= path
+			return  // Success! Stop here
+
+	// If no normal priority recipes worked, try fallback recipes
+	for(var/datum/container_craft/recipe as anything in fallback_recipe_types)
+		var/datum/container_craft/singleton = GLOB.container_craft_to_singleton[recipe]
+		if(!singleton)
+			continue
+
+		// Try to start the craft
+		if(singleton.try_craft(host, stored_items.Copy(), user, on_craft_start, on_craft_failed))
+			return  // Success! Stop here

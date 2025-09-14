@@ -84,6 +84,9 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 
 	var/atom/movable/screen/vis_holder/vis_holder
 
+	/// Mouse hover text for this hud
+	var/atom/movable/screen/movable/mouseover/maptext/mouse_over_text
+
 /datum/hud/New(mob/owner)
 	mymob = owner
 
@@ -116,6 +119,9 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 		hand_slots = list()
 	else
 		hand_slots.Cut()
+
+	mouse_over_text = new(null, src)
+	static_inventory += mouse_over_text
 
 	for(var/mytype in subtypesof(/atom/movable/screen/plane_master))
 		var/atom/movable/screen/plane_master/instance = new mytype()
@@ -159,6 +165,7 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 	QDEL_LIST_ASSOC_VAL(plane_masters)
 	QDEL_LIST_ASSOC_VAL(plane_master_controllers)
 	QDEL_LIST(screenoverlays)
+	QDEL_NULL(mouse_over_text)
 	mymob = null
 
 	return ..()

@@ -93,19 +93,16 @@
 
 /obj/item/dice/d1
 	name = "d1"
-	desc = ""
 	icon_state = "d1"
 	sides = 1
 
 /obj/item/dice/d2
 	name = "d2"
-	desc = ""
 	icon_state = "d2"
 	sides = 2
 
 /obj/item/dice/d4
 	name = "d4"
-	desc = ""
 	icon_state = "d4"
 	sides = 4
 
@@ -116,15 +113,22 @@
 /obj/item/dice/d6
 	name = "d6"
 
+/obj/item/dice/d6/wood
+	name = "die"
+	desc = "A six sided die carved from wood."
+
+/obj/item/dice/d6/bone
+	name = "bone die"
+	icon_state = "bone_d6"
+	desc = "A six sided die carved from bone."
+
 /obj/item/dice/d6/ebony
 	name = "ebony die"
-	desc = ""
 	icon_state = "de6"
 	microwave_riggable = FALSE // You can't melt wood in the microwave
 
 /obj/item/dice/d6/space
 	name = "space cube"
-	desc = ""
 	icon_state = "spaced6"
 
 /obj/item/dice/d6/space/Initialize()
@@ -134,44 +138,37 @@
 
 /obj/item/dice/fudge
 	name = "fudge die"
-	desc = ""
 	sides = 3 //shhh
 	icon_state = "fudge"
 	special_faces = list("minus","blank","plus")
 
 /obj/item/dice/d8
 	name = "d8"
-	desc = ""
 	icon_state = "d8"
 	sides = 8
 
 /obj/item/dice/d10
 	name = "d10"
-	desc = ""
 	icon_state = "d10"
 	sides = 10
 
 /obj/item/dice/d00
 	name = "d00"
-	desc = ""
 	icon_state = "d00"
 	sides = 10
 
 /obj/item/dice/d12
 	name = "d12"
-	desc = ""
 	icon_state = "d12"
 	sides = 12
 
 /obj/item/dice/d20
 	name = "d20"
-	desc = ""
 	icon_state = "d20"
 	sides = 20
 
 /obj/item/dice/d100
 	name = "d100"
-	desc = ""
 	icon_state = "d100"
 	w_class = WEIGHT_CLASS_SMALL
 	sides = 100
@@ -182,7 +179,6 @@
 
 /obj/item/dice/eightbd20
 	name = "strange d20"
-	desc = ""
 	icon_state = "8bd20"
 	sides = 20
 	special_faces = list("It is certain","It is decidedly so","Without a doubt","Yes, definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Don't count on it","My reply is no","My sources say no","Outlook not so good","Very doubtful")
@@ -193,7 +189,6 @@
 
 /obj/item/dice/fourdd6
 	name = "4d d6"
-	desc = ""
 	icon_state = "4dd6"
 	sides = 48
 	special_faces = list("Cube-Side: 1-1","Cube-Side: 1-2","Cube-Side: 1-3","Cube-Side: 1-4","Cube-Side: 1-5","Cube-Side: 1-6","Cube-Side: 2-1","Cube-Side: 2-2","Cube-Side: 2-3","Cube-Side: 2-4","Cube-Side: 2-5","Cube-Side: 2-6","Cube-Side: 3-1","Cube-Side: 3-2","Cube-Side: 3-3","Cube-Side: 3-4","Cube-Side: 3-5","Cube-Side: 3-6","Cube-Side: 4-1","Cube-Side: 4-2","Cube-Side: 4-3","Cube-Side: 4-4","Cube-Side: 4-5","Cube-Side: 4-6","Cube-Side: 5-1","Cube-Side: 5-2","Cube-Side: 5-3","Cube-Side: 5-4","Cube-Side: 5-5","Cube-Side: 5-6","Cube-Side: 6-1","Cube-Side: 6-2","Cube-Side: 6-3","Cube-Side: 6-4","Cube-Side: 6-5","Cube-Side: 6-6","Cube-Side: 7-1","Cube-Side: 7-2","Cube-Side: 7-3","Cube-Side: 7-4","Cube-Side: 7-5","Cube-Side: 7-6","Cube-Side: 8-1","Cube-Side: 8-2","Cube-Side: 8-3","Cube-Side: 8-4","Cube-Side: 8-5","Cube-Side: 8-6")
@@ -203,13 +198,13 @@
 	return ..()
 
 /obj/item/dice/attack_self(mob/user, params)
-	diceroll(user)
+	diceroll(user, TRUE)
 
 /obj/item/dice/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	diceroll(thrownby)
+	diceroll(thrownby, TRUE)
 	. = ..()
 
-/obj/item/dice/proc/diceroll(mob/user)
+/obj/item/dice/proc/diceroll(mob/user, var/shown)
 	result = roll(sides)
 	if(rigged != DICE_NOT_RIGGED && result != rigged_value)
 		if(rigged == DICE_BASICALLY_RIGGED)
@@ -235,9 +230,12 @@
 	if(special_faces.len == sides)
 		result = special_faces[result]
 	if(user != null) //Dice was rolled by someone
-		user.visible_message(span_notice("[user] has rolled [src]. It lands on [result]. [comment]"), \
-							span_notice("I roll [src]. It lands on [result]. [comment]"), \
-							span_hear("I hear [src] rolling, it sounds like a [fake_result]."))
+		if(shown)
+			user.visible_message(span_notice("[user] has rolled [src]. It lands on [result]. [comment]"), \
+								span_notice("I roll [src]. It lands on [result]. [comment]"), \
+								span_hear("I hear [src] rolling, it sounds like a [fake_result]."))
+		else
+			to_chat(user, span_notice("I roll [src] in secret. It lands on [result]. [comment]"))
 	else if(!src.throwing) //Dice was knocked around and is coming to rest
 		visible_message(span_notice("[src] rolls to a stop, landing on [result]. [comment]"))
 

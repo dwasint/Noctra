@@ -223,7 +223,7 @@
 /turf/open/floor/dirt/road,
 /area/rogue/under/tomb)
 "PP" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/under/tomb)
 "Qw" = (

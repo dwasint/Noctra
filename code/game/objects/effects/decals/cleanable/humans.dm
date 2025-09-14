@@ -8,9 +8,9 @@
 	bloodiness = BLOOD_AMOUNT_PER_DECAL
 	beauty = -100
 	alpha = 200
-	nomouseover = TRUE
+	no_over_text = TRUE
 	appearance_flags = NO_CLIENT_COLOR
-	nomouseover = TRUE
+	no_over_text = TRUE
 	clean_type = CLEAN_TYPE_BLOOD
 
 	var/blood_timer

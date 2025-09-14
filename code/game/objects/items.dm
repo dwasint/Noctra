@@ -60,10 +60,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/slot_flags = 0		//This is used to determine on which slots an item can fit.
 	var/obj/item/master = null
 
-	var/heat_protection = 0 //flags which determine which body parts are protected from heat. Use the HEAD, CHEST, GROIN, etc. flags. See setup.dm
-	var/cold_protection = 0 //flags which determine which body parts are protected from cold. Use the HEAD, CHEST, GROIN, etc. flags. See setup.dm
-	var/max_heat_protection_temperature //Set this variable to determine up to which temperature (IN KELVIN) the item protects against heat damage. Keep at null to disable protection. Only protects areas set by heat_protection flags
-	var/min_cold_protection_temperature //Set this variable to determine down to which temperature (IN KELVIN) the item protects against cold damage. 0 is NOT an acceptable number due to if(varname) tests!! Keep at null to disable protection. Only protects areas set by cold_protection flags
+	var/max_heat_protection_temperature //Set this variable to determine up to which temperature (IN Celcius) the item protects against heat damage. Keep at null to disable protection. Only protects areas set by heat_protection flags
+	var/min_cold_protection_temperature //Set this variable to determine down to which temperature (IN Celcius) the item protects against cold damage. 0 is NOT an acceptable number due to if(varname) tests!! Keep at null to disable protection. Only protects areas set by cold_protection flags
 
 	// List of /datum/action's that this item has.
 	var/list/datum/action/actions

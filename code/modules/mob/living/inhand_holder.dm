@@ -48,6 +48,7 @@
 
 /obj/item/clothing/head/mob_holder/proc/update_visuals(mob/living/L)
 	appearance = L?.appearance
+	plane = ABOVE_HUD_PLANE
 
 /obj/item/clothing/head/mob_holder/proc/release(del_on_release = TRUE)
 	if(!held_mob)

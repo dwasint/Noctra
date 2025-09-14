@@ -8,7 +8,7 @@
 	icon = 'icons/hud/storage.dmi'
 	icon_state = "background"
 	screen_loc = "WEST,SOUTH:96"
-	nomouseover = FALSE
+	no_over_text = FALSE
 	var/build_state = TRUE
 	var/datum/building_datum/build_datum
 	var/datum/building_datum/datum_path

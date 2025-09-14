@@ -7,7 +7,7 @@
 	anchored = TRUE
 	alpha = 80
 	//shhh
-	nomouseover = TRUE
+	no_over_text = TRUE
 	///What to say when antimagic'd
 	var/flare_message
 	///What to say when found
@@ -78,14 +78,14 @@
 		visible_message(found_message)
 	if(sparks)
 		spark_system.start()
-	nomouseover = FALSE
+	no_over_text = FALSE
 	alpha = 200
 	last_trigger = world.time
 	animate(src, alpha = initial(alpha), time = time_between_triggers)
 	addtimer(CALLBACK(src, PROC_REF(unflare)), time_between_triggers, (TIMER_UNIQUE|TIMER_CLIENT_TIME))
 
 /obj/structure/trap/proc/unflare()
-	nomouseover = TRUE
+	no_over_text = TRUE
 
 /obj/structure/trap/Crossed(atom/movable/AM)
 	if(is_type_in_typecache(AM, ignore_typecache))

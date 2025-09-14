@@ -3,8 +3,11 @@
 	name = "Atropa Death Draught"
 	created_reagent = /datum/reagent/poison/herbal/atropa_concentrate
 	water_conversion = 1
+	reagent_requirements = list(
+		/datum/reagent/poison/herbal/weak_atropa = 20,
+	)
 	requirements = list(
-		/obj/item/alch/herb/atropa = 3,
+		/obj/item/alch/herb/atropa = 2,
 		/obj/item/alch/herb/matricaria = 1
 	)
 	output_amount = 20 // Small amount of concentrated poison

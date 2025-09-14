@@ -39,9 +39,7 @@
 	input = locate(/obj/structure/water_pipe) in east_turf
 	output = locate(/obj/structure/water_pipe) in west_turf
 
-/obj/structure/boiler/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
-	mouseover.maptext_height = 128
-
+/obj/structure/boiler/return_rotation_chat()
 	return	"Input Pressure:[input ? input.water_pressure : "0"]\n\
 			Output Pressure: ACTL:[min(pressure_target, stored_steam)] TGT:[pressure_target]\n\
 			Stored Steam:[stored_steam ? round((stored_steam / maximum_steam) * 100, 1 ): "0"]%"

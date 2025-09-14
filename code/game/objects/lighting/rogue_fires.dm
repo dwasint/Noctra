@@ -27,7 +27,7 @@
 				// to_chat(H, "<span class='warning'>HOT!</span>")
 				// if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 				// 	H.update_damage_overlays()
-				H.adjust_bodytemperature(40)
+				H.adjust_bodytemperature(10)
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 
 	else
@@ -122,7 +122,7 @@
 	fueluse = 0
 	crossfire = FALSE
 	cookonme = TRUE
-	temperature_change = 35
+	temperature_change = 30
 
 /obj/machinery/light/fueled/wallfire/candle
 	name = "candles"
@@ -398,7 +398,7 @@
 	on = FALSE
 	cookonme = TRUE
 	soundloop = /datum/looping_sound/fireloop
-	temperature_change = 45
+	temperature_change = 40
 	var/heat_time = 100
 	var/obj/item/attachment = null
 	var/obj/item/reagent_containers/food/snacks/food = null
@@ -475,7 +475,7 @@
 			if(istype(H))
 				H.visible_message("<span class='info'>[H] warms \his hand over the embers.</span>")
 				if(do_after(H, 5 SECONDS, src))
-					H.adjust_bodytemperature(40)
+					H.adjust_bodytemperature(10)
 			return TRUE
 
 
@@ -513,7 +513,7 @@
 	max_integrity = 30
 	soundloop = /datum/looping_sound/fireloop
 
-	temperature_change = 35
+	temperature_change = 25
 
 /obj/machinery/light/fueled/campfire/process()
 	..()
@@ -544,7 +544,7 @@
 				// to_chat(H, "<span class='warning'>HOT!</span>")
 				// if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 				// 	H.update_damage_overlays()
-				H.adjust_bodytemperature(40)
+				H.adjust_bodytemperature(10)
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 
 /obj/machinery/light/fueled/campfire/densefire

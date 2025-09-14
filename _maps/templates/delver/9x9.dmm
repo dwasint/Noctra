@@ -4,8 +4,8 @@
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "d" = (
-/obj/structure/fluff/railing/woodfence,
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall,
+/obj/structure/fluff/railing/tall{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -23,7 +23,7 @@
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "x" = (
-/obj/structure/fluff/railing/woodfence,
+/obj/structure/fluff/railing/tall,
 /turf/open/floor/grass,
 /area/template_noop)
 "B" = (
@@ -44,7 +44,7 @@
 /turf/open/floor/grass,
 /area/template_noop)
 "S" = (
-/obj/structure/fluff/railing/woodfence{
+/obj/structure/fluff/railing/tall{
 	dir = 4
 	},
 /turf/open/floor/grass,

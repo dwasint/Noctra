@@ -66,9 +66,6 @@
 	/// description of weather
 	var/desc = "Heavy gusts of wind blanket the area, periodically knocking down anyone caught in the open."
 
-	//messages to send at different severities
-	var/list/weather_messages = list()
-
 	// Sounds to play at different severities - order from lowest to highest
 	var/list/weather_sounds = list()
 	var/list/indoor_weather_sounds = list()
@@ -123,15 +120,14 @@
 	//assoc list of mob=looping_sound
 	var/list/currentSounds = list()
 
-	//assoc list of mob=timestamp -> Next time we can send a message
-	var/list/messagedMobs = list()
-
 	var/last_message = ""
 
 	var/blend_type
 	var/filter_type
 	var/secondary_filter_type
 	var/forecast_tag
+
+	var/temperature_modification = 0
 
 	var/datum/weather_effect/weather_special_effect
 
@@ -191,10 +187,6 @@
 
 	if(SSParticleWeather.particleEffect)
 		SSParticleWeather.particleEffect.animateSeverity(severityMod())
-
-	//Send new severity message if the message has changed
-	if(last_message != scale_range_pick(minSeverity, maxSeverity, severity, weather_messages))
-		messagedMobs = list()
 
 	//Tick on
 	if(severityStepsTaken < severitySteps)
@@ -273,11 +265,8 @@
 		weather_sound_effect(L)
 		if(can_weather_effect(L))
 			weather_act(L)
-			if(!messagedMobs[L] || world.time > messagedMobs[L])
-				weather_message(L) //Try not to spam
 	else
 		stop_weather_sound_effect(L)
-		messagedMobs[L] = 0 //resend a message next time they go outside
 
 //Overload with weather effects
 /datum/particle_weather/proc/weather_act(mob/living/L)
@@ -318,11 +307,6 @@
 		currentSound.stop()
 		qdel(currentSound)
 
-/datum/particle_weather/proc/weather_message(mob/living/L)
-	messagedMobs[L] = world.time + 30 SECONDS //Chunky delay - this spams otherwise - Severity changes and going indoors resets this timer
-	last_message = scale_range_pick(minSeverity, maxSeverity, severity, weather_messages)
-	if(last_message)
-		to_chat(L, last_message)
 
 /datum/particle_weather/proc/can_weather_act_obj(obj/obj_to_check)
 	var/turf/obj_turf = get_turf(obj_to_check)

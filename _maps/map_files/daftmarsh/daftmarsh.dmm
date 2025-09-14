@@ -4410,6 +4410,10 @@
 /obj/structure/flora/grass,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/town)
+"esu" = (
+/obj/structure/bars,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "esw" = (
 /obj/structure/door/violet,
 /obj/effect/mapping_helpers/access/keyset/town/merchant,
@@ -6909,6 +6913,14 @@
 /obj/item/bedsheet/fabric_double,
 /turf/open/floor/carpet/green,
 /area/rogue/indoors/town)
+"gQS" = (
+/obj/structure/door/viewport{
+	dir = 1;
+	name = "Stockpiles"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "gQZ" = (
 /obj/machinery/light/fueled/hearth,
 /turf/open/floor/tile/checker,
@@ -8431,6 +8443,14 @@
 "ipu" = (
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/indoors/town/bath)
+"ipY" = (
+/obj/structure/door/viewport{
+	dir = 8;
+	name = "Metals"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "iqN" = (
 /turf/closed/wall/mineral/wooddark/end{
 	dir = 8
@@ -10677,6 +10697,10 @@
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/wood,
 /area/rogue/outdoors/town/roofs)
+"kps" = (
+/obj/structure/stockpile_storage/food,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "kqa" = (
 /obj/structure/water_pipe,
 /turf/open/transparent/openspace,
@@ -15693,6 +15717,10 @@
 	dir = 4
 	},
 /area/rogue/under/town/sewer)
+"pwi" = (
+/obj/structure/stockpile_storage,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "pxj" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -15906,6 +15934,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
+"pHo" = (
+/obj/structure/stockpile_storage/metal,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "pHw" = (
 /turf/closed/wall/mineral/stone/window,
 /area/rogue/indoors/town)
@@ -20045,6 +20077,14 @@
 /obj/item/weapon/surgery/retractor,
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/town/clinic_large)
+"tAK" = (
+/obj/structure/door/viewport{
+	dir = 4;
+	name = "Food and Materials"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/vault,
+/turf/open/floor/cobble,
+/area/rogue/under/town/basement)
 "tAS" = (
 /obj/structure/closet/crate/chest,
 /obj/machinery/light/fueled/wallfire/candle{
@@ -83537,9 +83577,9 @@ hdd
 hdd
 sWx
 kSn
-tRv
-tRv
-tRv
+hOf
+fzM
+hOf
 uPM
 iXs
 iXs
@@ -83739,10 +83779,10 @@ hdd
 hdd
 sWx
 kSn
-tRv
-tRv
-tRv
-uPM
+hOf
+pHo
+hOf
+esu
 iXs
 iXs
 iKO
@@ -83941,10 +83981,10 @@ hdd
 hdd
 sWx
 kSn
-tRv
-tRv
-tRv
-uPM
+hOf
+hOf
+hOf
+esu
 uNN
 iXs
 wJn
@@ -84143,9 +84183,9 @@ hdd
 hdd
 sWx
 uPM
-tRv
-tRv
-tRv
+esu
+ipY
+esu
 uPM
 uNN
 hmP
@@ -84345,10 +84385,10 @@ vDk
 hdd
 sWx
 uPM
-tRv
-tRv
-tRv
-uPM
+xco
+hOf
+hOf
+gQS
 uNN
 uNN
 wJn
@@ -84547,9 +84587,9 @@ vDk
 hdd
 hdd
 uPM
-tRv
-tRv
-tRv
+esu
+tAK
+esu
 uPM
 iXs
 uNN
@@ -84749,10 +84789,10 @@ vDk
 rLN
 hdd
 kSn
-tRv
-tRv
-tRv
-uPM
+hOf
+hOf
+hOf
+esu
 uNN
 iXs
 iKO
@@ -84951,10 +84991,10 @@ vDk
 hdd
 hdd
 kSn
-tRv
-tRv
-tRv
-uPM
+hOf
+kps
+hOf
+esu
 iXs
 iXs
 wJn
@@ -85153,9 +85193,9 @@ vDk
 hdd
 hdd
 uPM
-tRv
-tRv
-tRv
+hOf
+pwi
+hOf
 uPM
 bzY
 iXs
@@ -85355,8 +85395,8 @@ vDk
 hdd
 hdd
 uPM
-tRv
-tRv
+qhJ
+hOf
 eqo
 eqo
 bYL

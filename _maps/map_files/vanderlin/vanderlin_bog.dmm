@@ -293,7 +293,7 @@
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/shelter/bog)
 "dN" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -388,7 +388,7 @@
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/shelter/bog)
 "eY" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt,
@@ -544,7 +544,7 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "gF" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -702,10 +702,10 @@
 /turf/closed/wall/mineral/decostone,
 /area/rogue/indoors/shelter/bog)
 "iI" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "iO" = (
@@ -826,10 +826,10 @@
 	},
 /area/rogue/indoors/shelter/bog)
 "ld" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "lf" = (
@@ -1220,10 +1220,10 @@
 /turf/open/floor/wood/nosmooth,
 /area/rogue/indoors/shelter/bog)
 "qm" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt,
@@ -1669,7 +1669,7 @@
 /turf/closed/wall/mineral/decostone/long,
 /area/rogue/outdoors/bog)
 "wr" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "wu" = (
@@ -1851,7 +1851,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/indoors/shelter/bog)
 "zq" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt,
@@ -1951,10 +1951,10 @@
 /turf/open/floor/wood/nosmooth,
 /area/rogue/indoors/shelter/bog)
 "AH" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "AK" = (
@@ -2214,7 +2214,7 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "Eh" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -2447,7 +2447,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/indoors/cave)
 "Ih" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "Iw" = (
@@ -2619,7 +2619,7 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "KY" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "La" = (
@@ -2829,10 +2829,10 @@
 /turf/open/floor/woodturned/nosmooth,
 /area/rogue/indoors/shelter/bog)
 "Ou" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -2861,7 +2861,7 @@
 /turf/open/floor/churchmarble,
 /area/rogue/indoors/shelter/bog)
 "OO" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /obj/structure/fluff/railing/wood{
@@ -2965,7 +2965,7 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "Qn" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/grass,
@@ -3037,7 +3037,7 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "Rj" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,
@@ -3161,7 +3161,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
 "SH" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "SJ" = (
@@ -3234,10 +3234,10 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/bog)
 "TS" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt,
@@ -3293,7 +3293,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "UE" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -3515,10 +3515,10 @@
 /turf/open/floor/ruinedwood/turned,
 /area/rogue/indoors/shelter/bog)
 "Xh" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "Xi" = (
@@ -3574,8 +3574,8 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
 "XL" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,

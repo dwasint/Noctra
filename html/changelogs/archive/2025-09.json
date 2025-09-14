@@ -396,7 +396,21 @@
     "2025-09-14": {
         "CheffieGithub": [
             {
+                "bugfix": "Fixed new wooden fence and pallisade passing."
+            },
+            {
+                "bugfix": "Fixed harpies sometimes not having wings or the correct tail"
+            },
+            {
                 "bugfix": "Fixed punches being unable to do critical hits or wounds"
+            },
+            {
+                "bugfix": "Round end vote passing stops futher votes from happening."
+            }
+        ],
+        "grungussuss": [
+            {
+                "admin": "subtle messages are more visible to the player"
             }
         ]
     }

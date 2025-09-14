@@ -137,8 +137,10 @@ SUBSYSTEM_DEF(job)
 			JobDebug("GRJ incompatible with patron, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
 			continue
 
+		#ifdef USES_PQ
 		if(get_playerquality(player.ckey) < job.min_pq)
 			continue
+		#endif
 
 		if(length(job.allowed_ages) && !(player.client.prefs.age in job.allowed_ages))
 			JobDebug("GRJ incompatible with age, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
@@ -147,10 +149,11 @@ SUBSYSTEM_DEF(job)
 		if(length(job.allowed_sexes) && !(player.client.prefs.gender in job.allowed_sexes))
 			JobDebug("GRJ incompatible with sex, Player: [player], Job: [job.title]")
 			continue
-
+		#ifdef USES_PQ
 		if(get_playerquality(player.ckey) < job.min_pq)
 			JobDebug("GRJ incompatible with minPQ, Player: [player], Job: [job.title]")
 			continue
+		#endif
 
 		if(job.banned_leprosy && is_misc_banned(player.client.ckey, BAN_MISC_LEPROSY))
 			JobDebug("GRJ incompatible with leprosy, Player: [player], Job: [job.title]")
@@ -289,10 +292,11 @@ SUBSYSTEM_DEF(job)
 				if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 					JobDebug("DO incompatible with patron, Player: [player], Job: [job.title], Race: [player.client.prefs.pref_species.name]")
 					continue
-
+				#ifdef USES_PQ
 				if(get_playerquality(player.ckey) < job.min_pq)
 					JobDebug("DO player lacks Quality. Player: [player], Job: [job.title]")
 					continue
+				#endif
 
 				if((player.client.prefs.lastclass == job.title) && (!job.bypass_lastclass))
 					JobDebug("DO player already played class, Player: [player], Job: [job.title]")
@@ -490,9 +494,10 @@ SUBSYSTEM_DEF(job)
 
 			if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 				continue
-
+			#ifdef USES_PQ
 			if(get_playerquality(player.ckey) < job.min_pq)
 				continue
+			#endif
 
 			if((player.client.prefs.lastclass == job.title) && (!job.bypass_lastclass))
 				continue
@@ -746,8 +751,10 @@ SUBSYSTEM_DEF(job)
 	if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 		return
 
+	#ifdef USES_PQ
 	if(get_playerquality(player.ckey) < job.min_pq)
 		return
+	#endif
 
 	if((player.client.prefs.lastclass == job.title) && (!job.bypass_lastclass))
 		return

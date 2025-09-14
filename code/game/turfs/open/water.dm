@@ -34,7 +34,7 @@
 	heavyfootstep = null
 	landsound = 'sound/foley/jumpland/waterland.ogg'
 	shine = SHINE_SHINY
-	nomouseover = FALSE
+	no_over_text = FALSE
 	water_level = 2
 	var/uses_level = TRUE
 	var/datum/reagent/water_reagent = /datum/reagent/water

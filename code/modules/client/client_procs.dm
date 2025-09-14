@@ -768,10 +768,11 @@ GLOBAL_LIST_EMPTY(respawncounts)
 
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 
+	SSjob.save_player_boosts(ckey)
 	SSambience.remove_ambience_client(src)
+	SSmouse_entered.hovers -= src
 	seen_messages = null
 	Master.UpdateTickRate()
-	SSjob.save_player_boosts(ckey)
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
 	return QDEL_HINT_HARDDEL_NOW
 

@@ -689,6 +689,13 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 
+/datum/repeatable_crafting_recipe/leather/standalone/boots/watch
+	name = "watch boots"
+	output = /obj/item/clothing/shoes/boots/leather/advanced/watch
+	requirements = list(/obj/item/natural/hide/cured = 1,
+				/obj/item/natural/fibers = 1, /obj/item/ingot/iron)
+	craftdiff = 4
+
 /datum/repeatable_crafting_recipe/leather/standalone/gatemaster_coat
 	name = "gatemaster's coat"
 	output = /obj/item/clothing/armor/leather/jacket/gatemaster_jacket

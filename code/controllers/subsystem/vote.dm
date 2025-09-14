@@ -144,6 +144,9 @@ SUBSYSTEM_DEF(vote)
 				SSmapping.changemap(global.config.maplist[.])
 				SSmapping.map_voted = TRUE
 			if("endround")
+				if(SSgamemode.roundvoteend)
+					log_game("LOG VOTE: END VOTE TRIGGERED RESULT AS ROUND IS ENDING")
+					return
 				if(. == "Continue Playing")
 					log_game("LOG VOTE: CONTINUE PLAYING AT [REALTIMEOFDAY]")
 					GLOB.round_timer = GLOB.round_timer + (32 MINUTES)

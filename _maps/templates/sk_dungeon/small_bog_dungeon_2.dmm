@@ -1,9 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ad" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,
@@ -21,7 +21,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "cj" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt,
@@ -72,10 +72,10 @@
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "qa" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "qk" = (
@@ -89,7 +89,7 @@
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "sB" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -98,7 +98,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "ta" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/cobblerock,
@@ -114,10 +114,10 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "vS" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
@@ -135,8 +135,8 @@
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "Bs" = (
-/obj/structure/fluff/railing/fence,
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade,
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -164,7 +164,7 @@
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "GU" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/bog)
 "Ii" = (
@@ -172,7 +172,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "Iz" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "JA" = (
@@ -182,7 +182,7 @@
 /turf/closed/wall/mineral/tent,
 /area/rogue/outdoors/bog)
 "Ku" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
 /turf/open/floor/dirt/road,
@@ -224,10 +224,10 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "Vm" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 1
 	},
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 4
 	},
 /turf/open/floor/dirt/road,
@@ -247,7 +247,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/bog)
 "Yt" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/dirt/road,

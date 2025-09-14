@@ -117,21 +117,53 @@
 		new /obj/item/natural/stone(src)
 	if (mineralType && (mineralAmt > 0))
 		if(prob(33)) //chance to spawn ore directly
-			new mineralType(src)
+			var/obj/item/ore/new_ore = new mineralType(src)
+			// Apply quality based on mining skill and luck
+			apply_mining_quality(new_ore, user)
 		if(rockType) //always spawn at least 1 rock
-			new rockType(src)
+			var/obj/item/natural/rock/new_rock = new rockType(src)
+			// Rocks can also have quality
+			apply_mining_quality(new_rock, user)
 			if(prob(23))
-				new rockType(src)
+				var/obj/item/natural/rock/bonus_rock = new rockType(src)
+				apply_mining_quality(bonus_rock, user)
 		SSblackbox.record_feedback("tally", "ore_mined", mineralAmt, mineralType)
 	else if(user?.stat_roll(STATKEY_LCK,2,10))
 		var/newthing = pickweight(list(/obj/item/natural/rock/salt = 2, /obj/item/natural/rock/iron = 1, /obj/item/natural/rock/coal = 2))
-//		to_chat(user, "<span class='notice'>Bonus ducks!</span>")
-		new newthing(src)
+		var/obj/item/bonus_item = new newthing(src)
+		apply_mining_quality(bonus_item, user)
 	var/flags = NONE
-	if(defer_change) // TODO: make the defer change var a var for any changeturf flag
+	if(defer_change)
 		flags = CHANGETURF_DEFER_CHANGE
 	ScrapeAway(null, flags)
 	addtimer(CALLBACK(src, PROC_REF(AfterChange)), 1, TIMER_UNIQUE)
+
+/turf/closed/mineral/proc/apply_mining_quality(obj/item/item, mob/living/user)
+	if(!user || !istype(item, /obj/item/ore))
+		return
+
+	var/mining_skill = user.get_skill_level(/datum/skill/labor/mining)
+
+	// Base quality calculation - mainly chance-based with skill influence
+	var/base_chance = 5 // 5% chance for quality 2
+	var/skill_bonus = mining_skill * 2 // +2% per skill level
+	var/luck_bonus = 0
+
+	// Check for luck bonus
+	if(user.stat_roll(STATKEY_LCK, 3, 15))
+		luck_bonus = 10
+
+	var/total_chance = base_chance + skill_bonus + luck_bonus
+	var/quality = 1 // Default quality
+
+	// Determine quality tier
+	if(prob(total_chance))
+		quality = 2
+		if(prob(total_chance / 3)) // Much rarer
+			quality = 3
+			if(prob(total_chance / 6)) // Very rare
+				quality = 4
+	item.set_quality(quality)
 
 /turf/closed/mineral/attack_animal(mob/living/simple_animal/user)
 	if((user.environment_smash & ENVIRONMENT_SMASH_WALLS) || (user.environment_smash & ENVIRONMENT_SMASH_RWALLS))

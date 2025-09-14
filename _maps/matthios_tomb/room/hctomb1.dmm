@@ -114,7 +114,7 @@
 /turf/open/floor/cobblerock,
 /area/rogue/under/tomb)
 "gA" = (
-/obj/structure/fluff/railing/fence{
+/obj/structure/fluff/railing/tall/palisade{
 	dir = 8
 	},
 /turf/open/floor/naturalstone,
@@ -512,7 +512,7 @@
 /turf/open/floor/metal/barograte,
 /area/rogue/under/tomb/indoors)
 "Cr" = (
-/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/tall/palisade,
 /turf/open/floor/naturalstone,
 /area/rogue/under/tomb/cave)
 "CI" = (

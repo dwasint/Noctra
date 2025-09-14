@@ -4,7 +4,7 @@
 	screen_loc = "CENTER:-16,CENTER:-16"
 	appearance_flags = PIXEL_SCALE
 	plane = HUD_PLANE
-	nomouseover = TRUE
+	no_over_text = TRUE
 
 /atom/movable/fishingoverlay/base
 	icon_state = "fishingbase"
