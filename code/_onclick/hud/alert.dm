@@ -186,12 +186,12 @@
 /atom/movable/screen/alert/status_effect/debuff/hot
 	name = "Too Hot"
 	desc = ""
-	icon_state = "hot"
+	icon_state = "debuff"
 
 /atom/movable/screen/alert/status_effect/debuff/cold
 	name = "Too Cold"
 	desc = ""
-	icon_state = "cold"
+	icon_state = "debuff"
 
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"
