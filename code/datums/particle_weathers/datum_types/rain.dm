@@ -33,7 +33,7 @@
 	target_trait = PARTICLEWEATHER_RAIN
 	forecast_tag = "rain"
 
-	temperature_modification = -3
+	temperature_modification = -1
 
 /datum/particle_weather/rain_storm
 	name = "Rain"
@@ -53,7 +53,7 @@
 	target_trait = PARTICLEWEATHER_RAIN
 	forecast_tag = "rain"
 
-	temperature_modification = -5
+	temperature_modification = -2
 
 	COOLDOWN_DECLARE(thunder)
 
