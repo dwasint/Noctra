@@ -413,5 +413,25 @@
                 "admin": "subtle messages are more visible to the player"
             }
         ]
+    },
+    "2025-09-15": {
+        "Wouju": [
+            {
+                "rscadd": "Added craftable dice cups and dice"
+            }
+        ],
+        "dwasint": [
+            {
+                "rscadd": "composters can now be clicked on with a shovel to bulk remove compost"
+            }
+        ],
+        "snowyseshi": [
+            {
+                "rscadd": "watch boots with a special footstep noise + change footman cudgel to iron mace"
+            },
+            {
+                "sound": "added heavy footstep sound"
+            }
+        ]
     }
 }
