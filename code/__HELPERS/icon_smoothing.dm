@@ -196,16 +196,16 @@ DEFINE_BITFIELD(smoothing_junction, list(
 	switch(dir)
 		if(NORTH)
 			add = "[edgeicon]-n"
-			y = -32
+			y = -world.icon_size
 		if(SOUTH)
 			add = "[edgeicon]-s"
-			y = 32
+			y = world.icon_size
 		if(EAST)
 			add = "[edgeicon]-e"
-			x = -32
+			x = -world.icon_size
 		if(WEST)
 			add = "[edgeicon]-w"
-			x = 32
+			x = world.icon_size
 
 	if(!add)
 		return
