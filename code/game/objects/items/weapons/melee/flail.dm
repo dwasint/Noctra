@@ -205,8 +205,8 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -32
 	pixel_x = -32
-	inhand_x_dimension = 128
-	inhand_y_dimension = 128
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT

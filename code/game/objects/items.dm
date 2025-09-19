@@ -28,8 +28,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	var/worn_x_dimension = 64
 	var/worn_y_dimension = 64
 	//Same as above but for inhands, uses the lefthand_ and righthand_ file vars
-	var/inhand_x_dimension = 128
-	var/inhand_y_dimension = 128
+	var/inhand_x_dimension = 64
+	var/inhand_y_dimension = 64
 
 	var/no_effect = FALSE
 
@@ -451,8 +451,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 	// Initalize addon for the var for custom inhands 32x32.
 	if(!experimental_inhand)
-		inhand_x_dimension = 64
-		inhand_y_dimension = 64
+		inhand_x_dimension = 32
+		inhand_y_dimension = 32
 
 	if(grid_width <= 0)
 		grid_width = (w_class * world.icon_size)

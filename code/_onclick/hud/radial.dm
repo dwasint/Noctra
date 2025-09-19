@@ -100,7 +100,7 @@ GLOBAL_LIST_EMPTY(radial_menus)
 	var/next_check = 0
 	var/check_delay = DEFAULT_CHECK_DELAY
 
-	var/radius = 32
+	var/radius = 64
 	var/starting_angle = 0
 	var/ending_angle = 360
 	var/zone = 360

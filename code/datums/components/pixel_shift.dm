@@ -6,7 +6,7 @@
 	//what type of shifting parent is doing, or if they aren't shifting at all
 	var/shifting = FALSE
 	//the maximum amount we/an item can move
-	var/maximum_pixel_shift = 16
+	var/maximum_pixel_shift = 32
 	//If we are shifted
 	var/is_shifted = FALSE
 	//Amount of shifting necessary to make the parent passthroughable

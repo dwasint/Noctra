@@ -13,8 +13,8 @@
 	icon_state = "quake_background"
 	mask_icon_state = "quake_scroll_mask"
 
-	offset_x = -190
-	offset_y = -215
+	offset_x = -380
+	offset_y = -430
 	special_offset = -70
 	special_x_offset = 180
 
@@ -30,9 +30,9 @@
 	// Scroll dimensions
 	var/console_width = 19 // tiles
 	var/console_height = 10 // tiles
-	visible_width = 608 // 19 * 32
-	visible_height = 320 // 10 * 32
-	max_height = 320
+	visible_width = 1216 // 19 * 32
+	visible_height = 640 // 10 * 32
+	max_height = 640
 
 /obj/abstract/visual_ui_element/scrollable/console_output/New(turf/loc, datum/visual_ui/P)
 	. = ..()

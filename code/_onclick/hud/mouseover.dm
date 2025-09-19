@@ -28,7 +28,7 @@
 		return
 	user_hud.mouse_over_text.screen_loc = null
 
-#define HOVER_TEXT_WIDTH 128
+#define HOVER_TEXT_WIDTH 256
 
 /// Create a maptext over a hovered atom, at the hovered atom's position
 /atom/proc/create_over_text(mob/user, list/modifiers)

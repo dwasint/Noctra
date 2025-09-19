@@ -384,10 +384,10 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	client.screen += T
 	T.maptext = MAPTEXT_BLACKMOOR("<span class='center' style='vertical-align:top; color: #820000;\
 		text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;'>[A.first_time_text]</span>")
-	T.maptext_width = 205
-	T.maptext_height = 209
-	T.maptext_x = 12
-	T.maptext_y = 64
+	T.maptext_width = 410
+	T.maptext_height = 418
+	T.maptext_x = 24
+	T.maptext_y = 128
 	var/used_sound = 'sound/misc/stings/generic.ogg'
 	var/map_sound = SSmapping.config.custom_area_sound
 	var/area_sound = A.custom_area_sound

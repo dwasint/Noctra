@@ -4,8 +4,8 @@
 	icon_state = "quake_input"
 	layer = VISUAL_UI_BUTTON
 	mouse_opacity = 1
-	offset_x = -190
-	offset_y = -215
+	offset_x = -380
+	offset_y = -430
 
 	///modifiers
 	var/shift_down = FALSE

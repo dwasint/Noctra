@@ -5,10 +5,10 @@
 #define MAPTEXT_CENTER(text) {"<span class='maptext center'>[##text]</span>"}
 
 /// Large area entry maptext
-#define MAPTEXT_BLACKMOOR(text) {"<span style='font-family: "Blackmoor LET"; font-size: 24pt; -dm-text-outline: 1px black'>[##text]</span>"}
+#define MAPTEXT_BLACKMOOR(text) {"<span style='font-family: "Blackmoor LET"; font-size: 48pt; -dm-text-outline: 1px black'>[##text]</span>"}
 
 /// Pixel maptext
-#define MAPTEXT_PIXELIFY(text) {"<span style='font-family: "Pixelify Sans"; font-size: 8pt; -dm-text-outline: 1px black'>[##text]</span>"}
+#define MAPTEXT_PIXELIFY(text) {"<span style='font-family: "Pixelify Sans"; font-size: 16pt; -dm-text-outline: 1px black'>[##text]</span>"}
 
 /// Macro from Lummox used to get height from a MeasureText proc
 #define WXH_TO_HEIGHT(measurement, return_var) \

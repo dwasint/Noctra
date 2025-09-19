@@ -1,5 +1,5 @@
 #define LOBBY_SCREEN_SLIDE_DURATION 1.25 SECONDS
-#define MOVE_AMOUNT 400
+#define MOVE_AMOUNT 800
 
 /datum/hud/new_player
 	///Whether the menu is currently on the client's screen or not
@@ -65,7 +65,7 @@
 	icon_state = "background"
 	plane = LOBBY_MENU_PLANE
 	layer = LOBBY_BACKGROUND_LAYER
-	screen_loc = "WEST:10,TOP:10"
+	screen_loc = "WEST:20,TOP:20"
 	alpha = 150
 
 /atom/movable/screen/lobby/button
@@ -135,7 +135,7 @@
 ///Prefs menu
 /atom/movable/screen/lobby/button/character_setup
 	name = "View Character Setup"
-	screen_loc = "WEST:19,TOP:-10"
+	screen_loc = "WEST:38,TOP:-20"
 	icon = 'icons/hud/lobby/character_sheet.dmi'
 	icon_state = "character_sheet_disabled"
 	base_icon_state = "character_sheet"
@@ -165,7 +165,7 @@
 ///Button that appears before the game has started
 /atom/movable/screen/lobby/button/ready
 	name = "Toggle Readiness"
-	screen_loc = "WEST:20,TOP:-68"
+	screen_loc = "WEST:40,TOP:-136"
 	icon = 'icons/hud/lobby/ready.dmi'
 	icon_state = "not_ready"
 	base_icon_state = "not_ready"
@@ -213,7 +213,7 @@
 ///Shown when the game has started
 /atom/movable/screen/lobby/button/join
 	name = "Join Game"
-	screen_loc = "WEST:20,TOP:-68"
+	screen_loc = "WEST:40,TOP:-136"
 	icon = 'icons/hud/lobby/join_game.dmi'
 	icon_state = "" //Default to not visible
 	base_icon_state = "join_game"
@@ -276,7 +276,7 @@
 
 /atom/movable/screen/lobby/button/lore
 	name = "Lore Primer"
-	screen_loc = "WEST:20,TOP:-101"
+	screen_loc = "WEST:40,TOP:-202"
 	icon = 'icons/hud/lobby/lore.dmi'
 	icon_state = "lore"
 	base_icon_state = "lore"
@@ -291,7 +291,7 @@
 
 /atom/movable/screen/lobby/button/migration
 	name = "Migration"
-	screen_loc = "WEST:20,TOP:-134"
+	screen_loc = "WEST:40,TOP:-268"
 	icon = 'icons/hud/lobby/migration.dmi'
 	icon_state = "migration"
 	base_icon_state = "migration"
@@ -307,7 +307,7 @@
 
 /atom/movable/screen/lobby/button/actors
 	name = "Actors"
-	screen_loc = "WEST:20,TOP:-167"
+	screen_loc = "WEST:40,TOP:-334"
 	icon = 'icons/hud/lobby/actors.dmi'
 	icon_state = "actors"
 	base_icon_state = "actors"
@@ -325,7 +325,7 @@
 	icon_state = "collapse"
 	base_icon_state = "collapse"
 	layer = LOBBY_BELOW_MENU_LAYER
-	screen_loc = "WEST:10,TOP:-390"
+	screen_loc = "WEST:20,TOP:-780"
 	always_shown = TRUE
 
 	var/blip_enabled = TRUE

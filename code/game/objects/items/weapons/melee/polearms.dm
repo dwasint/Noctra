@@ -5,8 +5,8 @@
 	throwforce = DAMAGE_STAFF
 	icon = 'icons/roguetown/weapons/64.dmi'
 	SET_BASE_PIXEL(-32, -32)
-	inhand_x_dimension = 128
-	inhand_y_dimension = 128
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
@@ -590,8 +590,8 @@
 	icon_state = "scythe"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	SET_BASE_PIXEL(-32, -32)
-	inhand_x_dimension = 128
-	inhand_y_dimension = 128
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT
@@ -624,8 +624,8 @@
 	// icon_state = "bonespear"
 	icon_state = "stonespear_sk"
 	//SET_BASE_PIXEL(-32, -32)
-	inhand_x_dimension = 128
-	inhand_y_dimension = 128
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT

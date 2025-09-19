@@ -1290,6 +1290,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	if(prefs && prefs.chat_toggles & CHAT_PULLR)
 		to_chat(src, announcement)
 
+GLOBAL_VAR_INIT(text_x, 40)
+GLOBAL_VAR_INIT(text_y, 2)
 /client/proc/show_character_previews(mutable_appearance/MA)
 	var/pos = 0
 	for(var/D in GLOB.cardinals)
@@ -1304,15 +1306,18 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		screen += O
 		O.appearance = MA
 		O.dir = D
+		var/matrix/matrix = matrix()
+		matrix.Scale(0.5, 0.5)
+		O.transform = matrix
 		switch(pos)
 			if(1)
-				O.screen_loc = "character_preview_map:1:2,2:-18"
+				O.screen_loc = "character_preview_map:1:-5,2:-40"
 			if(2)
-				O.screen_loc = "character_preview_map:0:2,2:-18"
+				O.screen_loc = "character_preview_map:0:5,2:-40"
 			if(3)
-				O.screen_loc = "character_preview_map:1:2,0:10"
+				O.screen_loc = "character_preview_map:1:-5,0:40"
 			if(4)
-				O.screen_loc = "character_preview_map:0:2,0:10"
+				O.screen_loc = "character_preview_map:0:5,0:40"
 
 /client/proc/clear_character_previews()
 	for(var/atom/movable/screen/S in char_render_holders)

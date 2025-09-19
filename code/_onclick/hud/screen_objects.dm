@@ -1345,7 +1345,7 @@
 	member_key = mob.ckey
 	var/display_name = mob.real_name || mob.name
 
-	maptext = MAPTEXT({"<div style="text-align: left; font-family: 'Small Fonts'; font-size: 7px; color: #FFFFFF; text-shadow: 1px 1px 0px #000000;">\
+	maptext = MAPTEXT({"<div style="text-align: left; font-family: 'Small Fonts'; font-size: 14px; color: #FFFFFF; text-shadow: 1px 1px 0px #000000;">\
 		<div style="color: #FFFFFF;">[display_name]</div>\
 		<div style="color: #FFD700; margin-top: 1px;">[rank]</div>\
 	</div>"})

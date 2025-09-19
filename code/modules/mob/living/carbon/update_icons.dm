@@ -285,7 +285,7 @@
 		inv?.update_appearance()
 
 	if(head)
-		if(hide_nonstandard && (head.worn_x_dimension != 32 || head.worn_y_dimension != 32))
+		if(hide_nonstandard && (head.worn_x_dimension != 64 || head.worn_y_dimension != 64))
 			update_hud_head(head)
 			return
 
