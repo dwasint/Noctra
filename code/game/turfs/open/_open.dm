@@ -103,7 +103,7 @@
 			to_chat(C, "<span class='notice'>I slipped[ O ? " on the [O.name]" : ""]!</span>")
 			playsound(C.loc, 'sound/blank.ogg', 50, TRUE, -3)
 
-		SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)
+		C.add_stress(/datum/stress_event/slipped)
 		if(force_drop)
 			for(var/obj/item/I in C.held_items)
 				C.accident(I)
@@ -187,6 +187,8 @@
 	if(SSParticleWeather.runningWeather)
 		ambient_temperature += SSParticleWeather.runningWeather?.temperature_modification
 	if(ambient_temperature < 15 && (outdoor_effect?.weatherproof || !outdoor_effect))
+		if(ambient_temperature < 0)
+			ambient_temperature = 0
 		ambient_temperature += 10
 	if(!("[z]" in GLOB.cellar_z))
 		if(SSmapping.level_has_any_trait(z, list(ZTRAIT_CELLAR_LIKE)))

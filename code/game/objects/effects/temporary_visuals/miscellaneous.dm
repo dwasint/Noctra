@@ -8,11 +8,6 @@
 	var/splatter_type = "splatter"
 
 /obj/effect/temp_visual/dir_setting/bloodsplatter/Initialize(mapload, set_dir)
-	icon_state = "[splatter_type][rand(1, 6)]"
-	. = ..()
-	animate(src, alpha = 0, time = duration)
-/*
-/obj/effect/temp_visual/dir_setting/bloodsplatter/Initialize(mapload, set_dir)
 	if(set_dir in GLOB.diagonals)
 		icon_state = "[splatter_type][pick(1, 2, 6)]"
 	else
@@ -45,7 +40,7 @@
 			target_pixel_y = -16
 			layer = ABOVE_MOB_LAYER
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
-*/
+
 /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter
 	splatter_type = "xsplatter"
 
@@ -361,6 +356,29 @@
 	I.alpha = 255
 	I.appearance_flags = RESET_ALPHA
 	animate(I, alpha = 0, time = duration)
+
+// NOCTRA STUFF
+/obj/effect/temp_visual/heart/sex_effects
+	duration = 4 SECONDS
+	plane = GAME_PLANE_UPPER
+
+/obj/effect/temp_visual/heart/sex_effects/Initialize(mapload)
+	. = ..()
+	var/random_pixel_w = rand(2, 5)
+	var/random_time = rand(2, 7) * 0.1 SECONDS
+	var/random_time2 = random_time + rand(5, 15) * 0.1 SECONDS
+	layer = prob(50) ? ABOVE_MOB_LAYER : BELOW_MOB_LAYER
+
+	animate(src, time = 5 SECONDS, transform = transform.Scale(0.1), flags = ANIMATION_PARALLEL)
+	animate(src, time = random_time, pixel_w = random_pixel_w, easing = CIRCULAR_EASING, flags = ANIMATION_PARALLEL|ANIMATION_RELATIVE)
+	animate(time = random_time2, pixel_w = -random_pixel_w, easing = CIRCULAR_EASING, flags = ANIMATION_RELATIVE)
+	animate(time = random_time, pixel_w = -random_pixel_w, easing = CIRCULAR_EASING, flags = ANIMATION_RELATIVE)
+	animate(time = random_time2, pixel_w = random_pixel_w, easing = CIRCULAR_EASING, flags = ANIMATION_RELATIVE, loop = -1)
+
+/obj/effect/temp_visual/heart/sex_effects/red_heart
+	name = "red heart"
+	icon = 'icons/effects/noctravfx.dmi'
+	icon_state = "redheart"
 
 /obj/effect/temp_visual/warp_cube
 	duration = 5

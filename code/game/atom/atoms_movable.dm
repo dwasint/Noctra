@@ -401,7 +401,7 @@
 			SEND_SIGNAL(old_pulling, COMSIG_ATOM_NO_LONGER_PULLED, src)
 	setGrabState(GRAB_PASSIVE)
 
-/atom/movable/proc/Move_Pulled(atom/A)
+/atom/movable/proc/Move_Pulled(atom/movable/A)
 	if(!pulling)
 		return FALSE
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
@@ -427,7 +427,10 @@
 			source.update_vision_cone()
 	return TRUE
 
-/mob/living/Move_Pulled(atom/A)
+/atom/movable/proc/after_being_moved_by_pull(atom/movable/puller)
+	return
+
+/mob/living/Move_Pulled(atom/movable/A)
 	. = ..()
 	if(!. || !isliving(A))
 		return
@@ -530,64 +533,57 @@
 			lastcardinal = direct
 			. = ..()
 		else //Diagonal move, split it into cardinal moves
+			moving_diagonally = FIRST_DIAG_STEP
+			var/first_step_dir
+			// The `&& moving_diagonally` checks are so that a forceMove taking
+			// place due to a Crossed, Bumped, etc. call will interrupt
+			// the second half of the diagonal movement, or the second attempt
+			// at a first half if step() fails because we hit something.
 			if (direct & NORTH)
 				if (direct & EAST)
-					if(lastcardinal == NORTH)
-						direction_to_move = EAST
-						if(!step(src, EAST))
-							direction_to_move = NORTH
-							. = step(src, NORTH)
-					else if(lastcardinal == EAST)
-						direction_to_move = NORTH
-						if(!step(src, NORTH))
-							direction_to_move = EAST
-							. = step(src, EAST)
-					else
-						direction_to_move = pick(NORTH,EAST)
-						. = step(src, direction_to_move)
+					if (step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if (moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
 				else if (direct & WEST)
-					if(lastcardinal == NORTH)
-						direction_to_move = WEST
-						if(!step(src, WEST))
-							direction_to_move = NORTH
-							. = step(src, NORTH)
-					else if(lastcardinal == WEST)
-						direction_to_move = NORTH
-						if(!step(src, NORTH))
-							direction_to_move = WEST
-							. = step(src, WEST)
-					else
-						direction_to_move = pick(NORTH,WEST)
-						. = step(src, direction_to_move)
+					if (step(src, NORTH) && moving_diagonally)
+						first_step_dir = NORTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if (moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, NORTH)
 			else if (direct & SOUTH)
 				if (direct & EAST)
-					if(lastcardinal == SOUTH)
-						direction_to_move = EAST
-						if(!step(src, EAST))
-							direction_to_move = SOUTH
-							. = step(src, SOUTH)
-					else if(lastcardinal == EAST)
-						direction_to_move = SOUTH
-						if(!step(src, SOUTH))
-							direction_to_move = EAST
-							. = step(src, EAST)
-					else
-						direction_to_move = pick(SOUTH,EAST)
-						. = step(src, direction_to_move)
+					if (step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, EAST)
+					else if (moving_diagonally && step(src, EAST))
+						first_step_dir = EAST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
 				else if (direct & WEST)
-					if(lastcardinal == SOUTH)
-						direction_to_move = WEST
-						if(!step(src, WEST))
-							direction_to_move = SOUTH
-							. = step(src, SOUTH)
-					else if(lastcardinal == WEST)
-						direction_to_move = SOUTH
-						if(!step(src, SOUTH))
-							direction_to_move = WEST
-							. = step(src, WEST)
-					else
-						direction_to_move = pick(SOUTH,WEST)
-						. = step(src, direction_to_move)
+					if (step(src, SOUTH) && moving_diagonally)
+						first_step_dir = SOUTH
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, WEST)
+					else if (moving_diagonally && step(src, WEST))
+						first_step_dir = WEST
+						moving_diagonally = SECOND_DIAG_STEP
+						. = step(src, SOUTH)
+			if(moving_diagonally == SECOND_DIAG_STEP)
+				if(!. && update_dir)
+					setDir(first_step_dir)
+				else if(!inertia_moving)
+					newtonian_move(dir2angle(direct))
+			moving_diagonally = 0
+			return
 
 	if(!loc || (loc == oldloc && oldloc != newloc))
 		last_move = 0
@@ -609,6 +605,7 @@
 						pulling_update_dir = FALSE
 						break
 				pulling.Move(T, get_dir(pulling, T), glide_size, pulling_update_dir) //the pullee tries to reach our previous position
+				pulling.after_being_moved_by_pull(src)
 				pulling.moving_from_pull = null
 			check_pulling()
 
@@ -1478,6 +1475,19 @@
 	var/direction = get_dir(old_loc, new_loc)
 	loc = new_loc
 	Moved(old_loc, direction, TRUE)
+
+/atom/movable/proc/pushed(new_loc, dir_pusher_to_pushed, glize_size, pusher_dir)
+	if(!Move(new_loc, dir_pusher_to_pushed, glize_size))
+		return FALSE
+
+	after_pushed(arglist(args))
+
+	return TRUE
+
+/// called after this atom has been successfully pushed
+/atom/movable/proc/after_pushed(new_loc, dir_pusher_to_pushed, glize_size, pusher_dir)
+	if(pusher_dir)
+		setDir(dir_pusher_to_pushed)
 
 #undef ATTACK_ANIMATION_PIXEL_DIFF
 #undef ATTACK_ANIMATION_TIME

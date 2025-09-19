@@ -722,7 +722,6 @@
 	C.next_attack_msg.Cut()
 	if(C.apply_damage(damage, BRUTE, limb_grabbed, armor_block))
 		playsound(C.loc, "smallslash", 100, FALSE, -1)
-		limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		var/datum/wound/caused_wound = limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		if(user.mind)
 			//TODO: Werewolf Signal
@@ -833,7 +832,7 @@
 						if(H.virginity)
 							to_chat(user, span_love("Virgin blood, delicious!"))
 							var/mob/living/carbon/V = user
-							V.add_stress(/datum/stressevent/vblood)
+							V.add_stress(/datum/stress_event/vblood)
 							var/used_vitae = 150
 
 							if(C.bloodpool >= 750)

@@ -41,7 +41,6 @@
 
 	#ifdef USES_PQ
 	if(client)
-		#ifdef USES_PQ
 		if(get_playerquality(client.ckey) <= -20)
 			to_chat(usr, "<span class='warning'>I can't use custom emotes. (LOW PQ)</span>")
 			return

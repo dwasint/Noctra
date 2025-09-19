@@ -319,7 +319,6 @@ Works together with spawning an observer, noted above.
 				return ..()
 			#ifdef USES_PQ
 			var/datum/antagonist/zombie/Z = mind.has_antag_datum(/datum/antagonist/zombie)
-			#ifdef USES_PQ
 			if(Z && get_playerquality(ckey) < 15)
 				can_reenter_corpse = FALSE
 			#endif
