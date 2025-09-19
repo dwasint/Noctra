@@ -246,8 +246,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 	dynamic_hair_suffix = ""
 	salvage_result = /obj/item/natural/silk
 	flags_inv = HIDEFACE

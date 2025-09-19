@@ -119,6 +119,6 @@
 	I.pixel_y = I.base_pixel_y
 	var/mutable_appearance/M = new /mutable_appearance(I)
 	M.transform *= 0.8
-	M.pixel_y = 6
+	M.pixel_y = 12
 	M.pixel_x = 0
 	. += M

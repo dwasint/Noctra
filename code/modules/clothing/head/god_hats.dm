@@ -55,8 +55,8 @@
 	icon_state = "eorahood"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 	resistance_flags = FIRE_PROOF // Made of metal
 	armor = ARMOR_WEAK
 	salvage_result = NUTRITION_LEVEL_HUNGRY
@@ -79,8 +79,8 @@
 	dropshrink = 0.8
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF

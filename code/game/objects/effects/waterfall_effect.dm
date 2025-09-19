@@ -2,7 +2,7 @@
 	name = "waterfall"
 	icon = 'icons/effects/waterfall.dmi'
 	icon_state = "waterfall_temp"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 	var/datum/reagent/water_reagent = /datum/reagent/water
 
 /obj/effect/waterfall/Initialize()

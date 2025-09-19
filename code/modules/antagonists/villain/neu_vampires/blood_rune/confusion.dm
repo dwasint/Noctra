@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(confusion_victims, list())
 	anchored = 1
 	icon = 'icons/effects/vampire/64x64.dmi'
 	icon_state = ""
-	SET_BASE_PIXEL(-16, -16)
+	SET_BASE_PIXEL(-32, -32)
 	plane = ABOVE_LIGHTING_PLANE
 	mouse_opacity = 0
 	var/duration = 5

@@ -16,13 +16,13 @@
 	desc = "A list of the worst scoundrels this realm has to offer along with their face sketches."
 	icon_state = "wanted1"
 	layer = BELOW_MOB_LAYER
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/wantedposter/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/structure/fluff/walldeco/wantedposter/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/walldeco/wantedposter/Initialize()
 	. = ..()
@@ -222,7 +222,7 @@
 	desc = "A drape of fabric."
 	icon_state = "black_drape"
 	dir = SOUTH
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/wallshield
 	name = ""
@@ -259,17 +259,17 @@
 	icon_state = "maidensigil"
 	mouse_opacity = 0
 	dir = SOUTH
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/maidensigil/r
 	dir = WEST
-	SET_BASE_PIXEL(16, 0)
+	SET_BASE_PIXEL(32, 0)
 
 /obj/structure/fluff/walldeco/bigpainting
 	name = "painting"
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "sherwoods"
-	SET_BASE_PIXEL(-16, 32)
+	SET_BASE_PIXEL(-32, 64)
 
 /obj/structure/fluff/walldeco/bigpainting/lake
 	icon_state = "lake"
@@ -278,7 +278,7 @@
 	name = "painting"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "mona"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/chains
 	name = "hanging chains"
@@ -334,14 +334,14 @@
 	icon_state = "skullspike"
 	plane = -1
 	layer = ABOVE_MOB_LAYER
-	SET_BASE_PIXEL(8, 24)
+	SET_BASE_PIXEL(16, 48)
 
 /*	..................   The Drunken Saiga   ................... */
 /obj/structure/fluff/walldeco/sign/saiga
 	name = "The Drunken Saiga"
 	icon_state = "shopsign_inn_saiga_right"
 	plane = -1
-	SET_BASE_PIXEL(3, 16)
+	SET_BASE_PIXEL(6, 32)
 
 /obj/structure/fluff/walldeco/sign/saiga/left
 	icon_state = "shopsign_inn_saiga_left"
@@ -349,20 +349,20 @@
 /obj/structure/fluff/walldeco/sign/trophy
 	name = "saiga trophy"
 	icon_state = "saiga_trophy"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /*	..................   Feldsher Sign   ................... */
 /obj/structure/fluff/walldeco/feldshersign
 	name = "feldsher sign"
 	icon_state = "feldsher"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /*	..................   Weaponsmith Sign   ................... */
 /obj/structure/fluff/walldeco/sign/weaponsmithsign
 	name = "weaponsmith shop sign"
 	icon_state = "shopsign_weaponsmith_right"
 	plane = -1
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/fluff/walldeco/sign/weaponsmithsign/left
 	icon_state = "shopsign_weaponsmith_left"
@@ -372,7 +372,7 @@
 	name = "armorsmith shop sign"
 	icon_state = "shopsign_armorsmith_right"
 	plane = -1
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/fluff/walldeco/sign/armorsmithsign/left
 	icon_state = "shopsign_armorsmith_left"
@@ -382,7 +382,7 @@
 	name = "merchant shop sign"
 	icon_state = "shopsign_merchant_right"
 	plane = -1
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/fluff/walldeco/sign/merchantsign/left
 	icon_state = "shopsign_merchant_left"
@@ -392,7 +392,7 @@
 	name = "apothecary sign"
 	icon_state = "shopsign_apothecary_right"
 	plane = -1
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/fluff/walldeco/sign/apothecarysign/left
 	icon_state = "shopsign_apothecary_left"
@@ -400,40 +400,40 @@
 /*	..................   Wall decorations   ................... */
 /obj/structure/fluff/walldeco/bath // suggestive stonework
 	icon_state = "bath1"
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 	alpha = 210
 
 /obj/structure/fluff/walldeco/bath/two
 	icon_state = "bath2"
-	SET_BASE_PIXEL(-29, 0)
+	SET_BASE_PIXEL(-58, 0)
 
 /obj/structure/fluff/walldeco/bath/three
 	icon_state = "bath3"
-	SET_BASE_PIXEL(-29, 0)
+	SET_BASE_PIXEL(-58, 0)
 
 /obj/structure/fluff/walldeco/bath/four
 	icon_state = "bath4"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/bath/five
 	icon_state = "bath5"
-	SET_BASE_PIXEL(-29, 0)
+	SET_BASE_PIXEL(-58, 0)
 
 /obj/structure/fluff/walldeco/bath/six
 	icon_state = "bath6"
-	SET_BASE_PIXEL(-29, 0)
+	SET_BASE_PIXEL(-58, 0)
 
 /obj/structure/fluff/walldeco/bath/seven
 	icon_state = "bath7"
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/structure/fluff/walldeco/bath/gents
 	icon_state = "gents"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/bath/ladies
 	icon_state = "ladies"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/bath/wallrope
 	icon_state = "wallrope"
@@ -459,7 +459,7 @@
 
 /obj/structure/fluff/walldeco/bath/wallpipes
 	icon_state = "wallpipe"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/bath/wallpipes/innie
 	icon_state = "wallpipe_innie"
@@ -471,7 +471,7 @@
 
 /obj/structure/fluff/walldeco/bath/random
 	icon_state = "bath"
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/bath/random/Initialize()
 	. = ..()
@@ -483,13 +483,13 @@
 	icon_state = "vinez"
 
 /obj/structure/fluff/walldeco/vinez/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/walldeco/vinez/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/structure/fluff/walldeco/vinez/offset
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/walldeco/vinez/blue
 	icon_state = "vinez_blue"

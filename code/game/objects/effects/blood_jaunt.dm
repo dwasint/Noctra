@@ -6,8 +6,8 @@
 	invisibility = SEE_INVISIBLE_LIVING
 	alpha = 127
 	plane = ABOVE_LIGHTING_PLANE
-	pixel_x = -32
-	pixel_y = -32
+	pixel_x = -64
+	pixel_y = -64
 	animate_movement = 0
 	var/atom/movable/rider = null//lone user?
 	var/list/packed = list()//moving a lot of stuff?

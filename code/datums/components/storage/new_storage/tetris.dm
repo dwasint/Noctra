@@ -52,7 +52,7 @@
 /datum/component/storage
 	screen_max_columns = 3
 	screen_max_rows = 8
-	screen_pixel_x = 5
+	screen_pixel_x = 10
 	screen_pixel_y = 0
 	screen_start_x = 1
 	screen_start_y = 10

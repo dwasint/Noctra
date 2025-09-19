@@ -241,10 +241,10 @@
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	icon_state = "malumhammer"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	pixel_y = -32
+	pixel_x = -32
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_LONG

@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(transformation_animation_objects)
 		transform_effect.pixel_y = transform_effect.base_pixel_y + 16
 		transform_effect.alpha = 255
 		transformation_objects += transform_effect
-		animate(transform_effect,pixel_y=-16,time=time)
+		animate(transform_effect,pixel_y=-32,time=time)
 		animate(alpha=0)
 
 	GLOB.transformation_animation_objects[src] = transformation_objects

@@ -192,7 +192,7 @@
 	icon_state = "wisp"
 	light_outer_range =  4
 	light_color = "#3FBAFD"
-	SET_BASE_PIXEL(20, 0)
+	SET_BASE_PIXEL(40, 0)
 
 #undef PRESTI_CLEAN
 #undef PRESTI_GATHER

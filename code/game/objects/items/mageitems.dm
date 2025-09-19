@@ -674,8 +674,8 @@
 
 /obj/structure/soul/Initialize(mapload)
 	. = ..()
-	animate(src, pixel_y = 4, time = 1 SECONDS, loop = -1, flags = ANIMATION_RELATIVE)
-	animate(pixel_y = -4, time = 1 SECONDS, flags = ANIMATION_RELATIVE)
+	animate(src, pixel_y = 8, time = 1 SECONDS, loop = -1, flags = ANIMATION_RELATIVE)
+	animate(pixel_y = -8, time = 1 SECONDS, flags = ANIMATION_RELATIVE)
 
 /obj/structure/soul/Destroy()
 	if(qdel_timer)

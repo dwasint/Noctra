@@ -1180,8 +1180,8 @@
 				attack,
 				alpha = 175,
 				transform = copy_transform.Scale(0.75),
-				pixel_x = 4 * x_sign,
-				pixel_y = 3 * y_sign,
+				pixel_x = 8 * x_sign,
+				pixel_y = 6 * y_sign,
 				time = 0.2 SECONDS
 				)
 			animate(
@@ -1222,8 +1222,8 @@
 			)
 			animate(
 				alpha = 0,
-				pixel_x = -3 * -(x_sign + sin(attack_angle)),
-				pixel_y = -2 * -(y_sign + cos(attack_angle)),
+				pixel_x = -6 * -(x_sign + sin(attack_angle)),
+				pixel_y = -4 * -(y_sign + cos(attack_angle)),
 				time = 0.1 SECONDS,
 				easing = BACK_EASING|EASE_OUT
 			)
@@ -1287,10 +1287,10 @@
 					x_return = 18 * x_sign
 					y_return = 6 * y_sign
 
-			animate(attack, pixel_x = 4 * x_sign * angle_mult, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_IN, flags = ANIMATION_PARALLEL)
+			animate(attack, pixel_x = 8 * x_sign * angle_mult, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_IN, flags = ANIMATION_PARALLEL)
 			animate(pixel_x = x_return, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_OUT)
 
-			animate(attack, pixel_y = 3 * y_sign * angle_mult, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_IN, flags = ANIMATION_PARALLEL)
+			animate(attack, pixel_y = 6 * y_sign * angle_mult, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_IN, flags = ANIMATION_PARALLEL)
 			animate(pixel_y = y_return, time = 0.2 SECONDS, easing = CIRCULAR_EASING | EASE_OUT)
 
 /obj/effect/temp_visual/dir_setting/attack_effect
@@ -1314,7 +1314,7 @@
 /atom/movable/proc/do_warning()
 	var/image/I
 	I = image('icons/effects/effects.dmi', src, "mobwarning", src.layer + 0.1)
-	I.pixel_y = 16
+	I.pixel_y = 32
 	flick_overlay(I, GLOB.clients, 5)
 
 /atom/movable/vv_get_dropdown()

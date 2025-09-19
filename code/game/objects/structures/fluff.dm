@@ -315,7 +315,7 @@
 	desc = ""
 	icon_state = "pipe2"
 	dir = WEST
-	SET_BASE_PIXEL(19, 0)
+	SET_BASE_PIXEL(38, 0)
 
 //===========================
 
@@ -437,7 +437,7 @@
 	break_sound = "glassbreak"
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 	metalizer_result = /obj/item/gear/metal/bronze
 
 /obj/structure/fluff/wallclock/Destroy()
@@ -486,10 +486,10 @@
 	attacked_sound = initial(attacked_sound)
 
 /obj/structure/fluff/wallclock/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/wallclock/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 //vampire
 /obj/structure/fluff/wallclock/vampire
@@ -503,13 +503,13 @@
 	blade_dulling = DULLING_BASHCHOP
 	max_integrity = 100
 	integrity_failure = 0.5
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/fluff/wallclock/vampire/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/wallclock/vampire/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/structure/fluff/signage
 	name = "sign"
@@ -677,7 +677,7 @@
 	deconstructible = FALSE
 	density = TRUE
 	blade_dulling = DULLING_BASH
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 
 /obj/structure/fluff/statue/astrata/bling
 	icon_state = "astrata_bling"
@@ -705,7 +705,7 @@
 /obj/structure/fluff/statue/psy
 	icon_state = "psy"
 	icon = 'icons/roguetown/misc/96x96.dmi'
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/statue/small
 	icon = 'icons/roguetown/misc/structure.dmi'
@@ -718,7 +718,7 @@
 /obj/structure/fluff/statue/femalestatue
 	icon = 'icons/roguetown/misc/ay.dmi'
 	icon_state = "1"
-	SET_BASE_PIXEL(-32, -16)
+	SET_BASE_PIXEL(-64, -32)
 
 /obj/structure/fluff/statue/femalestatue/clean
 	icon_state = "12"
@@ -738,7 +738,7 @@
 /obj/structure/fluff/statue/musician
 	icon = 'icons/roguetown/misc/ay.dmi'
 	icon_state = "3"
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fluff/statue/zizo
 	name = "statue of Zizo"

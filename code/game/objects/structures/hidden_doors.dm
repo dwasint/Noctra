@@ -127,7 +127,7 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 		playsound(src, open_sound, 90)
 	if(!windowed)
 		set_opacity(FALSE)
-	animate(src, pixel_x = -22, alpha = 50, time = animate_time)
+	animate(src, pixel_x = -44, alpha = 50, time = animate_time)
 	sleep(animate_time)
 	density = FALSE
 	door_opened = TRUE
@@ -142,7 +142,7 @@ GLOBAL_LIST_EMPTY(thieves_guild_doors)
 	switching_states = TRUE
 	if(!windowed)
 		set_opacity(FALSE)
-	animate(src, pixel_x = -22, alpha = 50, time = animate_time)
+	animate(src, pixel_x = -44, alpha = 50, time = animate_time)
 	sleep(animate_time)
 	density = FALSE
 	door_opened = TRUE

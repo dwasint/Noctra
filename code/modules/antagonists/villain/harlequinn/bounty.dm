@@ -5,7 +5,7 @@
 	icon_state = "bounty_board"
 	anchored = TRUE
 	density = FALSE
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 	var/list/active_contracts = list()
 	var/list/completed_contracts = list()
 	var/total_bounty_pool = 0

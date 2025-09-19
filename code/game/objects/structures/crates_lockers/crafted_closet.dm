@@ -18,7 +18,7 @@
 	base_icon_state = "closet3"
 	icon_state = "closet3"
 	dir = SOUTH
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/closet/crate/crafted_closet/inn
 	base_icon_state = "closet3"

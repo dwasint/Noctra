@@ -6,7 +6,7 @@
 	icon_state = "scomm1"
 	density = FALSE
 	blade_dulling = DULLING_BASH
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 	anchored = TRUE
 	var/next_decree = 0
 	var/listening = TRUE
@@ -23,10 +23,10 @@
 	return ..()
 
 /obj/structure/fake_machine/scomm/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/structure/fake_machine/scomm/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/fake_machine/scomm/examine(mob/user)
 	. = ..()

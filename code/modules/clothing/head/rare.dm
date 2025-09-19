@@ -81,8 +81,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	icon_state = "aasimarhead"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 	allowed_race = list(SPEC_ID_AASIMAR)
 	flags_inv = HIDEEARS
 	clothing_flags = CANT_SLEEP_IN

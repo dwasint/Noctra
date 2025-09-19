@@ -29,7 +29,7 @@
 
 	if(gnome_progress)
 		var/image/gnome_overlay = image('icons/mob/gnome2.dmi', "gnome-tube")
-		gnome_overlay.pixel_y = 6
+		gnome_overlay.pixel_y = 12
 		gnome_overlay.layer = layer - 0.1
 		. += gnome_overlay
 

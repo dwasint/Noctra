@@ -241,7 +241,7 @@
 	icon_state = "turbulenta"
 	base_icon = "turbulenta"
 	slot_flags = ITEM_SLOT_BACK
-	SET_BASE_PIXEL(-16, -16)
+	SET_BASE_PIXEL(-32, -32)
 	bigboy = TRUE
 	dropshrink = 0.75
 	fire_sound = 'sound/combat/Ranged/turbulentafire.ogg'

@@ -35,7 +35,7 @@
 	plane = GAME_PLANE_UPPER
 	layer = ABOVE_MOB_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 
 /obj/effect/explosion/Initialize()
 	. = ..()

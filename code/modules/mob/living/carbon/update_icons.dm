@@ -199,17 +199,17 @@
 	if(I)
 		if(client?.charging)
 			var/mutable_appearance/warn_overlay = mutable_appearance('icons/effects/effects.dmi', I.warnie, -HALO_LAYER)
-			warn_overlay.pixel_y = 16
+			warn_overlay.pixel_y = 32
 //			if(I.warnoffset)
 //				warn_overlay.pixel_y = I.warnoffset
 //			else
 //				switch(aimheight)
 //					if(2)
-//						warn_overlay.pixel_y = 16
+//						warn_overlay.pixel_y = 32
 //					if(1)
 //						warn_overlay.pixel_y = 0
 //					if(0)
-//						warn_overlay.pixel_y = -8
+//						warn_overlay.pixel_y = -16
 			overlays_standing[HALO_LAYER] = warn_overlay
 
 	apply_overlay(HALO_LAYER)

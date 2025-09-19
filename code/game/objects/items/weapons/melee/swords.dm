@@ -238,9 +238,9 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
-	SET_BASE_PIXEL(-16, -16)
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	SET_BASE_PIXEL(-32, -32)
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 
@@ -414,7 +414,7 @@
 	swingsound = BLADEWOOSH_SMALL
 	minstr = 6
 	wbalance = VERY_HARD_TO_DODGE
-	SET_BASE_PIXEL(-16, -16)
+	SET_BASE_PIXEL(-32, -32)
 	dropshrink = 0.8
 
 /obj/item/weapon/sword/rapier/getonmobprop(tag)
@@ -547,9 +547,9 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "khopesh"
 	item_state = "khopesh"
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	SET_BASE_PIXEL(-16, -16)
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
+	SET_BASE_PIXEL(-32, -32)
 	dropshrink = 0.75
 	bigboy = TRUE // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
@@ -584,9 +584,9 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
-	SET_BASE_PIXEL(-16, -16)
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	SET_BASE_PIXEL(-32, -32)
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	sellprice = 60
@@ -604,10 +604,10 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = FALSE // OAUGHHHH!!! OAUGUUGHh!!!!1 aaaaAAAAAHH!!!
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	pixel_y = -32
+	pixel_x = -32
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.8
 	sellprice = 80
@@ -641,10 +641,10 @@
 	bigboy = TRUE
 	wlength = WLENGTH_LONG
 	gripsprite = FALSE // OAUGHHHH!!! OAUGUUGHh!!!!1 aaaaAAAAAHH!!!
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	pixel_y = -32
+	pixel_x = -32
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.8
 	sellprice = 80
@@ -1164,8 +1164,8 @@
 	wlength = WLENGTH_LONG
 	max_blade_int = 150
 	max_integrity = INTEGRITY_POOR + 50
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	throwforce = 15
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.90
@@ -1206,9 +1206,9 @@
 	max_integrity = INTEGRITY_POOR + 80
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
-	SET_BASE_PIXEL(-16, -16)
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	SET_BASE_PIXEL(-32, -32)
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT
@@ -1228,8 +1228,8 @@
 	force = DAMAGE_SWORD - 8
 	force_wielded = DAMAGE_SWORD_WIELD
 	icon = 'icons/roguetown/weapons/64.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	possible_item_intents = list(
 		/datum/intent/sword/chop,
 		/datum/intent/sword/strike,
@@ -1551,10 +1551,10 @@
 	bigboy = 1
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	pixel_y = -32
+	pixel_x = -32
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	associated_skill = /datum/skill/combat/swords
 	throwforce = 15
 	thrown_bclass = BCLASS_CUT

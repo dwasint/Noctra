@@ -51,8 +51,8 @@
 	icon = 'icons/roguetown/clothing/special/forest_guard.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/forest_guard.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden_64x64.dmi'
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 	icon_state = "wardenhelm"
 
 /obj/item/clothing/head/helmet/medium

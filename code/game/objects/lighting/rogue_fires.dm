@@ -131,7 +131,7 @@
 	bulb_colour = "#ffa35c"
 	crossfire = FALSE
 	cookonme = FALSE
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 	soundloop = null
 	temperature_change = 0
 
@@ -157,10 +157,10 @@
 	. = ..()
 
 /obj/machinery/light/fueled/wallfire/candle/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/blue
 	bulb_colour = "#8d73ff"
@@ -174,10 +174,10 @@
 	return FALSE
 
 /obj/machinery/light/fueled/wallfire/candle/blue/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/blue/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/skull
 	bulb_colour = "#8d73ff"
@@ -191,20 +191,20 @@
 	return FALSE
 
 /obj/machinery/light/fueled/wallfire/candle/skull/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/skull/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/weak
 	light_power = 0.9
 	light_outer_range =  6
 
 /obj/machinery/light/fueled/wallfire/candle/weak/l
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/machinery/light/fueled/wallfire/candle/weak/r
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /*	.............   Candle lamp   ................ */
 /obj/machinery/light/fueled/wallfire/candle/lamp // cant get them to start unlit but they work as is
@@ -232,7 +232,7 @@
 	var/shows_empty = TRUE
 
 /obj/machinery/light/fueled/torchholder/c
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/machinery/light/fueled/torchholder/r
 	dir = WEST
@@ -369,7 +369,7 @@
 	icon = 'icons/roguetown/misc/tallwide.dmi'
 	density = FALSE
 	brightness = 10
-	SET_BASE_PIXEL(-10, -10)
+	SET_BASE_PIXEL(-20, -20)
 	layer = 2.0
 	fueluse = 0
 	soundloop = null

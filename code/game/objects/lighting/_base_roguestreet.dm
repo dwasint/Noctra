@@ -27,7 +27,7 @@
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "midlamp1"
 	base_state = "midlamp"
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 	density = TRUE
 
 /obj/machinery/light/fueledstreet/orange
@@ -79,7 +79,7 @@
 	icon_state = "midlamp3"
 	base_state = "midlamp"
 	state_suffix = "3"
-	SET_BASE_PIXEL(0, -16)
+	SET_BASE_PIXEL(0, -32)
 	density = TRUE
 
 /obj/machinery/light/fueledstreet/blue/wall

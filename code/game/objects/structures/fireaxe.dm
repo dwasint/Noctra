@@ -57,4 +57,4 @@
 
 /obj/structure/fireaxecabinet/south
 	dir = SOUTH
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)

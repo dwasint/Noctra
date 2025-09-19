@@ -42,7 +42,7 @@
 		indicator.overlays.len = 0
 		indicator = image(icon = 'icons/obj/vampire.dmi', loc = victim, icon_state = "")
 		indicator.plane = GAME_PLANE_UPPER
-		indicator.pixel_y = 8
+		indicator.pixel_y = 16
 		for (var/i = 1 to dots)
 			var/state = "stun_dot1"
 			if (current_dots == i)
@@ -66,18 +66,18 @@
 /obj/effect/stun_indicator/proc/place_indicator(image/I, dot)
 	switch (dot)
 		if (2, 3)
-			I.pixel_x = -8
+			I.pixel_x = -16
 		if (5, 6)
-			I.pixel_x = 8
+			I.pixel_x = 16
 	switch (dot)
 		if (2, 6)
-			I.pixel_y = 4
-		if (3, 5)
-			I.pixel_y = -4
-		if (1)
 			I.pixel_y = 8
-		if (4)
+		if (3, 5)
 			I.pixel_y = -8
+		if (1)
+			I.pixel_y = 16
+		if (4)
+			I.pixel_y = -16
 	return I
 
 /obj/effect/stun_indicator/Destroy()

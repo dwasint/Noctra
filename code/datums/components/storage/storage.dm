@@ -54,8 +54,8 @@
 	//Screen variables: Do not mess with these vars unless you know what you're doing. They're not defines so storage that isn't in the same location can be supported in the future.
 	var/screen_max_columns = INFINITY							//These two determine maximum screen sizes.
 	var/screen_max_rows = 9
-	var/screen_pixel_x = 16								//These two are pixel values for screen loc of boxes and closer
-	var/screen_pixel_y = 16
+	var/screen_pixel_x = 32								//These two are pixel values for screen loc of boxes and closer
+	var/screen_pixel_y = 32
 	var/screen_start_x = 1								//These two are where the storage starts being rendered, screen_loc wise.
 	var/screen_start_y = 2
 	//End

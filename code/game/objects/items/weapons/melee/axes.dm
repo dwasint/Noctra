@@ -408,10 +408,10 @@
 	desc = "A iron great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure.."
 	icon_state = "igreataxe"
 	icon = 'icons/roguetown/weapons/64.dmi'
-	pixel_y = -16
-	pixel_x = -16
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	pixel_y = -32
+	pixel_x = -32
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_GREAT

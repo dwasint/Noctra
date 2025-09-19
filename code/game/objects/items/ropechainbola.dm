@@ -210,7 +210,7 @@
 	name = "noose"
 	desc = "Abandon all hope."
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
-	SET_BASE_PIXEL(0, 10)
+	SET_BASE_PIXEL(0, 20)
 	icon_state = "noose"
 	can_buckle = 1
 	layer = 4.26

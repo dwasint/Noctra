@@ -100,13 +100,13 @@
 			stun_duration = 10 SECONDS
 			anim(target = loc, a_icon = 'icons/effects/vampire/64x64.dmi', flick_anim = "rune_stun", sleeptime = 20, offX = -16, offY = -16, plane = ABOVE_LIGHTING_PLANE)
 			icon = 'icons/effects/vampire/480x480.dmi'
-			SET_BASE_PIXEL(-224, -224)
+			SET_BASE_PIXEL(-448, -448)
 			animate(src, alpha = 255, time = 1 SECONDS)
 		if(2)
 			stun_duration = 5 SECONDS
 			anim(target = loc, a_icon = 'icons/effects/vampire/64x64.dmi', flick_anim = "talisman_stun", sleeptime = 20, offX = -16, offY = -16, plane = ABOVE_LIGHTING_PLANE)
 			icon = 'icons/effects/vampire/224x224.dmi'
-			SET_BASE_PIXEL(-96, -96)
+			SET_BASE_PIXEL(-192, -192)
 			animate(src, alpha = 255, time = 1 SECONDS)
 
 	playsound(src, 'sound/effects/vampire/stun_rune_charge.ogg', 75, 0, 0)

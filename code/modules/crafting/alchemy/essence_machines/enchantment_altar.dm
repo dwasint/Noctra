@@ -42,7 +42,7 @@
 
 	if(placed_item)
 		var/mutable_appearance/item_overlay = mutable_appearance(placed_item.icon, placed_item.icon_state)
-		item_overlay.pixel_y = 8
+		item_overlay.pixel_y = 16
 		var/matrix/matrix = matrix()
 		matrix.Scale(0.5, 0.5)
 		item_overlay.transform = matrix

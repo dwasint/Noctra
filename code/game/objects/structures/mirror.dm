@@ -10,7 +10,7 @@
 	integrity_failure = 0.9
 	break_sound = "glassbreak"
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/mirror/fancy
 	icon_state = "fancymirror"

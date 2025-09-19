@@ -36,7 +36,7 @@
 	speed = 5
 	move_to_delay = 5
 	ranged = TRUE
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 	aggressive = 1
 	deathmessage = "collapses to the floor with a final roar, the impact rocking the ground."
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -634,7 +634,7 @@
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "void_blink_in"
 	layer = BELOW_MOB_LAYER
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 	color = "#FF0000"
 	duration = 10
 
@@ -642,7 +642,7 @@
 	icon = 'icons/mob/96x96/ratwood_dragon.dmi'
 	icon_state = "dragon"
 	layer = ABOVE_ALL_MOB_LAYER
-	SET_BASE_PIXEL(-32, 10)
+	SET_BASE_PIXEL(-64, 20)
 	randomdir = FALSE
 
 /obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
@@ -669,9 +669,9 @@
 /obj/effect/temp_visual/dragon_flight/end/flight(negative)
 	if(negative)
 		pixel_x = -DRAKE_SWOOP_HEIGHT
-		animate(src, pixel_x = -32, pixel_z = 0, time = 5)
+		animate(src, pixel_x = -64, pixel_z = 0, time = 5)
 	else
-		animate(src, pixel_x = -32, pixel_z = 0, time = 5)
+		animate(src, pixel_x = -64, pixel_z = 0, time = 5)
 
 #undef DRAKE_SWOOP_HEIGHT
 #undef DRAKE_SWOOP_DIRECTION_CHANGE_RANGE

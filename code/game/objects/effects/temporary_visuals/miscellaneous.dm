@@ -17,27 +17,27 @@
 	var/target_pixel_y = 0
 	switch(set_dir)
 		if(NORTH)
-			target_pixel_y = 16
+			target_pixel_y = 32
 		if(SOUTH)
-			target_pixel_y = -16
+			target_pixel_y = -32
 			layer = ABOVE_MOB_LAYER
 		if(EAST)
-			target_pixel_x = 16
+			target_pixel_x = 32
 		if(WEST)
-			target_pixel_x = -16
+			target_pixel_x = -32
 		if(NORTHEAST)
-			target_pixel_x = 16
-			target_pixel_y = 16
+			target_pixel_x = 32
+			target_pixel_y = 32
 		if(NORTHWEST)
-			target_pixel_x = -16
-			target_pixel_y = 16
+			target_pixel_x = -32
+			target_pixel_y = 32
 		if(SOUTHEAST)
-			target_pixel_x = 16
-			target_pixel_y = -16
+			target_pixel_x = 32
+			target_pixel_y = -32
 			layer = ABOVE_MOB_LAYER
 		if(SOUTHWEST)
-			target_pixel_x = -16
-			target_pixel_y = -16
+			target_pixel_x = -32
+			target_pixel_y = -32
 			layer = ABOVE_MOB_LAYER
 	animate(src, pixel_x = target_pixel_x, pixel_y = target_pixel_y, alpha = 0, time = duration)
 
@@ -120,7 +120,7 @@
 /obj/effect/temp_visual/dir_setting/curse/grasp_portal
 	icon = 'icons/effects/64x64.dmi'
 	layer = LARGE_MOB_LAYER
-	SET_BASE_PIXEL(-16, -16)
+	SET_BASE_PIXEL(-32, -32)
 	duration = 3.2 SECONDS
 	fades = FALSE
 
@@ -266,7 +266,7 @@
 	name = "explosion"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "explosion"
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 	duration = 0.8 SECONDS
 
 /obj/effect/temp_visual/explosion/fast

@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(dungeon_exits, list())
 	icon_state = "portal"
 	density = TRUE
 	anchored = TRUE
-	SET_BASE_PIXEL(-48, 0)
+	SET_BASE_PIXEL(-96, 0)
 	bound_width = 128
 	appearance_flags = NONE
 	opacity = TRUE

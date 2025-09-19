@@ -224,7 +224,7 @@
 /obj/effect/blood_ritual/feet_portal
 	anchored = 1
 	icon_state = "rune_rejoin"
-	pixel_y = -10
+	pixel_y = -20
 	layer = ABOVE_OBJ_LAYER
 	plane = GAME_PLANE
 	var/mob/living/caster = null

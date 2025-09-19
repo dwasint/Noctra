@@ -3,7 +3,7 @@
 	desc = ""
 	icon_state = "pylon"
 	icon = 'icons/roguetown/misc/mana_pylon.dmi'
-	SET_BASE_PIXEL(0, -32)
+	SET_BASE_PIXEL(0, -64)
 	has_initial_mana_pool = TRUE
 	plane = GAME_PLANE_UPPER
 	layer = ABOVE_MOB_LAYER
@@ -85,8 +85,8 @@
 			beam_layer = LOWER_LEYLINE_LAYER,
 			beam_plane = LEYLINE_PLANE,
 			invisibility = INVISIBILITY_LEYLINES,
-			override_origin_pixel_y = 32,
-			override_target_pixel_y = 32,
+			override_origin_pixel_y = 64,
+			override_target_pixel_y = 64,
 		)
 
 	if(pylon_to_link.z != z)
@@ -113,7 +113,7 @@
 		if(!length(mana_pools))
 			return
 
-	var/datum/beam/transfer_beam = user.Beam(src, icon_state = "drain_life", time = INFINITY, override_target_pixel_y = 32)
+	var/datum/beam/transfer_beam = user.Beam(src, icon_state = "drain_life", time = INFINITY, override_target_pixel_y = 64)
 
 	var/failed = FALSE
 	while(!failed)

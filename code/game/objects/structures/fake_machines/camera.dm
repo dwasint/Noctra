@@ -7,15 +7,15 @@
 	blade_dulling = DULLING_BASH
 	layer = ABOVE_MOB_LAYER
 	var/number = 1
-	SET_BASE_PIXEL(0, 10)
+	SET_BASE_PIXEL(0, 20)
 
 /obj/structure/fake_machine/camera/right
 	icon_state = "camera-r"
-	SET_BASE_PIXEL(5, 5)
+	SET_BASE_PIXEL(10, 10)
 
 /obj/structure/fake_machine/camera/left
 	icon_state = "camera-l"
-	SET_BASE_PIXEL(-5, 5)
+	SET_BASE_PIXEL(-10, 10)
 
 /obj/structure/fake_machine/camera/atom_break(damage_flag)
 	. = ..()

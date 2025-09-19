@@ -672,8 +672,8 @@ All foods are distributed among various categories. Use common sense.
 	icon = 'icons/roguetown/items/food.dmi'
 	item_state = "plate_food"
 	experimental_inhand = FALSE
-	inhand_x_dimension = 32
-	inhand_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 
 // Proc for important vars when reaching meal level

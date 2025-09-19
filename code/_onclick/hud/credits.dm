@@ -48,7 +48,7 @@
 	upvoted = TRUE
 	var/image/I = new('icons/effects/effects.dmi', "hearty")
 	I.pixel_x = rand(-32,32)
-	animate(I, pixel_y = 64, alpha = 0, time = 18, flags = ANIMATION_PARALLEL)
+	animate(I, pixel_y = 128, alpha = 0, time = 18, flags = ANIMATION_PARALLEL)
 	add_overlay(I)
 	for(var/client/C in GLOB.clients)
 		if(C == parent)
@@ -57,7 +57,7 @@
 			if(CR.creditee == creditee)
 				var/image/IR = new('icons/effects/effects.dmi', "hearty")
 				IR.pixel_x = rand(-32,32)
-				animate(IR, pixel_y = 64, alpha = 0, time = 18, flags = ANIMATION_PARALLEL)
+				animate(IR, pixel_y = 128, alpha = 0, time = 18, flags = ANIMATION_PARALLEL)
 				CR.add_overlay(IR)
 
 /atom/movable/screen/credit/Initialize(mapload, credited, client/P, icon/I)

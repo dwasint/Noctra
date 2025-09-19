@@ -212,6 +212,6 @@
 	if(hott)
 		M.filters += filter(type="color", color = list(3,0,0,1, 0,2.7,0,0.4, 0,0,1,0, 0,0,0,1))
 	M.transform *= 0.5
-	M.pixel_y = 5
-	M.pixel_x = 3
+	M.pixel_y = 10
+	M.pixel_x = 6
 	. += M

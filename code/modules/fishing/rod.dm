@@ -205,8 +205,8 @@
 	I.pixel_x = I.base_pixel_x + 6
 	I.pixel_y = I.base_pixel_y - 6
 	var/mutable_appearance/M = new /mutable_appearance(I)
-	M.pixel_x = 6
-	M.pixel_y = -6
+	M.pixel_x = 12
+	M.pixel_y = -12
 	. += M
 
 #define FISHRARITYWEIGHTS list("com" = 70, "rare" = 20, "ultra" = 9, "gold" = 1)

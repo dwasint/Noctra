@@ -477,11 +477,11 @@
 	climbable = FALSE
 	density = FALSE
 	climb_offset = 0
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/structure/rack/shelf/big
 	icon_state = "shelf_big"
-	SET_BASE_PIXEL(0, 16)
+	SET_BASE_PIXEL(0, 32)
 
 /obj/structure/rack/shelf/biggest
 	icon_state = "shelf_biggest"
@@ -493,7 +493,7 @@
 // Shelves have been made nondense. The only functional difference this has now is a lower pixel_y
 /obj/structure/rack/shelf/notdense
 	density = FALSE
-	SET_BASE_PIXEL(0, 24)
+	SET_BASE_PIXEL(0, 48)
 
 // Necessary to avoid a critical bug with disappearing weapons.
 /obj/structure/rack/attackby(obj/item/I, mob/user, params)

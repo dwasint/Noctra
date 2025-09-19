@@ -14,7 +14,7 @@
 	resistance_flags = FIRE_PROOF
 	drag_slowdown = 3
 
-	SET_BASE_PIXEL(-16, -16)
+	SET_BASE_PIXEL(-32, -32)
 
 	var/obj/item/fuse/inserted_fuse
 

@@ -104,8 +104,8 @@
 	MA.plane = plane
 	MA.layer = layer + 0.1
 
-	MA.pixel_y = 36
-	MA.pixel_x = 126
+	MA.pixel_y = 72
+	MA.pixel_x = 252
 
 	character.cut_overlays()
 	character.add_overlay(MA)

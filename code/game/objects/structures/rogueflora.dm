@@ -20,7 +20,7 @@
 	density = TRUE
 	max_integrity = 200
 	blade_dulling = DULLING_CUT
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 	plane = GAME_PLANE_UPPER
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/treefall.ogg'
@@ -168,7 +168,7 @@
 	icon_state = "t1"
 	num_random_icons = 4
 	stump_type = /obj/structure/table/wood/treestump/burnt
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 	metalizer_result = /obj/machinery/anvil
 
 /obj/structure/flora/tree/underworld
@@ -186,7 +186,7 @@
 	icon = 'icons/obj/flora/pines.dmi'
 	static_debris = list(/obj/item/ore/coal/charcoal = 1)
 	stump_type = null
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/structure/flora/tree/stump/pine/Initialize()
 	. = ..()
@@ -273,7 +273,7 @@
 	static_debris = list(/obj/item/grown/log/tree = 1)
 	max_integrity = 200
 	sleepy = 0.2
-	SET_BASE_PIXEL(-14, 7)
+	SET_BASE_PIXEL(-28, 14)
 	pass_flags_self = PASSTABLE
 
 /obj/structure/chair/bench/ancientlog/Initialize()
@@ -475,7 +475,7 @@
 	icon_state = "tallbush1"
 	base_icon_state = "tallbush"
 	opacity = TRUE
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 	num_random_icons = 2
 	debris = null
 	static_debris = null
@@ -589,7 +589,7 @@
 	num_random_icons = 5
 	max_integrity = 120
 	blade_dulling = DULLING_CUT
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	destroy_sound = 'sound/misc/woodhit.ogg'
 	static_debris = list(/obj/item/grown/log/tree/small = 1)
@@ -645,7 +645,7 @@
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "stump_mush1"
 	alpha = 255
-	SET_BASE_PIXEL(-16, 0)
+	SET_BASE_PIXEL(-32, 0)
 	climb_offset = 14
 	stump_loot = /obj/item/reagent_containers/food/snacks/truffles
 
@@ -878,6 +878,6 @@
 	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
 	icon = 'icons/mob/creacher/trolls/troll.dmi'
 	icon_state = "troll_hide"
-	SET_BASE_PIXEL(-16, -1)
+	SET_BASE_PIXEL(-32, -2)
 	num_random_icons = 0
 	silky = TRUE

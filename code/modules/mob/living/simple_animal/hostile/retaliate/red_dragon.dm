@@ -27,7 +27,7 @@
 	speed = 5
 	move_to_delay = 7
 	ranged = TRUE
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 	deathmessage = "collapses to the floor with a final roar, the impact rocking the ground."
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	void_corruption = FALSE

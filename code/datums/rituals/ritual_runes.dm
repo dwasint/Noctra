@@ -381,8 +381,8 @@ GLOBAL_LIST(teleport_runes)
 	icon_state = "empowerment"
 	runesize = 1
 	tier = 2
-	pixel_x = -32 //So the big ol' 96x96 sprite shows up right
-	pixel_y = -32
+	pixel_x = -64 //So the big ol' 96x96 sprite shows up right
+	pixel_y = -64
 	pixel_z = 0
 	//icon_state = "6"
 	invocation = "Thal’miren vek’laris un’vethar!"
@@ -428,7 +428,7 @@ GLOBAL_LIST(teleport_runes)
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "empowerment"
 	tier = 2
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 	pixel_z = 0
 	invocation = "Thal’miren vek’laris un’vethar!"
 	layer = SIGIL_LAYER
@@ -575,7 +575,7 @@ GLOBAL_LIST(teleport_runes)
 	invocation = "Thar’morak dul’vorr keth’alor!"
 	ritual_number = FALSE
 	runesize = 2
-	SET_BASE_PIXEL(-64, -64)
+	SET_BASE_PIXEL(-128, -128)
 	pixel_z = 0
 	can_be_scribed = TRUE
 //	var/id = "arcyne_fortress"
@@ -634,7 +634,7 @@ GLOBAL_LIST(teleport_runes)
 	ritual_number = FALSE
 	req_keyword = TRUE
 	runesize = 2
-	SET_BASE_PIXEL(-64, -64)
+	SET_BASE_PIXEL(-128, -128)
 	pixel_z = 0
 	can_be_scribed = TRUE
 	associated_ritual = /datum/runerituals/teleport
@@ -801,7 +801,7 @@ GLOBAL_LIST(teleport_runes)
 	icon_state = "sealate"
 	runesize = 1
 	tier = 2
-	SET_BASE_PIXEL(-32, -32)
+	SET_BASE_PIXEL(-64, -64)
 	pixel_z = 0
 	can_be_scribed = TRUE
 
@@ -812,7 +812,7 @@ GLOBAL_LIST(teleport_runes)
 	icon_state = "warded"
 	runesize = 2
 	tier = 3
-	SET_BASE_PIXEL(-64, -64)
+	SET_BASE_PIXEL(-128, -128)
 	pixel_z = 0
 	can_be_scribed = TRUE
 
@@ -824,7 +824,7 @@ GLOBAL_LIST(teleport_runes)
 	runesize = 3
 	req_invokers = 3
 	tier = 4
-	SET_BASE_PIXEL(-96, -96)
+	SET_BASE_PIXEL(-192, -192)
 	pixel_z = 0
 	can_be_scribed = TRUE
 
@@ -871,7 +871,7 @@ GLOBAL_LIST(teleport_runes)
 	ritual_number = FALSE
 	req_keyword = TRUE
 	runesize = 2
-	SET_BASE_PIXEL(-64, -64)
+	SET_BASE_PIXEL(-128, -128)
 	pixel_z = 0
 	can_be_scribed = TRUE
 	associated_ritual = /datum/runerituals/attunement

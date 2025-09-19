@@ -749,7 +749,7 @@
 		targeti = image('icons/mouseover.dmi', targetting.loc, "target")
 		var/icon/I = icon(icon, icon_state, dir)
 		targeti.pixel_y = I.Height() - world.icon_size - 4
-		targeti.pixel_x = -1
+		targeti.pixel_x = -2
 		src.client.images |= targeti
 		for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
 			eyet.update_appearance(UPDATE_ICON)

@@ -62,7 +62,7 @@
 	if(render_target)
 		reflective_icon.render_source = render_target
 	reflective_icon.plane = REFLECTION_PLANE
-	reflective_icon.pixel_y = -32
+	reflective_icon.pixel_y = -64
 	reflective_icon.transform = matrix().Scale(1, -1)
 	reflective_icon.vis_flags = VIS_INHERIT_DIR
 	//filters
@@ -87,7 +87,7 @@
 	if(render_target)
 		reflective_icon.render_source = render_target
 	reflective_icon.plane = REFLECTION_PLANE
-	reflective_icon.pixel_y = -32
+	reflective_icon.pixel_y = -64
 	reflective_icon.transform = matrix().Scale(1, -1)
 	reflective_icon.vis_flags = VIS_INHERIT_DIR
 	var/icon/I = icon('icons/turf/overlays.dmi', "whiteOverlay")
@@ -1169,7 +1169,7 @@
 		var/image/flaggy = image('icons/effects/effects.dmi',src,"surrender",ABOVE_MOB_LAYER)
 		flaggy.appearance_flags = RESET_TRANSFORM|KEEP_APART
 		flaggy.transform = null
-		flaggy.pixel_y = 12
+		flaggy.pixel_y = 24
 		flick_overlay_view(flaggy, 150)
 		drop_all_held_items()
 		Stun(150)

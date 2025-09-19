@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(bloodcult_exitportals, list())
 	I_network.plane = GAME_PLANE
 	I_network.transform /= 1.5
 	I_network.pixel_x = round(W.offset_x*0.75)
-	I_network.pixel_y = -3 + round(W.offset_y*0.75)
+	I_network.pixel_y = -6 + round(W.offset_y*0.75)
 
 	spell_holder.overlays.len = 0
 	spell_holder.overlays += I_crystals

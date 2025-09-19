@@ -34,7 +34,7 @@
 	desc = "A powerful whirlpool pulling everything toward its center."
 	icon = 'icons/obj/whirlpool.dmi'  // Replace with appropriate icon
 	icon_state = "whirlpool"  // Replace with appropriate icon_state
-	SET_BASE_PIXEL(-96, -96)
+	SET_BASE_PIXEL(-192, -192)
 	anchored = TRUE
 	layer = ABOVE_MOB_LAYER
 	var/mob/creator

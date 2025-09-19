@@ -4,7 +4,7 @@
 	name = "supply pod" //Names and descriptions are normally created with the setStyle() proc during initialization, but we have these default values here as a failsafe
 	desc = ""
 	icon_state = "supplypod"
-	SET_BASE_PIXEL(-16, -5)
+	SET_BASE_PIXEL(-32, -10)
 	layer = TABLE_LAYER //So that the crate inside doesn't appear underneath
 	allow_objects = TRUE
 	allow_dense = TRUE
@@ -246,7 +246,7 @@
 //------------------------------------FALLING SUPPLY POD-------------------------------------//
 /obj/effect/DPfall //Falling pod
 	name = ""
-	SET_BASE_PIXEL(-16, -5)
+	SET_BASE_PIXEL(-32, -10)
 	pixel_z = 200
 	desc = ""
 	layer = FLY_LAYER//that wasnt flying, that was falling with style!
@@ -316,7 +316,7 @@
 	M = matrix(pod.transform) //Make another matrix based on the pod
 	M.Turn(rotation) //Turn the matrix
 	pod.transform = M //Turn the actual pod (Won't be visible until endLaunch() proc tho)
-	animate(fallingPod, pixel_z = 0, pixel_x = -16, time = pod.fallDuration, , easing = LINEAR_EASING) //Make the pod fall! At an angle!
+	animate(fallingPod, pixel_z = 0, pixel_x = -32, time = pod.fallDuration, , easing = LINEAR_EASING) //Make the pod fall! At an angle!
 	addtimer(CALLBACK(src, PROC_REF(endLaunch)), pod.fallDuration, TIMER_CLIENT_TIME) //Go onto the last step after a very short falling animation
 
 /obj/effect/DPtarget/proc/endLaunch()

@@ -29,20 +29,20 @@
 /datum/sprite_accessory/wings/wide
 	abstract_type = /datum/sprite_accessory/wings/wide
 	icon = 'icons/mob/sprite_accessory/wings/wings_wide.dmi'
-	pixel_x = -7
+	pixel_x = -14
 
 /datum/sprite_accessory/wings/huge
 	abstract_type = /datum/sprite_accessory/wings/huge
 	icon = 'icons/mob/sprite_accessory/wings/wings_huge.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
-	pixel_x = -32
+	pixel_x = -64
 	can_open = TRUE
 
 /datum/sprite_accessory/wings/large
 	abstract_type = /datum/sprite_accessory/wings/large
 	icon = 'icons/mob/sprite_accessory/wings/wings_64x32.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
-	pixel_x = -16
+	pixel_x = -32
 
 /datum/sprite_accessory/wings/large/harpyswept
 	name = "Harpy (Swept)"

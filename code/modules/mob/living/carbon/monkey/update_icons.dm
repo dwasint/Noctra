@@ -45,7 +45,7 @@
 	remove_overlay(LEGCUFF_LAYER)
 	if(legcuffed)
 		var/mutable_appearance/legcuff_overlay = mutable_appearance('icons/mob/mob.dmi', "legcuff1", -LEGCUFF_LAYER)
-		legcuff_overlay.pixel_y = 8
+		legcuff_overlay.pixel_y = 16
 		overlays_standing[LEGCUFF_LAYER] = legcuff_overlay
 	apply_overlay(LEGCUFF_LAYER)
 

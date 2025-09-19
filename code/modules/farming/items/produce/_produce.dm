@@ -110,9 +110,9 @@
 	faretype = FARE_POOR
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
-	worn_x_dimension = 64
+	worn_x_dimension = 128
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	worn_y_dimension = 64
+	worn_y_dimension = 128
 	rotprocess = SHELFLIFE_DECENT
 	sellprice = 0 // spoil too quickly to export
 	var/equippedloc = null

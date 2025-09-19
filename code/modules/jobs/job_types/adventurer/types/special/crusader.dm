@@ -136,8 +136,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
+	worn_x_dimension = 128
+	worn_y_dimension = 128
 
 /obj/item/clothing/head/helmet/heavy/crusader/t
 	desc = "A silver gilded bucket helm, inscriptions in old Psydonic are found embezzeled on every inch of silver. Grenzelhoft specializes in these helmets, the Totod order has been purchasing them en-masse."
@@ -146,8 +146,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
 	bloody_icon = 'icons/effects/blood.dmi'
 	bloody_icon_state = "itemblood"
-	worn_x_dimension = 32
-	worn_y_dimension = 32
+	worn_x_dimension = 64
+	worn_y_dimension = 64
 
 /obj/item/clothing/cloak/cape/crusader/Initialize(mapload, ...)
 	. = ..()

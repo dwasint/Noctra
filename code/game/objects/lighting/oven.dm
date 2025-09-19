@@ -46,15 +46,15 @@
 
 /obj/machinery/light/fueled/oven/south
 	dir = SOUTH
-	SET_BASE_PIXEL(0, 32)
+	SET_BASE_PIXEL(0, 64)
 
 /obj/machinery/light/fueled/oven/west
 	dir = WEST
-	SET_BASE_PIXEL(32, 0)
+	SET_BASE_PIXEL(64, 0)
 
 /obj/machinery/light/fueled/oven/east
 	dir = EAST
-	SET_BASE_PIXEL(-32, 0)
+	SET_BASE_PIXEL(-64, 0)
 
 /obj/machinery/light/fueled/oven/Initialize()
 	. = ..()
