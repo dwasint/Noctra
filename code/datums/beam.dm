@@ -144,12 +144,12 @@
 	rot_matrix.Turn(Angle)
 
 	//Translation vector for origin and target
-	var/DX = (32*target.x+target_px)-(32*origin.x+origin_px)
-	var/DY = (32*target.y+target_py)-(32*origin.y+origin_py)
+	var/DX = (64*target.x+target_px)-(64*origin.x+origin_px)
+	var/DY = (64*target.y+target_py)-(64*origin.y+origin_py)
 	var/N = 0
 	var/length = round(sqrt((DX)**2+(DY)**2)) //hypotenuse of the triangle formed by target and origin's displacement
 
-	for(N in 0 to length-1 step 32)//-1 as we want < not <=, but we want the speed of X in Y to Z and step X
+	for(N in 0 to length-1 step 64)//-1 as we want < not <=, but we want the speed of X in Y to Z and step X
 		if(QDELETED(src))
 			break
 		var/obj/effect/ebeam/segment = new beam_type(origin_turf, src)
@@ -157,9 +157,9 @@
 
 		//Assign our single visual ebeam to each ebeam's vis_contents
 		//ends are cropped by a transparent box icon of length-N pixel size laid over the visuals obj
-		if(N+32>length) //went past the target, we draw a box of space to cut away from the beam sprite so the icon actually ends at the center of the target sprite
+		if(N+64>length) //went past the target, we draw a box of space to cut away from the beam sprite so the icon actually ends at the center of the target sprite
 			var/icon/II = new(icon, icon_state)//this means we exclude the overshooting object from the visual contents which does mean those visuals don't show up for the final bit of the beam...
-			II.DrawBox(null,1,(length-N),32,32)//in the future if you want to improve this, remove the drawbox and instead use a 513 filter to cut away at the final object's icon
+			II.DrawBox(null,1,(length-N),64,64)//in the future if you want to improve this, remove the drawbox and instead use a 513 filter to cut away at the final object's icon
 			segment.icon = II
 			segment.color = beam_color
 		else
@@ -173,21 +173,21 @@
 		if(DX == 0)
 			Pixel_x = 0
 		else
-			Pixel_x = round(sin(Angle)+32*sin(Angle)*(N+16)/32)
+			Pixel_x = round(sin(Angle)+64*sin(Angle)*(N+16)/64)
 		if(DY == 0)
 			Pixel_y = 0
 		else
-			Pixel_y = round(cos(Angle)+32*cos(Angle)*(N+16)/32)
+			Pixel_y = round(cos(Angle)+64*cos(Angle)*(N+16)/64)
 
 		//Position the effect so the beam is one continous line
 		var/final_x = segment.x
 		var/final_y = segment.y
-		if(abs(Pixel_x)>32)
-			final_x += Pixel_x > 0 ? round(Pixel_x/32) : CEILING(Pixel_x/32, 1)
-			Pixel_x %= 32
-		if(abs(Pixel_y)>32)
-			final_y += Pixel_y > 0 ? round(Pixel_y/32) : CEILING(Pixel_y/32, 1)
-			Pixel_y %= 32
+		if(abs(Pixel_x)>64)
+			final_x += Pixel_x > 0 ? round(Pixel_x/64) : CEILING(Pixel_x/64, 1)
+			Pixel_x %= 64
+		if(abs(Pixel_y)>64)
+			final_y += Pixel_y > 0 ? round(Pixel_y/64) : CEILING(Pixel_y/64, 1)
+			Pixel_y %= 64
 
 		segment.forceMove(locate(final_x, final_y, segment.z))
 		segment.pixel_x = origin_px + Pixel_x
