@@ -130,23 +130,23 @@
 /atom/movable/screen/controller_ui/name_pane
 	icon_state = "name"
 	maptext_x = 206
-	maptext_width = 120
-	maptext_height = 32
+	maptext_width = 240
+	maptext_height = 64
 	maptext_y = 64
 
 /atom/movable/screen/controller_ui/task_pane
 	icon_state = "task"
 	maptext_x = 201
-	maptext_width = 128
-	maptext_height = 16
+	maptext_width = 256
+	maptext_height = 32
 	maptext_y = 16
 
 /atom/movable/screen/controller_ui/stat_pane
 	icon_state = "stats"
 	maptext_x = 346
 	maptext_y = 62
-	maptext_width = 128
-	maptext_height = 32
+	maptext_width = 256
+	maptext_height = 64
 
 /atom/movable/screen/controller_ui/controller_button
 	icon_state = "button_1"

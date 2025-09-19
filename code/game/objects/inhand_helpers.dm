@@ -63,8 +63,8 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 
 /obj/item/proc/generateonmob(tag, prop, behind, mirrored)
 	var/list/used_prop = prop
-	var/UH = 64
-	var/UW = 64
+	var/UH = 128
+	var/UW = 128
 	var/used_mask = 'icons/roguetown/helpers/inhand_64.dmi'
 	var/icon/returned = icon(used_mask, "blank")
 	var/icon/blended
@@ -102,9 +102,9 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 				blended.Blend(image_overlay, ICON_OVERLAY)
 
 	var/icon/holder
-	if(blended.Height() == 32)
-		UW = 32
-		UH = 32
+	if(blended.Height() == 64)
+		UW = 64
+		UH = 64
 		used_mask = 'icons/roguetown/helpers/inhand.dmi'
 
 	var/icon/masky
@@ -131,22 +131,22 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 			holder.Turn(used_prop["nturn"])
 		if("nx" in used_prop)
 			if(mirrored)
-				px += used_prop["nx"]*-1
+				px += (used_prop["nx"] * 2)*-1
 				var/biggu = FALSE
-				if(UH > 32)
+				if(UH > 64)
 					biggu = TRUE
 				if(mirror_fix(used_prop["shrink"], biggu))
 					px += mirror_fix(used_prop["shrink"], biggu)
 //				if(UH == 64)
 //				else
 			else
-				px += used_prop["nx"]
+				px += used_prop["nx"] * 2
 		if("ny" in used_prop)
-			py = used_prop["ny"]
+			py = used_prop["ny"] * 2
 		ax = 0
 		if("shrink" in used_prop)
 			holder.Scale(UW*used_prop["shrink"],UH*used_prop["shrink"])
-			ax = 32-(holder.Width()/2)
+			ax = 64-(holder.Width()/2)
 		px += ax
 		py += ax
 		if(mirrored)
@@ -173,22 +173,22 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 			holder.Turn(used_prop["sturn"])
 		if("sx" in used_prop)
 			if(mirrored)
-				px += used_prop["sx"]*-1
+				px += (used_prop["sx"] * 2)*-1
 				var/biggu = FALSE
-				if(UH > 32)
+				if(UH > 64)
 					biggu = TRUE
 				if(mirror_fix(used_prop["shrink"], biggu))
 					px += mirror_fix(used_prop["shrink"], biggu)
 //				if(UH == 64)
 //				else
 			else
-				px += used_prop["sx"]
+				px += used_prop["sx"] * 2
 		if("sy" in used_prop)
-			py += used_prop["sy"]
+			py += used_prop["sy"] * 2
 		ax = 0
 		if("shrink" in used_prop)
 			holder.Scale(UW*used_prop["shrink"],UH*used_prop["shrink"])
-			ax = 32-(holder.Width()/2)
+			ax = 64-(holder.Width()/2)
 		px += ax
 		py += ax
 		if(mirrored)
@@ -220,15 +220,15 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if("[usedtag]turn" in used_prop)
 			holder.Turn(used_prop["[usedtag]turn"])
 		if("[usedtag]x" in used_prop)
-			px = used_prop["[usedtag]x"]
+			px = used_prop["[usedtag]x"] * 2
 			if(mirrored)
 				px = px*-1
 		if("[usedtag]y" in used_prop)
-			py = used_prop["[usedtag]y"]
+			py = used_prop["[usedtag]y"] * 2
 		ax = 0
 		if("shrink" in used_prop)
 			holder.Scale(UW*used_prop["shrink"],UH*used_prop["shrink"])
-			ax = 32-(holder.Width()/2)
+			ax = 64-(holder.Width()/2)
 		px += ax
 		py += ax
 		if(mirrored)
@@ -260,15 +260,15 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if("[usedtag]turn" in used_prop)
 			holder.Turn(used_prop["[usedtag]turn"])
 		if("[usedtag]x" in used_prop)
-			px = used_prop["[usedtag]x"]
+			px = used_prop["[usedtag]x"] * 2
 			if(mirrored)
 				px = px*-1
 		if("[usedtag]y" in used_prop)
-			py = used_prop["[usedtag]y"]
+			py = used_prop["[usedtag]y"] * 2
 		ax = 0
 		if("shrink" in used_prop)
 			holder.Scale(UW*used_prop["shrink"],UH*used_prop["shrink"])
-			ax = 32-(holder.Width()/2)
+			ax = 64-(holder.Width()/2)
 		px += ax
 		py += ax
 		if(mirrored)

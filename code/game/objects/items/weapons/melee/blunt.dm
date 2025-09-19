@@ -421,8 +421,8 @@
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	SET_BASE_PIXEL(-32, -32)
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
+	inhand_x_dimension = 128
+	inhand_y_dimension = 128
 	bigboy = TRUE
 	gripsprite = TRUE
 	wlength = WLENGTH_LONG

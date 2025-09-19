@@ -2,7 +2,7 @@
 #define MAPTEXT(text) {"<span class='maptext'>[##text]</span>"}
 
 /// Prepares text for maptext centered
-#define MAPTEXT_CENTER(text) {"<span class='maptext center'>[##text]</span>"}
+#define MAPTEXT_CENTER(text) {"<span class='maptext center' style='font-size:200%'>[##text]</span>"}
 
 /// Large area entry maptext
 #define MAPTEXT_BLACKMOOR(text) {"<span style='font-family: "Blackmoor LET"; font-size: 48pt; -dm-text-outline: 1px black'>[##text]</span>"}

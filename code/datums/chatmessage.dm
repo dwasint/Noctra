@@ -35,7 +35,7 @@
 	var/approx_lines
 	/// if we finished typing up all our letters.
 	var/finished_typing = FALSE
-	var/font_size = 8
+	var/font_size = 16
 	var/tgt_color
 	var/list/_extra_classes
 	var/text
@@ -67,7 +67,7 @@
 		return
 
 	if(extra_classes.Find("emote"))
-		font_size = 7
+		font_size = 14
 		tgt_color = "#adadad"
 
 	if(ishuman(owner))

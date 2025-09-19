@@ -33,8 +33,8 @@
 	icon_state = null
 	alpha = 255
 
-	maptext_height = 64
-	maptext_width = 480
+	maptext_height = 128
+	maptext_width = 960
 	maptext_x = 0
 	maptext_y = 0
 	screen_loc = "LEFT,TOP-3"

@@ -57,8 +57,8 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	screen_loc = "CENTER-7,CENTER-7"
-	maptext_height = 480
-	maptext_width = 480
+	maptext_height = 960
+	maptext_width = 960
 
 /atom/movable/screen/swap_hand
 	plane = HUD_PLANE
@@ -1331,9 +1331,9 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "blank"
 	screen_loc = "EAST-1,CENTER-1:15"
-	maptext_width = 128
-	maptext_height = 48
-	maptext_x = -64
+	maptext_width = 256
+	maptext_height = 98
+	maptext_x = -128
 	maptext_y = 0
 	var/member_key
 	var/mob/member

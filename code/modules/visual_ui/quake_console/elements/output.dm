@@ -15,8 +15,8 @@
 
 	offset_x = -380
 	offset_y = -430
-	special_offset = -70
-	special_x_offset = 180
+	special_offset = -140
+	special_x_offset = 360
 
 	scroll_handle = /obj/abstract/visual_ui_element/hoverable/scroll_handle/dummy
 	scroll_track = /obj/abstract/visual_ui_element/scroll_track/dummy
@@ -24,7 +24,7 @@
 	mouse_opacity = 1
 	var/list/lines = list()
 	var/max_lines = 1000
-	var/line_height = 18
+	var/line_height = 36
 	var/obj/abstract/visual_ui_element/console_text/text_element
 
 	// Scroll dimensions

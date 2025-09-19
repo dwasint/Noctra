@@ -86,8 +86,8 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 		client.screen += T
 		T.maptext = MAPTEXT_CENTER({"<span style='vertical-align:top;color: #7c5b10; font-size: 150%;
 					text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;'>[text_to_show]</span>"})
-		T.maptext_width = 205
-		T.maptext_height = 209
+		T.maptext_width = 410
+		T.maptext_height = 418
 		T.maptext_x = 12
 		T.maptext_y = -120
 		playsound_local(src, 'sound/misc/newday.ogg', 60, FALSE)

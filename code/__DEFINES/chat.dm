@@ -5,7 +5,7 @@
 #define CHAT_MESSAGE_EXP_DECAY		0.7 // Messages decay at pow(factor, idx in stack)
 #define CHAT_MESSAGE_HEIGHT_DECAY	0.9 // Increase message decay based on the height of the message
 #define CHAT_MESSAGE_APPROX_LHEIGHT	11 // Approximate height in pixels of an 'average' line, used for height decay
-#define CHAT_MESSAGE_WIDTH			96 // pixels
+#define CHAT_MESSAGE_WIDTH			192 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		110 // characters
 #define CHAT_GLORF_LIST list(\
 							"-ah!!",\

@@ -56,6 +56,7 @@
 	mouse_over.maptext_y = maptext_height
 	mouse_over.maptext_x = (HOVER_TEXT_WIDTH - world.icon_size) * -0.5 - base_pixel_x
 	WXH_TO_HEIGHT(user.client.MeasureText(used_content, null, HOVER_TEXT_WIDTH), mouse_over.maptext_height)
+	mouse_over.maptext_height = max(mouse_over.maptext_height, 32)
 	mouse_over.maptext_width = HOVER_TEXT_WIDTH
 
 #undef HOVER_TEXT_WIDTH

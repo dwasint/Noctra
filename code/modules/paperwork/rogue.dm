@@ -67,10 +67,10 @@
 		user.hud_used.reads.icon_state = "scroll"
 		user.hud_used.reads.show()
 		user.hud_used.reads.maptext = MAPTEXT(info)
-		user.hud_used.reads.maptext_width = 230
-		user.hud_used.reads.maptext_height = 200
-		user.hud_used.reads.maptext_y = 150
-		user.hud_used.reads.maptext_x = 120
+		user.hud_used.reads.maptext_width = 460
+		user.hud_used.reads.maptext_height = 400
+		user.hud_used.reads.maptext_y = 300
+		user.hud_used.reads.maptext_x = 240
 
 	onclose(user, "reading", src)
 
