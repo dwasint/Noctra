@@ -1320,6 +1320,8 @@
 #include "code\datums\sex\preferences\boolean\subtle_session_messages.dm"
 #include "code\datums\sex\preferences\list\_base.dm"
 #include "code\datums\sex\preferences\numeric\_base.dm"
+#include "code\datums\sex\ui_hook\tracker.dm"
+#include "code\datums\sex\ui_hook\updater.dm"
 #include "code\datums\skills\_skill.dm"
 #include "code\datums\skills\combat.dm"
 #include "code\datums\skills\craft.dm"

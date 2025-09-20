@@ -25,6 +25,8 @@
 	var/static/sex_id = 0
 	var/our_sex_id = 0 //this is so we can have more then 1 sex id open at once
 
+	var/datum/ui_updater/session_updater
+
 /datum/sex_session/New(mob/living/carbon/human/session_user, mob/living/carbon/human/session_target)
 	user = session_user
 	target = session_target
@@ -34,15 +36,21 @@
 
 	RegisterSignal(user, COMSIG_SEX_CLIMAX, PROC_REF(on_climax))
 
+	add_ui_tracking("sexcon[our_sex_id]")
+
 	addtimer(CALLBACK(src, PROC_REF(check_sex)), 60 SECONDS, flags = TIMER_LOOP)
 
 /datum/sex_session/Destroy(force, ...)
-	UnregisterSignal(user, COMSIG_SEX_CLIMAX)
+	UnregisterSignal(user, list(COMSIG_SEX_CLIMAX, COMSIG_SEX_AROUSAL_CHANGED))
 	// Remove from collective
+	if(session_updater)
+		qdel(session_updater)
+		session_updater = null
+
 	if(collective)
 		collective.sessions -= src
 		// If this was the last session in the collective, remove the collective
-		if(!collective.sessions.len)
+		if(!length(collective.sessions))
 			collective.unregister_collective_tab()
 			LAZYREMOVE(GLOB.sex_collectives, collective)
 			qdel(collective)
@@ -71,6 +79,31 @@
 	if(inactivity < 3)
 		return
 	qdel(src)
+
+/datum/sex_session/proc/add_ui_tracking(window_id)
+	session_updater = new /datum/ui_updater(user, window_id, src, FALSE)
+
+	session_updater.track_property("arousal_data", "updateProgressBars", variable = FALSE)
+	RegisterSignal(user, COMSIG_SEX_AROUSAL_CHANGED, PROC_REF(on_arousal_changed), TRUE)
+
+	session_updater.start_updates()
+
+/datum/sex_session/proc/on_arousal_changed()
+    if(session_updater)
+        var/arousal_string = get_arousal_data_string()
+        session_updater.push_data_change("arousal_data", arousal_string)
+
+/datum/sex_session/proc/get_arousal_data_string()
+	var/list/arousal_data = list()
+	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data)
+
+	var/max_arousal = MAX_AROUSAL || 120
+	var/current_arousal = arousal_data["arousal"] || 0
+	var/arousal_percent = min(100, (current_arousal / max_arousal) * 100)
+	var/pleasure_percent = arousal_percent
+	var/pain_percent = 0
+
+	return "[arousal_percent],[pleasure_percent],[pain_percent]"
 
 /datum/sex_session/proc/check_climax()
 	var/list/arousal_data = list()
@@ -599,7 +632,22 @@
 	dat += "</div>"
 
 	// JavaScript for search functionality and tab management
-	dat += "<script>"
+	dat += "<script type=\"text/javascript\">"
+
+	dat +="function updateProgressBars(dataString) {"
+	dat +=	"var values = dataString.split(',');"
+	dat +=	"var arousalPercent = parseFloat(values\[0\]) || 0;"
+	dat +=	"var pleasurePercent = parseFloat(values\[1\]) || 0;"
+	dat +=	"var painPercent = parseFloat(values\[2\]) || 0;"
+
+	dat +=	"var arousalBar = document.querySelector('.progress-fill-arousal');"
+	dat +=	"var pleasureBar = document.querySelector('.progress-fill-pleasure');"
+	dat +=	"var painBar = document.querySelector('.progress-fill-pain');"
+
+	dat +=	"if(arousalBar) arousalBar.style.width = arousalPercent + '%';"
+	dat +=	"if(pleasureBar) pleasureBar.style.width = pleasurePercent + '%';"
+	dat +=	"if(painBar) painBar.style.width = painPercent + '%';"
+	dat +=	"}"
 
 	dat += "function switchNotesTab(tabName) {"
 	dat += "  var contents = document.querySelectorAll('.notes-tab-content');"
