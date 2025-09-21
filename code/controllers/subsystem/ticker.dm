@@ -274,9 +274,10 @@ SUBSYSTEM_DEF(ticker)
 							continue
 					readied_jobs.Add(V)
 
-	if(!(("Monarch" in readied_jobs) || (start_immediately == TRUE))) //start_immediately triggers when the world is doing a test run or an admin hits start now, we don't need to check for king
-		to_chat(world, span_purple("[pick(no_ruler_lines)]"))
-		return FALSE
+	if(CONFIG_GET(flag/ruler_required))
+		if(!(("Monarch" in readied_jobs) || (start_immediately == TRUE))) //start_immediately triggers when the world is doing a test run or an admin hits start now, we don't need to check for king
+			to_chat(world, span_purple("[pick(no_ruler_lines)]"))
+			return FALSE
 
 	job_change_locked = TRUE
 	return TRUE

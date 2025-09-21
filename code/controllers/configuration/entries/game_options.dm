@@ -362,3 +362,7 @@
 
 /datum/config_entry/flag/save_spritesheets
 	default = FALSE
+
+/datum/config_entry/flag/ruler_required
+	config_entry_value = FALSE
+	default = FALSE
