@@ -46,6 +46,20 @@
 	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_STANDARD
 
+/obj/item/clothing/gloves/plate/blk
+	name = "blacksteel gauntlets"
+	desc = "Gauntlets of blacksteel, offering unmatched protection for the hands."
+	icon_state = "bkgloves"
+	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	anvilrepair = /datum/skill/craft/blacksmithing
+	smeltresult = /obj/item/ingot/blacksteel
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PLATE_GOOD
+	item_weight = 7 * BLACKSTEEL_MULTIPLIER
+	sellprice = VALUE_SILVER_ITEM * 2
+
 	//............... Evil Gloves ............... //
 
 /obj/item/clothing/gloves/plate/zizo

@@ -29,7 +29,7 @@
 	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/pants/tights/colored/jester
-	desc = "Funny tights!"
+	name = "funny tights"
 	color = CLOTHING_SALMON
 
 /obj/item/clothing/pants/tights/colored/lord
@@ -40,13 +40,12 @@
 	body_parts_covered = GROIN|LEG_LEFT
 	torn_sleeve_number = 1
 
-/obj/item/clothing/pants/tights/colored/vagrant/l
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_TORN
-	body_parts_covered = GROIN|LEG_RIGHT
-
 /obj/item/clothing/pants/tights/colored/vagrant/Initialize()
 	color = pick(CLOTHING_MUD_BROWN, CLOTHING_OLD_LEATHER, CLOTHING_SPRING_GREEN, CLOTHING_BARK_BROWN, CLOTHING_CANVAS	)
+	if(prob(50))
+		r_sleeve_status = SLEEVE_NORMAL
+		l_sleeve_status = SLEEVE_TORN
+		body_parts_covered = GROIN|LEG_RIGHT
 	return ..()
 
 /obj/item/clothing/pants/tights/colored/guard

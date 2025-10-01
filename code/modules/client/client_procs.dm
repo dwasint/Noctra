@@ -756,7 +756,7 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	log_access("Logout: [key_name(src)]")
 	GLOB.ahelp_tickets.ClientLogout(src)
 
-	if(credits)
+	if(length(credits))
 		QDEL_LIST(credits)
 
 	if(player_details)

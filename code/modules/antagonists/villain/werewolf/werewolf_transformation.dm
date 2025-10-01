@@ -86,8 +86,13 @@
 					to_chat(H, span_warning("Daylight shines around me... the curse begins to fade."))
 					COOLDOWN_START(src, message_cooldown, 10 SECONDS)
 
-/datum/antagonist/werewolf/proc/generate_werewolf(mob/living/user)
+/datum/antagonist/werewolf/proc/generate_werewolf(mob/living/carbon/human/user)
+	if(!istype(user))
+		return
 	var/mob/living/carbon/human/species/werewolf/W = new (get_turf(user))
+
+	if(user.age == AGE_CHILD)
+		W.age = AGE_CHILD
 
 	W.set_patron(user.patron)
 	W.limb_destroyer = TRUE
@@ -117,7 +122,7 @@
 	ADD_TRAIT(W, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_ORGAN_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_NASTY_EATER, TRAIT_GENERIC)
-	ADD_TRAIT(W, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNORESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)

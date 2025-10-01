@@ -224,6 +224,14 @@
 	hammers_per_item = 10
 	craftdiff = 3
 
+/datum/artificer_recipe/contraptions/advanced_ingot_mold
+	name = "Advanced Ingot Mold (+1 Ingot Mold) (+1 Metal Gear) (+1 Bucket)"
+	required_item = /obj/item/ingot/bronze
+	additional_items = list(/obj/item/mould/ingot = 1, /obj/item/gear/metal = 1, /obj/item/reagent_containers/glass/bucket/wooden = 1)
+	created_item = /obj/item/mould/ingot/advanced
+	hammers_per_item = 6
+	craftdiff = 3
+
 /datum/artificer_recipe/contraptions/shears
 	name = "Amputation Shears (+2 Bronze)"
 	required_item = /obj/item/ingot/bronze

@@ -85,13 +85,12 @@
 	body_parts_covered = CHEST|ARM_LEFT|VITALS
 	torn_sleeve_number = 1
 
-/obj/item/clothing/shirt/undershirt/colored/vagrant/l
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_TORN
-	body_parts_covered = CHEST|ARM_RIGHT|VITALS
-
 /obj/item/clothing/shirt/undershirt/colored/vagrant/Initialize()
 	color = pick(CLOTHING_MUD_BROWN, CLOTHING_OLD_LEATHER, CLOTHING_SPRING_GREEN, CLOTHING_BARK_BROWN, CLOTHING_CANVAS	)
+	if(prob(50))
+		r_sleeve_status = SLEEVE_NORMAL
+		l_sleeve_status = SLEEVE_TORN
+		body_parts_covered = CHEST|ARM_RIGHT|VITALS
 	return ..()
 
 /obj/item/clothing/shirt/undershirt/webs

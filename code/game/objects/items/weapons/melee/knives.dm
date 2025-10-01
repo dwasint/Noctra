@@ -304,7 +304,7 @@
 
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop, /datum/intent/dagger/thrust)
 	name = "iron seme"
-	desc = "A broad iron dagger of ancient Lakkarian design. Popular amongst the indigenous elven tribes of western Lakkari."
+	desc = "A broad iron dagger of ancient Lakkarian design. Popular amongst the indigenous jungle elf tribes of the Lakkarian Rainforests."
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "njora_iron"
 	melting_material = null
@@ -335,7 +335,7 @@
 /obj/item/weapon/knife/njora/steel
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop, /datum/intent/dagger/thrust)
 	name = "steel seme"
-	desc = "A broad steel dagger of ancient Lakkarian design. Popular amongst the indigenous elven tribes of western Lakkari."
+	desc = "A broad steel dagger of ancient Lakkarian design. Popular amongst the indigenous jungle elf tribes of the Lakkarian Rainforests."
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "njora_steel"
 	melting_material = null

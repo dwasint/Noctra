@@ -161,7 +161,7 @@
 
 /obj/item/reagent_containers/food/snacks/organ/on_consume(mob/living/eater)
 	if(HAS_TRAIT(eater, TRAIT_ORGAN_EATER) && eat_effect != /datum/status_effect/debuff/rotfood)
-		eat_effect = null // food buff handled in /datum/reagent/organpoison
+		eat_effect = /datum/status_effect/buff/foodbuff
 	if(bitecount >= bitesize)
 		record_featured_stat(FEATURED_STATS_CRIMINALS, eater)
 		record_round_statistic(STATS_ORGANS_EATEN)
@@ -202,6 +202,11 @@
 
 /obj/item/reagent_containers/food/snacks/organ/lungs
 	name = "lungs"
+	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/organpoison = 2)
+	grind_results = list(/datum/reagent/organpoison = 6)
+
+/obj/item/reagent_containers/food/snacks/organ/liver
+	name = "liver"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT, /datum/reagent/organpoison = 2)
 	grind_results = list(/datum/reagent/organpoison = 6)
 

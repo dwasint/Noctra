@@ -43,6 +43,7 @@
 	remains_type = /obj/item/weapon/axe/battle
 
 	ai_controller = /datum/ai_controller/minotaur
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/Initialize()

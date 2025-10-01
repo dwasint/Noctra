@@ -73,7 +73,7 @@
 
 /datum/reagent/consumable/tea/badidea/on_mob_life(mob/living/carbon/M)
 	if(volume > 5)
-		if(isdwarf(M))
+		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
 			M.add_nausea(1)
 			M.adjustToxLoss(0.5)
 		else

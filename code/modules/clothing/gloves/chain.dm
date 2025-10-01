@@ -38,5 +38,6 @@
 
 /obj/item/clothing/gloves/chain/vampire
 	name = "ancient ceremonial gloves"
+	desc = "A weathered gauntlet with an ancient design."
 	icon_state = "vgloves"
 	item_weight = 6 * STEEL_MULTIPLIER

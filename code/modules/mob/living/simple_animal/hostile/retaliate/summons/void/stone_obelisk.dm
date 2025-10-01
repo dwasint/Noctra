@@ -63,7 +63,7 @@
 	food_max = 0
 
 	ai_controller = /datum/ai_controller/void_obelisk
-
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 	del_on_death = TRUE
 
 	var/datum/action/cooldown/mob_cooldown/voidblast/beam

@@ -28,7 +28,6 @@
 		M.adjustBruteLoss(-1.75*REM, 0)
 		M.adjustFireLoss(-1.75*REM, 0)
 		M.adjustOxyLoss(-1.25, 0)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 		M.adjustCloneLoss(-1.75*REM, 0)
 	if(istype(M, /mob/living/carbon/human/species/werewolf))
 		var/mob/living/carbon/human/human = M
@@ -61,7 +60,6 @@
 		M.adjustBruteLoss(-7*REM, 0)
 		M.adjustFireLoss(-7*REM, 0)
 		M.adjustOxyLoss(-5, 0)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 		M.adjustCloneLoss(-7*REM, 0)
 	..()
 	. = 1
@@ -347,7 +345,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.09)
-		if(isdwarf(M))
+		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
 			M.add_nausea(1)
 			M.adjustToxLoss(0.5)
 		else
@@ -368,7 +366,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongpoison/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.09)
-		if(isdwarf(M))
+		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
 			M.add_nausea(1)
 			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
 		else
@@ -390,9 +388,9 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
 		M.add_nausea(9)
 		M.adjustToxLoss(2)
-	else if(volume >= 1.5 && HAS_TRAIT(M, TRAIT_ORGAN_EATER))
-		M.apply_status_effect(/datum/status_effect/buff/foodbuff)
-		M.reagents.remove_reagent(/datum/reagent/organpoison, 1.5)
+	else
+		//it does nothing, so we can just remove it
+		M.reagents.remove_reagent(/datum/reagent/organpoison, 1)
 	return ..()
 
 /datum/reagent/stampoison
@@ -407,7 +405,10 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/stampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(2.25) //Slowly leech stamina
+		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
+			M.adjust_stamina(0.75)
+		else
+			M.adjust_stamina(2.25) //Slowly leech stamina
 	return ..()
 
 /datum/reagent/strongstampoison
@@ -422,7 +423,10 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongstampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(9) //Rapidly leech stamina
+		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
+			M.adjust_stamina(4.5)
+		else
+			M.adjust_stamina(9) //Rapidly leech stamina
 	return ..()
 
 

@@ -37,7 +37,7 @@
 	to_chat(owner.current, span_greentext("You have consumed enough organs and hearts to satisfy Graggar!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence(GRAGGAR, 15)
+	adjust_storyteller_influence(GRAGGAR, 20)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_ORGAN_CONSUMED)
 

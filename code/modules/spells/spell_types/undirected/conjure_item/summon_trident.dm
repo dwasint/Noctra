@@ -1,5 +1,24 @@
 /datum/action/cooldown/spell/undirected/conjure_item/summon_trident
 	name = "Summon Trident"
+	desc = "Summon a trident with magic"
+	button_icon_state = "lightning"
+	sound = 'sound/foley/jumpland/waterland.ogg'
+
+	associated_skill = /datum/skill/magic/arcane
+
+	invocation = "Innkalle trefork"
+	invocation_type = INVOCATION_SHOUT
+	charge_time = 2 SECONDS
+	charge_slowdown = 0.3
+	cooldown_time = 1 MINUTES
+	spell_cost = 20
+
+	delete_old = TRUE
+	item_type = /obj/item/fishingrod/abyssor_trident/arcane
+	item_duration = 0
+
+/datum/action/cooldown/spell/undirected/conjure_item/summon_trident/miracle
+	name = "Summon Trident"
 	desc = "Summon a trident from Abyssor's domain."
 	button_icon_state = "lightning"
 	sound = 'sound/foley/jumpland/waterland.ogg'
@@ -125,3 +144,7 @@
 	deeplist = list(/obj/item/reagent_containers/food/snacks/fish/angler = 1,
 					/obj/item/reagent_containers/food/snacks/fish/clownfish = 1)
 
+/obj/item/fishingrod/abyssor_trident/arcane
+	name = "Arcane Trident"
+	desc = "A conjured trident, it resonates with arcyne energy."
+	icon_state = "tridentblue"

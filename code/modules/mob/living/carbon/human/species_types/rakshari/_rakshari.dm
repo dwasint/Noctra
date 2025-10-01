@@ -120,7 +120,7 @@
 
 /datum/species/rakshari/spec_life(mob/living/carbon/human/H)
 	. = ..()
-	if(prob(1))
+	if(prob(1) && !(H.rogue_sneaking))
 		if(!COOLDOWN_FINISHED(src, cat_meow_cooldown))
 			return
 		var/emote = "meow"

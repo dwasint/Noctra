@@ -71,12 +71,7 @@
 	return ..()
 
 /obj/item/needle/pre_attack(atom/A, mob/living/user, params)
-	if(isitem(A) && !can_repair)
-		if(istype(A, /obj/item/storage))
-			return ..()
-		to_chat(user, span_warning("[src] cannot be used to repair [A]!"))
-		return TRUE
-	if(isitem(A) && can_repair)
+	if(isitem(A))
 		var/obj/item/I = A
 		if(!(I.obj_flags & CAN_BE_HIT) && !istype(A, /obj/item/storage)) // to preserve old attack_obj behavior
 			return ..()
@@ -89,6 +84,9 @@
 			return ..()
 		if(stringamt < 1)
 			to_chat(user, span_warning("[src] has no thread left!"))
+			return TRUE
+		if(!can_repair)
+			to_chat(user, span_warning("[src] cannot be used to repair [A]!"))
 			return TRUE
 		var/armor_value = 0
 		var/skill_level = user.get_skill_level(/datum/skill/misc/sewing)

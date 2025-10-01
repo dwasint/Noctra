@@ -21,6 +21,7 @@
 
 // Town Garrison (Including forest)
 #define ACCESS_GARRISON "garrison"
+#define ACCESSS_LIEUTENANT "lieutenant"
 #define ACCESS_FOREST "forest"
 #define ACCESS_CAPTAIN "captain"
 #define ACCESS_GATE "gate"

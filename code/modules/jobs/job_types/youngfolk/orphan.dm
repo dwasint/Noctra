@@ -15,7 +15,7 @@
 	allowed_races = RACES_PLAYER_ALL
 	allowed_ages = list(AGE_CHILD)
 
-	outfit = /datum/outfit/job/orphan
+	outfit = /datum/outfit/orphan
 	can_have_apprentices = FALSE
 	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
 
@@ -23,7 +23,7 @@
 	. = ..()
 	peopleknowme = list()
 
-/datum/outfit/job/orphan/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/orphan/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/orphanage_renovated = FALSE
 	if(has_world_trait(/datum/world_trait/orphanage_renovated))
@@ -44,14 +44,8 @@
 		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	else
 		if(prob(50))
-			if(prob(50))
-				shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
-			else
-				shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
-			if(prob(50))
-				pants = /obj/item/clothing/pants/tights/colored/vagrant/l
-			else
-				pants = /obj/item/clothing/pants/tights/colored/vagrant
+			shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
+			pants = /obj/item/clothing/pants/tights/colored/vagrant
 		else
 			armor = /obj/item/clothing/shirt/rags
 

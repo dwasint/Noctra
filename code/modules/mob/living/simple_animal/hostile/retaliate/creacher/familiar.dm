@@ -29,5 +29,6 @@
 	perfect_butcher_results = null
 	head_butcher = null
 	del_on_death = TRUE
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 	ai_controller = /datum/ai_controller/summon

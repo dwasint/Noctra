@@ -586,6 +586,9 @@
 	background_track_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
+/area/rogue/indoors/town/garrison/lieutenant
+	name = "Watch Lieutenant"
+
 /area/rogue/indoors/town/cell
 	name = "dungeon cell"
 	icon_state = "cell"

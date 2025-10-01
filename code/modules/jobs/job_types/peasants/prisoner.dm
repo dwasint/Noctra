@@ -18,15 +18,15 @@
 	banned_leprosy = FALSE
 	bypass_lastclass = TRUE
 
-	allowed_races = RACES_PLAYER_ALL
+	allowed_races = RACES_PLAYER_FOREIGNNOBLE
 
-	outfit = /datum/outfit/job/prisoner
+	outfit = /datum/outfit/prisoner
 	give_bank_account = 173
 
 	cmode_music = 'sound/music/cmode/towner/CombatPrisoner.ogg'
 	can_have_apprentices = FALSE
 
-/datum/outfit/job/prisoner/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/prisoner/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/pants/loincloth/colored/brown
 	mask = /obj/item/clothing/face/facemask/prisoner

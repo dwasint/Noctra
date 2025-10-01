@@ -30,7 +30,7 @@
 	to_chat(owner.current, span_greentext("You've butchered enough animals to satisfy Dendor!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence(DENDOR, 15)
+	adjust_storyteller_influence(DENDOR, 20)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_MOB_BUTCHERED)
 

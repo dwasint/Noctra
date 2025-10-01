@@ -4,6 +4,13 @@
 	abstract_type = /obj/item/clothing/head/padded
 
 //................ Simple Hats ............... //
+/obj/item/clothing/head/dungeoneer
+	name = "sack hood"
+	desc = "A crude way to conceal one's identity, these are usually worn by local brigands to not get recognised."
+	icon_state = "dungeoneer"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	fiber_salvage = FALSE
+
 /obj/item/clothing/head/menacing
 	name = "sack hood"
 	desc = "A crude way to conceal one's identity, these are usually worn by local brigands to not get recognised."
@@ -303,3 +310,15 @@
 	desc = ""
 	icon_state = "takuhatsugasa"
 	item_flags = ABSTRACT
+
+/obj/item/clothing/head/helmet/pegasusknight
+	name = "pegasus knight helm"
+	desc = "A helmet typically worn by Lakkarian pegasus knights. Many find the design of this helmet unusual, but it protects the neck well and is easy to see out of."
+	icon_state = "lakkarihelm"
+	armor = ARMOR_PLATE
+	flags_inv = HIDEEARS|HIDEHAIR
+	body_parts_covered = HEAD_NECK
+	prevent_crits = ALL_EXCEPT_BLUNT
+	block2add = FOV_BEHIND
+	anvilrepair = /datum/skill/craft/armorsmithing
+	sewrepair = FALSE

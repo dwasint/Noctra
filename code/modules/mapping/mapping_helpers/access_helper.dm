@@ -98,6 +98,10 @@
 /obj/effect/mapping_helpers/access/keyset/garrison/general
 	accesses = list(ACCESS_GARRISON)
 
+/obj/effect/mapping_helpers/access/keyset/garrison/lieutenant
+	accesses = list(ACCESSS_LIEUTENANT)
+	difficulty = 2
+
 /obj/effect/mapping_helpers/access/keyset/garrison/captain
 	accesses = list(ACCESS_CAPTAIN)
 	difficulty = 2

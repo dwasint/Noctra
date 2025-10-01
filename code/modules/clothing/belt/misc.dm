@@ -45,7 +45,13 @@
 		/obj/item/key/forrestgarrison,
 	)
 
-//Bandit's belt starts with a bandage and a key to their guildhall.
+/obj/item/storage/belt/leather/townguard //they get their keys + dagger there
+	populate_contents = list(
+		/obj/item/weapon/knife/dagger/steel/special,
+		/obj/item/storage/keyring/guard,
+	)
+
+// Bandit's belt starts with a bandage and a key to their guildhall.
 /obj/item/storage/belt/leather/mercenary
 	populate_contents = list(
 		/obj/item/natural/cloth,
@@ -282,6 +288,10 @@
 	bloody_icon_state = "bodyblood"
 	component_type = /datum/component/storage/concrete/grid/backpack
 
+/obj/item/storage/backpack/backpack/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HARD_TO_STEAL, TRAIT_GENERIC)
+
 /obj/item/storage/backpack/backpack/artibackpack
 	name = "cooling backpack"
 	desc = "A leather backpack with complex bronze pipework coursing through it. It hums and vibrates constantly."
@@ -290,6 +300,12 @@
 	resistance_flags = FIRE_PROOF
 	sewrepair = FALSE
 	//for those curious, yes the artibackpack preserves organs and food. Check _organ.dm and snacks.dm
+
+/obj/item/storage/backpack/backpack/artibackpack/porter
+	name = "humdrum"
+	desc = "A absurdly oversized backpack with complex bronze pipework coursing through it. It hums and vibrates constantly."
+	sewrepair = TRUE //Kobold thing, trust.
+	component_type = /datum/component/storage/concrete/grid/porter
 
 /obj/item/storage/backpack/satchel/surgbag
 	name = "surgery bag"

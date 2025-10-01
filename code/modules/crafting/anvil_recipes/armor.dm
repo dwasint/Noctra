@@ -55,10 +55,26 @@
 
 // IRON ARMOR
 /datum/anvil_recipe/armor/iron/splint
-	name = "Splint Armor (+Hide)"
+	name = "Two splint Armors (+2 cured leather)"
 	recipe_name = "durable light armor"
-	additional_items = list(/obj/item/natural/hide/cured)
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
 	created_item = /obj/item/clothing/armor/leather/splint
+	createditem_extra = 1
+
+/datum/anvil_recipe/armor/iron/splintpants
+	name = "two splint trousers  (+3 cured leather)" //two items per bar since is mostly leather + iron bits, ideal for cheaper armors
+	recipe_name = "durable light armor"
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/pants/trou/leather/splint
+	createditem_extra = 1
+
+/datum/anvil_recipe/armor/iron/mailleboots
+	name = "two chainmail boots (+2 cured leather)"
+	recipe_name = "durable light armor"
+	additional_items = list(/obj/item/natural/hide/cured, /obj/item/natural/hide/cured)
+	created_item = /obj/item/clothing/shoes/boots/armor/ironmaille
+	createditem_extra = 1
+
 
 /datum/anvil_recipe/armor/iron/cuirass
 	name = "Iron Cuirass"
@@ -129,8 +145,9 @@
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/iron/highcollier_renegade
-	name = "Iron Renegade Collar"
+	name = "Iron Renegade Collar (+Hide)"
 	recipe_name = "a renegade collar"
+	additional_items = list(/obj/item/natural/hide)
 	created_item = /obj/item/clothing/neck/highcollier/iron/renegadecollar
 	craftdiff = 1
 
@@ -146,6 +163,12 @@
 	name = "Iron Plate Gauntlets"
 	recipe_name = "a pair of Plate Gauntlets"
 	created_item = /obj/item/clothing/gloves/plate/iron
+
+/datum/anvil_recipe/armor/iron/ijackchain
+	name = "2x Iron Jack Chains"
+	recipe_name = "two pairs of Jack Chains"
+	created_item = /obj/item/clothing/wrists/bracers/ironjackchain
+	createditem_extra = 1
 
 /datum/anvil_recipe/armor/iron/ibracers
 	name = "Iron Plate Vambraces"
@@ -227,6 +250,13 @@
 	recipe_name = "a heavy steel bastion helmet"
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = /obj/item/clothing/head/helmet/heavy/necked
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/pegasusknighthelm
+	name = "Lakkarian Pegasus Knight Helm (+Cloth)"
+	recipe_name = "a pegasus knight's helmet"
+	additional_items = list(/obj/item/natural/cloth)
+	created_item = /obj/item/clothing/head/helmet/pegasusknight
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/steel/crusader_helm
@@ -617,7 +647,7 @@
 	recipe_name = "a cuirass"
 	created_item = /obj/item/clothing/armor/cuirass/rare/elven
 
-/datum/anvil_recipe/armor/steel/helmetsall
+/datum/anvil_recipe/armor/steel/helmetsall_zalad
 	name = "Kulah Khud"
 	recipe_name = "a Zalad Sallet"
 	created_item = /obj/item/clothing/head/helmet/sallet/zalad
@@ -834,7 +864,7 @@
 /datum/anvil_recipe/armor/steel/rare/zaladin_plate_helm
 	name = "Zaladin Bastion Plate Helm (+Bar)"
 	additional_items = list(/obj/item/ingot/steel)
-	created_item = /obj/item/clothing/head/rare/zybanplate
+	created_item = /obj/item/clothing/head/rare/zaladplate
 
 /datum/anvil_recipe/armor/steel/rare/hoplite_plate_helm
 	name = "Hoplite Plate Helm (+Bronze Bar, +Steel Bar)"
@@ -843,12 +873,12 @@
 
 /datum/anvil_recipe/armor/steel/rare/zaladin_plate_gauntlets
 	name = "Zaladin Claw Plate Gauntlets"
-	created_item = /obj/item/clothing/gloves/rare/zybanplate
+	created_item = /obj/item/clothing/gloves/rare/zaladplate
 
 /datum/anvil_recipe/armor/steel/rare/zaladin_plate
 	name = "Zaladin Kataphractoe Scaleskin (+Bar X3)"
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/clothing/armor/rare/zybanplate
+	created_item = /obj/item/clothing/armor/rare/zaladplate
 
 /datum/anvil_recipe/armor/steel/rare/hoplite_plate
 	name = "Hoplite Plate (+Bar x2 +Bronze Bar x2)"
@@ -857,7 +887,7 @@
 
 /datum/anvil_recipe/armor/steel/rare/zaladin_plate_boots
 	name = "Zaladin Boots"
-	created_item = /obj/item/clothing/shoes/boots/rare/zybanplate
+	created_item = /obj/item/clothing/shoes/boots/rare/zaladplate
 
 /datum/anvil_recipe/armor/steel/rare/hoplite_plate_bracers
 	name = "Hoplite Bracers (+Bronze Bar)"

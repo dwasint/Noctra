@@ -37,7 +37,7 @@
 	. = ..()
 	owner.Dizzy(5)
 
-/datum/status_effect/debuff/dazed/refresh()
+/datum/status_effect/debuff/dazed/refresh(mob/living/new_owner, duration_override, ...)
 	. = ..()
 	owner.Dizzy(5)
 

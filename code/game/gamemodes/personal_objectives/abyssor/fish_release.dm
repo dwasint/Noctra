@@ -30,7 +30,7 @@
 	to_chat(owner.current, span_greentext("A rare fish has been returned to the depths, pleasing Abyssor!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence(ABYSSOR, 15)
+	adjust_storyteller_influence(ABYSSOR, 20)
 	escalate_objective()
 	UnregisterSignal(SSdcs, COMSIG_GLOBAL_FISH_RELEASED)
 

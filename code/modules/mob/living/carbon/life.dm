@@ -43,7 +43,6 @@
 					heart_attacking = FALSE
 
 		handle_sleep()
-
 		handle_brain_damage()
 
 	check_cremation()
@@ -166,7 +165,7 @@
 		var/turf/open/T = loc
 		if(reagents && T.pollution)
 			T.pollution.breathe_act(src)
-			if(HAS_TRAIT(src, TRAIT_NOSTINK))
+			if(HAS_TRAIT(src, TRAIT_DEADNOSE))
 				return
 			if(next_smell <= world.time)
 				next_smell = world.time + 30 SECONDS

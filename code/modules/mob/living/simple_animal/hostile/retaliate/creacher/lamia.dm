@@ -44,6 +44,7 @@
 	remains_type = null
 
 	ai_controller = /datum/ai_controller/lamia
+	dendor_taming_chance = DENDOR_TAME_PROB_LOW
 
 
 

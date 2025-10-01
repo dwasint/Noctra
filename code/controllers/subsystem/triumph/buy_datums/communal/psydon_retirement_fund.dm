@@ -2,7 +2,7 @@
 	name = "Psydon's Retirement Fund"
 	desc = "Contribute to a fund that will be redistributed to the poorest players when its full or when the round ends."
 	triumph_buy_id = TRIUMPH_BUY_PSYDON_RETIREMENT
-	maximum_pool = 500
+	maximum_pool = 300
 
 /datum/triumph_buy/communal/psydon_retirement_fund/on_activate()
 	var/total_pool = SStriumphs.communal_pools[type]

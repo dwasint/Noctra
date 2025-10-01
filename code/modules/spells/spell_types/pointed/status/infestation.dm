@@ -18,13 +18,14 @@
 	charge_time = 1 SECONDS
 	cooldown_time = 20 SECONDS
 	spell_cost = 20
+	duration_scaling = TRUE
 
 	status_effect = /datum/status_effect/debuff/infestation
 
 /datum/status_effect/debuff/infestation
 	id = "infestation"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/infestation
-	duration = 5 SECONDS
+	duration = 45 SECONDS
 	effectedstats = list(STATKEY_CON = -2)
 	var/static/mutable_appearance/rotten = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
 
@@ -34,10 +35,15 @@
 	to_chat(owner, span_danger("I am suddenly surrounded by a cloud of bugs!"))
 	target.Jitter(20)
 	target.add_overlay(rotten)
+	RegisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(wash_off))
 
 /datum/status_effect/debuff/infestation/on_remove()
 	. = ..()
+	UnregisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT)
 	owner.cut_overlay(rotten)
+
+/datum/status_effect/debuff/infestation/proc/wash_off()
+	qdel(src)
 
 /datum/status_effect/debuff/infestation/tick()
 	var/static/list/messages = list(

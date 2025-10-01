@@ -51,7 +51,7 @@
 /obj/item/clothing/armor/gambeson/heavy/colored/dark
 	color = CLOTHING_DARK_INK
 
-/obj/item/clothing/armor/gambeson/lakkarijupon
+/obj/item/clothing/armor/gambeson/heavy/lakkarijupon
 	name = "lakkarian jupon"
 	desc = "a thick, quilted jupon with an iron heart protector. Apart of the standard traveling uniform for Lakkarian clerics. It's great for the southern desert's heat and northern tundra's cold."
 	icon_state = "lakkarijupon"

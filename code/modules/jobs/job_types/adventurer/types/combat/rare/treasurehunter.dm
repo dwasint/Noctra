@@ -1,16 +1,16 @@
 //dagger and huntknife
-/datum/advclass/combat/gravedigger
-	name = "Treasure Hunter"
+/datum/job/advclass/combat/gravedigger
+	title = "Treasure Hunter"
 	tutorial = "Grave robbers sell themselves as treasure hunters, but be sure to wipe that \
 	necrotic flesh off of that trinket you found."
 	allowed_sexes = list(MALE, FEMALE)
 
-	outfit = /datum/outfit/job/adventurer/gravedigger
+	outfit = /datum/outfit/adventurer/gravedigger
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 
-/datum/outfit/job/adventurer/gravedigger/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/adventurer/gravedigger/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/pants/tights/colored/black
 	armor = /obj/item/clothing/armor/leather/vest/colored/black
@@ -47,6 +47,6 @@
 		H.change_stat(STATKEY_END, 2)
 		H.change_stat(STATKEY_SPD, 1)
 		H.change_stat(STATKEY_LCK, -1) // Tradeoff for never being cursed when graverobbing.
-		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)

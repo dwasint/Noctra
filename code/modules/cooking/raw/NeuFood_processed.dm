@@ -109,14 +109,15 @@
 /obj/item/reagent_containers/food/snacks/meat/salami/on_consume(mob/living/eater)
 	..()
 	if(slices_num)
-		if(bitecount == 1)
-			slices_num = 4
-		if(bitecount == 2)
-			slices_num = 3
-		if(bitecount == 3)
-			slices_num = 2
-		if(bitecount == 4)
-			changefood(slice_path, eater)
+		switch(bitecount)
+			if(1)
+				slices_num = 4
+			if(2)
+				slices_num = 3
+			if(3)
+				slices_num = 2
+			if(4)
+				changefood(slice_path, eater)
 
 /obj/item/reagent_containers/food/snacks/meat/salami/slice
 	eat_effect = null
@@ -345,7 +346,7 @@
 	name = "stick of butter"
 	desc = ""
 	icon_state = "butter6"
-	list_reagents = list(/datum/reagent/consumable/nutriment = BUTTER_NUTRITION)
+	list_reagents = list(/datum/reagent/consumable/nutriment = BUTTER_NUTRITION * 2)
 	foodtype = DAIRY
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	slice_path = /obj/item/reagent_containers/food/snacks/butterslice
@@ -353,6 +354,7 @@
 	slice_batch = FALSE
 	bitesize = 6
 	slice_sound = TRUE
+	tastes = list("raw unsalted butter" = 1)
 	faretype = FARE_IMPOVERISHED
 
 /obj/item/reagent_containers/food/snacks/butter/update_icon_state()
@@ -365,36 +367,40 @@
 /obj/item/reagent_containers/food/snacks/butter/on_consume(mob/living/eater)
 	..()
 	if(slices_num)
-		if(bitecount == 1)
-			slices_num = 5
-		if(bitecount == 2)
-			slices_num = 4
-		if(bitecount == 3)
-			slices_num = 3
-		if(bitecount == 4)
-			slices_num = 2
-		if(bitecount == 5)
-			changefood(slice_path, eater)
+		switch(bitecount)
+			if(1)
+				slices_num = 5
+			if(2)
+				slices_num = 4
+			if(3)
+				slices_num = 3
+			if(4)
+				slices_num = 2
+			if(5)
+				changefood(slice_path, eater)
 
 /obj/item/reagent_containers/food/snacks/butterslice
 	icon_state = "butter_slice"
 	name = "butter"
 	foodtype = DAIRY
+	eat_effect = /datum/status_effect/debuff/uncookedfood
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("raw unsalted butter" = 1)
+	bitesize = 1
 	faretype = FARE_IMPOVERISHED
 
 /*	............   Pestran Stick   ................ */
 
 /obj/item/reagent_containers/food/snacks/pestranstick
 	name = "pestran stick"
-	desc = "An unappetizing snack adored by devout Pestrans, somehow doesnt taste half bad."
+	desc = "An unappetizing snack adored by devout Pestrans, somehow doesn't taste half bad."
 	icon_state = "pestranstick"
 	list_reagents = list(/datum/reagent/consumable/nutriment = BUTTER_NUTRITION)
-	tastes = list("raw unsalted butter" = 1)
+	tastes = list("raw unsalted butter on a stick" = 1)
 	trash = /obj/item/grown/log/tree/stick
 	foodtype = DAIRY
-	bitesize = 6
-	faretype = FARE_NEUTRAL
+	bitesize = 3
+	faretype = FARE_POOR
 
 /*-------\
 | Cheese |

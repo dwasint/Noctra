@@ -51,6 +51,8 @@
 
 	var/cached_use = 0
 
+	var/cleanliness_factor = 1 //related to hygiene for washing
+
 /turf/open/water/proc/set_watervolume(volume)
 	water_volume = volume
 	if(src in children)
@@ -409,6 +411,16 @@
 			if(!mapped)
 				adjust_originate_watervolume(-2)
 			playsound(user, pick(wash), 100, FALSE)
+
+			//handle hygiene
+			if(isliving(user))
+				var/mob/living/hygiene_target = user
+				var/list/equipped_items = hygiene_target.get_equipped_items()
+				if(length(equipped_items) > 0)
+					to_chat(user, span_notice("I could probably clean myself faster if I weren't wearing clothes..."))
+					hygiene_target.adjust_hygiene(HYGIENE_GAIN_CLOTHED * cleanliness_factor)
+				else
+					hygiene_target.adjust_hygiene(HYGIENE_GAIN_UNCLOTHED * cleanliness_factor)
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 /turf/open/water/attackby_secondary(obj/item/item2wash, mob/user, params)
@@ -477,6 +489,7 @@
 	icon_state = MAP_SWITCH("bathtile", "bathtileW")
 	water_level = 2
 	slowdown = 15
+	cleanliness_factor = 5
 	water_reagent = /datum/reagent/water
 
 /turf/open/water/sewer
@@ -491,6 +504,7 @@
 	footstep = FOOTSTEP_MUD
 	barefootstep = FOOTSTEP_MUD
 	heavyfootstep = FOOTSTEP_MUD
+	cleanliness_factor = -5
 
 /turf/open/water/sewer/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()
@@ -533,6 +547,7 @@
 	slowdown = 20
 	wash_in = FALSE
 	water_reagent = /datum/reagent/water/gross/sewer
+	cleanliness_factor = -5
 
 /turf/open/water/swamp/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -607,6 +622,7 @@
 	slowdown = 15
 	wash_in = FALSE
 	water_reagent = /datum/reagent/water/gross/marshy
+	cleanliness_factor = -3
 
 /turf/open/water/marsh/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -639,6 +655,7 @@
 	name = "water"
 	desc = "Clear and shallow water, mostly untainted by surrounding soil."
 	icon_state = MAP_SWITCH("dirt", "dirtW5")
+	cleanliness_factor = -1
 
 /turf/open/water/cleanshallow/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -651,6 +668,7 @@
 	icon_state = MAP_SWITCH("rock", "rockb")
 	water_level = 2
 	slowdown = 15
+	cleanliness_factor = -5
 	water_reagent = /datum/reagent/blood
 
 /turf/open/water/blood/Initialize()
@@ -724,15 +742,18 @@
 /turf/open/water/river/dirt
 	icon_state = MAP_SWITCH("dirty", "rivermovealt-dir")
 	water_reagent = /datum/reagent/water/gross
+	cleanliness_factor = -5
 
 /turf/open/water/river/blood
 	icon_state = MAP_SWITCH("rocky", "rivermovealt2-dir")
 	water_reagent = /datum/reagent/blood
+	cleanliness_factor = -5
 
 /turf/open/water/acid // holy SHIT
 	name = "acid pool"
 	desc = "Well... how did THIS get here?"
 	water_reagent = /datum/reagent/rogueacid
+	cleanliness_factor = -100
 
 /turf/open/water/acid/mapped
 	desc = "You know how this got here. You think."

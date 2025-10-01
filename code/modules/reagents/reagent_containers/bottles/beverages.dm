@@ -91,13 +91,13 @@
 	auto_label_desc = "This one appears to be labelled as a sweet wine from the colder northern regions."
 
 /obj/item/reagent_containers/glass/bottle/elfred
-	desc = "A bottle gilded with a silver cork-seal. Likely worth more than what an entire village makes!"
+	desc = "A bottle gilded with a silver cork-seal."
 	list_reagents = list(/datum/reagent/consumable/ethanol/elfred = 70)
 	auto_label_name = "valorian red"
 	auto_label_desc = "An Elvish red wine from Valoria. Likely worth more than what an entire village makes!"
 
 /obj/item/reagent_containers/glass/bottle/elfblue
-	desc = "A bottle gilded with a golden cork-seal. This bottle would swoon Gods over!"
+	desc = "A bottle gilded with a golden cork-seal."
 	list_reagents = list(/datum/reagent/consumable/ethanol/elfblue = 70)
 	auto_label_name = "valmora blue"
 	auto_label_desc = "This is the legendary Valmora Blue from the Vineyard of Valmora, headed by a sainted Dark-Elf swordsmaster. This bottle would swoon Gods over!"

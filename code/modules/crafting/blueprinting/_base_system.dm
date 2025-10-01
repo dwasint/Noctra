@@ -656,6 +656,11 @@
 
 	var/turf/final_location = location
 
+	var/atom/selected_output = selected_recipe.result_type
+
+	if(ispath(selected_output, /turf/closed) && istype(get_area(final_location), /area/overlord_lair))
+		return
+
 	// Handle wall fixtures - place blueprint on adjacent floor when clicking on wall
 	if(selected_recipe.check_adjacent_wall && selected_recipe.place_on_wall && !selected_recipe.floor_object)
 		var/turf/wall_turf = location

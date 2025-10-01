@@ -33511,6 +33511,7 @@
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/tile,
 /area/rogue/indoors/town/tavern)
 "sud" = (

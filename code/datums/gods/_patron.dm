@@ -42,6 +42,9 @@ GLOBAL_LIST_EMPTY(prayers)
 	///verbs applied by set_patron and removed when changed
 	var/list/added_verbs
 
+	//If the patron has a specific specie worshipping them.
+	var/list/allowed_races
+
 	var/datum/storyteller/storyteller
 
 /datum/patron/proc/on_gain(mob/living/pious)

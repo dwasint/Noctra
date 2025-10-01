@@ -42,6 +42,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_NOFIRE" = TRAIT_NOFIRE,
 		"TRAIT_NOGUNS" = TRAIT_NOGUNS,
 		"TRAIT_NOHUNGER" = TRAIT_NOHUNGER,
+		"TRAIT_NOHYGIENE" = TRAIT_NOHYGIENE,
 		"TRAIT_NOMETABOLISM" = TRAIT_NOMETABOLISM,
 		"TRAIT_TOXIMMUNE" = TRAIT_TOXIMMUNE,
 		"TRAIT_EASYDISMEMBER" = TRAIT_EASYDISMEMBER,
@@ -92,7 +93,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Of the Cabal" = TRAIT_CABAL,
 		"Unleechable" = TRAIT_LEECHIMMUNE,
 		"Webwalker" = TRAIT_WEBWALK,
-		"Dead Nose" = TRAIT_NOSTINK,
+		"Dead Nose" = TRAIT_DEADNOSE,
 		"High Jumping" = TRAIT_ZJUMP,
 		"Jesterophobia" = TRAIT_JESTERPHOBIA,
 		"Xenophobia" = TRAIT_XENOPHOBIC,
@@ -161,6 +162,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Endless Slumber" = TRAIT_TORPOR,
 		"Boundless Energy" = TRAIT_NOENERGY,
 		"Keen Ears"	= TRAIT_KEENEARS,
+		"Poison Resilience" = TRAIT_POISON_RESILIENCE,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -184,7 +186,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
-	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
+	TRAIT_DEADNOSE = span_dead("My nose is numb to the smell of unpleasant odors."),
 	TRAIT_ZJUMP = "Time to reach a new height.",
 	TRAIT_JESTERPHOBIA = span_warning("I have a severe irrational fear of Jesters"),
 	TRAIT_XENOPHOBIC = span_warning("Lesser species pollute our land"),
@@ -274,7 +276,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
 	TRAIT_NOENERGY = span_info("I don't need rest; I won't ever feel fatigue."),
-	TRAIT_KEENEARS = span_info("I've a good pair of ears, and can tell who is speaking, even when they're out of sight. I can also hear whispers from further away.")
+	TRAIT_KEENEARS = span_info("I've a good pair of ears, and can tell who is speaking, even when they're out of sight. I can also hear whispers from further away."),
+	TRAIT_POISON_RESILIENCE	= span_info("I'm more resilient to poisons."),
 ))
 
 /// value -> trait name, generated on use from trait_by_type global

@@ -346,6 +346,13 @@ GLOBAL_LIST_INIT(primordial_wounds, init_primordial_wounds())
 		return
 	if(human_owner.stat >= DEAD) //forget it
 		return
+	var/static/list/silver_items = list(
+		/obj/item/clothing/neck/psycross/silver,
+		/obj/item/clothing/neck/silveramulet
+	)
+	if(is_type_in_list(human_owner.wear_wrists, silver_items) || is_type_in_list(human_owner.wear_neck, silver_items))
+		if(prob(50))
+			return
 	to_chat(human_owner, span_danger("I feel horrible... REALLY horrible..."))
 	MOBTIMER_SET(human_owner, MT_PUKE)
 	human_owner.vomit(1, blood = TRUE, stun = FALSE)

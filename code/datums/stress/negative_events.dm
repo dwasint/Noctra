@@ -18,13 +18,6 @@
 	stress_change = 6
 	desc = list("<span class='red'>If I don't sate my desire soon, I am going to kill myself..</span>","<span class='red'>I need it. I need it. I need it.</span>")
 
-/*
-/datum/stress_event/failcraft
-	timer = 15 SECONDS
-	stress_change = 1
-	max_stacks = 10
-	desc = "<span class='red'>I've failed to craft something.</span>"
-*/
 /datum/stress_event/miasmagas
 	timer = 10 SECONDS
 	stress_change = 2
@@ -427,6 +420,47 @@
 	stress_change = 3
 	desc = span_red("I've been taken hostage!")
 
+/datum/stress_event/perfume_hater
+	stress_change = 1
+	desc = span_red("The scent of flowers makes me nauseous!")
+	timer = 10 MINUTES
+
+/datum/stress_event/odor
+	stress_change = 1
+	desc = span_red("The scent of body odor violates my nostrils!")
+	timer = 10 MINUTES
+
+//Hygiene
+
+/datum/stress_event/dirty
+	timer = INFINITY
+	desc = span_red("I smell horrid.")
+	stress_change = 1
+
+/datum/stress_event/disgusting
+	timer = INFINITY
+	desc = span_red("I smell <i>DISGUSTING!</i>")
+	stress_change = 2
+
+/datum/stress_event/forced_clean
+	timer = 10 MINUTES
+	desc = span_red("My wonderful musk has been washed away...")
+	stress_change = 1
+
+/datum/stress_event/startled
+	desc = span_warning("Hearing that word made me think about something scary.")
+	stress_change = 1
+	max_stacks = 2
+	stress_change_per_extra_stack = 1
+	timer = 1 MINUTES
+
+/datum/stress_event/phobia
+	desc = span_red("I saw something very frightening.")
+	stress_change = 4
+	max_stacks = 2
+	stress_change_per_extra_stack = 2
+	timer = 4 MINUTES
+
 /datum/stress_event/handcuffed
 	desc = "<span class='warning'>I guess my antics have finally caught up with me.</span>\n"
 	stress_change = -1
@@ -585,3 +619,8 @@
 	desc = span_red("My phantom ear was destroyed!")
 	stress_change = 1
 	timer = 2 MINUTES
+
+/datum/stress_event/collarcurse
+	desc = "<span class='boldwarning'>It's uncomfortable, and I can't take it off!</span>\n" //torture yay!
+	stress_change = 50
+	timer = 1000 MINUTES

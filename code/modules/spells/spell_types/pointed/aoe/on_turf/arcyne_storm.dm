@@ -16,6 +16,9 @@
 		/datum/attunement/arcyne = 1.2
 	)
 
+	invocation = "BE TORN APART!!!"
+	invocation_type = INVOCATION_SHOUT
+
 /datum/action/cooldown/spell/aoe/on_turf/arcyne_storm/cast_on_thing_in_aoe(atom/victim, atom/caster)
 	for(var/i in 1 to 16)
 		addtimer(CALLBACK(src, PROC_REF(apply_damage), victim), wait = i * 1 SECONDS)

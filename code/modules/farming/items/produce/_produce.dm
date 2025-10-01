@@ -457,7 +457,6 @@
 	desc = "Astratas favoured flower, said to carry some of her warmth and radiance. Astratan acolytes hold them in high regard."
 	icon_state = "sunflower"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head_items.dmi'
-	seed = /obj/item/neuFarm/seed/sunflower
 	slot_flags = ITEM_SLOT_HEAD
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
@@ -467,13 +466,12 @@
 	dropshrink = 0.8
 	rotprocess = null
 
-
+/*	..................   Sugarcane   ................... */
 /obj/item/reagent_containers/food/snacks/produce/sugarcane
 	seed = /obj/item/neuFarm/seed/sugarcane
 	name = "sugarcane"
 	desc = "A crop best suited for a warmer climate, raw sugar cane is considered a sweet snack by some sea elves."
 	icon_state = "sugarcane"
-	seed = /obj/item/neuFarm/seed/sugarcane
 	throwforce = 0
 	faretype = FARE_FINE //Reasoning: Sugarcane is a rare import. You can also chew sugarcane fibers. Try some out next time you have some!
 	w_class = WEIGHT_CLASS_TINY

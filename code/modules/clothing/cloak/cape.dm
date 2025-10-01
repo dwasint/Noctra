@@ -20,6 +20,7 @@
 	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/cape/guard
+	name = "guard's cape"
 	color = CLOTHING_BLOOD_RED
 	uses_lord_coloring = LORD_PRIMARY
 

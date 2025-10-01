@@ -122,7 +122,7 @@
 		playsound(get_turf(src), pick(attacked_sound), 100)
 		user.visible_message(span_warning("[user] kicks [src] open!"), \
 			span_notice("I kick [src] open!"))
-		force_open()
+		force_open(user)
 		return
 	if(isliving(user))
 		var/mob/living/L = user
@@ -136,7 +136,7 @@
 			user.visible_message(span_warning("[user] kicks open [src]!"), \
 				span_notice("I kick open [src]!"))
 			unlock()
-			force_open()
+			force_open(user)
 			return
 		playsound(get_turf(src), pick(attacked_sound), 100)
 		user.visible_message(span_warning("[user] kicks [src]!"), \
@@ -235,7 +235,7 @@
 				take_damage(200, BRUTE, BCLASS_BLUNT, TRUE)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
-				force_open()
+				force_open(AM)
 				user.visible_message(span_warning("[user] smashes through [src]!"))
 			return
 		if(HAS_TRAIT(user, TRAIT_ROTMAN))
@@ -244,7 +244,7 @@
 				take_damage(50, BRUTE, BCLASS_BLUNT, TRUE)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 90)
-				force_open()
+				force_open(AM)
 				user.visible_message(span_warning("The deadite smashes through [src]!"))
 			return
 		if(locked())
@@ -331,23 +331,23 @@
 	if(!M.client)
 		return FALSE
 	if(!iscarbon(M))
-		SwitchState()
+		SwitchState(user = user)
 		return FALSE
 	var/mob/living/carbon/C = M
 	if(!C.handcuffed)
 		if(C.m_intent == MOVE_INTENT_SNEAK)
-			SwitchState(TRUE)
+			SwitchState(TRUE, user)
 		else
-			SwitchState()
+			SwitchState(user = user)
 		return TRUE
 
-/obj/structure/door/proc/SwitchState(silent = FALSE)
+/obj/structure/door/proc/SwitchState(silent = FALSE, mob/user)
 	if(door_opened)
 		Close(silent)
 		return
-	Open(silent)
+	Open(silent, user)
 
-/obj/structure/door/proc/Open(silent = FALSE)
+/obj/structure/door/proc/Open(silent = FALSE, mob/user)
 	switching_states = TRUE
 	if(!silent)
 		playsound(get_turf(src), open_sound, 90)
@@ -364,8 +364,9 @@
 	if(close_delay > 0)
 		addtimer(CALLBACK(src, PROC_REF(Close), silent), close_delay)
 	air_update_turf(TRUE)
+	SEND_SIGNAL(src, COMSIG_DOOR_OPENED, user)
 
-/obj/structure/door/proc/force_open()
+/obj/structure/door/proc/force_open(mob/user)
 	switching_states = TRUE
 	if(!windowed)
 		set_opacity(FALSE)
@@ -375,6 +376,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 	switching_states = FALSE
 	air_update_turf(TRUE)
+	SEND_SIGNAL(src, COMSIG_DOOR_OPENED, user)
 
 /obj/structure/door/proc/Close(silent = FALSE)
 	if(switching_states || !door_opened)

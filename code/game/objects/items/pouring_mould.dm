@@ -1,5 +1,6 @@
 /obj/item/mould
 	name = "mould"
+	desc = "You shouldn't be seeing this one."
 
 	icon = 'icons/roguetown/weapons/crucible.dmi'
 	icon_state = "flat-mold"
@@ -13,6 +14,7 @@
 
 	var/cooling = FALSE
 	var/cooling_progress = 0
+	var/cooling_bonus = 1
 
 	// Quality tracking variables
 	var/total_quality_points = 0  // Sum of (amount * quality) for weighted average
@@ -55,6 +57,8 @@
 	if(!filling_metal)
 		var/list/names = list()
 		for(var/datum/material/material as anything in metal.data)
+			if(!ispath(material))
+				continue
 			if(crucible.reagents.chem_temp < initial(material.melting_point))
 				continue
 			names |= initial(material.name)
@@ -63,6 +67,8 @@
 		if(!choice)
 			return
 		for(var/datum/material/material as anything in metal.data)
+			if(!ispath(material))
+				continue
 			if(choice != initial(material.name))
 				continue
 			filling_metal = material
@@ -125,7 +131,7 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/item/mould/process()
-	cooling_progress += 2.5
+	cooling_progress += 7.5 * cooling_bonus
 	update_appearance(UPDATE_OVERLAYS)
 	if(cooling_progress >= 100)
 		STOP_PROCESSING(SSobj, src)
@@ -158,7 +164,8 @@
 
 
 /obj/item/mould/ingot
-	name = "ingot mold"
+	name = "ingot mould"
+	desc = "A clay mould for making metal ingots."
 
 	icon_state = "ingot-mold"
 	filling_icon_state = "ingot-mold-color"
@@ -196,3 +203,8 @@
 	total_quality_points = 0
 	average_quality = 0
 	update_appearance(UPDATE_OVERLAYS)
+
+/obj/item/mould/ingot/advanced
+	name = "advanced ingot mould"
+	desc = "An ingot mould that utilizes water for faster cooling."
+	cooling_bonus = 2

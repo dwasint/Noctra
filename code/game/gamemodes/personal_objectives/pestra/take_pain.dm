@@ -2,7 +2,7 @@
 	name = "Take Pain"
 	triumph_count = 3
 	var/total_pain_taken = 0
-	var/target_pain = 1000
+	var/target_pain = 750
 
 /datum/objective/take_pain/on_creation()
 	. = ..()
@@ -35,7 +35,7 @@
 		to_chat(owner.current, span_greentext("You have taken enough pain from others, completing Pestra's objective! Your sacrifice is rewarded."))
 		owner.current.adjust_triumphs(triumph_count)
 		completed = TRUE
-		adjust_storyteller_influence(PESTRA, 15)
+		adjust_storyteller_influence(PESTRA, 20)
 		escalate_objective()
 		UnregisterSignal(owner.current, COMSIG_PAIN_TRANSFERRED)
 

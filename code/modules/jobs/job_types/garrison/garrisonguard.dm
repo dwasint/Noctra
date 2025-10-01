@@ -15,24 +15,24 @@
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	allowed_races = RACES_PLAYER_GUARD
 
-	outfit = /datum/outfit/job/guardsman	//Default outfit.
+	outfit = /datum/outfit/guardsman	//Default outfit.
 	advclass_cat_rolls = list(CTAG_GARRISON = 20)	//Handles class selection.
 	give_bank_account = 30
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
 //................. City Watchmen Base .............. //
-/datum/outfit/job/guardsman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/guardsman/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	cloak = pick(/obj/item/clothing/cloak/half/guard, /obj/item/clothing/cloak/half/guardsecond)
-	pants = /obj/item/clothing/pants/trou/leather
-	wrists = /obj/item/rope/chain
-	shoes = /obj/item/clothing/shoes/boots/leather/advanced/watch
-	belt = /obj/item/storage/belt/leather
+	pants = /obj/item/clothing/pants/trou/leather/splint
+	wrists = /obj/item/clothing/wrists/bracers/ironjackchain //yes their buff to be above adventurers is a few spare iron pieces for the arms and legs
+	shoes = /obj/item/clothing/shoes/boots/armor/ironmaille
+	belt = /obj/item/storage/belt/leather/townguard
 	gloves = /obj/item/clothing/gloves/leather
 	if(H.dna && !(H.dna.species.id in RACES_PLAYER_NONDISCRIMINATED)) // to prevent examine stress
 		mask = /obj/item/clothing/face/shepherd
 
-/datum/outfit/job/guardsman/post_equip(mob/living/carbon/human/H)
+/datum/outfit/guardsman/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.cloak)
 		if(!findtext(H.cloak.name,"([H.real_name])"))
@@ -41,25 +41,25 @@
 // EVERY TOWN GUARD SHOULD HAVE AT LEAST THREE CLUB SKILL
 
 //................. Axes, Maces, Swords, Shields .............. //
-/datum/advclass/garrison/footman
-	name = "City Watch Footman"
+/datum/job/advclass/garrison/footman
+	title = "City Watch Footman"
 	tutorial = "You are a member of the City Watch. \
 	You are well versed in holding the line with a shield while wielding a trusty sword, axe, or mace in the other hand."
-	outfit = /datum/outfit/job/guardsman/footman
+	outfit = /datum/outfit/guardsman/footman
 	category_tags = list(CTAG_GARRISON)
 
-/datum/outfit/job/guardsman/footman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/helmet/townwatch
+	head = /obj/item/clothing/head/helmet/townbarbute
 	neck = /obj/item/clothing/neck/gorget
-	armor = /obj/item/clothing/armor/chainmail
+	armor = /obj/item/clothing/armor/cuirass/iron
 	shirt = /obj/item/clothing/armor/gambeson
 	backr = /obj/item/weapon/shield/heater
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/weapon/sword/short
 	beltl = /obj/item/weapon/mace/cudgel
 	scabbards = list(/obj/item/weapon/scabbard/sword)
-	backpack_contents = list(/obj/item/storage/keyring/guard, /obj/item/weapon/knife/dagger/steel/special)
+	backpack_contents = list(/obj/item/rope/chain)
 
 
 	H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // Main weapon
@@ -82,15 +82,15 @@
 	H.verbs |= /mob/proc/haltyell
 
 //................. Archer .............. //
-/datum/advclass/garrison/archer
-	name = "City Watch Archer"
+/datum/job/advclass/garrison/archer
+	title = "City Watch Archer"
 	tutorial = "You are a member of the City Watch. Your training with bows makes you a formidable threat when perched atop the walls or rooftops, raining arrows down upon foes with impunity."
-	outfit = /datum/outfit/job/guardsman/archer
+	outfit = /datum/outfit/guardsman/archer
 	category_tags = list(CTAG_GARRISON)
 
-/datum/outfit/job/guardsman/archer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/helmet/townwatch/alt
+	head = /obj/item/clothing/head/helmet/townbarbute
 	neck = /obj/item/clothing/neck/chaincoif
 	armor = /obj/item/clothing/armor/gambeson/heavy
 	shirt = pick(/obj/item/clothing/shirt/undershirt/colored/guard, /obj/item/clothing/shirt/undershirt/colored/guardsecond)
@@ -98,7 +98,7 @@
 	backl = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/ammo_holder/quiver/arrows
 	beltl = /obj/item/weapon/mace/cudgel
-	backpack_contents = list(/obj/item/storage/keyring/guard, /obj/item/weapon/knife/dagger/steel/special)
+	backpack_contents = list(/obj/item/rope/chain)
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE) // Main Weapon
 		H.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE) // You don't even have access to crossbows
@@ -120,17 +120,17 @@
 		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 		H.verbs |= /mob/proc/haltyell
 
-/datum/advclass/garrison/pikeman
-	name = "City Watch Pikeman"
+/datum/job/advclass/garrison/pikeman
+	title = "City Watch Pikeman"
 	tutorial = "You are a pikeman in the City Watch. You are less fleet of foot compared to the rest, but you are burly and well practiced with spears, pikes, billhooks - all the various polearms for striking enemies from a distance."
-	outfit = /datum/outfit/job/guardsman/pikeman
+	outfit = /datum/outfit/guardsman/pikeman
 
 	category_tags = list(CTAG_GARRISON)
 
-/datum/outfit/job/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/helmet/townwatch
-	armor = /obj/item/clothing/armor/chainmail
+	head = /obj/item/clothing/head/helmet/townbarbute
+	armor = /obj/item/clothing/armor/cuirass/iron
 	shirt = /obj/item/clothing/armor/gambeson
 	neck = /obj/item/clothing/neck/gorget
 	backl = /obj/item/storage/backpack/satchel
@@ -138,7 +138,7 @@
 	beltl = /obj/item/weapon/sword/short
 	beltr = /obj/item/weapon/mace/cudgel
 	scabbards = list(/obj/item/weapon/scabbard/sword)
-	backpack_contents = list(/obj/item/storage/keyring/guard, /obj/item/weapon/knife/dagger/steel/special)
+	backpack_contents = list(/obj/item/rope/chain)
 
 	//Stats for class
 	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)

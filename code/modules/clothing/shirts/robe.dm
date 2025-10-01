@@ -60,10 +60,13 @@
 	icon_state = "nocrobe"
 	sleeved = null
 
+//someone should make sure the necromancer robe gets dwarf and child sprites
 /obj/item/clothing/shirt/robe/necromancer
 	name = "necromancer robes"
 	desc = "Eerie black garb of death."
 	icon_state = "warlock"
+	allowed_ages = ALL_AGES_LIST
+	allowed_race = SPECIES_BASE_BODY
 	sleeved = null
 
 /obj/item/clothing/shirt/robe/dendor
@@ -116,8 +119,6 @@
 	name = "wizard's robe"
 	desc = "What wizard's ensemble would be complete without robes?"
 	icon_state = "wizardrobes"
-	allowed_sex = list(MALE)
-	allowed_race = SPECIES_BASE_BODY
 	sellprice = 100
 
 /obj/item/clothing/shirt/robe/magus
@@ -174,9 +175,6 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	boobed = TRUE
 	flags_inv = HIDEBOOB
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
-	allowed_sex = list(MALE, FEMALE)
 	allowed_race = SPECIES_BASE_BODY
 	color = null
 	sellprice = 100
@@ -192,9 +190,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
-	allowed_sex = list(MALE, FEMALE)
 	toggle_icon_state = TRUE
 	armor = ARMOR_PADDED_BAD
 	max_integrity = 200

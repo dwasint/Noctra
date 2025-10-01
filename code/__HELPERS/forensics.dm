@@ -8,3 +8,5 @@
 #define GET_ATOM_FIBRES(atom) atom.forensics?.fibers
 /// Returns the number of unique blood dna sources on this atom
 #define GET_ATOM_BLOOD_DNA_LENGTH(atom) (isnull(atom.forensics) ? 0 : length(atom.forensics.blood_DNA))
+/// Returns if item has blood dna on it
+#define HAS_BLOOD_DNA(atom) (isnull(atom.forensics) ? 0 : length(atom.forensics.blood_DNA) > 0 ? 1 : 0)

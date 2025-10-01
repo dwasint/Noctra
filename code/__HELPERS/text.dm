@@ -536,7 +536,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	return t
 
-/proc/parsemarkdown_basic_step2(t)
+/proc/parsemarkdown_basic_step2(t, limited = FALSE)
 	if(length(t) <= 0)
 		return
 
@@ -558,11 +558,20 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	t = replacetext(t, "$0", "%")
 	t = replacetext(t, "$-", "$")
 
+	if(!limited)
+		t = replacetext(t, "<hr>", "<hr style='border: 1px solid #666;'>") // The same thing as just replacing --- with <hr style='border: 1px'> but i've been asked to keep it this way.
+
 	return t
 
+
+/*
+ * Markdown parsing
+ * * Limited: Doesn't parse lists, headers, or small tags. (Used in paper / crayon / flavortext code.)
+ * * Barebones: Doesn't parse bold, italics, or underline. (Used in say / emote code, mostly.)
+ */
 /proc/parsemarkdown_basic(t, limited=FALSE, barebones = FALSE)
 	t = parsemarkdown_basic_step1(t, limited, barebones)
-	t = parsemarkdown_basic_step2(t)
+	t = parsemarkdown_basic_step2(t, limited)
 	return t
 
 /proc/parsemarkdown(t, mob/user=null, limited=FALSE)

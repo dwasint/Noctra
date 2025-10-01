@@ -50,7 +50,7 @@
 	body_eater = FALSE
 
 	ai_controller = /datum/ai_controller/lycan
-
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 	del_on_death = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/leylinelycan/simple_add_wound(datum/wound/wound, silent = FALSE, crit_message = FALSE)	//No wounding the lycan.

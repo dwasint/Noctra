@@ -65,7 +65,7 @@
 /obj/item/reagent_containers/examine(mob/user)
 	. = ..()
 	if(has_variable_transfer_amount && length(possible_transfer_amounts) > 1)
-		. += span_notice("Shift Left-click or right-click in-hand to increase or decrease its transfer amount.")
+		. += span_notice("Alt Left-click or right-click in-hand to increase or decrease its transfer amount.")
 
 /obj/item/reagent_containers/Destroy()
 	if(is_open_container())
@@ -212,17 +212,15 @@
 		reagents.add_reagent_list(list_reagents)
 	update_appearance(UPDATE_OVERLAYS)
 
-/obj/item/reagent_containers/attack_self(mob/user, params)
-	. = ..()
-	if(has_variable_transfer_amount && LAZYACCESS(params2list(params), SHIFT_CLICKED))
-		change_transfer_amount(user, FORWARD)
-
-/obj/item/reagent_containers/attack_self_secondary(mob/user, params)
-	. = ..()
-	if(. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN)
+/obj/item/reagent_containers/AltClick(mob/user)
+	if(!user.Adjacent(src) || !has_variable_transfer_amount)
 		return
-	if(has_variable_transfer_amount && LAZYACCESS(params2list(params), SHIFT_CLICKED))
-		change_transfer_amount(user, BACKWARD)
+	change_transfer_amount(user, FORWARD)
+
+/obj/item/reagent_containers/AltRightClick(mob/user)
+	if(!user.Adjacent(src) || !has_variable_transfer_amount)
+		return
+	change_transfer_amount(user, BACKWARD)
 
 /obj/item/reagent_containers/proc/mode_change_message(mob/user)
 	return
@@ -240,7 +238,7 @@
 		else
 			CRASH("change_transfer_amount() called with invalid direction value")
 	amount_per_transfer_from_this = possible_transfer_amounts[index]
-	balloon_alert(user, "transferring [amount_per_transfer_from_this] [UNIT_FORM_STRING(amount_per_transfer_from_this)].")
+	balloon_alert(user, "transferring [UNIT_FORM_STRING(amount_per_transfer_from_this)].")
 	mode_change_message(user)
 
 /obj/item/reagent_containers/proc/canconsume(mob/eater, mob/user, silent = FALSE)

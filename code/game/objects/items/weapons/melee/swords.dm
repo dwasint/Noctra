@@ -288,7 +288,7 @@
 
 /obj/item/weapon/sword/scimitar/ngombe
 	name = "ngombe ngulu"
-	desc = "A heavy executioner's sword originating from Lakkari. It was used by Astratans to behead Psydonites settlers responsible for the Red Dune Massacre."
+	desc = "A heavy executioner's sword originating from Lakkari. It was used by Astratans to behead Psydonite settlers responsible for the Red Dune Massacre."
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "ngombe"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/axe/chop)

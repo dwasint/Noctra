@@ -17,6 +17,7 @@
 	innate_traits = list(
 		TRAIT_NOSTAMINA,
 		TRAIT_NOHUNGER,
+		TRAIT_NOHYGIENE,
 		TRAIT_NOBREATH,
 		TRAIT_NOPAIN,
 		TRAIT_TOXIMMUNE,
@@ -102,10 +103,10 @@
 	L.dna.species.species_traits |= NOBLOOD
 	L.grant_undead_eyes()
 	L.skeletonize(FALSE)
-	L.equipOutfit(/datum/outfit/job/lich)
+	L.equipOutfit(/datum/outfit/lich)
 	L.set_patron(/datum/patron/inhumen/zizo)
 
-/datum/outfit/job/lich/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/lich/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/helmet/skullcap/cult
 	pants = /obj/item/clothing/pants/chainlegs
@@ -146,13 +147,12 @@
 	if(H.dna?.species)
 		H.dna.species.native_language = "Zizo Chant"
 		H.dna.species.accent_language = H.dna.species.get_accent(H.dna.species.native_language)
-
 	H.dna.species.soundpack_m = new /datum/voicepack/lich()
 	H.ambushable = FALSE
 
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "LICH"), 5 SECONDS)
 
-/datum/outfit/job/lich/post_equip(mob/living/carbon/human/H)
+/datum/outfit/lich/post_equip(mob/living/carbon/human/H)
 	..()
 	var/datum/antagonist/lich/lichman = H.mind.has_antag_datum(/datum/antagonist/lich)
 	for(var/i in 1 to 3)
@@ -162,7 +162,7 @@
 		H.equip_to_slot_if_possible(new_phylactery,ITEM_SLOT_BACKPACK, TRUE)
 
 /// called via COMSIG_LIVING_DEATH
-/datum/antagonist/lich/proc/on_death(/datum/source)
+/datum/antagonist/lich/proc/on_death(datum/source)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, PROC_REF(attempt_resurrection)) // this proc sleeps
 

@@ -386,47 +386,69 @@
 	if(ishuman(A))
 		var/mob/living/carbon/human/U = src
 		var/mob/living/carbon/human/V = A
-		var/thiefskill = src.get_skill_level(/datum/skill/misc/stealing) + (has_world_trait(/datum/world_trait/matthios_fingers) ? (is_ascendant(MATTHIOS) ? 2 : 1) : 0)
+		var/thiefskill = U.get_skill_level(/datum/skill/misc/stealing) + (has_world_trait(/datum/world_trait/matthios_fingers) ? (is_ascendant(MATTHIOS) ? 2 : 1) : 0)
+		var/thief_skill_base = U.get_skill_level(/datum/skill/misc/stealing)
+		if(thiefskill <= 0)
+			thiefskill = 1
+		if(U.rogue_sneaking)
+			thiefskill += 1
 		var/stealroll = roll("[thiefskill]d6")
-		var/targetperception = (V.STAPER)
-		var/exp_to_gain = STAINT
-		var/list/stealablezones = list("chest", "neck", "groin", "r_hand", "l_hand")
+		var/target_perception = V.STAPER
+		var/target_skill = V.get_skill_level(/datum/skill/misc/stealing)
+		var/exp_to_gain = U.STAINT * 1.5
+		var/list/stealablezones = list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND)
 		var/list/stealpos = list()
-		if(stealroll > targetperception)
+		if(client?.prefs.showrolls)
+			to_chat(U, span_info("Your stealing skill roll of [thiefskill]d6 is [stealroll]..."))
+		if(stealroll >= target_perception)
 			if(U.get_active_held_item())
-				to_chat(src, span_warning("I can't pickpocket while my hand is full!"))
+				to_chat(U, span_warning("I can't pickpocket while my hand is full!"))
 				return
 			if(!(zone_selected in stealablezones))
-				to_chat(src, span_warning("What am I going to steal from there?"))
+				to_chat(U, span_warning("What am I going to steal from there?"))
 				return
-			if(do_after(U, 2 SECONDS, V, progress = FALSE))
+			//2.5 seconds for those without skill
+			//better skill shortens time, up to one second with legendary
+			if(do_after(U, (2.5 - (thief_skill_base * 0.25)) SECONDS, V, progress = FALSE))
 				switch(U.zone_selected)
-					if("chest")
+					if(BODY_ZONE_CHEST)
 						if (V.get_item_by_slot(ITEM_SLOT_BACK_L))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BACK_L))
 						if (V.get_item_by_slot(ITEM_SLOT_BACK_R))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BACK_R))
-					if("neck")
+					if(BODY_ZONE_L_ARM)
+						if (V.get_item_by_slot(ITEM_SLOT_BACK_L))
+							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BACK_L))
+					if(BODY_ZONE_R_ARM)
+						if (V.get_item_by_slot(ITEM_SLOT_BACK_R))
+							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BACK_R))
+					if(BODY_ZONE_PRECISE_NECK)
 						if (V.get_item_by_slot(ITEM_SLOT_NECK))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_NECK))
-					if("groin")
+					if(BODY_ZONE_PRECISE_GROIN)
 						if (V.get_item_by_slot(ITEM_SLOT_BELT_R))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BELT_R))
 						if (V.get_item_by_slot(ITEM_SLOT_BELT_L))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BELT_L))
-					if("r_hand", "l_hand")
+					if(BODY_ZONE_L_ARM)
+						if (V.get_item_by_slot(ITEM_SLOT_BELT_L))
+							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BELT_L))
+					if(BODY_ZONE_R_ARM)
+						if (V.get_item_by_slot(ITEM_SLOT_BELT_R))
+							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_BELT_R))
+					if(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_PRECISE_L_HAND)
 						if (V.get_item_by_slot(ITEM_SLOT_RING))
 							stealpos.Add(V.get_item_by_slot(ITEM_SLOT_RING))
-				if (length(stealpos) > 0)
+				if(length(stealpos) > 0)
 					var/obj/item/picked = pick(stealpos)
 					if(HAS_TRAIT(picked, TRAIT_HARD_TO_STEAL))
-						to_chat(src, span_danger("[picked] is strapped on tight, I can't steal it!"))
+						to_chat(U, span_danger("[picked] is strapped on tight, I can't steal it!"))
 						return
 
 					V.dropItemToGround(picked)
 					put_in_active_hand(picked)
-					to_chat(src, span_green("I stole [picked]!"))
-					exp_to_gain *= src.get_learning_boon(thiefskill)
+					to_chat(U, span_green("I stole [picked]!"))
+					exp_to_gain += U.get_learning_boon(thiefskill) * 5
 					if(V.client && V.stat != DEAD)
 						SEND_SIGNAL(U, COMSIG_ITEM_STOLEN, V)
 						record_featured_stat(FEATURED_STATS_THIEVES, U)
@@ -436,15 +458,17 @@
 						sate_addiction()
 				else
 					exp_to_gain /= 2
-					to_chat(src, span_warning("I didn't find anything there. Perhaps I should look elsewhere."))
+					to_chat(U, span_warning("I didn't find anything there. Perhaps I should look elsewhere."))
 			else
-				to_chat(src, span_warning("I fumbled it!"))
-		if(stealroll <= 4)
+				to_chat(U, span_warning("I fumbled it!"))
+		if(thief_skill_base <= target_skill)
 			to_chat(V, span_danger("Someone tried pickpocketing me!"))
-		if(stealroll < targetperception)
-			exp_to_gain /= 5
-			to_chat(src, span_danger("I failed to pick the pocket!"))
-		src.adjust_experience(/datum/skill/misc/stealing, exp_to_gain, FALSE)
+			if(thief_skill_base >= 3)
+				to_chat(U, span_danger("[V] probably realized I tried pickpocketing them!"))
+		if(stealroll < target_perception)
+			exp_to_gain /= 2
+			to_chat(U, span_danger("I failed to pick the pocket!"))
+		U.adjust_experience(/datum/skill/misc/stealing, exp_to_gain, FALSE)
 		changeNext_move(mmb_intent.clickcd)
 
 /mob/living/proc/jump_action(atom/A)

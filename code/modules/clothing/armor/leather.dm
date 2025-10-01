@@ -21,19 +21,21 @@
 	salvage_result = /obj/item/natural/hide/cured
 	item_weight = 3.2
 
+//THE ARMOUR VALUES OF ADVANCED AND MASTERWORK ARMOUR ARE INTENDED
+//KEEP THIS IN MIND
+
 /obj/item/clothing/armor/leather/advanced
-	name = "hardened leather coat"
-	desc = "Sturdy, durable, flexible. Will keep you alive in style."
-	max_integrity = 350
+	name = "hardened leather armor"
+	desc = "Sturdy, durable, flexible. Will keep you alive."
+	max_integrity = INTEGRITY_STANDARD + 50
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("blunt" = 75, "slash" = 60, "stab" = 30, "piercing" = 10, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/armor/leather/masterwork
-	name = "masterwork leather coat"
-	desc = "This coat is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	icon_state = "leather"
-	max_integrity = 400
+	name = "masterwork leather armor"
+	desc = "This leather armor is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	max_integrity = INTEGRITY_STANDARD + 100
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
 	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
 
@@ -145,6 +147,11 @@
 	name = "artificer jacket"
 	icon_state = "artijacket"
 	desc = "A thick leather jacket adorned with fur and cog decals. The height of Heartfelt fashion."
+
+/obj/item/clothing/armor/leather/jacket/artijacket/porter
+	name = "leather jacket"
+	desc = "A thick leather jacket adorned with fur."
+	misc_flags = CRAFTING_TEST_EXCLUDE
 
 /obj/item/clothing/armor/leather/jacket/gatemaster_jacket
 	name = "gatemaster's coat"

@@ -15,8 +15,11 @@
 /datum/migrant_pref/proc/set_active(new_state, silent = FALSE)
 	if(active == new_state)
 		return
-	active = new_state
+	if((new_state == TRUE) && SSmigrants.admin_disabled)
+		to_chat(prefs.parent, span_boldwarning("Migration is disabled!"))
+		return
 	role_preferences.Cut()
+	active = new_state
 	if(!silent && prefs.parent)
 		if(new_state)
 			to_chat(prefs.parent, span_notice("You are now in the migrant queue, and will join the game with them when they arrive"))
@@ -24,30 +27,36 @@
 			to_chat(prefs.parent, span_boldwarning("You are no longer in the migrant queue"))
 
 /datum/migrant_pref/proc/toggle_role_preference(role_type)
+	if(!active)
+		set_active(TRUE)
 	if(role_type in role_preferences)
 		role_preferences -= role_type
-	else
-		// Currently only allow 1 role preffed up for clarity
-		role_preferences.Cut()
-		if(SSmigrants.can_be_role(prefs.parent, role_type))
-			role_preferences += role_type
-			var/datum/migrant_role/role = MIGRANT_ROLE(role_type)
-			to_chat(prefs.parent, span_nicegreen("You have prioritized the [role.name]. This does not guarantee getting the role"))
+		return
+	role_preferences.Cut()
+	if(SSmigrants.can_be_role(prefs.parent, role_type))
+		role_preferences += role_type
+		var/datum/migrant_role/role = MIGRANT_ROLE(role_type)
+		to_chat(prefs.parent, span_nicegreen("You have prioritized the [role.name]. This does not guarantee getting the role"))
 
 /datum/migrant_pref/proc/post_spawn()
 	set_active(FALSE, TRUE)
 	hide_ui()
 
-/datum/migrant_pref/proc/show_ui()
+/datum/migrant_pref/proc/build_html_data()
 	var/client/client = prefs.parent
 	if(!client)
 		return
 
 	var/current_migrants = SSmigrants.get_active_migrant_amount()
+	var/list/main_dat = list()
+
+	if(SSmigrants.admin_disabled)
+		main_dat += "<center> <h1> <b style='color:red;'> Migration has been disabled by an admin! </b>  </h1> </center>"
+		return main_dat
+
 	var/player_triumph = SStriumphs.get_triumphs(client.ckey)
 
 	// Build main content (left side)
-	var/list/main_dat = list()
 	main_dat += "<div style='padding: 10px;'>"
 	main_dat += "<div style='text-align: center; font-weight: bold; margin-bottom: 10px;'>WAVE: \Roman[SSmigrants.wave_number] | TRIUMPH: [player_triumph]</div>"
 	main_dat += "<div style='text-align: center; margin-bottom: 10px;'><b>BE A MIGRANT: <a href='byond://?src=[REF(src)];task=toggle_active'>[active ? "YES" : "NO"]</a></b></div>"
@@ -269,6 +278,16 @@
 			});
 		}
 	</script>"}
+
+
+	return dat
+
+/datum/migrant_pref/proc/show_ui()
+	var/client/client = prefs.parent
+	if(!client)
+		return
+	var/list/dat = list()
+	dat = build_html_data()
 
 	var/datum/browser/popup = new(client.mob, "migration", "<center>Find a purpose</center>", 650, 500, src)
 	popup.set_content(dat.Join())

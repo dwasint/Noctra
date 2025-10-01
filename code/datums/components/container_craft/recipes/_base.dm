@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(container_craft_to_singleton, init_container_crafts())
 	var/average_freshness = (ingredient_count > 0) ? (total_freshness / ingredient_count) : 0
 
 	// Get the initiator's cooking skill
-	var/cooking_skill = initiator.get_skill_level(used_skill)
+	var/cooking_skill = initiator.get_skill_level(used_skill) + initiator.get_inspirational_bonus()
 
 	// Create the output items
 	for(var/j = 1 to output_amount)

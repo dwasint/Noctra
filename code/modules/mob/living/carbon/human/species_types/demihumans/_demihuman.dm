@@ -163,7 +163,9 @@
 	"red - wine" = "82534c",
 	"red - sunset" = "82462b",
 	"red - blood" = "822b2b",
-	"red - maroon" = "612929"
+	"red - maroon" = "612929",
+
+	"orange - flame" = "b24c2e"
 
 	))
 

@@ -9,7 +9,7 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver/eora)
 
-	invocation = "Eora, lend some of your devine beauty!"
+	invocation = "Eora, lend some of your divine beauty!"
 	invocation_type = INVOCATION_SHOUT
 
 	charge_required = FALSE
@@ -27,3 +27,6 @@
 	cast_on.apply_status_effect(/datum/status_effect/buff/divine_beauty)
 	cast_on.wash(CLEAN_WASH)
 	cast_on.AddComponent(/datum/component/temporary_pollution_emission, pick(subtypesof(/datum/pollutant/fragrance)), 1, 2 MINUTES)
+	if(ishuman(cast_on))
+		var/mob/living/carbon/human/stinky_boy = cast_on
+		stinky_boy.set_hygiene(HYGIENE_LEVEL_CLEAN)

@@ -12,7 +12,8 @@
 
 	var/atom/movable/screen/controller_ui/controller_button/one/button_one
 	var/atom/movable/screen/controller_ui/controller_button/two/button_two
-	var/atom/movable/screen/controller_ui/controller_button/three/button_three
+	var/atom/movable/screen/controller_ui/controller_button/mob_exit/mob_exit
+	var/atom/movable/screen/controller_ui/controller_button/patrol/patrol_button
 
 	var/mob/living/worker_mob
 	var/datum/worker_mind/worker_mind
@@ -43,7 +44,8 @@
 	client.screen += stat
 	client.screen += button_one
 	client.screen += button_two
-	client.screen += button_three
+	client.screen += mob_exit
+	client.screen += patrol_button
 
 /atom/movable/screen/controller_ui/controller_ui/proc/remove_ui(client/client)
 	if(!client)
@@ -55,7 +57,8 @@
 	client.screen -= stat
 	client.screen -= button_one
 	client.screen -= button_two
-	client.screen -= button_three
+	client.screen -= mob_exit
+	client.screen -= patrol_button
 
 /atom/movable/screen/controller_ui/controller_ui/proc/create_and_position_buttons()
 	character = new
@@ -65,7 +68,10 @@
 	button_one = new
 
 	button_two = new
-	button_three = new
+	mob_exit = new
+
+	patrol_button = new
+	patrol_button.parent_ui = src
 
 	update_screen_loc()
 	update_all()
@@ -80,7 +86,8 @@
 	stat.screen_loc = screen_loc
 	button_one.screen_loc = screen_loc
 	button_two.screen_loc = screen_loc
-	button_three.screen_loc = screen_loc
+	mob_exit.screen_loc = screen_loc
+	patrol_button.screen_loc = screen_loc
 
 /atom/movable/screen/controller_ui/controller_ui/proc/update_all()
 	update_character_visual()
@@ -149,29 +156,22 @@
 	maptext_height = 32
 
 /atom/movable/screen/controller_ui/controller_button
-	icon_state = "button_1"
+	icon_state = "blank_first"
+	var/highlighted = FALSE
+	var/highlight_color
 
-/atom/movable/screen/controller_ui/controller_button/one
-	icon_state = "button_1"
-
-/atom/movable/screen/controller_ui/controller_button/two
-	icon_state = "button_2"
-
-/atom/movable/screen/controller_ui/controller_button/three
-	icon_state = "button_3"
-
-/atom/movable/screen/controller_ui/controller_button/three/Click(location, control, params)
-	var/mob/camera/strategy_controller/controller = usr
-	if(!controller || !controller.client)
+/atom/movable/screen/controller_ui/controller_button/MouseExited()
+	if(!usr.client)
 		return
 
-	// Close the current mob UI
-	if(controller.displayed_mob_ui)
-		controller.displayed_mob_ui.remove_ui(controller.client)
+	. = ..()
+	color = null
+	if(highlighted)
+		color = highlight_color
 
-	// Reopen the base UI
-	if(controller.displayed_base_ui)
-		controller.displayed_base_ui.add_ui(controller.client)
-		controller.displayed_base_ui.add_ui_buttons(controller.client)
+/atom/movable/screen/controller_ui/controller_button/MouseEntered(location,control,params)
+	if(!usr.client)
+		return
 
-	return TRUE
+	. = ..()
+	color = "#f0efab"

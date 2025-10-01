@@ -17,7 +17,7 @@
 
 	allowed_races = RACES_PLAYER_ALL
 
-	outfit = /datum/outfit/job/vagrant
+	outfit = /datum/outfit/vagrant
 	can_random = FALSE
 
 	can_have_apprentices = FALSE
@@ -27,7 +27,16 @@
 	. = ..()
 	peopleknowme = list()
 
-/datum/outfit/job/vagrant/pre_equip(mob/living/carbon/human/H)
+/datum/job/vagrant/after_spawn(mob/living/spawned, client/player_client)
+	..()
+	if(ishuman(spawned))
+		var/mob/living/carbon/human/stinky_boy = spawned
+		if(prob(25))
+			stinky_boy.set_hygiene(HYGIENE_LEVEL_DISGUSTING)
+		else
+			stinky_boy.set_hygiene(HYGIENE_LEVEL_DIRTY)
+
+/datum/outfit/vagrant/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(prob(20))
 		head = /obj/item/clothing/head/knitcap
@@ -43,11 +52,8 @@
 		armor = /obj/item/clothing/shirt/rags
 	else
 		pants = /obj/item/clothing/pants/tights/colored/vagrant
-		if(prob(50))
-			pants = /obj/item/clothing/pants/tights/colored/vagrant/l
 		shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant
-		if(prob(50))
-			shirt = /obj/item/clothing/shirt/undershirt/colored/vagrant/l
+
 	H.adjust_skillrank(/datum/skill/misc/sneaking, pick(1,2,3,4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/stealing, pick(1,2,3,4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/lockpicking, pick (1,2,3,4,5), TRUE) // thug lyfe
@@ -62,5 +68,6 @@
 	H.change_stat(STATKEY_CON, -2)
 	H.change_stat(STATKEY_END, -2)
 
-/datum/outfit/job/vagrant
+/datum/outfit/vagrant
 	name = "Beggar"
+

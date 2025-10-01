@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(breakable_types, list(
 		return
 	building_right_now = TRUE
 
-	new created_atom(center_turf)
+	var/atom/atom = new created_atom(center_turf)
 
-	after_construction()
+	after_construction(atom)
 	master.building_requests -= src

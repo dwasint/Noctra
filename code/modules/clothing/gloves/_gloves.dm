@@ -19,7 +19,6 @@
 
 	body_parts_covered = HANDS
 	slot_flags = ITEM_SLOT_GLOVES
-	body_parts_covered = HANDS
 	resistance_flags = FIRE_PROOF
 
 	attack_verb = list("challenged")

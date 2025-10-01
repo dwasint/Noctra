@@ -16,7 +16,7 @@
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS //Has shoulder guards, and nothing else to suggest leg protection
 	prevent_crits = ALL_EXCEPT_BLUNT
 	max_integrity = INTEGRITY_STRONGEST
-	stand_speed_reduction = 0.8
+	stand_speed_reduction = 1.2
 
 /obj/item/clothing/armor/plate/Initialize()
 	. = ..()
@@ -31,6 +31,14 @@
 	sellprice = VALUE_IRON_ARMOR
 	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_STRONG
+
+/obj/item/clothing/armor/plate/vampire
+	name = "ancient plate"
+	desc = "An ornate, ceremonial plate of considerable age."
+	icon_state = "vplate"
+
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_CRITICAL_HITS_VAMP
 
 //................ Full Plate Armor ............... //
 /obj/item/clothing/armor/plate/full
@@ -73,8 +81,10 @@
 	max_integrity = INTEGRITY_STANDARD
 	item_weight = 12 * IRON_MULTIPLIER
 
+
 /obj/item/clothing/armor/plate/blkknight
 	name = "blacksteel plate"
+	desc = "A chestplate forged from blacksteel with shoulder guards, combining strength and agility."
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	armor_class = AC_MEDIUM
 	icon_state = "bkarmor"
@@ -84,6 +94,8 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/blacksteel
 	item_weight = 12 * BLACKSTEEL_MULTIPLIER
+	sellprice = VALUE_SILVER_ITEM * 6
+	stand_speed_reduction = 1.05
 
 //................ Deccorated Half-plate ............... //
 

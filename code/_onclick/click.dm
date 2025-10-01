@@ -296,7 +296,7 @@
 		W.melee_attack_chain(src, A, params)
 	else
 		if(ismob(A))
-			var/adf = used_intent.clickcd
+			var/adf = used_intent?.clickcd
 			if(istype(rmb_intent, /datum/rmb_intent/aimed))
 				adf = round(adf * 1.4)
 			if(istype(rmb_intent, /datum/rmb_intent/swift))

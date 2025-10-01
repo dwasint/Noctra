@@ -28,10 +28,21 @@
 	uses_lord_coloring = LORD_PRIMARY
 	misc_flags = CRAFTING_TEST_EXCLUDE
 
+/obj/item/clothing/pants/trou/leather/splint
+	name = "splint plate trousers"
+	desc = "Affordable armored pants for regular soldiers, they seem simple and their craftmanship is solid, makes sure all stays in place with a plated codpiece."
+	icon_state = "splintlegs"
+	armor = ARMOR_MAILLE_IRON
+	max_integrity = INTEGRITY_STANDARD
+
+/obj/item/clothing/pants/trou/leather/guard
+	uses_lord_coloring = LORD_PRIMARY
+	misc_flags = CRAFTING_TEST_EXCLUDE
+
 /obj/item/clothing/pants/trou/leather/advanced
 	name = "hardened leather chausses"
 	desc = "Sturdy, durable, flexible. The finest leather to protect your nether regions."
-	max_integrity = 200
+	max_integrity = INTEGRITY_POOR + 50
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20,"fire" = 0, "acid" = 0)
 
@@ -52,7 +63,7 @@
 /obj/item/clothing/pants/trou/leather/masterwork
 	name = "masterwork leather chausses"
 	desc = "These chausses are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	max_integrity = 250
+	max_integrity = INTEGRITY_POOR + 100
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP)
 	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 20, "fire" = 0, "acid" = 0)
 

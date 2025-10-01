@@ -127,7 +127,7 @@
 
 /obj/item/weapon/polearm/neant/afterattack(atom/target, mob/living/user, proximity_flag, click_parameters)
 	. = ..()
-	if(!HAS_TRAIT(user, TRAIT_CABAL))
+	if(!HAS_TRAIT(user, TRAIT_CABAL) || !istype(user.patron, /datum/patron/inhumen/zizo))
 		return
 	if(user.used_intent?.tranged)
 		handle_magick(user, target)

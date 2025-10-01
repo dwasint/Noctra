@@ -58,7 +58,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/harpoon_gun/apply_components()
-	AddComponent(/datum/component/steam_storage, 300, 0)
+	AddComponent(/datum/component/steam_storage, 300, 0, "harpoon_gun")
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
 /obj/item/harpoon_gun/Destroy()
@@ -97,7 +97,7 @@
 	if(user.CanReach(attacked_atom))
 		return
 
-	if(!SEND_SIGNAL(src, COMSIG_ATOM_STEAM_USE, 50))
+	if(!SEND_SIGNAL(src, COMSIG_ATOM_STEAM_USE, 50, "harpoon_gun"))
 		return
 	. |= TRUE
 

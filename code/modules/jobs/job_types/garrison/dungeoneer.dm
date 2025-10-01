@@ -16,17 +16,16 @@
 
 	allowed_races = RACES_PLAYER_NONEXOTIC
 
-	outfit = /datum/outfit/job/dungeoneer
+	outfit = /datum/outfit/dungeoneer
 	give_bank_account = 50
 
 	cmode_music = 'sound/music/cmode/nobility/CombatDungeoneer.ogg'
 
-/datum/outfit/job/dungeoneer
 	job_bitflag = BITFLAG_GARRISON
 
-/datum/outfit/job/dungeoneer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/menacing
+	head = /obj/item/clothing/head/dungeoneer
 	neck = /obj/item/storage/belt/pouch/coins/poor	// Small storage. N.
 	pants = /obj/item/clothing/pants/trou
 	shoes = /obj/item/clothing/shoes/simpleshoes
@@ -36,7 +35,7 @@
 	beltr = /obj/item/weapon/whip/antique
 	beltl = /obj/item/storage/keyring/dungeoneer
 	backr = /obj/item/storage/backpack/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.
-
+	backpack_contents = list(/obj/item/clothing/head/menacing)
 
 	H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)

@@ -622,6 +622,7 @@
 					add_splatter_floor(location)
 					if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 						user.add_mob_blood(src)
+						user.adjust_hygiene(-10)
 			if(newforce > 15)
 				if(haha == BCLASS_BLUNT)
 					I.add_mob_blood(src)
@@ -629,6 +630,7 @@
 					add_splatter_floor(location)
 					if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 						user.add_mob_blood(src)
+						user.adjust_hygiene(-10)
 	send_item_attack_message(I, user, hitlim)
 	if(I.force)
 		return TRUE
@@ -637,7 +639,8 @@
 	if(I.force < force_threshold || I.damtype == STAMINA)
 		playsound(loc, 'sound/blank.ogg', I.get_clamped_volume(), TRUE, -1)
 	else
-		return ..()
+		. = ..()
+		I.do_special_attack_effect(user, null, null, src, null)
 
 /**
  * Last proc in the [/obj/item/proc/melee_attack_chain]
@@ -696,6 +699,11 @@
 /obj/item/proc/attack_qdeleted(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_QDELETED, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK_QDELETED, target, user, proximity_flag, click_parameters)
+
+/obj/item/proc/do_special_attack_effect(user, obj/item/bodypart/affecting, intent, mob/living/victim, selzone, thrown = FALSE)
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(victim, COMSIG_ITEM_ATTACK_EFFECT, user, affecting, intent, selzone, src)
+	SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_EFFECT, user, affecting, intent, victim, selzone)
 
 /obj/item/proc/get_clamped_volume()
 	if(w_class)

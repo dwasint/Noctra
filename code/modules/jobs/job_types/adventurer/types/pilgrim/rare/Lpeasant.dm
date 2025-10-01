@@ -1,20 +1,20 @@
 //master farmer
 
-/datum/advclass/pilgrim/rare/farmermaster
-	name = "Master Farmer"
+/datum/job/advclass/pilgrim/rare/farmermaster
+	title = "Master Farmer"
 	tutorial = "A veteran among the serfs that tend to cattle and fields of produce, \
 	able to handle almost every single task there is to do on a fief."
 	allowed_sexes = list(MALE, FEMALE)
 
-	outfit = /datum/outfit/job/adventurer/farmermaster
-	maximum_possible_slots = 1
-	pickprob = 15
+	outfit = /datum/outfit/adventurer/farmermaster
+	total_positions = 1
+	roll_chance = 15
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	apprentice_name = "Handyman"
 	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
 	is_recognized = TRUE
 
-/datum/outfit/job/adventurer/farmermaster/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/adventurer/farmermaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -52,5 +52,5 @@
 	H.change_stat(STATKEY_CON, 1)
 	H.change_stat(STATKEY_END, 2)
 	H.change_stat(STATKEY_INT, -1)
-	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)	//Peasants probably smell terrible. (:
+	ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)	//Peasants probably smell terrible. (:
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)

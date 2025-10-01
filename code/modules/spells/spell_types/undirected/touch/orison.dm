@@ -298,10 +298,6 @@
 	potency = light_power
 	return ..()
 
-/datum/status_effect/light_buff/refresh()
-	// stack this up as much as we can be bothered to cast it
-	duration += initial(duration)
-
 /datum/status_effect/light_buff/on_apply()
 	. = ..()
 	to_chat(owner, span_notice("Light blossoms into being around me!"))

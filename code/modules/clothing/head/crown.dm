@@ -95,6 +95,6 @@
 /obj/item/clothing/head/crown/circlet/stink/equipped(mob/user, slot)
 	. = ..()
 	if ((slot & ITEM_SLOT_HEAD) && istype(user))
-		ADD_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
+		ADD_TRAIT(user, TRAIT_DEADNOSE,"Dead Nose")
 	else
-		REMOVE_TRAIT(user, TRAIT_NOSTINK,"Dead Nose")
+		REMOVE_TRAIT(user, TRAIT_DEADNOSE,"Dead Nose")

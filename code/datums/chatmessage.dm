@@ -119,9 +119,6 @@
 	if(damage < 4)
 		return
 
-	if(damage < 4)
-		return
-
 	premature_end_of_life()
 
 /**
@@ -324,12 +321,14 @@
 	if(skip_spelling)
 		add_string()
 
-	animate(
-		message,
-		time = CHAT_SPELLING_DELAY_WITH_EXCLAIMED_MULTIPLIER,
-		pixel_w = 0,
-		pixel_z = 0,
-	)
+	if(!QDELETED(message))
+		animate(
+			message,
+			time = CHAT_SPELLING_DELAY_WITH_EXCLAIMED_MULTIPLIER,
+			pixel_w = 0,
+			pixel_z = 0,
+		)
+
 	addtimer(CALLBACK(src, PROC_REF(end_of_life)), delay + 2 SECONDS)
 
 /datum/chatmessage/proc/add_string(string = "", direction = 1, audible = TRUE)

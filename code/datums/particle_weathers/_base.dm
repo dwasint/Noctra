@@ -331,8 +331,20 @@
 	if(!holder)
 		return
 
-	var/weather_type = input("Choose a weather", "Weather")  as null|anything in sortList(subtypesof(/datum/particle_weather), GLOBAL_PROC_REF(cmp_typepaths_asc))
+	var/list/selection = list("End Current Weather")
+
+	selection += sortList(subtypesof(/datum/particle_weather))
+
+	var/weather_type = browser_input_list(src, "Choose a weather", "Weather", selection)
+
 	if(!weather_type)
+		return
+
+	if(weather_type == "End Current Weather")
+		log_admin("[key_name(usr)] Ended weather of type [SSParticleWeather.get_current_weather()].")
+		message_admins("[key_name_admin(usr)] Ended weather of type [SSParticleWeather.get_current_weather()].")
+		SSParticleWeather.end_current_weather()
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "End Particle Weather")
 		return
 
 	SSParticleWeather.run_weather(weather_type, TRUE)

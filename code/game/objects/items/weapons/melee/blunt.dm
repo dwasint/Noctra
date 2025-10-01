@@ -103,7 +103,7 @@
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
 
 /datum/intent/mace/strike/heavy
-	penfactor = AP_CLUB_STRIKE+10
+	penfactor = AP_CLUB_HEAVY_STRIKE
 	swingdelay = 2
 	icon_state = "instrike"
 	misscost = 12

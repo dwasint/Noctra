@@ -33,6 +33,10 @@
 	if(!ispath(input.carrying_reagent, /datum/reagent/steam))
 		return
 
+	if(placed_atom.obj_broken)
+		visible_message(span_notice("[placed_atom] is broken."))
+		remove_placed()
+
 	var/taking_pressure = min(100, input.water_pressure)
 	var/obj/structure/water_pipe/picked_provider = pick(input.providers)
 	picked_provider?.taking_from?.use_water_pressure(taking_pressure)

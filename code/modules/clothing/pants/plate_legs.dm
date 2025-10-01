@@ -72,6 +72,20 @@
 	prevent_crits = ALL_CRITICAL_HITS_VAMP // Vampire armors don't protect against lashing, Castlevania reference
 	item_weight = 5.5 * STEEL_MULTIPLIER
 
+/obj/item/clothing/pants/platelegs/blk
+	name = "blacksteel legs"
+	desc = "Leg armor of blacksteel, resilient and surprisingly light."
+	icon_state = "bklegs"
+	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	anvilrepair = /datum/skill/craft/blacksmithing
+	smeltresult = /obj/item/ingot/blacksteel
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PLATE_GOOD
+	item_weight = 9 * BLACKSTEEL_MULTIPLIER
+	sellprice = VALUE_SILVER_ITEM * 2
+
 //............... Evil Pants ............... //
 
 /obj/item/clothing/pants/platelegs/zizo

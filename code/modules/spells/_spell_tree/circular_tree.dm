@@ -535,7 +535,7 @@
 	node_x = UP_X_LEFT
 	node_y = UP_Y_TIER_2
 	prerequisites = list(/datum/spell_node/dark_attunement)
-	spell_type = /datum/action/cooldown/spell/projectile/eldritch_blast
+	spell_type = /datum/action/cooldown/spell/cone/staggered/eldritch_blast
 
 /datum/spell_node/encode_thoughts
 	name = "Encode Thoughts"

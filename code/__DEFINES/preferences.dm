@@ -1,3 +1,5 @@
+#define MINIMUM_FLAVOR_TEXT		0
+#define MINIMUM_OOC_NOTES 		0
 
 //Preference toggles
 #define SOUND_ADMINHELP			(1<<0)

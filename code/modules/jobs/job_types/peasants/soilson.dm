@@ -18,14 +18,13 @@
 
 	allowed_races = RACES_PLAYER_ALL
 
-	outfit = /datum/outfit/job/farmer
+	outfit = /datum/outfit/farmer
 	give_bank_account = 20
 	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
 
-/datum/outfit/job/farmer
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
-/datum/outfit/job/farmer/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/farmer/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -63,7 +62,7 @@
 	H.change_stat(STATKEY_CON, 1)
 	H.change_stat(STATKEY_END, 1)
 	H.change_stat(STATKEY_INT, -1)
-	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	backpack_contents = list(/obj/item/recipe_book/cooking = 1, /obj/item/bottle_kit = 1, /obj/item/recipe_book/agriculture = 1)
 
@@ -104,14 +103,13 @@
 
 	allowed_races = RACES_PLAYER_ALL
 
-	outfit = /datum/outfit/job/soilchild
+	outfit = /datum/outfit/soilchild
 	give_bank_account = 10
 	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
 
-/datum/outfit/job/soilchild
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
-/datum/outfit/job/soilchild/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/soilchild/pre_equip(mob/living/carbon/human/H)
 	..()
 	// Reduced skill levels compared to adult Soilson
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
@@ -140,7 +138,7 @@
 	H.change_stat(STATKEY_END, -1)
 	H.change_stat(STATKEY_INT, 1)
 
-	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 
 	neck = /obj/item/storage/belt/pouch/coins/poor

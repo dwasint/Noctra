@@ -574,7 +574,7 @@
 	if (can_afford())
 		switch(cost_system)
 			if(COVEN_COST_VITAE)
-				owner.bloodpool = owner.bloodpool - vitae_cost
+				owner.adjust_bloodpool(-vitae_cost)
 		owner.update_action_buttons()
 		return TRUE
 	else

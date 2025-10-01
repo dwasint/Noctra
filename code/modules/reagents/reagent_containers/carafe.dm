@@ -73,13 +73,13 @@
 /* Spawning full */
 
 /obj/item/reagent_containers/glass/carafe/water
-	list_reagents = list(/datum/reagent/water = 96)
+	list_reagents = list(/datum/reagent/water = 100)
 
 /obj/item/reagent_containers/glass/carafe/redwine
-	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 96)
+	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 100)
 
 /obj/item/reagent_containers/glass/carafe/silver/redwine
-	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 96)
+	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 100)
 
 /obj/item/reagent_containers/glass/carafe/gold/redwine
-	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 96)
+	list_reagents = list(/datum/reagent/consumable/ethanol/redwine = 100)

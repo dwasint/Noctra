@@ -580,6 +580,7 @@
 				if(iscarbon(src))
 					var/mob/living/carbon/C = src
 					C.add_stress(/datum/stress_event/vomitself)
+					C.adjust_hygiene(-25)
 			distance = 0
 		else
 			if(message)

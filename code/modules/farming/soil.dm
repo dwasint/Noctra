@@ -586,35 +586,29 @@
 	var/should_update
 	process_plant_nutrition(dt)
 	should_update = process_plant_health(dt)
-	if(matured && !produce_ready)
+	if(!produce_ready)
 		process_crop_quality(dt)
 	return should_update
 
 /obj/structure/soil/proc/process_crop_quality(dt)
-	if(!plant || plant_dead || !matured || produce_ready)
+	if(!plant || plant_dead || produce_ready)
 		return
 
-	var/quality_potential = 0.5  // Start lower
-
+	var/quality_potential = 0.5
 	if(plant_genetics)
 		var/genetics_trait = plant_genetics.quality_trait
-		// Convert trait value to quality potential
-		// Below average (0-40): 0.2-0.5 potential
-		// Average (40-60): 0.5-0.7 potential
-		// Above average (60-100): 0.7-1.2 potential
 		if(genetics_trait <= 40)
-			quality_potential = 0.2 + (genetics_trait / 20) * 0.3
+			quality_potential = 0.2 + (genetics_trait / 40) * 0.3
 		else if(genetics_trait <= 60)
-			quality_potential = 0.5 + ((genetics_trait - 30) / 20) * 0.2
+			quality_potential = 0.5 + ((genetics_trait - 40) / 20) * 0.2
 		else
-			quality_potential = 0.7 + ((genetics_trait - 50) / 40) * 0.5
+			quality_potential = 0.7 + ((genetics_trait - 60) / 40) * 0.5
 
 	var/growth_bonus = clamp((1 - (plant.maturation_time / (12 MINUTES))) * 0.3, -0.2, 0.3)
 	quality_potential += growth_bonus
 	quality_potential = clamp(quality_potential, 0.1, 1.5)
 
-	var/conditions_quality = 0.7  // Start lower, need good care to reach 1.0
-
+	var/conditions_quality = 0.7
 	if(tilled_time > 0)
 		conditions_quality += 0.1
 	if(pollination_time > 0)
@@ -627,6 +621,7 @@
 	var/npk_balance_quality = calculate_npk_quality_modifier()
 	conditions_quality *= npk_balance_quality
 
+	// Water requirements
 	if(water >= MAX_PLANT_WATER * 0.9)
 		conditions_quality += 0.2
 	else if(water >= MAX_PLANT_WATER * 0.7)
@@ -636,34 +631,62 @@
 	else if(water < MAX_PLANT_WATER * 0.3)
 		conditions_quality *= 0.5
 
-	// Weeds more severely affect quality
+	// Weed penalties
 	if(weeds >= MAX_PLANT_WEEDS * 0.6)
 		conditions_quality *= 0.6
 	else if(weeds >= MAX_PLANT_WEEDS * 0.3)
 		conditions_quality *= 0.8
 
-	// Cap conditions quality
 	conditions_quality = clamp(conditions_quality, 0.1, 1.8)
 
 	var/quality_rate = quality_potential * conditions_quality
 
-	var/max_quality_points = 30 * (plant.maturation_time / (6 MINUTES))
+	// Phase-based quality accumulation rates
+	var/phase_multiplier = 1.0
+	if(!matured)
+		phase_multiplier = 1.2
+
+	// Calculate max quality points based on total potential time
+	// Base time + production time + reasonable harvest window
+	var/total_potential_time = plant.maturation_time + plant.produce_time
+	var/max_quality_points = 30 * (total_potential_time / (6 MINUTES))
 
 	var/progress_ratio = quality_points / max_quality_points
-	var/diminishing_returns = 1 - (progress_ratio * 0.9)  // Stronger diminishing returns
-	quality_points += dt * quality_rate * 0.025 * diminishing_returns  // Slower accumulation
+	var/diminishing_returns = 1 - (progress_ratio * 0.8)  // Slightly reduced diminishing returns
+
+	// Accumulate quality points
+	quality_points += dt * quality_rate * 0.26 * phase_multiplier * diminishing_returns
 	quality_points = min(quality_points, max_quality_points)
 
-	if(quality_points >= max_quality_points * 0.95)
+	// Quality tier thresholds
+	if(quality_points >= max_quality_points * 0.9)
 		crop_quality = QUALITY_DIAMOND
-	else if(quality_points >= max_quality_points * 0.85)
-		crop_quality = QUALITY_GOLD
 	else if(quality_points >= max_quality_points * 0.7)
+		crop_quality = QUALITY_GOLD
+	else if(quality_points >= max_quality_points * 0.5)
 		crop_quality = QUALITY_SILVER
-	// else if(quality_points >= max_quality_points * 0.5)
-	// 	crop_quality = QUALITY_BRONZE
 	else
 		crop_quality = QUALITY_REGULAR
+
+// Optional: Add a proc to show current quality progress to players
+/obj/structure/soil/proc/get_quality_info()
+	if(!matured || !plant)
+		return "Plant not mature enough to assess quality."
+
+	var/total_potential_time = plant.maturation_time + plant.produce_time + (20 MINUTES)
+	var/max_quality_points = 30 * (total_potential_time / (6 MINUTES))
+	var/progress_percent = round((quality_points / max_quality_points) * 100, 1)
+
+	var/quality_name = "Regular"
+	switch(crop_quality)
+		if(QUALITY_SILVER)
+			quality_name = "Silver"
+		if(QUALITY_GOLD)
+			quality_name = "Gold"
+		if(QUALITY_DIAMOND)
+			quality_name = "Diamond"
+
+	return "Current Quality: [quality_name] ([progress_percent]% of maximum potential)"
 
 // Calculate quality modifier based on NPK balance
 /obj/structure/soil/proc/calculate_npk_quality_modifier()

@@ -72,6 +72,26 @@
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stress_event/starving)
 
+/datum/status_effect/debuff/hungryt4
+	id = "hungryt4"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/hungryt4
+	duration = 100
+
+
+//Used only when starvation damage is enabled
+/atom/movable/screen/alert/status_effect/debuff/hungryt4
+	name = "Dying of Starvation"
+	desc = "<span class='boldwarning'>I am dying of starvation! I need to find food, quick!</span>\n"
+	icon_state = "hunger4"
+
+/datum/status_effect/debuff/hungryt4/tick()
+	owner.adjustToxLoss(CONFIG_GET(number/starvation_damage_per_tick))
+
+/datum/status_effect/debuff/hungryt4/on_apply()
+	. = ..()
+	to_chat(owner, "<span class='danger'>I am starving to death! I need to eat something before it's too late!</span>")
+
+
 //SILVER DAGGER EFFECT
 
 /datum/status_effect/debuff/silver_curse
@@ -171,6 +191,25 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.remove_stress(/datum/stress_event/parched)
+
+/datum/status_effect/debuff/thirstyt4
+	id = "thirstyt4"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/thirstyt4
+	duration = 100
+
+
+//Used only when starvation damage is enabled
+/atom/movable/screen/alert/status_effect/debuff/thirstyt4
+	name = "Dying of Thirst"
+	desc = "<span class='boldwarning'>I am dying of thirst! I need to find water, quick!</span>\n"
+	icon_state = "thirst4"
+
+/datum/status_effect/debuff/thirstyt4/tick()
+	owner.adjustToxLoss(CONFIG_GET(number/dehydration_damage_per_tick))
+
+/datum/status_effect/debuff/thirstyt4/on_apply()
+	. = ..()
+	to_chat(owner, "<span class='danger'>I am dying of thirst! I need to find water before it's too late!</span>")
 
 /////////
 
@@ -482,3 +521,21 @@
 	desc = span_danger("Oh- \n I don't... have it anymore.\n")
 
 
+/datum/status_effect/debuff/stinky_person
+	id = "stinky_person"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/stinky_person
+	duration = -1
+
+/atom/movable/screen/alert/status_effect/debuff/stinky_person
+	name = "Stinky Person"
+	desc = "<span class='warning'>I smell HORRID.</span>\n"
+	icon_state = "stinky" //TODO add icon
+
+/datum/status_effect/debuff/stinky_person/on_apply()
+	. = ..()
+	owner.AddComponent(/datum/component/rot/stinky_person)
+
+/datum/status_effect/debuff/stinky_person/on_remove()
+	. = ..()
+	var/datum/component/stinky_component = GetComponent(/datum/component/rot/stinky_person)
+	stinky_component?.RemoveComponent()

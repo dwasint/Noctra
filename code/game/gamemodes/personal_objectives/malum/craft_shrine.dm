@@ -36,7 +36,7 @@
 	to_chat(owner.current, span_greentext("You have built all the required sacred crosses, completing Malum's objective!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence(MALUM, 10)
+	adjust_storyteller_influence(MALUM, 20)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_ITEM_CRAFTED)
 

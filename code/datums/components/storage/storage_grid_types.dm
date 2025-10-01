@@ -302,6 +302,7 @@
 				/obj/item/mana_battery/mana_crystal,
 				/obj/item/reagent_containers/powder,
 				/obj/item/organ,
+				/obj/item/neuFarm/seed,
 				)
 			),
 		)
@@ -324,3 +325,9 @@
 	insert_verb = "slide"
 	insert_preposition = "in"
 
+/datum/component/storage/concrete/grid/porter
+	screen_max_rows = 8
+	screen_max_columns = 5
+	max_w_class = WEIGHT_CLASS_HUGE
+	not_while_equipped = TRUE
+	allow_big_nesting = TRUE

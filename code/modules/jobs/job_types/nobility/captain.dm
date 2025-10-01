@@ -1,7 +1,7 @@
 /datum/job/captain
 	title = "Captain"
 	tutorial = "Law and Order, your divine reason for existence. \
-	You have been given command over the garrison to help keep order and peace within the city, \
+	You have been given command over the town and keep garrison to help ensure order and peace within the city, \
 	and defend it against the many dangers of the peninsula."
 	department_flag = NOBLEMEN
 	display_order = JDO_CAPTAIN
@@ -14,11 +14,13 @@
 
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 
-	outfit = /datum/outfit/job/captain
+	outfit = /datum/outfit/captain
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/guard)
 	give_bank_account = 120
 	cmode_music = 'sound/music/cmode/antag/CombatSausageMaker.ogg'
 	noble_income = 11
+
+	job_bitflag = BITFLAG_ROYALTY | BITFLAG_GARRISON
 
 /datum/job/captain/after_spawn(mob/living/spawned, client/player_client)
 	..()
@@ -31,10 +33,7 @@
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
 
-/datum/outfit/job/captain
-	job_bitflag = BITFLAG_ROYALTY | BITFLAG_GARRISON
-
-/datum/outfit/job/captain/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/captain/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/helmet/visored/captain
 	gloves = /obj/item/clothing/gloves/plate

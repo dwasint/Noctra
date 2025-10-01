@@ -43,6 +43,10 @@
 	var/preferred_tasks = list() // Tasks this worker gravitates toward
 	var/list/learned_behaviors = list() // Behaviors this worker has learned
 
+	var/list/turf/patrol_points = list()
+	var/patrol_setup_active = FALSE
+	var/list/image/patrol_visual_images = list()
+
 /datum/worker_mind/New(mob/living/new_worker, mob/camera/strategy_controller/new_master)
 	. = ..()
 	idle = new /datum/idle_tendancies/dynamic
@@ -290,16 +294,5 @@
 	if(!movement_target)
 		return
 
-	// Workers remember and prefer certain routes
-	var/route_key = "[get_turf(worker)]-[get_turf(movement_target)]"
-	var/list/preferred_path = master.learned_routes[route_key]
-
-	if(preferred_path && prob(70))
-		current_path = preferred_path.Copy()
-	else
-		current_path = get_path_to(worker, get_turf(movement_target),
-			TYPE_PROC_REF(/turf, Heuristic_cardinal_3d), 32 + 1, 250, 1)
-
-		// Store successful routes
-		if(length(current_path))
-			master.learned_routes[route_key] = current_path.Copy()
+	current_path = get_path_to(worker, get_turf(movement_target),
+		TYPE_PROC_REF(/turf, Heuristic_cardinal_3d), 32 + 1, 250, 1)

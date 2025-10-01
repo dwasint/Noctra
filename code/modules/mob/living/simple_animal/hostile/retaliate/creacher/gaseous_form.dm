@@ -30,6 +30,7 @@
 	is_flying_animal = TRUE
 	gold_core_spawnable = NO_SPAWN //too spooky for science
 	var/random = TRUE //if you want random names for ghosts or not
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 /mob/living/simple_animal/hostile/retaliate/gaseousform/Initialize()
 	. = ..()

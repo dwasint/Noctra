@@ -98,6 +98,9 @@
 	stress_change = -5
 	desc = span_green("Down with the tyranny!")
 
+
+//Hygiene
+
 /datum/stress_event/clean
 	timer = 20 MINUTES
 	stress_change = -1
@@ -108,15 +111,16 @@
 	stress_change = -1
 	desc = span_green("That was an amazing bath.")
 
+/datum/stress_event/filth_lover
+	timer = 10 MINUTES
+	stress_change = -1
+	desc = span_green("I smell horrid.")
+
+//Music
 /datum/stress_event/music
 	timer = 30 SECONDS
 	stress_change = 0 // you suck at music
 	desc = span_green("This music is pleasant.")
-
-/datum/stress_event/beautiful
-	timer = 2 MINUTES
-	stress_change = -2
-	desc = span_green("Their face is a work of art!")
 
 /datum/stress_event/music/two
 	stress_change = -1
@@ -137,6 +141,11 @@
 /datum/stress_event/music/six
 	stress_change = -3
 	desc = span_green("This music is divine.")
+
+/datum/stress_event/beautiful
+	timer = 2 MINUTES
+	stress_change = -2
+	desc = span_green("Their face is a work of art!")
 
 /datum/stress_event/eora
 	stress_change = -4
@@ -187,6 +196,11 @@
 /datum/stress_event/perfume
 	stress_change = -1
 	desc = span_green("A soothing fragrance envelops me.")
+	timer = 10 MINUTES
+
+/datum/stress_event/odor_lover
+	stress_change = -1
+	desc = span_green("This pungent odor is wonderful!")
 	timer = 10 MINUTES
 
 /datum/stress_event/divine_beauty

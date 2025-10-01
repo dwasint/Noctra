@@ -16,14 +16,13 @@
 
 	allowed_races = RACES_PLAYER_NONHERETICAL
 
-	outfit = /datum/outfit/job/undertaker
+	outfit = /datum/outfit/undertaker
 	give_bank_account = TRUE
 	cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 
-/datum/outfit/job/undertaker
 	job_bitflag = BITFLAG_CHURCH
 
-/datum/outfit/job/undertaker/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/undertaker/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/padded/deathshroud
 	neck = /obj/item/clothing/neck/psycross/silver/necra
@@ -56,7 +55,7 @@
 	if(!H.has_language(/datum/language/celestial)) // For discussing church matters with the other Clergy
 		H.grant_language(/datum/language/celestial)
 		to_chat(H, "<span class='info'>I can speak Celestial with ,c before my speech.</span>")
-	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Operating with corpses every day.
 	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
 

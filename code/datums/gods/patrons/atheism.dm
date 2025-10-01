@@ -85,3 +85,20 @@
 		"WHAT'S A GOD?!",
 		"NOBODY EVER TOLD ME ABOUT THE DIVINE!"
 	)
+
+/datum/patron/godless/rashan
+	name = "Rashan-Kahl"
+	domain = "Twin-faced god of ambition and chains"
+	desc = "Rashan represents both creation and destruction, freedom and bondage- a duality that mirrors the rakshari's complex relationship with power. Temples to Rashan-Kahl often double as marketplaces, symbolizing the transactional nature of life."
+	flaws = "Flaws of their followers"
+	worshippers = "Rakshari, Slavers, His Majesty"
+	sins = "Sins of their Followers"
+	boons = "The will to meow"
+	confess_lines = list(
+		"WHAT MUST I PAY FOR THE PAIN TO STOP!",
+		"I AM UNCHAINED!!",
+		"I AM PROMISED FREEDOM",
+		"MY GOD IS FREEDOM WHILE YOURS ARE SHACKLES!",
+		"RASHAN-KAHL WILL ENSLAVE YOU!"
+	)
+	allowed_races = list(SPEC_ID_RAKSHARI)

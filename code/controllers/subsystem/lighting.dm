@@ -1,6 +1,7 @@
 SUBSYSTEM_DEF(lighting)
 	name = "Lighting"
 	wait = 0
+
 	init_order = INIT_ORDER_LIGHTING
 	flags = SS_TICKER
 	priority = FIRE_PRIORITY_DEFAULT
@@ -14,6 +15,9 @@ SUBSYSTEM_DEF(lighting)
 
 
 /datum/controller/subsystem/lighting/Initialize(timeofday)
+	#ifdef ABSOLUTE_MINIMUM_MODE
+	return ..()
+	#endif
 	if(!initialized)
 		if (CONFIG_GET(flag/starlight))
 			for(var/I in GLOB.sortedAreas)

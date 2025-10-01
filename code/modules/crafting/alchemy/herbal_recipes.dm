@@ -95,7 +95,6 @@
 /datum/reagent/medicine/herbal/mentha_tea/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.add_nausea(-1)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.5*REM)
 		if(M.mana_pool)
 			M.mana_pool.adjust_mana(1)
 	..()
@@ -220,7 +219,7 @@
 
 /datum/reagent/medicine/herbal/euphrasia_eye_wash/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -0.1*REM)
+		M.adjustOrganLoss(ORGAN_SLOT_EYES, -0.1*REM)
 		if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
 			M.adjust_stamina(-0.1, internal_regen = FALSE)
 
@@ -447,10 +446,9 @@
 	M.adjustToxLoss(1.5)
 	if(prob(15))
 		M.emote("cough")
-	if(prob(10))
-		var/turf/T = get_turf(M)
-		if(T)
-			T.pollute_turf(/datum/pollutant/rot, 8)
+	var/turf/T = get_turf(M)
+	if(T)
+		T.pollute_turf(/datum/pollutant/rot, 16)
 	. = ..()
 
 // Magical Enhancement

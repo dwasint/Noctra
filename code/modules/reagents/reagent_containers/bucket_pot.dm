@@ -90,7 +90,6 @@
 /obj/item/reagent_containers/glass/bucket/pot/copper
 	icon_state = "pote_copper"
 	melting_material = /datum/material/copper
-	melt_amount = 80
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
 	icon_state = "pote_stone"

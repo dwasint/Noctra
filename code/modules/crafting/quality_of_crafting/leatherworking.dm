@@ -846,7 +846,7 @@
 				/obj/item/clothing/armor/medium/scale = 1)
 	craftdiff = 4
 
-/datum/repeatable_crafting_recipe/leather/standalone/coat
+/datum/repeatable_crafting_recipe/leather/standalone/coat/forest
 	name = "forrester leather armor"
 	output = /obj/item/clothing/armor/leather/advanced/forrester
 	requirements = list(/obj/item/natural/hide/cured = 3,

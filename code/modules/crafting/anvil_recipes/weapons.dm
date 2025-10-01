@@ -167,6 +167,14 @@
 	created_item = /obj/item/weapon/polearm/halberd/bardiche/warcutter
 	craftdiff = 2
 
+/datum/anvil_recipe/weapons/iron/greataxe
+	name = "Greataxe (+Bar x2), (+Small log)"
+	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/ingot/iron, /obj/item/ingot/iron)
+	recipe_name = "a Greataxe with a single blade."
+	appro_skill = /datum/skill/craft/weaponsmithing
+	created_item = /obj/item/weapon/greataxe
+	craftdiff = 3
+
 /datum/anvil_recipe/weapons/iron/dagger_iron
 	name = "Dagger x2"
 	recipe_name = "a couple Daggers"
@@ -404,6 +412,22 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/weapon/axe/steel
+
+/datum/anvil_recipe/weapons/steel/greataxe
+	name = "Greataxe (+Bar x2), (+Small log)"
+	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/ingot/steel, /obj/item/ingot/steel)
+	recipe_name = "a Greataxe with a single blade."
+	appro_skill = /datum/skill/craft/weaponsmithing
+	created_item = /obj/item/weapon/greataxe/steel
+	craftdiff = 4
+
+/datum/anvil_recipe/weapons/steel/doubleheaded_greataxe
+	name = "Double-headed Greataxe (+Bar x3), (+Small log)"
+	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/ingot/steel)
+	recipe_name = "a Greataxe with two blades."
+	appro_skill = /datum/skill/craft/weaponsmithing
+	created_item = /obj/item/weapon/greataxe/steel/doublehead
+	craftdiff = 5
 
 /datum/anvil_recipe/weapons/steel/nsapo/
 	name = "Steel Kasuyu (+Stick)"

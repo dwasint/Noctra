@@ -32,14 +32,14 @@
 	for(var/turf/turf as anything in turfs)
 		for(var/obj/effect/workspot/spot in turf.contents)
 			workspots |= spot
-	after_construction(turfs)
+	after_construction(turfs, master_controller)
 
 	var/list/created_nodes = list()
 	for(var/datum/persistant_workorder/node as anything in persistant_nodes)
 		created_nodes |= new node(src)
 	persistant_nodes = created_nodes
 
-/obj/effect/building_node/proc/after_construction(list/turfs)
+/obj/effect/building_node/proc/after_construction(list/turfs, atom/master)
 	return
 
 /obj/effect/building_node/proc/add_material_request(location, list/resource_amount, multiplier = 1)

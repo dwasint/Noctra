@@ -567,6 +567,12 @@
 	wdefense = ULTMATE_PARRY
 	sellprice = 150 // A noble collector would love to get his/her hands on one of these spears
 
+/obj/item/weapon/polearm/spear/hoplite/abyssal
+	name = "Abyssal spear"
+	desc = "A spear with a toothed end, inspired after the teeth of an abyssal monstrosity"
+	icon_state = "ancient_spear"
+	wdefense = ULTMATE_PARRY
+	sellprice = 40
 
 /obj/item/weapon/polearm/spear/bronze
 	name = "Bronze Spear"

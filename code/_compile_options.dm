@@ -88,9 +88,14 @@
 //#define NO_DUNGEON //comment this to load dungeons.
 
 //#define USES_PQ
+//#define ABSOLUTE_MINIMUM_MODE //uncomment this to skip as many resource intensive ops as possible to load in for testing the fastest while preserving most gameplay features.
 
 #ifdef LOWMEMORYMODE
+#ifdef ABSOLUTE_MINIMUM_MODE
+#define FORCE_MAP "_maps/minimal_test.json"
+#else
 #define FORCE_MAP "_maps/roguetest.json"
+#endif
 #endif
 
 #ifdef TESTING
@@ -135,4 +140,10 @@
 #error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
 #error You need version 515.1643 or higher
 #endif
+#endif
+
+//#define KALYPSO_PROJECT
+#if defined(KALYPSO_PROJECT)
+#define NO_DUNGEON
+#define FORCE_MAP "_maps/projectkalypso.json"
 #endif

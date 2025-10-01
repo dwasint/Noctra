@@ -21,10 +21,13 @@
 	salvage_result = /obj/item/natural/hide/cured
 	item_weight = 1.6
 
+//THE ARMOUR VALUES OF ADVANCED AND MASTERWORK HELMETS ARE INTENDED
+//KEEP THIS IN MIND
+
 /obj/item/clothing/head/helmet/leather/advanced
 	name = "hardened leather helmet"
 	desc = "Sturdy, durable, flexible. A confortable and reliable hood made of hardened leather."
-	max_integrity = 250
+	max_integrity = INTEGRITY_STANDARD + 50
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20, "fire" = 0, "acid" = 0)
@@ -32,7 +35,7 @@
 /obj/item/clothing/head/helmet/leather/masterwork
 	name = "masterwork leather helmet"
 	desc = "This helmet is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	max_integrity = 300
+	max_integrity = INTEGRITY_STANDARD + 100
 	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
 	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)

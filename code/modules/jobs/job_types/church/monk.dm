@@ -16,16 +16,15 @@
 	allowed_races = RACES_PLAYER_NONHERETICAL
 	allowed_patrons = ALL_TEMPLE_PATRONS
 
-	outfit = /datum/outfit/job/monk
+	outfit = /datum/outfit/monk
 	give_bank_account = TRUE
-
-/datum/outfit/job/monk
-	name = "Acolyte"
-	jobtype = /datum/job/monk
 	allowed_patrons = ALL_TEMPLE_PATRONS
 	job_bitflag = BITFLAG_CHURCH
 
-/datum/outfit/job/monk/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/monk
+	name = "Acolyte"
+
+/datum/outfit/monk/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
 	belt = /obj/item/storage/belt/leather/rope
@@ -48,7 +47,7 @@
 			pants = /obj/item/clothing/pants/trou/leather/mourning
 			armor = /obj/item/clothing/shirt/robe/necra
 			H.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)//accustomed to death
+			ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)//accustomed to death
 		if(/datum/patron/divine/eora)
 			mask = /obj/item/clothing/face/operavisage
 			neck = /obj/item/clothing/neck/psycross/silver/eora

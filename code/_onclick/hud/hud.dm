@@ -71,6 +71,7 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 
 	var/atom/movable/screen/stamina/stamina
 	var/atom/movable/screen/energy/energy
+	var/atom/movable/screen/bloodpool/bloodpool
 
 	var/image/object_overlay
 	var/atom/movable/screen/overlay_curloc
@@ -357,6 +358,15 @@ GLOBAL_LIST_INIT(available_ui_styles, sortList(list(
 
 /datum/hud/proc/update_locked_slots()
 	return
+
+/datum/hud/proc/initialize_bloodpool()
+	bloodpool = new /atom/movable/screen/bloodpool(null, src)
+	infodisplay += bloodpool
+	show_hud(HUD_STYLE_STANDARD)
+
+/datum/hud/proc/shutdown_bloodpool()
+	infodisplay -= bloodpool
+	QDEL_NULL(bloodpool)
 
 /datum/hud/proc/position_action(atom/movable/screen/movable/action_button/button, position)
 	if(button.location != SCRN_OBJ_DEFAULT)

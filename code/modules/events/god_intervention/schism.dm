@@ -75,8 +75,8 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 
 	if(astrata_count >= challenger_count)
 		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
-		adjust_storyteller_influence(ASTRATA, 200)
-		adjust_storyteller_influence(challenger.name, -50)
+		adjust_storyteller_influence(ASTRATA, 250)
+		adjust_storyteller_influence(challenger.name, -100)
 
 		for(var/datum/weakref/supporter_ref in supporters_astrata)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
@@ -165,13 +165,11 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		var/male
 		if(selected_priest.gender == FEMALE)
 			selected_priest.job = "Vice Priestess"
-			selected_priest.advjob = "Vice Priestess"
 			male = FALSE
 		else
 			selected_priest.job = "Vice Priest"
-			selected_priest.advjob = "Vice Priest"
 			male = TRUE
-		selected_priest.migrant_type = null
+
 		var/datum/devotion/C = selected_priest.cleric
 		if(C)
 			C.passive_devotion_gain = 1

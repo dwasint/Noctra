@@ -27,7 +27,7 @@
 	to_chat(owner.current, span_greentext("You've established your dominance over this man and completed Zizo's objective!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
-	adjust_storyteller_influence(ZIZO, 15)
+	adjust_storyteller_influence(ZIZO, 20)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_MOB_KICK)
 

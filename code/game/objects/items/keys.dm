@@ -219,6 +219,12 @@
 	icon_state = "spikekey"
 	lockids = list(ACCESS_GARRISON)
 
+/obj/item/key/lieutenant
+	name = "city watch lieutenant key"
+	desc = "This key belongs to the Lieutenant of the City Watch."
+	icon_state = "spikekey"
+	lockids = list(ACCESSS_LIEUTENANT)
+
 /obj/item/key/forrestgarrison
 	name = "forest guard key"
 	desc = "This key belongs to the Forest Guard."

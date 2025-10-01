@@ -1,14 +1,14 @@
-/datum/advclass/combat/dredge
-	name = "Dredge"
+/datum/job/advclass/combat/dredge
+	title = "Dredge"
 	tutorial = "Peasants and nobles. Saints, sinners, madmen and thieves - who you once were is now irrelevant. \
 	Cast from your home for what is undoubtedly a heinous act of violence, your travels have washed you up upon this \
 	shiteheap. All you have are your possessions from your former life. Make some coin for yourself, lest you end up dead and gone."
-	outfit = /datum/outfit/job/adventurer/dredge
+	outfit = /datum/outfit/adventurer/dredge
 	category_tags = list(CTAG_ADVENTURER)
-	maximum_possible_slots = 7
+	total_positions = 7
 	min_pq = 0
 
-/datum/outfit/job/adventurer/dredge/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/adventurer/dredge/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_skillrank(/datum/skill/combat/wrestling, pick (1,2), TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, pick (1,2), TRUE)
@@ -206,7 +206,7 @@
 			)
 		if("Destitute") // Fuck you, die. Welcome to Heartcrit. Dark souls challenge run.
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 			H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
@@ -590,7 +590,7 @@
 			H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.change_stat(STATKEY_INT, 1)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 			to_chat(H,span_info("\
 			I've studied anatomy, and used to practice medicine.")
 			)

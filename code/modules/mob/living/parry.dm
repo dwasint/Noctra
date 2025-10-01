@@ -172,7 +172,7 @@
 			skill_modifier -= (attacker_skill * 20)
 
 			if(master.wbalance > 0 && user.STASPD > src.STASPD)
-				skill_modifier -= (master.wbalance * ((user.STASPD - src.STASPD) * 10))
+				skill_modifier -= ((user.STASPD - src.STASPD) * 10)
 		else
 			attacker_skill = user.get_skill_level(/datum/skill/combat/unarmed)
 			skill_modifier -= (attacker_skill * 20)

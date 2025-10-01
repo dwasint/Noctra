@@ -6,6 +6,7 @@
 
 /datum/clan_leader/nosferatu
 	lord_spells = list(
+		/datum/action/cooldown/spell/enslave_mortal,
 		/datum/action/cooldown/spell/undirected/mansion_portal,
 		/datum/action/cooldown/spell/undirected/shapeshift/rat_vampire
 	)

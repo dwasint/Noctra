@@ -39,7 +39,7 @@
 	defdrain = 5
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0.1
-
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 	dodgetime = 15
 	aggressive = 1
 	remains_type = null

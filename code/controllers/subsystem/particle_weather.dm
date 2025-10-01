@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 /datum/controller/subsystem/ParticleWeather/proc/run_weather(datum/particle_weather/weather_datum_type, force = 0)
 	if(runningWeather)
 		if(force)
-			runningWeather.end()
+			end_current_weather()
 		else
 			return
 	if (istext(weather_datum_type))
@@ -83,6 +83,11 @@ SUBSYSTEM_DEF(ParticleWeather)
 		var/randTime = rand(0, 6000) + initial(runningWeather.weather_duration_upper)
 		addtimer(CALLBACK(runningWeather, /datum/particle_weather/proc/start), randTime, TIMER_UNIQUE|TIMER_STOPPABLE) //Around 0-10 minutes between weathers
 
+/datum/controller/subsystem/ParticleWeather/proc/end_current_weather()
+	runningWeather?.end()
+
+/datum/controller/subsystem/ParticleWeather/proc/get_current_weather()
+	return runningWeather || "none"
 
 /datum/controller/subsystem/ParticleWeather/proc/make_eligible(possible_weather)
 	elligble_weather = possible_weather

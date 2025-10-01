@@ -354,6 +354,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	throwforce = 0
 	slot_flags = ITEM_SLOT_MOUTH
 	spitoutmouth = TRUE
+	resistance_flags = FLAMMABLE
 
 /obj/item/cigbutt/Initialize()
 	. = ..()

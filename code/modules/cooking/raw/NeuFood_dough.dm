@@ -180,16 +180,17 @@
 /obj/item/reagent_containers/food/snacks/bread/on_consume(mob/living/eater)
 	..()
 	if(slices_num)
-		if(bitecount == 1)
-			slices_num = 5
-		if(bitecount == 2)
-			slices_num = 4
-		if(bitecount == 3)
-			slices_num = 3
-		if(bitecount == 4)
-			slices_num = 2
-		if(bitecount == 5)
-			changefood(slice_path, eater)
+		switch(bitecount)
+			if(1)
+				slices_num = 5
+			if(2)
+				slices_num = 4
+			if(3)
+				slices_num = 3
+			if(4)
+				slices_num = 2
+			if(5)
+				changefood(slice_path, eater)
 
 /*	.................   Breadslice & Toast   ................... */
 /obj/item/reagent_containers/food/snacks/breadslice

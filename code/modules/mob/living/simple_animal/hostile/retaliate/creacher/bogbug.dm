@@ -51,7 +51,7 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/bogbug
 	body_eater = TRUE
-
+	dendor_taming_chance = DENDOR_TAME_PROB_HIGH
 	ai_controller = /datum/ai_controller/bog_bug
 
 

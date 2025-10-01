@@ -97,7 +97,7 @@
 /obj/item/ore/coal
 	name = "coal"
 	icon_state = "orecoal1"
-	firefuel = 5 MINUTES
+	firefuel = 10 MINUTES
 	smeltresult = /obj/item/ore/coal
 	sellprice = 1
 	item_weight = 7
@@ -120,7 +120,7 @@
 	desc = "Burnt lumps of wood."
 	dropshrink = 0.8
 	color = "#929292"
-	firefuel = 15 MINUTES
+	firefuel = 30 MINUTES
 	smeltresult = /obj/item/ore/coal/charcoal
 	sellprice = 1
 

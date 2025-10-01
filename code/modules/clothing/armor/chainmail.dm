@@ -59,7 +59,7 @@
 
 //................ Ancient Haubergon ............... //
 /obj/item/clothing/armor/chainmail/hauberk/vampire
-	name = "ancient hauberk"
+	name = "ancient haubergeon"
 	desc = "A style of armor long out of use, rests easy on the shoulders. Has sleeves but doesn't cover the legs."
 	icon_state = "vunder"
 	sellprice = VALUE_STEEL_ARMOR_FINE

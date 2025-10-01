@@ -78,6 +78,10 @@
 		if(ispath(datum, /datum/building_datum/simple))
 			var/datum/building_datum/simple/building = datum
 			var/mutable_appearance/MA = mutable_appearance(initial(building.created_atom.icon), initial(building.created_atom.icon_state), new_button.layer + 0.1, new_button.plane)
+			var/atom/created_atom = building.created_atom
+			var/initial_flags = initial(created_atom.smoothing_flags)
+			if(initial_flags & USES_BITMASK_SMOOTHING)
+				MA.icon_state = "[initial(created_atom.icon_state)]-0"
 			new_button.add_overlay(MA)
 			new_button.name = initial(building.created_atom.name)
 		else if(ispath(datum, /datum/building_datum))

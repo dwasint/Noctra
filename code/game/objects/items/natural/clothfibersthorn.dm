@@ -6,7 +6,7 @@
 	force = 0
 	throwforce = 0
 	color = "#454032"
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -23,7 +23,7 @@
 	force = 0
 	throwforce = 0
 	color = "#e6e3db"
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -56,7 +56,7 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/soak, /datum/intent/wring)
 	force = 0
 	throwforce = 0
-	firefuel = 5 MINUTES
+	firefuel = 3 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP|ITEM_SLOT_MASK|ITEM_SLOT_BELT
 	body_parts_covered = null
@@ -273,7 +273,7 @@
 	force = 10
 	throwforce = 0
 	possible_item_intents = list(/datum/intent/stab)
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	embedding = list("embedded_unsafe_removal_time" = 20, "embedded_pain_chance" = 10, "embedded_pain_multiplier" = 1, "embed_chance" = 35, "embedded_fall_chance" = 0)
 	resistance_flags = FLAMMABLE
 	max_integrity = 20
@@ -306,7 +306,7 @@
 	throwforce = 0
 	maxamount = 12
 	color = "#454032"
-	firefuel = 5 MINUTES
+	firemod =  1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -331,7 +331,7 @@
 	throwforce = 0
 	maxamount = 6
 	color = "#e6e3db"
-	firefuel = 5 MINUTES
+	firemod = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -350,7 +350,7 @@
 	force = 0
 	throwforce = 0
 	maxamount = 10
-	firefuel = 5 MINUTES
+	firemod = 3 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
@@ -374,7 +374,7 @@
 	maxamount = 10
 	force = 0
 	throwforce = 0
-	firefuel = 5 MINUTES
+	firemod = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
@@ -426,6 +426,7 @@
 	maxamount = 6
 	color = null
 	firefuel = null
+	firemod = 0
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20

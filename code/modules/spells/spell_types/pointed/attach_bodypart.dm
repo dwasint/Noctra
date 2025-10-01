@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/attach_bodypart
 	name = "Bodypart Miracle"
-	desc = "Reattach a held limb instantly."
+	desc = "Reattach a held limb or organ instantly. The bodypart will be sewn back together."
 	button_icon_state = "limb_attach"
 	sound = 'sound/gore/flesh_eat_03.ogg'
 	charge_sound = 'sound/magic/holycharging.ogg'
@@ -12,8 +12,8 @@
 	required_items = list(/obj/item/clothing/neck/psycross/silver)
 
 	charge_required = FALSE
-	cooldown_time = 1 MINUTES
-	spell_cost = 60
+	cooldown_time = 30 SECONDS
+	spell_cost = 125
 
 /datum/action/cooldown/spell/attach_bodypart/is_valid_target(atom/cast_on)
 	. = ..()
@@ -26,6 +26,9 @@
 	for(var/obj/item/bodypart/limb as anything in get_limbs(cast_on, owner))
 		if(!limb?.attach_limb(cast_on))
 			continue
+		limb.heal_damage(limb.brute_dam, limb.burn_dam)//heals the limb by the amount of burn and brute damage it has
+		for(var/datum/wound/limb_wounds as anything in limb.wounds)
+			qdel(limb_wounds)
 		cast_on.visible_message(
 			span_info("\The [limb] attaches itself to [cast_on]!"),
 			span_notice("\The [limb] attaches itself to me!")
@@ -33,9 +36,10 @@
 	for(var/obj/item/organ/organ as anything in get_organs(cast_on, owner))
 		if(!organ?.Insert(cast_on))
 			continue
+		organ.setOrganDamage(0)
 		cast_on.visible_message(
-			span_info("\The [organ] attaches itself to [cast_on]!"),
-			span_notice("\The [organ] attaches itself to me!")
+			span_info("\The [organ] forces itself into [cast_on]!"),
+			span_notice("\The [organ] forces itself into me!")
 		)
 	owner.update_inv_hands()
 	cast_on.update_body()
