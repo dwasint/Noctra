@@ -176,12 +176,6 @@
 				/obj/item/natural/fibers = 1)
 	category = "Hat"
 
-/datum/repeatable_crafting_recipe/sewing/turban
-	name = "turban"
-	output = /obj/item/clothing/head/turban
-	requirements = list(/obj/item/natural/cloth = 2,)
-	category = "Hat"
-
 /datum/repeatable_crafting_recipe/sewing/headband_naledi
 	name = "headband"
 	output = /obj/item/clothing/head/headband/naledi
