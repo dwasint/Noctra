@@ -115,6 +115,10 @@
 #define VV_HK_COPY_OUTFIT "copy_outfit"
 #define VV_HK_SET_SPECIES "setspecies"
 #define VV_HK_CORONATE "coronate"
+<<<<<<< HEAD
+=======
+#define VV_HK_CHANGE_TITLE "change_title"
+>>>>>>> vanderlin/main
 
 // misc
 #define VV_HK_SPACEVINE_PURGE "spacevine_purge"

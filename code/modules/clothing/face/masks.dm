@@ -40,6 +40,245 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	clothing_flags = CANT_SLEEP_IN
+	smeltresult = null
+	melting_material = /datum/material/iron
+	melt_amount = 50
+
+/obj/item/clothing/face/facemask/goldnosechain
+	name = "gold nosechain"
+	icon_state = "nosechain_g"
+	desc = "A fashionable nose chain with two rings, It's design originated from the Savannah Elf tribes."
+	max_integrity = 100
+	blocksound = FALSE
+	armor = FALSE
+	prevent_crits = FALSE
+	flags_inv = FALSE
+	body_parts_covered = FACE
+	block2add = FALSE
+	slot_flags = ITEM_SLOT_MASK
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = FALSE
+	sellprice = VALUE_GOLD_ITEM
+
+/obj/item/clothing/face/facemask/silvernosechain
+	name = "silver nosechain"
+	icon_state = "nosechain_s"
+	desc = "A fashionable nose chain with two rings, It's design originated from the Savannah Elf tribes."
+	max_integrity = 100
+	blocksound = FALSE
+	armor = FALSE
+	prevent_crits = FALSE
+	flags_inv = FALSE
+	body_parts_covered = FACE
+	block2add = FALSE
+	slot_flags = ITEM_SLOT_MASK
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = FALSE
+	sellprice = VALUE_SILVER_ITEM
+
+/obj/item/clothing/face/facemask/silvernosechain/Initialize()
+	. = ..()
+	enchant(/datum/enchantment/silver)
+
+/obj/item/clothing/face/facemask/goldveil
+	name = "golden face veil"
+	icon_state = "veil_g"
+	desc = "A veil made out of golden chains."
+	max_integrity = 100
+	blocksound = FALSE
+	armor = FALSE
+	prevent_crits = FALSE
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FALSE
+	slot_flags = ITEM_SLOT_MASK
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = FALSE
+	sellprice = VALUE_GOLD_ITEM
+
+/obj/item/clothing/face/facemask/silverveil
+	name = "silver face veil"
+	icon_state = "veil_s"
+	desc = "A veil made out of silver chains."
+	max_integrity = 100
+	blocksound = FALSE
+	armor = FALSE
+	prevent_crits = FALSE
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FALSE
+	slot_flags = ITEM_SLOT_MASK
+	sewrepair = FALSE
+	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = FALSE
+	sellprice = VALUE_SILVER_ITEM
+
+/obj/item/clothing/face/facemask/silverveil/Initialize()
+	. = ..()
+	enchant(/datum/enchantment/silver)
+
+/obj/item/clothing/face/jademask
+	name = "joapstone mask "
+	icon_state = "mask_jade"
+	desc = "A joapstone mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 70
+
+/obj/item/clothing/face/turqmask
+	name = "ceruleabaster mask "
+	icon_state = "mask_turq"
+	desc = "A ceruleabaster mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDEHAIR
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 95
+
+/obj/item/clothing/face/rosemask
+	name = "rosellusk mask "
+	icon_state = "mask_rose"
+	desc = "A rosellusk mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 35
+
+/obj/item/clothing/face/shellmask
+	name = "shell mask "
+	icon_state = "mask_shell"
+	desc = "A shell mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 30
+
+/obj/item/clothing/face/coralmask
+	name = "aoetal mask "
+	icon_state = "mask_coral"
+	desc = "An aoetal mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 80
+
+/obj/item/clothing/face/ambermask
+	name = "petriamber mask "
+	icon_state = "mask_amber"
+	desc = "A petriamber mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 70
+
+/obj/item/clothing/face/onyxamask
+	name = "onyxa mask "
+	icon_state = "mask_onyxa"
+	desc = "An onyxa mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 50
+
+/obj/item/clothing/face/opalmask
+	name = "opaloise mask "
+	icon_state = "mask_opal"
+	desc = "An opaloise mask that both conceals and protects the face."
+	max_integrity = 85
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = FALSE
+	clothing_flags = CANT_SLEEP_IN
+	sellprice = 100
 
 /obj/item/clothing/face/jademask
 	name = "joapstone mask "
@@ -235,6 +474,9 @@
 	armor = list("blunt" = 100, "slash" = 100, "stab" = 100,  "piercing" = 80, "fire" = 0, "acid" = 0)
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
 	max_integrity = 300
+	smeltresult = /obj/item/ingot/steel
+	melting_material = /datum/material/steel
+	melt_amount = 100
 
 /obj/item/clothing/face/facemask/silver
 	name = "silver mask"
@@ -244,6 +486,13 @@
 	armor = list("blunt" = 100, "slash" = 100, "stab" = 100,  "piercing" = 85, "fire" = 0, "acid" = 0)
 	desc = "A custom made silver penance mask, created especially for the Adepts of the Inquisitorial Lodge."
 	max_integrity = 300
+	smeltresult = /obj/item/ingot/silver
+	melting_material = /datum/material/silver
+	melt_amount = 100
+
+/obj/item/clothing/face/facemask/silver/Initialize(mapload)
+	. = ..()
+	enchant(/datum/enchantment/silver)
 
 /obj/item/clothing/face/facemask/silver/Initialize(mapload)
 	. = ..()
@@ -253,6 +502,8 @@
 	name = "anthraxi war mask"
 	desc = "A metal mask resembling a spider's face. Such a visage haunts many an older dark elf's nitemares - while the younger generation simply scoffs at such relics."
 	icon_state = "shadowfacemask"
+	smeltresult = null// the mask is made out of silk and cloth, turns out it was giving "free" iron
+	melting_material = null
 
 /obj/item/clothing/face/shepherd
 	name = "halfmask"

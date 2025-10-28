@@ -3,13 +3,18 @@
 	category = "Matthios' Chosen"
 	triumph_count = 2
 	rewards = list("2 Triumphs", "Matthios grows stronger", "Ability to see item's value on examine")
+<<<<<<< HEAD
 	var/target_mammons = 400
+=======
+	var/target_mammons = 300
+>>>>>>> vanderlin/main
 	var/current_amount = 0
 	var/check_cooldown = 20 SECONDS
 	var/next_check = 0
 
 /datum/objective/personal/hoard_mammons/on_creation()
 	. = ..()
+	target_mammons = pick(250, 300, 350)
 	START_PROCESSING(SSprocessing, src)
 	update_explanation_text()
 
@@ -31,6 +36,7 @@
 
 	var/mammon_count = get_mammons_in_atom(user)
 	if(mammon_count >= target_mammons && !completed)
+<<<<<<< HEAD
 		to_chat(user, span_greentext("You have accumulated [mammon_count] mammons, completing Matthios' objective!"))
 		user.adjust_triumphs(triumph_count)
 		completed = TRUE
@@ -39,5 +45,19 @@
 		escalate_objective()
 		STOP_PROCESSING(SSprocessing, src)
 
+=======
+		complete_objective()
+
+/datum/objective/personal/hoard_mammons/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have accumulated enough mammons, completing Matthios' objective!"))
+	adjust_storyteller_influence(MATTHIOS, 20)
+	STOP_PROCESSING(SSprocessing, src)
+
+/datum/objective/personal/hoard_mammons/reward_owner()
+	. = ..()
+	ADD_TRAIT(owner.current, TRAIT_SEEPRICES, TRAIT_GENERIC)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/hoard_mammons/update_explanation_text()
 	explanation_text = "Accumulate at least [target_mammons] mammons in your possession to demonstrate your greediness to Matthios."

@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY(credits_icons)
 
 SUBSYSTEM_DEF(crediticons)
 	name = "crediticons"
-	wait = 20
+	wait = 60
 	flags = SS_NO_INIT
 	priority = 1
 	var/list/processing = list()
@@ -57,9 +57,13 @@ SUBSYSTEM_DEF(crediticons)
 		return null
 
 	var/credit_name = "[target.real_name]"
+	if(target.original_name)
+		credit_name = "[target.original_name]"
 	if(target.mind.assigned_role)
 		var/datum/job/job = target.mind.assigned_role
 		var/used_title = job.get_informed_title(target)
+		if(job.parent_job)
+			used_title = job.parent_job.get_informed_title(target)
 		if(used_title)
 			credit_name = "[credit_name]\nthe [used_title]"
 

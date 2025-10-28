@@ -44,6 +44,7 @@
 
 /datum/job/migrant/serjeant_at_arms/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+<<<<<<< HEAD
 	spawned.verbs |= /mob/proc/haltyell
 
 /datum/job/migrant/serjeant_at_arms/adjust_values(mob/living/carbon/human/spawned)
@@ -54,6 +55,18 @@
 		LAZYADDASSOC(jobstats, STATKEY_END, 2)
 		LAZYADDASSOC(jobstats, STATKEY_PER, 1)
 		LAZYADDASSOC(jobstats, STATKEY_SPD, 1)
+=======
+	if(spawned.age == AGE_OLD)
+		var/list/old_stats = list(
+			STATKEY_STR = 3,
+			STATKEY_INT = 2,
+			STATKEY_END = 2,
+			STATKEY_PER = 1,
+			STATKEY_SPD = 1,
+		)
+		spawned.adjust_stat_modifier_list("job_stats", old_stats)
+	spawned.verbs |= /mob/proc/haltyell
+>>>>>>> vanderlin/main
 
 /datum/outfit/serjeant_at_arms
 	name = "Serjeant-at-Arms"

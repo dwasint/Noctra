@@ -23,7 +23,12 @@
 
 	innate_traits = list(
 		TRAIT_STRONGBITE,
+<<<<<<< HEAD
 		TRAIT_BESTIALSENSE
+=======
+		TRAIT_BESTIALSENSE,
+		TRAIT_BRUSHWALK
+>>>>>>> vanderlin/main
 	)
 
 /datum/antagonist/werewolf/lesser
@@ -101,6 +106,8 @@
 	if(mind.has_antag_datum(/datum/antagonist/werewolf))
 		return FALSE
 	if(mind.has_antag_datum(/datum/antagonist/skeleton))
+		return FALSE
+	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED))
 		return FALSE
 	return TRUE
 

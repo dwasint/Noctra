@@ -17,8 +17,7 @@
 	job_reopens_slots_on_death = FALSE
 	shows_in_list = FALSE
 	can_have_apprentices = FALSE
-
-/datum/job/adventurer/courtagent
+	scales = FALSE
 
 //Hooking in here does not mess with their equipment procs
 /datum/job/adventurer/courtagent/after_spawn(mob/living/spawned, client/player_client)

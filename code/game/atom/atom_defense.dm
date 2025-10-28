@@ -45,7 +45,10 @@
 
 /// Handles the integrity of an atom changing. This must be called instead of changing integrity directly.
 /atom/proc/update_integrity(new_value, update_atom = TRUE, damage_flag)
+<<<<<<< HEAD
 	SHOULD_NOT_OVERRIDE(TRUE)
+=======
+>>>>>>> vanderlin/main
 	if(!uses_integrity)
 		CRASH("/atom/proc/update_integrity() was called on [src] when it doesnt use integrity!")
 	var/old_value = atom_integrity
@@ -70,6 +73,38 @@
 
 	SEND_SIGNAL(src, COMSIG_ATOM_INTEGRITY_CHANGED, old_value, new_value)
 
+<<<<<<< HEAD
+=======
+/obj/item/update_integrity(new_value, update_atom = TRUE, damage_flag)
+	if(!uses_integrity)
+		CRASH("/atom/proc/update_integrity() was called on [src] when it doesnt use integrity!")
+	var/old_value = atom_integrity
+	new_value = max(0, new_value)
+	if(atom_integrity == new_value)
+		return
+	atom_integrity = new_value
+
+	if(update_atom)
+		if(new_value > old_value)
+			if(integrity_failure && (atom_integrity > integrity_failure * max_integrity))
+				atom_fix()
+		else
+			//BREAKING FIRST
+			if(integrity_failure && atom_integrity <= integrity_failure * max_integrity)
+				var/silent = !(old_value > integrity_failure * max_integrity)
+				atom_break(damage_flag, silent)
+
+			//DESTROYING SECOND
+			if(atom_integrity <= 0)
+				if(item_flags & ITEM_ONLY_BREAK)
+					atom_integrity = 1
+					return
+				atom_destruction(damage_flag)
+
+	SEND_SIGNAL(src, COMSIG_ATOM_INTEGRITY_CHANGED, old_value, new_value)
+
+
+>>>>>>> vanderlin/main
 /// This mostly exists to keep atom_integrity private. Might be useful in the future.
 /atom/proc/get_integrity()
 	SHOULD_BE_PURE(TRUE)

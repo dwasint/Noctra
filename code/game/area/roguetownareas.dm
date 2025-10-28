@@ -1,7 +1,6 @@
 /area/rogue
 	name = "roguetown"
 	icon_state = "rogue"
-	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/rogue/indoors
@@ -1033,7 +1032,11 @@
 	name = "middeck"
 	icon_state = "indoors"
 	droning_index = DRONING_BOAT
+<<<<<<< HEAD
 	background_track = 'sound/music/area/middeckdrone.ogg'
+=======
+	background_track = 'sound/music/area/topdeckdrone.ogg'
+>>>>>>> vanderlin/main
 	background_track_dusk = null
 	background_track_night = null
 	first_time_text = "Waist Deck"
@@ -1054,3 +1057,27 @@
 	background_track_dusk = null
 	background_track_night = null
 	first_time_text = "The Brig"
+<<<<<<< HEAD
+=======
+
+
+/area/rogue/indoors/inq
+	name = "The Inquisition"
+	icon_state = "chapel"
+	first_time_text = "THE ORATORIUM"
+
+/area/rogue/indoors/inq/office
+	name = "The Inquisitor's Office"
+	icon_state = "chapel"
+
+/area/rogue/indoors/inq/basement
+	name = "The Inquisition's Basement"
+	icon_state = "chapel"
+
+/area/rogue/indoors/inq/import
+	name = "foreign imports"
+	icon_state = "warehouse"
+
+/area/rogue/indoors/inq/import/can_craft_here()
+	return FALSE
+>>>>>>> vanderlin/main

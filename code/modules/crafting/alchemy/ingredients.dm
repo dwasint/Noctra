@@ -147,7 +147,10 @@
 	w_class = WEIGHT_CLASS_TINY
 	alternate_worn_layer  = 8.9
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> vanderlin/main
 /obj/item/alch/herb/mentha
 	name = "mentha"
 	icon_state = "mentha"

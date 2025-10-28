@@ -91,6 +91,83 @@
 	tutorial = "Crusader of the true faith, you came from Grenzelhoft under the command of the Inquisitor. Obey them as they lead you to smite the heathens."
 	allowed_races = RACES_PLAYER_GRENZ
 	is_recognized = TRUE
+	outfit = /datum/outfit/inquisition_crusader
+
+	jobstats = list(
+		STATKEY_END = 2,
+		STATKEY_CON = 2,
+		STATKEY_STR = 1,
+	)
+
+	skills = list(
+		/datum/skill/combat/crossbows = 2,
+		/datum/skill/combat/wrestling = 3,
+		/datum/skill/combat/unarmed = 3,
+		/datum/skill/combat/swords = 2,
+		/datum/skill/combat/knives = 2,
+		/datum/skill/combat/shields = 2,
+		/datum/skill/misc/swimming = 1,
+		/datum/skill/misc/climbing = 2,
+		/datum/skill/misc/riding = 4,
+		/datum/skill/misc/athletics = 3,
+		/datum/skill/misc/reading = 2,
+		/datum/skill/misc/sewing = 1,
+		/datum/skill/craft/cooking = 1,
+	)
+
+	traits = list(
+		TRAIT_STEELHEARTED,
+		TRAIT_HEAVYARMOR,
+	)
+
+	languages = list(/datum/language/oldpsydonic)
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
+	voicepack_m = /datum/voicepack/male/knight
+
+/datum/job/migrant/inquisition_crusader/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	if(spawned.gender == FEMALE)
+		spawned.adjust_skillrank(/datum/skill/combat/crossbows, 2)
+		spawned.adjust_skillrank(/datum/skill/combat/knives, 2)
+	else
+		spawned.adjust_skillrank(/datum/skill/combat/swords, 2)
+		spawned.adjust_skillrank(/datum/skill/combat/shields, 1)
+
+	spawned.set_patron(/datum/patron/psydon)
+
+	var/datum/species/species = spawned.dna?.species
+	if(!species)
+		return
+	species.native_language = "Old Psydonic"
+	species.accent_language = species.get_accent(species.native_language)
+
+/datum/outfit/inquisition_crusader
+	name = "Episcopal Crusader"
+	head = /obj/item/clothing/head/helmet/heavy/crusader
+	neck = /obj/item/clothing/neck/coif/cloth
+	armor = /obj/item/clothing/armor/chainmail/hauberk
+	cloak = /obj/item/clothing/cloak/cape/crusader
+	gloves = /obj/item/clothing/gloves/chain
+	shirt = /obj/item/clothing/shirt/tunic/colored/random
+	pants = /obj/item/clothing/pants/chainlegs
+	shoes = /obj/item/clothing/shoes/boots/armor/light
+	backr = /obj/item/weapon/shield/tower/metal
+	belt = /obj/item/storage/belt/leather/plaquesilver
+	beltl = /obj/item/weapon/sword/silver
+	wrists = /obj/item/clothing/neck/psycross/silver
+	cloak = /obj/item/clothing/cloak/stabard/crusader
+	backpack_contents = list(/obj/item/storage/belt/pouch/coins/rich = 1)
+
+/datum/outfit/inquisition_crusader/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+	. = ..()
+
+	if(equipped_human.gender == FEMALE)
+		head = /obj/item/clothing/head/helmet/heavy/crusader/t
+		cloak = /obj/item/clothing/cloak/stabard/crusader/t
+		backl = /obj/item/storage/backpack/satchel/black
+		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+		beltl = /obj/item/weapon/knife/dagger/silver
+		beltr = /obj/item/ammo_holder/quiver/bolts
 
 	jobstats = list(
 		STATKEY_END = 2,

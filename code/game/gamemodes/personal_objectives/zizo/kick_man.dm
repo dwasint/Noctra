@@ -25,6 +25,7 @@
 	else
 		complete_objective()
 
+<<<<<<< HEAD
 /datum/objective/personal/kick_groin/proc/complete_objective()
 	to_chat(owner.current, span_greentext("You've established your dominance over this man and completed Zizo's objective!"))
 	owner.current.adjust_triumphs(triumph_count)
@@ -34,5 +35,17 @@
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_MOB_KICK)
 
+=======
+/datum/objective/personal/kick_groin/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You've established your dominance over this man and completed Zizo's objective!"))
+	adjust_storyteller_influence(ZIZO, 20)
+	UnregisterSignal(owner.current, COMSIG_MOB_KICK)
+
+/datum/objective/personal/kick_groin/reward_owner()
+	. = ..()
+	ADD_TRAIT(owner.current, TRAIT_NUTCRACKER, TRAIT_GENERIC)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/kick_groin/update_explanation_text()
 	explanation_text = "Kick a man in the balls to show your dominance and earn Zizo's approval!"

@@ -52,14 +52,21 @@ GLOBAL_LIST_INIT(ritualslist, build_zizo_rituals())
 		to_chat(user, span_danger("The veil is too strong to support more than seven lackeys."))
 		return
 	var/datum/antagonist/zizocultist/PR = user.mind.has_antag_datum(/datum/antagonist/zizocultist)
+<<<<<<< HEAD
 	var/alert = browser_alert(target, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST? (Resisting: 1 TRI)", "???", list("Yield", "Resist"))
+=======
+	var/alert = browser_alert(target, "YOU WILL BE SHOWN THE TRUTH. DO YOU RESIST?", "???", list("Yield", "Resist"))
+>>>>>>> vanderlin/main
 	target.Immobilize(3 SECONDS)
 	if(alert == "Yield")
 		to_chat(target, span_notice("I see the truth now! It all makes so much sense! They aren't HERETICS! They want the BEST FOR US!"))
 		PR.add_cultist(target.mind)
 		target.praise()
 	else
+<<<<<<< HEAD
 		target.adjust_triumphs(-1)
+=======
+>>>>>>> vanderlin/main
 		target.visible_message(span_danger("[target] thrashes around, unyielding!"))
 		to_chat(target, span_danger("Yield."))
 		if(target.electrocute_act(10))

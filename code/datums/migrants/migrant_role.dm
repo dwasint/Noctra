@@ -5,7 +5,11 @@
 	/// greet_text for the role
 	var/greet_text = "You are a migrant"
 	/// Reference to a job to apply to the migrant role, vars for this are used to determine if selectable.
+<<<<<<< HEAD
 	var/datum/job/migrant/migrant_job
+=======
+	var/datum/job/migrant/migrant_job = /datum/job/migrant/generic
+>>>>>>> vanderlin/main
 	/// Antagonist datum to apply with the migrant be mindful of the job if any.
 	var/datum/antagonist/antag_datum
 

@@ -93,6 +93,10 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Of the Cabal" = TRAIT_CABAL,
 		"Unleechable" = TRAIT_LEECHIMMUNE,
 		"Webwalker" = TRAIT_WEBWALK,
+<<<<<<< HEAD
+=======
+		"Brushwalker" = TRAIT_BRUSHWALK,
+>>>>>>> vanderlin/main
 		"Dead Nose" = TRAIT_DEADNOSE,
 		"High Jumping" = TRAIT_ZJUMP,
 		"Jesterophobia" = TRAIT_JESTERPHOBIA,
@@ -154,6 +158,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Bad Mood" = TRAIT_BAD_MOOD,
 		"Night Owl" = TRAIT_NIGHT_OWL,
 		"Ugly" = TRAIT_UGLY,
+		"Fishface" = TRAIT_FISHFACE,
 		"Hollow Bones" = TRAIT_HOLLOWBONES,
 		"Light Load" = TRAIT_AMAZING_BACK,
 		"Loved By Kittens" = TRAIT_KITTEN_MOM,
@@ -166,6 +171,12 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Poison Resilience" = TRAIT_POISON_RESILIENCE,
 		"Expert Forager" = TRAIT_FORAGER,
 		"Seed Finder" = TRAIT_SEED_FINDER,
+<<<<<<< HEAD
+=======
+		"Recruited" = TRAIT_RECRUITED,
+		"Recognized" = TRAIT_RECOGNIZED,
+		"Member of the Oratorium Throni Vacui" = TRAIT_INQUISITION,
+>>>>>>> vanderlin/main
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -189,6 +200,10 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
+<<<<<<< HEAD
+=======
+	TRAIT_BRUSHWALK = "I can move freely through plain bushes.",
+>>>>>>> vanderlin/main
 	TRAIT_DEADNOSE = span_dead("My nose is numb to the smell of unpleasant odors."),
 	TRAIT_ZJUMP = "Time to reach a new height.",
 	TRAIT_JESTERPHOBIA = span_warning("I have a severe irrational fear of Jesters"),
@@ -236,6 +251,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_BAD_MOOD = span_warning("Everything just seems to piss me off"),
 	TRAIT_NIGHT_OWL = span_info("I enjoy spending my time in the night"),
 	TRAIT_UGLY = span_necrosis("Do not look in the mirror."),
+	TRAIT_FISHFACE = span_necrosis("Other species find me hideous."),
 	TRAIT_SPELLBLOCK = span_warning("I cannot cast any spells."),
 	TRAIT_ANTIMAGIC = "I am immune to most forms of magic.",
 	TRAIT_ANTISCRYING = "I am immune to most forms of magical divination.",
@@ -257,6 +273,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_TUTELAGE = "I am a capable tutor to those who apprentice under me.",
 	TRAIT_APRICITY = "The warmth of the sun rejuvenates me, allowing me to regain my stamina quicker.",
 	TRAIT_BLACKLEG = "I can cheat by rigging coin and dice, and peek at cards.",
+	TRAIT_INQUISITION = span_info("I am a member of the Oratorium Throni Vacui. I can easily identify others of my cadre at a glance."),
+	TRAIT_SILVER_BLESSED = span_info("I am anointed with holy silver, which preserves me from curses that bite."),
 	TRAIT_MATTHIOS_EYES = span_notice("I have a sense for what the most valuable item someone has is."),
 	TRAIT_CRATEMOVER = "I am able to drag heavy objects without any difficulty.",
 	TRAIT_SEE_LEYLINES = "I can see the lines that make up this world.",
@@ -274,6 +292,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_RECOGNIZED = span_notice("These people recognize me, my renown has spread from my homeland to this very place."),
 	TRAIT_EARGRAB = span_info("I can keep a tight grip on the ear of unruly children."),
 	TRAIT_KITTEN_MOM = span_info("Kittens love you, they see you are a parent."),
+	TRAIT_INSPIRING_MUSICIAN = span_info("The flow of battle dances to my song!"),
 	TRAIT_FACELESS = span_danger("I am faceless. I am shunned. The others will recognise me for what I am. If I give them the chance."),
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
 	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
@@ -284,6 +303,13 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_POISON_RESILIENCE	= span_info("I'm more resilient to poisons."),
 	TRAIT_FORAGER = span_info("I can tell which jackberries are poisonous."),
 	TRAIT_SEED_FINDER = span_info("I find seeds more easily."),
+<<<<<<< HEAD
+=======
+	TRAIT_PSYDONITE = span_info("PSYDON LYVES. PSYDON PERSISTS. I can ENDURE and LYVE with wounds better than most. Healing miracles hold no sway over me and others of my faith."),
+	TRAIT_PSYDONIAN_GRIT = span_info("I can shrug off my wounds and maintain composure under duress. My own mortality is proof that I LYVE, as too does HE."),
+	TRAIT_BLACKBAGGER = span_info("I've been trained to properly abduct individuals through the use of seizing garrotes and blackbags."),
+	TRAIT_NOCSHADES = span_info("The lens I look through allows me to see in the dark clear as dae, at the cost of greater vision."),
+>>>>>>> vanderlin/main
 ))
 
 /// value -> trait name, generated on use from trait_by_type global

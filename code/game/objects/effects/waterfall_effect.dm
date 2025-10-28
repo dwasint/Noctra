@@ -2,6 +2,12 @@
 	name = "waterfall"
 	icon = 'icons/effects/waterfall.dmi'
 	icon_state = "waterfall_temp"
+<<<<<<< HEAD
+=======
+	plane = GAME_PLANE_UPPER
+	layer = ABOVE_MOB_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+>>>>>>> vanderlin/main
 	SET_BASE_PIXEL(0, 32)
 	var/datum/reagent/water_reagent = /datum/reagent/water
 

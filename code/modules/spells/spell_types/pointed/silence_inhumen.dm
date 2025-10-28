@@ -1,6 +1,10 @@
 /datum/action/cooldown/spell/silence_inhumen
 	name = "Silence Inhumen"
 	button_icon_state = "bcry"
+<<<<<<< HEAD
+=======
+	sound = null
+>>>>>>> vanderlin/main
 	self_cast_possible = FALSE
 	has_visual_effects = FALSE
 

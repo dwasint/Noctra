@@ -25,11 +25,15 @@
 		return
 
 	if(outcome == winning_side)
-		complete_objective(TRUE, our_coin)
+		handle_coin_result(TRUE, our_coin)
 	else
-		complete_objective(FALSE, our_coin)
+		handle_coin_result(FALSE, our_coin)
 
+<<<<<<< HEAD
 /datum/objective/personal/coin_flip/proc/complete_objective(success, obj/item/coin/our_coin)
+=======
+/datum/objective/personal/coin_flip/proc/handle_coin_result(success, obj/item/coin/our_coin)
+>>>>>>> vanderlin/main
 	if(completed)
 		return
 
@@ -39,9 +43,13 @@
 
 	if(success)
 		if(prob(50))
+<<<<<<< HEAD
 			to_chat(user, span_greentext("The coin landed on the winning side! You won the game and earned Xylix's favor!"))
 			user.adjust_triumphs(triumph_count)
 			adjust_storyteller_influence(XYLIX, 20)
+=======
+			complete_objective()
+>>>>>>> vanderlin/main
 		else
 			change_rules(our_coin)
 			return
@@ -50,11 +58,24 @@
 		qdel(our_coin)
 		return
 
+<<<<<<< HEAD
 	completed = TRUE
 	owner.current.set_stat_modifier("xylix_blessing", STATKEY_LCK, 1)
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_COIN_FLIPPED)
 
+=======
+/datum/objective/personal/coin_flip/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("The coin landed on the winning side! You won the game and earned Xylix's favor!"))
+	adjust_storyteller_influence(XYLIX, 20)
+	UnregisterSignal(owner.current, COMSIG_COIN_FLIPPED)
+
+/datum/objective/personal/coin_flip/reward_owner()
+	. = ..()
+	owner.current.set_stat_modifier("xylix_blessing", STATKEY_LCK, 1)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/coin_flip/update_explanation_text()
 	explanation_text = "Xylix wants to play a game! Simply flip a [initial(required_coin_type.name)] and see if you win! Only Xylix knows the rules! Or do they?"
 

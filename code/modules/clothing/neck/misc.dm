@@ -236,8 +236,14 @@
 	toggle_icon_state = TRUE
 	blocksound = CHAINHIT
 	smeltresult = null
+<<<<<<< HEAD
 	melt_amount = 75
 	melting_material = /datum/material/steel
+=======
+	smeltresult = /obj/item/ingot/steel
+	melting_material = /datum/material/iron
+	melt_amount = 100
+>>>>>>> vanderlin/main
 	clothing_flags = CANT_SLEEP_IN
 
 	armor_class = AC_MEDIUM
@@ -279,7 +285,13 @@
 	name = "iron chain coif"
 	desc = "A chain coif made of interwoven iron rings. Affordable protection against arrows and blades, \
 			but should be used as padding rather than relied upon as armor."
+<<<<<<< HEAD
 	melting_material = /datum/material/iron
+=======
+	smeltresult = /obj/item/ingot/iron
+	melting_material = /datum/material/iron
+	melt_amount = 100
+>>>>>>> vanderlin/main
 
 	armor = ARMOR_MAILLE_IRON
 	max_integrity = INTEGRITY_STRONG
@@ -307,7 +319,12 @@
 	desc = "A piece of steel plate armor meant to protect the throat and neck of its wearer against decapitation, extending the protection of armor plates."
 	icon_state = "bevor"
 	flags_inv = HIDEFACIALHAIR
+<<<<<<< HEAD
 	smeltresult = /obj/item/ingot/steel
+=======
+	melt_amount = 75
+	melting_material = /datum/material/steel
+>>>>>>> vanderlin/main
 	melt_amount = 100
 	melting_material = /datum/material/steel
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'

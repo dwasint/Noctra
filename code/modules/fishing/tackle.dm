@@ -52,6 +52,7 @@
 	hookmod = 3
 	difficultymod = -2
 
+<<<<<<< HEAD
 /obj/item/fishing/hook
 	attachtype = "hook"
 
@@ -196,6 +197,8 @@
 		"type" = /obj/item/reagent_containers/food/snacks/fish/clownfish,
 	)
 
+=======
+>>>>>>> vanderlin/main
 /proc/pickweightmerge(list/List, list/add)//i need a way to merge multiple lists for my shenanigannery to work. remove this if fishing ever stops needing this
 	var/list/returner = List
 	var/addlength = length(add)

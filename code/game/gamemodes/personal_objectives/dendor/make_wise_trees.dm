@@ -29,12 +29,19 @@
 	if(trees_transformed >= trees_required)
 		complete_objective()
 
+<<<<<<< HEAD
 /datum/objective/personal/wise_trees/proc/complete_objective()
 	to_chat(owner.current, span_greentext("You have created enough wise trees to satisfy Dendor!"))
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
 	adjust_storyteller_influence(DENDOR, 20)
 	escalate_objective()
+=======
+/datum/objective/personal/wise_trees/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have created enough wise trees to satisfy Dendor!"))
+	adjust_storyteller_influence(DENDOR, 20)
+>>>>>>> vanderlin/main
 	UnregisterSignal(owner.current, COMSIG_TREE_TRANSFORMED)
 
 /datum/objective/personal/wise_trees/update_explanation_text()

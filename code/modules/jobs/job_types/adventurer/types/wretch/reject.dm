@@ -11,12 +11,19 @@
 		SPEC_ID_DROW,\
 		SPEC_ID_HALF_ORC,\
 		SPEC_ID_TIEFLING,\
+<<<<<<< HEAD
 )
+=======
+	)
+>>>>>>> vanderlin/main
 	allowed_ages = list(AGE_ADULT, AGE_CHILD)
 	total_positions = 1
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 	outfit = /datum/outfit/wretch/reject
+<<<<<<< HEAD
 	category_tags = list(CTAG_WRETCH)
+=======
+>>>>>>> vanderlin/main
 
 /datum/outfit/wretch/reject
 	head = /obj/item/clothing/head/crown/circlet

@@ -5,7 +5,11 @@
 	name = "Rakshari"
 	id = SPEC_ID_RAKSHARI
 	changesource_flags = WABBAJACK
+<<<<<<< HEAD
 	native_language = "Pirate"
+=======
+	native_language = "Zalad"
+>>>>>>> vanderlin/main
 
 	desc = "Rakshari origins trace back to nomadic desert tribes, \
 	whose survival in the harsh sands cultivated a culture steeped in resilience, cunning, and adaptability. \

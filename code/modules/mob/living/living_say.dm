@@ -382,6 +382,10 @@
 		if(HAS_TRAIT(hearing_movable, TRAIT_KEENEARS))
 			keenears_range_bonus = 5
 
+		var/keenears_range_bonus = 0
+		if(HAS_TRAIT(hearing_movable, TRAIT_KEENEARS))
+			keenears_range_bonus = 5
+
 		if(!ignore_z && z_message_type == Z_MODE_ONE_CEILING && hearing_movable.z != z)
 			var/listener_has_ceiling = TRUE
 			var/turf/listener_turf = get_turf(hearing_movable)
@@ -552,7 +556,7 @@
 	return TRUE
 
 /mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
-	if(HAS_TRAIT(src, TRAIT_MUTE))
+	if(HAS_TRAIT(src, TRAIT_MUTE) || HAS_TRAIT(src, TRAIT_BAGGED))
 		return FALSE
 
 	if(is_muzzled())

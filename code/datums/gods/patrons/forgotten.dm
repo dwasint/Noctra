@@ -8,12 +8,17 @@
 	sins = "Apostasy, Demon Worship, Betraying thy Father"
 	boons = "None. His power is divided."
 	associated_faith = /datum/faith/psydon
+	added_traits = list(TRAIT_PSYDONIAN_GRIT, TRAIT_PSYDONITE)
 	confess_lines = list(
 		"THERE IS ONLY ONE GOD!",
 		"THE SUCCESSORS HALT HIS RETURN!",
-		"PSYDON LIVES!",
+		"PSYDON LYVES!",
 	)
 	profane_words = list()
+<<<<<<< HEAD
+=======
+	devotion_holder = /datum/devotion/psydon
+>>>>>>> vanderlin/main
 
 /datum/patron/psydon/can_pray(mob/living/carbon/human/follower)
 	//We just kind of assume the follower is a human here

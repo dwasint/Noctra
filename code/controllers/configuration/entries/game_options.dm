@@ -364,8 +364,13 @@
 	default = FALSE
 
 /datum/config_entry/flag/ruler_required
+<<<<<<< HEAD
 	config_entry_value = FALSE
 	default = FALSE
+=======
+	config_entry_value = TRUE
+	default = TRUE
+>>>>>>> vanderlin/main
 
 /datum/config_entry/flag/starvation_death
 	default = FALSE

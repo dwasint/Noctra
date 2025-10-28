@@ -4,7 +4,7 @@
 	triumph_count = 2
 	rewards = list("2 Triumphs", "Pestra grows stronger", "Pestra blesses you (+1 Constitution)")
 	var/meals_eaten = 0
-	var/meals_required = 2
+	var/meals_required = 1
 
 /datum/objective/personal/rotten_feast/on_creation()
 	. = ..()
@@ -24,6 +24,7 @@
 
 	meals_eaten++
 	if(meals_eaten >= meals_required)
+<<<<<<< HEAD
 		to_chat(owner.current, span_greentext("You have consumed enough rotten food to complete Pestra's objective!"))
 		owner.current.adjust_triumphs(triumph_count)
 		completed = TRUE
@@ -36,3 +37,21 @@
 
 /datum/objective/personal/rotten_feast/update_explanation_text()
 	explanation_text = "Let nothing go to waste! Consume [meals_required] pieces of rotten food to gain Pestra's favor!"
+=======
+		complete_objective()
+	else
+		to_chat(owner.current, span_notice("Rotten meal consumed! Eat [meals_required - meals_eaten] more to complete Pestra's objective."))
+
+/datum/objective/personal/rotten_feast/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have consumed enough rotten food to complete Pestra's objective!"))
+	adjust_storyteller_influence(PESTRA, 20)
+	UnregisterSignal(owner.current, COMSIG_ROTTEN_FOOD_EATEN)
+
+/datum/objective/personal/rotten_feast/reward_owner()
+	. = ..()
+	owner.current.set_stat_modifier("pestra_blessing", STATKEY_CON, 1)
+
+/datum/objective/personal/rotten_feast/update_explanation_text()
+	explanation_text = "Let nothing go to waste! Consume [meals_required] piece of rotten food to gain Pestra's favor!"
+>>>>>>> vanderlin/main

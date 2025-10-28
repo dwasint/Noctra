@@ -75,8 +75,6 @@
 		6 = -2,
 	)
 
-	/// Handles techweb-oriented surgeries
-	var/requires_tech = FALSE
 	/**
 	 * type; doesn't show up if this type exists.
 	 * Set to /datum/surgery_step if you want to hide a "base" surgery  (useful for typing parents IE healing.dm just make sure to null it out again)
@@ -95,30 +93,10 @@
 		return FALSE
 	if(!tool_check(user, tool))
 		return FALSE
-	if(!validate_tech(user, target, target_zone, intent))
-		return FALSE
 	if(!validate_user(user, target, target_zone, intent))
 		return FALSE
 	if(!validate_target(user, target, target_zone, intent))
 		return FALSE
-
-	return TRUE
-
-/datum/surgery_step/proc/validate_tech(mob/user, mob/living/target, target_zone, datum/intent/intent)
-	SHOULD_CALL_PARENT(TRUE)
-	// Always return false in this case
-	if(replaced_by == /datum/surgery_step)
-		return FALSE
-
-	// True surgeons (like abductor scientists) need no instructions
-	if(HAS_TRAIT(user, TRAIT_SURGEON) || (user.mind && HAS_TRAIT(user.mind, TRAIT_SURGEON)))
-		// only show top-level surgeries
-		if(replaced_by)
-			return FALSE
-		return TRUE
-
-	if(!requires_tech && !replaced_by)
-		return TRUE
 
 	return TRUE
 
@@ -297,9 +275,9 @@
 		play_failure_sound(user, target, target_zone, tool)
 		if(user.client?.prefs.showrolls)
 			if(try_to_fail)
-				to_chat(user, "<span class='warning'>Intentional surgery fail... [success_prob]%</span>")
+				to_chat(user, span_warning("Intentional surgery fail, the chance to succeed was [success_prob]%"))
 			else
-				to_chat(user, "<span class='warning'>Surgery fail... [success_prob]%</span>")
+				to_chat(user, span_warning("Surgery fail, the chance to succeed was [success_prob]%"))
 		if(repeating && can_do_step(user, target, target_zone, tool, intent, try_to_fail))
 			initiate(user, target, target_zone, tool, intent, try_to_fail)
 		return FALSE

@@ -182,7 +182,11 @@
 	var/prev_name = spawned.name
 	var/honorary = "Ritter"
 	if(spawned.gender == FEMALE)
+<<<<<<< HEAD
 		honorary = "Ritterin"
+=======
+		honorary = "Ritter"
+>>>>>>> vanderlin/main
 	spawned.real_name = "[honorary] [prev_real_name]"
 	spawned.name = "[honorary] [prev_name]"
 
@@ -209,12 +213,20 @@
 
 /datum/migrant_role/grenzelhoft_man_at_arms
 	name = "Grenzelhoft Man-at-Arms"
+<<<<<<< HEAD
 	greet_text = "You and your fellows are men at arms from Grenzelhoft, following your count with pride. Obey the Ritter and make sure the nobles you arrived with surive."
+=======
+	greet_text = "You and your fellows are men at arms from Grenzelhoft, following your count with pride. Obey the Herr Präfekt and make sure the nobles you arrived with surive."
+>>>>>>> vanderlin/main
 	migrant_job = /datum/job/migrant/grenzelhoft_man_at_arms
 
 /datum/job/migrant/grenzelhoft_man_at_arms
 	title = "Grenzelhoft Man-at-Arms"
+<<<<<<< HEAD
 	tutorial = "You and your fellows are men at arms from Grenzelhoft, following your count with pride. Obey the Ritter and make sure the nobles you arrived with surive."
+=======
+	tutorial = "You and your fellows are men at arms from Grenzelhoft, following your count with pride. Obey the Herr Präfekt and make sure the nobles you arrived with surive."
+>>>>>>> vanderlin/main
 	outfit = /datum/outfit/grenzelhoft_man_at_arms
 	allowed_races = RACES_PLAYER_GRENZ
 
@@ -242,18 +254,28 @@
 
 /datum/job/migrant/grenzelhoft_man_at_arms/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
+<<<<<<< HEAD
+=======
+	spawned.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1, 1, 2))
+	spawned.adjust_skillrank(/datum/skill/combat/axesmaces, pick(2, 3))
+	spawned.adjust_skillrank(/datum/skill/combat/shields, pick(0, 0, 1))
+
+>>>>>>> vanderlin/main
 	if(!spawned.dna?.species)
 		return
 	var/datum/species/species = spawned.dna.species
 	species.native_language = "Old Psydonic"
 	species.accent_language = species.get_accent(species.native_language)
 
+<<<<<<< HEAD
 /datum/job/migrant/grenzelhoft_man_at_arms/adjust_values(mob/living/carbon/human/spawned)
 	. = ..()
 	LAZYADDASSOC(skills, /datum/skill/combat/whipsflails, pick(1, 1, 2))
 	LAZYADDASSOC(skills, /datum/skill/combat/axesmaces, pick(2, 3))
 	LAZYADDASSOC(skills, /datum/skill/combat/shields, pick(0, 0, 1))
 
+=======
+>>>>>>> vanderlin/main
 /datum/outfit/grenzelhoft_man_at_arms
 	name = "Grenzelhoft Man-at-Arms"
 	beltr = /obj/item/storage/belt/pouch/coins/poor

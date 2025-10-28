@@ -55,6 +55,7 @@
 	if(time_spent >= time_required && !completed)
 		complete_objective()
 
+<<<<<<< HEAD
 /datum/objective/personal/listen_whispers/proc/complete_objective()
 	to_chat(owner.current, span_greentext("You have listened to the whispers of the dead long enough to satisfy Necra!"))
 	owner.current.adjust_triumphs(triumph_count)
@@ -64,5 +65,17 @@
 	escalate_objective()
 	STOP_PROCESSING(SSprocessing, src)
 
+=======
+/datum/objective/personal/listen_whispers/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have listened to the whispers of the dead long enough to satisfy Necra!"))
+	adjust_storyteller_influence(NECRA, 20)
+	STOP_PROCESSING(SSprocessing, src)
+
+/datum/objective/personal/listen_whispers/reward_owner()
+	. = ..()
+	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/listen_whispers/update_explanation_text()
 	explanation_text = "Necra wants you to understand death better. Spend at least [time_required / (1 MINUTES)] minutes in the church listening to the whispers of the dead while wearing an amulet of Necra."

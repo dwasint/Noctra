@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	return
 
 /// Aplies after the user mob is fully spawned and has mind
-/datum/charflaw/proc/after_spawn(mob/user)
+/datum/charflaw/proc/after_spawn(mob/user, client/mob_client)
 	return
 
 /// Applies when the flaw is deleted
@@ -136,13 +136,18 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	desc = "I'm a normal person, how rare! (Consumes 3 triumphs or randomizes)"
 	random_exempt = TRUE
 
+<<<<<<< HEAD
 /datum/charflaw/noflaw/after_spawn(mob/user)
+=======
+/datum/charflaw/noflaw/after_spawn(mob/user, client/mob_client)
+>>>>>>> vanderlin/main
 	. = ..()
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_triumphs() >= 3)
-		H.adjust_triumphs(-3)
+	var/triumphs = get_triumph_amount(mob_client.ckey)
+	if(triumphs >= 3)
+		adjust_triumphs(mob_client.ckey, -3)
 		H.set_flaw(/datum/charflaw/eznoflaw)
 		return
 	H.get_random_flaw()
@@ -798,6 +803,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	//solves edgecases with inbred princes and eoran hand-holders. Yes, you can be an ugly Eoran templar. You are not safe.
 	REMOVE_TRAIT(user, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 	REMOVE_TRAIT(user, TRAIT_UGLY, TRAIT_GENERIC)
+	REMOVE_TRAIT(user, TRAIT_FISHFACE, TRAIT_GENERIC)
 
 	if(prob(50))
 		ADD_TRAIT(user, TRAIT_BEAUTIFUL, TRAIT_GENERIC)

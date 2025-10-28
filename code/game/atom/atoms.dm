@@ -276,7 +276,7 @@
  * * clears overlays and priority overlays
  * * clears the light object
  */
-/atom/Destroy()
+/atom/Destroy(force)
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
 			var/datum/atom_hud/alternate_appearance/AA = alternate_appearances[K]
@@ -682,17 +682,7 @@
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "blunt")
 	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)
-	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
-/**
- * We have have actually hit the passed in atom
- *
- * Default behaviour is to move back from the item that hit us
- */
-/atom/proc/hitby_react(atom/movable/AM)
-	if(AM && isturf(AM.loc))
-		step(AM, turn(AM.dir, 180))
 
 ///Handle the atom being slipped over
 /atom/proc/handle_slip(mob/living/carbon/C, knockdown_amount, obj/O, lube, paralyze, force_drop)
@@ -1338,6 +1328,7 @@
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
 	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)
 
+<<<<<<< HEAD
 /**
  * Returns true if this atom has gravity for the passed in turf
  *
@@ -1377,6 +1368,8 @@
 	// it'd be trivial to readd if you needed it, though
 	return SSmapping.gravity_by_z_level["[gravity_turf.z]"] || turf_area.has_gravity
 
+=======
+>>>>>>> vanderlin/main
 /obj/proc/propagate_temp_change(value, weight, falloff = 0.5, max_depth = 3)
 	var/key = REF(src)
 	temperature_affected_turfs = list()

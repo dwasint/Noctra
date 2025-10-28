@@ -10,8 +10,19 @@
 	var/active_item = FALSE
 	var/warned = FALSE
 
+<<<<<<< HEAD
 /datum/enchantment/rewind/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
 	.=..()
+=======
+/datum/enchantment/rewind/register_triggers(atom/item)
+	. = ..()
+	registered_signals += COMSIG_ITEM_AFTERATTACK
+	RegisterSignal(item, COMSIG_ITEM_AFTERATTACK, PROC_REF(on_hit))
+	registered_signals += COMSIG_ITEM_HIT_RESPONSE
+	RegisterSignal(item, COMSIG_ITEM_HIT_RESPONSE, PROC_REF(on_hit_response))
+
+/datum/enchantment/rewind/proc/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
+>>>>>>> vanderlin/main
 	if(!proximity_flag)
 		return
 	if(world.time < src.last_used + 100)
@@ -24,7 +35,7 @@
 		do_teleport(user, target_turf, channel = TELEPORT_CHANNEL_QUANTUM)
 		src.last_used = world.time
 
-/datum/enchantment/rewind/on_hit_response(obj/item/I, mob/living/carbon/human/owner, mob/living/carbon/human/attacker)
+/datum/enchantment/rewind/proc/on_hit_response(obj/item/I, mob/living/carbon/human/owner, mob/living/carbon/human/attacker)
 	if(world.time < src.last_used + 100)
 		return
 	if(!active_item)

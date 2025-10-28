@@ -5,9 +5,10 @@
 	weight = 6 //temp disabled 6
 	max_occurrences = 2
 
-	earliest_start = 15 MINUTES
+	earliest_start = 20 MINUTES
 
 	tags = list(
+		TAG_ZIZO,
 		TAG_HAUNTED,
 		TAG_COMBAT,
 		TAG_VILLIAN,
@@ -20,6 +21,3 @@
 	)
 	can_roll = FALSE
 
-/datum/migrant_role/lich
-	name = "Lich"
-	antag_datum = /datum/antagonist/lich

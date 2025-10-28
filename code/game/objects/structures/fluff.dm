@@ -296,6 +296,18 @@
 		obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 
 
+/obj/structure/plank
+	name = "plank"
+	desc = ""
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "plank2"
+	density = FALSE
+	layer = TABLE_LAYER
+	plane = GAME_PLANE
+	damage_deflection = 5
+	blade_dulling = DULLING_BASHCHOP
+	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
+
 /obj/structure/bars/pipe
 	name = "bronze pipe"
 	desc = ""
@@ -958,55 +970,63 @@
 	if(user.mind)
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
-			if(istype(W, /obj/item/reagent_containers/lux))
-				user.adjust_triumphs(1, reason = "Offered Lux")
-				qdel(W)
+			if(B.tri_amt >= 8)
+				to_chat(user, "<span class='warning'>The idol had collected enough tribute from you.</span>")
 				return
-			if(istype(W, /obj/item/coin) || istype(W, /obj/item/gem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/reagent_containers/glass/carafe) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/crown/circlet) || istype(W, /obj/item/statue))
-				if(B.tri_amt >= 10)
-					to_chat(user, "<span class='warning'>The mouth doesn't open.</span>")
-					return
+			if(istype(W, /obj/item/reagent_containers/lux))
+				B.contrib += 150
+				record_round_statistic(STATS_SHRINE_VALUE, 150)
+			else if(istype(W, /obj/item/coin) || istype(W, /obj/item/gem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/reagent_containers/glass/carafe) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/crown/circlet) || istype(W, /obj/item/statue))
 				if(!istype(W, /obj/item/coin))
-					B.contrib += (W.get_real_price() / 2) //sell jewerly and other fineries, though at a lesser price compared to fencing them first
+					B.contrib += (W.get_real_price() / 2) // sell jewelry and other fineries, though at a lesser price compared to fencing them first
 					record_round_statistic(STATS_SHRINE_VALUE, (W.get_real_price() / 2))
 				else
 					B.contrib += W.get_real_price()
 					record_round_statistic(STATS_SHRINE_VALUE, W.get_real_price())
-				if(B.contrib >= 100)
-					B.tri_amt++
-					user.mind.adjust_triumphs(1)
-					B.contrib -= 100
-					var/obj/item/I
-					switch(B.tri_amt)
-						if(1)
-							I = new /obj/item/reagent_containers/glass/bottle/healthpot(user.loc)
-						if(2)
-							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
-								I = new /obj/item/clothing/armor/medium/scale(user.loc)
-							else
-								I = new /obj/item/clothing/armor/chainmail/iron(user.loc)
-						if(4)
-							I = new /obj/item/clothing/head/helmet/horned(user.loc)
-						if(6)
-							if(user.get_skill_level(/datum/skill/combat/polearms) > 2)
-								I = new /obj/item/weapon/polearm/spear/billhook(user.loc)
-							else if(user.get_skill_level(/datum/skill/combat/bows) > 2)
-								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.get_skill_level(/datum/skill/combat/swords) > 2)
-								I = new /obj/item/weapon/sword/long(user.loc)
-							else
-								I = new /obj/item/weapon/mace/steel(user.loc)
-						if(8)
-							I = new /obj/item/clothing/pants/chainlegs(user.loc)
-					if(I)
-						I.sellprice = 0
-					playsound(loc,'sound/items/matidol2.ogg', 50, TRUE)
-				else
-					playsound(loc,'sound/items/matidol1.ogg', 50, TRUE)
-				playsound(loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
-				qdel(W)
-				return
-	..()
+			if(B.contrib >= 100)
+				give_rewards(B, user)
+			else
+				playsound(loc,'sound/items/matidol1.ogg', 50, TRUE)
+			playsound(loc,'sound/misc/eat.ogg', rand(30, 60), TRUE)
+			qdel(W)
+			return
+
+	return ..()
+
+/obj/structure/fluff/statue/evil/proc/give_rewards(datum/antagonist/bandit/offering_bandit, mob/user)
+	offering_bandit.tri_amt++
+	user.mind.adjust_triumphs(1)
+	offering_bandit.contrib -= 100
+
+	var/obj/item/I
+	switch(offering_bandit.tri_amt)
+		if(1)
+			I = new /obj/item/reagent_containers/glass/bottle/healthpot(user.loc)
+		if(2)
+			if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+				I = new /obj/item/clothing/armor/medium/scale(user.loc)
+			else
+				I = new /obj/item/clothing/armor/chainmail/iron(user.loc)
+		if(4)
+			I = new /obj/item/clothing/head/helmet/horned(user.loc)
+		if(6)
+			if(user.get_skill_level(/datum/skill/combat/polearms) > 2)
+				I = new /obj/item/weapon/polearm/spear/billhook(user.loc)
+			else if(user.get_skill_level(/datum/skill/combat/bows) > 2)
+				I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
+			else if(user.get_skill_level(/datum/skill/combat/swords) > 2)
+				I = new /obj/item/weapon/sword/long(user.loc)
+			else
+				I = new /obj/item/weapon/mace/steel(user.loc)
+		if(8)
+			I = new /obj/item/clothing/pants/chainlegs(user.loc)
+	if(I)
+		I.sellprice = 0
+
+	if(offering_bandit.contrib >= 100 && offering_bandit.tri_amt < 8)
+		give_rewards(offering_bandit, user)
+	else
+		playsound(loc,'sound/items/matidol2.ogg', 50, TRUE)
 
 /obj/structure/fluff/psycross
 	name = "pantheon cross"
@@ -1087,24 +1107,61 @@
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
 	name = "devouring shrine to Dendor"
+<<<<<<< HEAD
 	desc = "The life force of a Volf has consecrated this holy place.<br/> Present two blood baits here to craft a worthy sacrifice."
+=======
+	desc = "The life force of a Volf has consecrated this holy place. \n First present two blood baits to craft a red sacrifice. \n Then offer an egg and two feathers to craft a crimson sacrifice."
+>>>>>>> vanderlin/main
 	icon_state = "shrine_dendor_volf"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
 	name = "stinging shrine to Dendor"
+<<<<<<< HEAD
 	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and eels for crafting a worthy sacrifice."
+=======
+	desc = "The life force of a Saiga has consecrated this holy place. \n First present a jacksberry, westleach leaf, and eel to craft a yellow sacrifice. \n Then offer a jacksberry, calendula flower, and fiber to craft a citrine sacrifice."
+>>>>>>> vanderlin/main
 	icon_state = "shrine_dendor_saiga"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
 	name = "growing shrine to Dendor"
+<<<<<<< HEAD
 	desc = "The life force of a Gote has consecrated this holy place.<br/> Present poppies, swampweed leaves, and silk grubs for crafting a worthy sacrifice."
+=======
+	desc = "The life force of a Gote has consecrated this holy place. \n First present a poppy flower, swampweed leaf, and silk grub to craft a green sacrifice. \n Then offer a euphoriba flower, swampweed leaf, and two thorns to craft a viridian sacrifice."
+>>>>>>> vanderlin/main
 	icon_state = "shrine_dendor_gote"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_troll
 	name = "lording shrine to Dendor"
+<<<<<<< HEAD
 	desc = "The life force of a Troll has consecrated this holy place.<br/> Present two troll horns for crafting a worthy sacrifice."
 	icon_state = "shrine_dendor_troll"
 
+=======
+	desc = "The life force of a Troll has consecrated this holy place. \n First present two troll horns to craft a purple sacrifice. \n Then offer a piece of strange meat and two sinews to craft an indigo sacrifice."
+	icon_state = "shrine_dendor_troll"
+
+/obj/structure/fluff/psycross/psycrucifix
+	name = "wooden psydonic crucifix"
+	desc = "A rarely seen symbol of absolute and devoted certainty, more common in Grenzelhoft: HE yet lyves. HE yet breathes."
+	icon_state = "psycruci"
+	max_integrity = 80
+
+/obj/structure/fluff/psycross/psycrucifix/stone
+	name = "stone psydonic crucifix"
+	desc = "Formed of stone, this great Psycross symbolises that HE is forever ENDURING. Considered a rare sight upon the Peaks."
+	icon_state = "psycruci_r"
+	max_integrity = 120
+
+/obj/structure/fluff/psycross/psycrucifix/silver
+	name = "silver psydonic crucifix"
+	icon_state = "psycruci_s"
+	desc = "Constructed of Blessed Silver, this crucifix symbolises absolute faith in the ONE - For PSYDON WEEPS, for all mortal ilk. PSYDON WEEPS, for all who walk upon the soil. PSYDON WEEPS..."
+	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
+	max_integrity = 450
+
+>>>>>>> vanderlin/main
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(!user.mind)
 		return ..()
@@ -1244,8 +1301,11 @@
 		var/announcement_message = "Eora [groom.gender == bride.gender ? "begrudgingly accepts" : "proudly embraces"] the marriage between [groom.real_name] and [bride_first_name]!"
 		priority_announce(announcement_message, title = "Holy Union!", sound = 'sound/misc/bell.ogg')
 
+<<<<<<< HEAD
 	groom.remove_stress(/datum/stress_event/eora_matchmaking)
 	bride.remove_stress(/datum/stress_event/eora_matchmaking)
+=======
+>>>>>>> vanderlin/main
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOBAL_MARRIAGE, groom, bride)
 	record_round_statistic(STATS_MARRIAGES)
 	qdel(apple)

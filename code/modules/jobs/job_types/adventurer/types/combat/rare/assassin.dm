@@ -37,10 +37,14 @@
 	H.become_blind("TRAIT_GENERIC")
 	// Assassin now spawns disguised as one of the non-combat drifters. You never know who will stab you in the back.
 	var/disguises = list("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Noble", "Peasant", "Carpenter", "Thief", "Ranger", "Servant", "Faceless One")
-	var/disguisechoice = input("Choose your cover", "Available disguises") as anything in disguises
-
+	var/disguisechoice = browser_input_list(H, "Choose your cover.", "Available disguises", disguises)
 	if(disguisechoice)
 		H.job = disguisechoice
+<<<<<<< HEAD
+=======
+	if(!disguisechoice)
+		disguisechoice = pick(disguises)
+>>>>>>> vanderlin/main
 
 	switch(disguisechoice)
 		if("Bard")
@@ -160,7 +164,7 @@
 				H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE) //Female nobles get the male noble's bow, but are less trained than an Assassin disguising as a Hunter. Balance.
 				H.adjust_skillrank(/datum/skill/combat/crossbows, -1, TRUE)
 				shirt = /obj/item/clothing/shirt/dress/silkdress/colored/random
-				head = /obj/item/clothing/head/hatfur
+				head = /obj/item/clothing/head/fancyhat
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak
 				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 				beltr = /obj/item/weapon/knife/dagger/steel/special
@@ -252,6 +256,7 @@
 			shirt = /obj/item/clothing/shirt/undershirt/colored/uncolored
 			belt = /obj/item/storage/belt/leather/assassin
 			beltl = /obj/item/storage/belt/pouch/coins/poor
+			backl = /obj/item/storage/backpack/satchel
 			if(H.gender == MALE)
 				armor = /obj/item/clothing/armor/leather/vest/colored/black
 			else
@@ -265,7 +270,6 @@
 			pants = /obj/item/clothing/pants/trou/leather
 			shoes = /obj/item/clothing/shoes/boots
 			backl = /obj/item/storage/backpack/satchel
-			belt = /obj/item/storage/belt/leather/knifebelt/black/steel
 			beltl = /obj/item/storage/belt/pouch/coins/poor
 			beltr = /obj/item/weapon/knife/dagger/steel
 			cloak = /obj/item/clothing/cloak/faceless
@@ -274,6 +278,15 @@
 			backpack_contents = list(/obj/item/reagent_containers/glass/bottle/poison, /obj/item/weapon/knife/dagger/steel/profane, /obj/item/lockpick, /obj/item/storage/fancy/cigarettes/zig, /obj/item/flint)
 			ADD_TRAIT(H, TRAIT_FACELESS, TRAIT_GENERIC)
 			H.real_name = get_faceless_name(H)
+			var/list/belt_options = list("Leather Belt", "Toss Blade Belt")
+			var/belt_pick = browser_input_list(H, "Select belt.", "BELT OPTION", belt_options)
+			if(!belt_pick)
+				belt_pick = pick(belt_options)
+			switch(belt_pick)
+				if("Leather Belt")
+					belt = /obj/item/storage/belt/leather
+				if("Toss Blade Belt")
+					belt = /obj/item/storage/belt/leather/knifebelt/black/steel
 
 	H.cure_blind("TRAIT_GENERIC")
 

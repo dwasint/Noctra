@@ -16,6 +16,10 @@
 /datum/migrant_role/advclass/adventurer/maniac
 	name = "Crazed Adventurer"
 	antag_datum = /datum/antagonist/maniac
+<<<<<<< HEAD
+=======
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 15)
+>>>>>>> vanderlin/main
 
 /datum/migrant_wave/maniac
 	name = "Crazed Adventurer"
@@ -27,6 +31,10 @@
 /datum/migrant_role/advclass/adventurer/werewolf
 	name = "Adventurer"
 	antag_datum = /datum/antagonist/werewolf
+<<<<<<< HEAD
+=======
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 15)
+>>>>>>> vanderlin/main
 
 /datum/migrant_wave/werewolf
 	name = "Exiled Adventurer (Verevolf)"
@@ -38,6 +46,10 @@
 /datum/migrant_role/advclass/adventurer/vampire
 	name = "Adventurer"
 	antag_datum = /datum/antagonist/vampire
+<<<<<<< HEAD
+=======
+	advclass_cat_rolls = list(CTAG_ADVENTURER = 15)
+>>>>>>> vanderlin/main
 
 /datum/migrant_wave/vampire
 	name = "Exiled Adventurer (Vampire)"

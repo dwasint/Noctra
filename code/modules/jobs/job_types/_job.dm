@@ -7,6 +7,8 @@
 	var/title_override = null
 	/// The title of this job given to female mobs. Fluff, not as important as [var/title].
 	var/f_title = null
+	/// Used if the job gets switched later to something else.
+	var/datum/job/parent_job
 	/// When joining the round, this text will be shown to the player.
 	var/tutorial = null
 
@@ -26,6 +28,12 @@
 
 	/// How many players currently have this job
 	var/current_positions = 0
+
+	///How many slots were open in this round. Used to prevent slots locking with decreasing amount of alive players
+	var/total_positions_so_far = 0
+
+	///If the roles will scale depending on the amount of players, example : adventurer, only for jobs that are not in the FACTION_TOWN
+	var/scales = FALSE
 
 	/// Whether this job clears a slot when you get a rename prompt.
 	var/antag_job = FALSE
@@ -85,16 +93,25 @@
 	/// Default patron in case the patron is not allowed
 	var/datum/patron/default_patron
 
+<<<<<<< HEAD
 	/// Stats given to the job in the form of list(STA_X = value)
 	var/list/jobstats
 	/// Female stats only used if a value is given
 	var/list/jobstats_f
 
+=======
+>>>>>>> vanderlin/main
 	/// Voicepack to grant to males
 	var/datum/voicepack/voicepack_m
 	/// Voicepack to grant to females
 	var/datum/voicepack/voicepack_f
 
+<<<<<<< HEAD
+=======
+	/// Stats given to the job in the form of list(STA_X = value)
+	var/list/jobstats
+
+>>>>>>> vanderlin/main
 	/// Skill levels granted at roundstart.
 	/// Possibly modified by species.
 	/// Basic format is list(/datum/skill/foo = value).
@@ -209,6 +226,9 @@
 		for(var/X in GLOB.youngfolk_positions)
 			peopleiknow += X
 			peopleknowme += X
+		for(var/X in GLOB.inquisition_positions)
+			peopleiknow += X
+			peopleknowme += X
 
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
@@ -230,8 +250,11 @@
 	if(!ishuman(spawned))
 		return
 
+<<<<<<< HEAD
 	adjust_values(spawned)
 
+=======
+>>>>>>> vanderlin/main
 	if(magic_user)
 		spawned.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
@@ -259,16 +282,25 @@
 	spawned.adjust_spell_points(spell_points)
 	spawned.generate_random_attunements(rand(attunements_min, attunements_max))
 
+<<<<<<< HEAD
 	var/list/used_stats = ((spawned.gender == FEMALE) && jobstats_f) ? jobstats_f : jobstats
 	spawned.remove_stat_modifier("job_stats") // Reset so no inf stat
 	spawned.adjust_stat_modifier_list("job_stats", used_stats)
+=======
+	spawned.remove_stat_modifier("job_stats") // Reset so no inf stat
+	spawned.adjust_stat_modifier_list("job_stats", jobstats)
+>>>>>>> vanderlin/main
 
 	for(var/datum/skill/skill as anything in skills)
 		var/amount_or_list = skills[skill]
 		if(islist(amount_or_list))
 			spawned.clamped_adjust_skillrank(skill, amount_or_list[1], amount_or_list[2], TRUE)
 		else
+<<<<<<< HEAD
 			spawned.adjust_skillrank(skill, amount_or_list, TRUE)
+=======
+			spawned.clamped_adjust_skillrank(skill, amount_or_list, amount_or_list) //! This was changed because what the fuck.
+>>>>>>> vanderlin/main
 
 	for(var/X in peopleknowme)
 		for(var/datum/mind/MF in get_minds(X))
@@ -290,21 +322,32 @@
 		if(noble_income)
 			SStreasury.noble_incomes[spawned] = noble_income
 
-	if(job_flags & JOB_SHOW_IN_CREDITS)
-		SScrediticons.processing += spawned
-
 	if(cmode_music)
 		DIRECT_OUTPUT(spawned, load_resource(cmode_music, -1)) //preload their combat mode music
 		spawned.cmode_music = cmode_music
 
+<<<<<<< HEAD
 	if(!(type in actors_list_blacklist)) //don't show these.
+=======
+	var/type_check
+	if(parent_job)
+		type_check = parent_job.type
+		used_title = parent_job.get_informed_title(spawned)
+	else
+		type_check = type
+	if(!(type_check in actors_list_blacklist)) //don't show these.
+>>>>>>> vanderlin/main
 		GLOB.actors_list[spawned.mobid] = "[spawned.real_name] as [used_title]<BR>"
 
 	if(forced_flaw)
 		spawned.set_flaw(forced_flaw)
 
 	if(spawned.charflaw)
+<<<<<<< HEAD
 		spawned.charflaw.after_spawn(spawned)
+=======
+		spawned.charflaw.after_spawn(spawned, player_client)
+>>>>>>> vanderlin/main
 
 	if(antag_role && spawned.mind)
 		spawned.mind.add_antag_datum(antag_role)
@@ -327,10 +370,43 @@
 	if(length(advclass_cat_rolls))
 		spawned.hugboxify_for_class_selection()
 
+<<<<<<< HEAD
 /// Called by [after_spawn] and run before anything else.
 /// Change your stat values and such here, not in outfits.
 /datum/job/proc/adjust_values(mob/living/carbon/human/spawned)
 	return
+=======
+	if(job_flags & JOB_SHOW_IN_CREDITS)
+		SScrediticons.processing += spawned
+
+/datum/job/proc/adjust_patron(mob/living/carbon/human/spawned)
+	if(!length(allowed_patrons))
+		return
+
+	var/datum/patron/old_patron = spawned.patron
+	if(old_patron?.type in allowed_patrons)
+		return
+
+	var/list/datum/patron/all_gods = list()
+	var/list/datum/patron/pantheon_gods = list()
+	for(var/god in GLOB.patronlist)
+		if(!(god in allowed_patrons))
+			continue
+		all_gods |= god
+		var/datum/patron/P = GLOB.patronlist[god]
+		if(P.associated_faith == old_patron.associated_faith) //Prioritize choosing a possible patron within our pantheon
+			pantheon_gods |= god
+
+	if(length(pantheon_gods))
+		spawned.set_patron(default_patron || pick(pantheon_gods), TRUE)
+	else
+		spawned.set_patron(default_patron || pick(all_gods), TRUE)
+
+	var/datum/patron/new_patron = spawned.patron
+	if(old_patron != new_patron) // If the patron we selected first does not match the patron we end up with, display the message.
+		to_chat(spawned, span_warning("I've followed the word of [old_patron.display_name ? old_patron.display_name : old_patron] in my younger years, \
+		but the path I tread todae has accustomed me to [new_patron.display_name ? new_patron.display_name : new_patron]."))
+>>>>>>> vanderlin/main
 
 /datum/job/proc/adjust_patron(mob/living/carbon/human/spawned)
 	if(!length(allowed_patrons))
@@ -487,6 +563,12 @@
 	equipped_human.remove_spells(source = src)
 
 /datum/job/proc/get_informed_title(mob/mob)
+<<<<<<< HEAD
+=======
+	if(mob.admin_title)
+		return mob.admin_title
+
+>>>>>>> vanderlin/main
 	if(title_override)
 		return title_override
 
@@ -494,3 +576,9 @@
 		return f_title
 
 	return title
+
+/datum/job/proc/set_spawn_and_total_positions(count)
+	return spawn_positions
+
+/datum/job/proc/get_total_positions(latejoin)
+	return latejoin ? total_positions : spawn_positions

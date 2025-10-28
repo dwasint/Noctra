@@ -5,7 +5,11 @@
 	immediate_effects = list("Gained an ability to take pain of others upon yourself")
 	rewards = list("3 Triumphs", "Pestra grows stronger", "Pestra blesses you (+1 Constitution)")
 	var/total_pain_taken = 0
+<<<<<<< HEAD
 	var/target_pain = 750
+=======
+	var/target_pain = 500
+>>>>>>> vanderlin/main
 
 /datum/objective/personal/take_pain/on_creation()
 	. = ..()
@@ -14,7 +18,12 @@
 	update_explanation_text()
 
 /datum/objective/personal/take_pain/Destroy()
+<<<<<<< HEAD
 	UnregisterSignal(owner.current, COMSIG_PAIN_TRANSFERRED)
+=======
+	if(owner?.current)
+		UnregisterSignal(owner.current, COMSIG_PAIN_TRANSFERRED)
+>>>>>>> vanderlin/main
 	return ..()
 
 /datum/objective/personal/take_pain/proc/on_pain_transferred(datum/source, amount)
@@ -35,6 +44,7 @@
 		to_chat(owner.current, span_green("The pain is nearly overwhelming, but you can sense you're close to completing Pestra's task."))
 
 	if(total_pain_taken >= target_pain)
+<<<<<<< HEAD
 		to_chat(owner.current, span_greentext("You have taken enough pain from others, completing Pestra's objective! Your sacrifice is rewarded."))
 		owner.current.adjust_triumphs(triumph_count)
 		completed = TRUE
@@ -43,5 +53,19 @@
 		escalate_objective()
 		UnregisterSignal(owner.current, COMSIG_PAIN_TRANSFERRED)
 
+=======
+		complete_objective()
+
+/datum/objective/personal/take_pain/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have taken enough pain from others, completing Pestra's objective! Your sacrifice is rewarded."))
+	adjust_storyteller_influence(PESTRA, 20)
+	UnregisterSignal(owner.current, COMSIG_PAIN_TRANSFERRED)
+
+/datum/objective/personal/take_pain/reward_owner()
+	. = ..()
+	owner.current.set_stat_modifier("pestra_blessing", STATKEY_CON, 1)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/take_pain/update_explanation_text()
 	explanation_text = "Take enough pain from others upon yourself as an act of mercy and devotion to Pestra."

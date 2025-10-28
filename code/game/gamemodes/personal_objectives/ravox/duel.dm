@@ -9,13 +9,15 @@
 
 /datum/objective/personal/ravox_duel/on_creation()
 	. = ..()
-	var/datum/action/innate/ravox_challenge/challenge = new(src)
-	challenge.Grant(owner.current)
+	if(owner?.current)
+		var/datum/action/cooldown/spell/ravox_challenge/challenge_spell = new(src)
+		challenge_spell.Grant(owner.current)
 	update_explanation_text()
 
 /datum/objective/personal/ravox_duel/proc/on_duel_won()
 	duels_won++
 	if(duels_won >= duels_required && !completed)
+<<<<<<< HEAD
 		to_chat(owner.current, span_greentext("You have proven your worth in combat! Ravox is pleased!"))
 		owner.current.adjust_triumphs(triumph_count * duels_required)
 		completed = TRUE
@@ -64,6 +66,18 @@
 
 	new /datum/duel(owner, duelist, target)
 
+=======
+		complete_objective()
+
+/datum/objective/personal/ravox_duel/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have proven your worth in combat! Ravox is pleased!"))
+	adjust_storyteller_influence(RAVOX, 20)
+
+/datum/objective/personal/ravox_duel/update_explanation_text()
+	explanation_text = "Win [duels_required] duel\s with honor against other warriors to prove your might!"
+
+>>>>>>> vanderlin/main
 /datum/duel
 	var/ongoing = TRUE
 	var/datum/weakref/challenger
@@ -125,7 +139,11 @@
 
 	if(objective)
 		var/datum/objective/personal/ravox_duel/ravox = objective.resolve()
+<<<<<<< HEAD
 		if(ravox?.owner == winner)
+=======
+		if(ravox?.owner == winner.mind)
+>>>>>>> vanderlin/main
 			ravox.on_duel_won()
 
 	qdel(src)

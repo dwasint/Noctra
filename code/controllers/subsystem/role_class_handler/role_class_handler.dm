@@ -133,9 +133,18 @@ SUBSYSTEM_DEF(role_class_handler)
 
 	qdel(related_handler)
 
+<<<<<<< HEAD
 	if(picked_class.inherit_parent_title)
 		// At this point the job is the job of the previous advclass "parent" or null
 		var/datum/job/old = SSjob.GetJob(H.job)
+=======
+	// At this point the job is the job of the previous advclass "parent" or null
+	var/datum/job/old = SSjob.GetJob(H.job)
+
+	picked_class.parent_job = old
+
+	if(picked_class.inherit_parent_title)
+>>>>>>> vanderlin/main
 		if(old)
 			if(H.gender == FEMALE && old.f_title)
 				picked_class.title_override = old.f_title

@@ -129,7 +129,7 @@
 	plane = FULLSCREEN_PLANE
 	alpha = 0
 
-/atom/movable/screen/fullscreen/love/New(client/C)
+/atom/movable/screen/fullscreen/love/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	animate(src, alpha = 255, time = 30)
 
@@ -179,6 +179,10 @@
 	icon_state = "oxydamageoverlay"
 	layer = BLIND_LAYER
 
+/atom/movable/screen/fullscreen/inqvision
+	icon_state = "inqvision"
+	layer = BLIND_LAYER
+
 /atom/movable/screen/fullscreen/blackimageoverlay
 	icon_state = "blackimageoverlay"
 	layer = BLIND_LAYER
@@ -187,6 +191,11 @@
 /atom/movable/screen/fullscreen/blind
 	icon_state = "blind"
 	layer = BLIND_LAYER
+	plane = FULLSCREEN_PLANE
+
+/atom/movable/screen/fullscreen/zezuspsyst
+	icon_state = "hey"
+	layer = CRIT_LAYER
 	plane = FULLSCREEN_PLANE
 
 /atom/movable/screen/fullscreen/curse

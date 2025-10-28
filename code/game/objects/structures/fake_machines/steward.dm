@@ -279,7 +279,7 @@
 				SStreasury.give_money_account(-newtax, A)
 				break
 	if(href_list["payroll"])
-		var/list/L = list(GLOB.noble_positions) + list(GLOB.garrison_positions) + list(GLOB.church_positions) + list(GLOB.serf_positions) + list(GLOB.company_positions) + list(GLOB.peasant_positions) + list(GLOB.youngfolk_positions) + list(GLOB.apprentices_positions)
+		var/list/L = list(GLOB.noble_positions) + list(GLOB.garrison_positions) + list(GLOB.church_positions) + list(GLOB.serf_positions) + list(GLOB.company_positions) + list(GLOB.peasant_positions) + list(GLOB.youngfolk_positions) + list(GLOB.apprentices_positions) + list(GLOB.inquisition_positions)
 		var/list/jobs = list()
 		for(var/list/category in L)
 			for(var/A in category)
@@ -299,7 +299,9 @@
 		if(findtext(num2text(amount_to_pay), "."))
 			return
 		for(var/mob/living/carbon/human/H in GLOB.human_list)
-			if(H.job == job_to_pay)
+			var/datum/job/job_check = H.mind?.assigned_role?.parent_job ? H.mind.assigned_role.parent_job : H.mind?.assigned_role
+			var/datum/job/job_pay = SSjob.GetJob(job_to_pay)
+			if(job_check && job_check.type == job_pay.type)
 				record_round_statistic(STATS_WAGES_PAID, amount_to_pay)
 				SStreasury.give_money_account(amount_to_pay, H)
 	if(href_list["compact"])

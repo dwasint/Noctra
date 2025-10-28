@@ -201,7 +201,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Inquisitor"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/shepherd
+/obj/effect/landmark/start/orthodoxist
+	name = "Orthodoxist"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/absolver
+	name = "Absolver"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/adept
 	name = "Adept"
 	icon_state = "arrow"
 
@@ -396,6 +404,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/innkeep_son
 	name = "Innkeepers Son"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/clinicapprentice
+	name = "Clinic Apprentice"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/evilskeleton	// Trying to make EVIL SKELTON actually spawn

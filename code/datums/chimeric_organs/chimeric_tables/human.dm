@@ -217,10 +217,17 @@
 /datum/chimeric_table/rousman
 	name = "Rousman"
 	compatible_blood_types = list(
+<<<<<<< HEAD
 		/datum/blood_type/human/rousman,
 	)
 	preferred_blood_types = list(
 		/datum/blood_type/human/rousman,
+=======
+		/datum/blood_type/human/corrupted/rousman,
+	)
+	preferred_blood_types = list(
+		/datum/blood_type/human/corrupted/rousman,
+>>>>>>> vanderlin/main
 	)
 	incompatible_blood_types = list()
 
@@ -238,10 +245,17 @@
 /datum/chimeric_table/goblin
 	name = "Goblin"
 	compatible_blood_types = list(
+<<<<<<< HEAD
 		/datum/blood_type/human/goblin,
 	)
 	preferred_blood_types = list(
 		/datum/blood_type/human/goblin,
+=======
+		/datum/blood_type/human/corrupted/goblin,
+	)
+	preferred_blood_types = list(
+		/datum/blood_type/human/corrupted/goblin,
+>>>>>>> vanderlin/main
 	)
 	incompatible_blood_types = list()
 
@@ -257,10 +271,17 @@
 /datum/chimeric_table/orc
 	name = "Orc"
 	compatible_blood_types = list(
+<<<<<<< HEAD
 		/datum/blood_type/human/orc,
 	)
 	preferred_blood_types = list(
 		/datum/blood_type/human/orc,
+=======
+		/datum/blood_type/human/corrupted/orc,
+	)
+	preferred_blood_types = list(
+		/datum/blood_type/human/corrupted/orc,
+>>>>>>> vanderlin/main
 	)
 	incompatible_blood_types = list()
 

@@ -4,7 +4,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED //Royal Knight
 	outfit = /datum/outfit/wretch/disgraced
+<<<<<<< HEAD
 	category_tags = list(CTAG_WRETCH)
+=======
+>>>>>>> vanderlin/main
 	total_positions = 1
 
 /datum/outfit/wretch/disgraced/pre_equip(mob/living/carbon/human/H)

@@ -33,6 +33,7 @@
 		return
 	user.open_gear_ui(src)
 
+<<<<<<< HEAD
 /obj/effect/building_node/proc/store_gear(obj/item/item, gear_type)
 	if(!stored_gear)
 		stored_gear = list()
@@ -53,11 +54,46 @@
 	return stored_gear[gear_type]
 
 /obj/effect/building_node/proc/get_stored_gear_by_type(slot_type)
+=======
+
+/obj/effect/building_node/proc/store_gear(obj/item/item, datum/worker_gear/gear_datum)
+	if(!stored_gear)
+		stored_gear = list()
+
+	var/slot_type = gear_datum?.slot || "unknown"
+	var/gear_type = gear_datum?.type || /datum/worker_gear
+
+	// Create unique key
+	var/gear_key = "[slot_type]_[gear_type]_[stored_gear.len + 1]"
+
+	// Store both item and gear datum
+	stored_gear[gear_key] = list("item" = item, "gear" = gear_datum)
+	item.forceMove(src)
+
+	return gear_key
+
+/obj/effect/building_node/proc/retrieve_gear(gear_key)
+	if(!stored_gear || !(gear_key in stored_gear))
+		return null
+
+	var/list/gear_data = stored_gear[gear_key]
+	stored_gear -= gear_key
+
+	return gear_data // Returns list("item" = item, "gear" = gear_datum)
+
+/obj/effect/building_node/proc/get_stored_gear(gear_key)
+	if(!stored_gear)
+		return null
+	return stored_gear[gear_key]
+
+/obj/effect/building_node/proc/get_stored_gear_by_slot(slot_type)
+>>>>>>> vanderlin/main
 	if(!stored_gear)
 		return list()
 
 	var/list/matching_gear = list()
 	for(var/gear_key in stored_gear)
+<<<<<<< HEAD
 		if(findtext(gear_key, slot_type))
 			matching_gear[gear_key] = stored_gear[gear_key]
 
@@ -68,6 +104,25 @@
 
 /obj/effect/building_node/proc/get_stored_count(slot_type)
 	var/list/matching = get_stored_gear_by_type(slot_type)
+=======
+		var/list/gear_data = stored_gear[gear_key]
+		var/datum/worker_gear/gear = gear_data["gear"]
+		if(gear && gear.slot == slot_type)
+			matching_gear[gear_key] = gear_data
+
+	return matching_gear
+
+/obj/effect/building_node/proc/get_all_stored_gear()
+	if(!stored_gear)
+		return list()
+	return stored_gear.Copy()
+
+/obj/effect/building_node/proc/get_storage_capacity(slot_type)
+	return 20 // Can store 20 items per slot type
+
+/obj/effect/building_node/proc/get_stored_count(slot_type)
+	var/list/matching = get_stored_gear_by_slot(slot_type)
+>>>>>>> vanderlin/main
 	return length(matching)
 
 /obj/effect/building_node/proc/can_store_more(slot_type)

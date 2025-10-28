@@ -57,12 +57,21 @@
 						if(val > protection)
 							protection = val
 							used = C
+
+	var/obj/item/clothing/cloak/boiler/steam_boiler = get_item_by_slot(ITEM_SLOT_BACK_R) || get_item_by_slot(ITEM_SLOT_BACK_L)
+	if(!istype(steam_boiler))
+		steam_boiler = null
+
+	var/boiler_damage = damage / 5
+
 	if(used)
-		if(!blade_dulling)
-			blade_dulling = BCLASS_BLUNT
 		if(used.blocksound)
 			playsound(loc, get_armor_sound(used.blocksound, blade_dulling), 100)
 		used.take_damage(damage, damage_flag = d_type, sound_effect = FALSE, armor_penetration = 100)
+
+	if(steam_boiler && def_zone == BODY_ZONE_CHEST)
+		steam_boiler.take_damage(boiler_damage, damage_flag = d_type, sound_effect = FALSE, armor_penetration = 100)
+
 	if(physiology)
 		protection += physiology.armor.getRating(d_type)
 	return protection

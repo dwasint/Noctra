@@ -84,6 +84,12 @@
 #define SFX_CAT_MEOW "cat_meow"
 #define SFX_CAT_PURR "cat_purr"
 #define SFX_EGG_HATCHING "egg_hatching"
+<<<<<<< HEAD
+=======
+#define SFX_DEFAULT_FISH_SLAP "default_fish_slap"
+#define SFX_ALT_FISH_SLAP "alt_fish_slap"
+#define SFX_REEL "reel"
+>>>>>>> vanderlin/main
 
 #define INTERACTION_SOUND_RANGE_MODIFIER 0
 #define EQUIP_SOUND_VOLUME 100

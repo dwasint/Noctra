@@ -51,7 +51,10 @@
 
 /datum/antagonist/lich/on_gain()
 	SSmapping.retainer.liches |= owner
-	owner.current?.purge_combat_knowledge() // purge all their combat skills first
+	var/mob/living/carbon/human/lich = owner?.current
+	lich.purge_combat_knowledge() // purge all their combat skills first
+	lich.reset_and_reroll_stats()
+	lich.remove_all_traits()
 	. = ..()
 	if(iscarbon(owner.current))
 		lich_body_ref = WEAKREF(owner.current)
@@ -61,7 +64,11 @@
 	owner.special_role = name
 	move_to_spawnpoint()
 	remove_job()
+<<<<<<< HEAD
 	owner.current?.roll_mob_stats()
+=======
+	lich.delete_equipment()
+>>>>>>> vanderlin/main
 	owner.current?.remove_stat_modifier("innate_age")
 	skele_look()
 	equip_lich()

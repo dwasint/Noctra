@@ -20,7 +20,12 @@
 	if(completed)
 		return
 
+	complete_objective()
+
+/datum/objective/personal/lux_extraction/complete_objective()
+	. = ..()
 	to_chat(owner.current, span_greentext("You have extracted lux and completed Pestra's objective!"))
+<<<<<<< HEAD
 	owner.current.adjust_triumphs(triumph_count)
 	completed = TRUE
 	adjust_storyteller_influence(PESTRA, 20)
@@ -28,5 +33,14 @@
 	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_LUX_EXTRACTED)
 
+=======
+	adjust_storyteller_influence(PESTRA, 20)
+	UnregisterSignal(owner.current, COMSIG_LUX_EXTRACTED)
+
+/datum/objective/personal/lux_extraction/reward_owner()
+	. = ..()
+	owner.current.adjust_skillrank(/datum/skill/misc/medicine, 1)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/lux_extraction/update_explanation_text()
 	explanation_text = "Extract lux from a living being to sate Pestra's curiosity!"

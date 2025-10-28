@@ -31,11 +31,25 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"au" = (
+/obj/effect/landmark/tram/queued_path{
+	next_path_id = "cargo_pre_enter";
+	platform_code = "point_1"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "aC" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/boat_transfer/ship_side,
+>>>>>>> vanderlin/main
 /turf/open/floor/rooftop/green{
 	dir = 8
 	},
@@ -75,6 +89,7 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "aM" = (
+<<<<<<< HEAD
 /obj/structure/chair/bench/church/r{
 	dir = 4
 	},
@@ -83,6 +98,13 @@
 	},
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/light/fueled/wallfire/candle/blue{
+	pixel_y = -32
+	},
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "aN" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/closet/crate/chest/wicker,
@@ -96,6 +118,7 @@
 	dir = 4
 	},
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "bb" = (
 /obj/structure/chair/wood/alt/chair_noble{
 	dir = 8;
@@ -104,6 +127,18 @@
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+"aT" = (
+/obj/effect/decal/cobbleedge{
+	icon_state = "borderfall"
+	},
+/obj/structure/fluff/railing/border,
+/obj/item/tent_kit,
+/turf/open/floor/rooftop/green{
+	dir = 4
+	},
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "bg" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -129,6 +164,16 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"bn" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "roofg";
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "br" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -142,11 +187,21 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/metal/barograte,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "bx" = (
 /turf/closed/wall/mineral/decostone/end{
 	dir = 1
 	},
 /area/rogue/ship/middeck)
+=======
+"by" = (
+/obj/effect/landmark/tram/queued_path/cargo_map_enter{
+	next_path_id = "point_1"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "bz" = (
 /obj/structure/closet/crate/chest/gold,
 /obj/item/reagent_containers/powder/spice,
@@ -172,9 +227,15 @@
 	},
 /area/rogue/ship/middeck)
 "bI" = (
+<<<<<<< HEAD
 /obj/effect/landmark/start/manorguardsman,
 /turf/open/floor/carpet/lord/center,
 /area/rogue/ship/nobledeck)
+=======
+/obj/effect/landmark/start/cook,
+/turf/open/floor/herringbone,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "bK" = (
 /turf/closed/wall/mineral/wooddark/window,
 /area/rogue/ship/middeck)
@@ -217,6 +278,20 @@
 /obj/item/natural/cloth,
 /obj/item/natural/cloth,
 /obj/structure/rack/shelf/notdense,
+<<<<<<< HEAD
+=======
+/obj/item/key/clinic{
+	pixel_x = -9;
+	pixel_y = 32
+	},
+/obj/item/key/clinic{
+	pixel_y = 32
+	},
+/obj/item/key/clinic{
+	pixel_y = 32;
+	pixel_x = 9
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "bZ" = (
@@ -224,11 +299,17 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "cd" = (
+<<<<<<< HEAD
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
 /obj/structure/carpet/green,
 /turf/open/floor/tile/checker,
 /area/rogue/ship/middeck)
+=======
+/obj/structure/carpet/green,
+/turf/open/floor/tile/checker,
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "ce" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/ingot/iron,
@@ -236,9 +317,13 @@
 /obj/item/ingot/iron,
 /obj/item/ingot/iron,
 /obj/item/ingot/steel,
+<<<<<<< HEAD
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
+=======
+/obj/item/ingot/copper,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "ci" = (
@@ -247,12 +332,33 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
+=======
+"co" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "corner";
+	icon = 'icons/turf/walls.dmi';
+	density = 1;
+	opacity = 1
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "cp" = (
 /obj/structure/fluff/statue/pillar{
 	density = 1
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"cs" = (
+/obj/structure/industrial_lift/tram{
+	fake = 1
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "ct" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/structure/roguetent,
@@ -272,6 +378,10 @@
 	pixel_y = 15;
 	pixel_x = -5
 	},
+<<<<<<< HEAD
+=======
+/obj/item/needle,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "cF" = (
@@ -283,8 +393,13 @@
 	dir = 4;
 	icon_state = "border"
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "cI" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -306,7 +421,11 @@
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "cR" = (
 /obj/structure/stairs/fancy/c{
 	dir = 1;
@@ -314,6 +433,7 @@
 	},
 /turf/open/floor/carpet/lord/center,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "cU" = (
 /obj/structure/window,
 /obj/structure/bars,
@@ -323,6 +443,20 @@
 /obj/item/coin/silver/pile,
 /turf/open/floor/tile/checker,
 /area/rogue/ship/middeck)
+=======
+"cS" = (
+/obj/effect/decal/cobbleedge{
+	icon_state = "borderfall"
+	},
+/obj/structure/fluff/railing/border,
+/obj/item/tent_kit,
+/turf/open/floor/hay,
+/area/rogue/ship/middeck)
+"cW" = (
+/obj/item/coin/silver/pile,
+/turf/open/floor/tile/checker,
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "cY" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -334,6 +468,13 @@
 	},
 /turf/open/floor/hay,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"cZ" = (
+/obj/structure/dock_bell,
+/turf/open/floor/ruinedwood/chevron,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "db" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -384,6 +525,7 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "dh" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
@@ -402,6 +544,10 @@
 	},
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/churchrough,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "dp" = (
 /obj/structure/table/wood,
 /obj/structure/bars{
@@ -418,6 +564,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "dr" = (
+<<<<<<< HEAD
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
@@ -425,6 +572,15 @@
 /obj/effect/landmark/start/templar,
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/obj/structure/ladder,
+/turf/open/floor/woodturned,
+/area/rogue/ship/topdeck)
+"du" = (
+/obj/effect/landmark/start/templar,
+/turf/open/floor/churchrough,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "dy" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -462,6 +618,10 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/item/fuse/parchment,
+>>>>>>> vanderlin/main
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
 "dE" = (
@@ -480,8 +640,13 @@
 	pixel_y = 0;
 	pixel_x = 32
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/churchrough,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "dI" = (
 /obj/structure/fluff/railing/border{
 	dir = 5;
@@ -490,10 +655,14 @@
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "dL" = (
+<<<<<<< HEAD
 /obj/structure/door/fancy{
 	lockid = "heir";
 	name = "Heir's Apartment"
 	},
+=======
+/obj/structure/door/fancy,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "dN" = (
@@ -502,6 +671,10 @@
 	icon_state = "longtable"
 	},
 /obj/item/paper/scroll,
+<<<<<<< HEAD
+=======
+/obj/item/natural/feather,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "dS" = (
@@ -513,26 +686,52 @@
 /obj/item/ingot/copper,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "dY" = (
 /obj/structure/door{
 	lockid = "physician";
 	name = "physician's office"
 	},
 /obj/effect/mapping_helpers/access/locker,
+=======
+"dX" = (
+/obj/structure/stairs{
+	dir = 4
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"dY" = (
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door,
+/obj/effect/mapping_helpers/access/keyset/town/tailor,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "dZ" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"ec" = (
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "ee" = (
 /obj/structure/bed/shit,
 /obj/item/bedsheet/cloth,
 /obj/effect/landmark/start/churchling{
 	dir = 4
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "eh" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -541,7 +740,11 @@
 "ei" = (
 /obj/item/bin/water/gross,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "ej" = (
 /obj/structure/table/wood{
 	dir = 8;
@@ -556,6 +759,21 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
+=======
+"eq" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/structure/fluff/railing/border{
+	dir = 8;
+	icon_state = "border"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "er" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -579,6 +797,17 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
+=======
+"eG" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "eQ" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/effect/landmark/start/mercenary,
@@ -595,11 +824,14 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "eU" = (
 /turf/open/floor/rooftop/green{
 	dir = 4
 	},
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "fd" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
@@ -610,7 +842,11 @@
 	icon_state = "border"
 	},
 /turf/open/floor/churchmarble,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "fg" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -634,6 +870,17 @@
 	icon_state = "largetable"
 	},
 /obj/item/weapon/knife/cleaver,
+<<<<<<< HEAD
+=======
+/obj/item/reagent_containers/peppermill{
+	pixel_y = 10;
+	pixel_x = -9
+	},
+/obj/item/kitchen/rollingpin{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/cobble,
 /area/rogue/ship/middeck)
 "fr" = (
@@ -659,6 +906,7 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "fF" = (
+<<<<<<< HEAD
 /obj/structure/door/red,
 /obj/effect/mapping_helpers/access/keyset/garrison/captain,
 /obj/effect/mapping_helpers/access/locker,
@@ -666,13 +914,36 @@
 /area/rogue/ship/middeck)
 "fN" = (
 /obj/effect/landmark/start/shepherd,
+=======
+/obj/structure/door/red{
+	name = "Dungeoneer's Room"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/manor/dungeon,
+/turf/open/floor/ruinedwood,
+/area/rogue/ship/middeck)
+"fN" = (
+/obj/effect/landmark/start/orthodoxist,
+>>>>>>> vanderlin/main
 /obj/structure/bed/inn,
 /obj/item/bedsheet/wool,
 /obj/structure/fluff/walldeco/psybanner{
 	pixel_y = 29
 	},
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/inq/import)
+"fP" = (
+/obj/structure/door/violet{
+	name = "Mage's Quarters"
+	},
+/obj/effect/mapping_helpers/access/keyset/town/tower,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/nobledeck)
+>>>>>>> vanderlin/main
 "fQ" = (
 /turf/closed/wall/mineral/wooddark/horizontal,
 /area/rogue/ship/nobledeck)
@@ -714,6 +985,21 @@
 /obj/structure/fluff/nest,
 /turf/open/floor/hay,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
+=======
+"gb" = (
+/obj/structure/plank{
+	icon_state = "plank"
+	},
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "gf" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/produce/grain/wheat,
@@ -736,8 +1022,13 @@
 /obj/effect/landmark/start/churchling{
 	dir = 8
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "gq" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -749,7 +1040,11 @@
 /obj/structure/closet/crate/chest/gold,
 /obj/item/gem/amethyst,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "gv" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/ruinedwood/spiral,
@@ -764,6 +1059,7 @@
 	},
 /area/rogue/ship/middeck)
 "gI" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	dir = 4;
 	icon_state = "border"
@@ -778,16 +1074,23 @@
 	},
 /obj/structure/fluff/wallclock/l,
 /turf/open/floor/ruinedwood/two,
+=======
+/obj/structure/fluff/wallclock/l,
+/turf/open/water/bath,
+>>>>>>> vanderlin/main
 /area/rogue/ship/middeck)
 "gK" = (
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "gN" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/carpet/purple,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "gO" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_x = 32;
@@ -799,21 +1102,52 @@
 /obj/structure/fake_machine/mail,
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "gS" = (
 /obj/structure/fake_machine/vendor,
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/outdoors/beach)
+=======
+"gT" = (
+/obj/effect/landmark/start/cook{
+	dir = 8
+	},
+/turf/open/floor/herringbone,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "hf" = (
 /obj/item/coin/copper/pile,
 /obj/structure/carpet/green,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "hm" = (
+=======
+/area/rogue/indoors/town/vault)
+"hi" = (
+/obj/structure/fluff/railing/border{
+	dir = 8;
+	icon_state = "border"
+	},
+>>>>>>> vanderlin/main
 /obj/structure/fluff/railing/border{
 	dir = 1;
 	icon_state = "border"
 	},
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/spiral,
+=======
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"hm" = (
+/obj/structure/industrial_lift/tram,
+/obj/structure/fluff/railing/border{
+	dir = 5;
+	icon_state = "border"
+	},
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "hs" = (
 /turf/closed/wall/mineral/wooddark,
@@ -834,11 +1168,19 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "hA" = (
+<<<<<<< HEAD
 /obj/structure/door/violet{
 	name = "Head Butler's Quarters"
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/general,
 /obj/effect/mapping_helpers/access/locker,
+=======
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/violet{
+	name = "Apprentice's Quarters"
+	},
+/obj/effect/mapping_helpers/access/keyset/town/tower,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "hB" = (
@@ -862,9 +1204,12 @@
 /area/rogue/ship/middeck)
 "hJ" = (
 /obj/structure/fluff/railing/border{
+<<<<<<< HEAD
 	layer = 2.65
 	},
 /obj/structure/fluff/railing/border{
+=======
+>>>>>>> vanderlin/main
 	dir = 4
 	},
 /obj/structure/fluff/railing/wood{
@@ -877,6 +1222,12 @@
 	pixel_y = 4;
 	layer = 2.6
 	},
+<<<<<<< HEAD
+=======
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+>>>>>>> vanderlin/main
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "hT" = (
@@ -893,6 +1244,7 @@
 /obj/item/reagent_containers/glass/bottle/healthpot,
 /obj/item/reagent_containers/glass/bottle/healthpot,
 /obj/item/clothing/neck/chaincoif,
+<<<<<<< HEAD
 /obj/item/clothing/neck/chaincoif,
 /obj/item/clothing/neck/chaincoif,
 /obj/item/clothing/neck/chaincoif,
@@ -907,6 +1259,10 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+/turf/open/floor/twig,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "if" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/closet/crate/chest,
@@ -933,9 +1289,12 @@
 	},
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "ip" = (
 /turf/closed/wall/mineral/decostone,
 /area/rogue/ship/middeck)
+=======
+>>>>>>> vanderlin/main
 "iw" = (
 /obj/effect/landmark/start/hunter{
 	dir = 4
@@ -948,12 +1307,24 @@
 /area/rogue/ship/middeck)
 "iA" = (
 /obj/structure/door{
+<<<<<<< HEAD
 	lockid = "physician";
 	name = "apothacary bunks"
 	},
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+=======
+	name = "clinic bunks"
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/clinic,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+"iE" = (
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "iJ" = (
 /obj/structure/closet/crate/chest,
 /obj/item/clothing/armor/chainmail,
@@ -1004,6 +1375,7 @@
 	dir = 1;
 	icon_state = "borderfall"
 	},
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
@@ -1013,6 +1385,29 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/light/fueled/lanternpost/fixed,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+"jm" = (
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"jq" = (
+/obj/structure/door/viewport{
+	name = "Priest's Quarters"
+	},
+/obj/effect/mapping_helpers/access/keyset/church/general,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "jy" = (
 /obj/effect/landmark/start/villager{
 	dir = 8
@@ -1034,7 +1429,11 @@
 	},
 /obj/item/coin/gold/pile,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "jF" = (
 /obj/structure/ladder,
 /turf/open/floor/woodturned,
@@ -1090,11 +1489,20 @@
 /obj/item/burial_shroud,
 /obj/item/burial_shroud,
 /obj/item/burial_shroud,
+<<<<<<< HEAD
 /obj/item/burial_shroud,
+=======
+>>>>>>> vanderlin/main
 /obj/item/candle/skull/lit{
 	pixel_x = -3;
 	pixel_y = 12
 	},
+<<<<<<< HEAD
+=======
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/needle,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "kh" = (
@@ -1145,14 +1553,21 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "ks" = (
+<<<<<<< HEAD
 /obj/item/ingot/steel,
 /obj/item/ingot/steel,
+=======
+>>>>>>> vanderlin/main
 /obj/structure/stockpile_storage/food,
 /obj/structure/stockpile_storage,
 /obj/structure/stockpile_storage/metal,
 /obj/structure/carpet/green,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "ky" = (
 /obj/structure/bed/shit,
 /turf/open/floor/ruinedwood/spiral,
@@ -1168,8 +1583,24 @@
 	icon_state = "tablewood3"
 	},
 /obj/item/rope,
+<<<<<<< HEAD
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
+=======
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/needle,
+/turf/open/floor/hay,
+/area/rogue/ship/topdeck)
+"kF" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood3"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "kI" = (
 /obj/structure/grindwheel,
 /turf/open/floor/ruinedwood/spiral,
@@ -1206,7 +1637,11 @@
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/storage/backpack/satchel/surgbag,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "kX" = (
 /obj/structure/fluff/railing/border{
 	layer = 2.65
@@ -1223,6 +1658,18 @@
 	},
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"le" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "corner";
+	icon = 'icons/turf/walls.dmi';
+	density = 1;
+	opacity = 1
+	},
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "li" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/carpet/cyan,
@@ -1275,7 +1722,11 @@
 /obj/structure/bed/hay,
 /obj/item/bedsheet/cloth,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "lA" = (
 /obj/structure/table/wood{
 	dir = 6;
@@ -1296,9 +1747,16 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "lH" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	dir = 6
 	},
+=======
+/obj/effect/landmark/start/nightmaiden{
+	dir = 4
+	},
+/obj/structure/fluff/railing/border,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "lK" = (
@@ -1327,6 +1785,19 @@
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
+<<<<<<< HEAD
+=======
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/soap,
+/obj/item/soap,
+/obj/item/soap,
+/obj/item/soap,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "lW" = (
@@ -1352,6 +1823,7 @@
 "md" = (
 /obj/structure/rack,
 /obj/item/clothing/armor/plate/iron,
+<<<<<<< HEAD
 /obj/item/clothing/armor/plate/iron,
 /obj/item/clothing/armor/plate,
 /obj/item/clothing/armor/plate,
@@ -1361,6 +1833,19 @@
 /obj/item/clothing/gloves/plate,
 /turf/open/floor/twig,
 /area/rogue/ship/middeck)
+=======
+/obj/item/clothing/gloves/chain/iron,
+/turf/open/floor/twig,
+/area/rogue/ship/middeck)
+"me" = (
+/obj/machinery/light/fueled/wallfire/candle/l,
+/obj/structure/industrial_lift/tram{
+	icon_state = "roofg";
+	dir = 4
+	},
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "mq" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
@@ -1379,6 +1864,21 @@
 "ms" = (
 /turf/closed/sea_fog,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
+=======
+"mv" = (
+/obj/structure/rack/shelf/notdense,
+/obj/item/candle/yellow{
+	pixel_x = -7;
+	pixel_y = 40
+	},
+/obj/item/candle/yellow/lit{
+	pixel_x = 8;
+	pixel_y = 40
+	},
+/turf/open/floor/ruinedwood,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "mz" = (
 /obj/machinery/light/fueled/firebowl/standing,
 /obj/effect/decal/cobbleedge{
@@ -1405,10 +1905,16 @@
 /area/rogue/ship/middeck)
 "mI" = (
 /turf/open/water/cleanshallow,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "mJ" = (
 /obj/structure/chair/bench/coucha/r,
 /obj/item/clothing/head/helmet/leather/tricorn,
+=======
+/area/rogue/indoors/town/church/chapel)
+"mJ" = (
+/obj/structure/chair/bench/coucha/r,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "mM" = (
@@ -1438,13 +1944,20 @@
 /area/rogue/ship/middeck)
 "nf" = (
 /obj/structure/closet/crate/chest/neu_iron,
+<<<<<<< HEAD
 /obj/item/paper/confession,
+=======
+>>>>>>> vanderlin/main
 /obj/item/key/church,
 /obj/item/key/church,
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/needle/thorn,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "nl" = (
 /obj/structure/rack/shelf/big{
 	icon_state = "shelf_biggest";
@@ -1485,6 +1998,19 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"no" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "plank2"
+	},
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "nt" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -1509,7 +2035,13 @@
 /obj/effect/decal/cobbleedge{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/structure/door/viewport,
+=======
+/obj/structure/door/viewport{
+	name = "Merchant Dock"
+	},
+>>>>>>> vanderlin/main
 /obj/effect/mapping_helpers/access/keyset/manor/steward,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/two,
@@ -1520,14 +2052,37 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
 "nL" = (
 /obj/effect/landmark/start/manorguardsman,
+=======
+"nF" = (
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/church)
+"nG" = (
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/inq/import)
+"nL" = (
+>>>>>>> vanderlin/main
 /obj/structure/stairs/fancy/r{
 	dir = 1;
 	icon_state = "fancy_stairs_r"
 	},
 /turf/open/floor/carpet/lord/right,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
+=======
+"nQ" = (
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+/obj/structure/fluff/railing/border{
+	dir = 9
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "nR" = (
 /obj/structure/fluff/walldeco/customflag{
 	pixel_y = 32
@@ -1537,8 +2092,15 @@
 "nS" = (
 /obj/structure/bed/inn,
 /obj/item/bedsheet/wool,
+<<<<<<< HEAD
 /obj/effect/landmark/start/gravedigger,
 /obj/structure/fluff/wallclock/r,
+=======
+/obj/structure/fluff/wallclock/r,
+/obj/effect/landmark/start/tailor{
+	dir = 8
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "oa" = (
@@ -1547,7 +2109,11 @@
 	icon_state = "borderfall"
 	},
 /turf/open/water/cleanshallow,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "oh" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "cobbleedge-sread"
@@ -1563,6 +2129,10 @@
 	dir = 1;
 	pixel_y = 14
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/adventurerlate,
+>>>>>>> vanderlin/main
 /turf/open/floor/twig,
 /area/rogue/outdoors/beach)
 "oo" = (
@@ -1572,12 +2142,15 @@
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "op" = (
 /obj/machinery/light/fueled/lanternpost{
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "oq" = (
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood,
@@ -1610,6 +2183,7 @@
 /area/rogue/outdoors/beach)
 "oB" = (
 /obj/structure/rack,
+<<<<<<< HEAD
 /obj/item/weapon/sword/sabre{
 	pixel_x = -5;
 	pixel_y = 2
@@ -1621,6 +2195,18 @@
 /obj/item/weapon/sword/sabre{
 	pixel_x = 7
 	},
+=======
+/obj/item/weapon/sword/sabre/cutlass,
+/obj/item/weapon/sword/sabre/cutlass{
+	pixel_x = 7
+	},
+/obj/item/weapon/sword/sabre/cutlass{
+	pixel_x = 15
+	},
+/obj/item/weapon/sword/sabre/cutlass{
+	pixel_y = 8
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "oF" = (
@@ -1645,6 +2231,7 @@
 	},
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "oM" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -1657,6 +2244,8 @@
 /obj/item/rope/chain,
 /turf/open/floor/ruinedwood/platform,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "oO" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -1694,6 +2283,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "pb" = (
 /obj/structure/fluff/statue/small,
 /turf/open/floor/ruinedwood/platform,
@@ -1719,6 +2309,8 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "pn" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -1729,6 +2321,7 @@
 /obj/structure/carpet/cyan,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "ps" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -1764,6 +2357,8 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "pt" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/candle/yellow,
@@ -1774,10 +2369,13 @@
 /obj/item/candle/yellow,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "pu" = (
 /obj/structure/fake_machine/atm,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "pz" = (
 /obj/item/reagent_containers/glass/mortar{
 	pixel_x = 32
@@ -1811,6 +2409,7 @@
 /area/rogue/ship/middeck)
 "pQ" = (
 /obj/structure/closet/crate/chest/wicker,
+<<<<<<< HEAD
 /obj/item/ingot/copper,
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
@@ -1822,6 +2421,15 @@
 /obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/obj/item/natural/cloth,
+/turf/open/floor/hay,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "pT" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/lord/right,
@@ -1836,9 +2444,12 @@
 /obj/item/clothing/shirt/undershirt/puritan,
 /obj/item/storage/backpack/satchel,
 /obj/item/storage/backpack/satchel,
+<<<<<<< HEAD
 /obj/item/clothing/armor/leather/jacket/silk_coat,
 /obj/item/clothing/cloak/half/colored/red,
 /obj/item/clothing/cloak/half,
+=======
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "pW" = (
@@ -1861,12 +2472,23 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "qn" = (
 /obj/structure/closet/crate/chest{
 	base_icon_state = "woodchestalt";
 	icon_state = "woodchestalt"
 	},
 /turf/open/floor/ruinedwood/spiral,
+=======
+"qm" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "qv" = (
 /obj/structure/window/openclose{
@@ -1893,6 +2515,7 @@
 	},
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "qK" = (
 /obj/structure/closet/crate/drawer/inn,
 /obj/item/key/merchant,
@@ -1904,6 +2527,8 @@
 /obj/structure/fluff/wallclock/l,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "qL" = (
 /obj/structure/carpet/purple,
 /turf/open/floor/ruinedwood/two,
@@ -1968,6 +2593,10 @@
 /obj/structure/fluff/railing/wood{
 	dir = 8
 	},
+<<<<<<< HEAD
+=======
+/obj/item/fuse/parchment,
+>>>>>>> vanderlin/main
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "rM" = (
@@ -1990,6 +2619,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "rT" = (
 /obj/structure/door,
 /obj/effect/mapping_helpers/access/keyset/town/merchant,
@@ -2019,6 +2649,14 @@
 	dir = 4
 	},
 /area/rogue/outdoors/beach)
+=======
+"rV" = (
+/obj/effect/landmark/start/shophand{
+	dir = 8
+	},
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "sc" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -2036,10 +2674,13 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "sj" = (
 /obj/structure/fake_machine/merchantvend,
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "sk" = (
 /obj/structure/bars/grille,
 /turf/open/transparent/openspace,
@@ -2056,16 +2697,23 @@
 /obj/structure/closet/crate/coffin,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "ss" = (
 /obj/structure/stairs{
 	dir = 4
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/outdoors/beach)
+=======
+"sw" = (
+/turf/closed/wall/mineral/wooddark/window,
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "sA" = (
 /obj/structure/rack/shelf/big,
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "sF" = (
 /obj/structure/bed/inn,
 /obj/structure/roguetent{
@@ -2079,6 +2727,8 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "sL" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -2118,12 +2768,21 @@
 	},
 /area/rogue/ship/middeck)
 "tb" = (
+<<<<<<< HEAD
 /obj/effect/landmark/start/butler{
 	dir = 8
 	},
 /obj/structure/bed/inn,
 /obj/item/bedsheet/fabric,
 /obj/structure/rack/shelf/notdense,
+=======
+/obj/structure/bed/inn,
+/obj/item/bedsheet/fabric,
+/obj/structure/rack/shelf/notdense,
+/obj/effect/landmark/start/wapprentice{
+	dir = 8
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "th" = (
@@ -2133,6 +2792,7 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
 "to" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -2140,6 +2800,8 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "tq" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -2152,6 +2814,7 @@
 /obj/structure/closet/crate/chest/crate,
 /obj/item/gem,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "tu" = (
 /obj/structure/table/wood{
@@ -2189,6 +2852,9 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "tB" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
@@ -2214,8 +2880,13 @@
 /obj/item/clothing/cloak/stabard/templar/abyssor{
 	pixel_x = 15
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/churchrough,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "tM" = (
 /obj/machinery/light/fueled/hearth,
 /obj/item/cooking/pan,
@@ -2226,12 +2897,25 @@
 /obj/item/ingot/blacksteel,
 /obj/item/ingot/blacksteel,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "tT" = (
 /turf/open/floor/carpet/lord/right{
 	dir = 1
 	},
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
+=======
+"tY" = (
+/obj/effect/landmark/start/jester{
+	dir = 4
+	},
+/turf/closed/wall/mineral/wooddark,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "ud" = (
 /obj/effect/decal/cobbleedge{
 	dir = 9
@@ -2293,11 +2977,14 @@
 /obj/item/clothing/armor/gambeson,
 /obj/item/clothing/armor/gambeson,
 /obj/item/clothing/armor/gambeson,
+<<<<<<< HEAD
 /obj/item/clothing/armor/chainmail,
 /obj/item/clothing/armor/chainmail,
 /obj/item/clothing/armor/chainmail,
 /obj/item/clothing/armor/chainmail,
 /obj/item/clothing/armor/chainmail,
+=======
+>>>>>>> vanderlin/main
 /turf/open/floor/twig,
 /area/rogue/ship/middeck)
 "uv" = (
@@ -2307,10 +2994,16 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "uw" = (
+<<<<<<< HEAD
 /obj/structure/door/stone{
 	lockid = "confession"
 	},
 /obj/effect/mapping_helpers/access/locker,
+=======
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/stone,
+/obj/effect/mapping_helpers/access/keyset/church/inquisition,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
 "uB" = (
@@ -2326,7 +3019,11 @@
 	dir = 8;
 	icon_state = "border"
 	},
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost,
+=======
+/obj/machinery/light/fueled/lanternpost/fixed,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "uG" = (
@@ -2337,6 +3034,7 @@
 /area/rogue/ship/middeck)
 "uK" = (
 /turf/open/floor/tile/masonic/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "uM" = (
 /obj/structure/closet/crate/drawer/inn,
@@ -2346,6 +3044,12 @@
 /obj/item/key/courtphys{
 	pixel_y = 9
 	},
+=======
+/area/rogue/indoors/town/church/chapel)
+"uM" = (
+/obj/structure/closet/crate/drawer/inn,
+/obj/item/needle,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "uN" = (
@@ -2361,7 +3065,10 @@
 /obj/structure/throne{
 	pixel_x = -32
 	},
+<<<<<<< HEAD
 /obj/effect/landmark/start/jester,
+=======
+>>>>>>> vanderlin/main
 /obj/structure/fake_machine/titan{
 	density = 0;
 	pixel_y = 32
@@ -2377,7 +3084,11 @@
 "uX" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "uY" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -2394,7 +3105,17 @@
 "uZ" = (
 /obj/effect/landmark/start/monk,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+"vc" = (
+/obj/effect/landmark/tram/queued_path/cargo_exit{
+	next_path_id = "cargo_map_exit"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "ve" = (
 /obj/effect/landmark/start/mercenarylate,
 /turf/open/floor/ruinedwood/spiral,
@@ -2416,6 +3137,10 @@
 	pixel_y = 36
 	},
 /obj/structure/rack/shelf/notdense,
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/clinicapprentice,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "vn" = (
@@ -2450,6 +3175,16 @@
 /obj/structure/roguetent,
 /turf/open/floor/hay,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"vv" = (
+/obj/structure/door/stone{
+	lockid = "church";
+	name = "Church"
+	},
+/turf/open/floor/churchmarble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "vx" = (
 /obj/structure/fluff/walldeco/painting/queen{
 	pixel_x = 32
@@ -2467,7 +3202,11 @@
 	},
 /obj/item/coin/gold/pile,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "vC" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -2501,6 +3240,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "vJ" = (
 /obj/structure/closet/crate/chest,
 /obj/structure/floordoor{
@@ -2508,6 +3248,8 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "vQ" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8
@@ -2515,6 +3257,10 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/item/fuse/parchment,
+>>>>>>> vanderlin/main
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "vU" = (
@@ -2547,12 +3293,15 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "wg" = (
 /obj/structure/fake_machine/mail/r{
 	pixel_y = 32
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "wh" = (
 /obj/structure/fluff/clock,
 /turf/open/floor/carpet/lord/left{
@@ -2564,12 +3313,17 @@
 	pixel_y = 12;
 	density = 0
 	},
+<<<<<<< HEAD
 /obj/item/paper/confession,
 /obj/item/paper/confession,
 /obj/item/paper/confession,
 /obj/item/paper/confession,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/inq/import)
+>>>>>>> vanderlin/main
 "wv" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/closet/crate/chest/old_crate,
@@ -2588,6 +3342,10 @@
 	dir = 10
 	},
 /obj/structure/fake_machine/steward,
+<<<<<<< HEAD
+=======
+/obj/item/key/steward,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "wA" = (
@@ -2597,9 +3355,12 @@
 /obj/item/weapon/mace/woodclub/train_sword,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "wC" = (
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "wD" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -2607,14 +3368,35 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "wE" = (
+<<<<<<< HEAD
+=======
+/obj/structure/table/wood/plain{
+	layer = 2
+	},
+>>>>>>> vanderlin/main
 /obj/structure/door/weak/bolt/shutter{
 	dir = 2
 	},
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "wH" = (
 /obj/structure/rack,
 /obj/item/weapon/axe/steel,
+=======
+"wF" = (
+/obj/structure/bed/inn,
+/obj/item/bedsheet/cloth,
+/obj/structure/rack/shelf/notdense,
+/obj/structure/roguetent{
+	layer = 8
+	},
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/middeck)
+"wH" = (
+/obj/structure/rack,
+>>>>>>> vanderlin/main
 /obj/item/weapon/axe/battle,
 /obj/machinery/light/fueled/torchholder/l,
 /obj/item/clothing/head/helmet/leather/tricorn,
@@ -2627,6 +3409,7 @@
 	icon_state = "borderfall"
 	},
 /obj/structure/fluff/railing/wood,
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
@@ -2636,6 +3419,18 @@
 /obj/item/bedsheet/wool,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/light/fueled/lanternpost/fixed,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+"wU" = (
+/obj/effect/landmark/start/orthodoxist,
+/obj/structure/bed/inn,
+/obj/item/bedsheet/wool,
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/inq/import)
+>>>>>>> vanderlin/main
 "wZ" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
@@ -2675,6 +3470,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "xn" = (
+<<<<<<< HEAD
 /obj/item/candle/yellow/lit{
 	pixel_x = 8;
 	pixel_y = 40
@@ -2686,6 +3482,11 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/artificer_table,
+/turf/open/floor/hay,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "xu" = (
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
@@ -2722,12 +3523,15 @@
 /obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
 "xJ" = (
 /obj/structure/door/violet,
 /obj/effect/mapping_helpers/access/keyset/town/merchant,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "xM" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -2752,11 +3556,14 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "xW" = (
 /turf/closed/wall/mineral/decostone/end{
 	dir = 8
 	},
 /area/rogue/ship/middeck)
+=======
+>>>>>>> vanderlin/main
 "yd" = (
 /obj/structure/fluff/wallclock/r,
 /turf/open/floor/ruinedwood/two,
@@ -2836,10 +3643,13 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "yO" = (
 /obj/item/fake_machine/merchant,
 /turf/open/floor/carpet/purple,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "yX" = (
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
@@ -2895,7 +3705,11 @@
 	pixel_y = 29
 	},
 /turf/open/water/cleanshallow,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "zT" = (
 /obj/structure/chair/wood/alt/fancy{
 	dir = 8
@@ -2906,8 +3720,13 @@
 /obj/structure/bed/shit,
 /obj/item/bedsheet/cloth,
 /obj/effect/landmark/start/churchling,
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "zY" = (
 /obj/structure/rack/shelf/notdense,
 /obj/item/weapon/polearm/spear{
@@ -2933,6 +3752,13 @@
 	},
 /turf/open/floor/twig,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"Ac" = (
+/obj/effect/landmark/start/innkeep,
+/turf/open/floor/herringbone,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "Ad" = (
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/ruinedwood/spiral,
@@ -2948,13 +3774,27 @@
 /obj/item/gem/blue,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "Ah" = (
 /obj/effect/landmark/start/tailor{
 	dir = 8
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
+=======
+"Aj" = (
+/obj/structure/fluff/railing/border{
+	dir = 9
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Ak" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/closet/crate/chest/wicker,
@@ -3007,6 +3847,7 @@
 	},
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "AG" = (
 /obj/structure/lever{
 	redstone_id = "droploot"
@@ -3017,6 +3858,22 @@
 /obj/structure/bed/hay,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+=======
+"AT" = (
+/obj/structure/bed/hay,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/church)
+"AU" = (
+/obj/structure/fluff/statue/small{
+	pixel_y = 11;
+	pixel_x = -4
+	},
+/obj/structure/industrial_lift/tram{
+	icon_state = "plank2"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "AZ" = (
 /obj/structure/closet/crate/chest/neu_fancy,
 /obj/item/instrument/flute,
@@ -3039,9 +3896,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
 "Bg" = (
 /turf/closed/wall/mineral/decostone/end,
 /area/rogue/ship/middeck)
+=======
+>>>>>>> vanderlin/main
 "Bi" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -3076,7 +3936,10 @@
 /turf/open/water/bath,
 /area/rogue/ship/middeck)
 "BG" = (
+<<<<<<< HEAD
 /obj/item/bedsheet/double_pelt,
+=======
+>>>>>>> vanderlin/main
 /obj/structure/bed/inn/double,
 /obj/effect/landmark/start/steward,
 /turf/open/floor/ruinedwood/two,
@@ -3127,7 +3990,13 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "Cj" = (
+<<<<<<< HEAD
 /obj/structure/door,
+=======
+/obj/structure/door{
+	name = "Barracks"
+	},
+>>>>>>> vanderlin/main
 /obj/effect/mapping_helpers/access/keyset/garrison/general,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/two,
@@ -3153,6 +4022,7 @@
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/shipbrig)
+<<<<<<< HEAD
 "Cp" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/hardtack,
@@ -3172,6 +4042,16 @@
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+"Cv" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/item/tent_kit,
+/turf/open/floor/hay,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "Cw" = (
 /obj/structure/fluff/clock,
 /turf/open/floor/ruinedwood/spiral,
@@ -3198,10 +4078,13 @@
 	},
 /turf/open/water/swamp,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "CC" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "CE" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
@@ -3242,12 +4125,25 @@
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "CS" = (
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
 "CY" = (
 /obj/effect/landmark/start/gravedigger{
 	dir = 4
 	},
+=======
+/obj/structure/mannequin/male{
+	dir = 8;
+	pixel_y = 0;
+	pixel_x = 12;
+	density = 0
+	},
+/turf/open/floor/hay,
+/area/rogue/ship/topdeck)
+"CY" = (
+/obj/effect/landmark/start/clinicapprentice,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "Da" = (
@@ -3285,6 +4181,15 @@
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
+=======
+"Dt" = (
+/obj/effect/landmark/tram/queued_path/cargo_pre_enter{
+	next_path_id = "cargo_stop"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Du" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall"
@@ -3292,6 +4197,13 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
+=======
+"Dv" = (
+/obj/machinery/light/fueled/wallfire/candle,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/nobledeck)
+>>>>>>> vanderlin/main
 "Dw" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -3314,12 +4226,17 @@
 /turf/closed/wall/mineral/wooddark/slitted,
 /area/rogue/ship/middeck)
 "DP" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
 /obj/structure/ladder,
 /turf/open/floor/woodturned,
 /area/rogue/ship/topdeck)
+=======
+/turf/closed/wall/mineral/decostone,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "DQ" = (
 /obj/effect/landmark/ship_marker,
 /turf/closed/sea_fog,
@@ -3368,12 +4285,21 @@
 "Ed" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/l,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "Ee" = (
 /obj/machinery/light/fueled/wallfire/candle/blue,
 /obj/structure/fluff/psycross/copper,
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+"Ee" = (
+/obj/machinery/light/fueled/wallfire/candle/blue,
+/obj/structure/fluff/psycross/copper,
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Em" = (
 /obj/machinery/light/fueled/oven/east,
 /obj/structure/rack/shelf,
@@ -3406,6 +4332,10 @@
 	dir = 1;
 	pixel_y = 14
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/adventurerlate,
+>>>>>>> vanderlin/main
 /turf/open/floor/hay,
 /area/rogue/outdoors/beach)
 "Eq" = (
@@ -3417,7 +4347,11 @@
 	pixel_y = 29
 	},
 /turf/open/water/cleanshallow,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Ew" = (
 /obj/structure/fluff/walldeco/bigpainting/lake{
 	pixel_x = 0
@@ -3454,6 +4388,14 @@
 /obj/item/clothing/armor/leather/jacket/sea,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"ET" = (
+/obj/structure/table/wood/crafted,
+/obj/item/storage/crucible/random,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "EX" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -3511,10 +4453,17 @@
 /turf/open/floor/hay,
 /area/rogue/ship/middeck)
 "Fx" = (
+<<<<<<< HEAD
 /obj/structure/stairs/stone,
 /obj/machinery/light/fueled/wallfire/candle/blue/r,
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/light/fueled/wallfire/candle/blue/r,
+/obj/structure/stairs/stone/church,
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Fz" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -3529,10 +4478,22 @@
 "FD" = (
 /obj/structure/door/fancy{
 	lockid = "royal";
+<<<<<<< HEAD
 	name = "Lord's Apartment"
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+=======
+	name = "Captain's Chamber"
+	},
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/nobledeck)
+"FF" = (
+/obj/machinery/light/fueled/hearth,
+/obj/item/reagent_containers/glass/bucket/pot/copper,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "FK" = (
 /obj/structure/window/openclose{
 	dir = 1;
@@ -3540,6 +4501,23 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
+=======
+"FN" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
+	},
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/item/tent_kit,
+/turf/open/floor/rooftop/green{
+	dir = 4
+	},
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "FO" = (
 /obj/structure/door/weak/bolt{
 	dir = 1
@@ -3558,9 +4536,21 @@
 	dir = 10;
 	icon_state = "cobbleedge-w"
 	},
+<<<<<<< HEAD
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/nightmaiden{
 	dir = 8
+=======
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "tablewood1"
+	},
+/obj/item/candle/yellow/lit{
+	pixel_y = 5
+	},
+/obj/item/candle/yellow/lit{
+	pixel_x = 8
+>>>>>>> vanderlin/main
 	},
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
@@ -3600,6 +4590,10 @@
 	},
 /obj/item/book/bibble,
 /obj/item/key/lord,
+<<<<<<< HEAD
+=======
+/obj/machinery/light/fueled/wallfire/candle/l,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "Gh" = (
@@ -3651,8 +4645,13 @@
 /obj/structure/chair/bench/church{
 	dir = 4
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "GF" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -3666,15 +4665,35 @@
 /obj/effect/landmark/start/guardsman,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "GI" = (
 /obj/effect/landmark/start/priest,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+=======
+"GH" = (
+/turf/closed/wall/mineral/wooddark,
+/area/rogue/indoors/town/church)
+"GI" = (
+/obj/effect/landmark/start/priest,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "GK" = (
 /obj/structure/bed/shit,
 /obj/structure/fluff/walldeco/chains,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/shipbrig)
+<<<<<<< HEAD
+=======
+"GQ" = (
+/obj/effect/landmark/tram/queued_path{
+	next_path_id = "cargo_map_enter";
+	platform_code = "cargo_return_2"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "GR" = (
 /obj/structure/rack,
 /obj/item/weapon/sword/scimitar/messer,
@@ -3685,8 +4704,11 @@
 /obj/item/weapon/sword/scimitar/messer,
 /obj/item/clothing/pants/chainlegs/iron,
 /obj/item/clothing/pants/chainlegs/iron,
+<<<<<<< HEAD
 /obj/item/clothing/pants/chainlegs/kilt,
 /obj/item/clothing/pants/chainlegs/kilt,
+=======
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
 "GS" = (
@@ -3694,7 +4716,11 @@
 /obj/item/scomstone,
 /obj/item/weapon/whip/antique,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/inq/import)
+>>>>>>> vanderlin/main
 "GU" = (
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
@@ -3759,8 +4785,23 @@
 /area/rogue/ship/middeck)
 "HQ" = (
 /obj/structure/table/wood/crafted,
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+=======
+/obj/item/storage/crucible/random{
+	pixel_y = 2;
+	pixel_x = 5
+	},
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+"HS" = (
+/obj/structure/plank{
+	icon_state = "plank"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Ia" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -3785,11 +4826,18 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /obj/item/plate,
 /obj/item/plate,
+<<<<<<< HEAD
+=======
+/obj/item/storage/messkit,
+/obj/item/storage/messkit,
+/obj/item/storage/messkit,
+>>>>>>> vanderlin/main
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "It" = (
 /turf/closed/wall/mineral/wooddark/end,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "Iv" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -3798,6 +4846,8 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Ix" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/bed/shit,
@@ -3805,6 +4855,20 @@
 /obj/structure/carpet/red,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"IA" = (
+/obj/structure/industrial_lift/tram,
+/obj/structure/stairs{
+	dir = 4
+	},
+/obj/structure/fluff/railing/border{
+	dir = 8;
+	icon_state = "border"
+	},
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "II" = (
 /turf/closed/wall/mineral/wooddark/vertical,
 /area/rogue/ship/nobledeck)
@@ -3828,12 +4892,15 @@
 	dir = 4
 	},
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "IO" = (
 /obj/structure/floordoor{
 	redstone_id = "droploot"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "IT" = (
 /obj/item/ore/coal,
 /obj/effect/landmark/start/mercenary,
@@ -3841,12 +4908,18 @@
 /area/rogue/ship/middeck)
 "IV" = (
 /obj/structure/door/viewport{
+<<<<<<< HEAD
 	dir = 1
+=======
+	dir = 1;
+	name = "Merchant Dock"
+>>>>>>> vanderlin/main
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/steward,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/chevron,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "IW" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
@@ -3857,6 +4930,8 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "IY" = (
 /obj/machinery/light/fueled/lanternpost{
 	pixel_x = 16;
@@ -3865,12 +4940,15 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "Jc" = (
 /obj/effect/landmark/start/shophand{
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Je" = (
 /obj/structure/bed/shit,
 /turf/open/floor/ruinedwood,
@@ -3882,6 +4960,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "Jk" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -3898,6 +4977,8 @@
 	dir = 4
 	},
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Jt" = (
 /obj/structure/fluff/railing/border,
 /obj/item/rope,
@@ -3905,11 +4986,19 @@
 /area/rogue/ship/topdeck)
 "Jv" = (
 /obj/structure/closet/crate/crafted_closet/lord,
+<<<<<<< HEAD
 /obj/item/clothing/armor/brigandine/coatplates,
 /obj/item/clothing/head/helmet/heavy/zizo,
 /obj/item/weapon/sword/long/judgement,
 /obj/item/clothing/gloves/angle,
 /obj/item/clothing/wrists/bracers/leather,
+=======
+/obj/item/storage/messkit,
+/obj/item/clothing/head/helmet/leather/tricorn,
+/obj/item/clothing/cloak/half,
+/obj/item/clothing/cloak/half/colored/red,
+/obj/item/clothing/armor/leather/jacket/silk_coat,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "Jx" = (
@@ -3933,6 +5022,7 @@
 	pixel_x = -8;
 	pixel_y = 10
 	},
+<<<<<<< HEAD
 /obj/item/reagent_containers/glass/bottle{
 	layer = 5;
 	pixel_x = -8;
@@ -3941,6 +5031,8 @@
 /obj/item/key/courtphys,
 /obj/item/key/courtphys,
 /obj/item/key/courtphys,
+=======
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "JF" = (
@@ -3948,6 +5040,7 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/shipbrig)
 "JI" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	dir = 8;
 	icon_state = "border"
@@ -3963,19 +5056,28 @@
 /obj/item/candle/yellow/lit{
 	pixel_x = 8
 	},
+=======
+>>>>>>> vanderlin/main
 /obj/effect/decal/cobbleedge{
 	dir = 10;
 	icon_state = "cobbleedge-w"
 	},
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/two,
+=======
+/turf/closed/wall/mineral/wooddark,
+>>>>>>> vanderlin/main
 /area/rogue/ship/middeck)
 "JJ" = (
 /turf/open/floor/twig,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "JO" = (
 /obj/structure/fluff/statue/small,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "JP" = (
 /obj/item/reagent_containers/glass/cup/silver{
 	pixel_x = -5;
@@ -3994,6 +5096,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "JT" = (
 /obj/structure/table/wood{
 	icon_state = "largetable"
@@ -4025,13 +5128,18 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "JU" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall"
 	},
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost{
 	dir = 1
 	},
+=======
+>>>>>>> vanderlin/main
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
@@ -4041,6 +5149,12 @@
 /obj/structure/cannon{
 	pixel_y = -16
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/light/fueled/lanternpost/fixed{
+	dir = 1
+	},
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "JW" = (
@@ -4049,6 +5163,10 @@
 /obj/structure/fluff/walldeco/painting/queen{
 	pixel_x = -32
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/lord,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "JZ" = (
@@ -4057,11 +5175,24 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
+=======
+"Kc" = (
+/obj/effect/landmark/tram/queued_path/cargo_map_exit{
+	next_path_id = "cargo_return_1"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Kd" = (
 /obj/structure/fluff/railing/border,
 /obj/effect/decal/cobbleedge{
 	icon_state = "cobbleedge-sread"
 	},
+<<<<<<< HEAD
+=======
+/obj/structure/chair/stool,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "Ki" = (
@@ -4078,11 +5209,18 @@
 /obj/structure/window,
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "Kr" = (
 /obj/structure/ladder,
 /turf/open/floor/rooftop/green{
 	dir = 4
 	},
+=======
+"Kp" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "Ks" = (
 /obj/structure/bars,
@@ -4114,7 +5252,11 @@
 /area/rogue/ship/middeck)
 "Kw" = (
 /obj/structure/closet/crate/coffin,
+<<<<<<< HEAD
 /turf/open/floor/church,
+=======
+/turf/open/floor/cobble,
+>>>>>>> vanderlin/main
 /area/rogue/ship/middeck)
 "KC" = (
 /obj/structure/fluff/railing/border{
@@ -4148,6 +5290,10 @@
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = -32
 	},
+<<<<<<< HEAD
+=======
+/obj/item/tent_kit,
+>>>>>>> vanderlin/main
 /turf/open/floor/rooftop/green{
 	dir = 4
 	},
@@ -4198,6 +5344,18 @@
 	dir = 8
 	},
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"KZ" = (
+/obj/structure/fluff/railing/border{
+	dir = 1;
+	icon_state = "border"
+	},
+/obj/structure/fluff/railing/border,
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "La" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -4219,10 +5377,13 @@
 "Li" = (
 /turf/open/water/ocean/deep,
 /area/rogue/outdoors/beach)
+<<<<<<< HEAD
 "Ln" = (
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Lp" = (
 /obj/structure/fermentation_keg,
 /turf/open/floor/hay,
@@ -4252,19 +5413,25 @@
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "LE" = (
+<<<<<<< HEAD
 /obj/effect/landmark/start/manorguardsman,
+=======
+>>>>>>> vanderlin/main
 /obj/structure/stairs/fancy/l{
 	dir = 1;
 	icon_state = "fancy_stairs_l"
 	},
 /turf/open/floor/carpet/lord/left,
 /area/rogue/ship/nobledeck)
+<<<<<<< HEAD
 "LI" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood3"
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "LJ" = (
 /turf/closed/wall/mineral/wooddark/end{
 	dir = 1
@@ -4276,21 +5443,33 @@
 	dir = 4
 	},
 /turf/open/water/cleanshallow,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "LV" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
 	},
 /obj/item/reagent_containers/food/snacks/smallrat,
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "LX" = (
 /obj/structure/fake_machine/mail,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "LY" = (
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Ma" = (
 /obj/structure/bars,
 /obj/structure/window/openclose{
@@ -4337,7 +5516,11 @@
 	},
 /obj/structure/table/wood/fine,
 /turf/open/floor/tile/checker,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "MF" = (
 /obj/structure/bed/inn,
 /obj/effect/decal/cobbleedge{
@@ -4356,6 +5539,7 @@
 	},
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "MQ" = (
 /obj/structure/door/viewport{
@@ -4365,6 +5549,22 @@
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+"MQ" = (
+/obj/structure/door/viewport{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/access/locker,
+/obj/effect/mapping_helpers/access/keyset/town/apothecary,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+"MU" = (
+/obj/machinery/light/fueled/torchholder/r,
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Na" = (
 /obj/structure/window,
 /obj/structure/roguetent,
@@ -4381,6 +5581,7 @@
 /obj/effect/landmark/start/orphanlate,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "Nl" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -4389,6 +5590,16 @@
 	dir = 5
 	},
 /turf/open/floor/ruinedwood/spiral,
+=======
+"Nk" = (
+/obj/structure/fluff/railing/border,
+/obj/structure/fluff/railing/border{
+	dir = 8;
+	icon_state = "border"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "Nt" = (
 /turf/closed/wall/mineral/wooddark/end,
@@ -4442,11 +5653,22 @@
 /area/rogue/ship/middeck)
 "NV" = (
 /obj/structure/door/viewport{
+<<<<<<< HEAD
 	dir = 1
+=======
+	dir = 1;
+	name = "Apothecary"
+>>>>>>> vanderlin/main
 	},
 /obj/effect/mapping_helpers/access/keyset/town/apothecary,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"NX" = (
+/turf/open/floor/tile/checker,
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "Ob" = (
 /obj/structure/chair/wood/alt/fancy,
 /obj/structure/fluff/walldeco/customflag{
@@ -4480,12 +5702,21 @@
 "Ol" = (
 /obj/structure/fluff/walldeco/psybanner,
 /turf/closed/wall/mineral/wooddark,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "Om" = (
 /turf/closed/wall/mineral/decostone/end{
 	dir = 4
 	},
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+"Om" = (
+/obj/structure/chair/stool,
+/obj/machinery/light/fueled/wallfire/candle/blue/l,
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Op" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -4533,11 +5764,15 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/cup/golden,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "OB" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "OF" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/weapon/sword/long/exe/cloth,
@@ -4598,6 +5833,15 @@
 /obj/item/candle/yellow,
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"OW" = (
+/obj/structure/industrial_lift/tram{
+	fake = 1
+	},
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "OY" = (
 /obj/structure/door{
 	lockid = "roomiv";
@@ -4609,7 +5853,11 @@
 "OZ" = (
 /obj/structure/carpet/green,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/inq/import)
+>>>>>>> vanderlin/main
 "Pb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -4628,11 +5876,16 @@
 	},
 /area/rogue/ship/middeck)
 "Pg" = (
+<<<<<<< HEAD
 /obj/structure/door/fancy{
 	name = "Hand's Chambers"
 	},
 /obj/effect/mapping_helpers/access/keyset/manor/hand,
 /obj/effect/mapping_helpers/access/locker,
+=======
+/obj/effect/mapping_helpers/access/locker,
+/obj/structure/door/fancy,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "Pl" = (
@@ -4643,9 +5896,19 @@
 /obj/item/candle/yellow,
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "Pp" = (
 /obj/structure/ladder,
 /turf/open/floor/ruinedwood/spiral,
+=======
+"Ps" = (
+/obj/structure/fluff/railing/border{
+	dir = 4;
+	icon_state = "border"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "Pt" = (
 /obj/structure/fluff/railing/border{
@@ -4657,6 +5920,23 @@
 "Pv" = (
 /turf/closed/wall/mineral/wooddark,
 /area/rogue/ship/shipbrig)
+<<<<<<< HEAD
+=======
+"PJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/obj/structure/industrial_lift/tram,
+/obj/structure/fluff/railing/border{
+	dir = 9
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"PL" = (
+/obj/structure/chair/stool,
+/turf/open/floor/churchmarble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "PN" = (
 /obj/structure/stairs{
 	dir = 4
@@ -4684,8 +5964,24 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+=======
+/obj/item/fuse/parchment,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+"Qf" = (
+/obj/structure/rack/shelf/notdense{
+	pixel_y = 23
+	},
+/obj/structure/table/wood{
+	icon_state = "largetable"
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Qg" = (
 /obj/machinery/light/fueled/hearth,
 /obj/item/reagent_containers/glass/bucket/pot,
@@ -4698,6 +5994,7 @@
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "Qm" = (
 /obj/structure/table/wood,
 /obj/item/coin/silver/pile,
@@ -4705,11 +6002,17 @@
 /obj/item/weapon/knife/dagger/navaja,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Qx" = (
 /obj/structure/bed/inn,
 /obj/item/bedsheet/fabric,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "QB" = (
 /obj/structure/roguetent,
 /turf/open/floor/rooftop/green{
@@ -4763,6 +6066,10 @@
 "QS" = (
 /obj/structure/door/window,
 /obj/effect/mapping_helpers/access/keyset/manor/general,
+<<<<<<< HEAD
+=======
+/obj/effect/mapping_helpers/access/locker,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/nobledeck)
 "QU" = (
@@ -4818,12 +6125,17 @@
 /turf/open/floor/carpet/lord/left,
 /area/rogue/ship/nobledeck)
 "Rw" = (
+<<<<<<< HEAD
 /obj/structure/fluff/railing/border{
 	layer = 2.65
 	},
 /obj/structure/ladder,
 /turf/open/floor/woodturned,
 /area/rogue/ship/topdeck)
+=======
+/turf/closed/wall/mineral/wooddark,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Rz" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -4834,10 +6146,18 @@
 	pixel_y = 14
 	},
 /obj/structure/fluff/nest,
+<<<<<<< HEAD
 /turf/open/floor/hay,
 /area/rogue/outdoors/beach)
 "RF" = (
 /obj/structure/fermentation_keg/water,
+=======
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/hay,
+/area/rogue/outdoors/beach)
+"RF" = (
+/obj/machinery/tanningrack,
+>>>>>>> vanderlin/main
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
 "RH" = (
@@ -4858,6 +6178,14 @@
 /obj/structure/meathook,
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"RL" = (
+/obj/machinery/light/fueled/wallfire/candle/r,
+/obj/structure/industrial_lift/tram,
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "RO" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -4948,7 +6276,11 @@
 /obj/item/weapon/polearm/woodstaff/aries,
 /obj/item/scomstone,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "Ss" = (
 /turf/open/floor/rooftop/green{
 	dir = 8
@@ -4965,15 +6297,35 @@
 /obj/item/needle/thorn,
 /obj/item/needle/thorn,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+>>>>>>> vanderlin/main
 "Sy" = (
 /obj/structure/table/wood{
 	layer = 2.8
 	},
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "SB" = (
 /obj/machinery/light/fueled/smelter,
+=======
+/obj/item/key/garrison,
+/obj/item/key/garrison{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/key/garrison{
+	pixel_y = 4;
+	pixel_x = -9
+	},
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+"SB" = (
+/obj/machinery/light/fueled/smelter/great,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "SC" = (
@@ -4990,7 +6342,11 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/nobledeck)
 "SO" = (
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost,
+=======
+/obj/machinery/light/fueled/lanternpost/fixed,
+>>>>>>> vanderlin/main
 /turf/open/floor/hay,
 /area/rogue/ship/topdeck)
 "SP" = (
@@ -4998,6 +6354,16 @@
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"SR" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "roofg";
+	dir = 4
+	},
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "ST" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -5012,6 +6378,7 @@
 "Tb" = (
 /obj/structure/fermentation_keg/random/water,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
 "Te" = (
 /obj/structure/chair/bench/church/r{
@@ -5019,6 +6386,13 @@
 	},
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church)
+"Te" = (
+/obj/structure/chair/stool,
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Tg" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall"
@@ -5041,6 +6415,7 @@
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
 "Ts" = (
+<<<<<<< HEAD
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
 	dir = 4
@@ -5055,6 +6430,10 @@
 	},
 /turf/open/floor/churchmarble,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/churchmarble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Tv" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -5070,6 +6449,7 @@
 "Tx" = (
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
 "TA" = (
 /obj/structure/bed/inn,
 /obj/structure/roguetent{
@@ -5080,6 +6460,36 @@
 	pixel_y = 32
 	},
 /turf/open/floor/ruinedwood/spiral,
+=======
+"TE" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall"
+	},
+/obj/item/tent_kit,
+/turf/open/floor/rooftop/green{
+	dir = 4
+	},
+/area/rogue/ship/middeck)
+"TF" = (
+/obj/effect/landmark/tram/queued_path{
+	next_path_id = "cargo_return_2";
+	platform_code = "cargo_return_1"
+	},
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"TG" = (
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+"TK" = (
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/obj/structure/fluff/railing/border,
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+>>>>>>> vanderlin/main
 /area/rogue/outdoors/beach)
 "TN" = (
 /turf/open/transparent/openspace,
@@ -5113,6 +6523,7 @@
 	icon_state = "longtable"
 	},
 /obj/item/reagent_containers/glass/bottle/beer/hagwoodbitter,
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
 "Uj" = (
@@ -5129,6 +6540,10 @@
 /obj/item/reagent_containers/food/snacks/cooked/coppiette,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+/turf/open/floor/churchrough,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "Uq" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border{
@@ -5154,20 +6569,41 @@
 /obj/structure/closet/crate/chest/gold,
 /obj/item/ingot/silver,
 /obj/item/ingot/silver,
+<<<<<<< HEAD
 /obj/item/ingot/silver,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/tile/checker,
 /area/rogue/ship/middeck)
+=======
+/obj/machinery/light/fueled/wallfire/candle/r,
+/turf/open/floor/tile/checker,
+/area/rogue/indoors/town/vault)
+>>>>>>> vanderlin/main
 "Uu" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /obj/structure/closet/crate/chest/old_crate,
+<<<<<<< HEAD
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
+=======
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/reagent_containers/powder/blastpowder,
+/obj/item/reagent_containers/powder/blastpowder,
+/obj/item/reagent_containers/powder/blastpowder,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "Uv" = (
@@ -5183,6 +6619,10 @@
 /obj/structure/fake_machine/mail{
 	mailtag = "Guard Captain"
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/dungeoneer,
+>>>>>>> vanderlin/main
 /turf/open/floor/wood,
 /area/rogue/ship/middeck)
 "UF" = (
@@ -5221,6 +6661,14 @@
 	dir = 1
 	},
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
+=======
+"UV" = (
+/obj/structure/rack/shelf/notdense,
+/obj/structure/industrial_lift/tram,
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "UX" = (
 /obj/structure/rack/shelf/big{
 	icon_state = "shelf_biggest";
@@ -5251,6 +6699,13 @@
 	},
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"UY" = (
+/obj/structure/industrial_lift/tram,
+/turf/open/water/ocean/deep,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "UZ" = (
 /obj/item/rope,
 /obj/structure/fluff/railing/border{
@@ -5310,8 +6765,18 @@
 /obj/structure/fluff/railing/wood{
 	dir = 8
 	},
+<<<<<<< HEAD
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+=======
+/obj/item/fuse/parchment,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+"Vp" = (
+/obj/effect/landmark/tram/queued_path/cargo_stop,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Vs" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -5321,7 +6786,11 @@
 	dir = 1;
 	icon_state = "borderfall"
 	},
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost{
+=======
+/obj/machinery/light/fueled/lanternpost/fixed{
+>>>>>>> vanderlin/main
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/spiral,
@@ -5330,8 +6799,13 @@
 /obj/effect/landmark/start/churchling{
 	dir = 8
 	},
+<<<<<<< HEAD
 /turf/open/floor/church,
 /area/rogue/ship/middeck)
+=======
+/turf/open/floor/cobble,
+/area/rogue/indoors/town/church/chapel)
+>>>>>>> vanderlin/main
 "VA" = (
 /obj/structure/chair/wood/alt/chair_noble{
 	dir = 4;
@@ -5379,9 +6853,12 @@
 /area/rogue/ship/middeck)
 "VL" = (
 /obj/structure/fluff/railing/border{
+<<<<<<< HEAD
 	dir = 1
 	},
 /obj/structure/fluff/railing/border{
+=======
+>>>>>>> vanderlin/main
 	dir = 4
 	},
 /obj/structure/fluff/railing/border{
@@ -5393,6 +6870,14 @@
 /obj/structure/fluff/railing/wood{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/structure/fluff/railing/border{
+	dir = 9;
+	icon_state = "border";
+	layer = 2.7
+	},
+>>>>>>> vanderlin/main
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "VO" = (
@@ -5410,18 +6895,25 @@
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
 "VS" = (
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost,
+=======
+/obj/machinery/light/fueled/lanternpost/fixed,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "VU" = (
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "VZ" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
 	},
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/outdoors/beach)
+=======
+>>>>>>> vanderlin/main
 "Wi" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -5440,7 +6932,11 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "Wr" = (
+<<<<<<< HEAD
 /obj/machinery/light/fueled/lanternpost{
+=======
+/obj/machinery/light/fueled/lanternpost/fixed{
+>>>>>>> vanderlin/main
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/spiral,
@@ -5451,16 +6947,34 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"Wv" = (
+/obj/effect/landmark/start/feldsher,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "Wx" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/landmark/start/cook,
+>>>>>>> vanderlin/main
 /turf/open/floor/cobble,
 /area/rogue/ship/middeck)
 "WB" = (
 /obj/structure/chair/wood,
 /turf/open/floor/herringbone,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"WG" = (
+/obj/structure/ship_wheel,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "WO" = (
 /obj/structure/stairs{
 	dir = 4
@@ -5498,9 +7012,17 @@
 	},
 /area/rogue/ship/middeck)
 "Xa" = (
+<<<<<<< HEAD
 /obj/effect/landmark/start/lord,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+=======
+/obj/effect/landmark/start/innkeep_son{
+	dir = 4
+	},
+/turf/open/floor/herringbone,
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "Xb" = (
 /obj/item/candle/yellow/lit{
 	pixel_x = 8;
@@ -5537,10 +7059,26 @@
 /area/rogue/ship/topdeck)
 "Xu" = (
 /obj/structure/door/window{
+<<<<<<< HEAD
 	lockid = "physician"
 	},
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+=======
+	name = "Treatment Center"
+	},
+/obj/effect/mapping_helpers/access/keyset/town/clinic,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+"XA" = (
+/obj/structure/fluff/railing/border,
+/obj/item/tent_kit,
+/turf/open/floor/rooftop/green{
+	dir = 4
+	},
+/area/rogue/ship/middeck)
+>>>>>>> vanderlin/main
 "XB" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -5582,6 +7120,17 @@
 	},
 /turf/open/floor/twig,
 /area/rogue/ship/middeck)
+<<<<<<< HEAD
+=======
+"XY" = (
+/obj/structure/fluff/railing/border{
+	dir = 1
+	},
+/obj/structure/fluff/railing/border,
+/obj/effect/landmark/observer_start,
+/turf/open/floor/ruinedwood/spiral,
+/area/rogue/ship/topdeck)
+>>>>>>> vanderlin/main
 "Ya" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall"
@@ -5602,7 +7151,16 @@
 	lockid = "church"
 	},
 /turf/open/floor/churchmarble,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/town/church/chapel)
+"Yn" = (
+/obj/structure/bars,
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "Yw" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall"
@@ -5620,7 +7178,13 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/middeck)
 "Yy" = (
+<<<<<<< HEAD
 /obj/effect/landmark/start/gravedigger{
+=======
+/obj/structure/bed/inn/double,
+/obj/item/bedsheet/fabric_double,
+/obj/effect/landmark/start/tailor{
+>>>>>>> vanderlin/main
 	dir = 8
 	},
 /turf/open/floor/ruinedwood/two,
@@ -5683,7 +7247,11 @@
 /obj/item/bedsheet/fabric,
 /obj/item/book/bibble,
 /turf/open/floor/ruinedwood/spiral,
+<<<<<<< HEAD
 /area/rogue/ship/middeck)
+=======
+/area/rogue/indoors/inq/import)
+>>>>>>> vanderlin/main
 "Za" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "borderfall";
@@ -5715,12 +7283,32 @@
 /obj/structure/fermentation_keg,
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
+<<<<<<< HEAD
 "Zr" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
 /obj/projectile/bullet/reusable/cannonball,
+=======
+"Zl" = (
+/obj/machinery/loom,
+/turf/open/floor/hay,
+/area/rogue/ship/topdeck)
+"Zr" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/ammo_casing/caseless/cball,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/fuse/parchment,
+/obj/item/reagent_containers/powder/blastpowder,
+/obj/item/reagent_containers/powder/blastpowder,
+/obj/item/reagent_containers/powder/blastpowder,
+>>>>>>> vanderlin/main
 /turf/open/floor/ruinedwood/spiral,
 /area/rogue/ship/topdeck)
 "Zu" = (
@@ -5736,10 +7324,28 @@
 /area/rogue/ship/middeck)
 "ZB" = (
 /obj/structure/fake_machine/drugmachine{
+<<<<<<< HEAD
 	pixel_x = 32
 	},
 /turf/open/floor/ruinedwood/two,
 /area/rogue/ship/middeck)
+=======
+	pixel_x = 32;
+	density = 0
+	},
+/obj/effect/landmark/start/nightmaiden{
+	dir = 8
+	},
+/turf/open/floor/ruinedwood/two,
+/area/rogue/ship/middeck)
+"ZD" = (
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+/obj/structure/industrial_lift/tram,
+/turf/open/transparent/openspace,
+/area/rogue/outdoors/beach)
+>>>>>>> vanderlin/main
 "ZE" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -12404,10 +14010,17 @@ Rk
 KM
 Rk
 KY
+<<<<<<< HEAD
 CY
 jA
 jA
 jA
+=======
+jA
+jA
+jA
+jd
+>>>>>>> vanderlin/main
 Ze
 Li
 Li
@@ -12608,7 +14221,11 @@ ne
 pM
 RR
 nS
+<<<<<<< HEAD
 Yy
+=======
+jA
+>>>>>>> vanderlin/main
 jA
 Ze
 Li
@@ -13215,7 +14832,11 @@ Ks
 ky
 Ze
 uM
+<<<<<<< HEAD
 bR
+=======
+Yy
+>>>>>>> vanderlin/main
 Ze
 Li
 Li
@@ -13809,7 +15430,11 @@ Li
 Li
 Ze
 uY
+<<<<<<< HEAD
 yA
+=======
+aT
+>>>>>>> vanderlin/main
 Ze
 Ks
 Ks
@@ -13819,7 +15444,11 @@ ne
 bj
 wx
 bj
+<<<<<<< HEAD
 Ze
+=======
+wx
+>>>>>>> vanderlin/main
 hB
 RO
 bO
@@ -14024,7 +15653,11 @@ Fq
 Ze
 Cg
 ko
+<<<<<<< HEAD
 gE
+=======
+XA
+>>>>>>> vanderlin/main
 Ze
 Li
 Li
@@ -14423,9 +16056,15 @@ Ze
 Ze
 wx
 Ze
+<<<<<<< HEAD
 ip
 uw
 Om
+=======
+Ze
+uw
+Ze
+>>>>>>> vanderlin/main
 Cg
 vU
 aN
@@ -14622,12 +16261,21 @@ ne
 Ze
 OF
 Ze
+<<<<<<< HEAD
 CI
 ne
 Ze
 wU
 ne
 xW
+=======
+wF
+ne
+Ze
+wU
+nG
+Ze
+>>>>>>> vanderlin/main
 Cg
 vU
 wv
@@ -14828,7 +16476,11 @@ UI
 ne
 Ze
 wq
+<<<<<<< HEAD
 ne
+=======
+nG
+>>>>>>> vanderlin/main
 Ze
 Cg
 cI
@@ -15033,7 +16685,11 @@ fN
 OZ
 Ze
 Cg
+<<<<<<< HEAD
 vU
+=======
+FN
+>>>>>>> vanderlin/main
 gE
 Ze
 Li
@@ -15626,7 +17282,11 @@ Li
 Li
 Li
 Ze
+<<<<<<< HEAD
 sL
+=======
+Cv
+>>>>>>> vanderlin/main
 yj
 ne
 Ze
@@ -15636,7 +17296,11 @@ Al
 ne
 wx
 ne
+<<<<<<< HEAD
 ne
+=======
+gv
+>>>>>>> vanderlin/main
 Ze
 Cg
 vU
@@ -15839,7 +17503,11 @@ ne
 Ze
 qP
 ne
+<<<<<<< HEAD
 Ze
+=======
+wx
+>>>>>>> vanderlin/main
 ne
 gn
 if
@@ -16649,7 +18317,11 @@ Ze
 vY
 wx
 Fq
+<<<<<<< HEAD
 gn
+=======
+TE
+>>>>>>> vanderlin/main
 vo
 Ze
 Li
@@ -17041,17 +18713,28 @@ Li
 Li
 Ze
 NB
+<<<<<<< HEAD
 yj
+=======
+cS
+>>>>>>> vanderlin/main
 Ze
 Ze
 Ze
 Ze
 Ze
 LX
+<<<<<<< HEAD
 CS
 Ze
 Su
 Ze
+=======
+Hu
+GH
+Su
+GH
+>>>>>>> vanderlin/main
 Ze
 rF
 Cl
@@ -17249,9 +18932,15 @@ Ze
 Gt
 VK
 Ze
+<<<<<<< HEAD
 CS
 Kw
 Ze
+=======
+Hu
+Kw
+GH
+>>>>>>> vanderlin/main
 uZ
 ly
 Ze
@@ -17266,7 +18955,11 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
+=======
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -17451,9 +19144,15 @@ lA
 ne
 ne
 dp
+<<<<<<< HEAD
 CS
 Ze
 Ze
+=======
+Hu
+GH
+GH
+>>>>>>> vanderlin/main
 uZ
 AT
 Ze
@@ -17467,9 +19166,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 wC
 wC
+=======
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -17654,10 +19359,17 @@ ne
 Qg
 Ze
 ui
+<<<<<<< HEAD
 Ze
 ei
 uZ
 ne
+=======
+GH
+ei
+uZ
+nF
+>>>>>>> vanderlin/main
 Ze
 Ze
 Ze
@@ -17669,9 +19381,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 Jk
 wC
+=======
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -17853,6 +19571,7 @@ ne
 gv
 ne
 ne
+<<<<<<< HEAD
 Om
 ip
 Yl
@@ -17864,17 +19583,38 @@ gv
 cN
 Tb
 bK
+=======
+Rw
+Rw
+vv
+Rw
+Rw
+ly
+nF
+ec
+cN
+Tb
+sw
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 wC
 rY
 wC
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18050,6 +19790,7 @@ Li
 Li
 Li
 Ze
+<<<<<<< HEAD
 Ze
 Ol
 Ze
@@ -18066,17 +19807,43 @@ ne
 ly
 Ze
 Ze
+=======
+Rw
+Ol
+Rw
+DP
+ML
+Rw
+zW
+Ts
+Ts
+Yl
+nF
+nF
+nF
+ly
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 TA
 Jc
 sF
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18252,6 +20019,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Eq
 ee
@@ -18267,6 +20035,28 @@ kV
 ly
 Ze
 Ze
+=======
+Rw
+Eq
+ee
+LU
+iE
+Om
+Te
+Ts
+go
+Rw
+uZ
+kV
+ly
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18274,11 +20064,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 pm
 LY
 pm
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18454,6 +20247,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Ee
 uK
@@ -18469,6 +20263,28 @@ Ze
 Ze
 Ze
 Ze
+=======
+Rw
+Ee
+uK
+Ts
+Ts
+Ts
+PL
+Ts
+iE
+Rw
+GH
+GH
+GH
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18476,11 +20292,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 wC
 rT
 wC
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18656,6 +20475,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 zR
 oa
@@ -18671,6 +20491,28 @@ Ed
 ne
 nf
 Ze
+=======
+Rw
+zR
+oa
+iE
+GC
+Te
+PL
+Te
+aM
+Rw
+GH
+Ed
+nF
+nf
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18678,11 +20520,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 JT
 LY
 qK
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18858,14 +20703,22 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Ol
 mI
 CS
+=======
+Rw
+Ol
+mI
+iE
+>>>>>>> vanderlin/main
 LV
 cF
 fd
 fd
+<<<<<<< HEAD
 Ts
 jq
 ne
@@ -18873,6 +20726,20 @@ GI
 Qx
 Ze
 Ze
+=======
+fd
+jq
+nF
+GI
+Qx
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -18880,11 +20747,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 ps
 LY
 Qm
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19060,6 +20930,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Ze
 Ze
@@ -19075,6 +20946,28 @@ OA
 Ze
 Ze
 Ze
+=======
+Rw
+Rw
+Rw
+Vy
+Fx
+dh
+dh
+dh
+tK
+Rw
+Sr
+OA
+GH
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19082,11 +20975,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 tu
 wg
 bb
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19264,6 +21160,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Ze
 Ze
@@ -19275,6 +21172,24 @@ Ze
 Ze
 Ze
 Ze
+=======
+Rw
+Rw
+Rw
+du
+dh
+dF
+Uf
+Rw
+GH
+GH
+GH
+Li
+Li
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19284,11 +21199,14 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 wC
 Uj
 wC
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19468,6 +21386,7 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Ze
 Ze
 Ze
@@ -19475,6 +21394,18 @@ Ze
 Ze
 Ze
 Ze
+=======
+Rw
+Rw
+Rw
+Rw
+Rw
+Rw
+GH
+Li
+Li
+Li
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -19487,9 +21418,12 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 wC
 wC
 wC
+=======
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -21301,9 +23235,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
+=======
+OW
+OW
+OW
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -21503,7 +23443,11 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
+=======
+OW
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -21705,7 +23649,11 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
+=======
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -21906,9 +23854,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
+=======
+le
+le
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -22108,9 +24062,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
+=======
+le
+me
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -22309,11 +24269,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+le
+SR
+le
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -22511,11 +24479,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+UV
+UY
+UY
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -22713,11 +24689,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+IA
+UY
+IA
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -22915,11 +24899,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+le
+UY
+le
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -23117,11 +25109,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+Qf
+UY
+UY
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -23319,11 +25319,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+Qf
+UY
+UY
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -23521,11 +25529,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+Qf
+UY
+RL
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -23723,11 +25739,19 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
 Li
 Li
+=======
+le
+le
+UY
+le
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -23926,9 +25950,15 @@ Li
 Li
 Li
 Li
+<<<<<<< HEAD
 Li
 Li
 Li
+=======
+le
+le
+le
+>>>>>>> vanderlin/main
 Li
 Li
 Li
@@ -48572,6 +50602,10 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
+=======
+Kc
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -48593,8 +50627,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+TF
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -51198,7 +53236,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+vc
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -52807,7 +54849,11 @@ Tx
 Xu
 jA
 jA
+<<<<<<< HEAD
 jA
+=======
+CY
+>>>>>>> vanderlin/main
 fv
 Ze
 TN
@@ -53211,7 +55257,11 @@ Tx
 pM
 RJ
 pz
+<<<<<<< HEAD
 jA
+=======
+Wv
+>>>>>>> vanderlin/main
 fv
 Ze
 TN
@@ -53620,7 +55670,11 @@ mq
 Ze
 La
 yB
+<<<<<<< HEAD
 FZ
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -53822,7 +55876,11 @@ XI
 Ze
 Ze
 SX
+<<<<<<< HEAD
 xd
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -54019,12 +56077,20 @@ Tx
 ud
 nx
 Dw
+<<<<<<< HEAD
 jA
+=======
+rV
+>>>>>>> vanderlin/main
 ix
 lZ
 IV
 SX
+<<<<<<< HEAD
 xd
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -54225,10 +56291,17 @@ wz
 BG
 YY
 Ze
+<<<<<<< HEAD
 SX
 xd
 TN
 TN
+=======
+cZ
+TN
+TN
+Vp
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -54428,7 +56501,11 @@ Ze
 Ze
 Ze
 yt
+<<<<<<< HEAD
 eo
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -54619,7 +56696,11 @@ XI
 MQ
 XI
 Ze
+<<<<<<< HEAD
 Ze
+=======
+Tx
+>>>>>>> vanderlin/main
 oh
 wb
 wb
@@ -54820,15 +56901,24 @@ Ze
 OQ
 lH
 gI
+<<<<<<< HEAD
 dh
 Ze
+=======
+Ze
+Tx
+>>>>>>> vanderlin/main
 oh
 wb
 tM
 Wx
 Hu
 uN
+<<<<<<< HEAD
 GU
+=======
+gT
+>>>>>>> vanderlin/main
 In
 Ze
 jF
@@ -55019,11 +57109,19 @@ TN
 Ze
 JP
 XI
+<<<<<<< HEAD
 jA
 Kd
 BA
 BA
 XI
+=======
+FF
+Kd
+BA
+Ze
+Tx
+>>>>>>> vanderlin/main
 oh
 wb
 Zg
@@ -55225,13 +57323,22 @@ jA
 xM
 FP
 JI
+<<<<<<< HEAD
 Ze
 xn
+=======
+mv
+Tx
+>>>>>>> vanderlin/main
 Ze
 Sg
 Hu
 GU
+<<<<<<< HEAD
 GU
+=======
+bI
+>>>>>>> vanderlin/main
 aD
 vQ
 dc
@@ -55427,7 +57534,11 @@ lV
 ZB
 jA
 Ze
+<<<<<<< HEAD
 Ze
+=======
+Tx
+>>>>>>> vanderlin/main
 Tx
 Ze
 Ze
@@ -55628,10 +57739,17 @@ Ze
 Ze
 Ze
 jA
+<<<<<<< HEAD
 jA
 NV
 Tx
 Tx
+=======
+NV
+Tx
+Tx
+Tx
+>>>>>>> vanderlin/main
 Ze
 Ze
 Ze
@@ -55836,7 +57954,11 @@ Mp
 Ze
 Ze
 Ti
+<<<<<<< HEAD
 GU
+=======
+Xa
+>>>>>>> vanderlin/main
 GU
 GU
 nl
@@ -57050,7 +59172,11 @@ Na
 uB
 EJ
 WV
+<<<<<<< HEAD
 GU
+=======
+Ac
+>>>>>>> vanderlin/main
 ZM
 Ze
 TN
@@ -57263,7 +59389,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 pb
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -57460,13 +59590,22 @@ Ze
 SX
 xd
 TN
+<<<<<<< HEAD
+=======
+Dt
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
 TN
+<<<<<<< HEAD
 La
 oM
 FZ
+=======
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -57665,11 +59804,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 La
 Iv
 Uo
 ph
 FZ
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -57867,11 +60014,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 Ch
 Ln
 AG
 LI
 xd
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -58067,6 +60222,7 @@ db
 eo
 TN
 TN
+<<<<<<< HEAD
 La
 pW
 Iv
@@ -58075,6 +60231,16 @@ LY
 Ln
 ph
 FZ
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -58269,6 +60435,7 @@ xd
 TN
 TN
 TN
+<<<<<<< HEAD
 Ch
 vJ
 LY
@@ -58277,6 +60444,16 @@ LY
 qn
 OB
 xd
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -58471,6 +60648,7 @@ EX
 TN
 TN
 TN
+<<<<<<< HEAD
 Ch
 IO
 ty
@@ -58479,6 +60657,16 @@ Nl
 to
 VZ
 xd
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -58660,7 +60848,11 @@ tD
 xi
 KY
 gu
+<<<<<<< HEAD
 Lg
+=======
+NX
+>>>>>>> vanderlin/main
 ME
 KY
 cx
@@ -58673,6 +60865,7 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 qS
 Tv
 CC
@@ -58681,6 +60874,16 @@ hZ
 yt
 hm
 xd
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -58876,6 +61079,7 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 Ch
 op
 ss
@@ -58883,6 +61087,15 @@ LY
 ss
 LY
 xd
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -59078,6 +61291,7 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 qS
 wC
 gS
@@ -59085,6 +61299,15 @@ IW
 xJ
 wC
 eo
+=======
+TN
+TN
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -59281,11 +61504,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 wC
 pu
 LY
 LY
 wC
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -59483,11 +61714,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 cU
 Pp
 LY
 Cp
 cU
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -59685,11 +61924,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 sj
 dr
 Cs
 gN
 wC
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -59884,13 +62131,22 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
+=======
+au
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
 TN
+<<<<<<< HEAD
 wC
 cU
 wC
+=======
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -61702,9 +63958,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+AU
+cs
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -61904,7 +64166,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+no
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -62106,7 +64372,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+KZ
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -62307,9 +64577,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+hi
+nQ
+Nk
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -62509,9 +64785,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+eG
+TG
+Kp
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -62710,11 +64992,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+eq
+Aj
+TG
+ZD
+Nk
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -62912,11 +65202,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+PJ
+Ps
+jm
+Ps
+TK
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63114,11 +65412,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+Kp
+TN
+qm
+TN
+KZ
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63316,6 +65622,14 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
+=======
+hm
+dX
+by
+dX
+Kp
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63335,12 +65649,16 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
 TN
+=======
+GQ
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63518,11 +65836,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+co
+co
+kF
+TG
+co
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63720,11 +66046,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+co
+TG
+TG
+TG
+co
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -63922,11 +66256,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+Yn
+TG
+TG
+TG
+Yn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -64124,11 +66466,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+co
+MU
+TG
+TG
+co
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -64327,9 +66677,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+co
+Yn
+co
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -93401,7 +95757,11 @@ SX
 Il
 fU
 fU
+<<<<<<< HEAD
 Il
+=======
+fP
+>>>>>>> vanderlin/main
 tT
 Fa
 hs
@@ -95214,7 +97574,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 Rw
+=======
+dr
+>>>>>>> vanderlin/main
 GF
 Zr
 iw
@@ -95232,7 +97596,11 @@ VU
 mQ
 Tw
 Ow
+<<<<<<< HEAD
 DP
+=======
+dr
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -96630,14 +98998,22 @@ TN
 TN
 kX
 GF
+<<<<<<< HEAD
 Xa
+=======
+VU
+>>>>>>> vanderlin/main
 VU
 zH
 Lp
 tB
 RX
 sk
+<<<<<<< HEAD
 QR
+=======
+XY
+>>>>>>> vanderlin/main
 sk
 Ae
 VU
@@ -96843,8 +99219,13 @@ rC
 gq
 eC
 VU
+<<<<<<< HEAD
 mQ
 Lp
+=======
+CS
+Zl
+>>>>>>> vanderlin/main
 mQ
 VU
 Jx
@@ -97032,7 +99413,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 Rw
+=======
+dr
+>>>>>>> vanderlin/main
 GF
 VU
 VU
@@ -97653,7 +100038,11 @@ VU
 VU
 VU
 VU
+<<<<<<< HEAD
 HQ
+=======
+ET
+>>>>>>> vanderlin/main
 HQ
 Ji
 Rq
@@ -97838,6 +100227,7 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 kX
@@ -97845,6 +100235,15 @@ kp
 VU
 mQ
 TW
+=======
+HS
+HS
+gb
+GF
+VU
+mQ
+xn
+>>>>>>> vanderlin/main
 mQ
 VU
 VU
@@ -98258,7 +100657,11 @@ VU
 PN
 Xo
 HD
+<<<<<<< HEAD
 HD
+=======
+VU
+>>>>>>> vanderlin/main
 VU
 VU
 iS
@@ -98674,7 +101077,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 JO
+=======
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -99262,7 +101669,11 @@ gx
 gx
 gx
 cR
+<<<<<<< HEAD
 bI
+=======
+gx
+>>>>>>> vanderlin/main
 gx
 gx
 gx
@@ -99279,9 +101690,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 tw
 tw
 tw
+=======
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -99480,11 +101897,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 eU
 tw
 yO
 tw
 eU
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -99671,7 +102096,11 @@ uo
 ej
 qD
 hs
+<<<<<<< HEAD
 qD
+=======
+Dv
+>>>>>>> vanderlin/main
 bT
 NE
 II
@@ -99682,11 +102111,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 eU
 tw
 tw
 tw
 eU
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -99884,11 +102321,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 eU
 Kr
 eU
 eU
 eU
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -100086,11 +102531,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 eU
 eU
 eU
 eU
 eU
+=======
+TN
+TN
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -100289,9 +102742,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 eU
 eU
 eU
+=======
+TN
+TN
+TN
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -102103,9 +104562,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+cs
+cs
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -102305,7 +104770,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -102507,7 +104976,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -102709,7 +105182,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -102911,7 +105388,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -103113,7 +105594,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -103315,7 +105800,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -103517,7 +106006,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+cs
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -103718,9 +106211,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -103919,11 +106418,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -104121,11 +106628,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -104323,11 +106838,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -104525,11 +107048,19 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -104728,9 +107259,15 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
 TN
+=======
+bn
+bn
+bn
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -127095,6 +129632,7 @@ ms
 ms
 ms
 ms
+<<<<<<< HEAD
 TN
 TN
 TN
@@ -127195,6 +129733,108 @@ TN
 TN
 TN
 TN
+=======
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+>>>>>>> vanderlin/main
 "}
 (2,1,4) = {"
 ms
@@ -127297,6 +129937,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -127395,8 +130039,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (3,1,4) = {"
 ms
@@ -127499,6 +130147,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -127597,8 +130249,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (4,1,4) = {"
 ms
@@ -127701,6 +130357,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -127799,8 +130459,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (5,1,4) = {"
 ms
@@ -127903,6 +130567,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -128001,8 +130669,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (6,1,4) = {"
 ms
@@ -128105,6 +130777,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -128203,8 +130879,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (7,1,4) = {"
 ms
@@ -128307,6 +130987,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -128405,8 +131089,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (8,1,4) = {"
 ms
@@ -128509,6 +131197,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -128607,8 +131299,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (9,1,4) = {"
 ms
@@ -128711,6 +131407,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -128809,8 +131509,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (10,1,4) = {"
 ms
@@ -128913,6 +131617,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -129011,8 +131719,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (11,1,4) = {"
 ms
@@ -129115,6 +131827,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -129213,8 +131929,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (12,1,4) = {"
 ms
@@ -129317,6 +132037,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -129415,8 +132139,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (13,1,4) = {"
 ms
@@ -129519,6 +132247,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -129617,8 +132349,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (14,1,4) = {"
 ms
@@ -129721,6 +132457,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -129819,8 +132559,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (15,1,4) = {"
 ms
@@ -129923,6 +132667,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -130021,8 +132769,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (16,1,4) = {"
 ms
@@ -130125,6 +132877,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -130223,8 +132979,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (17,1,4) = {"
 ms
@@ -130327,6 +133087,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -130425,8 +133189,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (18,1,4) = {"
 ms
@@ -130529,6 +133297,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -130627,8 +133399,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (19,1,4) = {"
 ms
@@ -130731,6 +133507,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -130829,8 +133609,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (20,1,4) = {"
 ms
@@ -130933,6 +133717,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -131031,8 +133819,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (21,1,4) = {"
 ms
@@ -131135,6 +133927,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -131233,8 +134029,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (22,1,4) = {"
 ms
@@ -131337,6 +134137,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -131435,8 +134239,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (23,1,4) = {"
 ms
@@ -131539,6 +134347,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -131637,8 +134449,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (24,1,4) = {"
 ms
@@ -131741,6 +134557,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -131839,8 +134659,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (25,1,4) = {"
 ms
@@ -131943,7 +134767,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -132042,7 +134870,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (26,1,4) = {"
 ms
@@ -132145,7 +134977,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -132244,7 +135080,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (27,1,4) = {"
 ms
@@ -132347,7 +135187,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -132446,7 +135290,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (28,1,4) = {"
 ms
@@ -132549,7 +135397,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -132648,7 +135500,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (29,1,4) = {"
 ms
@@ -132751,7 +135607,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -132850,7 +135710,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (30,1,4) = {"
 ms
@@ -132953,7 +135817,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -133052,7 +135920,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (31,1,4) = {"
 ms
@@ -133155,7 +136027,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -133254,7 +136130,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (32,1,4) = {"
 ms
@@ -133357,7 +136237,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -133456,7 +136340,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (33,1,4) = {"
 ms
@@ -133559,7 +136447,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -133658,7 +136550,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (34,1,4) = {"
 ms
@@ -133761,7 +136657,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -133860,7 +136760,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (35,1,4) = {"
 ms
@@ -133963,7 +136867,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -134062,7 +136970,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (36,1,4) = {"
 ms
@@ -134165,7 +137077,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -134264,7 +137180,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (37,1,4) = {"
 ms
@@ -134367,7 +137287,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -134466,7 +137390,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (38,1,4) = {"
 ms
@@ -134569,7 +137497,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -134668,7 +137600,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (39,1,4) = {"
 ms
@@ -134771,7 +137707,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -134870,7 +137810,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (40,1,4) = {"
 ms
@@ -134973,7 +137917,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -135072,7 +138020,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (41,1,4) = {"
 ms
@@ -135175,7 +138127,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -135274,7 +138230,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (42,1,4) = {"
 ms
@@ -135377,7 +138337,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -135476,7 +138440,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (43,1,4) = {"
 ms
@@ -135579,7 +138547,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -135678,7 +138650,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (44,1,4) = {"
 ms
@@ -135781,7 +138757,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -135880,7 +138860,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (45,1,4) = {"
 ms
@@ -135983,7 +138967,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -136082,7 +139070,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (46,1,4) = {"
 ms
@@ -136185,7 +139177,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -136230,7 +139226,11 @@ ZU
 VI
 VI
 VI
+<<<<<<< HEAD
 TY
+=======
+tY
+>>>>>>> vanderlin/main
 VI
 VI
 VI
@@ -136284,7 +139284,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (47,1,4) = {"
 ms
@@ -136387,7 +139391,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -136486,7 +139494,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (48,1,4) = {"
 ms
@@ -136589,7 +139601,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -136688,7 +139704,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (49,1,4) = {"
 ms
@@ -136791,7 +139811,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -136890,7 +139914,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (50,1,4) = {"
 ms
@@ -136993,7 +140021,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -137092,7 +140124,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (51,1,4) = {"
 ms
@@ -137195,7 +140231,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -137294,7 +140334,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (52,1,4) = {"
 ms
@@ -137397,7 +140441,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -137496,7 +140544,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (53,1,4) = {"
 ms
@@ -137599,7 +140651,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -137698,7 +140754,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (54,1,4) = {"
 ms
@@ -137801,7 +140861,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -137900,7 +140964,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (55,1,4) = {"
 ms
@@ -138003,7 +141071,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -138102,7 +141174,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (56,1,4) = {"
 ms
@@ -138205,7 +141281,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -138304,7 +141384,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (57,1,4) = {"
 ms
@@ -138407,7 +141491,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -138506,7 +141594,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (58,1,4) = {"
 ms
@@ -138609,7 +141701,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -138708,7 +141804,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (59,1,4) = {"
 ms
@@ -138811,7 +141911,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -138856,7 +141960,11 @@ Wi
 rR
 Gm
 pa
+<<<<<<< HEAD
 VU
+=======
+WG
+>>>>>>> vanderlin/main
 pa
 WO
 rR
@@ -138910,7 +142018,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (60,1,4) = {"
 ms
@@ -139013,7 +142125,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -139112,7 +142228,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (61,1,4) = {"
 ms
@@ -139215,7 +142335,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -139314,7 +142438,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (62,1,4) = {"
 ms
@@ -139417,7 +142545,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -139516,7 +142648,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (63,1,4) = {"
 ms
@@ -139619,7 +142755,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -139718,7 +142858,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (64,1,4) = {"
 ms
@@ -139821,7 +142965,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -139920,7 +143068,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (65,1,4) = {"
 ms
@@ -140023,7 +143175,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -140122,7 +143278,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (66,1,4) = {"
 ms
@@ -140225,7 +143385,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -140324,7 +143488,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (67,1,4) = {"
 ms
@@ -140427,7 +143595,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -140526,7 +143698,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (68,1,4) = {"
 ms
@@ -140629,7 +143805,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -140728,7 +143908,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (69,1,4) = {"
 ms
@@ -140831,7 +144015,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -140930,7 +144118,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (70,1,4) = {"
 ms
@@ -141033,7 +144225,11 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -141132,7 +144328,11 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (71,1,4) = {"
 ms
@@ -141235,6 +144435,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -141333,8 +144537,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (72,1,4) = {"
 ms
@@ -141437,6 +144645,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -141535,8 +144747,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (73,1,4) = {"
 ms
@@ -141639,6 +144855,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -141737,8 +144957,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (74,1,4) = {"
 ms
@@ -141841,6 +145065,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -141939,8 +145167,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (75,1,4) = {"
 ms
@@ -142043,6 +145275,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -142141,8 +145377,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (76,1,4) = {"
 ms
@@ -142245,6 +145485,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -142343,8 +145587,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (77,1,4) = {"
 ms
@@ -142447,6 +145695,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -142545,8 +145797,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (78,1,4) = {"
 ms
@@ -142649,6 +145905,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -142747,8 +146007,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (79,1,4) = {"
 ms
@@ -142851,6 +146115,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -142949,8 +146217,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (80,1,4) = {"
 ms
@@ -143053,6 +146325,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -143151,8 +146427,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (81,1,4) = {"
 ms
@@ -143255,6 +146535,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -143353,8 +146637,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (82,1,4) = {"
 ms
@@ -143457,6 +146745,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -143555,8 +146847,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (83,1,4) = {"
 ms
@@ -143659,6 +146955,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -143757,8 +147057,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (84,1,4) = {"
 ms
@@ -143861,6 +147165,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -143959,8 +147267,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (85,1,4) = {"
 ms
@@ -144063,6 +147375,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -144161,8 +147477,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (86,1,4) = {"
 ms
@@ -144265,6 +147585,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -144363,8 +147687,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (87,1,4) = {"
 ms
@@ -144467,6 +147795,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -144565,8 +147897,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (88,1,4) = {"
 ms
@@ -144669,6 +148005,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -144767,8 +148107,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (89,1,4) = {"
 ms
@@ -144871,6 +148215,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -144969,8 +148317,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (90,1,4) = {"
 ms
@@ -145073,6 +148425,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -145171,8 +148527,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (91,1,4) = {"
 ms
@@ -145275,6 +148635,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -145373,8 +148737,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (92,1,4) = {"
 ms
@@ -145477,6 +148845,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -145575,8 +148947,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (93,1,4) = {"
 ms
@@ -145679,6 +149055,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -145777,8 +149157,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (94,1,4) = {"
 ms
@@ -145881,6 +149265,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -145979,8 +149367,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (95,1,4) = {"
 ms
@@ -146083,6 +149475,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -146181,8 +149577,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (96,1,4) = {"
 ms
@@ -146285,6 +149685,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -146383,8 +149787,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (97,1,4) = {"
 ms
@@ -146487,6 +149895,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -146585,8 +149997,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (98,1,4) = {"
 ms
@@ -146689,6 +150105,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -146787,8 +150207,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (99,1,4) = {"
 ms
@@ -146891,6 +150315,10 @@ TN
 TN
 TN
 ms
+<<<<<<< HEAD
+=======
+ms
+>>>>>>> vanderlin/main
 TN
 TN
 TN
@@ -146989,8 +150417,12 @@ TN
 TN
 TN
 TN
+<<<<<<< HEAD
 TN
 TN
+=======
+ms
+>>>>>>> vanderlin/main
 "}
 (100,1,4) = {"
 ms
@@ -147093,6 +150525,7 @@ ms
 ms
 ms
 ms
+<<<<<<< HEAD
 TN
 TN
 TN
@@ -147193,6 +150626,108 @@ TN
 TN
 TN
 TN
+=======
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+ms
+>>>>>>> vanderlin/main
 "}
 (101,1,4) = {"
 ms

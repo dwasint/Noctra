@@ -11,6 +11,7 @@
 	var/require_flat_terrain = TRUE // Requires all tiles to be same height
 	var/spawn_weight = 100 // Weight for random selection
 	var/max_height_variance = 0 // Maximum height difference allowed within template area
+<<<<<<< HEAD
 
 /datum/island_feature_template/blackberry
 	name = "Blackberry Field"
@@ -33,3 +34,6 @@
 	min_elevation = 0
 	max_elevation = 1
 	spawn_weight = 100
+=======
+	var/z_offset = 0
+>>>>>>> vanderlin/main

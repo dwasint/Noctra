@@ -230,10 +230,13 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	/// Custom UI scale
 	var/ui_scale
+<<<<<<< HEAD
 	///this is our character slot
 	var/tmp/current_slot = 1
 	/// List storing ERP preference values
 	var/list/erp_preferences
+=======
+>>>>>>> vanderlin/main
 	/// Assoc list of culinary preferences, where the key is the type of the culinary preference, and value is food/drink typepath
 	var/list/culinary_preferences = list()
 
@@ -550,6 +553,11 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'>"
 		var/index = -1
 
+		var/race_ban = FALSE
+		if(is_race_banned(user.ckey, user.client.prefs.pref_species.id))
+			HTML += "</td> <td><a> YOU ARE BANNED FROM PLAYING THE SPECIES: [user.client.prefs.pref_species.id]</a></td></tr>"
+			race_ban = TRUE
+
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 		for(var/datum/job/job as anything in sortList(SSjob.joinable_occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
@@ -560,6 +568,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				continue
 
 			if(job.spawn_positions <= 0)
+				continue
+
+			if(race_ban)
 				continue
 
 			index += 1
@@ -648,7 +659,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 				<div class="tutorialhover">[used_name]</font>
 				<span class="tutorial">[job.tutorial]<br>
-				Slots: [job.spawn_positions]</span>
+				Slots: [job.get_total_positions()]</span>
 				</div>
 
 			"}
@@ -1217,9 +1228,18 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						voice_color = sanitize_hexcolor(new_voice)
 
 				if("headshot")
+<<<<<<< HEAD
 					to_chat(user, "<span class='notice'>Please use an image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
 					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 325x325 pixels, so the more square the photo, the better it will look.</span>")
+=======
+					if(!patreon)
+						to_chat(user, "This is a patreon exclusive feature, your headshot link will be applied but others will only be able to view it if you are a patreon supporter.")
+
+					to_chat(user, span_notice("Please use an image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]"))
+					to_chat(user, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
+					to_chat(user, span_notice("Keep in mind that the photo will be downsized to 325x325 pixels, so the more square the photo, the better it will look."))
+>>>>>>> vanderlin/main
 					var/new_headshot_link = input(user, "Input the headshot link (https, hosts: gyazo, lensdump, imgbox, catbox):", "Headshot", headshot_link) as text|null
 					if(!new_headshot_link)
 						return
@@ -1423,10 +1443,22 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						change_accent = TRUE
 					else
 						change_accent = FALSE
+<<<<<<< HEAD
 					var/accent
 					accent = browser_input_list(user, "CHOOSE YOUR HERO'S ACCENT", "VOICE OF THE WORLD", GLOB.accent_list, selected_accent)
 					if(accent)
 						selected_accent = accent
+=======
+					if(!patreon && !change_accent)
+						to_chat(user, "Sorry, this option is Patreon-exclusive or unavailable to your race.")
+						selected_accent = ACCENT_DEFAULT
+						return
+					var/accent
+					if(patreon)
+						accent = browser_input_list(user, "CHOOSE YOUR HERO'S ACCENT", "VOICE OF THE WORLD", GLOB.accent_list, selected_accent)
+						if(accent)
+							selected_accent = accent
+>>>>>>> vanderlin/main
 					else if(change_accent)
 						accent = browser_input_list(user, "CHOOSE YOUR HERO'S ACCENT", "VOICE OF THE WORLD", pref_species.multiple_accents, selected_accent)
 						if(accent)
@@ -1850,7 +1882,15 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	else
 		change_accent = FALSE
 
+<<<<<<< HEAD
 	character.accent = selected_accent
+=======
+	if(patreon)
+		character.accent = selected_accent
+	if(change_accent && !patreon)
+		character.accent = selected_accent
+		change_accent = FALSE
+>>>>>>> vanderlin/main
 
 	/* :V */
 	apply_character_kinks(character)

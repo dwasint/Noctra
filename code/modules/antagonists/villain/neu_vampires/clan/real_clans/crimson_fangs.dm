@@ -20,4 +20,8 @@
 		TRAIT_VAMP_DREAMS,
 		TRAIT_DARKVISION,
 		TRAIT_LIMBATTACHMENT,
+<<<<<<< HEAD
+=======
+		TRAIT_NOENERGY,
+>>>>>>> vanderlin/main
 	)

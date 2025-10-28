@@ -4,6 +4,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	grid_width = 32
 	grid_height = 64
+	slot_flags = ITEM_SLOT_HIP
 	var/list/types = list()
 	var/open
 	var/can_spawn = TRUE
@@ -126,6 +127,11 @@
 			category = "Chimeric Node"
 		else if(ispath(path, /datum/chimeric_table))
 			category = "Chimeric Dossier"
+<<<<<<< HEAD
+=======
+		else if(ispath(path, /obj/item/reagent_containers/food/snacks/fish))
+			category = "Fish"
+>>>>>>> vanderlin/main
 
 		// Clean up our temporary instance
 		if(temp_recipe)
@@ -575,6 +581,14 @@
 		var/datum/chimeric_table/r = temp_recipe
 		recipe_name = initial(r.name)
 		recipe_html = get_recipe_specific_html(r, user)
+<<<<<<< HEAD
+=======
+	else if(ispath(path, /obj/item/reagent_containers/food/snacks/fish))
+		temp_recipe = new path()
+		var/obj/item/reagent_containers/food/snacks/fish/r = temp_recipe
+		recipe_name = initial(r.name)
+		recipe_html = get_recipe_specific_html(r, user)
+>>>>>>> vanderlin/main
 	if(temp_recipe)
 		qdel(temp_recipe)
 
@@ -782,6 +796,7 @@
 	base_icon_state = "book5"
 
 	types = list(
+		/obj/item/reagent_containers/food/snacks/fish,
 		/datum/repeatable_crafting_recipe/survival,
 		/datum/repeatable_crafting_recipe/cooking/soap,
 		/datum/repeatable_crafting_recipe/cooking/soap/bath,

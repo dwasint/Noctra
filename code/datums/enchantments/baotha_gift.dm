@@ -7,7 +7,16 @@
 		/datum/thaumaturgical_essence/poison = 20
 	)
 
+<<<<<<< HEAD
 /datum/enchantment/baothagift/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
+=======
+/datum/enchantment/baothagift/register_triggers(atom/item)
+	. = ..()
+	registered_signals += COMSIG_ITEM_AFTERATTACK
+	RegisterSignal(item, COMSIG_ITEM_AFTERATTACK, PROC_REF(on_hit))
+
+/datum/enchantment/baothagift/proc/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
+>>>>>>> vanderlin/main
 	if(isliving(target) && isliving(user))
 		var/mob/living/victim = target
 

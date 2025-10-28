@@ -8,6 +8,13 @@
 #define MAT_VEG "Vegetable"
 #define MAT_FRUIT "Fruit"
 #define MAT_MEAT "Meat"
+<<<<<<< HEAD
+=======
+#define MAT_CLOTH "Cloth"
+#define MAT_SILK "Silk"
+#define MAT_HIDE "Hide"
+#define MAT_LEATHER "Leather"
+>>>>>>> vanderlin/main
 
 #define TASK_KEY_SPEED "speed"
 #define TASK_KEY_REDUCTION "reduction"

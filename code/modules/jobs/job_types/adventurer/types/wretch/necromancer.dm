@@ -4,7 +4,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ALL
 	outfit = /datum/outfit/wretch/necromancer
+<<<<<<< HEAD
 	category_tags = list(CTAG_WRETCH)
+=======
+>>>>>>> vanderlin/main
 	cmode_music = 'sound/music/cmode/antag/CombatLich.ogg'
 	total_positions = 1
 

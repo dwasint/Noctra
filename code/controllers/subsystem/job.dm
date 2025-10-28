@@ -113,6 +113,13 @@ SUBSYSTEM_DEF(job)
 			JobDebug("GRJ isbanned failed, Player: [player], Job: [job.title]")
 			continue
 
+		if(is_race_banned(player.ckey, player.client.prefs.pref_species.id)|| QDELETED(player))
+			if(QDELETED(player))
+				JobDebug("GRJ is_race_banned failed, Player deleted")
+				break
+			JobDebug("GRJ is_race_banned failed, Player: [player], Race: [player.client.prefs.pref_species.id]")
+			continue
+
 		if(!job.can_random)
 			JobDebug("GRJ can't random into this job, Job: [job.title], Player: [player]")
 			continue
@@ -266,6 +273,10 @@ SUBSYSTEM_DEF(job)
 				// Standard job checks...
 				if(is_role_banned(player.ckey, job.title))
 					JobDebug("DO isbanned failed, Player: [player], Job:[job.title]")
+					continue
+
+				if(is_race_banned(player.ckey, player.client.prefs.pref_species.id))
+					JobDebug("DO is_race_banned, Player: [player], Race: [player.client.prefs.pref_species.id]")
 					continue
 
 				if(QDELETED(player))
@@ -485,6 +496,9 @@ SUBSYSTEM_DEF(job)
 			if(is_role_banned(player.ckey, job.title))
 				continue
 
+			if(is_race_banned(player.ckey, player.client.prefs.pref_species.id))
+				continue
+
 			if(QDELETED(player))
 				break
 
@@ -642,6 +656,9 @@ SUBSYSTEM_DEF(job)
 			if(is_role_banned(player.ckey, job.title) || QDELETED(player))
 				banned++
 				continue
+			if(is_race_banned(player.ckey, player.client.prefs.pref_species.id))
+				banned++
+				continue
 			if(!job.player_old_enough(player.client))
 				young++
 				continue
@@ -743,6 +760,9 @@ SUBSYSTEM_DEF(job)
 	. = FALSE
 
 	if(is_role_banned(player.ckey, job.title))
+		return
+
+	if(is_race_banned(player.ckey, player.client.prefs.pref_species.id))
 		return
 
 	if(QDELETED(player))

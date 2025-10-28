@@ -27,6 +27,7 @@
 /datum/objective/personal/mock/monarch/on_mock_used(datum/source, mob/living/victim)
 	. = ..()
 	if((istype(victim.mind?.assigned_role, /datum/job/lord) || victim.job == "Monarch") && (source == owner.current))
+<<<<<<< HEAD
 		to_chat(owner.current, span_greentext("You have mocked the monarch and completed the objective!"))
 		owner.current.adjust_triumphs(triumph_count)
 		completed = TRUE
@@ -34,6 +35,16 @@
 		escalate_objective()
 		UnregisterSignal(owner.current, COMSIG_VICIOUSLY_MOCKED)
 
+=======
+		complete_objective()
+
+/datum/objective/personal/mock/monarch/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have mocked the monarch and completed the objective!"))
+	adjust_storyteller_influence(XYLIX, 20)
+	UnregisterSignal(owner.current, COMSIG_VICIOUSLY_MOCKED)
+
+>>>>>>> vanderlin/main
 /datum/objective/personal/mock/monarch/update_explanation_text()
 	. = ..()
 	explanation_text = "Viciously mock the monarch for Xylix!"
@@ -45,10 +56,13 @@
 	var/mocked_targets = 0
 	var/required_count = 2
 
+<<<<<<< HEAD
 /datum/objective/personal/mock/noble/update_explanation_text()
 	. = ..()
 	explanation_text = "Viciously mock [required_count] nobles for Xylix!"
 
+=======
+>>>>>>> vanderlin/main
 /datum/objective/personal/mock/noble/on_mock_used(datum/source, mob/living/victim)
 	. = ..()
 	var/mob/living/carbon/human/human_victim = victim
@@ -58,6 +72,7 @@
 	if(human_victim.is_noble() && (source == owner.current))
 		mocked_targets++
 		if(mocked_targets >= required_count)
+<<<<<<< HEAD
 			to_chat(owner.current, span_greentext("You have mocked enough nobles and completed the objective!"))
 			owner.current.adjust_triumphs(triumph_count)
 			completed = TRUE
@@ -65,5 +80,22 @@
 			owner.current.set_stat_modifier("xylix_blessing", STATKEY_LCK, 1)
 			escalate_objective()
 			UnregisterSignal(owner.current, COMSIG_VICIOUSLY_MOCKED)
+=======
+			complete_objective()
+>>>>>>> vanderlin/main
 		else
 			to_chat(owner.current, span_notice("Noble mocked! Viciously mock [required_count - mocked_targets] more noble to complete the objective!"))
+
+/datum/objective/personal/mock/noble/complete_objective()
+	. = ..()
+	to_chat(owner.current, span_greentext("You have mocked enough nobles and completed the objective!"))
+	adjust_storyteller_influence(XYLIX, 20)
+	UnregisterSignal(owner.current, COMSIG_VICIOUSLY_MOCKED)
+
+/datum/objective/personal/mock/noble/reward_owner()
+	. = ..()
+	owner.current.set_stat_modifier("xylix_blessing", STATKEY_LCK, 1)
+
+/datum/objective/personal/mock/noble/update_explanation_text()
+	. = ..()
+	explanation_text = "Viciously mock [required_count] nobles for Xylix!"

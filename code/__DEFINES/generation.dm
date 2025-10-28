@@ -2,3 +2,10 @@
 #define GENERATION_STATUS_ACTIVE "active"
 #define GENERATION_STATUS_COMPLETE "complete"
 #define GENERATION_STATUS_FAILED "failed"
+<<<<<<< HEAD
+=======
+
+#define SETTLEMENT_TIER_BASIC "basic"
+#define SETTLEMENT_TIER_WOOD "wood"
+#define SETTLEMENT_TIER_STONE "stone"
+>>>>>>> vanderlin/main

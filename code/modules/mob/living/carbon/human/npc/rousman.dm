@@ -144,6 +144,7 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 	changesource_flags = WABBAJACK
 	exotic_bloodtype = /datum/blood_type/human/rousman
 	var/raceicon = "rousman"
+	exotic_bloodtype = /datum/blood_type/human/corrupted/rousman
 
 /datum/species/rousman/update_damage_overlays(mob/living/carbon/human/H)
 	return
@@ -225,6 +226,9 @@ GLOBAL_LIST_EMPTY(rousman_ambush_objects)
 		QDEL_NULL(src.charflaw)
 	update_body()
 	faction = list(FACTION_RATS)
+	var/turf/turf = get_turf(src)
+	if(SSterrain_generation.get_island_at_location(turf))
+		faction |= "islander"
 	name = "rousman"
 	real_name = "rousman"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)

@@ -235,7 +235,14 @@
 	if(has_status_effect(/datum/status_effect/buff/received_lux))
 		return LUX_HAS_LUX
 
+	if(has_status_effect(/datum/status_effect/debuff/tainted_lux) || has_status_effect(/datum/status_effect/debuff/received_tainted_lux) || has_status_effect(/datum/status_effect/buff/received_lux))
+		return LUX_HAS_LUX
+
 	return blood.contains_lux
+
+/mob/living/proc/get_lux_tainted_status()
+	var/datum/blood_type/blood = get_blood_type()
+	return blood.tainted_lux
 
 /mob/living/carbon/human/get_blood_type()
 	RETURN_TYPE(/datum/blood_type)
