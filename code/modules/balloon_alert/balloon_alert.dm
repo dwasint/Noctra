@@ -68,7 +68,11 @@
 	)
 
 	animate(
+<<<<<<< HEAD
+		alpha = (alpha || 255),
+=======
 		alpha = 255,
+>>>>>>> vanderlin/main
 		time = BALLOON_TEXT_SPAWN_TIME,
 		easing = CUBIC_EASING | EASE_OUT,
 		flags = ANIMATION_PARALLEL,
