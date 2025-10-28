@@ -168,13 +168,6 @@
 	category = "Pants"
 	craftdiff = 3
 
-/datum/repeatable_crafting_recipe/sewing/patkilt
-	name = "patterned kilt"
-	output = /obj/item/clothing/pants/skirt/patkilt
-	requirements = list(/obj/item/natural/cloth = 4,
-				/obj/item/natural/fibers = 2)
-	category = "Pants"
-	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/headband
 	name = "headband"
@@ -202,12 +195,6 @@
 	output = /obj/item/clothing/head/strawhat
 	requirements = list(/obj/item/natural/fibers = 3)
 	category = "Hat"
-
-/datum/repeatable_crafting_recipe/sewing/sash
-	name = "cloth sash"
-	output = /obj/item/clothing/shirt/undershirt/sash
-	requirements = list(/obj/item/natural/cloth = 2,)
-	category = "Cloak"
 
 /datum/repeatable_crafting_recipe/sewing/knitcap
 	name = "knit cap"
