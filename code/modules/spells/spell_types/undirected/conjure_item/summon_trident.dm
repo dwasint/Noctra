@@ -134,8 +134,6 @@
 	name = "lack of attachment"
 
 
-<<<<<<< HEAD
-=======
 /obj/item/fishing/lure/no_bait
 	name = "lack of bait"
 	desc = "A special fishing lure for unique circumstances."
@@ -161,7 +159,6 @@
 		return TRUE
 	return FALSE
 
->>>>>>> vanderlin/main
 /obj/item/fishingrod/abyssor_trident/arcane
 	name = "Arcane Trident"
 	desc = "A conjured trident, it resonates with arcyne energy."

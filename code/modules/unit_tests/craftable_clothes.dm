@@ -23,18 +23,13 @@ abstract types are automatically excluded.
 		/obj/item/clothing/head/leather/inqhat/vigilante, //Renegade Bullshit
 		/obj/item/clothing/face/phys/plaguebearer, //Plague Only
 		/obj/item/clothing/ring/gold/burden, // uncraftable
-<<<<<<< HEAD
-=======
 		/obj/item/clothing/ring/feldsher_ring, // uncraftable
->>>>>>> vanderlin/main
 		/obj/item/clothing/head/maniac,
 		/obj/item/clothing/cloak/half/shadowcloak/cult, // cultist item
 		/obj/item/clothing/head/helmet/skullcap/cult, // cultist item
 		/obj/item/clothing/head/helmet/leather/saiga, // idk what kind of recipe to make this
 		/obj/item/clothing/neck/mana_star, // todo?
 		/obj/item/storage/backpack/backpack/artibackpack/porter, //Unique to Kobl
-<<<<<<< HEAD
-=======
 		/obj/item/clothing/face/spectacles/inq/spawnpair, //spawn type
 		/obj/item/clothing/face/facemask/steel/confessor/lensed, //manual craft
 		/obj/item/clothing/head/helmet/heavy/ordinatorhelm/plume, //manual craft
@@ -71,7 +66,6 @@ abstract types are automatically excluded.
 		/obj/item/clothing/armor/plate/fluted,
 		/obj/item/clothing/cloak/templar, //base type
 
->>>>>>> vanderlin/main
 	)
 	// these don't use misc_flags = CRAFTING_TEST_EXCLUDE because we want to explicitly know which paths we are excluding.
 	/// excludes paths along with their subtypes

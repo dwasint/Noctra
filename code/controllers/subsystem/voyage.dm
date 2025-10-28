@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// ==========================================
-// TERRAIN GENERATION SUBSYSTEM - COMPLETE
-// ==========================================
-=======
 /datum/terrain_generation_job
 	var/obj/effect/landmark/terrain_generation_marker/marker
 	var/turf/bottom_left
@@ -79,7 +74,6 @@
 	ship_size = size
 	z_level = z
 	top_right = locate(bl.x + size - 1, bl.y + size - 1, z_level)
->>>>>>> vanderlin/main
 
 SUBSYSTEM_DEF(terrain_generation)
 	name = "Terrain Generation"
@@ -103,27 +97,16 @@ SUBSYSTEM_DEF(terrain_generation)
 	var/list/island_registry = list() // List of all islands
 	var/list/ship_registry = list() // List of all ships
 
-<<<<<<< HEAD
-=======
 	var/list/island_positions = list() // Cached island positions: island_id -> list(nav_x, nav_y)
 	var/const/min_island_spacing = 30 // Minimum distance between islands
 	var/const/island_spawn_range = 750 // How far from origin to spawn islands
 	var/const/max_placement_attempts = 100 // Max attempts to find valid position
 
->>>>>>> vanderlin/main
 /datum/controller/subsystem/terrain_generation/Initialize()
 	setup_biome_pools()
 	generate_init_terrain()
 	return ..()
 
-<<<<<<< HEAD
-/datum/controller/subsystem/terrain_generation/proc/setup_biome_pools()
-	cave_biomes = subtypesof(/datum/cave_biome)
-	island_biomes = subtypesof(/datum/island_biome)
-
-/datum/controller/subsystem/terrain_generation/proc/generate_init_terrain()
-	// Find all markers that should generate on init
-=======
 /datum/controller/subsystem/terrain_generation/proc/get_difficulty()
 	var/list/difficulty_weights = list(
 		"0" = 1,
@@ -194,18 +177,10 @@ SUBSYSTEM_DEF(terrain_generation)
 /datum/controller/subsystem/terrain_generation/proc/generate_init_terrain()
 	// Find all markers that should generate on init
 	var/first = TRUE
->>>>>>> vanderlin/main
 	for(var/obj/effect/landmark/terrain_generation_marker/marker in world)
 		if(marker.generate_on_init)
 			log_world("Generating terrain at ([marker.x], [marker.y], [marker.z])...")
 
-<<<<<<< HEAD
-			var/cave_biome = marker.cave_biome_override || pick(cave_biomes)
-			var/island_biome = marker.island_biome_override || pick(island_biomes)
-
-			generate_terrain_sync(marker.loc, new cave_biome, new island_biome)
-
-=======
 			var/island_difficulty = get_difficulty()
 
 			var/cave_biome = marker.cave_biome_override || pick(cave_biomes)
@@ -213,16 +188,11 @@ SUBSYSTEM_DEF(terrain_generation)
 
 			generate_terrain_sync(marker.loc, new cave_biome(island_difficulty), new island_biome(island_difficulty), first)
 			first = FALSE
->>>>>>> vanderlin/main
 			qdel(marker)
 
 			log_world("Terrain generation complete.")
 
-<<<<<<< HEAD
-/datum/controller/subsystem/terrain_generation/proc/generate_terrain_sync(turf/bottom_left, datum/cave_biome/cave_biome, datum/island_biome/island_biome)
-=======
 /datum/controller/subsystem/terrain_generation/proc/generate_terrain_sync(turf/bottom_left, datum/cave_biome/cave_biome, datum/island_biome/island_biome, first)
->>>>>>> vanderlin/main
 	if(!bottom_left)
 		return FALSE
 
@@ -231,9 +201,6 @@ SUBSYSTEM_DEF(terrain_generation)
 	bottom_left = get_step(bottom_left, NORTH)
 
 	// Phase 1: Generate caves (z and z+1)
-<<<<<<< HEAD
-	var/datum/cave_generator/cave_gen = new(cave_biome, size, size)
-=======
 	var/datum/cave_generator/cave_gen
 
 	var/matthios = FALSE
@@ -243,7 +210,6 @@ SUBSYSTEM_DEF(terrain_generation)
 		matthios = TRUE
 	else
 		cave_gen = new(cave_biome, size, size)
->>>>>>> vanderlin/main
 
 	if(!cave_gen.generate(bottom_left))
 		log_world("ERROR: Cave generation failed at ([bottom_left.x], [bottom_left.y], [bottom_left.z])")
@@ -255,22 +221,14 @@ SUBSYSTEM_DEF(terrain_generation)
 		log_world("ERROR: Could not locate island z-level at z+2")
 		return FALSE
 
-<<<<<<< HEAD
-	var/datum/island_generator/island_gen = new(island_biome, size, size)
-=======
 	var/datum/island_generator/island_gen = new(island_biome, size, size, _matthios = matthios)
->>>>>>> vanderlin/main
 
 	if(!island_gen.generate(island_corner))
 		log_world("ERROR: Island generation failed at ([island_corner.x], [island_corner.y], [island_corner.z])")
 		return FALSE
 
-<<<<<<< HEAD
-	var/datum/island_data/island = new(bottom_left, size + (perimeter_width * 2))
-=======
 	var/datum/island_data/island = new(bottom_left, size + (perimeter_width * 2), island_biome.name, island_biome.difficulty, matthios, cave_biome.ore_types_lower, cave_biome.ore_types_upper)
 	generate_island_position(island)
->>>>>>> vanderlin/main
 	island_registry += island
 
 	return TRUE
@@ -379,11 +337,7 @@ SUBSYSTEM_DEF(terrain_generation)
 		return FALSE
 
 	var/cave_biome = marker.cave_biome_override || pick(cave_biomes)
-<<<<<<< HEAD
-	var/island_biome = marker.island_biome_override || pick(island_biomes)
-=======
 	var/island_biome = marker.island_biome_override || pickweight(island_biomes)
->>>>>>> vanderlin/main
 
 	var/datum/terrain_generation_job/job = queue_deferred_generation(marker.loc, cave_biome, island_biome)
 	job.marker = marker
@@ -409,11 +363,7 @@ SUBSYSTEM_DEF(terrain_generation)
 	return FALSE
 
 /datum/controller/subsystem/terrain_generation/proc/register_island(datum/terrain_generation_job/job)
-<<<<<<< HEAD
-	var/datum/island_data/island = new(job.bottom_left, island_size + (perimeter_width * 2))
-=======
 	var/datum/island_data/island = new(job.bottom_left, island_size + (perimeter_width * 2), job.island_biome.name)
->>>>>>> vanderlin/main
 	island_registry += island
 	return island
 
@@ -426,8 +376,6 @@ SUBSYSTEM_DEF(terrain_generation)
 
 	return ship
 
-<<<<<<< HEAD
-=======
 /datum/controller/subsystem/terrain_generation/proc/spawn_docking_boat(datum/ship_data/ship, datum/island_data/island, direction)
 	var/turf/shore_turf = find_shore_location(island, direction)
 	if(!shore_turf)
@@ -585,7 +533,6 @@ SUBSYSTEM_DEF(terrain_generation)
 
 	return edge_turfs[round(edge_turfs.len / 2)]
 
->>>>>>> vanderlin/main
 /datum/controller/subsystem/terrain_generation/proc/dock_ship_to_island(datum/ship_data/ship, datum/island_data/island, mirage_range = world.view)
 	if(!ship || !island)
 		return FALSE
@@ -607,15 +554,12 @@ SUBSYSTEM_DEF(terrain_generation)
 		var/index = ship_edge_turfs.Find(ship_turf)
 		var/turf/island_turf = island_edge_turfs[min(index, island_edge_turfs.len)]
 
-<<<<<<< HEAD
-=======
 		ship_turf.alpha = 0
 		if(istype(ship_turf, /turf/open/water))
 			var/turf/open/water/water = ship_turf
 			water.water_overlay.alpha = 0
 			water.water_top_overlay.alpha = 0
 
->>>>>>> vanderlin/main
 		var/datum/component/mirage_border/ship_to_island = ship_turf.AddComponent(\
 			/datum/component/mirage_border,\
 			island_turf,\
@@ -638,17 +582,11 @@ SUBSYSTEM_DEF(terrain_generation)
 		ship.active_mirage_borders += island_to_ship
 		ship.active_mirage_borders += island_turf
 
-<<<<<<< HEAD
-	ship.docked_island = island
-
-	log_world("Docked ship at z=[ship.z_level] (direction=[ship_direction]) to island at z=[island.z_level] (direction=[island_direction]) - [ship_edge_turfs.len] edge turfs")
-=======
 	// Spawn docking boat on island
 	ship.docked_boat_data = spawn_docking_boat(ship, island, island_direction)
 	ship.docked_island = island
 
 	log_world("Docked ship at z=[ship.z_level] to island at z=[island.z_level] with boat")
->>>>>>> vanderlin/main
 	return TRUE
 
 /datum/controller/subsystem/terrain_generation/proc/get_edge_turfs(turf/bottom_left, size, z_level, direction, is_ship = FALSE)
@@ -699,10 +637,7 @@ SUBSYSTEM_DEF(terrain_generation)
 	if(!ship)
 		return FALSE
 
-<<<<<<< HEAD
-=======
 	// Clean up mirage borders and restore alpha
->>>>>>> vanderlin/main
 	for(var/i = 1; i <= ship.active_mirage_borders.len; i++)
 		var/entry = ship.active_mirage_borders[i]
 		if(istype(entry, /datum/component/mirage_border))
@@ -710,28 +645,22 @@ SUBSYSTEM_DEF(terrain_generation)
 			qdel(MB)
 		else if(isturf(entry))
 			var/turf/T = entry
-<<<<<<< HEAD
-=======
 			T.alpha = 255
 			if(istype(T, /turf/open/water))
 				var/turf/open/water/water = T
 				water.water_overlay.alpha = 255
 				water.water_top_overlay.alpha = 255
->>>>>>> vanderlin/main
 			var/datum/component/mirage_border/MB = T.GetComponent(/datum/component/mirage_border)
 			if(MB)
 				qdel(MB)
 
 	ship.active_mirage_borders.Cut()
-<<<<<<< HEAD
-=======
 
 	// Clean up docking boat
 	if(ship.docked_boat_data)
 		cleanup_docking_boat(ship.docked_boat_data)
 		ship.docked_boat_data = null
 
->>>>>>> vanderlin/main
 	ship.docked_island = null
 
 	log_world("Undocked ship at z=[ship.z_level]")
@@ -753,11 +682,7 @@ SUBSYSTEM_DEF(terrain_generation)
 	for(var/datum/ship_data/ship in ship_registry)
 		if(T.x >= ship.bottom_left.x && T.x <= ship.top_right.x)
 			if(T.y >= ship.bottom_left.y && T.y <= ship.top_right.y)
-<<<<<<< HEAD
-				if(T.z == ship.z_level)
-=======
 				if(T.z >= ship.z_level && T.z <= ship.z_level + 3)
->>>>>>> vanderlin/main
 					return ship
 
 	return null
@@ -769,152 +694,11 @@ SUBSYSTEM_DEF(terrain_generation)
 	for(var/datum/island_data/island in island_registry)
 		if(T.x >= island.bottom_left.x && T.x <= island.top_right.x)
 			if(T.y >= island.bottom_left.y && T.y <= island.top_right.y)
-<<<<<<< HEAD
-				if(T.z == island.z_level)
-=======
 				if(T.z <= island.z_level + 1  && T.z >= island.z_level - 2)
->>>>>>> vanderlin/main
 					return island
 
 	return null
 
-<<<<<<< HEAD
-/datum/terrain_generation_job
-	var/obj/effect/landmark/terrain_generation_marker/marker
-	var/turf/bottom_left
-	var/datum/cave_biome/cave_biome
-	var/datum/island_biome/island_biome
-	var/z_level
-
-	var/status = GENERATION_STATUS_PENDING
-	var/current_phase = ""
-	var/progress = 0
-	var/error = ""
-
-	var/queued_time = 0
-	var/start_time = 0
-	var/completion_time = 0
-
-/datum/island_data
-	var/turf/bottom_left
-	var/turf/top_right
-	var/z_level
-	var/island_size
-	var/list/dock_anchors = list()
-	var/island_id
-	var/island_name // Human-readable name
-
-/datum/island_data/New(turf/bl, size)
-	bottom_left = bl
-	island_size = size
-	z_level = bl.z + 2 // Island is always at z+2
-	top_right = locate(bl.x + size - 1, bl.y + size - 1, z_level)
-	island_id = "island_[bl.x]_[bl.y]_[z_level]_[world.time]"
-	island_name = "Island #[length(SSterrain_generation.island_registry) + 1]"
-
-/datum/ship_data
-	var/turf/bottom_left
-	var/turf/top_right
-	var/z_level
-	var/ship_size
-	var/list/ship_anchors = list() // Turf locations for anchors (keyed by direction)
-	var/datum/island_data/docked_island
-	var/list/active_mirage_borders = list() // list of borders easier cleanup this way
-
-/datum/ship_data/New(turf/bl, size, z)
-	bottom_left = bl
-	ship_size = size
-	z_level = z
-	top_right = locate(bl.x + size - 1, bl.y + size - 1, z_level)
-
-/obj/effect/landmark/terrain_generation_marker
-	name = "terrain generation marker"
-	desc = "Marks where terrain should be generated. Bottom-left corner including perimeter."
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "x2"
-	alpha = 128
-
-	var/generate_on_init = TRUE
-	var/datum/cave_biome/cave_biome_override = null
-	var/datum/island_biome/island_biome_override = null
-
-/obj/effect/landmark/terrain_generation_marker/Initialize(mapload)
-	. = ..()
-	if(!generate_on_init)
-		// Make visible for deferred generation
-		alpha = 255
-
-/obj/effect/landmark/terrain_generation_marker/attack_hand(mob/user)
-	. = ..()
-	if(!generate_on_init)
-		to_chat(user, span_notice("Triggering terrain generation..."))
-		if(SSterrain_generation.trigger_deferred_generation(src))
-			to_chat(user, span_notice("Generation queued!"))
-		else
-			to_chat(user, span_warning("Failed to queue generation."))
-
-/obj/effect/landmark/terrain_generation_marker/deferred
-	generate_on_init = FALSE
-
-/obj/effect/landmark/ship_marker
-	name = "ship area marker"
-	desc = "Marks the bottom-left corner of a ship area. Click to dock/undock."
-	icon = 'icons/effects/effects.dmi'
-	icon_state = "x2"
-	alpha = 128
-
-	var/ship_size = 100
-	var/datum/ship_data/registered_ship
-	var/target_island_id = "" // Unique ID of island to dock to
-
-/obj/effect/landmark/ship_marker/Initialize(mapload)
-	. = ..()
-	registered_ship = SSterrain_generation.register_ship(loc, ship_size)
-
-/obj/effect/landmark/ship_marker/proc/mirage_link()
-	var/mob/user = usr
-	if(!registered_ship)
-		return
-
-	if(registered_ship.docked_island)
-		SSterrain_generation.undock_ship(registered_ship)
-	else
-		var/datum/island_data/island
-
-		if(target_island_id)
-			island = SSterrain_generation.get_island_by_id(target_island_id)
-		else
-			var/list/available_islands = SSterrain_generation.get_all_islands()
-			if(!available_islands.len)
-				to_chat(user, span_warning("No islands available!"))
-				return
-
-			var/list/island_choices = list()
-			for(var/datum/island_data/isl in available_islands)
-				island_choices[isl.island_name] = isl
-
-			var/choice = input(user, "Select island to dock to:", "Dock Ship") as null|anything in island_choices
-			if(!choice)
-				return
-
-			island = island_choices[choice]
-
-		if(!island)
-			to_chat(user, span_warning("Island not found!"))
-			return
-
-		if(SSterrain_generation.dock_ship_to_island(registered_ship, island))
-			to_chat(user, span_notice("Ship docked to [island.island_name]! You can now see the island."))
-		else
-			to_chat(user, span_warning("Failed to dock ship."))
-
-/obj/effect/landmark/ship_marker/Destroy()
-	if(registered_ship)
-		SSterrain_generation.undock_ship(registered_ship)
-	. = ..()
-
-=======
->>>>>>> vanderlin/main
 /client/proc/list_all_ships_and_islands()
 	set name = "List Ships and Islands"
 	set category = "Debug"

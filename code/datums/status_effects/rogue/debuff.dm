@@ -539,8 +539,6 @@
 	. = ..()
 	var/datum/component/stinky_component = GetComponent(/datum/component/rot/stinky_person)
 	stinky_component?.RemoveComponent()
-<<<<<<< HEAD
-=======
 
 /datum/status_effect/debuff/tainted_lux
 	id = "tainted_lux"
@@ -571,4 +569,3 @@
 /atom/movable/screen/alert/status_effect/debuff/corrupted_by_tainted_lux
 	name = "Corrupted..."
 	desc = span_danger("It filled my veins with light and rot alike... I can feel it crawling under my skin, whispering that I should never have done it...")
->>>>>>> vanderlin/main

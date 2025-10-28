@@ -785,8 +785,6 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/weapon/mace/silver/rungu
-<<<<<<< HEAD
-=======
 
 /datum/anvil_recipe/weapons/psy/axe
 	name = "Psydonian War Axe (+1 B. Silver, +1 Stick)"
@@ -890,4 +888,3 @@
 	created_item = /obj/item/weapon/axe/steel/atgervi
 	i_type = "Weapons"
 	craftdiff = 3
->>>>>>> vanderlin/main

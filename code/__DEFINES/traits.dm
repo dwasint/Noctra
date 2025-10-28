@@ -345,10 +345,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_BLACKBAGGER "Apprehension Techniques" // Capable of using Garrotes and Blackbags. Apprehension techniques.
 
 #define TRAIT_WEBWALK 					"Webwalker"
-<<<<<<< HEAD
-=======
 #define TRAIT_BRUSHWALK					"Brushwalker"
->>>>>>> vanderlin/main
 #define TRAIT_DEADNOSE 					"Dead Nose"
 #define TRAIT_STINKY					"Natural Stench"
 #define TRAIT_ZJUMP 					"High Jumping"
@@ -593,10 +590,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define ECHOLOCATION_TRAIT "echolocation"
 /// trait that makes you bounce when speaking
 #define TRAIT_SHAKY_SPEECH "Shaky Speech"
-<<<<<<< HEAD
-=======
 #define TRAIT_NEEDS_QUENCH "Needs Quenching"
->>>>>>> vanderlin/main
 
 /// Dendor Path Traits
 #define TRAIT_DENDOR_GROWING "trait_dendor_growing"

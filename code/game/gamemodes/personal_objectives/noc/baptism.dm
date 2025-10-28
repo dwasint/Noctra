@@ -28,15 +28,6 @@
 /datum/objective/personal/baptism/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You have been baptized and completed Noc's objective!"))
-<<<<<<< HEAD
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(NOC, 20)
-	owner.current.set_stat_modifier("noc_blessing", STATKEY_INT, 1)
-	escalate_objective()
-	UnregisterSignal(owner.current, COMSIG_BAPTISM_RECEIVED)
-
-=======
 	adjust_storyteller_influence(NOC, 20)
 	UnregisterSignal(owner.current, COMSIG_BAPTISM_RECEIVED)
 
@@ -44,6 +35,5 @@
 	. = ..()
 	owner.current.set_stat_modifier("noc_blessing", STATKEY_INT, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/baptism/update_explanation_text()
 	explanation_text = "Receive mana baptism in Noc's name to gain their favor!"

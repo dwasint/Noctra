@@ -19,8 +19,6 @@
 	var/atom/movable/screen/strategy_ui/controller_button/builds/builds
 
 	var/atom/movable/screen/strategy_ui/controller_button/exit/exit
-<<<<<<< HEAD
-=======
 
 /atom/movable/screen/strategy_ui/controller_ui/New(loc, ...)
 	. = ..()
@@ -38,7 +36,6 @@
 	QDEL_NULL(builds)
 	QDEL_NULL(exit)
 	return ..()
->>>>>>> vanderlin/main
 
 /atom/movable/screen/strategy_ui/controller_ui/vv_edit_var(var_name, var_value)
 	switch (var_name)
@@ -85,19 +82,6 @@
 	client.screen -= exit
 
 /atom/movable/screen/strategy_ui/controller_ui/proc/create_and_position_buttons()
-<<<<<<< HEAD
-	actions = new
-	units = new
-	ability = new
-	stat = new
-	decor = new
-	traps = new
-	builds = new
-	bottom = new
-	destroy = new
-	move = new
-	exit = new
-=======
 	actions = new(null, src)
 	units = new(null, src)
 	ability = new(null, src)
@@ -109,7 +93,6 @@
 	destroy = new(null, src)
 	move = new(null, src)
 	exit = new(null, src)
->>>>>>> vanderlin/main
 
 	update_screen_loc()
 	update_all()

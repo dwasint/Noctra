@@ -36,15 +36,9 @@
 	traits = list(TRAIT_ORPHAN)
 	cmode_music = 'sound/music/cmode/towner/CombatInn.ogg'
 
-<<<<<<< HEAD
-/datum/job/migrant/urchinbrain/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	LAZYADDASSOC(skills, /datum/skill/combat/wrestling, rand(3))
-=======
 /datum/job/migrant/urchinbrain/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	spawned.adjust_skillrank(/datum/skill/combat/wrestling, rand(3))
->>>>>>> vanderlin/main
 
 /datum/outfit/urchinbrain
 	name = "Urchin Leader"
@@ -91,15 +85,9 @@
 	traits = list(TRAIT_ORPHAN)
 	cmode_music = 'sound/music/cmode/towner/CombatInn.ogg'
 
-<<<<<<< HEAD
-/datum/job/migrant/urchinbrawn/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	LAZYADDASSOC(skills, /datum/skill/combat/unarmed, pick(1,2))
-=======
 /datum/job/migrant/urchinbrawn/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	spawned.adjust_skillrank(/datum/skill/combat/unarmed, pick(1, 2))
->>>>>>> vanderlin/main
 
 /datum/outfit/urchinbrawn
 	name = "Urchin"

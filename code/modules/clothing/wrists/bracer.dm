@@ -13,8 +13,6 @@
 	sewrepair = FALSE
 	smeltresult = /obj/item/ingot/iron //no 1 to 1 conversion
 	max_integrity = INTEGRITY_STRONG
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/wrists/bracers/naledi
 	name = "sojourner's wrappings"
@@ -30,7 +28,6 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	sewrepair = TRUE
->>>>>>> vanderlin/main
 
 /obj/item/clothing/wrists/bracers/iron
 	name = "iron plate vambraces"
@@ -59,11 +56,7 @@
 	icon_state = "ijackchain"
 	item_state = "ijackchain"
 	armor = ARMOR_MAILLE
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	prevent_crits = CUT_AND_MINOR_CRITS
 	smeltresult = /obj/item/fertilizer/ash //we avoid melting one piece for one bar
 	melting_material = /datum/material/iron // we get one bar per two pieces of the item recovered and smelted
@@ -108,8 +101,6 @@
 /obj/item/clothing/wrists/bracers/leather/masterwork/Initialize()
 	. = ..()
 	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/wrists/bracers/psythorns
 	name = "psydonian thorns"
@@ -146,4 +137,3 @@
 	else
 		user.visible_message(span_warning("[user] stops reshaping [src]."))
 		return
->>>>>>> vanderlin/main

@@ -87,16 +87,9 @@
 
 //#define NO_DUNGEON //comment this to load dungeons.
 
-<<<<<<< HEAD
 //#define USES_PQ
 //#define ABSOLUTE_MINIMUM_MODE //uncomment this to skip as many resource intensive ops as possible to load in for testing the fastest while preserving most gameplay features.
 
-=======
-//#define ABSOLUTE_MINIMUM_MODE //uncomment this to skip as many resource intensive ops as possible to load in for testing the fastest while preserving most gameplay features.
-
-#define USES_PQ
-
->>>>>>> vanderlin/main
 #ifdef LOWMEMORYMODE
 #ifdef ABSOLUTE_MINIMUM_MODE
 #define FORCE_MAP "_maps/minimal_test.json"

@@ -1136,11 +1136,7 @@
 	var/reason = input(user, "Choose a reason", "Triumph Giver") as text|null
 
 	for(var/client/client as anything in GLOB.clients)
-<<<<<<< HEAD
-		client.mob.adjust_triumphs(amount, reason = reason)
-=======
 		client.mob.adjust_triumphs(amount, reason = reason, override_bonus = TRUE)
->>>>>>> vanderlin/main
 
 /datum/admins/proc/change_skill_exp_modifier()
 	set name = "Change Skill Experience Gain"

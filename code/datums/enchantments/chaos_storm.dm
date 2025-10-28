@@ -14,12 +14,6 @@
 
 	var/last_used
 
-<<<<<<< HEAD
-/datum/enchantment/chaos_storm/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	if(!proximity_flag)
-		return
-	if(world.time < (src.last_used[source] + (10 SECONDS)))
-=======
 /datum/enchantment/chaos_storm/register_triggers(atom/item)
 	. = ..()
 	registered_signals += COMSIG_ITEM_AFTERATTACK
@@ -29,7 +23,6 @@
 	if(!proximity_flag)
 		return
 	if(world.time < src.last_used + 10 SECONDS)
->>>>>>> vanderlin/main
 		return
 
 	if(isliving(target))

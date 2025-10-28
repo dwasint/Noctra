@@ -1904,21 +1904,12 @@
 	var/atom/movable/screen/bloodpool_maskpart/fill
 	var/atom/movable/screen/bloodpool_maskpart/mask
 
-<<<<<<< HEAD
-/atom/movable/screen/bloodpool/Initialize(mapload, ...)
-	. = ..()
-	foreground = new /atom/movable/screen/bloodpool_maskpart/foreground(null, icon, src)
-	background = new /atom/movable/screen/bloodpool_maskpart/background(null, icon, src)
-	fill = new /atom/movable/screen/bloodpool_maskpart/fill(null, icon, src)
-	mask = new /atom/movable/screen/bloodpool_maskpart/mask(null, icon, src)
-=======
 /atom/movable/screen/bloodpool/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	foreground = new /atom/movable/screen/bloodpool_maskpart/foreground(null, hud_owner, icon, src)
 	background = new /atom/movable/screen/bloodpool_maskpart/background(null, hud_owner, icon, src)
 	fill = new /atom/movable/screen/bloodpool_maskpart/fill(null, hud_owner, icon, src)
 	mask = new /atom/movable/screen/bloodpool_maskpart/mask(null, hud_owner, icon, src)
->>>>>>> vanderlin/main
 
 	background.vis_contents += fill
 	mask.vis_contents += background
@@ -1972,11 +1963,7 @@
 	/// Ref to our parent screem, purely for examine purposes
 	var/atom/movable/screen/parent_screen
 
-<<<<<<< HEAD
-/atom/movable/screen/bloodpool_maskpart/Initialize(mapload, icon, parent_screen)
-=======
 /atom/movable/screen/bloodpool_maskpart/Initialize(mapload, datum/hud/owner_hud, icon, parent_screen)
->>>>>>> vanderlin/main
 	. = ..()
 	src.icon = icon
 	src.parent_screen = parent_screen

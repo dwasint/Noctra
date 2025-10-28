@@ -2718,8 +2718,6 @@
 "oB" = (
 /turf/open/floor/churchbrick,
 /area/overlord_lair)
-<<<<<<< HEAD
-=======
 "oD" = (
 /obj/machinery/light/fueled/wallfire/candle/weak/l,
 /obj/structure/closet/crate/crafted_closet/inn,
@@ -2734,7 +2732,6 @@
 /obj/item/clothing/shirt/dress/royal/princess,
 /turf/open/floor/herringbone,
 /area/rogue/indoors/vampire_manor)
->>>>>>> vanderlin/main
 "oE" = (
 /obj/structure/table/wood/nice/decorated_alt,
 /obj/item/reagent_containers/glass/cup/wooden{
@@ -6244,33 +6241,10 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods_safe)
 "ME" = (
-<<<<<<< HEAD
-/obj/structure/closet/crate/crafted_closet/inn,
-/obj/item/clothing/armor/leather/jacket/hand,
-/obj/item/clothing/armor/leather/jacket/leathercoat/black,
-/obj/item/clothing/shirt/grenzelhoft,
-/obj/item/clothing/shirt/tunic/noblecoat,
-/obj/item/clothing/shirt/undershirt/fancy,
-/obj/item/clothing/head/fancyhat,
-/obj/item/clothing/pants/grenzelpants,
-/obj/item/clothing/shoes/boots,
-/obj/item/clothing/shoes/nobleboot,
-/obj/item/clothing/head/helmet/skullcap/grenzelhoft,
-/obj/item/clothing/cloak/cape,
-/obj/item/clothing/cloak/raincloak/furcloak,
-/obj/item/clothing/shirt/tunic/colored/black,
-/obj/item/clothing/gloves/angle/grenzel,
-/obj/item/clothing/gloves/angle,
-/obj/item/clothing/shirt/dress/silkdress/colored/black,
-/obj/item/clothing/armor/gambeson/heavy/winterdress,
-/obj/item/clothing/armor/gambeson/heavy/dress,
-/obj/item/storage/belt/leather,
-=======
 /obj/structure/closet/crate/chest/crate,
 /obj/item/reagent_containers/glass/bottle/healthpot,
 /obj/item/reagent_containers/glass/bottle/healthpot,
 /obj/item/reagent_containers/glass/bottle/healthpot,
->>>>>>> vanderlin/main
 /turf/open/floor/carpet,
 /area/rogue/indoors/vampire_manor)
 "MF" = (
@@ -7374,10 +7348,7 @@
 /obj/structure/rack,
 /obj/item/weapon/mace,
 /obj/item/weapon/polearm/spear,
-<<<<<<< HEAD
-=======
 /obj/item/weapon/flail,
->>>>>>> vanderlin/main
 /turf/open/floor/hexstone,
 /area/rogue/indoors/vampire_manor)
 "TM" = (

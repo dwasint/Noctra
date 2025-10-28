@@ -51,16 +51,6 @@
 		"[user] extracts lux from [target]'s innards.")
 		return FALSE
 	else
-<<<<<<< HEAD
-		display_results(user, target, span_notice("You extract a single dose of lux from [target]'s heart."),
-			"[user] extracts lux from [target]'s innards.",
-			"[user] extracts lux from [target]'s innards.")
-		new /obj/item/reagent_containers/lux(target.loc)
-		if(target.has_status_effect(/datum/status_effect/buff/received_lux))
-			target.remove_status_effect(/datum/status_effect/buff/received_lux)
-		else
-			target.apply_status_effect(/datum/status_effect/debuff/lux_drained)
-=======
 		if(target.get_lux_tainted_status() || target.has_status_effect(/datum/status_effect/debuff/tainted_lux) || target.has_status_effect(/datum/status_effect/debuff/received_tainted_lux))
 			display_results(user, target, span_notice("You extract a single dose of tainted lux from [target]'s heart."),
 				"[user] extracts tainted lux from [target]'s innards.",
@@ -78,7 +68,6 @@
 		else
 			target.apply_status_effect(/datum/status_effect/debuff/lux_drained)
 			target.remove_status_effect(/datum/status_effect/debuff/tainted_lux)
->>>>>>> vanderlin/main
 		SEND_SIGNAL(user, COMSIG_LUX_EXTRACTED, target)
 		record_featured_stat(FEATURED_STATS_CRIMINALS, user)
 		record_round_statistic(STATS_LUX_HARVESTED)

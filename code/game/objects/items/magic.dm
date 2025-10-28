@@ -74,10 +74,7 @@
 					return
 				if(HL.STAPER >= 11)
 					to_chat(HL, span_warning("I feel a pair of unknown eyes on me."))
-<<<<<<< HEAD
-=======
 			REMOVE_TRAIT(user, TRAIT_NOSSDINDICATOR, "scryingorb")
->>>>>>> vanderlin/main
 			return
 	to_chat(user, span_warning("I peer into [src], but can't find [input]."))
 	return

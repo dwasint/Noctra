@@ -298,8 +298,6 @@
 	item_state = "lakkaritabard"
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	allowed_race = SPECIES_BASE_BODY
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/cloak/poncho
 
@@ -309,4 +307,3 @@
 	item_state = "poncho"
 	boobed = FALSE
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
->>>>>>> vanderlin/main

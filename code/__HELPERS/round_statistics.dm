@@ -310,10 +310,7 @@ GLOBAL_LIST_INIT(vanderlin_round_stats, list(
 	STATS_MAMMONS_DEPOSITED = 0,
 	STATS_MAMMONS_WITHDRAWN = 0,
 	STATS_STARTING_TREASURY = 0,
-<<<<<<< HEAD
-=======
 	STATS_HUNTED_PEOPLE = 0,
->>>>>>> vanderlin/main
 ))
 
 GLOBAL_LIST_EMPTY(patron_follower_counts)

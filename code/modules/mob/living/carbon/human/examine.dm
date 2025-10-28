@@ -20,17 +20,11 @@
 			user.add_stress(/datum/stress_event/beautiful_self)
 		else
 			user.add_stress(/datum/stress_event/beautiful)
-<<<<<<< HEAD
-	if(HAS_TRAIT(src, TRAIT_UGLY) && user != src)
-=======
 	if(HAS_TRAIT(src, TRAIT_UGLY) &&  user != src)
->>>>>>> vanderlin/main
 		if(user == src)
 			user.add_stress(/datum/stress_event/ugly_self)
 		else
 			user.add_stress(/datum/stress_event/ugly)
-<<<<<<< HEAD
-=======
 	if(HAS_TRAIT(src, TRAIT_FISHFACE))
 		if(HAS_TRAIT(user, TRAIT_FISHFACE))
 			if(user == src)
@@ -42,7 +36,6 @@
 				user.add_stress(/datum/stress_event/fish_monster)
 			else
 				user.add_stress(/datum/stress_event/fishface)
->>>>>>> vanderlin/main
 	if(HAS_TRAIT(src, TRAIT_OLDPARTY) && HAS_TRAIT(user, TRAIT_OLDPARTY) && user != src)
 		user.add_stress(/datum/stress_event/saw_old_party)
 
@@ -174,8 +167,6 @@
 		if(has_flaw(/datum/charflaw/addiction/junkie) && HAS_TRAIT(user, TRAIT_RECOGNIZE_ADDICTS))
 			. += span_userdanger("JUNKIE!")
 
-<<<<<<< HEAD
-=======
 		if(HAS_TRAIT(src, TRAIT_FISHFACE) && HAS_TRAIT(user, TRAIT_FISHFACE))
 			if(user == src)
 				. += span_green("I don't look that bad, I just look different to other species.")
@@ -190,7 +181,6 @@
 			else
 				. += span_necrosis("That fish is ugly!")
 
->>>>>>> vanderlin/main
 		if(real_name in GLOB.excommunicated_players)
 			. += span_userdanger("EXCOMMUNICATED!")
 
@@ -653,11 +643,7 @@
 				. += span_notice("Inscryption[N ? " by [N]'s " : ""][W ? "Wonder #[W]" : ""]: [K ? K : ""]")
 
 	if(!obscure_name) // Miniature headshot on examine
-<<<<<<< HEAD
 		if(headshot_link)
-=======
-		if(headshot_link && client?.patreon?.has_access(ACCESS_ASSISTANT_RANK))
->>>>>>> vanderlin/main
 			. += "<img src=[headshot_link] width=100 height=100/>"
 
 	if(Adjacent(user))
@@ -689,12 +675,7 @@
 	if(!appears_dead)
 		if(skipface && user.has_flaw(/datum/charflaw/hunted) && user != src)
 			user.add_stress(/datum/stress_event/hunted)
-<<<<<<< HEAD
 	if(!obscure_name && (flavortext || headshot_link)) // only show flavor text if there is a flavor text and we show headshot
-=======
-
-	if(!obscure_name && (flavortext || ((headshot_link || ooc_extra_link) && client?.patreon?.has_access(ACCESS_ASSISTANT_RANK)))) // only show flavor text if there is a flavor text and we show headshot
->>>>>>> vanderlin/main
 		. += "<a href='?src=[REF(src)];task=view_flavor_text;'>Examine Closer</a>"
 
 	var/trait_exam = common_trait_examine()

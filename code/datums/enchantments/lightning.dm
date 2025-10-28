@@ -12,12 +12,6 @@
 
 	var/last_used
 
-<<<<<<< HEAD
-/datum/enchantment/lightning/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	if(!proximity_flag)
-		return
-	if(world.time < (src.last_used[source] + (1 MINUTES + 40 SECONDS))) //thanks borbop
-=======
 /datum/enchantment/lightning/register_triggers(atom/item)
 	. = ..()
 	registered_signals += COMSIG_ITEM_AFTERATTACK
@@ -27,7 +21,6 @@
 	if(!proximity_flag)
 		return
 	if(world.time < (last_used + 100 SECONDS))
->>>>>>> vanderlin/main
 		return
 
 	if(isliving(target))

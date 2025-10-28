@@ -409,17 +409,6 @@
 	additional_items = list(/obj/item/natural/feather)
 	recipe_name = "a grenzelhoft plume helmet"
 	created_item = /obj/item/clothing/head/helmet/skullcap/grenzelhoft
-<<<<<<< HEAD
-
-/datum/anvil_recipe/armor/iron/splint
-	name = "Splint Armor (+Hide)"
-	recipe_name = "durable light armor"
-	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/natural/hide)
-	created_item = /obj/item/clothing/armor/leather/splint
-	craftdiff = 1
-
-=======
 
 /datum/anvil_recipe/armor/iron/splint
 	name = "Two splint Armors (+2 cured leather)"
@@ -428,7 +417,6 @@
 	created_item = /obj/item/clothing/armor/leather/splint
 	createditem_extra = 1
 
->>>>>>> vanderlin/main
 ///////////////////////////////////////////////
 // --------- STEEL -----------
 /datum/anvil_recipe/armor/steel
@@ -1150,8 +1138,6 @@
 	created_item = /obj/item/clothing/head/rare/elfplate/welfplate
 	craftdiff = 5
 */
-<<<<<<< HEAD
-=======
 
 /datum/anvil_recipe/armor/anklets
 	name = "golden anklets"
@@ -1341,4 +1327,3 @@
 	name = "Psydonic Chain Gloves"
 	req_bar = /obj/item/ingot/silverblessed
 	created_item = /obj/item/clothing/gloves/chain/psydon
->>>>>>> vanderlin/main

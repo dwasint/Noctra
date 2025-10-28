@@ -39,11 +39,7 @@
 		return AFFECTED
 	return UNAFFECTED
 
-<<<<<<< HEAD
-/datum/enchantment/silver/on_hit(obj/item/source, mob/living/carbon/human/target, mob/living/carbon/human/user, proximity_flag, click_parameters)
-=======
 /datum/enchantment/silver/proc/on_hit(obj/item/source, mob/living/carbon/human/target, mob/living/carbon/human/user, proximity_flag, click_parameters)
->>>>>>> vanderlin/main
 	if(!proximity_flag)
 		return
 	if(!ishuman(target))

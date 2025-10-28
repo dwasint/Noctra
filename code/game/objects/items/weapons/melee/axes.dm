@@ -226,11 +226,7 @@
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "nsapo_iron"
 	max_blade_int = 200
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	melting_material = /datum/material/iron
 	melt_amount = 75
 	parrysound = "sword"
@@ -368,13 +364,8 @@
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "nsapo_steel"
 	max_blade_int = 300
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-	melting_material = /datum/material/iron
-=======
 	max_integrity = INTEGRITY_STRONGEST
 	melting_material = /datum/material/steel
->>>>>>> vanderlin/main
 	melt_amount = 75
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
@@ -495,8 +486,6 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-<<<<<<< HEAD
-=======
 
 /obj/item/weapon/greataxe/psy
 	force = 15
@@ -515,7 +504,6 @@
 	. = ..()
 	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
->>>>>>> vanderlin/main
 /obj/item/weapon/greataxe/steel
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_HEAVYAXE_WIELD
@@ -527,13 +515,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 11
 	max_blade_int = 300
-<<<<<<< HEAD
-	smeltresult = /obj/item/ingot/steel
 	max_integrity = INTEGRITY_STRONGEST
-	smeltresult = /obj/item/ingot/steel
-=======
-	max_integrity = INTEGRITY_STRONGEST
->>>>>>> vanderlin/main
 	melting_material = /datum/material/steel
 	melt_amount = 150
 	sellprice = 90

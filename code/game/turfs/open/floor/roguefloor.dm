@@ -988,22 +988,14 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/grassland.ogg'
 	slowdown = 0
-<<<<<<< HEAD
-=======
 	var/randomized = TRUE
->>>>>>> vanderlin/main
 	var/blood_sand = FALSE
 
 /turf/open/floor/sand/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	var/random_num = rand(1, 12)
-	icon_state = "sand-[random_num]"
-=======
 	if(randomized)
 		var/random_num = rand(1, 12)
 		icon_state = "sand-[random_num]"
->>>>>>> vanderlin/main
 
 /turf/open/floor/sand/proc/make_bloodied()
 	if(blood_sand)
@@ -1046,14 +1038,7 @@
 
 /turf/open/floor/sand/bloodied
 	icon_state = "bloody"
-<<<<<<< HEAD
-
-/turf/open/floor/sand/bloodied/Initialize(mapload)
-	. = ..()
-	make_bloodied()
-=======
 	randomized = FALSE
->>>>>>> vanderlin/main
 
 /turf/open/floor/sandstone_tile
 	icon = 'icons/delver/desert_objects.dmi'
@@ -1077,16 +1062,11 @@
 /turf/open/floor/cracked_earth
 	icon = 'icons/delver/desert_objects.dmi'
 	icon_state = "cracked_earth"
-<<<<<<< HEAD
-=======
 	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_DIRT_ROAD
->>>>>>> vanderlin/main
 
 /turf/open/floor/cracked_earth/Initialize(mapload)
 	. = ..()
 	dir = pick(GLOB.cardinals)
-<<<<<<< HEAD
-=======
 
 /turf/open/floor/flesh
 	name = "nerve threads"
@@ -1153,4 +1133,3 @@
 	base_icon_state = "mushroom_green"
 	icon = 'icons/turf/smooth/floors/mushroom_green.dmi'
 	mushroom_color = "green"
->>>>>>> vanderlin/main

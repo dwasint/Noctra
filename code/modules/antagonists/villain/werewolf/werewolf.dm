@@ -23,12 +23,8 @@
 
 	innate_traits = list(
 		TRAIT_STRONGBITE,
-<<<<<<< HEAD
-		TRAIT_BESTIALSENSE
-=======
 		TRAIT_BESTIALSENSE,
 		TRAIT_BRUSHWALK
->>>>>>> vanderlin/main
 	)
 
 /datum/antagonist/werewolf/lesser

@@ -24,8 +24,6 @@
 
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
-<<<<<<< HEAD
-=======
 /datum/outfit/farmer/map_override(mob/living/carbon/human/H)
 	if(SSmapping.config.map_name != "Voyage")
 		return
@@ -35,7 +33,6 @@
 	wrists = null
 	shoes = /obj/item/clothing/shoes/boots
 
->>>>>>> vanderlin/main
 /datum/outfit/farmer/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)

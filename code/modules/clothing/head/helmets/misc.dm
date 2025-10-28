@@ -9,11 +9,7 @@
 
 
 	body_parts_covered = COVERAGE_NASAL
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONGEST
->>>>>>> vanderlin/main
 	item_weight = 5.5 * STEEL_MULTIPLIER
 
 //................ Skull Cap ............... //
@@ -93,11 +89,7 @@
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS
 	sellprice = VALUE_CHEAP_STEEL_HELMET
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONGEST
->>>>>>> vanderlin/main
 	smeltresult = /obj/item/fertilizer/ash
 	melting_material = /datum/material/steel
 	melt_amount = 75
@@ -156,11 +148,7 @@
 	armor = ARMOR_SCALE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	body_parts_covered = COVERAGE_HEAD
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	item_weight = 5.5 * IRON_MULTIPLIER
 
 //................ Copper Lamellar Cap ............... //
@@ -439,11 +427,7 @@
 	body_parts_covered = COVERAGE_HEAD_NOSE
 	flags_inv = HIDEEARS|HIDEHAIR
 	block2add = FOV_BEHIND
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	slot_flags = ITEM_SLOT_HEAD | ITEM_SLOT_HIP
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR_UNUSUAL

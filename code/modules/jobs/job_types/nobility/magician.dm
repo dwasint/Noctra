@@ -36,15 +36,6 @@
 
 	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo) //intentional. This means it's a gamble between Noc or Zizo if your not one already. Don't fucking change this.
 
-<<<<<<< HEAD
-/datum/job/magician/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	if(prob(1)) //extremely rare
-		cmode_music = 'sound/music/cmode/antag/combat_evilwizard.ogg'
-
-/datum/outfit/magician/pre_equip(mob/living/carbon/human/H)
-	..()
-=======
 /datum/job/magician/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(prob(1))
@@ -53,7 +44,6 @@
 /datum/outfit/magician/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
->>>>>>> vanderlin/main
 	backr = /obj/item/storage/backpack/satchel
 	cloak = /obj/item/clothing/cloak/black_cloak
 	ring = /obj/item/clothing/ring/gold

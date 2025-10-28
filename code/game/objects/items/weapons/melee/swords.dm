@@ -133,21 +133,6 @@
 	wbalance = HARD_TO_DODGE
 	sellprice = 15
 
-<<<<<<< HEAD
-/obj/item/weapon/sword/ida
-	force = DAMAGE_SHORTSWORD
-	name = "steel ida"
-	desc = "A Lakkarian short sword with a tapered leaf-shaped blade. It's popular amongst the lower class of Ei Osalla."
-	icon = 'icons/roguetown/weapons/lakkari.dmi'
-	icon_state = "ida_steel"
-	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
-	gripped_intents = null
-	minstr = 5
-	wdefense = GOOD_PARRY
-	wbalance = HARD_TO_DODGE
-	sellprice = 50
-
-=======
 /obj/item/weapon/sword/short/psy
 	name = "psydonian shortsword"
 	desc = "Grenzelhoftian smiths worked with artificers, and an esoteric blade was born: a blade with an unique design, dismissing a crossguard in favor of a hollow beak to hook and draw harm away from its user. Short in length, yet lethally light in weight."
@@ -186,7 +171,6 @@
 	wbalance = HARD_TO_DODGE
 	sellprice = 50
 
->>>>>>> vanderlin/main
 /obj/item/weapon/sword/ida/iron
 	force = DAMAGE_SHORTSWORD
 	name = "iron ida"
@@ -559,10 +543,7 @@
 	icon_state = "nimcha"
 	desc = "A swift sword of Lakkarian origin. It's popular with the noblewomen of Ei Osalla."
 	wbalance = HARD_TO_DODGE
-<<<<<<< HEAD
-=======
 	dropshrink = 0.8
->>>>>>> vanderlin/main
 	sellprice = 140 // its made with gold and steel, thats pretty valuable
 
 //................ Lord's Rapier ............... //

@@ -154,10 +154,7 @@
  */
 /datum/outfit/proc/equip(mob/living/carbon/human/H, visuals_only = FALSE)
 	pre_equip(H, visuals_only)
-<<<<<<< HEAD
-=======
 	map_override(H, visuals_only)
->>>>>>> vanderlin/main
 
 	if(belt)
 		H.equip_to_slot_or_del(new belt(H),ITEM_SLOT_BELT, TRUE)

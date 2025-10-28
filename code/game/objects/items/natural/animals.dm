@@ -110,11 +110,7 @@
 			headpricemin = floor(headpricemin * 0.75)
 			headpricemax = floor(headpricemax * 0.75)
 		if(1)
-<<<<<<< HEAD
-			//nothing
-=======
 			EMPTY_BLOCK_GUARD
->>>>>>> vanderlin/main
 		if(2)
 			sellprice = floor(sellprice * 1.25)
 			headpricemin = floor(headpricemin * 1.25)
@@ -200,8 +196,6 @@
 	headpricemax = 7
 	sellprice = 5
 	meat_to_give = /obj/item/reagent_containers/food/snacks/meat/mince/beef
-<<<<<<< HEAD
-=======
 
 /obj/item/natural/head/direbear
 	name = "direbear head"
@@ -217,7 +211,6 @@
 	layer = 3.1
 	grid_height = 32
 	sellprice = 6
->>>>>>> vanderlin/main
 
 /obj/item/natural/head/spider
 	name = "beespider head"

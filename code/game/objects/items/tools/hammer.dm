@@ -7,11 +7,7 @@
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	mob_overlay_icon = 'icons/roguetown/onmob/onmob.dmi'
 	sharpness = IS_BLUNT
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	wlength = 10
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
@@ -152,12 +148,8 @@
 	experimental_onhip = FALSE
 	experimental_onback = FALSE
 	time_multiplier = 0.8
-<<<<<<< HEAD
-	smeltresult = /obj/item/ingot/steel
-=======
 	melt_amount = 50
 	melting_material = /datum/material/steel
->>>>>>> vanderlin/main
 
 // --------- MALLET -----------
 /obj/item/weapon/hammer/wood
@@ -237,12 +229,8 @@
 	icon_state = "warbonker"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	max_integrity = INTEGRITY_STRONGEST
-<<<<<<< HEAD
-	smeltresult = /obj/item/ingot/steel
-=======
 	melt_amount = 50
 	melting_material = /datum/material/steel
->>>>>>> vanderlin/main
 	time_multiplier = 1.5 //it's for crushing skulls not nails
 
 /obj/item/weapon/hammer/sledgehammer/war/malum
@@ -265,12 +253,8 @@
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	max_integrity = INTEGRITY_STRONGEST * 1.2
-<<<<<<< HEAD
-	smeltresult = /obj/item/ingot/steel
-=======
 	melt_amount = 50
 	melting_material = /datum/material/steel
->>>>>>> vanderlin/main
 	melting_material = /datum/material/steel
 	resistance_flags = FIRE_PROOF
 	minstr = 10

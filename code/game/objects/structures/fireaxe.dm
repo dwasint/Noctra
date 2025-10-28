@@ -59,8 +59,6 @@
 /obj/structure/fireaxecabinet/south
 	dir = SOUTH
 	SET_BASE_PIXEL(0, 32)
-<<<<<<< HEAD
-=======
 
 
 /obj/structure/fireaxecabinet/verb/toggle_open()
@@ -115,4 +113,3 @@
 		add_overlay("unlocked")
 	else
 		add_overlay("glass_raised")
->>>>>>> vanderlin/main

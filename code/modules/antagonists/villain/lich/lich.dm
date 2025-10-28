@@ -64,11 +64,7 @@
 	owner.special_role = name
 	move_to_spawnpoint()
 	remove_job()
-<<<<<<< HEAD
-	owner.current?.roll_mob_stats()
-=======
 	lich.delete_equipment()
->>>>>>> vanderlin/main
 	owner.current?.remove_stat_modifier("innate_age")
 	skele_look()
 	equip_lich()

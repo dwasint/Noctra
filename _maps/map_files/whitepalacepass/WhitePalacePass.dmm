@@ -6759,11 +6759,7 @@
 /area/rogue/indoors/town/church)
 "gzP" = (
 /obj/structure/rack/shelf/biggest,
-<<<<<<< HEAD
-/obj/item/fishing/bait/meat{
-=======
 /obj/item/fishing/lure/meat{
->>>>>>> vanderlin/main
 	pixel_x = 3
 	},
 /obj/item/fishing/lure/meat{
@@ -6790,11 +6786,7 @@
 	pixel_x = -5;
 	pixel_y = 12
 	},
-<<<<<<< HEAD
-/obj/item/fishing/bait/gray{
-=======
 /obj/item/fishing/lure/gray{
->>>>>>> vanderlin/main
 	pixel_x = -8
 	},
 /obj/item/fishing/lure/dough{

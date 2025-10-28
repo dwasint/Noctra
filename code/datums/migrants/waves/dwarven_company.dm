@@ -98,19 +98,11 @@
 		TRAIT_MEDIUMARMOR,
 	)
 
-<<<<<<< HEAD
-/datum/job/migrant/dwarven_company/weaponsmith/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	if(spawned.age == AGE_OLD)
-		LAZYADDASSOC(skills, /datum/skill/craft/blacksmithing, pick(1, 2))
-		LAZYADDASSOC(skills, /datum/skill/craft/weaponsmithing, pick(1, 2))
-=======
 /datum/job/migrant/dwarven_company/weaponsmith/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(spawned.age == AGE_OLD)
 		spawned.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1, 2))
 		spawned.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1, 2))
->>>>>>> vanderlin/main
 
 /datum/outfit/dwarven_company/weaponsmith
 	name = "Dwarven Weaponsmith"
@@ -176,11 +168,7 @@
 		TRAIT_MEDIUMARMOR,
 	)
 
-<<<<<<< HEAD
-/datum/job/migrant/dwarven_company/armorsmith/adjust_values(mob/living/carbon/human/spawned)
-=======
 /datum/job/migrant/dwarven_company/armorsmith/after_spawn(mob/living/carbon/human/spawned, client/player_client)
->>>>>>> vanderlin/main
 	. = ..()
 	if(spawned.age == AGE_OLD)
 		LAZYADDASSOC(skills, /datum/skill/craft/blacksmithing, pick(1, 2))

@@ -19,10 +19,6 @@
 	. = ..()
 	icon_w = ANIMATION_W
 	icon_z = ANIMATION_Z
-<<<<<<< HEAD
-=======
-
->>>>>>> vanderlin/main
 	pixel_z = DISPLACEMENT_AMOUNT
 
 	src.thing_to_take = thing_to_take

@@ -25,11 +25,7 @@
 	var/turf/southwest = locate(CLAMP(x - (direction & WEST ? range : 0), 1, world.maxx), CLAMP(y - (direction & SOUTH ? range : 0), 1, world.maxy), CLAMP(z, 1, world.maxz))
 	var/turf/northeast = locate(CLAMP(x + (direction & EAST ? range : 0), 1, world.maxx), CLAMP(y + (direction & NORTH ? range : 0), 1, world.maxy), CLAMP(z, 1, world.maxz))
 
-<<<<<<< HEAD
-	for(var/i in block(southwest, northeast))
-=======
 	for(var/turf/i as anything in block(southwest, northeast))
->>>>>>> vanderlin/main
 		holder.vis_contents += i
 
 	if(direction & SOUTH)
@@ -154,23 +150,12 @@
 
 	var/turf/destination
 	if(from_above)
-<<<<<<< HEAD
-		// Always 1 z-level above the target turf
-=======
->>>>>>> vanderlin/main
 		destination = locate(target_turf.x, target_turf.y, CLAMP(target_turf.z + 1, 1, world.maxz))
 		if(!destination)
 			destination = target_turf
 	else
 		destination = target_turf
 
-<<<<<<< HEAD
-	crosser.forceMove(destination)
-
-	if(ismob(crosser))
-		var/mob/M = crosser
-		to_chat(M, span_notice("You cross through the mirage..."))
-=======
 	// Calculate pixel offset based on movement direction
 	var/pixel_offset = world.icon_size
 	var/initial_pixel_x = 0
@@ -221,7 +206,6 @@
 	if(C)
 		animate(C, pixel_x = C.pixel_x - initial_pixel_x, pixel_y = C.pixel_y - initial_pixel_y, time = glide_time, flags = ANIMATION_PARALLEL)
 		to_chat(C, span_notice("You cross through the mirage..."))
->>>>>>> vanderlin/main
 
 	return TRUE
 

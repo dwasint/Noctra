@@ -136,11 +136,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	desc = "I'm a normal person, how rare! (Consumes 3 triumphs or randomizes)"
 	random_exempt = TRUE
 
-<<<<<<< HEAD
-/datum/charflaw/noflaw/after_spawn(mob/user)
-=======
 /datum/charflaw/noflaw/after_spawn(mob/user, client/mob_client)
->>>>>>> vanderlin/main
 	. = ..()
 	if(!ishuman(user))
 		return

@@ -187,11 +187,7 @@
 	output = /obj/item/clothing/gloves/leather/apothecary
 
 /datum/repeatable_crafting_recipe/leather/gloves/otavan_gloves
-<<<<<<< HEAD
-	name = "otavan gloves"
-=======
 	name = "grenzelhoftian gloves"
->>>>>>> vanderlin/main
 	requirements = list(
 		/obj/item/natural/hide/cured = 2,
 		/obj/item/natural/fibers = 1
@@ -505,11 +501,6 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 3
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> vanderlin/main
 /datum/repeatable_crafting_recipe/leather/ominous_hood
 	name = "ominous hood"
 	requirements = list(

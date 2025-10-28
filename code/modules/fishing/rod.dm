@@ -216,21 +216,6 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-<<<<<<< HEAD
-/obj/item/fishingrod/update_overlays()
-	. = ..()
-	if(!baited)
-		return
-	var/obj/item/I = baited
-	I.pixel_x = I.base_pixel_x + 6
-	I.pixel_y = I.base_pixel_y - 6
-	var/mutable_appearance/M = new /mutable_appearance(I)
-	M.pixel_x = 6
-	M.pixel_y = -6
-	. += M
-
-=======
->>>>>>> vanderlin/main
 #define FISHRARITYWEIGHTS list("com" = 70, "rare" = 20, "ultra" = 9, "gold" = 1)
 #define FISHSIZEWEIGHTS list("tiny" = 4, "small" = 4, "normal" = 4, "large" = 2, "prize" = 1)
 

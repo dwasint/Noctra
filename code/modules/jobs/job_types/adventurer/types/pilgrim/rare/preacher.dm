@@ -7,10 +7,6 @@
 	outfit = /datum/outfit/adventurer/preacher
 	category_tags = list(CTAG_PILGRIM)
 	total_positions = 1
-<<<<<<< HEAD
-	roll_chance = 30
-=======
->>>>>>> vanderlin/main
 	min_pq = 0
 
 	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'

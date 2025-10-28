@@ -39,11 +39,8 @@
 	if(HAS_TRAIT(target, TRAIT_NECRA_CURSE))
 		to_chat(user, span_warning("Necra holds tight to this one."))
 		return FALSE
-<<<<<<< HEAD
-=======
 	if(target.get_lux_tainted_status())
 		tainted_mob = TRUE
->>>>>>> vanderlin/main
 
 /datum/surgery_step/infuse_lux/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	if(istype(tool, /obj/item/reagent_containers/lux_tainted))

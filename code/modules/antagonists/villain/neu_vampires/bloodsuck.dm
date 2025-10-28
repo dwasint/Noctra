@@ -60,13 +60,10 @@
 					blood_handle |= BLOOD_PREFERENCE_KIN
 					blood_handle  &= ~BLOOD_PREFERENCE_LIVING
 
-<<<<<<< HEAD
-=======
 				if(HAS_TRAIT(victim, TRAIT_SILVER_BLESSED))
 					blood_handle |= BLOOD_PREFERENCE_FANCY
 					blood_handle |= BLOOD_PREFERENCE_EUPHORIC
 
->>>>>>> vanderlin/main
 				if(victim.bloodpool > 0)
 					victim.blood_volume = max(victim.blood_volume-45, 0)
 					if(ishuman(victim))

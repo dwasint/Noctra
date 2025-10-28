@@ -82,13 +82,8 @@
 			if(!has_recipe_unlocked(user.key, hingot.currecipe.type))
 				return
 
-<<<<<<< HEAD
-		if(istype(hammer, /obj/item/weapon/hammer/wood))
-			hammer.take_damage(hammer.max_integrity * 0.03, BRUTE, "blunt")
-=======
 		// Start the minigame instead of direct hammering
 		start_minigame(user, hammer)
->>>>>>> vanderlin/main
 		return
 
 	if(hingot && hingot.currecipe && hingot.currecipe.needed_item && istype(W, hingot.currecipe.needed_item))

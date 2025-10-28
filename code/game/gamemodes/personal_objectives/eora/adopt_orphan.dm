@@ -12,12 +12,8 @@
 	update_explanation_text()
 
 /datum/objective/personal/adopt_orphan/Destroy()
-<<<<<<< HEAD
-	UnregisterSignal(owner.current, COMSIG_ORPHAN_ADOPTED)
-=======
 	if(owner?.current)
 		UnregisterSignal(owner.current, COMSIG_ORPHAN_ADOPTED)
->>>>>>> vanderlin/main
 	return ..()
 
 /datum/objective/personal/adopt_orphan/proc/on_orphan_adopted(datum/source, mob/new_child)

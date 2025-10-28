@@ -17,8 +17,6 @@
 
 	job_bitflag = BITFLAG_CONSTRUCTOR
 
-<<<<<<< HEAD
-=======
 /datum/outfit/miner/map_override(mob/living/carbon/human/H)
 	if(SSmapping.config.map_name != "Voyage")
 		return
@@ -28,7 +26,6 @@
 	wrists = null
 	shoes = /obj/item/clothing/shoes/boots
 
->>>>>>> vanderlin/main
 /datum/outfit/miner/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/armingcap

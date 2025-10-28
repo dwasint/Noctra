@@ -149,9 +149,6 @@
 	created_item = /obj/item/clothing/ring/silver
 	createditem_extra = 2
 
-<<<<<<< HEAD
-/datum/anvil_recipe/valuables/silver/bracelet
-=======
 /datum/anvil_recipe/valuables/silver/diadem
 	name = "Silver Diadem"
 	recipe_name = "a Silver Diadem"
@@ -173,7 +170,6 @@
 	created_item = /obj/item/clothing/head/crown/circlet/silverheaddress
 
 /datum/anvil_recipe/valuables/silver/sbracelet
->>>>>>> vanderlin/main
 	name = "2x Silver Bracelets"
 	recipe_name = "two Silver Bracelets"
 	created_item = /obj/item/clothing/wrists/silverbracelet
@@ -427,8 +423,6 @@
 	recipe_name = "worthy of a champion"
 	created_item = /obj/item/clothing/head/crown/sparrowcrown
 	craftdiff = 6
-<<<<<<< HEAD
-=======
 
 /datum/anvil_recipe/valuables/signet
 	name = "Signet Ring"
@@ -447,4 +441,3 @@
 	craftdiff = SKILL_LEVEL_MASTER
 	req_bar = /obj/item/ingot/silverblessed/bullion
 	created_item = /obj/item/clothing/ring/signet/silver
->>>>>>> vanderlin/main

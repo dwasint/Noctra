@@ -40,13 +40,10 @@
 		if(!length(CHECKS.category_tags))
 			continue
 		if(CTAG_WRETCH in CHECKS.category_tags)
-<<<<<<< HEAD
-=======
 			continue
 		if(CTAG_INQUISITION in CHECKS.category_tags)
 			continue
 		if(CTAG_PURITAN in CHECKS.category_tags)
->>>>>>> vanderlin/main
 			continue
 		possible_classes += CHECKS
 

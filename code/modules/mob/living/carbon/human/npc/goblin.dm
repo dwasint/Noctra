@@ -154,7 +154,6 @@
 	dam_icon_m = null
 	damage_overlay_type = ""
 	changesource_flags = WABBAJACK
-	exotic_bloodtype = /datum/blood_type/human/goblin
 	var/raceicon = "goblin"
 	exotic_bloodtype = /datum/blood_type/human/corrupted/goblin
 

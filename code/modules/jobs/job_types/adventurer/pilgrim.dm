@@ -24,8 +24,6 @@
 	can_have_apprentices = TRUE
 
 	selection_color = "#a33096"
-<<<<<<< HEAD
-=======
 
 /datum/job/advclass/pilgrim
 	abstract_type = /datum/job/advclass/pilgrim
@@ -34,4 +32,3 @@
 /datum/job/advclass/pilgrim/rare
 	abstract_type = /datum/job/advclass/pilgrim/rare
 	roll_chance = 30
->>>>>>> vanderlin/main

@@ -302,11 +302,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	name = "Schism within the Ten"
 	track = EVENT_TRACK_INTERVENTION
 	typepath = /datum/round_event/schism_within_ten
-<<<<<<< HEAD
-	weight = 0.25
-=======
 	weight = 2
->>>>>>> vanderlin/main
 	max_occurrences = 1
 	min_players = 50
 	earliest_start = 20 MINUTES

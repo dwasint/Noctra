@@ -123,8 +123,6 @@
 	cast_on.ai_controller.set_blackboard_key(BB_PET_TARGETING_DATUM, new /datum/targetting_datum/basic/not_friends())
 	cast_on.befriend(owner)
 	cast_on.pet_passive = TRUE
-<<<<<<< HEAD
-=======
 
 /// Tainted Lux from goblins, rous and others.
 
@@ -162,4 +160,3 @@
 		to_chat(M, span_green("This tastes awful, it won't help me feel my soul again.."))
 	M.add_stress(/datum/stress_event/consumed_tainted_lux)
 	..()
->>>>>>> vanderlin/main

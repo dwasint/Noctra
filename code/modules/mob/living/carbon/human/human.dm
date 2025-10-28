@@ -509,10 +509,7 @@
 	VV_DROPDOWN_OPTION(VV_HK_COPY_OUTFIT, "Copy Outfit")
 	VV_DROPDOWN_OPTION(VV_HK_SET_SPECIES, "Set Species")
 	VV_DROPDOWN_OPTION(VV_HK_CORONATE, "Coronate")
-<<<<<<< HEAD
-=======
 	VV_DROPDOWN_OPTION(VV_HK_CHANGE_TITLE, "Change Title")
->>>>>>> vanderlin/main
 
 /mob/living/carbon/human/vv_do_topic(list/href_list)
 	. = ..()
@@ -565,9 +562,6 @@
 		GLOB.badomens -= OMEN_NOLORD
 		priority_announce("The Ten have named [coronated.real_name] the inheritor of [SSmapping.config.map_name]!", \
 		title = "Long Live [lord_job.get_informed_title(coronated)] [coronated.real_name]!", sound = 'sound/misc/bell.ogg')
-<<<<<<< HEAD
-
-=======
 	if(href_list[VV_HK_CHANGE_TITLE])
 		if(!mind?.assigned_role)
 			return
@@ -579,7 +573,6 @@
 		if(is_lord_job(human_job))
 			var/datum/job/lord_job = SSjob.GetJobType(/datum/job/lord)
 			lord_job?.get_informed_title(src, TRUE, new_title)
->>>>>>> vanderlin/main
 
 /mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
 	if(pulling == target && stat == CONSCIOUS)

@@ -442,16 +442,12 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 	if(length(personal_objectives))
 		var/personal_count = 1
 		for(var/datum/objective/personal/objective in personal_objectives)
-<<<<<<< HEAD
-			output += "<br><B>Personal Goal #[personal_count]</B>: [objective.explanation_text][objective.completed ? " (COMPLETED)" : ""]"
-=======
 			if(objective.hidden)
 				continue
 			if(!has_personal_objectives)
 				has_personal_objectives = TRUE
 				personal_output += "<B>Personal Objectives:</B>"
 			personal_output += "<br><B>Personal Goal #[personal_count]</B>: [objective.explanation_text][objective.completed ? " (COMPLETED)" : ""]"
->>>>>>> vanderlin/main
 			personal_count++
 		if(has_personal_objectives)
 			personal_output += "<br>"
@@ -668,12 +664,6 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 /datum/mind/proc/announce_personal_objectives()
 	if(length(personal_objectives))
 		var/personal_count = 1
-<<<<<<< HEAD
-		for(var/datum/objective/personal/O in personal_objectives)
-			O.update_explanation_text()
-			to_chat(current, "<B>Personal Goal #[personal_count]</B>: [O.explanation_text]")
-			personal_count++
-=======
 		var/has_visible_objectives = FALSE
 		var/objective_output = ""
 
@@ -687,7 +677,6 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 
 		if(has_visible_objectives)
 			to_chat(current, objective_output)
->>>>>>> vanderlin/main
 
 /// Announce all objectives (both types)
 /datum/mind/proc/announce_objectives()

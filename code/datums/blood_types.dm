@@ -20,11 +20,8 @@ GLOBAL_LIST_INIT_TYPED(blood_types, /datum/blood_type, init_subtypes_w_path_keys
 	var/datum/reagent/restoration_chem
 	///do we contain Lux?
 	var/contains_lux = FALSE
-<<<<<<< HEAD
-=======
 	///is our lux tainted?
 	var/tainted_lux = FALSE
->>>>>>> vanderlin/main
 	///the chimeric table we pull from when creating chimeric nodes based on this blood
 	var/datum/chimeric_table/used_table
 
@@ -146,21 +143,6 @@ GLOBAL_LIST_INIT_TYPED(blood_types, /datum/blood_type, init_subtypes_w_path_keys
 /datum/blood_type/human/elf
 	name = "Elf"
 	used_table = /datum/chimeric_table/elf
-<<<<<<< HEAD
-
-/datum/blood_type/human/goblin
-	name = "Goblin"
-	used_table = /datum/chimeric_table/goblin
-
-/datum/blood_type/human/rousman
-	name = "Rousman"
-	used_table = /datum/chimeric_table/rousman
-
-/datum/blood_type/human/orc
-	name = "Orc"
-	used_table = /datum/chimeric_table/orc
-=======
->>>>>>> vanderlin/main
 
 /datum/blood_type/animal
 	name = "Animal"
@@ -177,8 +159,6 @@ GLOBAL_LIST_INIT_TYPED(blood_types, /datum/blood_type, init_subtypes_w_path_keys
 /datum/blood_type/lycan
 	name = "Lycan"
 	used_table = /datum/chimeric_table/lycan
-<<<<<<< HEAD
-=======
 
 /datum/blood_type/human/corrupted
 	contains_lux = TRUE
@@ -199,4 +179,3 @@ GLOBAL_LIST_INIT_TYPED(blood_types, /datum/blood_type, init_subtypes_w_path_keys
 
 /datum/blood_type/human/corrupted/zizombie
 	name = "Zizombie"
->>>>>>> vanderlin/main

@@ -26,17 +26,6 @@
 	if(energy_spent >= energy_required)
 		complete_objective()
 
-<<<<<<< HEAD
-/datum/objective/personal/energy_expenditure/proc/complete_objective()
-	to_chat(owner.current, span_greentext("You've spent enough energy working to satisfy Malum!"))
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(MALUM, 20)
-	owner.current.set_stat_modifier("malum_blessing", STATKEY_END, 1)
-	escalate_objective()
-	UnregisterSignal(owner.current, COMSIG_MOB_ENERGY_SPENT)
-
-=======
 /datum/objective/personal/energy_expenditure/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You've spent enough energy working to satisfy Malum!"))
@@ -47,6 +36,5 @@
 	. = ..()
 	owner.current.set_stat_modifier("malum_blessing", STATKEY_END, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/energy_expenditure/update_explanation_text()
 	explanation_text = "Don't be a slacker! Spend at least [energy_required] energy working to satisfy Malum."

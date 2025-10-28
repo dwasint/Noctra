@@ -83,11 +83,7 @@
 	html += {"
 		</div>
 		<div>
-<<<<<<< HEAD
-			<h2>Requires [UNIT_FORM_STRING(30)] of Water</h2>
-=======
 			<h2>Requires [UNIT_FORM_STRING(50)] of Water</h2>
->>>>>>> vanderlin/main
 			<h2>Creates</h2>
 	"}
 	//regarding the above, the amount of water needed can be found in the cauldron.dm file
@@ -180,31 +176,12 @@ Keep them reasonable to make
 	)
 
 /datum/alch_cauldron_recipe/mana_potion
-<<<<<<< HEAD
-	recipe_name = "Arcyne Elixir"
-	smells_like = "power"
-	output_reagents = list(/datum/reagent/medicine/manapot = 18)
-	required_essences = list(
-		/datum/thaumaturgical_essence/magic = 3,
-		/datum/thaumaturgical_essence/energia = 2
-	)
-
-/datum/alch_cauldron_recipe/big_mana_potion
-	recipe_name = "Powerful Arcyne Elixir"
-	smells_like = "fear"
-	output_reagents = list(/datum/reagent/medicine/manapot = 18, /datum/reagent/additive = 18)
-	required_essences = list(
-		/datum/thaumaturgical_essence/magic = 5,
-		/datum/thaumaturgical_essence/energia = 4,
-		/datum/thaumaturgical_essence/chaos = 1
-=======
 	recipe_name = "Mana"
 	smells_like = "dry air"
 	output_reagents = list(/datum/reagent/medicine/manapot = 10)
 	required_essences = list(
 		/datum/thaumaturgical_essence/water = 3,
 		/datum/thaumaturgical_essence/energia = 3,
->>>>>>> vanderlin/main
 	)
 
 /datum/alch_cauldron_recipe/stamina_potion

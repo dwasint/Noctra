@@ -11,12 +11,6 @@
 	)
 	var/last_used
 
-<<<<<<< HEAD
-/datum/enchantment/frostbite/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	if(!proximity_flag)
-		return
-	if(world.time < (src.last_used[source] + (20 SECONDS)))
-=======
 /datum/enchantment/frostbite/register_triggers(atom/item)
 	. = ..()
 	registered_signals += COMSIG_ITEM_AFTERATTACK
@@ -26,7 +20,6 @@
 	if(!proximity_flag)
 		return
 	if(world.time < (last_used + 20 SECONDS))
->>>>>>> vanderlin/main
 		return
 
 	if(isliving(target))

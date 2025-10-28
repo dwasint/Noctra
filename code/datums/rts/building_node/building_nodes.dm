@@ -33,28 +33,6 @@
 		return
 	user.open_gear_ui(src)
 
-<<<<<<< HEAD
-/obj/effect/building_node/proc/store_gear(obj/item/item, gear_type)
-	if(!stored_gear)
-		stored_gear = list()
-	stored_gear[gear_type] = item
-	item.forceMove(src)
-
-/obj/effect/building_node/proc/retrieve_gear(gear_type)
-	if(!stored_gear || !(gear_type in stored_gear))
-		return null
-
-	var/obj/item/item = stored_gear[gear_type]
-	stored_gear -= gear_type
-	return item
-
-/obj/effect/building_node/proc/get_stored_gear(gear_type)
-	if(!stored_gear)
-		return null
-	return stored_gear[gear_type]
-
-/obj/effect/building_node/proc/get_stored_gear_by_type(slot_type)
-=======
 
 /obj/effect/building_node/proc/store_gear(obj/item/item, datum/worker_gear/gear_datum)
 	if(!stored_gear)
@@ -87,24 +65,11 @@
 	return stored_gear[gear_key]
 
 /obj/effect/building_node/proc/get_stored_gear_by_slot(slot_type)
->>>>>>> vanderlin/main
 	if(!stored_gear)
 		return list()
 
 	var/list/matching_gear = list()
 	for(var/gear_key in stored_gear)
-<<<<<<< HEAD
-		if(findtext(gear_key, slot_type))
-			matching_gear[gear_key] = stored_gear[gear_key]
-
-	return matching_gear
-
-/obj/effect/building_node/proc/get_storage_capacity(slot_type)
-	return 6 // override in subtypes if needed
-
-/obj/effect/building_node/proc/get_stored_count(slot_type)
-	var/list/matching = get_stored_gear_by_type(slot_type)
-=======
 		var/list/gear_data = stored_gear[gear_key]
 		var/datum/worker_gear/gear = gear_data["gear"]
 		if(gear && gear.slot == slot_type)
@@ -122,7 +87,6 @@
 
 /obj/effect/building_node/proc/get_stored_count(slot_type)
 	var/list/matching = get_stored_gear_by_slot(slot_type)
->>>>>>> vanderlin/main
 	return length(matching)
 
 /obj/effect/building_node/proc/can_store_more(slot_type)

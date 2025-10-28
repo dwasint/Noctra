@@ -137,11 +137,7 @@
 
 /obj/structure/flora/grass/tangler/real/CanPass(atom/movable/mover, turf/target)
 	if(isliving(mover))
-<<<<<<< HEAD
-		if(prob(50) && !HAS_TRAIT(mover, TRAIT_WEBWALK))
-=======
 		if(prob(50) && !HAS_TRAIT(mover, TRAIT_BRUSHWALK))
->>>>>>> vanderlin/main
 			to_chat(mover, "<span class='danger'>I get stuck in \the [src] for a moment.</span>")
 			return FALSE
 	else if(istype(mover, /obj/projectile) && prob(30))

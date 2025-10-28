@@ -59,9 +59,5 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_LEGENDARY_ALCHEMIST, TRAIT_GENERIC)
-<<<<<<< HEAD
-	if(H.dna.species.id != SPEC_ID_MEDICATOR)
-=======
 	if(H.dna.species.id in RACES_PLAYER_NONDISCRIMINATED) // Astrata forbid a medicator gets nobility
->>>>>>> vanderlin/main
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

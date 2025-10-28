@@ -34,23 +34,11 @@
 	levels_gained += level_diff
 
 	if(levels_gained >= required_levels)
-<<<<<<< HEAD
-		to_chat(owner.current, span_greentext("You've improved your combat skills enough to satisfy Ravox!"))
-		owner.current.adjust_triumphs(triumph_count)
-		completed = TRUE
-		adjust_storyteller_influence(RAVOX, 20)
-		owner.current.set_stat_modifier("ravox_blessing", STATKEY_STR, 1)
-		escalate_objective()
-		UnregisterSignal(owner.current, COMSIG_SKILL_RANK_INCREASED)
-=======
 		complete_objective()
->>>>>>> vanderlin/main
 	else
 		var/remaining = required_levels - levels_gained
 		to_chat(owner.current, span_notice("Combat skill improved! [remaining] more level[remaining == 1 ? "" : "s"] needed to fulfill Ravox's task!"))
 
-<<<<<<< HEAD
-=======
 /datum/objective/personal/improve_combat/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You've improved your combat skills enough to satisfy Ravox!"))
@@ -61,6 +49,5 @@
 	. = ..()
 	owner.current.set_stat_modifier("ravox_blessing", STATKEY_STR, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/improve_combat/update_explanation_text()
 	explanation_text = "Improve your combat skills by gaining [required_levels] new skill levels through practice or dreams. For Ravox!"

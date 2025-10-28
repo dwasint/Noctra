@@ -516,8 +516,6 @@ And it also helps for the character set panel
 	stress_change = 3
 	max_stacks = 10
 	stress_change_per_extra_stack = 3
-<<<<<<< HEAD
-=======
 	timer = 10 MINUTES
 
 
@@ -551,5 +549,4 @@ And it also helps for the character set panel
 	stress_change = 3
 	max_stacks = 10
 	stress_change_per_extra_stack = 3
->>>>>>> vanderlin/main
 	timer = 10 MINUTES

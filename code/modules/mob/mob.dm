@@ -634,11 +634,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 					observer_skill = 1
 				if(observer.rogue_sneaking)
 					observer_skill += 1
-<<<<<<< HEAD
-				
-=======
-
->>>>>>> vanderlin/main
 				// determine PER multiplier based on the target PER
 				var/multiplier = 5
 				if(target.STAPER < 5)
@@ -649,16 +644,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 					multiplier = 6
 				else if(target.STAPER >= 15 && target.STAPER <= 20)
 					multiplier = 7
-<<<<<<< HEAD
-			
-				// calculate probability to fail
-				var/probby = (target.STAPER * multiplier) - (observer_skill * 10)
-			
-				// clamp probability
-				probby = max(probby, 5)
-				probby = min(probby, 95)
-				
-=======
 
 				// calculate probability to fail
 				var/probby = (target.STAPER * multiplier) - (observer_skill * 10)
@@ -667,7 +652,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 				probby = max(probby, 5)
 				probby = min(probby, 95)
 
->>>>>>> vanderlin/main
 				if(prob(probby))
 					to_chat(src, span_warning("[A] noticed me peeking!"))
 					to_chat(A, span_warning("[src] peeks at you!"))

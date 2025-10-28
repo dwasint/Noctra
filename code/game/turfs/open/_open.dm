@@ -102,17 +102,10 @@
 		to_chat(C, "<span class='notice'>I slipped[ O ? " on the [O.name]" : ""]!</span>")
 		playsound(C.loc, 'sound/blank.ogg', 50, TRUE, -3)
 
-<<<<<<< HEAD
-		C.add_stress(/datum/stress_event/slipped)
-		if(force_drop)
-			for(var/obj/item/I in C.held_items)
-				C.accident(I)
-=======
 	C.add_stress(/datum/stress_event/slipped)
 	if(force_drop)
 		for(var/obj/item/I in C.held_items)
 			C.accident(I)
->>>>>>> vanderlin/main
 
 	var/olddir = C.dir
 	C.moving_diagonally = 0 //If this was part of diagonal move slipping will stop it.

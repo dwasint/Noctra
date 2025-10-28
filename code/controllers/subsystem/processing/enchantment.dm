@@ -5,10 +5,6 @@ PROCESSING_SUBSYSTEM_DEF(enchantment)
 	wait = 2 SECONDS
 	var/list/enchantment_types = list() // cache of enchantment type paths and their properties
 
-<<<<<<< HEAD
-	var/list/enchantments_to_list = list()
-	var/list/weighted_enchantments = list()
-=======
 /datum/controller/subsystem/processing/enchantment/Initialize()
 	. = ..()
 	for(var/datum/enchantment/enchantment_path as anything in subtypesof(/datum/enchantment))
@@ -18,7 +14,6 @@ PROCESSING_SUBSYSTEM_DEF(enchantment)
 			"weight" = weight,
 			"required_type" = required
 		)
->>>>>>> vanderlin/main
 
 /datum/controller/subsystem/processing/enchantment/proc/has_enchantment(atom/item, datum/enchantment/path)
 	if(!item || !path)
@@ -31,31 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(enchantment)
 	return FALSE
 
 /datum/controller/subsystem/processing/enchantment/proc/has_any_enchantment(atom/item)
-<<<<<<< HEAD
-	for(var/enchantment as anything in enchantments_to_list)
-		if(has_enchantment(item, enchantment))
-			return TRUE
-	return FALSE
-
-/datum/controller/subsystem/processing/enchantment/proc/remove_enchantment(atom/item)
-	for(var/enchantment as anything in enchantments_to_list)
-		if(has_enchantment(item, enchantment))
-			var/datum/enchantment/real = enchantments_to_list[enchantment]
-			real.remove_item(WEAKREF(item))
-			return TRUE
-	return FALSE
-
-/datum/controller/subsystem/processing/enchantment/proc/enchant_item(atom/item, datum/enchantment/enchantment)
-	// so we don't need to initialize the subsystem
-	if(!length(enchantments_to_list) && !length(weighted_enchantments))
-		for(var/datum/enchantment/enchantment_path as anything in subtypesof(/datum/enchantment))
-			enchantments_to_list[enchantment_path] = new enchantment_path
-			weighted_enchantments[enchantment_path] = initial(enchantment_path.random_enchantment_weight)
-
-	if(!item || !enchantment)
-=======
 	if(!item)
->>>>>>> vanderlin/main
 		return FALSE
 	return item.enchantments && length(item.enchantments)
 

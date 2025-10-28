@@ -223,8 +223,6 @@
 			active.Cut(rand_idx, rand_idx + 1)
 
 	return points
-<<<<<<< HEAD
-=======
 
 /datum/noise_generator/proc/generate_voronoi_cells(min_x, max_x, min_y, max_y, num_cells)
 	var/list/cells = list()
@@ -251,4 +249,3 @@
 			closest_cell = cell
 
 	return closest_cell
->>>>>>> vanderlin/main

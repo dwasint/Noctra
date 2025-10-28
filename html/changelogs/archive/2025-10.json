@@ -97,12 +97,6 @@
         "Magiy-Anne": [
             {
                 "rscadd": "Added half-drow, drow, half-orcs, and tieflings to Rejected Royal Wretch"
-<<<<<<< HEAD
-        "Just-Sim": [
-            {
-                "rscdel": "patreon restrictions on accents"
-=======
->>>>>>> vanderlin/main
             }
         ]
     },
@@ -488,8 +482,6 @@
                 "rscadd": "Added more skills to the acolytes of ravox, malum, they get new tabards on them including the xylixian acolyte"
             }
         ]
-<<<<<<< HEAD
-=======
     },
     "2025-10-12": {
         "wgtjunior743": [
@@ -909,6 +901,5 @@
                 "rscadd": "Added new zizo miracle: snuff lights"
             }
         ]
->>>>>>> vanderlin/main
     }
 }

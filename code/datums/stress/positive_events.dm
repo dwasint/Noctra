@@ -147,8 +147,6 @@
 	stress_change = -2
 	desc = span_green("Their face is a work of art!")
 
-<<<<<<< HEAD
-=======
 /datum/stress_event/self_fishface
 	timer = 2 MINUTES
 	stress_change = -1
@@ -159,7 +157,6 @@
 	stress_change = -2
 	desc = span_green("A fellow Triton, looking good!")
 
->>>>>>> vanderlin/main
 /datum/stress_event/eora
 	stress_change = -4
 	timer = INFINITY

@@ -45,13 +45,9 @@
 		/turf/closed/wall/mineral/abyssal,
 		/turf/closed/wall/mineral/desert_soapstone,
 		/turf/open/floor/cracked_earth,
-<<<<<<< HEAD
-	) \
-=======
 		/turf/open/floor/flesh,
 	) \
 	+ typesof(/turf/open/floor/mushroom) \
->>>>>>> vanderlin/main
 	+ typesof(/turf/open/floor/sandstone_tile) \
 	+ typesof(/turf/open/floor/abyss_sand) \
 	+ typesof(/turf/open/floor/sand) \

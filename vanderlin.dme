@@ -177,10 +177,7 @@
 #include "code\__DEFINES\vampires.dm"
 #include "code\__DEFINES\vectors.dm"
 #include "code\__DEFINES\vehicles.dm"
-<<<<<<< HEAD
 #include "code\__DEFINES\veyra.dm"
-=======
->>>>>>> vanderlin/main
 #include "code\__DEFINES\visual_helpers.dm"
 #include "code\__DEFINES\visual_ui.dm"
 #include "code\__DEFINES\vv.dm"
@@ -1038,13 +1035,8 @@
 #include "code\datums\elements\firestacker.dm"
 #include "code\datums\elements\footstep.dm"
 #include "code\datums\elements\footstep_override.dm"
-<<<<<<< HEAD
-#include "code\datums\elements\forced_gravity.dm"
-#include "code\datums\elements\frozen.dm"
-=======
 #include "code\datums\elements\frozen.dm"
 #include "code\datums\elements\hat_wearer.dm"
->>>>>>> vanderlin/main
 #include "code\datums\elements\holy_weakness.dm"
 #include "code\datums\elements\mob_overlay_effect.dm"
 #include "code\datums\elements\movetype_handler.dm"
@@ -1216,10 +1208,7 @@
 #include "code\datums\quality\brewing.dm"
 #include "code\datums\quality\cooking.dm"
 #include "code\datums\quality\metallurgy.dm"
-<<<<<<< HEAD
-=======
 #include "code\datums\rage\_base.dm"
->>>>>>> vanderlin/main
 #include "code\datums\rituals\ritual.dm"
 #include "code\datums\rituals\ritual_runes.dm"
 #include "code\datums\rts\controller_mob.dm"
@@ -1291,10 +1280,7 @@
 #include "code\datums\rts\work_orders\orders\patrol.dm"
 #include "code\datums\rts\work_orders\orders\play_music.dm"
 #include "code\datums\rts\work_orders\orders\retrieve_gear.dm"
-<<<<<<< HEAD
-=======
 #include "code\datums\rts\work_orders\orders\sew_clothes.dm"
->>>>>>> vanderlin/main
 #include "code\datums\rts\work_orders\orders\socialize_with.dm"
 #include "code\datums\rts\work_orders\orders\store_gear.dm"
 #include "code\datums\rts\work_orders\orders\store_materials.dm"
@@ -1309,11 +1295,8 @@
 #include "code\datums\rts\work_orders\persistant\make_food.dm"
 #include "code\datums\rts\work_orders\persistant\mines.dm"
 #include "code\datums\rts\work_orders\persistant\patrol.dm"
-<<<<<<< HEAD
-=======
 #include "code\datums\rts\work_orders\persistant\sew_clothes.dm"
 #include "code\datums\rts\work_orders\persistant\tan_leather.dm"
->>>>>>> vanderlin/main
 #include "code\datums\rts\worker_gear\_base.dm"
 #include "code\datums\runeword\runes.dm"
 #include "code\datums\runeword\gem_effects\_base.dm"
@@ -1714,10 +1697,6 @@
 #include "code\game\objects\items\undies.dm"
 #include "code\game\objects\items\waterskins.dm"
 #include "code\game\objects\items\weaponry.dm"
-<<<<<<< HEAD
-#include "code\game\objects\items\artifacts\censer.dm"
-=======
->>>>>>> vanderlin/main
 #include "code\game\objects\items\chimeric_organs\chimeric_node.dm"
 #include "code\game\objects\items\chimeric_organs\ifak.dm"
 #include "code\game\objects\items\chimeric_organs\infusion_syringe.dm"
@@ -2775,8 +2754,6 @@
 #include "code\modules\jobs\job_types\garrison\town_elder.dm"
 #include "code\modules\jobs\job_types\garrison\veteran.dm"
 #include "code\modules\jobs\job_types\garrison\watchlieutenant.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\jobs\job_types\inquistion\absolver.dm"
 #include "code\modules\jobs\job_types\inquistion\adept.dm"
 #include "code\modules\jobs\job_types\inquistion\inquisitor.dm"
@@ -2794,7 +2771,6 @@
 #include "code\modules\jobs\job_types\inquistion\oratorium\position.dm"
 #include "code\modules\jobs\job_types\inquistion\puritian\inspector.dm"
 #include "code\modules\jobs\job_types\inquistion\puritian\ordinator.dm"
->>>>>>> vanderlin/main
 #include "code\modules\jobs\job_types\nobility\archivist.dm"
 #include "code\modules\jobs\job_types\nobility\captain.dm"
 #include "code\modules\jobs\job_types\nobility\consort.dm"
@@ -2957,26 +2933,18 @@
 #include "code\modules\mapping\space_management\space_transition.dm"
 #include "code\modules\mapping\space_management\traits.dm"
 #include "code\modules\mapping\space_management\zlevel_manager.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\mapping\voyage\boat_template.dm"
->>>>>>> vanderlin/main
 #include "code\modules\mapping\voyage\flora_patch.dm"
 #include "code\modules\mapping\voyage\noise.dm"
 #include "code\modules\mapping\voyage\spawn_rules.dm"
 #include "code\modules\mapping\voyage\testers.dm"
 #include "code\modules\mapping\voyage\caves\_biome.dm"
 #include "code\modules\mapping\voyage\caves\_features.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\mapping\voyage\caves\_fragment_generator.dm"
->>>>>>> vanderlin/main
 #include "code\modules\mapping\voyage\caves\_generator.dm"
 #include "code\modules\mapping\voyage\island\_biome.dm"
 #include "code\modules\mapping\voyage\island\_feature.dm"
 #include "code\modules\mapping\voyage\island\_generator.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\mapping\voyage\island\biomes\desert.dm"
 #include "code\modules\mapping\voyage\island\biomes\eoran_hell.dm"
 #include "code\modules\mapping\voyage\island\biomes\plains.dm"
@@ -2994,7 +2962,6 @@
 #include "code\modules\mapping\voyage\settlements\templates\basic_houses.dm"
 #include "code\modules\mapping\voyage\settlements\templates\stone_houses.dm"
 #include "code\modules\mapping\voyage\settlements\templates\wood_houses.dm"
->>>>>>> vanderlin/main
 #include "code\modules\mob\death.dm"
 #include "code\modules\mob\emote.dm"
 #include "code\modules\mob\inventory.dm"
@@ -3227,10 +3194,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\mole.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\orcs.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\poltergeist.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\raccoon.dm"
->>>>>>> vanderlin/main
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\rousabomination.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\shade.dm"
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\creacher\skeleton.dm"
@@ -3349,10 +3313,7 @@
 #include "code\modules\spells\spell_types\cone\cone_of_cold.dm"
 #include "code\modules\spells\spell_types\cone\eldritch_blast.dm"
 #include "code\modules\spells\spell_types\cone\void_cone.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\spells\spell_types\pointed\absolve.dm"
->>>>>>> vanderlin/main
 #include "code\modules\spells\spell_types\pointed\adopt_child.dm"
 #include "code\modules\spells\spell_types\pointed\appraise.dm"
 #include "code\modules\spells\spell_types\pointed\attach_bodypart.dm"
@@ -3390,10 +3351,7 @@
 #include "code\modules\spells\spell_types\pointed\ocean_embrace.dm"
 #include "code\modules\spells\spell_types\pointed\persistence.dm"
 #include "code\modules\spells\spell_types\pointed\pressure.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\spells\spell_types\pointed\respite.dm"
->>>>>>> vanderlin/main
 #include "code\modules\spells\spell_types\pointed\revel_in_slaughter.dm"
 #include "code\modules\spells\spell_types\pointed\revive.dm"
 #include "code\modules\spells\spell_types\pointed\sacred_flame.dm"
@@ -3435,10 +3393,7 @@
 #include "code\modules\spells\spell_types\pointed\projectile\arcyne_bolt.dm"
 #include "code\modules\spells\spell_types\pointed\projectile\blood_lightning.dm"
 #include "code\modules\spells\spell_types\pointed\projectile\blood_steal.dm"
-<<<<<<< HEAD
-=======
 #include "code\modules\spells\spell_types\pointed\projectile\bullet.dm"
->>>>>>> vanderlin/main
 #include "code\modules\spells\spell_types\pointed\projectile\enrapturing Powder.dm"
 #include "code\modules\spells\spell_types\pointed\projectile\eora_curse.dm"
 #include "code\modules\spells\spell_types\pointed\projectile\falcon_disrupt.dm"

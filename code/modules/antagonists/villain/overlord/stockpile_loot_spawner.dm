@@ -167,11 +167,7 @@
 		else
 			var/list/available_costs = list()
 			for(var/resource in resource_costs)
-<<<<<<< HEAD
-				if(resource in stockpile_ref.stored_materials && stockpile_ref.stored_materials[resource] > 0)
-=======
 				if((resource in stockpile_ref.stored_materials) && stockpile_ref.stored_materials[resource] > 0)
->>>>>>> vanderlin/main
 					available_costs[resource] = min(resource_costs[resource], stockpile_ref.stored_materials[resource])
 			stockpile_ref.remove_resources(available_costs)
 

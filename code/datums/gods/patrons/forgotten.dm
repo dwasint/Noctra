@@ -15,10 +15,7 @@
 		"PSYDON LYVES!",
 	)
 	profane_words = list()
-<<<<<<< HEAD
-=======
 	devotion_holder = /datum/devotion/psydon
->>>>>>> vanderlin/main
 
 /datum/patron/psydon/can_pray(mob/living/carbon/human/follower)
 	//We just kind of assume the follower is a human here

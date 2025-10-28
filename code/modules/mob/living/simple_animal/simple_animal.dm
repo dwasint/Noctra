@@ -234,16 +234,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(mob/user)
 	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
-<<<<<<< HEAD
-	tame = TRUE
-	if(user)
-		SEND_SIGNAL(src, COMSIG_FRIENDSHIP_CHANGE, user, 55)
-		befriend(user)
-		record_round_statistic(STATS_ANIMALS_TAMED)
-		SEND_SIGNAL(user, COMSIG_ANIMAL_TAMED, src)
-	pet_passive = TRUE
-=======
->>>>>>> vanderlin/main
 
 	if(ai_controller)
 		ai_controller.can_idle = FALSE
@@ -507,10 +497,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		if(happiness_message)
 			final_message += " [happiness_message]"
 		to_chat(user, span_notice("[final_message]"))
-<<<<<<< HEAD
-=======
 		SEND_SIGNAL(user, COMSIG_MOB_BUTCHERED, src)
->>>>>>> vanderlin/main
 		gib()
 
 /mob/living/proc/butcher_summary(botch_count, normal_count, perfect_count, bonus_count, botch_chance, perfect_chance, happiness_bonus)

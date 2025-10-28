@@ -108,9 +108,6 @@
 		return FALSE
 
 	var/name_prefix = quality_data["name_prefix"]
-<<<<<<< HEAD
-	var/description_prefix = quality_data["description"]
-=======
 	if(islist(name_prefix))
 		var/list/names = name_prefix
 		name_prefix = pick(names)
@@ -120,7 +117,6 @@
 		var/list/names = description_prefix
 		description_prefix = pick(names)
 
->>>>>>> vanderlin/main
 	// Apply name prefix
 	if(name_prefix && name_prefix != "")
 		target.name = "[name_prefix] [target.name]"

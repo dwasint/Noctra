@@ -25,13 +25,6 @@
 		/datum/action/cooldown/spell/undirected/call_bird = 1,
 	)
 
-<<<<<<< HEAD
-	spells = list(
-		/datum/action/cooldown/spell/undirected/call_bird = 1,
-	)
-
-=======
->>>>>>> vanderlin/main
 	job_bitflag = BITFLAG_ROYALTY
 
 /datum/outfit/noble/pre_equip(mob/living/carbon/human/H)

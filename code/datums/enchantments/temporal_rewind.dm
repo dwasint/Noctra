@@ -10,10 +10,6 @@
 	var/active_item = FALSE
 	var/warned = FALSE
 
-<<<<<<< HEAD
-/datum/enchantment/rewind/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	.=..()
-=======
 /datum/enchantment/rewind/register_triggers(atom/item)
 	. = ..()
 	registered_signals += COMSIG_ITEM_AFTERATTACK
@@ -22,7 +18,6 @@
 	RegisterSignal(item, COMSIG_ITEM_HIT_RESPONSE, PROC_REF(on_hit_response))
 
 /datum/enchantment/rewind/proc/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
->>>>>>> vanderlin/main
 	if(!proximity_flag)
 		return
 	if(world.time < src.last_used + 100)

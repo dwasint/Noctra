@@ -18,12 +18,7 @@
 	.=..()
 	enchanter.force += 10
 
-<<<<<<< HEAD
-/datum/enchantment/briarcurse/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	.=..()
-=======
 /datum/enchantment/briarcurse/proc/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
->>>>>>> vanderlin/main
 	if(!proximity_flag)
 		return
 	if(isliving(target))

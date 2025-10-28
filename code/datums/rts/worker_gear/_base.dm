@@ -16,12 +16,8 @@
 /datum/worker_gear/New(obj/item/new_item, new_slot, datum/worker_mind/new_owner)
 	. = ..()
 	item = new_item
-<<<<<<< HEAD
-	slot = new_slot
-=======
 	if(new_slot)
 		slot = new_slot
->>>>>>> vanderlin/main
 	owner = new_owner
 
 /datum/worker_gear/proc/get_task_bonus(datum/work_order/task, task_key)
@@ -49,10 +45,6 @@
 	return stamina_modifier
 
 /datum/worker_gear/instrument
-<<<<<<< HEAD
-
-/datum/worker_gear/pickaxe
-=======
 	slot = WORKER_SLOT_HANDS
 	task_bonuses = list(
 		/datum/work_order/play_music = list(TASK_KEY_QUALITY = 1.2, TASK_KEY_REDUCTION = 0.8)
@@ -74,37 +66,27 @@
 
 /datum/worker_gear/pickaxe
 	slot = WORKER_SLOT_HANDS
->>>>>>> vanderlin/main
 	task_bonuses = list(
 		/datum/work_order/mine = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9, TASK_KEY_QUANTITY = 2),
 		/datum/work_order/break_turf = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9)
 	)
 
 /datum/worker_gear/miner_cap
-<<<<<<< HEAD
-=======
 	slot = WORKER_SLOT_HEAD
->>>>>>> vanderlin/main
 	task_bonuses = list(
 		/datum/work_order/mine = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9),
 		/datum/work_order/break_turf = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9)
 	)
 
 /datum/worker_gear/miner_shoes
-<<<<<<< HEAD
-=======
 	slot = WORKER_SLOT_SHOES
->>>>>>> vanderlin/main
 	task_bonuses = list(
 		/datum/work_order/mine = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9),
 		/datum/work_order/break_turf = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9)
 	)
 
 /datum/worker_gear/miner_chest
-<<<<<<< HEAD
-=======
 	slot = WORKER_SLOT_SHIRT
->>>>>>> vanderlin/main
 	task_bonuses = list(
 		/datum/work_order/mine = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9),
 		/datum/work_order/break_turf = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9)
@@ -115,8 +97,6 @@
 		/datum/work_order/mine = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9),
 		/datum/work_order/break_turf = list(TASK_KEY_SPEED = 1.1, TASK_KEY_REDUCTION = 0.9)
 	)
-<<<<<<< HEAD
-=======
 
 /datum/worker_gear/hoe
 	slot = WORKER_SLOT_HANDS
@@ -253,4 +233,3 @@
 	task_bonuses = list(
 		/datum/work_order/sew_clothes = list(TASK_KEY_SPEED = 1.08, TASK_KEY_REDUCTION = 0.92)
 	)
->>>>>>> vanderlin/main

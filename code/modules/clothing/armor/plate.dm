@@ -162,8 +162,6 @@
 /obj/item/clothing/armor/plate/full/silver/Initialize(mapload)
 	. = ..()
 	enchant(/datum/enchantment/silver)
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/armor/plate/fluted
 	name = "fluted half-plate"
@@ -222,4 +220,3 @@
 	name = "Psydonic Endurance"
 	desc = "I am protected by blessed Psydonian plate armor."
 	icon_state = "buff"
->>>>>>> vanderlin/main

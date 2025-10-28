@@ -434,21 +434,15 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 		return
 
 	victim.job = new_pos
-<<<<<<< HEAD
-=======
 	victim.mind?.set_assigned_role(new_pos)
->>>>>>> vanderlin/main
 	if(ishuman(victim))
 		var/mob/living/carbon/human/human = victim
 		if(!HAS_TRAIT(human, TRAIT_RECRUITED) && HAS_TRAIT(human, TRAIT_FOREIGNER))
 			ADD_TRAIT(human, TRAIT_RECRUITED, TRAIT_GENERIC)
 
-<<<<<<< HEAD
-=======
 	if(victim.mind?.assigned_role)
 		new_pos = victim.mind.assigned_role.get_informed_title(victim)
 
->>>>>>> vanderlin/main
 	if(!SScommunications.can_announce(user))
 		return
 

@@ -40,11 +40,8 @@
 	var/disguisechoice = browser_input_list(H, "Choose your cover.", "Available disguises", disguises)
 	if(disguisechoice)
 		H.job = disguisechoice
-<<<<<<< HEAD
-=======
 	if(!disguisechoice)
 		disguisechoice = pick(disguises)
->>>>>>> vanderlin/main
 
 	switch(disguisechoice)
 		if("Bard")

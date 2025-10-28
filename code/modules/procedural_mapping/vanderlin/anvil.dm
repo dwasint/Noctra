@@ -28,21 +28,12 @@
 /datum/mapGeneratorModule/undermountain
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/dirt,/turf/open/floor/cobblerock, /turf/open/floor/naturalstone)
-<<<<<<< HEAD
-	spawnableAtoms = list(/obj/item/natural/stone = 15,
-						/obj/item/natural/rock = 10,
-						/obj/item/natural/rock/random_ore = 5,
-						/obj/structure/flora/shroom_tree = 5,
-						/obj/structure/essence_node = 0.1,
-						/obj/item/restraints/legcuffs/beartrap/armed = 2)
-=======
 	spawnableAtoms = list(/obj/item/natural/stone = 10,
 						/obj/item/natural/rock = 8,
 						/obj/item/natural/rock/random_ore = 2,
 						/obj/structure/flora/shroom_tree = 1,
 						/obj/structure/essence_node = 0.1,
 						/obj/item/restraints/legcuffs/beartrap/armed = 0.5)
->>>>>>> vanderlin/main
 	allowed_areas = list(/area/rogue/under/mountains/anvil/lower)
 
 /datum/mapGeneratorModule/grove // This area is not utilized in Malum's Anvil at all as of 10-13-2025

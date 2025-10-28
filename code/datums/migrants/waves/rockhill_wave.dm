@@ -208,16 +208,6 @@
 
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
-<<<<<<< HEAD
-/datum/job/migrant/rockhill/serjeant_at_arms/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	if(spawned.age == AGE_OLD)
-		LAZYADDASSOC(jobstats, STATKEY_STR, 3)
-		LAZYADDASSOC(jobstats, STATKEY_INT, 2)
-		LAZYADDASSOC(jobstats, STATKEY_END, 2)
-		LAZYADDASSOC(jobstats, STATKEY_PER, 1)
-		LAZYADDASSOC(jobstats, STATKEY_SPD, 1)
-=======
 /datum/job/migrant/rockhill/serjeant_at_arms/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(spawned.age == AGE_OLD)
@@ -229,7 +219,6 @@
 			STATKEY_SPD = 1,
 		)
 		spawned.adjust_stat_modifier_list("job_stats", old_stats)
->>>>>>> vanderlin/main
 
 /datum/outfit/rockhill/serjeant_at_arms
 	name = "Rockhill Serjeant"

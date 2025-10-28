@@ -761,8 +761,6 @@ GLOBAL_LIST_EMPTY(custom_fermentation_recipes)
 	. = ..()
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/hagwoodbitter,900)
 	update_appearance(UPDATE_OVERLAYS)
-<<<<<<< HEAD
-=======
 
 /obj/structure/fermentation_keg/whitewine
 	desc = "A barrel that contains a Grenzelhoftian luxury. A sweeter tasting wine that often serves to highlight and enhance savoury notes. The rarer the vintage, the harder the find. The names of the ingredients often grow more ostentatious the closer you get to the capital."
@@ -777,4 +775,3 @@ GLOBAL_LIST_EMPTY(custom_fermentation_recipes)
 /obj/structure/fermentation_keg/redwine/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/redwine,900)
->>>>>>> vanderlin/main

@@ -51,11 +51,6 @@
 	return TRUE
 
 /datum/surgery_step/bestow_lux/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
-<<<<<<< HEAD
-	display_results(user, target, span_notice("You succeed in integrating lux into [target]'s hearth."),
-		"[user] works the lux into [target]'s innards.",
-		"[user] works the lux into [target]'s innards.")
-=======
 	if(tainted_lux && !tainted_mob)
 		if(prob(50))
 			display_results(user, target,
@@ -71,7 +66,6 @@
 		"[user] works the [tool.name] into [target]'s innards.",
 		"[user] works the [tool.name] into [target]'s innards.")
 
->>>>>>> vanderlin/main
 	target.emote("breathgasp")
 	target.Jitter(100)
 	target.update_body()

@@ -2,11 +2,7 @@
 	var/size_x = 100
 	var/size_y = 100
 	var/datum/cave_biome/biome
-<<<<<<< HEAD
-	var/turf/wall_turf = /turf/closed/mineral/random
-=======
 	var/turf/wall_turf = /turf/closed/mineral
->>>>>>> vanderlin/main
 	var/turf/ravine_turf = /turf/open/transparent/openspace
 	var/turf/lava_turf = /turf/open/lava
 
@@ -41,11 +37,8 @@
 	var/temperature_frequency = 0.18
 	var/moisture_frequency = 0.18
 
-<<<<<<< HEAD
-=======
 	var/ore_vein_attempts = 20         // How many ore veins to attempt per ore type
 
->>>>>>> vanderlin/main
 	var/datum/noise_generator/cave_noise
 	var/datum/noise_generator/ravine_noise
 
@@ -90,8 +83,6 @@
 	moist_noise.frequency = moisture_frequency
 	return moist_noise.fbm2(x, y)
 
-<<<<<<< HEAD
-=======
 /datum/cave_generator/proc/generate_ore_veins(list/cave_map, list/wall_coords, list/ore_list)
 	if(!ore_list || !ore_list.len)
 		return list()
@@ -195,7 +186,6 @@
 			if(cave_map["[x+dx],[y+dy]"])
 				return TRUE
 	return FALSE
->>>>>>> vanderlin/main
 
 /datum/cave_generator/proc/generate_deferred(turf/bottom_left_corner, datum/controller/subsystem/terrain_generation/subsystem, datum/terrain_generation_job/job)
 	set waitfor = FALSE
@@ -304,11 +294,7 @@
 					"level" = 0
 				))
 			else
-<<<<<<< HEAD
-				T.ChangeTurf(wall_turf)
-=======
 				T.ChangeTurf(wall_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 
 			tiles_processed++
 			if(tiles_processed % 200 == 0)
@@ -316,8 +302,6 @@
 					job.progress = 20 + (tiles_processed / total_tiles) * 15 // 20-35% for lower level
 				CHECK_TICK
 
-<<<<<<< HEAD
-=======
 	// Phase 4.5: Generate ore veins for lower level
 	var/list/lower_wall_coords = list()
 	for(var/x = 0 to size_x - 1)
@@ -343,7 +327,6 @@
 		if(tiles_processed % 100 == 0)
 			CHECK_TICK
 
->>>>>>> vanderlin/main
 	// Phase 5: Place upper level tiles
 	var/list/upper_valid_tiles = list()
 	tiles_processed = 0
@@ -373,11 +356,7 @@
 					"level" = 1
 				))
 			else
-<<<<<<< HEAD
-				T.ChangeTurf(wall_turf)
-=======
 				T.ChangeTurf(wall_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 
 			tiles_processed++
 			if(tiles_processed % 200 == 0)
@@ -385,8 +364,6 @@
 					job.progress = 35 + (tiles_processed / total_tiles) * 15 // 35-50% for upper level
 				CHECK_TICK
 
-<<<<<<< HEAD
-=======
 	// Phase 5.5: Generate ore veins for upper level
 	var/list/upper_wall_coords = list()
 	for(var/x = 0 to size_x - 1)
@@ -412,7 +389,6 @@
 		if(tiles_processed % 100 == 0)
 			CHECK_TICK
 
->>>>>>> vanderlin/main
 	// Phase 6: Spawn flora and fauna
 	spawn_flora_poisson(upper_valid_tiles)
 	CHECK_TICK
@@ -421,11 +397,7 @@
 
 	spawn_fauna_poisson(upper_valid_tiles)
 	CHECK_TICK
-<<<<<<< HEAD
-	spawn_fauna_poisson(lower_valid_tiles)
-=======
 	spawn_fauna_poisson(lower_valid_tiles, TRUE)
->>>>>>> vanderlin/main
 	CHECK_TICK
 
 	// Phase 7: Place features
@@ -529,9 +501,6 @@
 					"level" = 0
 				))
 			else
-<<<<<<< HEAD
-				T.ChangeTurf(wall_turf)
-=======
 				T.ChangeTurf(wall_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
 
 	// Generate ore veins for lower level
@@ -553,7 +522,6 @@
 		if(T)
 			var/ore_turf = lower_ore_placements[coord]
 			T.ChangeTurf(ore_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 
 	var/list/upper_valid_tiles = list()
 	for(var/x = 0 to size_x - 1)
@@ -581,9 +549,6 @@
 					"level" = 1
 				))
 			else
-<<<<<<< HEAD
-				T.ChangeTurf(wall_turf)
-=======
 				T.ChangeTurf(wall_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
 
 	// Generate ore veins for upper level
@@ -605,17 +570,12 @@
 		if(T)
 			var/ore_turf = upper_ore_placements[coord]
 			T.ChangeTurf(ore_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 
 	spawn_flora_poisson(upper_valid_tiles)
 	spawn_flora_poisson(lower_valid_tiles)
 
 	spawn_fauna_poisson(upper_valid_tiles)
-<<<<<<< HEAD
-	spawn_fauna_poisson(lower_valid_tiles)
-=======
 	spawn_fauna_poisson(lower_valid_tiles, TRUE)
->>>>>>> vanderlin/main
 
 	if(biome.feature_templates && biome.feature_templates.len)
 		var/list/upper_turfs = list()
@@ -663,13 +623,6 @@
 		if(flora_type)
 			new flora_type(T)
 
-<<<<<<< HEAD
-/datum/cave_generator/proc/spawn_fauna_poisson(list/valid_tiles)
-	if(!biome.fauna_types || !biome.fauna_types.len || biome.fauna_density <= 0)
-		return
-
-	var/min_radius = biome.fauna_density
-=======
 /datum/cave_generator/proc/spawn_fauna_poisson(list/valid_tiles, lower_world = FALSE)
 	if(!valid_tiles.len)
 		return
@@ -694,7 +647,6 @@
 		return
 
 	var/min_radius = active_density
->>>>>>> vanderlin/main
 	var/max_radius = min_radius * 2
 
 	// Build fast lookup
@@ -716,11 +668,7 @@
 
 		var/temperature = tile_data["temperature"]
 		var/moisture = tile_data["moisture"]
-<<<<<<< HEAD
-		var/level = tile_data["level"]
-=======
 		var/tile_level = tile_data["level"]
->>>>>>> vanderlin/main
 		var/turf/T = tile_data["turf"]
 
 		var/spawn_chance = 100
@@ -731,16 +679,6 @@
 			continue
 
 		var/list/valid_fauna = list()
-<<<<<<< HEAD
-		for(var/fauna_path in biome.fauna_types)
-			var/datum/fauna_spawn_rule/rule = biome.fauna_types[fauna_path]
-
-			if(temperature < rule.min_temperature || temperature > rule.max_temperature)
-				continue
-			if(moisture < rule.min_moisture || rule.max_moisture)
-				continue
-			if(level < rule.min_height || level > rule.max_height)
-=======
 		for(var/fauna_path in active_fauna_types)
 			var/datum/fauna_spawn_rule/rule = active_fauna_types[fauna_path]
 
@@ -749,32 +687,11 @@
 			if(moisture < rule.min_moisture || moisture > rule.max_moisture)
 				continue
 			if(tile_level < rule.min_height || tile_level > rule.max_height)
->>>>>>> vanderlin/main
 				continue
 
 			valid_fauna[fauna_path] = rule.spawn_weight
 
 		if(valid_fauna.len)
-<<<<<<< HEAD
-			var/chosen = weighted_pick_fauna(valid_fauna)
-			if(chosen)
-				new chosen(T)
-
-/datum/cave_generator/proc/weighted_pick_fauna(list/weights)
-	var/total = 0
-	for(var/item in weights)
-		total += weights[item]
-
-	var/pick = rand(1, total)
-	var/current = 0
-
-	for(var/item in weights)
-		current += weights[item]
-		if(pick <= current)
-			return item
-
-	return pick(weights)
-=======
 			var/chosen = pickweight(valid_fauna)
 			if(chosen)
 				var/mob/living/mob = new chosen(T)
@@ -782,7 +699,6 @@
 				SSisland_mobs.register_mob(mob)
 				if(lower_world)
 					SSmobs.enhance_mob(mob, 1 + (biome.difficulty * 2))
->>>>>>> vanderlin/main
 
 /datum/cave_generator/proc/generate_lava_river_path(list/upper_cave_map, list/lower_cave_map, list/ravine_map)
 	var/list/valid_starts = list()
@@ -1028,11 +944,7 @@
 		if(!valid_tiles.len || !weighted_templates.len)
 			break
 
-<<<<<<< HEAD
-		var/datum/cave_feature_template/feature_template = weighted_pick(weighted_templates)
-=======
 		var/datum/cave_feature_template/feature_template = pickweight(weighted_templates)
->>>>>>> vanderlin/main
 		var/turf/spawn_loc = find_valid_cave_feature_location(feature_template, valid_tiles, placed_features)
 
 		if(!spawn_loc)
@@ -1090,21 +1002,3 @@
 			if(map["[x+dx],[y+dy]"])
 				count++
 	return count
-<<<<<<< HEAD
-
-/datum/cave_generator/proc/weighted_pick(list/weights)
-	var/total = 0
-	for(var/item in weights)
-		total += weights[item]
-
-	var/pick = rand(1, total)
-	var/current = 0
-
-	for(var/item in weights)
-		current += weights[item]
-		if(pick <= current)
-			return item
-
-	return pick(weights)
-=======
->>>>>>> vanderlin/main

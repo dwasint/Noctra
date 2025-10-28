@@ -53,12 +53,9 @@
 
 	var/cleanliness_factor = 1 //related to hygiene for washing
 
-<<<<<<< HEAD
-=======
 	/// Fishing element for this specific water tile
 	var/datum/fish_source/fishing_datum = /datum/fish_source/ocean
 
->>>>>>> vanderlin/main
 /turf/open/water/proc/set_watervolume(volume)
 	water_volume = volume
 	if(src in children)
@@ -779,18 +776,11 @@
 	icon = 'icons/turf/floors.dmi'
 	neighborlay_self = null
 	water_level = 2
-<<<<<<< HEAD
-	slowdown = 4
-	swim_skill = TRUE
-	wash_in = TRUE
-	water_reagent = /datum/reagent/water/salty
-=======
 	slowdown = 2
 	swim_skill = TRUE
 	wash_in = TRUE
 	water_reagent = /datum/reagent/water/salty
 	fishing_datum = /datum/fish_source/ocean
->>>>>>> vanderlin/main
 
 /turf/open/water/ocean/deep
 	name = "salt water"
@@ -798,16 +788,10 @@
 	icon_state = "ash"
 	icon = 'icons/turf/floors.dmi'
 	water_level = 3
-<<<<<<< HEAD
-	slowdown = 8
-	swim_skill = TRUE
-	wash_in = TRUE
-=======
 	slowdown = 4
 	swim_skill = TRUE
 	wash_in = TRUE
 	fishing_datum = /datum/fish_source/ocean/deep
->>>>>>> vanderlin/main
 
 /datum/reagent/water/salty
 	taste_description = "salt"

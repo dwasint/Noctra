@@ -57,8 +57,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(GLOB.keep_doors.len > 0)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(know_keep_door_password), H), 7 SECONDS)
 
-<<<<<<< HEAD
-=======
 /datum/outfit/lord/map_override(mob/living/carbon/human/H)
 	if(SSmapping.config.map_name != "Voyage")
 		return
@@ -70,7 +68,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	wrists = null
 	shoes = /obj/item/clothing/shoes/boots
 
->>>>>>> vanderlin/main
 /datum/outfit/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/crown/serpcrown

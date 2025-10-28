@@ -343,10 +343,7 @@
 	wdefense = AVERAGE_PARRY
 	wbalance = VERY_HARD_TO_DODGE
 	sellprice = 20
-<<<<<<< HEAD
-=======
 	dropshrink = 1.0
->>>>>>> vanderlin/main
 
 /obj/item/weapon/knife/njora/steel
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop, /datum/intent/dagger/thrust)
@@ -368,11 +365,7 @@
 	name ="plaguebringer sickle"
 	desc = "A wicked edge brings feculent delights."
 	icon_state = "pestrasickle"
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD
-=======
 	max_integrity = INTEGRITY_STRONG
->>>>>>> vanderlin/main
 	wdefense = GOOD_PARRY //They use a dagger, but it should be fine for them to also parry with it.
 //................ Fanged dagger ............... //
 /obj/item/weapon/knife/dagger/steel/dirk

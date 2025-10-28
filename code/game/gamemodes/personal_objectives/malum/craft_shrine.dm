@@ -40,15 +40,6 @@
 /datum/objective/personal/craft_shrine/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You have built all the required sacred crosses, completing Malum's objective!"))
-<<<<<<< HEAD
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(MALUM, 20)
-	owner.current.adjust_skillrank(/datum/skill/craft/crafting, 1)
-	escalate_objective()
-	UnregisterSignal(owner.current, COMSIG_ITEM_CRAFTED)
-
-=======
 	adjust_storyteller_influence(MALUM, 20)
 	UnregisterSignal(owner.current, COMSIG_ITEM_CRAFTED)
 
@@ -56,6 +47,5 @@
 	. = ..()
 	owner.current.adjust_skillrank(/datum/skill/craft/crafting, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/craft_shrine/update_explanation_text()
 	explanation_text = "Build [target_count] wooden pantheon cross[target_count > 1 ? "es" : ""] to demonstrate your devotion to Malum."

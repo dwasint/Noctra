@@ -4,10 +4,6 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ALL
 	outfit = /datum/outfit/wretch/berserker
-<<<<<<< HEAD
-	category_tags = list(CTAG_WRETCH)
-=======
->>>>>>> vanderlin/main
 	total_positions = 2
 
 /datum/outfit/wretch/berserker/pre_equip(mob/living/carbon/human/H)

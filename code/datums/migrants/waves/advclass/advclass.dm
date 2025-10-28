@@ -1,9 +1,6 @@
 /datum/migrant_role/advclass/pilgrim
 	name = "Pilgrim"
-<<<<<<< HEAD
-=======
 	migrant_job = /datum/job/pilgrim
->>>>>>> vanderlin/main
 	advclass_cat_rolls = list(CTAG_PILGRIM = 10)
 
 /datum/migrant_wave/pilgrim
@@ -42,10 +39,7 @@
 
 /datum/migrant_role/advclass/adventurer
 	name = "Adventurer"
-<<<<<<< HEAD
-=======
 	migrant_job = /datum/job/adventurer
->>>>>>> vanderlin/main
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
 /datum/migrant_wave/adventurer
@@ -84,10 +78,7 @@
 
 /datum/migrant_role/advclass/bandit
 	name = "Bandit"
-<<<<<<< HEAD
-=======
 	migrant_job = /datum/job/bandit
->>>>>>> vanderlin/main
 	advclass_cat_rolls = list(CTAG_BANDIT = 20)
 
 /datum/migrant_wave/bandit
@@ -128,10 +119,7 @@
 
 /datum/migrant_role/advclass/mercenary
 	name = "Mercenary"
-<<<<<<< HEAD
-=======
 	migrant_job = /datum/job/mercenary
->>>>>>> vanderlin/main
 	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
 
 /datum/migrant_wave/merc
@@ -164,7 +152,3 @@
 	roles = list(
 		/datum/migrant_role/advclass/mercenary = 1,
 	)
-<<<<<<< HEAD
-=======
-
->>>>>>> vanderlin/main

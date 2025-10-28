@@ -45,10 +45,6 @@
 
 /// Handles the integrity of an atom changing. This must be called instead of changing integrity directly.
 /atom/proc/update_integrity(new_value, update_atom = TRUE, damage_flag)
-<<<<<<< HEAD
-	SHOULD_NOT_OVERRIDE(TRUE)
-=======
->>>>>>> vanderlin/main
 	if(!uses_integrity)
 		CRASH("/atom/proc/update_integrity() was called on [src] when it doesnt use integrity!")
 	var/old_value = atom_integrity
@@ -73,8 +69,6 @@
 
 	SEND_SIGNAL(src, COMSIG_ATOM_INTEGRITY_CHANGED, old_value, new_value)
 
-<<<<<<< HEAD
-=======
 /obj/item/update_integrity(new_value, update_atom = TRUE, damage_flag)
 	if(!uses_integrity)
 		CRASH("/atom/proc/update_integrity() was called on [src] when it doesnt use integrity!")
@@ -104,7 +98,6 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_INTEGRITY_CHANGED, old_value, new_value)
 
 
->>>>>>> vanderlin/main
 /// This mostly exists to keep atom_integrity private. Might be useful in the future.
 /atom/proc/get_integrity()
 	SHOULD_BE_PURE(TRUE)

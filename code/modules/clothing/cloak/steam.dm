@@ -11,10 +11,6 @@
 
 	//you can't unsmelt your boiler Sir Steam Knightus
 	smeltresult = /obj/item/ingot/bronze
-<<<<<<< HEAD
-
-=======
->>>>>>> vanderlin/main
 	var/active = FALSE
 
 /obj/item/clothing/cloak/boiler/Initialize()
@@ -78,11 +74,6 @@
 
 /obj/item/clothing/cloak/boiler/proc/power_on(mob/living/carbon/user)
 	var/obj/item/clothing/shoes/boots/armor/steam/boots = locate() in list(user.shoes)
-<<<<<<< HEAD
-	//Stops the speed debuff from the boots
-	if(boots)
-		boots.power_on(user)
-=======
 	var/obj/item/clothing/head/helmet/heavy/steam/helmet = locate() in list(user.head)
 	//Stops the speed debuff from the boots
 	if(boots)
@@ -90,26 +81,18 @@
 	//Remove the FOV block and gives night vision
 	if(helmet)
 		helmet.power_on(user)
->>>>>>> vanderlin/main
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(try_steam_usage), override = TRUE)
 	return
 
 /obj/item/clothing/cloak/boiler/proc/power_off(mob/living/carbon/user, disable = FALSE, broken = FALSE)
 	var/obj/item/clothing/shoes/boots/armor/steam/boots = locate() in list(user.shoes)
-<<<<<<< HEAD
-
-	if(boots)
-		boots.power_off(user)
-
-=======
 	var/obj/item/clothing/head/helmet/heavy/steam/helmet = locate() in list(user.head)
 
 	if(boots)
 		boots.power_off(user)
 	if(helmet)
 		helmet.power_off(user)
->>>>>>> vanderlin/main
 	remove_status_effect(user)
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED) // stop burning steam
 	//Triggers when the player removes the boiler or any steamknight armor without turning the boiler off, penalizes them.
@@ -124,17 +107,10 @@
 		else
 			SEND_SIGNAL(user, COMSIG_ATOM_PROXY_STEAM_USE, src, random_loss, "steam_armor", FALSE, FALSE)
 
-<<<<<<< HEAD
-	//Triggers when the steamknight boiler runs out of steam.
-	if(disable)
-		active = FALSE
-		user.audible_message(span_warning("The [src.name] hisses and sputters, running completely out of steam!"), runechat_message = TRUE)
-=======
 	//Triggers when the steamknight boiler runs out of steam to move the armor.
 	if(disable)
 		active = FALSE
 		user.audible_message(span_warning("The [src.name] hisses and sputters, there's not enough steam to power the armor!"), runechat_message = TRUE)
->>>>>>> vanderlin/main
 
 	//Triggers when steamknight boiler breaks while active.
 	if(broken)
@@ -153,11 +129,6 @@
 	if(src.obj_broken)
 		power_off(source, FALSE, TRUE)
 		return FALSE
-<<<<<<< HEAD
-
-	if(!SEND_SIGNAL(source, COMSIG_ATOM_PROXY_STEAM_USE, src, 0.5, "steam_armor", FALSE, FALSE))
-		//Out of steam, shut down the boiler forcibly
-=======
 	var/steam_cost = 0.5
 	if(uses_integrity)
 		if(atom_integrity < max_integrity)
@@ -175,7 +146,6 @@
 
 	if(!SEND_SIGNAL(source, COMSIG_ATOM_PROXY_STEAM_USE, src, steam_cost, "steam_armor", FALSE, FALSE))
 		//Not enough steam to power the armor, shut down the boiler forcibly
->>>>>>> vanderlin/main
 		power_off(source, TRUE)
 		return FALSE
 

@@ -23,15 +23,12 @@
 	desc = "A crude peasant cap worn by about every serf under Astrata's radiance."
 	icon_state = "knitcap"
 	min_cold_protection_temperature = -5
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/head/turban
 	name = "turban"
 	desc = "A headwrap worn throughout the southern parts of Faience."
 	icon_state = "turban"
 	min_cold_protection_temperature = -5
->>>>>>> vanderlin/main
 
 /obj/item/clothing/head/headband
 	name = "headband"
@@ -346,8 +343,6 @@
 	block2add = FOV_BEHIND
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
-<<<<<<< HEAD
-=======
 
 /obj/item/clothing/head/roguehood/psydon
 	name = "psydonian hood"
@@ -386,4 +381,3 @@
 	toggle_icon_state = TRUE
 	max_integrity = 200
 
->>>>>>> vanderlin/main

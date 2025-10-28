@@ -26,17 +26,6 @@
 	if(tamed_count >= required_tames)
 		complete_objective(animal)
 
-<<<<<<< HEAD
-/datum/objective/personal/tame_animal/proc/complete_objective(mob/living/simple_animal/animal)
-	to_chat(owner.current, span_greentext("You have tamed [animal], fulfilling Dendor's will!"))
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(DENDOR, 20)
-	owner.current.adjust_skillrank(/datum/skill/labor/taming, 1)
-	escalate_objective()
-	UnregisterSignal(owner.current, COMSIG_ANIMAL_TAMED)
-
-=======
 /datum/objective/personal/tame_animal/complete_objective(mob/living/simple_animal/animal)
 	. = ..()
 	to_chat(owner.current, span_greentext("You have tamed [animal], fulfilling Dendor's will!"))
@@ -47,6 +36,5 @@
 	. = ..()
 	owner.current.adjust_skillrank(/datum/skill/labor/taming, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/tame_animal/update_explanation_text()
 	explanation_text = "Tame an animal, either by feeding it or any other means until it acknowledges you as a friend. Dendor wills it!"

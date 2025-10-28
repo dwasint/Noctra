@@ -11,12 +11,8 @@
 	update_explanation_text()
 
 /datum/objective/personal/hug_beggar/Destroy()
-<<<<<<< HEAD
-	UnregisterSignal(owner.current, COMSIG_MOB_HUGGED)
-=======
 	if(owner?.current)
 		UnregisterSignal(owner.current, COMSIG_MOB_HUGGED)
->>>>>>> vanderlin/main
 	return ..()
 
 /datum/objective/personal/hug_beggar/proc/on_hug(datum/source, mob/living/target)
@@ -25,16 +21,6 @@
 		return
 
 	if(target.job == "Beggar" || istype(target.mind?.assigned_role, /datum/job/vagrant))
-<<<<<<< HEAD
-		to_chat(owner.current, span_greentext("You've hugged a beggar, completing Eora's objective!"))
-		owner.current.adjust_triumphs(triumph_count)
-		completed = TRUE
-		adjust_storyteller_influence(EORA, 20)
-		ADD_TRAIT(owner.current, TRAIT_EMPATH, TRAIT_GENERIC)
-		escalate_objective()
-		UnregisterSignal(owner.current, COMSIG_MOB_HUGGED)
-
-=======
 		complete_objective()
 
 /datum/objective/personal/hug_beggar/complete_objective()
@@ -47,6 +33,5 @@
 	. = ..()
 	ADD_TRAIT(owner.current, TRAIT_EMPATH, TRAIT_GENERIC)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/hug_beggar/update_explanation_text()
 	explanation_text = "Everyone deserves love! Hug a beggar to please Eora!"

@@ -168,8 +168,6 @@
 	category = "Pants"
 	craftdiff = 3
 
-<<<<<<< HEAD
-=======
 /datum/repeatable_crafting_recipe/sewing/patkilt
 	name = "patterned kilt"
 	output = /obj/item/clothing/pants/skirt/patkilt
@@ -178,7 +176,6 @@
 	category = "Pants"
 	craftdiff = 3
 
->>>>>>> vanderlin/main
 /datum/repeatable_crafting_recipe/sewing/headband
 	name = "headband"
 	output = /obj/item/clothing/head/headband
@@ -465,8 +462,6 @@
 	craftdiff = 2
 	category = "Cloak"
 
-<<<<<<< HEAD
-=======
 /datum/repeatable_crafting_recipe/sewing/poncho
 	name = "cloth poncho"
 	output = /obj/item/clothing/cloak/poncho
@@ -476,7 +471,6 @@
 	craftdiff = 2
 	category = "Cloak"
 
->>>>>>> vanderlin/main
 /datum/repeatable_crafting_recipe/sewing/tabard/crusader
 	name = "tabard (crusader)"
 	output = /obj/item/clothing/cloak/tabard/crusader

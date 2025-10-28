@@ -7,12 +7,6 @@
 	)
 	var/last_used
 
-<<<<<<< HEAD
-/datum/enchantment/frostveil/on_hit(obj/item/source, atom/target, mob/user, proximity_flag, click_parameters)
-	if(!proximity_flag)
-		return
-	if(world.time < src.last_used + 100)
-=======
 /datum/enchantment/frostveil/register_triggers(atom/item)
 	. = ..()
 	registered_signals += COMSIG_ITEM_AFTERATTACK
@@ -24,7 +18,6 @@
 	if(!proximity_flag)
 		return
 	if(world.time < src.last_used + 10 SECONDS)
->>>>>>> vanderlin/main
 		return
 	if(isliving(target))
 		var/mob/living/targeted = target

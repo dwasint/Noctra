@@ -19,21 +19,13 @@
 	cooldown_time = 60 SECONDS
 	spell_cost = 20
 	duration_scaling = TRUE
-<<<<<<< HEAD
-
-=======
 	duration_modification = 5 SECONDS
->>>>>>> vanderlin/main
 	status_effect = /datum/status_effect/debuff/infestation
 
 /datum/status_effect/debuff/infestation
 	id = "infestation"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/infestation
-<<<<<<< HEAD
-	duration = 45 SECONDS
-=======
 	duration = 10 SECONDS
->>>>>>> vanderlin/main
 	effectedstats = list(STATKEY_CON = -2)
 	var/static/mutable_appearance/rotten = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
 

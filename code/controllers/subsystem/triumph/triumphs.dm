@@ -179,11 +179,7 @@ SUBSYSTEM_DEF(triumphs)
 		to_chat(C, span_redtext("You were refunded [refund_amount] triumph\s due to \a [reason]."))
 
 	else if(previous_owner_ckey)
-<<<<<<< HEAD
-		global.adjust_triumphs(previous_owner_ckey, refund_amount, previous_owner_ckey, override_bonus = TRUE)
-=======
 		triumph_adjust(refund_amount, previous_owner_ckey)
->>>>>>> vanderlin/main
 
 	if(triumph_buy.limited)
 		triumph_buy_stocks[triumph_buy.type]++
@@ -410,12 +406,7 @@ SUBSYSTEM_DEF(triumphs)
 
 	triumph_leaderboard = sorted_list
 
-<<<<<<< HEAD
-/// Called when an admin disables a Triumph Buy.
-/// Refunds all current owners of that Triumph Buy and disactive it.
-=======
 /// Called when an admin disables a Triumph Buy. Refunds all current owners of that Triumph Buy and deactive it.
->>>>>>> vanderlin/main
 /datum/controller/subsystem/triumphs/proc/refund_from_admin_toggle(datum/triumph_buy/TB)
 	if(!TB)
 		return

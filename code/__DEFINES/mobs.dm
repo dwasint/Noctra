@@ -382,11 +382,6 @@
 ///How much a mob's sprite should be moved when they're lying down
 #define PIXEL_Y_OFFSET_LYING -6
 
-<<<<<<< HEAD
-/// If gravity must be present to perform action (can't use pens without gravity)
-#define NEED_GRAVITY (1<<0)
-=======
->>>>>>> vanderlin/main
 /// If reading is required to perform action (can't read a book if you are illiterate)
 #define NEED_LITERACY (1<<0)
 /// If lighting must be present to perform action (can't heal someone in the dark)

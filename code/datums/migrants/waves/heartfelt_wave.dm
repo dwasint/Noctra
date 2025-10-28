@@ -322,16 +322,6 @@
 	cmode_music = 'sound/music/cmode/nobility/CombatCourtMagician.ogg'
 	voicepack_m = /datum/voicepack/male/wizard
 
-<<<<<<< HEAD
-/datum/job/migrant/heartfelt_magos/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	if(spawned.age == AGE_OLD)
-		LAZYADDASSOC(jobstats, STATKEY_SPD, -1)
-		LAZYADDASSOC(jobstats, STATKEY_PER, 1)
-
-/datum/job/migrant/heartfelt_magos/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-=======
 /datum/job/migrant/heartfelt_magos/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	if(spawned.age == AGE_OLD)
@@ -340,7 +330,6 @@
 			STATKEY_SPD = -1,
 		)
 		spawned.adjust_stat_modifier_list("job_stats", old_stats)
->>>>>>> vanderlin/main
 	spawned.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
 
 /datum/outfit/heartfelt_magos
@@ -397,26 +386,15 @@
 	. = ..()
 	spawned.virginity = TRUE
 
-<<<<<<< HEAD
-=======
 	if(spawned.age == AGE_OLD)
 		spawned.adjust_skillrank(/datum/skill/magic/holy, 1)
 
->>>>>>> vanderlin/main
 	var/holder = spawned.patron?.devotion_holder
 	if(holder)
 		var/datum/devotion/devotion = new holder()
 		devotion.make_priest()
 		devotion.grant_to(spawned)
 
-<<<<<<< HEAD
-/datum/job/migrant/heartfelt_prior/adjust_values(mob/living/carbon/human/spawned)
-	. = ..()
-	if(spawned.age == AGE_OLD)
-		LAZYADDASSOC(skills, /datum/skill/magic/holy, 1)
-
-=======
->>>>>>> vanderlin/main
 /datum/outfit/heartfelt_prior
 	neck = /obj/item/clothing/neck/psycross/silver
 	shirt = /obj/item/clothing/shirt/undershirt/priest

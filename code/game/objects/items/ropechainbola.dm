@@ -329,13 +329,6 @@
 					buckled_mob.visible_message(pick(flavor_text))
 				playsound(buckled_mob.loc, 'sound/foley/noose_idle.ogg', 30, 1, -3)
 			else
-<<<<<<< HEAD
-				buckled_mob.visible_message("<span class='danger'>[buckled_mob] drops from the noose!</span>")
-				buckled_mob.Knockdown(60)
-				buckled_mob.pixel_y = buckled_mob.base_pixel_y
-				buckled_mob.pixel_x = buckled_mob.base_pixel_x
-				unbuckle_all_mobs(force=1)
-=======
 				if(prob(1))
 					var/obj/item/bodypart/head/head = buckled_mob.get_bodypart("head")
 					if(head.brute_dam >= 50)
@@ -347,4 +340,3 @@
 			buckled_mob.pixel_y = buckled_mob.base_pixel_y
 			buckled_mob.pixel_x = buckled_mob.base_pixel_x
 			unbuckle_all_mobs(force=1)
->>>>>>> vanderlin/main

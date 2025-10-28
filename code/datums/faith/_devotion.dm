@@ -42,11 +42,7 @@
 	holder_mob = holder
 	holder_mob.cleric = src
 	holder_mob?.hud_used?.initialize_bloodpool()
-<<<<<<< HEAD
-	holder_mob?.hud_used?.bloodpool.set_fill_color("#3C41A4")
-=======
 	holder_mob?.hud_used?.bloodpool.set_fill_color(devotion_color)
->>>>>>> vanderlin/main
 	for(var/trait as anything in traits)
 		ADD_TRAIT(holder_mob, trait, DEVOTION_TRAIT)
 	for(var/datum/action/miracle as anything in miracles_extra)
@@ -124,15 +120,12 @@
 	devotion = 50
 	max_devotion = CLERIC_REQ_3
 	progression = CLERIC_REQ_1
-<<<<<<< HEAD
-=======
 	max_progression = CLERIC_REQ_2
 
 /datum/devotion/proc/make_absolver()
 	devotion = 100
 	max_devotion = CLERIC_REQ_3
 	progression = CLERIC_REQ_3
->>>>>>> vanderlin/main
 	max_progression = CLERIC_REQ_3
 
 /datum/devotion/proc/make_acolyte()

@@ -1,10 +1,6 @@
 /datum/triumph_buy/storyteller_influence_bonus
 	name = "Storyteller Influence Bonus"
-<<<<<<< HEAD
-	desc = "Buy an extra 20 influence for this god!"
-=======
 	desc = "Buy an extra 25 influence for this god!"
->>>>>>> vanderlin/main
 	triumph_cost = 2
 	category = TRIUMPH_CAT_STORYTELLER
 	visible_on_active_menu = TRUE

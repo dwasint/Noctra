@@ -5,17 +5,6 @@
 	var/turf/water_turf = /turf/open/water/ocean
 	var/turf/deep_water_turf = /turf/open/water/ocean/deep
 	var/turf/wall_turf = /turf/closed/mineral/random
-<<<<<<< HEAD
-	var/island_threshold = 0.3
-	var/beach_width = 2
-	var/beach_noise_scale = 0.15
-	var/min_ocean_border = 5
-	var/ocean_depth = 5
-	var/smoothing_passes = 1
-	var/seed = 0
-	var/feature_attempts = 5
-	var/min_feature_distance = 15
-=======
 	var/island_threshold = 0.25
 	var/beach_width = 2
 	var/beach_noise_scale = 0.15
@@ -23,7 +12,6 @@
 	var/smoothing_passes = 1
 	var/seed = 0
 	var/min_feature_distance = 6
->>>>>>> vanderlin/main
 
 	///commonly modified
 	var/height_frequency = 0.22
@@ -38,14 +26,11 @@
 	var/gain = 0.5
 	var/lacunarity = 2.0
 
-<<<<<<< HEAD
-=======
 	var/ocean_noise_amplification = 3.0  // How much to amplify the island noise for depth variation
 	var/shallow_water_noise_threshold = 0.25  // Higher = less shallow water extends out
 
 	var/matthios_fragment = FALSE
 
->>>>>>> vanderlin/main
 	// Persistent noise generators
 	var/datum/noise_generator/noise
 	var/datum/noise_generator/beach_noise
@@ -53,21 +38,14 @@
 	var/datum/noise_generator/temperature_noise
 	var/datum/noise_generator/moisture_noise
 
-<<<<<<< HEAD
-/datum/island_generator/New(datum/island_biome/selected_biome, sx = 100, sy = 100, _noise_influence = 0.5,  _temperature_frequency = 0.2, _moisture_frequency = 0.2, _height_frequency = 0.22, _height_threshold = 0.5)
-=======
 /datum/island_generator/New(datum/island_biome/selected_biome, sx = 100, sy = 100, _noise_influence = 0.5,  _temperature_frequency = 0.2, _moisture_frequency = 0.2, _height_frequency = 0.22, _height_threshold = 0.5, _matthios)
->>>>>>> vanderlin/main
 	..()
 	temperature_frequency = _temperature_frequency
 	moisture_frequency = _moisture_frequency
 	noise_influence = _noise_influence
 	height_threshold = _height_threshold
 	height_frequency = _height_frequency
-<<<<<<< HEAD
-=======
 	matthios_fragment = _matthios
->>>>>>> vanderlin/main
 
 	size_x = sx
 	size_y = sy
@@ -184,81 +162,6 @@
 	biome.temperature_map = temperature_map
 	biome.moisture_map = moisture_map
 
-<<<<<<< HEAD
-	// Phase 3: Generate water
-	var/list/water_distance_map = list()
-	var/list/water_queue = list()
-
-	for(var/x = 0 to size_x - 1)
-		for(var/y = 0 to size_y - 1)
-			if(!island_map["[x],[y]"])
-				var/turf/T = locate(start_x + x, start_y + y, start_z)
-				if(T)
-					T.ChangeTurf(deep_water_turf)
-			else
-				for(var/dx = -1 to 1)
-					for(var/dy = -1 to 1)
-						if(dx == 0 && dy == 0)
-							continue
-						var/wx = x + dx
-						var/wy = y + dy
-						if(!island_map["[wx],[wy]"] && wx >= 0 && wx < size_x && wy >= 0 && wy < size_y)
-							var/water_key = "[wx],[wy]"
-							if(!(water_key in water_distance_map))
-								water_distance_map[water_key] = 0
-								water_queue += water_key
-
-		if(x % 10 == 0)
-			if(job)
-				job.progress = 60 + (x / size_x) * 10 // 60-70% for water setup
-			CHECK_TICK
-
-	// Spread shallow water
-	var/water_tiles_processed = 0
-	while(water_queue.len)
-		var/current = water_queue[1]
-		water_queue.Cut(1, 2)
-
-		var/list/coords = splittext(current, ",")
-		var/x = text2num(coords[1])
-		var/y = text2num(coords[2])
-		var/current_dist = water_distance_map[current]
-
-		if(current_dist < ocean_depth)
-			var/turf/T = locate(start_x + x, start_y + y, start_z)
-			if(T)
-				T.ChangeTurf(water_turf)
-
-			var/spread_chance = 100 - (current_dist / ocean_depth * 40)
-
-			for(var/dx = -1 to 1)
-				for(var/dy = -1 to 1)
-					if(dx == 0 && dy == 0)
-						continue
-
-					if(!prob(spread_chance))
-						continue
-
-					var/nx = x + dx
-					var/ny = y + dy
-
-					if(nx < 0 || nx >= size_x || ny < 0 || ny >= size_y)
-						continue
-
-					if(island_map["[nx],[ny]"])
-						continue
-
-					var/neighbor_key = "[nx],[ny]"
-
-					if(neighbor_key in water_distance_map)
-						continue
-
-					water_distance_map[neighbor_key] = current_dist + 1
-					water_queue += neighbor_key
-
-		water_tiles_processed++
-		if(water_tiles_processed % 200 == 0)
-=======
 	for(var/x = 0 to size_x - 1)
 		for(var/y = 0 to size_y - 1)
 			if(!island_map["[x],[y]"])
@@ -279,7 +182,6 @@
 		if(x % 10 == 0)
 			if(job)
 				job.progress = 60 + (x / size_x) * 10
->>>>>>> vanderlin/main
 			CHECK_TICK
 
 	// Phase 4: Place terrain tiles
@@ -315,19 +217,11 @@
 						is_beach = TRUE
 
 			if(is_beach)
-<<<<<<< HEAD
-				T.ChangeTurf(biome.beach_turf)
-				beach_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
-			else
-				var/turf_type = biome.select_terrain(temperature, moisture, height)
-				T.ChangeTurf(turf_type)
-=======
 				T.ChangeTurf(biome.beach_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone, /turf/open/floor/dirt))
 				beach_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
 			else
 				var/turf_type = biome.select_terrain(temperature, moisture, height)
 				T.ChangeTurf(turf_type, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 				mainland_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
 
 			if(height > 0)
@@ -353,8 +247,6 @@
 	spawn_fauna_poisson(mainland_tiles, beach_tiles)
 	CHECK_TICK
 
-<<<<<<< HEAD
-=======
 	if(!generate_settlements_on_island(bottom_left_corner, mainland_tiles))
 		generate_cave_entry(bottom_left_corner, mainland_tiles)
 
@@ -363,7 +255,6 @@
 
 	CHECK_TICK
 
->>>>>>> vanderlin/main
 	if(job)
 		job.progress = 100
 
@@ -416,70 +307,6 @@
 	biome.temperature_map = temperature_map
 	biome.moisture_map = moisture_map
 
-<<<<<<< HEAD
-	var/list/water_distance_map = list()
-	var/list/water_queue = list()
-
-	for(var/x = 0 to size_x - 1)
-		for(var/y = 0 to size_y - 1)
-			if(!island_map["[x],[y]"])
-				var/turf/T = locate(start_x + x, start_y + y, start_z)
-				if(T)
-					T.ChangeTurf(deep_water_turf)
-			else
-				for(var/dx = -1 to 1)
-					for(var/dy = -1 to 1)
-						if(dx == 0 && dy == 0)
-							continue
-						var/wx = x + dx
-						var/wy = y + dy
-						if(!island_map["[wx],[wy]"] && wx >= 0 && wx < size_x && wy >= 0 && wy < size_y)
-							var/water_key = "[wx],[wy]"
-							if(!(water_key in water_distance_map))
-								water_distance_map[water_key] = 0
-								water_queue += water_key
-
-	while(water_queue.len)
-		var/current = water_queue[1]
-		water_queue.Cut(1, 2)
-
-		var/list/coords = splittext(current, ",")
-		var/x = text2num(coords[1])
-		var/y = text2num(coords[2])
-		var/current_dist = water_distance_map[current]
-
-		if(current_dist < ocean_depth)
-			var/turf/T = locate(start_x + x, start_y + y, start_z)
-			if(T)
-				T.ChangeTurf(water_turf)
-
-			var/spread_chance = 100 - (current_dist / ocean_depth * 40)
-
-			for(var/dx = -1 to 1)
-				for(var/dy = -1 to 1)
-					if(dx == 0 && dy == 0)
-						continue
-
-					if(!prob(spread_chance))
-						continue
-
-					var/nx = x + dx
-					var/ny = y + dy
-
-					if(nx < 0 || nx >= size_x || ny < 0 || ny >= size_y)
-						continue
-
-					if(island_map["[nx],[ny]"])
-						continue
-
-					var/neighbor_key = "[nx],[ny]"
-
-					if(neighbor_key in water_distance_map)
-						continue
-
-					water_distance_map[neighbor_key] = current_dist + 1
-					water_queue += neighbor_key
-=======
 	for(var/x = 0 to size_x - 1)
 		for(var/y = 0 to size_y - 1)
 			if(!island_map["[x],[y]"])
@@ -496,7 +323,6 @@
 						T.ChangeTurf(water_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
 					else
 						T.ChangeTurf(deep_water_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 
 	var/list/mainland_tiles = list()
 	var/list/beach_tiles = list()
@@ -529,19 +355,11 @@
 						is_beach = TRUE
 
 			if(is_beach)
-<<<<<<< HEAD
-				T.ChangeTurf(biome.beach_turf)
-				beach_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
-			else
-				var/turf_type = biome.select_terrain(temperature, moisture, height)
-				T.ChangeTurf(turf_type)
-=======
 				T.ChangeTurf(biome.beach_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone, /turf/open/floor/dirt))
 				beach_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
 			else
 				var/turf_type = biome.select_terrain(temperature, moisture, height)
 				T.ChangeTurf(turf_type, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
->>>>>>> vanderlin/main
 				mainland_tiles += list(list("turf" = T, "x" = x, "y" = y, "temperature" = temperature, "moisture" = moisture, "height" = height))
 
 			if(height > 0)
@@ -555,8 +373,6 @@
 	spawn_flora_poisson(mainland_tiles, beach_tiles, start_x, start_y)
 	spawn_fauna_poisson(mainland_tiles, beach_tiles)
 
-<<<<<<< HEAD
-=======
 	if(!generate_settlements_on_island(bottom_left_corner, mainland_tiles))
 		generate_cave_entry(bottom_left_corner, mainland_tiles)
 
@@ -702,7 +518,6 @@
 	if(height_variance > cave_template.max_height_variance)
 		return FALSE
 
->>>>>>> vanderlin/main
 	return TRUE
 
 /datum/island_generator/proc/spawn_flora_poisson(list/mainland_tiles, list/beach_tiles, start_x, start_y)
@@ -829,33 +644,12 @@
 			valid_fauna[fauna_path] = rule.spawn_weight
 
 		if(valid_fauna.len)
-<<<<<<< HEAD
-			var/chosen = weighted_pick_fauna(valid_fauna)
-			if(chosen)
-				new chosen(T)
-
-/datum/island_generator/proc/weighted_pick_fauna(list/weights)
-	var/total = 0
-	for(var/item in weights)
-		total += weights[item]
-
-	var/pick = rand(1, total)
-	var/current = 0
-
-	for(var/item in weights)
-		current += weights[item]
-		if(pick <= current)
-			return item
-
-	return pick(weights)
-=======
 			var/chosen = pickweight(valid_fauna)
 			if(chosen)
 				var/mob/living/mob = new chosen(T)
 				mob.faction |= "islander"
 				SSisland_mobs.register_mob(mob)
 
->>>>>>> vanderlin/main
 
 /datum/island_generator/proc/build_elevation(x, y, z, height, dist_to_water, temperature, moisture)
 	for(var/level = 1 to height)
@@ -868,13 +662,6 @@
 		for(var/obj/structure/structure in below)
 			qdel(structure)
 
-<<<<<<< HEAD
-		below.ChangeTurf(wall_turf)
-
-		if(level == height)
-			var/turf_type = biome.select_terrain(temperature, moisture, level)
-			current.ChangeTurf(turf_type)
-=======
 		below.ChangeTurf(wall_turf, list(/turf/open/transparent/openspace, /turf/open/floor/naturalstone))
 
 		if(level == height)
@@ -887,7 +674,6 @@
 
 	var/datum/settlement_generator/gen = biome.settlement_generator
 	return gen.generate_settlements(src, bottom_left_corner, mainland_tiles)
->>>>>>> vanderlin/main
 
 
 /datum/island_generator/proc/smooth_heights(list/height_map, list/island_map)
@@ -1001,10 +787,7 @@
 	var/list/placed_features = list()
 	var/list/island_map = list()
 	var/list/height_map = list()
-<<<<<<< HEAD
-=======
 	var/list/coord_to_turf = list()
->>>>>>> vanderlin/main
 
 	var/base_x = valid_tiles[1]:x
 	var/base_y = valid_tiles[1]:y
@@ -1012,35 +795,15 @@
 	for(var/turf/T in valid_tiles)
 		var/rel_x = T.x - base_x
 		var/rel_y = T.y - base_y
-<<<<<<< HEAD
-		island_map["[rel_x],[rel_y]"] = TRUE
-=======
 		var/key = "[rel_x],[rel_y]"
 		island_map[key] = TRUE
 		coord_to_turf[key] = T
->>>>>>> vanderlin/main
 
 		var/height = 0
 		var/turf/check = T
 		while(istype(GET_TURF_BELOW(check), /turf/closed/wall))
 			height++
 			check = GET_TURF_BELOW(check)
-<<<<<<< HEAD
-		height_map["[rel_x],[rel_y]"] = height
-
-	var/list/weighted_templates = list()
-	for(var/template_type in biome.feature_templates)
-		var/datum/island_feature_template/template = new template_type()
-		weighted_templates[template] = template.spawn_weight
-
-	for(var/attempt = 1 to feature_attempts)
-		if(!valid_tiles.len || !weighted_templates.len)
-			break
-
-		var/datum/island_feature_template/feature_template = weighted_pick(weighted_templates)
-		var/turf/spawn_loc = find_valid_template_location(feature_template, valid_tiles, placed_features, island_map, height_map, distance_map, base_x, base_y)
-
-=======
 		height_map[key] = height
 
 	// Use Poisson disk sampling for feature placement
@@ -1101,60 +864,20 @@
 
 		// Place the feature
 		var/turf/spawn_loc = locate(candidate.x, candidate.y, candidate.z + initial(feature_template.z_offset))
->>>>>>> vanderlin/main
 		if(!spawn_loc)
 			continue
 
 		var/datum/map_template/template = new feature_template.template_path()
 		if(template && template.load(spawn_loc, centered = FALSE))
 			placed_features += spawn_loc
-<<<<<<< HEAD
-
-			var/blocked_radius = max(feature_template.width, feature_template.height) + min_feature_distance
-			for(var/turf/check in valid_tiles)
-				var/dx = spawn_loc.x - check.x
-				var/dy = spawn_loc.y - check.y
-				if(dx * dx + dy * dy < blocked_radius * blocked_radius)
-					valid_tiles -= check
-
-/datum/island_generator/proc/find_valid_template_location(datum/island_feature_template/feature_template, list/valid_tiles, list/placed_features, list/island_map, list/height_map, list/distance_map, base_x, base_y)
-	var/max_attempts = 20
-
-	for(var/i = 1 to max_attempts)
-		var/turf/candidate = pick(valid_tiles)
-
-		var/too_close = FALSE
-		for(var/turf/placed in placed_features)
-			var/dx = candidate.x - placed.x
-			var/dy = candidate.y - placed.y
-			if(dx * dx + dy * dy < min_feature_distance * min_feature_distance)
-				too_close = TRUE
-				break
-
-		if(too_close)
-			continue
-
-		if(!validate_template_requirements(feature_template, candidate, island_map, height_map, distance_map, base_x, base_y))
-			continue
-
-		return candidate
-
-	return null
-=======
 			available_templates -= feature_template  // Remove this template so it can't be placed again
->>>>>>> vanderlin/main
 
 /datum/island_generator/proc/validate_template_requirements(datum/island_feature_template/feature_template, turf/origin, list/island_map, list/height_map, list/distance_map, base_x, base_y)
 	var/origin_rel_x = origin.x - base_x
 	var/origin_rel_y = origin.y - base_y
-<<<<<<< HEAD
-	var/origin_height = height_map["[origin_rel_x],[origin_rel_y]"] || 0
-	var/origin_distance = distance_map["[origin_rel_x],[origin_rel_y]"] || 0
-=======
 	var/key = "[origin_rel_x],[origin_rel_y]"
 	var/origin_height = height_map[key] || 0
 	var/origin_distance = distance_map[key] || 0
->>>>>>> vanderlin/main
 
 	if(origin_height < feature_template.min_elevation || origin_height > feature_template.max_elevation)
 		return FALSE
@@ -1172,21 +895,6 @@
 
 	for(var/x = 0 to feature_template.width - 1)
 		for(var/y = 0 to feature_template.height - 1)
-<<<<<<< HEAD
-			var/check_x = origin.x + x
-			var/check_y = origin.y + y
-			var/rel_x = check_x - base_x
-			var/rel_y = check_y - base_y
-
-			if(!island_map["[rel_x],[rel_y]"])
-				return FALSE
-
-			var/turf/T = locate(check_x, check_y, origin.z)
-			if(!T || istype(T, /turf/open/water))
-				return FALSE
-
-			var/tile_height = height_map["[rel_x],[rel_y]"] || 0
-=======
 			var/check_rel_x = origin_rel_x + x
 			var/check_rel_y = origin_rel_y + y
 			var/check_key = "[check_rel_x],[check_rel_y]"
@@ -1199,7 +907,6 @@
 				return FALSE
 
 			var/tile_height = height_map[check_key] || 0
->>>>>>> vanderlin/main
 			min_height = min(min_height, tile_height)
 			max_height = max(max_height, tile_height)
 
@@ -1245,21 +952,3 @@
 			if(island_map["[x+dx],[y+dy]"])
 				count++
 	return count
-<<<<<<< HEAD
-
-/datum/island_generator/proc/weighted_pick(list/weights)
-	var/total = 0
-	for(var/item in weights)
-		total += weights[item]
-
-	var/pick = rand(1, total)
-	var/current = 0
-
-	for(var/item in weights)
-		current += weights[item]
-		if(pick <= current)
-			return item
-
-	return pick(weights)
-=======
->>>>>>> vanderlin/main

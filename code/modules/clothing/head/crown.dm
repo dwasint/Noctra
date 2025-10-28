@@ -11,8 +11,6 @@
 	icon_state = "goldcirclet"
 	sellprice = VALUE_GOLD_ITEM
 
-<<<<<<< HEAD
-=======
 /obj/item/clothing/head/crown/circlet/golddiadem
 	name = "gold diadem"
 	desc = "A luxurious diadem forged out of gold. Diadems are often associated with the Humen boy-kings of the early Grenzelhoftian Empire."
@@ -43,7 +41,6 @@
 	. = ..()
 	enchant(/datum/enchantment/silver)
 
->>>>>>> vanderlin/main
 /obj/item/clothing/head/crown/circlet/jade
 	name = "joapstone circlet"
 	desc = "An ornate circlet carved out of joapstone."

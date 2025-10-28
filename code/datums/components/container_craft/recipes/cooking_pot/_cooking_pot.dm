@@ -165,11 +165,7 @@
 			reagent.metabolization_rate *= 1.2 // Metabolizes faster (less effective)
 
 		if(2) // Standard quality
-<<<<<<< HEAD
-			// No modifications - baseline
-=======
 			EMPTY_BLOCK_GUARD // No modifications - baseline
->>>>>>> vanderlin/main
 
 		if(3) // High quality
 			// High quality is more effective

@@ -4,8 +4,6 @@
 	"map_file": [
 	"voyager.dmm"
 	],
-<<<<<<< HEAD
-=======
 	"immigrant_origin": "Kingsfield",
 	"monarch_title": "Captain",
 	"monarch_title_f": "Captain",
@@ -13,7 +11,6 @@
 		"_maps/map_files/voyager/island_batch.json",
 		"_maps/map_files/voyager/island_batch2.json"
 	],
->>>>>>> vanderlin/main
 	"traits": [
 	{"Name": "The Sea", "Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Down": true}],
 	"minetype": null,

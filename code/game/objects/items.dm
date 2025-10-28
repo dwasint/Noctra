@@ -285,12 +285,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	/// This thing can be used to unlock locks
 	var/can_unlock = TRUE
 
-<<<<<<< HEAD
-=======
 	///do we block the offhand while wielding
 	var/wield_block = TRUE
 
->>>>>>> vanderlin/main
 /obj/item/proc/set_quality(quality)
 	recipe_quality = clamp(quality, 0, 4)
 	update_appearance(UPDATE_OVERLAYS)

@@ -282,12 +282,8 @@
 	icon_state = "sinistarhelm"
 	dropshrink = 0.9
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-<<<<<<< HEAD
-	smeltresult = /obj/item/ingot/steel
-=======
 	melt_amount = 75
 	melting_material = /datum/material/steel
->>>>>>> vanderlin/main
 	item_weight = 7 * IRON_MULTIPLIER
 
 /obj/item/clothing/head/helmet/heavy/decorated	// template

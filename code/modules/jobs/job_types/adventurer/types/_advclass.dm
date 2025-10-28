@@ -13,13 +13,6 @@
 	/// What categories we are going to sort it in, handles selection
 	var/list/category_tags = null
 
-<<<<<<< HEAD
-/datum/job/advclass/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-=======
-
->>>>>>> vanderlin/main
-
 /datum/job/advclass/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
 	// Remove the stun first, then grant us the torch.

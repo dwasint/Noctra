@@ -1032,11 +1032,7 @@
 	name = "middeck"
 	icon_state = "indoors"
 	droning_index = DRONING_BOAT
-<<<<<<< HEAD
-	background_track = 'sound/music/area/middeckdrone.ogg'
-=======
 	background_track = 'sound/music/area/topdeckdrone.ogg'
->>>>>>> vanderlin/main
 	background_track_dusk = null
 	background_track_night = null
 	first_time_text = "Waist Deck"
@@ -1057,8 +1053,6 @@
 	background_track_dusk = null
 	background_track_night = null
 	first_time_text = "The Brig"
-<<<<<<< HEAD
-=======
 
 
 /area/rogue/indoors/inq
@@ -1080,4 +1074,3 @@
 
 /area/rogue/indoors/inq/import/can_craft_here()
 	return FALSE
->>>>>>> vanderlin/main

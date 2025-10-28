@@ -63,25 +63,6 @@ SUBSYSTEM_DEF(mobs)
 		if (MC_TICK_CHECK)
 			return
 
-<<<<<<< HEAD:code/controllers/subsystem/mobs.dm
-	if(!length(matthios))
-		matthios = matthios_mobs.Copy()
-
-	while(matthios.len)
-		var/mob/living/L = matthios[matthios.len]
-		matthios.len--
-		if(!L || QDELETED(L))
-			GLOB.mob_living_list.Remove(L)
-			continue
-		if(L.stat == DEAD)
-			L.DeadLife()
-		else
-			L.Life(seconds, times_fired)
-		if (TICK_CHECK)
-			return
-
-=======
->>>>>>> vanderlin/main:code/controllers/subsystem/mobs/mobs.dm
 /datum/controller/subsystem/mobs/proc/enhance_mob(mob/living/mob, delve_level = 1)
 	if(!affix_system)
 		affix_system = new()

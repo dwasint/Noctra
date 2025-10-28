@@ -907,8 +907,6 @@
 			if(!gaunt.can_consume_essence(used_cost, attunements))
 				if(feedback)
 					owner.balloon_alert(owner, "Not enough essence!")
-<<<<<<< HEAD
-=======
 				return FALSE
 
 			return TRUE
@@ -917,7 +915,6 @@
 			if(!caster.has_bloodpool_cost(used_cost))
 				if(feedback)
 					owner.balloon_alert(owner, "Need more grace to cast!")
->>>>>>> vanderlin/main
 				return FALSE
 
 			return TRUE

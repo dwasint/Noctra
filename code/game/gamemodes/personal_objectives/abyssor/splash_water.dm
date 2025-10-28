@@ -28,17 +28,6 @@
 	if(water_volume >= 30)
 		complete_objective()
 
-<<<<<<< HEAD
-/datum/objective/personal/abyssor_splash/proc/complete_objective(mob/target)
-	to_chat(owner.current, span_greentext("You've unleashed Abyssor's rage, completing the objective!"))
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(ABYSSOR, 20)
-	owner.current.set_stat_modifier("abyssor_blessing", STATKEY_CON, 1)
-	escalate_objective()
-	UnregisterSignal(owner.current, COMSIG_SPLASHED_MOB)
-
-=======
 /datum/objective/personal/abyssor_splash/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You've unleashed Abyssor's rage, completing the objective!"))
@@ -49,6 +38,5 @@
 	. = ..()
 	owner.current.set_stat_modifier("abyssor_blessing", STATKEY_CON, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/abyssor_splash/update_explanation_text()
 	explanation_text = "Abyssor is RAGING! Splash some ingrate who forgot his name with a bucket full of water!"

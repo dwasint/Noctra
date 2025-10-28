@@ -30,19 +30,10 @@
 	else
 		to_chat(owner.current, span_notice("Abyssoid created! [abyssoids_required - abyssoids_created] more abyssoid\s needed."))
 
-<<<<<<< HEAD
-/datum/objective/personal/create_abyssoids/proc/complete_objective()
-	to_chat(owner.current, span_greentext("You have created enough abyssoids to satisfy Abyssor!"))
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
-	adjust_storyteller_influence(ABYSSOR, 20)
-	escalate_objective()
-=======
 /datum/objective/personal/create_abyssoids/complete_objective()
 	. = ..()
 	to_chat(owner.current, span_greentext("You have created enough abyssoids to satisfy Abyssor!"))
 	adjust_storyteller_influence(ABYSSOR, 20)
->>>>>>> vanderlin/main
 	UnregisterSignal(owner.current, COMSIG_ABYSSOID_CREATED)
 
 /datum/objective/personal/create_abyssoids/update_explanation_text()

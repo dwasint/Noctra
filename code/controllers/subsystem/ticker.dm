@@ -242,8 +242,6 @@ SUBSYSTEM_DEF(ticker)
 				Master.SetRunLevel(RUNLEVEL_POSTGAME)
 			if(SSgamemode.roundvoteend)
 				return
-<<<<<<< HEAD
-=======
 
 /datum/controller/subsystem/ticker/proc/readying_update_scale_job()
 
@@ -286,7 +284,6 @@ SUBSYSTEM_DEF(ticker)
 		if(job_to_set.enabled && job_to_set.scales)
 			job_to_set.set_spawn_and_total_positions(ready_town_count)
 
->>>>>>> vanderlin/main
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()

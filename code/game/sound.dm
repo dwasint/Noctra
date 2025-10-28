@@ -428,8 +428,6 @@
 					'sound/foley/egg_hatching/egghatching2.ogg',
 					'sound/foley/egg_hatching/egghatching3.ogg',
 				)
-<<<<<<< HEAD
-=======
 			if(SFX_DEFAULT_FISH_SLAP)
 				soundin = pick(
 					'sound/mobs/non-humanoids/fish/fish_slap1.ogg',
@@ -447,5 +445,4 @@
 					'sound/items/reel/reel4.ogg',
 					'sound/items/reel/reel5.ogg',
 				)
->>>>>>> vanderlin/main
 	return soundin

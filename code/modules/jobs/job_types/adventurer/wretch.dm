@@ -4,11 +4,7 @@
 	department_flag = OUTSIDERS
 	job_flags = (JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE | JOB_SHOW_IN_CREDITS)
 	display_order = JDO_WRETCH
-<<<<<<< HEAD
-	faction = FACTION_TOWN
-=======
 	faction = FACTION_NEUTRAL
->>>>>>> vanderlin/main
 	total_positions = 2
 	spawn_positions = 2
 	min_pq = 10
@@ -38,10 +34,7 @@
 		GLOB.outlawed_players += H.real_name
 	else
 		GLOB.excommunicated_players += H.real_name
-<<<<<<< HEAD
-=======
 
 /datum/job/advclass/wretch
 	abstract_type = /datum/job/advclass/wretch
 	category_tags = list(CTAG_WRETCH)
->>>>>>> vanderlin/main

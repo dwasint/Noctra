@@ -170,36 +170,7 @@
 				if(!reagents.has_reagent(/datum/reagent/water/gross, 5))
 					to_chat(user, "<span class='warning'>Need more water to quench in.</span>")
 					return
-<<<<<<< HEAD
-			if(!T.held_item:currecipe)
-				to_chat(user, "<span class='warning'>Huh?</span>")
-				return
-			if(ingot.currecipe.progress != 100)
-				to_chat(user, "<span class='warning'>It's not finished yet.</span>")
-				return
-			if(!T.hott)
-				to_chat(user, "<span class='warning'>I need to heat it to temper the metal.</span>")
-				return
-			var/used_turf = user.loc
-			if(!isturf(used_turf))
-				used_turf = get_turf(src)
-			// This behemoth of a chunk of code is necessary to create copies of an altered item
-			// Because engine is dumb and doesn't have a copy object proc
-			// We take all values of a recipe, apply them to floating vars, then assign them to every extra copy
-			// (substracting one every time it runs) until we run out of that number
-			var/datum/anvil_recipe/R = T.held_item:currecipe
-			var/obj/item/crafteditem = R.created_item
-			for(var/i in 1 to R.createditem_extra + 1)
-				var/obj/item/IT = new crafteditem(used_turf, TRUE)
-				R.handle_creation(IT)
-				IT.OnCrafted(user.dir, user)
-				I.update_integrity(I.max_integrity, update_atom = FALSE)
-				record_featured_stat(FEATURED_STATS_SMITHS, user)
-				record_featured_object_stat(FEATURED_STATS_FORGED_ITEMS, IT.name)
-
-=======
 			reagents.remove_reagent(removereg, 5)
->>>>>>> vanderlin/main
 			playsound(src,pick('sound/items/quench_barrel1.ogg','sound/items/quench_barrel2.ogg'), 100, FALSE)
 			user.visible_message("<span class='info'>[user] tempers \the [T.held_item.name] in \the [src], hot metal sizzling.</span>")
 			T.held_item.remove_quench()

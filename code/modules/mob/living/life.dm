@@ -35,14 +35,6 @@
 			for(var/datum/wound/wound as anything in get_wounds())
 				wound.heal_wound(1)
 
-<<<<<<< HEAD
-		if (QDELETED(src)) // diseases can qdel the mob via transformations
-			return
-
-		//Random events (vomiting etc)
-		handle_random_events()
-
-=======
 		/// ENDVRE AS HE DOES.
 		if(!stat && HAS_TRAIT(src, TRAIT_PSYDONITE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
 			handle_wounds()
@@ -57,7 +49,6 @@
 		//Random events (vomiting etc)
 		handle_random_events()
 
->>>>>>> vanderlin/main
 		handle_traits() // eye, ear, brain damages
 		handle_status_effects() //all special effects, stun, knockdown, jitteryness, hallucination, sleeping, etc
 

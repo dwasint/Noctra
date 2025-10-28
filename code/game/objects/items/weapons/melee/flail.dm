@@ -156,11 +156,7 @@
 	wbalance = 0
 	wlength = WLENGTH_LONG
 	slot_flags = ITEM_SLOT_BACK
-<<<<<<< HEAD
-	max_integrity = INTEGRITY_STANDARD + 50
-=======
 	max_integrity = INTEGRITY_STRONG + 50
->>>>>>> vanderlin/main
 	sellprice = 20
 	minstr = 8
 

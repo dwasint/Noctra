@@ -188,7 +188,6 @@
 	sexes = 1
 	damage_overlay_type = ""
 	changesource_flags = WABBAJACK
-	exotic_bloodtype = /datum/blood_type/human/orc
 	var/raceicon = "orc"
 	exotic_bloodtype = /datum/blood_type/human/corrupted/orc
 

@@ -414,15 +414,8 @@ GLOBAL_LIST_INIT(fish_compatible_fluid_types, list(
 	if((status == FISH_DEAD || HAS_TRAIT(src, TRAIT_FISH_STASIS)) && icon_state_dead)
 		icon_state = icon_state_dead
 	else
-<<<<<<< HEAD
-		if(isturf(user.loc))
-			src.forceMove(user.loc)
-		to_chat(user, span_warning("Too slippery!"))
-		return
-=======
 		icon_state = base_icon_state
 	return ..()
->>>>>>> vanderlin/main
 
 /*
 /obj/item/reagent_containers/food/snacks/fish/attackby(obj/item/item, mob/living/user, list/modifiers, list/attack_modifiers)

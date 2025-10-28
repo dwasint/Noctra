@@ -24,18 +24,6 @@
 
 	stolen_count++
 	if(stolen_count >= required_count)
-<<<<<<< HEAD
-		to_chat(owner.current, span_greentext("You have stolen enough items to complete Matthios' objective!"))
-		owner.current.adjust_triumphs(triumph_count)
-		completed = TRUE
-		adjust_storyteller_influence(MATTHIOS, 20)
-		owner.current.adjust_skillrank(/datum/skill/misc/stealing, 1)
-		escalate_objective()
-		UnregisterSignal(owner.current, COMSIG_ITEM_STOLEN)
-	else
-		to_chat(owner.current, span_notice("Item stolen! Steal [required_count - stolen_count] more to complete Matthios' objective."))
-
-=======
 		complete_objective()
 	else
 		to_chat(owner.current, span_notice("Item stolen! Steal [required_count - stolen_count] more to complete Matthios' objective."))
@@ -50,6 +38,5 @@
 	. = ..()
 	owner.current.adjust_skillrank(/datum/skill/misc/stealing, 1)
 
->>>>>>> vanderlin/main
 /datum/objective/personal/steal_items/update_explanation_text()
 	explanation_text = "Steal [required_count] item\s from others to prove your cunning to Matthios!"
