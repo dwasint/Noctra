@@ -378,9 +378,8 @@ SUBSYSTEM_DEF(triumphs)
 /datum/controller/subsystem/triumphs/proc/adjust_leaderboard(user_key)
 	var/triumph_total = triumph_amount_cache[ckey(user_key)]
 
-	if(triumph_leaderboard[user_key])
+	if(triumph_leaderboard[user_key] || triumph_leaderboard[ckey(user_key)])
 		triumph_leaderboard.Remove(user_key)
-	if(triumph_leaderboard[ckey(user_key)])
 		triumph_leaderboard.Remove(ckey(user_key))
 
 	triumph_leaderboard[user_key] = triumph_total

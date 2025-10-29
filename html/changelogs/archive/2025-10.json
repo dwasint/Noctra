@@ -901,5 +901,36 @@
                 "rscadd": "Added new zizo miracle: snuff lights"
             }
         ]
+    },
+    "2025-10-29": {
+        "wgtjunior743": [
+            {
+                "admin": "Bulk Stat change options for admins."
+            }
+        ],
+        "Viviridia": [
+            {
+                "rscadd": "Added new Fruits"
+            },
+            {
+                "rscadd": "Added tarts made from the new fruits"
+            },
+            {
+                "rscadd": "Added new fruits for coastal trader seeds"
+            }
+        ],
+        "7erracotta": [
+            {
+                "rscadd": "kilts, sashes, and turbans."
+            },
+            {
+                "balance": "kerns now have cloth kilts instead of iron kilts."
+            }
+        ],
+        "Arkatos": [
+            {
+                "bugfix": "Aspirant should now get his rightful supporters."
+            }
+        ]
     }
 }

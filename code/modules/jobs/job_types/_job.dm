@@ -274,7 +274,7 @@
 		if(islist(amount_or_list))
 			spawned.clamped_adjust_skillrank(skill, amount_or_list[1], amount_or_list[2], TRUE)
 		else
-			spawned.clamped_adjust_skillrank(skill, amount_or_list, amount_or_list) //! This was changed because what the fuck.
+			spawned.clamped_adjust_skillrank(skill, amount_or_list, amount_or_list, TRUE) //! This was changed because what the fuck.
 
 	for(var/X in peopleknowme)
 		for(var/datum/mind/MF in get_minds(X))

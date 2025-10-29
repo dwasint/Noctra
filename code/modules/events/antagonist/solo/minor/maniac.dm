@@ -3,7 +3,7 @@
 	tags = list(
 		TAG_ZIZO,
 		TAG_GRAGGAR,
-		TAG_VILLIAN,
+		TAG_VILLAIN,
 		TAG_HAUNTED
 	)
 	antag_datum = /datum/antagonist/maniac
@@ -25,12 +25,14 @@
 		"Wretch"
 	)
 
+	denominator = 35
+
 	base_antags = 1
 	maximum_antags = 2
 
 	earliest_start = 0 SECONDS
 
-	weight = 9
+	weight = 8
 	secondary_events = list(
 		/datum/round_event_control/antagonist/solo/lich,
 		/datum/round_event_control/antagonist/solo/rebel,
@@ -50,8 +52,7 @@
 /datum/round_event_control/antagonist/solo/maniac/midround
 	name = "Maniacs Midround"
 	roundstart = FALSE
-	weight = 12
-	max_occurrences = 2
+	weight = 6
 	base_antags = 1
 	earliest_start = 30 MINUTES
 	maximum_antags = 2

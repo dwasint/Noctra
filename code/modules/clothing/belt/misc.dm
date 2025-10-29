@@ -245,13 +245,13 @@
 	alternate_worn_layer = UNDER_CLOAK_LAYER
 	component_type = /datum/component/storage/concrete/grid/satchel
 
-
 /obj/item/storage/backpack/satchel/cloth
 	name = "cloth knapsack"
 	desc = "A rudimentary cloth sack strapped to the back for storing small amounts of items."
 	icon_state = "clothbackpack"
 	item_state = "clothbackpack"
 	component_type = /datum/component/storage/concrete/grid/satchel/cloth
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/storage/backpack/satchel/heartfelt
 	populate_contents = list(

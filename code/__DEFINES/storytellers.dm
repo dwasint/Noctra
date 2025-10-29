@@ -42,7 +42,7 @@
 #define TAG_WIDESPREAD "widespread"
 
 /// Tag reserved for villain roles or actions (unused by gods)
-#define TAG_VILLIAN "villian"
+#define TAG_VILLAIN "villain"
 
 /// Tag representing medical influences, tied to Pestra
 #define TAG_MEDICAL "medical"

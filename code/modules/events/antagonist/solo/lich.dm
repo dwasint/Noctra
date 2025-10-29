@@ -4,13 +4,13 @@
 		TAG_ZIZO,
 		TAG_COMBAT,
 		TAG_HAUNTED,
-		TAG_VILLIAN,
+		TAG_VILLAIN,
 	)
 	roundstart = TRUE
 	antag_flag = ROLE_LICH
 	shared_occurence_type = SHARED_HIGH_THREAT
 
-	denominator = 80
+	denominator = 70
 
 	base_antags = 1
 	maximum_antags = 2

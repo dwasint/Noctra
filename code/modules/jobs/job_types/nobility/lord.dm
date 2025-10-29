@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 //TODO: MOVE THIS INTO TICKER INIT
 /datum/job/lord/after_spawn(mob/living/spawned, client/player_client)
-	..()
+	. = ..()
 	SSticker.rulermob = spawned
 	var/mob/living/carbon/human/H = spawned
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, lord_color_choice)), 7 SECONDS)

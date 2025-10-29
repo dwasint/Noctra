@@ -17,7 +17,7 @@
 	if(!.)
 		return FALSE
 
-	if(!length(GLOB.mana_fountains))
+	if(!length(GLOB.mana_fountains) || SSmapping.config.map_name == "Vanderlin")
 		return FALSE
 
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -32,7 +32,7 @@
 	return FALSE
 
 /datum/round_event/noc_baptism/start()
-	if(!length(GLOB.mana_fountains))
+	if(!length(GLOB.mana_fountains) || SSmapping.config.map_name == "Vanderlin")
 		return
 
 	var/list/valid_targets = list()

@@ -3,7 +3,7 @@
 	tags = list(
 		TAG_COMBAT,
 		TAG_HAUNTED,
-		TAG_VILLIAN,
+		TAG_VILLAIN,
 	)
 	roundstart = TRUE
 	antag_flag = ROLE_NBEAST
@@ -11,10 +11,10 @@
 
 	weight = 12
 
-	denominator = 80
+	denominator = 40
 
 	base_antags = 1
-	maximum_antags = 2
+	maximum_antags = 3
 
 	earliest_start = 0 SECONDS
 
