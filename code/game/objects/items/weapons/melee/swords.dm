@@ -828,6 +828,15 @@
 	desc = "A curved blade of Zaladin origin meaning 'curved one'. The standard sword that saw the conquest of the Zalad continent and peoples."
 	sellprice = 80
 
+/obj/item/weapon/sword/long/rider/steppe
+	name = "steppe sabre"
+	desc = "A curved blade of nomadic origin, it is used by cavalrymen all across the far steppes."
+	icon_state = "steppe"
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/curved)
+	force_wielded = 0
+	gripped_intents = null
+	wdefense = ULTMATE_PARRY
+
 /obj/item/weapon/sword/long/rider/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -840,7 +849,6 @@
 				return list("shrink" = 0.6,"sx" = 3,"sy" = 4,"nx" = -1,"ny" = 4,"wx" = -8,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
 
 /obj/item/weapon/sword/long/forgotten
 	force = DAMAGE_SWORD * 0.9 // Damage is .9 of a steel sword

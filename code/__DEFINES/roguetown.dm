@@ -128,6 +128,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define SHELFLIFE_DECENT 30 MINUTES
 #define SHELFLIFE_SHORT 20 MINUTES
 #define SHELFLIFE_TINY 12 MINUTES
+#define SHELFLIFE_MINISCULE 5 MINUTES
 
 /*
 	Formerly bitflags, now we are strings

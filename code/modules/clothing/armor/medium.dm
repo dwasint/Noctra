@@ -23,6 +23,12 @@
 	max_integrity = INTEGRITY_STRONG
 	item_weight = 7
 
+/obj/item/clothing/armor/medium/scale/steppe
+	name = "steel heavy lamellar"
+	desc = "A chestpiece composed of easily-replaced small rectangular plates of layered steel laced together in rows with wire. Malleable and protective, perfect for cavalrymen."
+	icon_state = "hudesutu"
+	body_parts_covered = COVERAGE_FULL
+
 //................ Armored Surcoat ............... //	- splint mail looking armor thats colored
 /obj/item/clothing/armor/medium/surcoat
 	name = "armored surcoat"

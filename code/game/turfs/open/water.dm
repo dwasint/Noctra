@@ -343,7 +343,7 @@
 	if(istype(AM, /obj/item/reagent_containers/food/snacks/fish))
 		var/obj/item/reagent_containers/food/snacks/fish/F = AM
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOBAL_FISH_RELEASED, F)
-		if(!F.dead)
+		if(!F.status != FISH_DEAD)
 			F.visible_message("<span class='warning'>[F] dives into \the [src] and disappears!</span>")
 		else
 			F.visible_message("<span class='warning'>[F] slowly sinks motionlessly into \the [src] and disappears...</span>")

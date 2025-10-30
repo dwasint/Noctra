@@ -85,17 +85,11 @@
 		if(user == src)
 			self_inspect = TRUE
 		var/used_title = get_role_title()
-		var/is_returning = FALSE
-		if(islatejoin)
-			is_returning = TRUE
 
 		// building the examine identity
 		statement_of_identity += "<EM>[used_name]</EM>"
 
 		var/appendage_to_name
-		if(is_returning && race_name && !HAS_TRAIT(src, TRAIT_FOREIGNER)) // latejoined? Foreigners can never be returning because they never lived here in the first place
-			appendage_to_name += " returning"
-
 		if(race_name) // race name
 			appendage_to_name += " [race_name]"
 // job name, don't show job of foreigners.

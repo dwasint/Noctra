@@ -53,6 +53,17 @@
 	armor = ARMOR_LEATHER
 	salvage_result = /obj/item/natural/hide/cured
 
+/obj/item/clothing/armor/leather/hide/steppe
+	name = "steppe hide armor"
+	desc = "Worn by riders of the steppe, this leather armor is padded with beast fur for warmth and comfort"
+	icon_state = "hatangafur"
+	sellprice = VALUE_LEATHER_ARMOR_FUR
+
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = COVERAGE_FULL
+	max_integrity = INTEGRITY_STRONG
+	item_weight = 6.7
+
 //................ Splint Mail ............... //
 /obj/item/clothing/armor/leather/splint
 	name = "splint armor"
@@ -64,7 +75,6 @@
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG
 	item_weight = 6.7
-
 
 //................ Leather Vest ............... //	- has no sleeves.  - can be worn in armor OR shirt slot
 /obj/item/clothing/armor/leather/vest

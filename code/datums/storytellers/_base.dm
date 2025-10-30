@@ -2,6 +2,10 @@
 #define STANDARD_FOLLOWER_MODIFIER 20
 /// Lower follower modifier for special storytellers such as Astrata, who is a default patron
 #define LOWER_FOLLOWER_MODIFIER STANDARD_FOLLOWER_MODIFIER - 3
+/// Standard follower modifier for inhumen storytellers, ie. how many points they get for each follower
+#define STANDARD_INHUMEN_MODIFIER 22
+/// Lower follower modifier for special inhumen storytellers such as Zizo, who gets extra undead followers
+#define LOWER_INHUMEN_FOLLOWER_MODIFIER STANDARD_INHUMEN_MODIFIER - 3
 
 ///The storyteller datum. He operates with the SSgamemode data to run events
 /datum/storyteller

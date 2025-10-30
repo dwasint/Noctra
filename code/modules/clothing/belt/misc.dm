@@ -219,6 +219,7 @@
 	name = "cloth pouch"
 	desc = "Usually used for holding small amount of coins."
 	icon_state = "clothpouch"
+	salvage_result = /obj/item/natural/cloth
 	component_type = /datum/component/storage/concrete/grid/coin_pouch/cloth
 
 //Poison darts pouch
@@ -250,8 +251,8 @@
 	desc = "A rudimentary cloth sack strapped to the back for storing small amounts of items."
 	icon_state = "clothbackpack"
 	item_state = "clothbackpack"
-	component_type = /datum/component/storage/concrete/grid/satchel/cloth
 	salvage_result = /obj/item/natural/cloth
+	component_type = /datum/component/storage/concrete/grid/satchel/cloth
 
 /obj/item/storage/backpack/satchel/heartfelt
 	populate_contents = list(

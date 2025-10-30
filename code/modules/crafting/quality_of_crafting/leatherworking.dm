@@ -443,6 +443,15 @@
 	output = /obj/item/clothing/armor/leather/hide
 	craftdiff = 2
 
+/datum/repeatable_crafting_recipe/leather/hidearmor/steppe
+	name = "frontier fur lined leather armor"
+	requirements = list(
+		/obj/item/natural/hide/cured = 2,
+		/obj/item/natural/fur = 2,
+	)
+	output = /obj/item/clothing/armor/leather/hide/steppe
+	craftdiff = 2
+
 /datum/repeatable_crafting_recipe/leather/whip
 	name = "leather whip"
 	requirements = list(
