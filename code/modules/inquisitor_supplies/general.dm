@@ -143,6 +143,19 @@
 	new /obj/item/smokebomb(src)
 	new /obj/item/smokebomb(src)
 
+/datum/inqports/supplies/canister_bomb
+	name = "4 Fragmentation Grenades"
+	item_type = /obj/structure/closet/crate/chest/inqcrate/supplies/canister_bomb
+	maximum = 1
+	marquescost = 8
+
+/obj/structure/closet/crate/chest/inqcrate/supplies/canister_bomb/Initialize()
+	. = ..()
+	new /obj/item/explosive/canister_bomb(src)
+	new /obj/item/explosive/canister_bomb(src)
+	new /obj/item/explosive/canister_bomb(src)
+	new /obj/item/explosive/canister_bomb(src)
+
 /obj/item/reagent_containers/glass/bottle/alchemical/blessedwater
 	list_reagents = list(/datum/reagent/water/blessed = 30)
 
