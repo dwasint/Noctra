@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(mined_resource_loc, list())
 	. = ..()
 	if(!.)
 		return FALSE
-	if(!LAZYLEN(GLOB.mined_resource_loc))
+	if(LAZYLEN(GLOB.mined_resource_loc) < 12)
 		return FALSE
 
 /datum/round_event/collapsing_earth
@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(mined_resource_loc, list())
 
 /datum/round_event/collapsing_earth/start()
 	. = ..()
-	if(!LAZYLEN(GLOB.mined_resource_loc))
+	if(LAZYLEN(GLOB.mined_resource_loc) < 12)
 		return
 
 	for(var/i = 1 to rand(4, 12))
