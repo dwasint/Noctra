@@ -45,7 +45,7 @@
 				if("Daybreak - Silver Whip")
 					choice = /obj/item/weapon/whip/antique/psywhip
 				if("Sanctum - Silver Halberd")
-					choice = /obj/item/weapon/polearm/halberd/psydon
+					choice = /obj/item/weapon/polearm/halberd/psydon/relic
 					user.clamped_adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)	//We make sure the weapon is usable by the Inquisitor.
 				if("Crusade - Silver Greatsword")
 					choice = /obj/item/weapon/sword/long/greatsword/psydon

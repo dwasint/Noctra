@@ -456,6 +456,8 @@ SUBSYSTEM_DEF(gamemode)
 
 	check_roundstart_gods_rankings()
 
+	initialize_culinary_globals()
+
 	pick_chronicle_stats()
 
 	. = ..()
@@ -506,6 +508,10 @@ SUBSYSTEM_DEF(gamemode)
 		update_crew_infos()
 		next_storyteller_process = world.time + STORYTELLER_WAIT_TIME
 		current_storyteller.process(STORYTELLER_WAIT_TIME * 0.1)
+
+/datum/controller/subsystem/gamemode/proc/initialize_culinary_globals()
+	GLOB.selectable_foods = get_global_selectable_foods()
+	GLOB.selectable_drinks = get_global_selectable_drinks()
 
 /// Gets the number of antagonists the antagonist injection events will stop rolling after.
 /datum/controller/subsystem/gamemode/proc/get_antag_cap()
