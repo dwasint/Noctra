@@ -49,7 +49,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	name = "iron rungu"
-	desc = "An iron Lakkarian mace favored by the Shackle-Breakers of Sebbet. It is the bane of Zalad slavers."
+	desc = "An iron Lakkarian mace favored by the Shinobi's of Sekket. It is the bane of Zalad slavers."
 	icon_state = "rungu_iron"
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -258,7 +258,7 @@
 
 /obj/item/weapon/mace/steel/rungu
 	name = "steel rungu"
-	desc = "A steel Lakkarian mace favored by the Shackle-Breakers of Sebbet. It is the bane of Zalad slavers."
+	desc = "A steel Lakkarian mace favored by the Shinobi's of Sekket. It is the bane of Zalad slavers."
 	icon_state = "rungu_steel"
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	blade_dulling = DULLING_BASH
@@ -712,7 +712,7 @@
 
 /obj/item/weapon/mace/silver/rungu
 	name = "silver rungu"
-	desc = "A silver mace favored by Lakkarian clerics. The weapon of choice for the monster-slayers of Napatahuum."
+	desc = "A silver mace favored by Lakkarian clerics. The weapon of choice for the monster-slayers of Sakhumeti."
 	icon_state = "rungu_silver"
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	blade_dulling = DULLING_BASH

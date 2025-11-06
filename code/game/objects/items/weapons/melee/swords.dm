@@ -161,7 +161,7 @@
 /obj/item/weapon/sword/ida
 	force = DAMAGE_SHORTSWORD
 	name = "steel ida"
-	desc = "A Lakkarian short sword with a tapered leaf-shaped blade. It's popular amongst the lower class of Ei Osalla."
+	desc = "A Lakkarian short sword with a tapered leaf-shaped blade. It's popular amongst the lower class of Ei Onkara."
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "ida_steel"
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
@@ -174,7 +174,7 @@
 /obj/item/weapon/sword/ida/iron
 	force = DAMAGE_SHORTSWORD
 	name = "iron ida"
-	desc = "A Lakkarian short sword with a tapered leaf-shaped blade. It's popular amongst the lower class of Ei Osalla."
+	desc = "A Lakkarian short sword with a tapered leaf-shaped blade. It's popular amongst the lower class of Ei Onkara."
 	icon = 'icons/roguetown/weapons/lakkari.dmi'
 	icon_state = "ida_iron"
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
@@ -541,7 +541,7 @@
 	name = "nimcha"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	icon_state = "nimcha"
-	desc = "A swift sword of Lakkarian origin. It's popular with the noblewomen of Ei Osalla."
+	desc = "A swift sword of Lakkarian origin. It's popular with the noblewomen of Ei Onkara."
 	wbalance = HARD_TO_DODGE
 	dropshrink = 0.8
 	sellprice = 140 // its made with gold and steel, thats pretty valuable
