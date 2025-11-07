@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(cached_drink_flat_icons)
 	return /datum/reagent/consumable/ethanol/beer
 
 /datum/preferences/proc/get_default_hated_drink()
-	return /datum/container_craft/cooking/tea/badidea
+	return /datum/reagent/consumable/tea/badidea
 
 /datum/preferences/proc/get_random_food()
 	if(!length(GLOB.selectable_foods))
