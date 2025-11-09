@@ -24,7 +24,7 @@
 	id = "vigor"
 	alert_type = /atom/movable/screen/alert/status_effect/vigor
 	duration = 60 SECONDS
-	effectedstats = list("strength" = 1, "endurance" = 1)
+	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 1)
 
 /datum/status_effect/buff/vigor/on_apply()
 	. = ..()

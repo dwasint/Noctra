@@ -140,9 +140,3 @@
 		CLERIC_T2 = /datum/action/cooldown/spell/projectile/blowingdust,
 		CLERIC_T3 = /datum/action/cooldown/spell/painkiller,
 	)
-
-/datum/devotion/psydon
-	miracles = list(
-		CLERIC_T1 = /datum/action/cooldown/spell/psydonendure,
-		CLERIC_T2 = /datum/action/cooldown/spell/undirected/psydonrespite,
-	)

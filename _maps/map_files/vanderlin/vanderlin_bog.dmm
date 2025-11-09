@@ -752,15 +752,7 @@
 /turf/open/floor/dirt,
 /area/rogue/outdoors/bog)
 "cd" = (
-/mob/living/simple_animal/hostile/retaliate/blood{
-	faction = list("Hostile");
-	icon_living = "new state";
-	icon_state = "new state";
-	icon = 'icons/roguetown/underworld/carriageman.dmi';
-	pixel_x = -16;
-	pixel_y = 0;
-	health = 1200
-	},
+/mob/living/simple_animal/hostile/retaliate/blood/weird,
 /turf/open/floor/tile/diamond/purple,
 /area/rogue/indoors/town/clocktower)
 "ce" = (
@@ -1397,18 +1389,7 @@
 /turf/open/floor/metal/barograte,
 /area/rogue/indoors/town/clocktower)
 "dU" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile/three{
 	color = "#547285"
 	},
@@ -2094,18 +2075,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile{
 	color = "#314C5D"
 	},
@@ -2336,18 +2306,7 @@
 /turf/open/floor/ruinedwood/darker,
 /area/rogue/outdoors/bog)
 "gw" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/ocean/deep,
 /area/rogue/under/cavewet)
 "gx" = (
@@ -3595,18 +3554,7 @@
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/clocktower)
 "jG" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_sand,
 /area/rogue/under/cavewet)
 "jH" = (
@@ -3882,18 +3830,7 @@
 	},
 /area/rogue/under/cavewet)
 "kx" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/blood,
 /area/rogue/under/cavewet)
 "ky" = (
@@ -4612,18 +4549,7 @@
 /area/rogue/under/cavewet)
 "mt" = (
 /obj/structure/flora/shells,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_sand/path,
 /area/rogue/under/cavewet)
 "mu" = (
@@ -5098,18 +5024,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile{
 	color = "#7D9BAE"
 	},
@@ -5213,20 +5128,7 @@
 	},
 /area/rogue/under/cavewet)
 "nO" = (
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/metal/alt,
 /area/rogue/indoors/town/clocktower)
 "nP" = (
@@ -5667,21 +5569,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon = 'icons/roguetown/mob/monster/pets.dmi';
-	icon_dead = "gg_dead";
-	icon_living = "gg";
-	icon_state = "gg";
-	name = "Robotic Volf";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	attack_sound = list('sound/items/beartrap.ogg');
-	faction = list("Undead");
-	desc = "A metalic monster made into that of a doglike form. It's jaw reminds you of a beartrap.";
-	color = "#E8C4A1"
-	},
+/mob/living/simple_animal/hostile/retaliate/snapper,
 /turf/open/floor/tile/diamond/blue,
 /area/rogue/indoors/town/clocktower)
 "pf" = (
@@ -5993,20 +5881,7 @@
 /obj/structure/fluff/walldeco/bath/wallpipes/innie{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/clocktower)
 "qc" = (
@@ -7020,21 +6895,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon = 'icons/roguetown/mob/monster/pets.dmi';
-	icon_dead = "gg_dead";
-	icon_living = "gg";
-	icon_state = "gg";
-	name = "Robotic Volf";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	attack_sound = list('sound/items/beartrap.ogg');
-	faction = list("Undead");
-	desc = "A metalic monster made into that of a doglike form. It's jaw reminds you of a beartrap.";
-	color = "#E8C4A1"
-	},
+/mob/living/simple_animal/hostile/retaliate/snapper,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/clocktower)
 "sV" = (
@@ -7958,15 +7819,7 @@
 	pixel_x = -17;
 	pixel_y = -18
 	},
-/mob/living/simple_animal/hostile/retaliate/blood{
-	faction = list("Hostile");
-	icon_living = "new state";
-	icon_state = "new state";
-	icon = 'icons/roguetown/underworld/carriageman.dmi';
-	pixel_x = -16;
-	pixel_y = 0;
-	health = 1200
-	},
+/mob/living/simple_animal/hostile/retaliate/blood/weird,
 /turf/open/floor/tile/diamond/purple,
 /area/rogue/indoors/town/clocktower)
 "vG" = (
@@ -9692,21 +9545,7 @@
 	},
 /area/rogue/under/cavewet)
 "Aw" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon = 'icons/roguetown/mob/monster/pets.dmi';
-	icon_dead = "gg_dead";
-	icon_living = "gg";
-	icon_state = "gg";
-	name = "Robotic Volf";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	attack_sound = list('sound/items/beartrap.ogg');
-	faction = list("Undead");
-	desc = "A metalic monster made into that of a doglike form. It's jaw reminds you of a beartrap.";
-	color = "#E8C4A1"
-	},
+/mob/living/simple_animal/hostile/retaliate/snapper,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/clocktower)
 "Ax" = (
@@ -10604,18 +10443,7 @@
 /turf/open/water/blood,
 /area/rogue/indoors/town/magician)
 "CR" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
@@ -10816,20 +10644,7 @@
 	pixel_y = 15;
 	pixel_x = -17
 	},
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/clocktower)
 "Dn" = (
@@ -10935,18 +10750,7 @@
 /area/rogue/outdoors/bog)
 "DC" = (
 /obj/structure/flora/ocean_plants,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/ocean,
 /area/rogue/under/cavewet)
 "DD" = (
@@ -11513,18 +11317,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile/three{
 	color = "#547285"
 	},
@@ -12084,18 +11877,7 @@
 	},
 /area/rogue/under/cavewet)
 "GI" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/abyss_tile/three{
 	color = "#29404E"
@@ -12569,18 +12351,7 @@
 	},
 /area/rogue/under/tomb/indoors/magic)
 "HT" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile/two{
 	color = "#547285"
 	},
@@ -12612,18 +12383,7 @@
 /area/rogue/under/cavewet)
 "HY" = (
 /obj/structure/flora/kelp,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/ocean,
 /area/rogue/under/cavewet)
 "HZ" = (
@@ -13015,18 +12775,7 @@
 	},
 /area/rogue/under/cavewet)
 "Ji" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/ocean,
 /area/rogue/under/cavewet)
 "Jj" = (
@@ -13550,18 +13299,7 @@
 /area/rogue/indoors/shelter/bog)
 "KC" = (
 /obj/structure/flora/ocean_plants,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_sand/path,
 /area/rogue/under/cavewet)
 "KD" = (
@@ -14417,18 +14155,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile/three{
 	color = "#314C5D"
 	},
@@ -14598,18 +14325,7 @@
 /area/rogue/under/tomb/indoors/magic)
 "Ns" = (
 /obj/structure/flora/grass/water,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/water/ocean,
 /area/rogue/under/cavewet)
 "Nt" = (
@@ -14641,21 +14357,7 @@
 /area/rogue/outdoors/mountains)
 "Nw" = (
 /obj/structure/fluff/steamvent,
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon = 'icons/roguetown/mob/monster/pets.dmi';
-	icon_dead = "gg_dead";
-	icon_living = "gg";
-	icon_state = "gg";
-	name = "Robotic Volf";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	attack_sound = list('sound/items/beartrap.ogg');
-	faction = list("Undead");
-	desc = "A metalic monster made into that of a doglike form. It's jaw reminds you of a beartrap.";
-	color = "#E8C4A1"
-	},
+/mob/living/simple_animal/hostile/retaliate/snapper,
 /turf/open/floor/metal/barograte,
 /area/rogue/indoors/town/clocktower)
 "Nx" = (
@@ -15151,20 +14853,7 @@
 /area/rogue/under/cavewet)
 "OP" = (
 /obj/effect/decal/shadow_floor,
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/clocktower)
 "OQ" = (
@@ -15246,12 +14935,7 @@
 	},
 /area/rogue/under/cavewet)
 "Pb" = (
-/mob/living/simple_animal/hostile/retaliate/voiddragon/red{
-	color = "#4B758F";
-	icon_living = "dragon";
-	icon_state = "dragon";
-	icon_dead = "dragon_dead"
-	},
+/mob/living/simple_animal/hostile/retaliate/voiddragon,
 /turf/open/floor/abyss_tile/three{
 	color = "#7D9BAE"
 	},
@@ -15587,18 +15271,7 @@
 	},
 /area/rogue/under/cavewet)
 "PT" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /obj/structure/fluff/walldeco/bath/wallrope{
 	pixel_x = 0;
 	pixel_y = 32
@@ -15924,20 +15597,7 @@
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/clocktower)
 "QS" = (
@@ -17188,18 +16848,7 @@
 /turf/open/floor/twig,
 /area/rogue/outdoors/mountains)
 "TY" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile/three{
 	color = "#314C5D"
 	},
@@ -18387,20 +18036,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/retaliate/spider{
-	icon_dead = "drone_clock_dead";
-	icon_living = "drone_clock";
-	icon_state = "drone_clock";
-	icon = 'icons/mob/drone.dmi';
-	name = "Robotic Spider";
-	desc = "A metalic creature made to instill a sense of fear onto trespassers. It's fangs producing a shocking strike.";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 1, /obj/item/natural/silk = 2);
-	head_butcher = null;
-	color = "#E8C4A1";
-	attack_sound = list('sound/misc/elec (1).ogg');
-	faction = list("Undead")
-	},
+/mob/living/simple_animal/hostile/retaliate/spider/robotic,
 /turf/open/floor/metal/alt,
 /area/rogue/indoors/town/clocktower)
 "XD" = (
@@ -18518,18 +18154,7 @@
 	},
 /area/rogue/under/cavewet)
 "XV" = (
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon_dead = "megacarp_dead";
-	icon_living = "megacarp";
-	icon_state = "megacarp";
-	icon = 'icons/mob/broadMobs.dmi';
-	faction = list("Hostile");
-	name = "Shark";
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 2);
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 1, /obj/item/alch/bone = 1);
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/mince/fish = 2, /obj/item/alch/sinew = 2, /obj/item/alch/bone = 1)
-	},
+/mob/living/simple_animal/hostile/retaliate/shark,
 /turf/open/floor/abyss_tile{
 	color = "#7D9BAE"
 	},
@@ -18781,21 +18406,7 @@
 /obj/effect/decal/shadow_floor{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/retaliate/wolf{
-	icon = 'icons/roguetown/mob/monster/pets.dmi';
-	icon_dead = "gg_dead";
-	icon_living = "gg";
-	icon_state = "gg";
-	name = "Robotic Volf";
-	botched_butcher_results = list(/obj/item/gear/metal/bronze = 1);
-	butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	head_butcher = null;
-	perfect_butcher_results = list(/obj/item/gear/metal/bronze = 2);
-	attack_sound = list('sound/items/beartrap.ogg');
-	faction = list("Undead");
-	desc = "A metalic monster made into that of a doglike form. It's jaw reminds you of a beartrap.";
-	color = "#E8C4A1"
-	},
+/mob/living/simple_animal/hostile/retaliate/snapper,
 /turf/open/floor/concrete,
 /area/rogue/indoors/town/clocktower)
 "YH" = (

@@ -9,9 +9,9 @@
 	SSmapping.add_world_trait(/datum/world_trait/longer_week, 0)
 	GLOB.round_timer += 40 MINUTES
 
-	to_chat(world, "<br>")
-	to_chat(world, span_reallybig("The working week has been extended! Rejoice!"))
-	to_chat(world, "<br>")
+	bordered_message(world, list(
+		span_reallybig("The working week has been extended! Rejoice, peasants!"),
+	))
 
 	for(var/client/C in GLOB.clients)
 		if(!C?.mob)
