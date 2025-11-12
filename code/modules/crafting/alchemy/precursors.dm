@@ -173,6 +173,16 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 		/obj/item/reagent_containers/food/snacks/produce/grain/oat,
 	)
 
+/datum/natural_precursor/mushroom
+	name = "mushroom"
+	essence_yields = list(
+		/datum/thaumaturgical_essence/chaos = 3,
+		/datum/thaumaturgical_essence/life = 1
+	)
+	init_types = list(
+		/obj/item/reagent_containers/food/snacks/produce/mushroom,
+	)
+
 /datum/natural_precursor/swampweed
 	name = "swampweed"
 	essence_yields = list(

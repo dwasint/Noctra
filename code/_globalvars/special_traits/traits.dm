@@ -664,9 +664,10 @@
 	character.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	character.set_stat_modifier("[type]", STATKEY_STR, 20)
-	character.set_stat_modifier("[type]", STATKEY_CON, 20)
-	character.set_stat_modifier("[type]", STATKEY_END, 20)
+	character.base_constitution = 20
+	character.base_strength = 20
+	character.base_endurance = 20
+	character.recalculate_stats()
 
 /datum/special_trait/my_precious
 	name = "My Precious"
@@ -776,8 +777,8 @@
 	switch(character.patron?.type)
 		if(/datum/patron/divine/astrata)
 			psycross = /obj/item/clothing/neck/psycross/silver/astrata
-			helmet = /obj/item/clothing/head/helmet/heavy/necked/astrata
-			cloak = /obj/item/clothing/cloak/stabard/templar/astrata
+			helmet = /obj/item/clothing/head/helmet/heavy/astratahelm
+			cloak = /obj/item/clothing/cloak/templar/astratan
 			weapon = /obj/item/weapon/sword/long/exe/astrata
 			character.cmode_music = 'sound/music/cmode/church/CombatAstrata.ogg'
 		if(/datum/patron/divine/noc)
@@ -796,14 +797,14 @@
 			character.clamped_adjust_skillrank(/datum/skill/combat/polearms, 4, 4, TRUE)
 		if(/datum/patron/divine/necra)
 			psycross = /obj/item/clothing/neck/psycross/silver/necra
-			helmet = /obj/item/clothing/head/helmet/heavy/necked/necra
-			cloak = /obj/item/clothing/cloak/stabard/templar/necra
+			helmet = /obj/item/clothing/head/helmet/heavy/necrahelm
+			cloak = /obj/item/clothing/cloak/templar/necran
 			weapon = /obj/item/weapon/flail/sflail/necraflail
 			character.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 		if(/datum/patron/divine/pestra)
 			psycross = /obj/item/clothing/neck/psycross/silver/pestra
 			helmet = /obj/item/clothing/head/helmet/heavy/necked/pestrahelm
-			cloak = /obj/item/clothing/cloak/stabard/templar/pestra
+			cloak = /obj/item/clothing/cloak/templar/pestran
 			weapon = /obj/item/weapon/knife/dagger/steel/pestrasickle
 			character.mind.special_items["Second Weapon"] = /obj/item/weapon/knife/dagger/steel/pestrasickle
 			character.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
@@ -820,19 +821,20 @@
 			ADD_TRAIT(character, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 		if(/datum/patron/divine/ravox)
 			psycross = /obj/item/clothing/neck/psycross/silver/ravox
-			helmet = /obj/item/clothing/head/helmet/heavy/necked/ravox
+			helmet = /obj/item/clothing/head/helmet/heavy/ravoxhelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/ravox
 			weapon = /obj/item/weapon/sword/long/ravox
 			character.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 		if(/datum/patron/divine/malum)
 			psycross = /obj/item/clothing/neck/psycross/silver/malum
 			helmet = /obj/item/clothing/head/helmet/heavy/necked/malumhelm
-			cloak = /obj/item/clothing/cloak/stabard/templar/malum
+			cloak = /obj/item/clothing/cloak/templar/malumite
 			weapon = /obj/item/weapon/mace/goden/steel/malum
 			character.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander2.ogg'
 			character.clamped_adjust_skillrank(/datum/skill/combat/axesmaces, 4, 4, TRUE)
 		if(/datum/patron/divine/abyssor)
 			psycross = /obj/item/clothing/neck/psycross/silver/abyssor
+			helmet = /obj/item/clothing/head/helmet/heavy/abyssorgreathelm
 			cloak = /obj/item/clothing/cloak/stabard/templar/abyssor
 			weapon = /obj/item/weapon/polearm/spear/abyssor
 			character.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
@@ -841,7 +843,7 @@
 		if(/datum/patron/divine/xylix)
 			psycross = /obj/item/clothing/neck/psycross/silver/xylix
 			helmet = /obj/item/clothing/head/helmet/heavy/necked/xylix
-			cloak = /obj/item/clothing/cloak/stabard/templar/xylix
+			cloak = /obj/item/clothing/cloak/templar/xylixian
 			weapon = /obj/item/weapon/whip/xylix
 			character.clamped_adjust_skillrank(/datum/skill/combat/whipsflails, 4, 4, TRUE)
 		if(/datum/patron/inhumen/graggar_zizo) //In case a admin decide to give them graggazo roundstart
@@ -849,6 +851,10 @@
 			helmet = /obj/item/clothing/head/helmet/graggar
 			cloak = /obj/item/clothing/cloak/graggar
 			weapon = /obj/item/weapon/sword/long/judgement/evil
+		else
+			cloak = /obj/item/clothing/cloak/templar/undivided
+			psycross = /obj/item/clothing/neck/psycross/silver/undivided
+			weapon = /obj/item/weapon/sword/long/decorated
 	if(!character.has_language(/datum/language/celestial))
 		character.grant_language(/datum/language/celestial)
 		to_chat(character, span_info("I can speak Celestial with ,c before my speech."))

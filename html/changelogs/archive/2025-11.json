@@ -357,5 +357,69 @@
                 "balance": "Adds more traits to increase briar survivability on certain Dendor paths"
             }
         ]
+    },
+    "2025-11-12": {
+        "Somniworld": [
+            {
+                "rscadd": "Added a new animation for graves consecrated by Necran clergymen."
+            },
+            {
+                "balance": "Halves the blood requirement for the vampire lord's blood rites research (the ones that make you stronger)."
+            }
+        ],
+        "Bloo4420": [
+            {
+                "rscadd": "Wild and cultivable mushroom crops"
+            },
+            {
+                "rscadd": "Mushroom mound"
+            },
+            {
+                "map": "Added mushroom mounds to Vanderlin's dungeon"
+            },
+            {
+                "map": "Added debug mushroom mounds to Roguetest"
+            }
+        ],
+        "7erracotta": [
+            {
+                "rscadd": "Added a new role"
+            }
+        ],
+        "Dorodomki": [
+            {
+                "rscadd": "Added cleric & fighter weapon choices"
+            },
+            {
+                "rscdel": "Removed old cleric god specific weaponry\\n:cl:\\n## Pre-Merge Checklist\\n- [x] You tested this on a local server.\\n- [x] This code did not runtime during testing.\\n- [x] You documented all of your changes."
+            }
+        ],
+        "SarmentiCampbell": [
+            {
+                "rscadd": "Spellcaster hat and Undivided Amulet"
+            },
+            {
+                "balance": "Devout Knights receive a different helmet compared to church templars"
+            },
+            {
+                "bugfix": "Bard can no longer receive magic by using bardic inspiration"
+            },
+            {
+                "bugfix": "Vicious mockery can now be used by specific races in combat modes."
+            },
+            {
+                "bugfix": "Apostates can no longer be iconoclasts."
+            }
+        ],
+        "rizencraft01": [
+            {
+                "rscadd": "Added captain and royal knight title for forest warden"
+            }
+        ],
+        "Singul0": [
+            {
+                "rscadd": "The Inquisition has fitted the every adepts with  a 'Collar of Servitude'. Ensuring their obedience and faithfulness to the inquisition."
+            }
+        ]
     }
 }

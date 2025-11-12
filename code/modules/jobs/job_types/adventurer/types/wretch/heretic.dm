@@ -3,6 +3,7 @@
 	tutorial = "You are either a heretic or a fanatic, spurned by the church, cast out from society - frowned upon by the tens for your type of faith."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_ALL
+	allowed_patrons = ALL_ICONOCLAST_PATRONS
 	outfit = /datum/outfit/wretch/heretic
 	total_positions = 2
 
@@ -169,8 +170,11 @@
 			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 			H.grant_language(/datum/language/oldpsydonic)
 			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
-		else //Why are you going faithless
-			wrists = /obj/item/clothing/neck/psycross/silver
+		else //Just in case.
+			head = /obj/item/clothing/head/helmet/heavy/bucket
+			wrists = /obj/item/clothing/neck/psycross/silver/undivided
+			cloak = /obj/item/clothing/cloak/templar/undivided
+			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 			H.cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 	if(!H.has_language(/datum/language/celestial) && (H.patron?.type in ALL_TEMPLE_PATRONS))
 		H.grant_language(/datum/language/celestial)
@@ -242,6 +246,6 @@
 			var/obj/item/weapon/scabbard/sword/L = new(get_turf(src))
 			H.equip_to_appropriate_slot(L)
 		else
-			var/obj/item/weapon/sword/long/greatsword/psydon/P = new(get_turf(src))
+			var/obj/item/weapon/sword/long/decorated/P = new(get_turf(src))
 			H.equip_to_appropriate_slot(P)
 	wretch_select_bounty(H)

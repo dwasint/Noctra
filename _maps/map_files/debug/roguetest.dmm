@@ -1112,9 +1112,6 @@
 	},
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/mountains/decap)
-"eh" = (
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "ek" = (
 /obj/machinery/light/fueled/torchholder/hotspring/standing{
 	pixel_x = 15
@@ -1148,6 +1145,14 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
+"eH" = (
+/obj/effect/mapping_helpers/secret_door_creator/keep{
+	redstone_id = "hd1";
+	override_floor = 1;
+	floor_turf = /turf/open/floor/tile/masonic/inverted
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "eO" = (
 /obj/machinery/anvil,
 /turf/open/floor/cobble,
@@ -1325,6 +1330,19 @@
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
+"ih" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/tile/masonic/inverted,
+/area/rogue/under/town/basement)
+"iw" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/tile/masonic/inverted,
+/area/rogue/under/town/basement)
 "iC" = (
 /obj/structure/ladder,
 /turf/open/floor/blocks,
@@ -1399,6 +1417,10 @@
 /obj/structure/channel_connector/furnace,
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/manor)
+"jM" = (
+/obj/machinery/light/fueled/wallfire/candle,
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "jN" = (
 /turf/closed/wall/mineral/stone,
 /area/rogue/indoors/town/manor)
@@ -1477,6 +1499,13 @@
 /obj/structure/vertical_gearbox,
 /turf/open/floor/wood,
 /area/rogue/indoors)
+"lt" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/blocks/stonered/tiny,
+/area/rogue/outdoors)
 "lu" = (
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/tile,
@@ -1902,12 +1931,6 @@
 	},
 /turf/open/floor/tile/kitchen,
 /area/rogue/indoors/town/manor)
-"qQ" = (
-/obj/structure/lever/hidden/keep{
-	redstone_id = "hd2"
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "qZ" = (
 /turf/closed/mineral/random/high,
 /area/rogue/outdoors/mountains/decap)
@@ -1931,6 +1954,12 @@
 	},
 /turf/open/floor/tile/kitchen,
 /area/rogue/indoors/town/manor)
+"ri" = (
+/obj/structure/lever/hidden/keep{
+	redstone_id = "hd1"
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "rj" = (
 /obj/structure/minecart_rail{
 	dir = 4
@@ -2002,9 +2031,12 @@
 /obj/structure/well,
 /turf/open/water,
 /area/rogue/outdoors)
-"sM" = (
-/turf/open/floor/tile/masonic/inverted,
-/area/rogue/under/town/basement)
+"sW" = (
+/obj/machinery/light/fueled/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/indoors/town/manor)
 "sZ" = (
 /obj/structure/essence_node/rare,
 /turf/open/floor/tile/bfloorz,
@@ -2107,13 +2139,6 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"uq" = (
-/obj/machinery/light/fueled/wallfire/candle{
-	pixel_x = 32;
-	pixel_y = 0
-	},
-/turf/open/floor/tile/masonic/inverted,
-/area/rogue/under/town/basement)
 "us" = (
 /obj/structure/table/wood{
 	dir = 4;
@@ -2127,6 +2152,12 @@
 /obj/structure/carpet,
 /turf/open/floor/tile/checkeralt,
 /area/rogue/indoors/town/manor)
+"uA" = (
+/obj/structure/lever/hidden/keep{
+	redstone_id = "hd2"
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "uL" = (
 /obj/structure/hotspring/border/two,
 /turf/open/floor/cobblerock,
@@ -2192,10 +2223,6 @@
 /obj/item/reagent_containers/glass/carafe/water,
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"wX" = (
-/obj/machinery/light/fueled/wallfire/candle,
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "wY" = (
 /obj/structure/flora/sakura{
 	pixel_y = -13
@@ -2263,14 +2290,6 @@
 /obj/structure/bridge_stakes,
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"xN" = (
-/obj/effect/mapping_helpers/secret_door_creator/keep{
-	redstone_id = "hd2";
-	floor_turf = /turf/open/floor/tile/masonic/inverted;
-	override_floor = 1
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "yr" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/dirt/road,
@@ -2450,6 +2469,12 @@
 /obj/structure/water_pipe,
 /turf/closed/wall/mineral/wood,
 /area/rogue/indoors)
+"Bd" = (
+/obj/structure/lever/hidden/keep{
+	redstone_id = "hd3"
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "Be" = (
 /obj/machinery/essence/reservoir/filled/life,
 /turf/open/floor/wood,
@@ -2779,10 +2804,13 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/manor)
-"GN" = (
-/obj/structure/table/wood/crafted,
-/obj/item/reagent_containers/powder/ozium,
-/turf/open/floor/tile/masonic/inverted,
+"Gz" = (
+/obj/effect/mapping_helpers/secret_door_creator/keep{
+	redstone_id = "hd3";
+	override_floor = 1;
+	floor_turf = /turf/open/floor/tile/masonic/inverted
+	},
+/turf/closed/wall/mineral/decorstone,
 /area/rogue/under/town/basement)
 "GO" = (
 /obj/effect/landmark/start/adventurerlate,
@@ -2832,12 +2860,6 @@
 /obj/effect/temp_visual/wave_up,
 /turf/open/floor/tile/bfloorz,
 /area/rogue/indoors)
-"HF" = (
-/obj/structure/lever/hidden/keep{
-	redstone_id = "hd3"
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "HK" = (
 /obj/structure/hotspring/border/two,
 /obj/machinery/light/fueled/torchholder/hotspring/standing{
@@ -2884,12 +2906,6 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"IQ" = (
-/obj/structure/lever/hidden/keep{
-	redstone_id = "hd1"
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "IR" = (
 /obj/structure/rotation_piece{
 	dir = 8
@@ -2997,13 +3013,10 @@
 	},
 /turf/open/floor/dirt,
 /area/rogue/outdoors)
-"Lj" = (
-/obj/effect/mapping_helpers/secret_door_creator/keep{
-	redstone_id = "hd3";
-	override_floor = 1;
-	floor_turf = /turf/open/floor/tile/masonic/inverted
-	},
-/turf/closed/wall/mineral/decorstone,
+"Lg" = (
+/obj/structure/table/wood/crafted,
+/obj/item/reagent_containers/powder/ozium,
+/turf/open/floor/tile/masonic/inverted,
 /area/rogue/under/town/basement)
 "Lm" = (
 /mob/living/simple_animal/hostile/retaliate/trufflepig/male{
@@ -3060,12 +3073,6 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/outdoors)
-"MF" = (
-/obj/machinery/light/fueled/wallfire/candle{
-	pixel_y = -32
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/indoors/town/manor)
 "MG" = (
 /obj/structure/gearbox,
 /turf/open/floor/dirt,
@@ -3115,12 +3122,6 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors)
-"OV" = (
-/obj/machinery/light/fueled/wallfire/candle{
-	pixel_y = -32
-	},
-/turf/open/floor/tile/masonic/inverted,
-/area/rogue/under/town/basement)
 "OZ" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/wood,
@@ -3163,11 +3164,6 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"Qp" = (
-/obj/structure/table/wood/crafted,
-/obj/item/paper/scroll/keep_plans,
-/turf/open/floor/tile/masonic/inverted,
-/area/rogue/under/town/basement)
 "Qq" = (
 /obj/structure/bars,
 /turf/open/floor/churchbrick,
@@ -3242,21 +3238,6 @@
 	},
 /turf/open/floor/grass/yel,
 /area/rogue/outdoors)
-"SU" = (
-/obj/structure/fluff/railing/wood{
-	dir = 8;
-	pixel_y = -1
-	},
-/turf/open/floor/blocks/stonered/tiny,
-/area/rogue/outdoors)
-"SV" = (
-/obj/effect/mapping_helpers/secret_door_creator/keep{
-	redstone_id = "hd1";
-	override_floor = 1;
-	floor_turf = /turf/open/floor/tile/masonic/inverted
-	},
-/turf/closed/wall/mineral/decorstone,
-/area/rogue/under/town/basement)
 "SZ" = (
 /obj/structure/hotspring/border/ten,
 /turf/open/floor/dirt/road,
@@ -3313,10 +3294,21 @@
 	},
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/manor)
+"TI" = (
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "TJ" = (
 /obj/structure/flora/grass/herb/hypericum,
 /turf/open/floor/cobblerock,
 /area/rogue/outdoors/mountains/decap)
+"TL" = (
+/obj/effect/mapping_helpers/secret_door_creator/keep{
+	redstone_id = "hd2";
+	floor_turf = /turf/open/floor/tile/masonic/inverted;
+	override_floor = 1
+	},
+/turf/closed/wall/mineral/decorstone,
+/area/rogue/under/town/basement)
 "TN" = (
 /obj/effect/landmark/house_spot{
 	house_id = "9x9_2";
@@ -3503,6 +3495,11 @@
 /obj/item/mould/ingot,
 /turf/open/floor/churchbrick,
 /area/rogue/indoors/town/manor)
+"XJ" = (
+/obj/structure/table/wood/crafted,
+/obj/item/paper/scroll/keep_plans,
+/turf/open/floor/tile/masonic/inverted,
+/area/rogue/under/town/basement)
 "XL" = (
 /obj/structure/hotspring/border/twelve,
 /turf/open/floor/dirt/road,
@@ -3513,6 +3510,9 @@
 	},
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors)
+"XX" = (
+/turf/open/floor/tile/masonic/inverted,
+/area/rogue/under/town/basement)
 "Yr" = (
 /obj/structure/rotation_piece/cog/large,
 /turf/open/floor/grass/yel,
@@ -19210,13 +19210,13 @@ Zs
 at
 at
 as
-eh
-eh
-eh
-eh
-eh
-eh
-eh
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 as
 as
 as
@@ -19430,7 +19430,7 @@ WL
 WL
 WL
 WL
-MF
+sW
 WL
 WL
 WL
@@ -19467,13 +19467,13 @@ Zs
 as
 as
 as
-eh
-Qp
-sM
-sM
-sM
-uq
-eh
+TI
+XJ
+XX
+XX
+XX
+ih
+TI
 as
 as
 as
@@ -19693,7 +19693,7 @@ WL
 Ft
 Ft
 WL
-SU
+lt
 vr
 IE
 at
@@ -19724,13 +19724,13 @@ at
 at
 at
 at
-eh
-GN
-sM
-eh
-SV
-IQ
-eh
+TI
+Lg
+XX
+TI
+eH
+ri
+TI
 as
 as
 as
@@ -19981,13 +19981,13 @@ Wr
 Wr
 QN
 ai
-sM
-sM
-sM
-xN
-sM
-sM
-eh
+XX
+XX
+XX
+TL
+XX
+XX
+TI
 as
 as
 as
@@ -20238,13 +20238,13 @@ ai
 Wr
 ai
 Wr
-eh
-sM
-OV
-qQ
-Lj
-HF
-wX
+TI
+XX
+iw
+uA
+Gz
+Bd
+jM
 as
 as
 as
@@ -20495,13 +20495,13 @@ QN
 QN
 ai
 QN
-eh
-sM
-sM
-sM
-sM
-sM
-eh
+TI
+XX
+XX
+XX
+XX
+XX
+TI
 as
 as
 as
@@ -20752,13 +20752,13 @@ tk
 QN
 ai
 ai
-eh
-eh
-eh
-eh
-eh
-eh
-eh
+TI
+TI
+TI
+TI
+TI
+TI
+TI
 as
 as
 as

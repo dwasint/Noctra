@@ -16,7 +16,7 @@
 	selection_color = JCOLOR_INQUISITION
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 
-	outfit = /datum/outfit/job/inquisitor
+	outfit = /datum/outfit/inquisitor
 	display_order = JDO_PURITAN
 	advclass_cat_rolls = list(CTAG_PURITAN = 20)
 	give_bank_account = 30
@@ -24,38 +24,40 @@
 	bypass_lastclass = TRUE
 	antag_role = /datum/antagonist/purishep
 
-/datum/outfit/job/inquisitor
+	languages = list(/datum/language/oldpsydonic)
+
+/datum/outfit/inquisitor
+	abstract_type = /datum/outfit/inquisitor
 	name = "Inquisitor"
 
-/datum/job/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/inquisitor/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
-	if(ishuman(L))
-		var/mob/living/carbon/human/H = L
-		H.grant_language(/datum/language/oldpsydonic)
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
-		H.verbs |= /mob/living/carbon/human/proc/faith_test
-		H.verbs |= /mob/living/carbon/human/proc/torture_victim
-		H.verbs |= /mob/living/carbon/human/proc/view_inquisition
 
-		H.hud_used?.shutdown_bloodpool()
-		H.hud_used?.initialize_bloodpool()
-		H.hud_used?.bloodpool.set_fill_color("#dcdddb")
-		H?.hud_used?.bloodpool?.name = "Psydon's Grace: [H.bloodpool]"
-		H?.hud_used?.bloodpool?.desc = "Devotion: [H.bloodpool]/[H.maxbloodpool]"
-		H.maxbloodpool = 1000
-		var/prev_real_name = H.real_name
-		var/prev_name = H.name
-		var/honorary = "Herr Prafekt"
-		if(H.gender == FEMALE)
-			honorary = "Frau Prafekt"
-		H.real_name = "[honorary] [prev_real_name]"
-		H.name = "[honorary] [prev_name]"
+	spawned.verbs |= /mob/living/carbon/human/proc/faith_test
+	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim
+	spawned.verbs |= /mob/living/carbon/human/proc/view_inquisition
 
-		if(H.dna?.species.id == SPEC_ID_HUMEN)
-			H.dna.species.native_language = "Old Psydonic"
-			H.dna.species.accent_language = H.dna.species.get_accent(H.dna.species.native_language)
+	spawned.hud_used?.shutdown_bloodpool()
+	spawned.hud_used?.initialize_bloodpool()
+	spawned.hud_used?.bloodpool.set_fill_color("#dcdddb")
+	spawned.hud_used?.bloodpool?.name = "Psydon's Grace: [spawned.bloodpool]"
+	spawned.hud_used?.bloodpool?.desc = "Devotion: [spawned.bloodpool]/[spawned.maxbloodpool]"
+	spawned.maxbloodpool = 1000
+
+	var/prev_real_name = spawned.real_name
+	var/prev_name = spawned.name
+	var/honorary = "Herr Prafekt"
+	if(spawned.gender == FEMALE)
+		honorary = "Frau Prafekt"
+	spawned.real_name = "[honorary] [prev_real_name]"
+	spawned.name = "[honorary] [prev_name]"
+
+	var/datum/species/species = spawned.dna?.species
+	if(!species)
+		return
+	species.native_language = "Old Psydonic"
+	species.accent_language = species.get_accent(species.native_language)
+
 ////Classic Inquisitor with a much more underground twist. Use listening devices, sneak into places to gather evidence, track down suspicious individuals. Has relatively the same utility stats as Confessor, but fulfills a different niche in terms of their combative job as the head honcho.
 
 ///The dirty, violent side of the Inquisition. Meant for confrontational, conflict-driven situations as opposed to simply sneaking around and asking questions. Templar with none of the miracles, but with all the muscles and more.

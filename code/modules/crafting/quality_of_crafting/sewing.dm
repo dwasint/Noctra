@@ -1258,6 +1258,16 @@
 	craftdiff = 3
 	category = "Armor"
 
+/datum/repeatable_crafting_recipe/sewing/spellcasterhat
+	name = "spellsinger Hat"
+	output = /obj/item/clothing/head/spellcasterhat
+	requirements = list(
+		/obj/item/natural/cloth = 3,
+		/obj/item/natural/hide/cured = 1
+	)
+	craftdiff = 2
+	category = "Hat"
+
 /datum/repeatable_crafting_recipe/sewing/spellcasterrobe
 	name = "spellsinger robes"
 	output = /obj/item/clothing/shirt/robe/spellcasterrobe

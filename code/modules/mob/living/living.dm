@@ -544,7 +544,7 @@
 		var/mob/living/living = AM
 		for(var/hand in living.hud_used?.hand_slots)
 			var/atom/movable/screen/inventory/hand/H = living.hud_used.hand_slots[hand]
-			H?.update_appearance()
+			H?.update_appearance(UPDATE_OVERLAYS)
 
 /mob/living/proc/is_limb_covered(obj/item/bodypart/limb)
 	if(!limb)
@@ -603,9 +603,10 @@
 			M.reset_offsets("pulledby")
 			if(HAS_TRAIT(M, TRAIT_GARROTED))
 				var/obj/item/inqarticles/garrote/gcord = src.get_active_held_item()
-				if(!gcord)
+				if(!istype(gcord))
 					gcord = src.get_inactive_held_item()
-				gcord.wipeslate(src)
+				if(istype(gcord))
+					gcord.wipeslate(src)
 
 			if(grab_state >= GRAB_AGGRESSIVE)
 				TIMER_COOLDOWN_START(pulling, "broke_free", max(0, 2 SECONDS - (0.2 SECONDS * get_skill_level(/datum/skill/combat/wrestling)))) // BUFF: Reduced cooldown
@@ -2642,7 +2643,7 @@
 
 	for(var/hand in hud_used?.hand_slots)
 		var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
-		H?.update_appearance()
+		H?.update_appearance(UPDATE_OVERLAYS)
 
 	if(isnull(new_pulledby))
 		reset_pull_offsets()

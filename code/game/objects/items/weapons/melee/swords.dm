@@ -676,6 +676,8 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	dropshrink = 0.75
 	sellprice = 60
+	grid_height = 96
+	grid_width = 64
 
 /obj/item/weapon/sword/long/shotel
 	name = "steel shotel"
@@ -720,6 +722,7 @@
 	sellprice = 60
 	max_integrity = INTEGRITY_STANDARD - 50
 	smeltresult = /obj/item/ingot/iron
+	melting_material = /datum/material/iron
 
 /obj/item/weapon/sword/long/death
 	color = CLOTHING_SOOT_BLACK
@@ -929,6 +932,8 @@
 	wdefense = GREAT_PARRY
 	sellprice = 90
 	last_used = 0
+	melting_material = /datum/material/silver
+	melt_amount = 75
 
 /obj/item/weapon/sword/long/forgotten/Initialize(mapload)
 	. = ..()
@@ -953,6 +958,8 @@
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 100
 	last_used = 0
+	melting_material = /datum/material/silver
+	melt_amount = 75
 
 /obj/item/weapon/sword/long/psydon/Initialize(mapload)
 	. = ..()
@@ -972,6 +979,8 @@
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 160
 	last_used = 0
+	melting_material = /datum/material/silver
+	melt_amount = 75
 
 /obj/item/weapon/sword/long/decorated/Initialize(mapload)
 	. = ..()
@@ -1021,6 +1030,8 @@
 	smeltresult = /obj/item/ingot/silver
 	sellprice = 150
 	minstr = 11
+	melting_material = /datum/material/silver
+	melt_amount = 150
 
 /obj/item/weapon/sword/long/greatsword/psydon/Initialize(mapload)
 	. = ..()
@@ -1057,6 +1068,8 @@
 	possible_item_intents = list(/datum/intent/sword/cut,/datum/intent/sword/chop,/datum/intent/stab)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/lunge, /datum/intent/sword/thrust/estoc)
 	alt_intents = list(/datum/intent/effect/daze, /datum/intent/sword/strike, /datum/intent/sword/bash)
+	melting_material = /datum/material/silver
+	melt_amount = 150
 
 /obj/item/weapon/sword/long/greatsword/broadsword/psy/relic
 	name = "Creed"
@@ -1103,6 +1116,8 @@
 	max_blade_int = 150 // Iron tier
 	max_integrity = INTEGRITY_STRONG
 	sellprice = 60
+	melting_material = /datum/material/iron
+	melt_amount = 225
 
 /obj/item/weapon/sword/long/greatsword/zwei/getonmobprop(tag)
 	. = ..()

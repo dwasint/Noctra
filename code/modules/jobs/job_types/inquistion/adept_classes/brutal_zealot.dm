@@ -44,7 +44,7 @@
 	//Armor for class
 	belt = /obj/item/storage/belt/leather
 	head = /obj/item/clothing/head/adeptcowl
-	neck = /obj/item/clothing/neck/chaincoif
+	neck = /obj/item/clothing/neck/gorget/explosive
 	armor = /obj/item/clothing/armor/chainmail
 	cloak = /obj/item/clothing/cloak/tabard/adept
 	beltl = /obj/item/weapon/mace/spiked

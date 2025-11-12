@@ -36,6 +36,8 @@
 	shine = SHINE_SHINY
 	no_over_text = FALSE
 	water_level = 2
+	spread_chance = 0
+	burn_power = 0
 	var/uses_level = TRUE
 	var/datum/reagent/water_reagent = /datum/reagent/water
 	var/mapped = TRUE // infinite source of water

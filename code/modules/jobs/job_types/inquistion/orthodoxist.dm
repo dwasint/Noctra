@@ -26,28 +26,23 @@
 	same_job_respawn_delay = 30 MINUTES
 	antag_role = /datum/antagonist/purishep
 
-/datum/job/orthodoxist/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	..()
-	if(L)
-		var/mob/living/carbon/human/H = L
-		H.grant_language(/datum/language/oldpsydonic)
-		if(!H.mind)
-			return
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
+	languages = list(/datum/language/oldpsydonic)
 
-		H.verbs |= /mob/living/carbon/human/proc/torture_victim
-		H.verbs |= /mob/living/carbon/human/proc/faith_test
-		H.verbs |= /mob/living/carbon/human/proc/view_inquisition
+/datum/job/orthodoxist/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
 
-		H.hud_used?.shutdown_bloodpool()
-		H.hud_used?.initialize_bloodpool()
-		H.hud_used?.bloodpool.set_fill_color("#dcdddb")
-		H?.hud_used?.bloodpool?.name = "Psydon's Grace: [H.bloodpool]"
-		H?.hud_used?.bloodpool?.desc = "Devotion: [H.bloodpool]/[H.maxbloodpool]"
-		H.maxbloodpool = 1000
+	spawned.verbs |= /mob/living/carbon/human/proc/torture_victim
+	spawned.verbs |= /mob/living/carbon/human/proc/faith_test
+	spawned.verbs |= /mob/living/carbon/human/proc/view_inquisition
 
-		if(H.dna?.species.id == SPEC_ID_HUMEN)
-			H.dna.species.native_language = "Old Psydonic"
-			H.dna.species.accent_language = H.dna.species.get_accent(H.dna.species.native_language)
+	spawned.hud_used?.shutdown_bloodpool()
+	spawned.hud_used?.initialize_bloodpool()
+	spawned.hud_used?.bloodpool.set_fill_color("#dcdddb")
+	spawned.hud_used?.bloodpool?.name = "Psydon's Grace: [spawned.bloodpool]"
+	spawned.hud_used?.bloodpool?.desc = "Devotion: [spawned.bloodpool]/[spawned.maxbloodpool]"
+	spawned.maxbloodpool = 1000
+
+	var/datum/species/species = spawned.dna?.species
+	if(species)
+		species.native_language = "Old Psydonic"
+		species.accent_language = species.get_accent(species.native_language)

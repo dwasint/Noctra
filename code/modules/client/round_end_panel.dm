@@ -820,12 +820,24 @@
 /proc/create_chronicle_holder_block(stat_name, include_title = TRUE, is_second_block = FALSE)
 	var/list/stat_data = GLOB.chronicle_stats[stat_name]
 	if(!stat_data)
-		return is_second_block ? "<div style='margin: 30px 0 15px 0;'><font color='[initial(GLOB.chronicle_stats[stat_name]["title_color"])]'>[initial(GLOB.chronicle_stats[stat_name]["title"])]</font></div>Nobody" : "Nobody"
+		var/initial_title = initial(GLOB.chronicle_stats[stat_name]["title"])
+		var/initial_color = initial(GLOB.chronicle_stats[stat_name]["title_color"])
+		if(is_second_block)
+			return "<div style='margin: 30px 0 15px 0;'><font color='[initial_color]'>[initial_title]</font></div>Nobody"
+		else if(include_title)
+			return "<div style='margin-bottom: 15px;'><font color='[initial_color]'>[initial_title]</font></div>Nobody"
+		else
+			return "Nobody"
 
 	var/datum/weakref/mob_weakref = stat_data["holder"]
 	var/mob/living/holder = mob_weakref?.resolve()
 	if(!holder)
-		return is_second_block ? "<div style='margin: 30px 0 15px 0;'><font color='[stat_data["title_color"]]'>[stat_data["title"]]</font></div>Nobody" : "Nobody"
+		if(is_second_block)
+			return "<div style='margin: 30px 0 15px 0;'><font color='[stat_data["title_color"]]'>[stat_data["title"]]</font></div>Nobody"
+		else if(include_title)
+			return "<div style='margin-bottom: 15px;'><font color='[stat_data["title_color"]]'>[stat_data["title"]]</font></div>Nobody"
+		else
+			return "<div style='margin: 30px 0 15px 0;'><font color='[stat_data["title_color"]]'>[stat_data["title"]]</font></div>Nobody"
 
 	var/list/output = list()
 	if(include_title)

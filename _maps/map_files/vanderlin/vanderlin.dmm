@@ -69,6 +69,10 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
+"acD" = (
+/obj/structure/soil/mushmound,
+/turf/open/floor/dirt,
+/area/rogue/indoors/town/cell)
 "acF" = (
 /obj/structure/table/wood/plain_alt,
 /obj/machinery/light/fueled/wallfire/candle/r,
@@ -3567,6 +3571,18 @@
 /obj/effect/landmark/start/vagrant,
 /turf/open/floor/grass,
 /area/rogue/outdoors/town)
+"bUr" = (
+/obj/structure/table/wood{
+	dir = 1;
+	icon_state = "longtable"
+	},
+/obj/item/reagent_containers/glass/cup/teacup/fancy,
+/obj/item/reagent_containers/glass/cup/teacup/fancy{
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/turf/open/floor/tile/diamond/purple,
+/area/rogue/indoors/town/manor/lord_appt)
 "bUu" = (
 /obj/structure/kneestingers{
 	pixel_x = 1;
@@ -4277,6 +4293,10 @@
 /obj/structure/door/fancy,
 /turf/open/floor/woodturned/nosmooth,
 /area/rogue/indoors/town/manor/throne)
+"csK" = (
+/obj/machinery/tanningrack,
+/turf/open/floor/blocks,
+/area/rogue/indoors/town/cell)
 "csU" = (
 /obj/structure/fluff/walldeco/vinez,
 /turf/closed/wall/mineral/stone/moss,
@@ -4778,6 +4798,17 @@
 "cIc" = (
 /turf/closed/wall/mineral/roofwall/center,
 /area/rogue/indoors/town/manor)
+"cIf" = (
+/obj/machinery/light/fueled/wallfire/candle,
+/obj/structure/table/wood/plain_alt,
+/obj/item/reagent_containers/glass/carafe/teapot/clay,
+/obj/item/reagent_containers/glass/carafe/teapot/clay,
+/obj/item/reagent_containers/glass/cup/clay,
+/obj/item/reagent_containers/glass/cup/clay,
+/obj/item/reagent_containers/glass/cup/clay,
+/obj/item/reagent_containers/glass/cup/clay,
+/turf/open/floor/ruinedwood/spiralfade,
+/area/rogue/under/town/basement)
 "cIj" = (
 /obj/item/natural/rock,
 /obj/effect/decal/cleanable/debris/stone,
@@ -7265,17 +7296,6 @@
 /obj/structure/bars/bent,
 /turf/open/floor/carpet/green,
 /area/rogue/indoors/town/merc_guild)
-"dYv" = (
-/obj/machinery/light/fueled/wallfire/candle,
-/obj/structure/table/wood/plain_alt,
-/obj/item/reagent_containers/glass/carafe/teapot/clay,
-/obj/item/reagent_containers/glass/carafe/teapot/clay,
-/obj/item/reagent_containers/glass/cup/clay,
-/obj/item/reagent_containers/glass/cup/clay,
-/obj/item/reagent_containers/glass/cup/clay,
-/obj/item/reagent_containers/glass/cup/clay,
-/turf/open/floor/ruinedwood/spiralfade,
-/area/rogue/under/town/basement)
 "dYA" = (
 /obj/structure/water_vent{
 	dir = 4
@@ -7893,6 +7913,18 @@
 /obj/structure/flora/grass/bush_meagre,
 /turf/open/floor/grass/red,
 /area/rogue/outdoors/woods_safe)
+"epF" = (
+/obj/structure/table/wood{
+	icon_state = "longtable"
+	},
+/obj/item/reagent_containers/glass/carafe/teapot/tea{
+	pixel_x = 10;
+	pixel_y = 9
+	},
+/turf/open/floor/tile/masonic{
+	dir = 8
+	},
+/area/rogue/indoors/town/manor/lord_appt)
 "epU" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/ruinedwood/spiral,
@@ -11100,6 +11132,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/naturalstone,
 /area/rogue/under/town/basement)
+"gdc" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/reagent_containers/glass/carafe/teapot/clay,
+/obj/item/reagent_containers/glass/cup/clay_mug,
+/obj/item/reagent_containers/glass/cup/clay_mug,
+/obj/item/reagent_containers/glass/cup/clay,
+/obj/item/reagent_containers/glass/cup/clay,
+/turf/open/floor/tile/kitchen,
+/area/rogue/indoors/town/tavern)
 "gde" = (
 /obj/structure/fluff/psycross,
 /turf/open/floor/dirt,
@@ -12554,30 +12595,6 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town)
-"gSo" = (
-/obj/structure/rack/shelf/biggest,
-/obj/item/reagent_containers/glass/carafe/teapot/tea{
-	pixel_x = 10;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/glass/cup/teacup/fancy{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/glass/cup/teacup/fancy{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/glass/cup/teacup/fancy{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/obj/item/reagent_containers/glass/cup/teacup/fancy{
-	pixel_x = -6;
-	pixel_y = -4
-	},
-/turf/open/floor/blocks/stonered,
-/area/rogue/indoors/town/manor/kitchen)
 "gSp" = (
 /obj/structure/fluff/walldeco/painting/castle,
 /turf/closed/wall/mineral/decowood,
@@ -16670,6 +16687,14 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/water/cleanshallow/dirt,
 /area/rogue/outdoors/woods_safe)
+"jjK" = (
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/neuFarm/seed/spore/capillus,
+/obj/item/neuFarm/seed/spore/capillus,
+/obj/item/neuFarm/seed/spore/borowiki,
+/obj/item/neuFarm/seed/spore/borowiki,
+/turf/open/floor/blocks,
+/area/rogue/indoors/town/cell)
 "jjT" = (
 /turf/open/floor/rooftop{
 	dir = 8
@@ -19714,14 +19739,6 @@
 	},
 /turf/open/floor/wood,
 /area/rogue/indoors/town/tavern)
-"kZN" = (
-/obj/structure/closet/crate/chest/wicker,
-/obj/item/neuFarm/seed/potato,
-/obj/item/neuFarm/seed/potato,
-/obj/item/neuFarm/seed/pear,
-/obj/item/neuFarm/seed/pear,
-/turf/open/floor/blocks,
-/area/rogue/indoors/town/cell)
 "lai" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/key/apartments/apartment1,
@@ -19754,18 +19771,6 @@
 "lbp" = (
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church)
-"lbs" = (
-/obj/structure/table/wood{
-	dir = 1;
-	icon_state = "longtable"
-	},
-/obj/item/reagent_containers/glass/cup/teacup/fancy,
-/obj/item/reagent_containers/glass/cup/teacup/fancy{
-	pixel_x = 11;
-	pixel_y = 10
-	},
-/turf/open/floor/tile/diamond/purple,
-/area/rogue/indoors/town/manor/lord_appt)
 "lbu" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -22807,15 +22812,6 @@
 /obj/structure/bars,
 /turf/open/floor/greenstone,
 /area/rogue/under/town/basement)
-"mTy" = (
-/obj/structure/rack/shelf/biggest,
-/obj/item/reagent_containers/glass/carafe/teapot/clay,
-/obj/item/reagent_containers/glass/cup/clay_mug,
-/obj/item/reagent_containers/glass/cup/clay_mug,
-/obj/item/reagent_containers/glass/cup/clay,
-/obj/item/reagent_containers/glass/cup/clay,
-/turf/open/floor/tile/kitchen,
-/area/rogue/indoors/town/tavern)
 "mTz" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -24925,6 +24921,30 @@
 	},
 /turf/open/floor/blocks,
 /area/rogue/indoors/town/manor/servant)
+"nXO" = (
+/obj/structure/rack/shelf/biggest,
+/obj/item/reagent_containers/glass/carafe/teapot/tea{
+	pixel_x = 10;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/cup/teacup/fancy{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/glass/cup/teacup/fancy{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/glass/cup/teacup/fancy{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/glass/cup/teacup/fancy{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/turf/open/floor/blocks/stonered,
+/area/rogue/indoors/town/manor/kitchen)
 "nYn" = (
 /turf/open/water/river{
 	dir = 8
@@ -28678,18 +28698,6 @@
 	},
 /turf/open/floor/cobble,
 /area/rogue/outdoors/town)
-"qfL" = (
-/obj/structure/table/wood{
-	icon_state = "longtable"
-	},
-/obj/item/reagent_containers/glass/carafe/teapot/tea{
-	pixel_x = 10;
-	pixel_y = 9
-	},
-/turf/open/floor/tile/masonic{
-	dir = 8
-	},
-/area/rogue/indoors/town/manor/lord_appt)
 "qfS" = (
 /obj/structure/stationary_bell{
 	pixel_x = -32;
@@ -59408,7 +59416,7 @@ huh
 iqd
 kiS
 fgB
-kZN
+jjK
 huh
 huh
 huh
@@ -60014,7 +60022,7 @@ iqd
 iqd
 iqd
 iqd
-pXR
+pdO
 lBA
 kjO
 pXR
@@ -60216,7 +60224,7 @@ iqd
 nqJ
 iqd
 iqd
-pXR
+csK
 huh
 lBA
 tyx
@@ -60414,8 +60422,8 @@ jUb
 fkZ
 vgJ
 huh
-iqd
-iqd
+acD
+acD
 iqd
 iqd
 pXR
@@ -60818,8 +60826,8 @@ jUb
 fkZ
 vgJ
 jEP
-iqd
-iqd
+acD
+acD
 iqd
 pXR
 pXR
@@ -70380,7 +70388,7 @@ hLb
 qpi
 vJz
 gEi
-dYv
+cIf
 vJz
 gbY
 hLb
@@ -100633,7 +100641,7 @@ lRC
 nmU
 lRC
 lyY
-gSo
+nXO
 afD
 wcZ
 wcZ
@@ -108771,7 +108779,7 @@ aXm
 aXm
 aXm
 aXm
-mTy
+gdc
 vNi
 mma
 jZz
@@ -144858,7 +144866,7 @@ ofE
 vBb
 cKY
 gGA
-qfL
+epF
 lNh
 wKu
 fUR
@@ -145060,7 +145068,7 @@ dXf
 cKY
 cKY
 cXS
-lbs
+bUr
 eQe
 sLM
 hZs

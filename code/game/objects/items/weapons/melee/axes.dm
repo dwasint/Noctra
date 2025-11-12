@@ -14,6 +14,8 @@
 	wlength = WLENGTH_NORMAL
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	axe_cut = 10	// bonus damage to trees
+	grid_height = 64
+	grid_width = 32
 
 /*------------\
 | Chop intent |	small AP, fewer protect vs this crit (more delimb?)

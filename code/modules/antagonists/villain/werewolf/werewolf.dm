@@ -70,6 +70,11 @@
 	if(!silent && owner.current)
 		to_chat(owner.current,span_danger("I am no longer a [special_role]!"))
 	owner.special_role = null
+	owner.current.remove_spell(/datum/action/cooldown/spell/undirected/werewolf_form)
+	owner.current.UnregisterSignal(owner.current, COMSIG_RAGE_BOTTOMED)
+	owner.current.UnregisterSignal(owner.current, COMSIG_RAGE_OVERRAGE)
+
+
 	return ..()
 
 /datum/antagonist/werewolf/proc/add_objective(datum/objective/O)
