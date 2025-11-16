@@ -137,7 +137,7 @@
 	cloak = /obj/item/clothing/cloak/tribal // yes, just a cloak
 	H.adjust_skillrank(/datum/skill/misc/sneaking, pick(4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/misc/stealing, pick(4,5), TRUE)
-	H.adjust_skillrank(/datum/skill/misc/lockpicking, pick (1,2,3,4,5), TRUE) // thug lyfe
+	H.adjust_skillrank(/datum/skill/misc/lockpicking, pick (1,2,3,4,5), TRUE) // thug life
 	H.adjust_skillrank(/datum/skill/misc/climbing, pick(4,5), TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, pick(3,3,4,5), TRUE) // Street-fu
 	H.adjust_skillrank(/datum/skill/combat/unarmed, pick(3,4,5,6), TRUE)

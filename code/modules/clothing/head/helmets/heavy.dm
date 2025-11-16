@@ -515,8 +515,8 @@
 	icon_state = "absolutionisthelm"
 	item_state = "absolutionisthelm"
 	emote_environment = 3
+	block2add = null
 	body_parts_covered = FULL_HEAD|NECK
-	block2add = FOV_RIGHT|FOV_LEFT
 	max_integrity = 450 // Worst vision. Yes.
 	worn_x_dimension = 64
 	worn_y_dimension = 64

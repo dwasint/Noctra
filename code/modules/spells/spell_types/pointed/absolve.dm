@@ -44,7 +44,7 @@
 			// Create visual effects
 			H.apply_status_effect(/datum/status_effect/buff/psyvived)
 			// Kill the caster
-			user.say("MY LYFE FOR YOURS! LYVE, AS DOES HE!", forced = TRUE)
+			user.say("MY LIFE FOR YOURS! LIVE, AS DOES HE!", forced = TRUE)
 			user.death()
 			// Revive the target
 			H.revive(full_heal = TRUE, admin_revive = FALSE)

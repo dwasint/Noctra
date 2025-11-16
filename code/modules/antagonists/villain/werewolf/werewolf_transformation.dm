@@ -94,9 +94,9 @@
 	W.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
 	W.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
 
-	W.base_constitution = 15
-	W.base_strength = 15
-	W.base_endurance = 15
+	W.base_constitution = 10 //werewolf.dm in the species has their ACTUAL stats, don't edit these, they'll make them stack ontop of each other.
+	W.base_strength = 10
+	W.base_endurance = 10
 	W.recalculate_stats()
 
 	W.add_spell(/datum/action/cooldown/spell/undirected/howl)

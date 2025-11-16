@@ -9,8 +9,9 @@
 	jobstats = list(
 		STATKEY_STR = 2,
 		STATKEY_CON = 2,
-		STATKEY_END = 3,
-	)
+		STATKEY_END = 2,
+		STATKEY_SPD = -2,
+	) //4 Statline
 
 	skills = list(
 		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,

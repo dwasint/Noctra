@@ -306,7 +306,7 @@
 
 	if(istype(T, /turf/open/water))
 		var/turf/open/water/W = T
-		if(!W.children)
+		if(!LAZYLEN(W.children))
 			W.water_reagent = blood.reagent_type // this is dumb, but it works for now
 			W.mapped = FALSE // no infinite vitae glitch
 			W.water_volume = 10

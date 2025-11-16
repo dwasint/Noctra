@@ -1381,7 +1381,7 @@
 
 /datum/repeatable_crafting_recipe/crafting/onyxa/cup
 	name = "onyxa cup"
-	output = /obj/item/reagent_containers/glass/cup/opal
+	output = /obj/item/reagent_containers/glass/cup/onyxa
 	craftdiff = 1
 
 /datum/repeatable_crafting_recipe/crafting/onyxa/bowl

@@ -8,10 +8,10 @@
 
 	jobstats = list(
 		STATKEY_SPD = 3,
-		STATKEY_END = 3,
+		STATKEY_END = 1,
 		STATKEY_PER = 2,
-		STATKEY_STR = -1
-	)
+		STATKEY_STR = -2
+	) //4 Statline
 	skills = list(
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN, //Should rely on the seizing garrote to properly subdue foes.
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,

@@ -493,5 +493,36 @@
                 "bugfix": "The Psyaltrist role now gets the \\\"of the inquisition\\\", \\\"psydonian grit\\\", and etc.. traits."
             }
         ]
+    },
+    "2025-11-16": {
+        "wgtjunior743": [
+            {
+                "bugfix": "Special Traits not working round start"
+            }
+        ],
+        "snowyseshi": [
+            {
+                "balance": "Lich skeleton stats raised, lich skeleton can't dodge anymore."
+            },
+            {
+                "bugfix": "undead parry bug"
+            },
+            {
+                "balance": "Deadite buffs/tweaks"
+            }
+        ],
+        "Rannoooo": [
+            {
+                "bugfix": "Werewolf stats fixed, down to the intended 15."
+            },
+            {
+                "code_imp": "Removed armor_penetration var from werevolf claws, combined it's value with the claw's penfactor var"
+            }
+        ],
+        "SarmentiCampbell": [
+            {
+                "balance": "rebalanced a few things."
+            }
+        ]
     }
 }

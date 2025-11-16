@@ -5,10 +5,9 @@
 	outfit = /datum/outfit/psyaltrist
 
 	jobstats = list(
-		STATKEY_STR = 1,
 		STATKEY_END = 1,
 		STATKEY_SPD = 3,
-	)
+	) //4 Statline
 
 	skills = list(
 		/datum/skill/misc/music = SKILL_LEVEL_MASTER,

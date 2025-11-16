@@ -48,8 +48,8 @@
 	var/swimdir = FALSE
 	var/notake = FALSE // cant pick up with reagent containers
 	var/set_relationships_on_init = TRUE
-	var/list/blocked_flow_directions = list("2" = 0, "1" = 0, "8" = 0, "4" = 0)
-	var/childless = FALSE
+	// A bitflag of blocked directions. ONLY works because we only allow cardinal flow.
+	var/blocked_flow_directions = 0
 
 	var/cached_use = 0
 
@@ -96,8 +96,11 @@
 	check_surrounding_water()
 
 /turf/open/water/proc/toggle_block_state(dir, value)
-	blocked_flow_directions["[dir]"] = value
-	if(blocked_flow_directions["[dir]"])
+	if(value)
+		blocked_flow_directions |= dir
+	else
+		blocked_flow_directions &= ~dir
+	if(blocked_flow_directions & dir)
 		var/turf/open/water/river/water = get_step(src, dir)
 		if(!istype(water))
 			return

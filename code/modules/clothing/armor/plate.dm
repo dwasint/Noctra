@@ -183,17 +183,7 @@
 	max_integrity = 400
 	melt_amount = 150
 	melting_material = /datum/material/silver
-	armor = ARMOR_BRIGANDINE // overall worse because of the endurance buff
-
-/obj/item/clothing/armor/plate/fluted/ornate/equipped(mob/living/user, slot)
-	. = ..()
-	if(slot & ITEM_SLOT_ARMOR)
-		user.apply_status_effect(/datum/status_effect/buff/psydonic_endurance)
-
-/obj/item/clothing/armor/plate/fluted/ornate/dropped(mob/living/carbon/human/user)
-	. = ..()
-	if(istype(user) && user?.wear_armor == src)
-		user.remove_status_effect(/datum/status_effect/buff/psydonic_endurance)
+	armor = ARMOR_PLATE // overall worse because of the endurance buff //Changed to Plate armor
 
 
 /obj/item/clothing/armor/plate/fluted/ornate/ordinator

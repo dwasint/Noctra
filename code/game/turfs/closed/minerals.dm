@@ -222,7 +222,7 @@
 	smoothing_list = SMOOTH_GROUP_MINERAL_WALLS
 	turf_type = /turf/open/floor/naturalstone
 	above_floor = /turf/open/floor/naturalstone
-	baseturfs = list(/turf/open/floor/naturalstone)
+	baseturfs = /turf/open/floor/naturalstone
 	wallclimb = TRUE
 	max_integrity = 400
 	///if this isn't empty, swaps to one of them via pickweight
@@ -236,7 +236,7 @@
 		var/path = pickweight(mineralSpawnChanceList)
 		var/turf/T = ChangeTurf(path,null,CHANGETURF_IGNORE_AIR)
 
-		if(T && ismineralturf(T))
+		if(ismineralturf(T))
 			var/turf/closed/mineral/M = T
 			M.mineralAmt = rand(1, 5)
 			M.turf_type = src.turf_type

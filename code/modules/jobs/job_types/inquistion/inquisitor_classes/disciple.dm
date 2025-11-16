@@ -6,8 +6,8 @@
 	outfit = /datum/outfit/disciple
 	category_tags = list(CTAG_INQUISITION)
 	jobstats = list(
-		STATKEY_STR = 3,
-		STATKEY_END = 3,
+		STATKEY_STR = 2,
+		STATKEY_END = 2,
 		STATKEY_CON = 3,
 		STATKEY_INT = -2,
 		STATKEY_SPD = -1
