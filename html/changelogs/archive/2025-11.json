@@ -591,5 +591,12 @@
                 "rscdel": "PQ does not affect rare classes roll anymore."
             }
         ]
+    },
+    "2025-11-20": {
+        "SarmentiCampbell": [
+            {
+                "rscdel": "Removed Prog Psydonite"
+            }
+        ]
     }
 }
