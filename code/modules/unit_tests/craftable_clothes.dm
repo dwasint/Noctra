@@ -67,6 +67,7 @@ abstract types are automatically excluded.
 		/obj/item/clothing/armor/plate/fluted/ornate/ordinator, //inqport
 		/obj/item/clothing/armor/plate/fluted,
 		/obj/item/clothing/cloak/templar, //base type
+		/obj/item/clothing/face/antiq, //implied to be a weird heartfelt technoitem. good luck replicating this. unique to antiquarian
 		/obj/item/clothing/wrists/bracers/naledi //Inqstuff
 
 	)

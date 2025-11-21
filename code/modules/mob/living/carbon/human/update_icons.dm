@@ -1017,6 +1017,8 @@ There are several things that need to be remembered:
 			hideboob = TRUE
 		if(cloak?.flags_inv & HIDEBOOB)
 			hideboob = TRUE
+		if(species?.no_boobs)
+			hideboob = TRUE
 		var/use_female_sprites = FALSE
 		if(species?.sexes)
 			if(gender == FEMALE && !species.swap_female_clothes)
@@ -1078,6 +1080,8 @@ There are several things that need to be remembered:
 		var/armsindex = get_limbloss_index(ARM_RIGHT, ARM_LEFT)
 		var/hideboob = FALSE
 		if(cloak?.flags_inv & HIDEBOOB)
+			hideboob = TRUE
+		if(species?.no_boobs)
 			hideboob = TRUE
 		var/use_female_sprites = FALSE
 		if(species?.sexes)

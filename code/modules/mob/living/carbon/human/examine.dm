@@ -131,7 +131,7 @@
 		if(ishuman(user))
 			var/mob/living/carbon/human/stranger = user
 			var/is_male = FALSE
-			if(gender == MALE)
+			if(pronouns != SHE_HER)
 				is_male = TRUE
 			if(family_datum == stranger.family_datum && family_datum)
 				var/family_text = ReturnRelation(user)

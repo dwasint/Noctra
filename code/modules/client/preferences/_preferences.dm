@@ -586,7 +586,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 			HTML += "<tr bgcolor='#000000'><td width='60%' align='right'>"
 			var/rank = job.title
-			var/used_name = (gender == FEMALE && job.f_title) ? job.f_title : job.title
+			var/used_name = (pronouns == SHE_HER && job.f_title) ? job.f_title : job.title
 			lastJob = job
 			if(is_role_banned(user.ckey, job.title))
 				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"

@@ -1,6 +1,6 @@
 /obj/item/clothing/cloak/eastcloak1
 	name = "cloud-cutter's cloak"
-	desc = "A brown cloak with white swirls. Some Kazengites may recognize it as an old militaristic symbol."
+	desc = "A brown cloak with white swirls. A few may recognize it as an old militaristic symbol."
 	color = null
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
 	icon_state = "eastcloak1"
@@ -119,12 +119,13 @@
 
 /obj/item/clothing/armor/basiceast/captainrobe
 	name = "foreign robes"
-	desc = "Flower-styled robes, said to have been infused with magical protection. The Merchant Guild says that this is from the southern Kazengite region."
+	desc = "Flower-styled robes."
 	icon_state = "eastsuit4"
 	item_state = "eastsuit4"
 	armor = ARMOR_LEATHER_GOOD
 	max_integrity = ARMOR_INT_CHEST_LIGHT_MASTER + 25 // Head Honcho gets a buff
 	sellprice = 25
+
 
 // this robe spawns on a role that offers no leg protection nor further upgrades to the loadout, in exchange for better roundstart gear
 
@@ -303,7 +304,7 @@
 
 /obj/item/clothing/shirt/undershirt/easttats
 	name = "bouhoi bujeog tattoos"
-	desc = "A mystic style of tattoos adopted by the Ruma Clan, emulating a practice performed by warrior monks of the Xinyi Dynasty. They are your way of identifying fellow clan members, an sign of companionship and secretive brotherhood. These are styled into the shape of clouds, created by a mystical ink which shifts and moves in ripples like a pond to harden where your skin is struck. It's movement causes you to shudder."
+	desc = "A mystic style of tattoos used to honor the kin that fell generations ago, an sign of companionship and secretive brotherhood. These are styled into the shape of clouds, created by a mystical ink which shifts and moves in ripples like a pond to harden where your skin is struck. It's movement causes you to shudder."
 	resistance_flags = FIRE_PROOF
 	icon_state = "easttats"
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
@@ -316,6 +317,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_race = RACES_PLAYER_ALL
+	surgery_cover = FALSE
 	max_integrity = 600 //Bad armor protection and very basic crit protection, but incredibly hard to break completely
 	flags_inv = null //free the breast
 	var/repair_amount = 6 //The amount of integrity the tattoos will repair themselves

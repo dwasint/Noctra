@@ -598,5 +598,64 @@
                 "rscdel": "Removed Prog Psydonite"
             }
         ]
+    },
+    "2025-11-21": {
+        "SarmentiCampbell": [
+            {
+                "balance": "Pronouns change."
+            },
+            {
+                "rscadd": "Add in Enforcer."
+            }
+        ],
+        "YellowHarlequin": [
+            {
+                "image": "Modified f/rakshari.dmi and child-rakshari.dmi"
+            },
+            {
+                "image": "removes all the humen child stuff from child-rakshari.dmi"
+            },
+            {
+                "code_imp": "female Rakshari offsets"
+            },
+            {
+                "code_imp": "removes boob overlay from female Rakshari clothes"
+            }
+        ],
+        "ediblebomb, kyres1": [
+            {
+                "rscadd": "Added muskets, they don't need to be wound unlike puffers, and can have bayonets affixed to them for use as spears."
+            },
+            {
+                "rscadd": "The Merchant can now buy a musket for a very high price."
+            },
+            {
+                "rscadd": "Grenzelhoftian Mercenaries now have a choice between a Zweihander or a Musket."
+            },
+            {
+                "image": "Musket and musket ramrod sprites by kyres1/@noodle_buster."
+            }
+        ],
+        "Gatsby229": [
+            {
+                "rscadd": "Added Profane Razor,  a new tool for assassins"
+            },
+            {
+                "rscadd": "Added lock picks to the assassins stash"
+            }
+        ],
+        "SmokingCrackForChrist": [
+            {
+                "rscadd": "New Wretch subclass, the Antiquarian - A gadgeteer thief from Heartfelt that relies on cantrips and is probably going to super-hell. Don't ask about the flies. 5 spells to go with the aforementioned Antiquarian, and a new mask to go with the Antiquarian."
+            },
+            {
+                "sound": "Added the song SALON (BETA) by T87-Suflurhead, added new sounds to go along with the new spells."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "Some jobs not reopening slots upon cryoing"
+            }
+        ]
     }
 }

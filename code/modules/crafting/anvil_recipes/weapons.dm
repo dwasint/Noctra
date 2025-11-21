@@ -14,7 +14,7 @@
 	craftdiff = 0
 ////////////////////////////////////
 
-/datum/anvil_recipe/weapons/tin/lead_bullet
+/datum/anvil_recipe/weapons/tin/lead_bullet //guys how are you making LEAD bullets out of TIN?
 	name = "4x Lead Bullets"
 	recipe_name = "a handful of lead bullets."
 	created_item = /obj/item/ammo_casing/caseless/bullet

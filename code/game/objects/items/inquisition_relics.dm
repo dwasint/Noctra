@@ -957,6 +957,16 @@
 		to_chat(user, span_danger("I [pick("garrote", "asphyxiate")] [C]!"))
 		user.changeNext_move(CLICK_CD_RESIST)	//Stops spam for choking.
 
+/obj/item/inqarticles/garrote/razor // To yische, who said not to give this out constantly, I respectfully disagree when it comes to assassin
+	name = "Profane Razor" // Its very not non lethal now.  Strangle your prey with glee
+	desc = "A thin strand of phantom black wire strung between steel grasps. The grasps are cold to the touch, even through gloves, and the strand of wire, while appearing fragile, is seemingly unbreakable"
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "garrote"
+	item_state = "garrote"
+	resistance_flags = INDESTRUCTIBLE
+	choke_damage = 20
+	sellprice = 100
+
 /obj/item/clothing/head/inqarticles/blackbag
 	name = "black bag"
 	desc = "A heavily spell-weaved padded sack intended to muffle the cries made within it. Due to the heaviness of the materials involved, application and removal of these is usually difficult for the untrained."

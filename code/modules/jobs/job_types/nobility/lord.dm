@@ -54,12 +54,14 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	SSticker.rulermob = spawned
 	var/mob/living/carbon/human/H = spawned
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, lord_color_choice)), 7 SECONDS)
-	if(spawned.gender == MALE)
-		SSfamilytree.AddRoyal(H, FAMILY_FATHER)
+	if(spawned.pronouns != SHE_HER)
 		ruler_title = "[SSmapping.config.monarch_title]"
 	else
-		SSfamilytree.AddRoyal(H, FAMILY_MOTHER)
 		ruler_title = "[SSmapping.config.monarch_title_f]"
+	if(spawned.gender == MALE)
+		SSfamilytree.AddRoyal(H, FAMILY_FATHER)
+	else
+		SSfamilytree.AddRoyal(H, FAMILY_MOTHER)
 	to_chat(world, "<b>[span_notice(span_big("[H.real_name] is [ruler_title] of [SSmapping.config.map_name]."))]</b>")
 	to_chat(world, "<br>")
 	if(GLOB.keep_doors.len > 0)
