@@ -623,7 +623,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	created_item = /obj/item/weapon/sword/kaskara
 
-/datum/anvil_recipe/weapons/steel/
+/datum/anvil_recipe/weapons/steel/kukri
 	name = "Steel Kukri"
 	recipe_name = "a Steel Kukri"
 	appro_skill = /datum/skill/craft/weaponsmithing
