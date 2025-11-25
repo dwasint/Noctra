@@ -81,6 +81,9 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 
+	//verbs
+	H.verbs |= /mob/proc/haltyell
+
 /datum/outfit/lieutenant/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.cloak)

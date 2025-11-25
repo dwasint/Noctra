@@ -748,5 +748,48 @@
                 "qol": "Removed the timelock from the tomb of Matthios"
             }
         ]
+    },
+    "2025-11-25": {
+        "KevinfromHP": [
+            {
+                "bugfix": "Admin Communal Triumph Disabling"
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "needing to click on extremist to see the lore primer stuff"
+            },
+            {
+                "bugfix": "The Citywatchmen Lieutenant got their Halt verb"
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "map": "Daftmarsh re-enabled."
+            },
+            {
+                "map": "Daftmarsh inquisiton updated."
+            },
+            {
+                "map": "Daftmarsh has merchant landmarks."
+            },
+            {
+                "map": "Daftmarsh has clinic apprentices (2)."
+            },
+            {
+                "map": "Daftmarsh has a meat hook in a new basement room."
+            },
+            {
+                "bugfix": "Vanderlin areas."
+            },
+            {
+                "rscadd": "Inquisition imports spawn from the hermes they are bought at. (yes the pope/whatever shoved a crate in there)"
+            }
+        ],
+        "SmokingCrackForChrist": [
+            {
+                "rscdel": "Removes Forest Brawler by blasting him into the sun forever this time. He returned to his home planet. Fuck off."
+            }
+        ]
     }
 }

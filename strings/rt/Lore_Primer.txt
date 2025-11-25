@@ -253,7 +253,8 @@ While it's not required reading, leadership roles may find this information usef
 		<summary><strong> Extremist Psydonism </strong></summary>
 		<br>
 		A small splinter of Orthodox Psydonism, believing the nine pieces are lies and propaganda, and that Psydon lives still.
-	<details>
+		<br><br>
+	</details>
 
 	<hr>
 	<strong><span style="font-size:115%"> THE DIVINE PANTHEON </span></strong>
