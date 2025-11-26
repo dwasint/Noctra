@@ -182,11 +182,6 @@
 
 	amt -= amt * con_modifier * CONSTITUTION_BLEEDRATE_MOD
 
-	if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
-		amt /= 2
-	if(HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS))
-		amt *= 2
-
 	blood_volume = max(blood_volume - amt, 0)
 
 	if(client)

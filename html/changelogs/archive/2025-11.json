@@ -791,5 +791,22 @@
                 "rscdel": "Removes Forest Brawler by blasting him into the sun forever this time. He returned to his home planet. Fuck off."
             }
         ]
+    },
+    "2025-11-26": {
+        "wgtjunior743": [
+            {
+                "admin": "Admin Player Panel search based on the players parent job if they have one."
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "balance": "Removed bleed mod from crit weakness/resistance"
+            }
+        ],
+        "KevinfromHP": [
+            {
+                "bugfix": "Re-added the ability for deadites to see Zizoites (Of the Cabal)."
+            }
+        ]
     }
 }
