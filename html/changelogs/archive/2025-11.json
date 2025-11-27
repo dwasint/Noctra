@@ -808,5 +808,12 @@
                 "bugfix": "Re-added the ability for deadites to see Zizoites (Of the Cabal)."
             }
         ]
+    },
+    "2025-11-27": {
+        "Draggeru": [
+            {
+                "map": "Unfuck Rosewood so it works"
+            }
+        ]
     }
 }
