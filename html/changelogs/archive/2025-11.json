@@ -815,5 +815,27 @@
                 "map": "Unfuck Rosewood so it works"
             }
         ]
+    },
+    "2025-11-29": {
+        "wgtjunior743": [
+            {
+                "rscadd": "Makes the description of stress events visible for both positive and negative."
+            }
+        ],
+        "snowyseshi": [
+            {
+                "balance": "Steelhearted added to dungeoneer"
+            }
+        ],
+        "Somniworld": [
+            {
+                "rscadd": "The adept's silver mask may now have it's little prongs retracted via right click."
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "bugfix": "Remove case sensitivity from the call"
+            }
+        ]
     }
 }
