@@ -30,6 +30,8 @@
 		TRAIT_INQUISITION,
 		TRAIT_PSYDONIAN_GRIT,
 		TRAIT_PSYDONITE,
+		TRAIT_FOREIGNER,
+		TRAIT_RECOGNIZED,
 	)
 
 /datum/job/advclass/puritan/ordinator/after_spawn(mob/living/carbon/human/spawned, client/player_client)
