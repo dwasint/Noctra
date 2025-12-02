@@ -1,0 +1,20 @@
+{
+    "2025-12-02": {
+        "SarmentiCampbell": [
+            {
+                "rscadd": "Added a new special trait related to baotha"
+            },
+            {
+                "qol": "Admins now know if someone got gibbed due to being given a admin-only patron"
+            },
+            {
+                "code_imp": "un-hardcode maniac's theme song and turn it into a component"
+            }
+        ],
+        "Somniworld": [
+            {
+                "rscadd": "Gives Noccites, Abyssor, the town elder and the veteran new cmode themes."
+            }
+        ]
+    }
+}

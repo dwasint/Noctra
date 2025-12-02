@@ -940,6 +940,7 @@
 #include "code\datums\components\tactical.dm"
 #include "code\datums\components\temporary_pollutor.dm"
 #include "code\datums\components\tether.dm"
+#include "code\datums\components\theme_song.dm"
 #include "code\datums\components\tippable.dm"
 #include "code\datums\components\twohanded.dm"
 #include "code\datums\components\udder.dm"
