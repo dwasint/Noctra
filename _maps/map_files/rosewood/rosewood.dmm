@@ -564,8 +564,31 @@
 /turf/open/floor/carpet,
 /area/indoors/town/tavern)
 "aoE" = (
-/obj/structure/table/wood/plain_alt,
-/obj/item/key/manor,
+/obj/structure/rack/shelf/big,
+/obj/item/key/guest{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/key/guest{
+	pixel_x = -4;
+	pixel_y = 7
+	},
+/obj/item/key/guest{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/servant_bell{
+	pixel_x = 8;
+	pixel_y = 9
+	},
+/obj/item/servant_bell{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/item/servant_bell{
+	pixel_x = 5;
+	pixel_y = 12
+	},
 /turf/open/floor/cobble,
 /area/under/town/basement)
 "aoJ" = (
@@ -1177,6 +1200,7 @@
 "aBE" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/storage/belt/pouch/coins/mid,
+/obj/item/servant_bell/lord,
 /turf/open/floor/carpet/royalblack,
 /area/indoors/town/manor)
 "aBK" = (
@@ -3160,6 +3184,7 @@
 	pixel_y = 6
 	},
 /obj/item/storage/belt/pouch/coins/poor,
+/obj/item/servant_bell/lord,
 /turf/open/floor/carpet/red,
 /area/indoors/town/manor)
 "bCY" = (
@@ -5433,6 +5458,7 @@
 /area/under/town/sewer)
 "cHh" = (
 /obj/structure/table/wood/fancy/purple,
+/obj/item/servant_bell,
 /turf/open/floor/carpet/purple,
 /area/indoors/town)
 "cHn" = (
@@ -6710,6 +6736,14 @@
 /obj/structure/bed/sleepingbag,
 /turf/open/floor/cobble/alt,
 /area/indoors/town/cell)
+"dmO" = (
+/obj/structure/door/violet{
+	name = "Head Servant's Quarters"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/atarms,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/cobble,
+/area/under/town/basement)
 "dnf" = (
 /obj/structure/soil,
 /obj/machinery/light/fueled/torchholder/l,
@@ -11426,10 +11460,19 @@
 /turf/open/floor/cobblerock,
 /area/under/town/basement)
 "fKm" = (
-/obj/structure/bed/inn,
-/obj/effect/landmark/start/butler,
-/obj/item/bedsheet/cloth,
-/turf/open/floor/blocks,
+/obj/structure/closet/crate/crafted_closet,
+/obj/item/clothing/cloak/apron/maid,
+/obj/item/clothing/cloak/apron/maid,
+/obj/item/clothing/head/maidband,
+/obj/item/clothing/head/maidband,
+/obj/item/clothing/shirt/dress/maid/servant,
+/obj/item/clothing/shirt/dress/maid/servant,
+/obj/item/storage/belt/leather/cloth_belt,
+/obj/item/storage/belt/leather/cloth_belt,
+/obj/item/clothing/shoes/simpleshoes,
+/obj/item/clothing/shoes/simpleshoes,
+/obj/structure/rack/shelf/biggest,
+/turf/open/floor/wood,
 /area/under/town/basement)
 "fKv" = (
 /obj/structure/fluff/statue/gargoyle/moss,
@@ -16102,11 +16145,6 @@
 	},
 /turf/open/floor/ruinedwood/darker,
 /area/indoors/town/church)
-"iao" = (
-/obj/structure/table/wood/plain_alt,
-/obj/item/key/manor,
-/turf/open/floor/blocks,
-/area/under/town/basement)
 "iaL" = (
 /obj/structure/stairs{
 	dir = 4
@@ -24655,6 +24693,10 @@
 /area/outdoors/town/roofs)
 "mtI" = (
 /obj/structure/table/wood/crafted,
+/obj/item/servant_bell/lord{
+	pixel_x = 10;
+	pixel_y = 16
+	},
 /turf/open/floor/churchmarble,
 /area/indoors/town/manor)
 "mtU" = (
@@ -24707,7 +24749,8 @@
 /obj/structure/door/fancy{
 	name = "Guest Room"
 	},
-/obj/effect/mapping_helpers/access/keyset/manor/general,
+/obj/effect/mapping_helpers/access/keyset/manor/guest,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood,
 /area/indoors/town/manor)
 "mvi" = (
@@ -26059,8 +26102,11 @@
 /turf/open/floor/ruinedwood/spiral,
 /area/indoors/town)
 "ncQ" = (
-/obj/structure/closet/crate/crafted_closet,
-/obj/item/book/manners,
+/obj/structure/closet/crate/crafted_closet/atarms,
+/obj/item/key/manor,
+/obj/item/key/manor,
+/obj/item/key/manor,
+/obj/item/key/manor,
 /turf/open/floor/cobble,
 /area/under/town/basement)
 "ncX" = (
@@ -26654,8 +26700,12 @@
 /turf/closed/wall/mineral/wood,
 /area/indoors/ship)
 "nuu" = (
-/obj/structure/door/weak/bolt,
-/turf/open/floor/blocks,
+/obj/structure/door/violet{
+	name = "Storage Room"
+	},
+/obj/effect/mapping_helpers/access/keyset/manor/atarms,
+/obj/effect/mapping_helpers/access/locker,
+/turf/open/floor/cobble,
 /area/under/town/basement)
 "nuz" = (
 /obj/structure/bars/pipe{
@@ -39864,6 +39914,7 @@
 /area/indoors/town/orphanage)
 "tPJ" = (
 /obj/structure/closet/crate/drawer,
+/obj/item/servant_bell/lord,
 /turf/open/floor/carpet/red,
 /area/indoors/town/manor)
 "tPN" = (
@@ -41234,6 +41285,7 @@
 	dir = 5
 	},
 /obj/structure/carpet/blue,
+/obj/item/servant_bell,
 /turf/open/floor/ruinedwood/turned/darker,
 /area/indoors/town)
 "uDZ" = (
@@ -43011,6 +43063,14 @@
 "vso" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /obj/structure/table/stone_small,
+/obj/item/servant_bell/lord{
+	pixel_x = 8;
+	pixel_y = 7
+	},
+/obj/item/servant_bell/lord{
+	pixel_x = -1;
+	pixel_y = 10
+	},
 /turf/open/floor/herringbone,
 /area/indoors/town/manor)
 "vsv" = (
@@ -43779,6 +43839,18 @@
 	},
 /turf/open/floor/ruinedwood/chevron,
 /area/indoors/town/orphanage)
+"vOH" = (
+/obj/structure/closet/crate/crafted_closet,
+/obj/item/clothing/shoes/boots,
+/obj/item/clothing/shoes/boots,
+/obj/item/clothing/pants/trou/formal/shorts,
+/obj/item/clothing/pants/trou/formal/shorts,
+/obj/item/storage/belt/leather/suspenders,
+/obj/item/storage/belt/leather/suspenders,
+/obj/item/clothing/shirt/undershirt/formal,
+/obj/item/clothing/shirt/undershirt/formal,
+/turf/open/floor/wood,
+/area/under/town/basement)
 "vOP" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/naturalstone,
@@ -45367,6 +45439,10 @@
 /obj/item/reagent_containers/glass/cup/golden{
 	pixel_x = -4;
 	pixel_y = 7
+	},
+/obj/item/servant_bell/lord{
+	pixel_x = 8;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/red,
 /area/indoors/town/manor)
@@ -60112,9 +60188,9 @@ rOB
 aCI
 sJZ
 dkb
-iao
+cuD
 aZj
-eEa
+dmO
 pvP
 pvP
 dkb
@@ -60320,7 +60396,7 @@ dkb
 pvP
 pvP
 nuu
-aZj
+jyq
 qAW
 dkb
 qJl
@@ -60510,7 +60586,7 @@ qJl
 qJl
 qJl
 dkb
-iao
+cuD
 aZj
 jyq
 jyq
@@ -60522,7 +60598,7 @@ dkb
 mQf
 pvP
 dkb
-jyq
+vOH
 fKm
 dkb
 qJl

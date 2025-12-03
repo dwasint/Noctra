@@ -16,5 +16,70 @@
                 "rscadd": "Gives Noccites, Abyssor, the town elder and the veteran new cmode themes."
             }
         ]
+    },
+    "2025-12-03": {
+        "wgtjunior743": [
+            {
+                "bugfix": "Inquisition shop not working"
+            }
+        ],
+        "SmokingCrackForChrist": [
+            {
+                "balance": "Beggars now roll Alchemy skill."
+            }
+        ],
+        "KevinfromHP": [
+            {
+                "bugfix": "Fixed children rendering adult sleeves, resulting in hunchbacks. Fixed male dwarves having belts at their feet."
+            },
+            {
+                "rscdel": "Removed Steward from Halfling Jobs"
+            },
+            {
+                "rscadd": "New Servant/Butler Outifts"
+            },
+            {
+                "rscadd": "Servant Bell"
+            },
+            {
+                "rscadd": "Galadros Kobold Patron"
+            }
+        ],
+        "lmenvs": [
+            {
+                "bugfix": "Sacrestants can no longer roll antag"
+            },
+            {
+                "bugfix": "Players who roll antag can no longer pick the Assassin subclass when signing up as Pilgrim."
+            }
+        ],
+        "CheffieGithub": [
+            {
+                "rscadd": "Unknowns are idenified by voice type and body type instead of pronouns."
+            }
+        ],
+        "snowyseshi": [
+            {
+                "bugfix": "vampires don't instantly kill someone if they suck when victim runs out of vitae."
+            }
+        ],
+        "Snack-Max": [
+            {
+                "rscadd": "Flameberges and Claymores now craftable at the smith"
+            },
+            {
+                "rscadd": "New Coppergate helmet with a decorative varient. Can be forged too"
+            }
+        ],
+        "YellowHarlequin": [
+            {
+                "spellcheck": "Changed \\\"ass\\\" to \\\"ass \\\" to override \\\"donkeyume\\\""
+            }
+        ],
+        "TheMrGlasses": [
+            {
+                "rscadd": "Added new spell and changed a inquisitor buy for it."
+            }
+        ]
     }
 }

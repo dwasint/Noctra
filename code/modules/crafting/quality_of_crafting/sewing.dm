@@ -547,6 +547,46 @@
 	craftdiff = 3
 	category = "Armor"
 
+/datum/repeatable_crafting_recipe/sewing/maidband
+	name = "maid headband"
+	output = /obj/item/clothing/head/maidband
+	requirements = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 3
+	category = "Hat"
+
+/datum/repeatable_crafting_recipe/sewing/servantdress
+	name = "servant dress"
+	output = /obj/item/clothing/shirt/dress/maid/servant
+	requirements = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 3
+	category = "Dress"
+
+/datum/repeatable_crafting_recipe/sewing/maidapron
+	name = "maid apron"
+	output = /obj/item/clothing/cloak/apron/maid
+	requirements = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+	category = "Cloak"
+
+/datum/repeatable_crafting_recipe/sewing/formalshirt
+	name = "formal shirt"
+	output = /obj/item/clothing/shirt/undershirt/formal
+	requirements = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 3
+	category = "Shirt"
+
+/datum/repeatable_crafting_recipe/sewing/trousershorts
+	name = "trouser shorts"
+	output = /obj/item/clothing/pants/trou/formal/shorts
+	requirements = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 3
+	category = "Pants"
+
 /datum/repeatable_crafting_recipe/sewing/wizhat
 	name = "wizard hat"
 	output = /obj/item/clothing/head/wizhat
@@ -640,6 +680,7 @@
 	requirements = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
+	category = "Cloak"
 
 /datum/repeatable_crafting_recipe/sewing/apron_cook
 	name = "cook apron"
@@ -647,6 +688,7 @@
 	requirements = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
+	category = "Cloak"
 
 /datum/repeatable_crafting_recipe/sewing/fisher_hat
 	name = "fisher hat"
@@ -861,8 +903,6 @@
 	craftdiff = 3
 	category = "Cloak"
 
-
-
 /datum/repeatable_crafting_recipe/sewing/dendortemplar
 	name = "dendorian surcoat"
 	output = /obj/item/clothing/cloak/stabard/templar/dendor
@@ -984,6 +1024,15 @@
 	craftdiff = 3
 	category = "Dress"
 
+/datum/repeatable_crafting_recipe/sewing/cloth_belt
+	name = "cloth belt"
+	output = /obj/item/storage/belt/leather/cloth_belt
+	requirements = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
+	category = "Belt"
+
+
 /* .............. recipes requiring skill 4 ..............*/
 
 /datum/repeatable_crafting_recipe/sewing/camisole
@@ -994,6 +1043,30 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
 	category = "Dress"
+
+/datum/repeatable_crafting_recipe/sewing/maiddress
+	name = "maid dress"
+	output = /obj/item/clothing/shirt/dress/maid
+	requirements = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 4
+	category = "Dress"
+
+/datum/repeatable_crafting_recipe/sewing/tailcoat
+	name =  "tailcoat"
+	output = /obj/item/clothing/armor/leather/jacket/tailcoat
+	requirements = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 4
+	category = "Armor"
+
+/datum/repeatable_crafting_recipe/sewing/formaltrousers
+	name = "formal trousers"
+	output = /obj/item/clothing/pants/trou/formal
+	requirements = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 4
+	category = "Pants"
 
 /datum/repeatable_crafting_recipe/sewing/fancyhat
 	name = "fancy hat"

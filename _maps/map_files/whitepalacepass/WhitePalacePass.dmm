@@ -1154,6 +1154,7 @@
 "ban" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/clothing/face/cigarette/pipe/westman,
+/obj/item/servant_bell/lord,
 /turf/open/floor/carpet/red,
 /area/indoors/town/manor)
 "baZ" = (
@@ -3381,6 +3382,10 @@
 	},
 /obj/item/alch/herb/rosa{
 	pixel_x = 6
+	},
+/obj/item/servant_bell/lord{
+	pixel_x = 4;
+	pixel_y = 15
 	},
 /turf/open/floor/ruinedwood/chevron,
 /area/indoors/town/manor)
@@ -10652,6 +10657,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/cobblerock,
 /area/under/tomb/indoors/church)
+"kgf" = (
+/obj/structure/closet/crate/crafted_closet/inn,
+/obj/item/servant_bell,
+/obj/item/servant_bell,
+/obj/item/servant_bell,
+/obj/item/servant_bell,
+/turf/open/floor/ruinedwood/turned,
+/area/under/town/basement)
 "kgq" = (
 /obj/effect/decal/carpet,
 /turf/open/floor/ruinedwood/spiralfade,
@@ -15392,6 +15405,7 @@
 /area/indoors/town)
 "otw" = (
 /obj/structure/closet/crate/crafted_closet/inn,
+/obj/item/servant_bell/lord,
 /turf/open/floor/ruinedwood/spiral,
 /area/under/town/basement)
 "otH" = (
@@ -16095,6 +16109,7 @@
 /area/under/town/basement)
 "pax" = (
 /obj/structure/closet/crate/crafted_closet/inn,
+/obj/item/servant_bell/lord,
 /turf/open/floor/ruinedwood/chevron,
 /area/under/town/basement)
 "pbj" = (
@@ -17421,6 +17436,7 @@
 "qiO" = (
 /obj/structure/closet/crate/drawer,
 /obj/machinery/light/fueled/wallfire/candle,
+/obj/item/servant_bell/lord,
 /turf/open/floor/ruinedwood/spiral,
 /area/indoors/town/manor)
 "qjq" = (
@@ -20412,6 +20428,7 @@
 /obj/item/book/bibble,
 /obj/item/book/law,
 /obj/item/key/lord,
+/obj/item/servant_bell/lord,
 /turf/open/floor/carpet/royalblack,
 /area/indoors/town/manor)
 "thj" = (
@@ -22031,6 +22048,7 @@
 /area/indoors/town/clocktower)
 "uHa" = (
 /obj/structure/closet/crate/drawer,
+/obj/item/servant_bell/lord,
 /turf/open/floor/ruinedwood/spiral,
 /area/indoors/town/manor)
 "uHn" = (
@@ -125520,7 +125538,7 @@ sDf
 dRO
 iqp
 mos
-aRq
+kgf
 trh
 xSJ
 xQF
