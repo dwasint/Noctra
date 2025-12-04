@@ -79,7 +79,7 @@
 					continue
 				viable_players += client.mob
 
-			lightning_destination = pick(viable_players)
+			lightning_destination = DEFAULTPICK(viable_players, null)
 
 		if(lightning_destination)
 			var/list/turfs = list()
