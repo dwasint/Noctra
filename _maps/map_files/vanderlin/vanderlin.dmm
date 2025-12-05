@@ -2614,6 +2614,10 @@
 "buV" = (
 /turf/open/floor/carpet/lord/center,
 /area/indoors/town/manor/halls/s)
+"bvw" = (
+/obj/structure/dryclothes,
+/turf/open/floor/dirt/road,
+/area/outdoors/town)
 "bvT" = (
 /turf/closed/wall/mineral/craftstone,
 /area/indoors/town/manor/dungeoneer)
@@ -30770,6 +30774,10 @@
 /obj/machinery/light/fueled/wallfire/candle/blue/l,
 /turf/open/floor/greenstone,
 /area/indoors/town/magician)
+"qoH" = (
+/obj/structure/dryclothes,
+/turf/open/floor/grass,
+/area/outdoors/town)
 "qoQ" = (
 /obj/effect/landmark/start/courtagent,
 /obj/machinery/light/fueled/wallfire/big_fireplace{
@@ -32512,11 +32520,11 @@
 /obj/structure/fluff/railing/border{
 	dir = 10
 	},
-/obj/item/plate/tray{
+/obj/item/tray{
 	pixel_y = 5
 	},
-/obj/item/plate/tray,
-/obj/item/plate/tray{
+/obj/item/tray,
+/obj/item/tray{
 	pixel_y = -6
 	},
 /obj/structure/rack/shelf/biggest,
@@ -36955,6 +36963,9 @@
 "tux" = (
 /obj/structure/fermentation_keg,
 /turf/open/floor/ruinedwood/alt,
+/area/outdoors/town)
+"tuO" = (
+/turf/open/water/cleanshallow,
 /area/outdoors/town)
 "tuV" = (
 /obj/structure/fluff/railing/border{
@@ -43763,6 +43774,10 @@
 	dir = 8
 	},
 /area/under/cavewet)
+"wSc" = (
+/obj/structure/dryclothes,
+/turf/open/floor/dirt,
+/area/outdoors/town)
 "wSt" = (
 /obj/structure/table/wood{
 	dir = 9;
@@ -103545,7 +103560,7 @@ ifM
 ace
 ace
 xSU
-mLC
+qoH
 izl
 izl
 izl
@@ -103948,7 +103963,7 @@ vQr
 ace
 kGY
 xSU
-ace
+tuO
 mLC
 elz
 izl
@@ -104351,7 +104366,7 @@ ace
 eri
 ace
 ace
-ecR
+wSc
 hML
 izl
 izl
@@ -104955,7 +104970,7 @@ kbK
 rdl
 rdl
 udo
-izl
+bvw
 izl
 izl
 izl

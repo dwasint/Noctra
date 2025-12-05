@@ -88,5 +88,12 @@
                 "bugfix": "possible fire nuke fix"
             }
         ]
+    },
+    "2025-12-05": {
+        "PineappleMan929": [
+            {
+                "rscdel": "Kills legendary pilgrims"
+            }
+        ]
     }
 }
