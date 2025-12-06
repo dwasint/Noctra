@@ -95,5 +95,12 @@
                 "rscdel": "Kills legendary pilgrims"
             }
         ]
+    },
+    "2025-12-06": {
+        "Bloo4420": [
+            {
+                "rscadd": "Proper outdoor cell area subtype"
+            }
+        ]
     }
 }
