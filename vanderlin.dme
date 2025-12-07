@@ -3168,6 +3168,7 @@
 #include "code\modules\mob\living\carbon\human\voicepacks\male\evil.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\jester.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\knight.dm"
+#include "code\modules\mob\living\carbon\human\voicepacks\male\kobold.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\medicator.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\serious.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\squire.dm"
