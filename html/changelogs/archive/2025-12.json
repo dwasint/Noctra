@@ -120,5 +120,17 @@
                 "bugfix": "Adds Halfspeak to tongue.dm"
             }
         ]
+    },
+    "2025-12-08": {
+        "snowyseshi": [
+            {
+                "balance": "Artery bleedrate increased, CON affects bloodloss less."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "Ascending as vamp lord not giving 2 of each stats to your direct subordinates"
+            }
+        ]
     }
 }
