@@ -398,6 +398,7 @@
 
 /datum/special_trait/gourmand/on_apply(mob/living/carbon/human/character, silent)
 	ADD_TRAIT(character, TRAIT_NASTY_EATER, "[type]")
+	ADD_TRAIT(character, TRAIT_ROT_EATER, "[type]")
 
 /datum/special_trait/lucky
 	name = "Fortune's Grace"
