@@ -162,5 +162,38 @@
                 "bugfix": "Message bottles work again and initialize with the proper icon."
             }
         ]
+    },
+    "2025-12-11": {
+        "KevinfromHP": [
+            {
+                "bugfix": "Child Cloaks"
+            },
+            {
+                "qol": "Language prefixes will now work in uppercase."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "Ordinator Broadsword + Shield weapon archetype spawns with their bag and keys"
+            }
+        ],
+        "Syndro101": [
+            {
+                "map": "heavily modified Vanderlin's Keep dungeon, minor ground floor changes. Minor Changes to the coastal manor."
+            },
+            {
+                "bugfix": "fixes the meat in the coastal manor kitchen into the proper subtype, meat/steak"
+            }
+        ],
+        "Gigigger": [
+            {
+                "bugfix": "fixed death and dark affinities. now both of them giving right attunements"
+            }
+        ],
+        "TerraGS": [
+            {
+                "bugfix": "Butchering now only drops the head when finished rather than each time you stop."
+            }
+        ]
     }
 }

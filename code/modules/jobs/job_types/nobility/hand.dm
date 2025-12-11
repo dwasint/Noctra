@@ -43,8 +43,15 @@
 
 	if(GLOB.keep_doors.len > 0)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(know_keep_door_password), H), 5 SECONDS)
+	// i know this sucks, but due to how job loading is, we can't just get the agents to load before the hand without some reworks
+	if(SSticker.current_state < GAME_STATE_PLAYING)
+		SSticker.OnRoundstart(CALLBACK(src, PROC_REF(agent_callback), H))
+	else
+		agent_callback(H)
 	ADD_TRAIT(H, TRAIT_KNOWKEEPPLANS, TRAIT_GENERIC)
-	addtimer(CALLBACK(src, PROC_REF(know_agents), H), 5 SECONDS)
+
+/datum/job/hand/proc/agent_callback(mob/living/carbon/human/H)
+	addtimer(CALLBACK(src, PROC_REF(know_agents), H), 6 SECONDS)
 
 /datum/job/hand/proc/know_agents(mob/living/carbon/human/H)
 	if(!GLOB.roundstart_court_agents.len)
@@ -53,7 +60,7 @@
 		to_chat(H, span_notice("We began the week with these agents:"))
 		for(var/name in GLOB.roundstart_court_agents)
 			to_chat(H, span_notice(name))
-		H.mind.cached_frumentarii |= GLOB.roundstart_court_agents
+			H.mind.cached_frumentarii[name] = TRUE
 
 /datum/job/advclass/hand
 	exp_types_granted  = list(EXP_TYPE_NOBLE)

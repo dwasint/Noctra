@@ -204,7 +204,10 @@
 
 		var/list/known_frumentarii = user.mind?.cached_frumentarii
 		if(name in known_frumentarii)
-			. += span_greentext("<b>[m1] an agent of the court!</b>")
+			if(known_frumentarii[name])
+				. += span_greentext("<b>[m1] an agent of the court!</b>")
+			else
+				. += span_redtext("[m1] an ex-agent of the court.")
 
 		if(user != src)
 			if(HAS_TRAIT(src, TRAIT_OLDPARTY) && HAS_TRAIT(user, TRAIT_OLDPARTY))
