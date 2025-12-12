@@ -195,5 +195,59 @@
                 "bugfix": "Butchering now only drops the head when finished rather than each time you stop."
             }
         ]
+    },
+    "2025-12-12": {
+        "Somniworld": [
+            {
+                "rscadd": "Shophand, Wizard/Clinicapprentices, Squires and Archivists now have combat mode music"
+            },
+            {
+                "rscadd": "Artificiers and Iron maiden now use the combat mode theme of Heartfelt"
+            },
+            {
+                "refactor": "refactored the court mage's job file to be more inline with our coding guidelines."
+            }
+        ],
+        "snowyseshi": [
+            {
+                "rscadd": "Death knight new armor and stat tweaks"
+            },
+            {
+                "image": "ancient sprites moved into other DMI files"
+            }
+        ],
+        "TerraGS": [
+            {
+                "bugfix": "GOLDFACE and PURITY are now more consistent with price checks"
+            }
+        ],
+        "Snack-Max": [
+            {
+                "rscadd": "Ported hair from Monke main."
+            }
+        ],
+        "KevinfromHP": [
+            {
+                "bugfix": "Changes to how the Hand's List works, Fixes for Hand not recognizing their agents."
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "Dirty water can extinguish mobs as it should"
+            },
+            {
+                "rscadd": "Throwing water from a bucket or other containers on a piece of clothing can make it wet"
+            }
+        ],
+        "lmenvs": [
+            {
+                "qol": "Subscribers to the server Host, TheDukeofOOK, on Twitch now receive donator perks!"
+            }
+        ],
+        "PineappleMan929": [
+            {
+                "rscadd": "Canes!"
+            }
+        ]
     }
 }
