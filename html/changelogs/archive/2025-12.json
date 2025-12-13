@@ -249,5 +249,28 @@
                 "rscadd": "Canes!"
             }
         ]
+    },
+    "2025-12-13": {
+        "DrSirKnight": [
+            {
+                "bugfix": "Lore primer tabs show properly again"
+            }
+        ],
+        "Draggeru": [
+            {
+                "map": "Various Rosewood map fixes"
+            }
+        ],
+        "wgtjunior743": [
+            {
+                "bugfix": "Custom Waves with one or more job only saving the first job of the outfit for all of them"
+            },
+            {
+                "bugfix": "Custom outfits being repeating and appearing more than once when selecting an outfit for a job"
+            },
+            {
+                "bugfix": "Jobs that were imported not transfering the language properly to chars."
+            }
+        ]
     }
 }
