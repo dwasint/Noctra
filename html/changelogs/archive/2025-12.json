@@ -321,5 +321,12 @@
                 "bugfix": "a getting up bug"
             }
         ]
+    },
+    "2025-12-19": {
+        "KevinfromHP": [
+            {
+                "bugfix": "Player book library tweaks"
+            }
+        ]
     }
 }
