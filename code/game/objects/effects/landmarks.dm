@@ -139,6 +139,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "City Watchmen"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/lieutenant
+	name = "City Watch Lieutenant"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/manorguardsman
 	name = "Royal Knight"
 	icon_state = "arrow"
@@ -174,7 +178,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/villager
 	name = "Towner"
 	icon_state = "arrow"
-	jobspawn_override = list("Fisher","Noble","Hunter","Lumberjack","Miner","Bard","Carpenter","Cheesemaker")
+	jobspawn_override = list("Hunter","Lumberjack","Miner","Bard","Carpenter","Cheesemaker")
 
 /obj/effect/landmark/start/cheesemaker
 	name = "Cheesemaker"
@@ -197,7 +201,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Inquisitor"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/shepherd
+/obj/effect/landmark/start/orthodoxist
+	name = "Orthodoxist"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/absolver
+	name = "Absolver"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/adept
 	name = "Adept"
 	icon_state = "arrow"
 
@@ -392,6 +404,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/innkeep_son
 	name = "Innkeepers Son"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/clinicapprentice
+	name = "Clinic Apprentice"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/evilskeleton	// Trying to make EVIL SKELTON actually spawn

@@ -14,6 +14,7 @@
 #define SPEC_ID_HARPY "harpy"
 #define SPEC_ID_TRITON "triton"
 #define SPEC_ID_MEDICATOR "medicator"
+#define SPEC_ID_HALFLING "halfling"
 
 #define SPEC_ID_ORC	"orc"
 #define SPEC_ID_GOBLIN	"goblin"
@@ -42,6 +43,7 @@
 	SPEC_ID_ROUSMAN,\
 	SPEC_ID_ZIZOMBIE,\
 	SPEC_ID_HUMAN_SPACE,\
+	SPEC_ID_HALFLING,\
 )
 
 /// Species where females get underwear, no underwear for kobold, rakshari, medicator and triton, dwarves handled seperately
@@ -84,6 +86,7 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
 	SPEC_ID_DROW,\
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
@@ -103,7 +106,11 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+<<<<<<< HEAD
 	SPEC_ID_HOLLOWKIN, \
+=======
+	SPEC_ID_HALFLING,\
+>>>>>>> vanderlin/main
 )
 
 /// Species who are nonheretical to the church. Excluded species typically have an inhumen god associated, like Zizo. Used for church/faith roles.
@@ -113,6 +120,7 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
 	SPEC_ID_HARPY,\
 	SPEC_ID_TRITON,\
 	SPEC_ID_MEDICATOR,\
@@ -126,6 +134,7 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
 	SPEC_ID_DROW,\
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
@@ -142,6 +151,9 @@
 	SPEC_ID_HOLLOWKIN,\
 	SPEC_ID_RAKSHARI,\
 	SPEC_ID_HUMAN_SPACE,\
+	SPEC_ID_ROUSMAN,\
+	SPEC_ID_GOBLIN,\
+	SPEC_ID_ORC,\
 )
 
 /// Species who are affiliated with Grenzelhoft or Psydon specifically.
@@ -180,12 +192,6 @@
 	SPEC_ID_HALF_DROW,\
 )
 
-/// Patreon only species.
-#define RACES_PLAYER_PATREON list(\
-	SPEC_ID_KOBOLD,\
-	SPEC_ID_HOLLOWKIN,\
-)
-
 /// Guard Species - No Orcs or Dark Elf
 #define RACES_PLAYER_GUARD list(\
 	SPEC_ID_HUMEN,\
@@ -193,6 +199,7 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_TIEFLING,\
 	SPEC_ID_HARPY,\
@@ -209,13 +216,32 @@
 	SPEC_ID_DWARF,\
 )
 
-#define RACES_PLAYER_COURT_PHYSICIAN list(\
+/// The butler
+
+#define RACES_BUTLER list(\
 	SPEC_ID_HUMEN,\
-	SPEC_ID_DWARF,\
-	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_DROW,\
+	SPEC_ID_HALF_DROW,\
+	SPEC_ID_TIEFLING,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_HARPY,\
 	SPEC_ID_MEDICATOR,\
+	SPEC_ID_TRITON,\
+)
+
+/// The tennite temple's paladins - Hallowed species excluding Harpies due to their inability to wear plate
+#define RACES_TEMPLAR list(\
+	SPEC_ID_HUMEN,\
+	SPEC_ID_ELF,\
+	SPEC_ID_HALF_ELF,\
+	SPEC_ID_DWARF,\
+	SPEC_ID_AASIMAR,\
+	SPEC_ID_MEDICATOR,\
+	SPEC_ID_TRITON,\
 )
 
 /// Foreigner Nobility Species - No Tiefling (you know why) or hollow-kin or medicators (too young to have nobles mayhaps)
@@ -225,6 +251,7 @@
 	SPEC_ID_AASIMAR,\
 	SPEC_ID_ELF,\
 	SPEC_ID_HALF_ELF,\
+	SPEC_ID_HALFLING,\
 	SPEC_ID_DROW,\
 	SPEC_ID_HALF_DROW,\
 	SPEC_ID_HALF_ORC,\

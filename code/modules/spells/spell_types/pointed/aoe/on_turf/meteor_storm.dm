@@ -20,6 +20,9 @@
 	max_targets = 16
 	respect_LOS = FALSE
 
+	invocation = "METEOR STORM!!!"
+	invocation_type = INVOCATION_SHOUT
+
 /datum/action/cooldown/spell/aoe/on_turf/meteor_storm/cast(atom/cast_on)
 	. = ..()
 	cast_on.visible_message(span_boldwarning("Fire is raining from the sky!"))

@@ -187,7 +187,7 @@ All foods are distributed among various categories. Use common sense.
 		slice_path = null
 		cooktime = 0
 		modified = TRUE
-		rot_away_timer = QDEL_IN_STOPPABLE(src, 10 MINUTES)
+		rot_away_timer = QDEL_IN_STOPPABLE(src, 15 MINUTES)
 		record_round_statistic(STATS_FOOD_ROTTED)
 		return TRUE
 	if(!ismob(loc) && loc)
@@ -297,6 +297,8 @@ All foods are distributed among various categories. Use common sense.
 						eater.add_stress(/datum/stress_event/noble_ate_without_table) // look i just had to okay?
 						if (prob(25))
 							to_chat(eater, span_red("I should really eat this at a table..."))
+					if(!(locate(/obj/item/plate) in range(1, eater)))
+						eater.add_stress(/datum/stress_event/noble_ate_without_plate)
 				switch (faretype)
 					if (FARE_IMPOVERISHED)
 						eater.add_stress(/datum/stress_event/noble_impoverished_food)
@@ -360,13 +362,37 @@ All foods are distributed among various categories. Use common sense.
 	return
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, def_zone)
-	if(user.used_intent.type != /datum/intent/food)
+	if(user.used_intent.type != /datum/intent/food && (!(M == user) && isanimal(M)))
 		return ..()
 	if(!eatverb)
 		eatverb = pick("bite","chew","nibble","gnaw","gobble","chomp")
+
 	if(iscarbon(M))
 		if(!canconsume(M, user))
 			return FALSE
+
+		var/obj/item/kitchen/fork/fork_check = user.get_active_held_item()
+		var/obj/item/plate/plate_check
+
+		if(istype(loc,/obj/item/plate))
+			plate_check = loc
+
+		if(fork_check)
+			if(!plate_check)
+				if(HAS_TRAIT(M,TRAIT_NOBLE))
+					M.add_stress(/datum/stress_event/noble_ate_with_just_a_fork)
+			else
+				if(plate_check.dirty)
+					M.add_stress(/datum/stress_event/dirty_platter)
+				else if(faretype != FARE_LAVISH && !plate_check.dirty)
+					faretype += 1
+				plate_check.fork_usages +=1
+				if(plate_check.fork_usages >= plate_check.max_fork_usages && !plate_check.dirty)
+					plate_check.dirty = TRUE
+					var/datum/component/particle_spewer = plate_check.GetComponent(/datum/component/particle_spewer/sparkle)
+					if(particle_spewer)
+						qdel(particle_spewer)
+					plate_check.update_appearance(UPDATE_OVERLAYS)
 
 		var/fullness = M.nutrition + 10
 		for(var/datum/reagent/consumable/C in M.reagents.reagent_list) //we add the nutrition value of what we're currently digesting
@@ -436,6 +462,7 @@ All foods are distributed among various categories. Use common sense.
 			playsound(M.loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 			if(reagents.total_volume)
 				SEND_SIGNAL(src, COMSIG_FOOD_EATEN, M, user)
+				SEND_SIGNAL(M, COMSIG_MOB_FOOD_EAT, src)
 				var/fraction = min(bitesize / reagents.total_volume, 1)
 				var/amt2take = reagents.total_volume / (bitesize - bitecount)
 				if((bitecount >= bitesize) || (bitesize == 1))
@@ -450,6 +477,11 @@ All foods are distributed among various categories. Use common sense.
 		playsound(M.loc,'sound/misc/eat.ogg', rand(30,60), TRUE)
 		qdel(src)
 		return FALSE
+	else if(isanimal(M))
+		var/mob/living/simple_animal/animal = M
+		if(animal.eat_food(src))
+			animal.eat_food_after(src)
+			return TRUE
 
 	return ..()
 
@@ -479,12 +511,15 @@ All foods are distributed among various categories. Use common sense.
 		if(slice_bclass == BCLASS_CHOP)
 			user.visible_message("<span class='notice'>[user] chops [src]!</span>")
 			slice(W, user)
+			user.nobles_seen_servant_work()
 			return TRUE
 		if(slice_bclass == BCLASS_CUT)
 			user.visible_message("<span class='notice'>[user] slices [src]!</span>")
 			slice(W, user)
+			user.nobles_seen_servant_work()
 			return TRUE
 		else if(slice(W, user))
+			user.nobles_seen_servant_work()
 			return TRUE
 
 /obj/item/reagent_containers/food/snacks/proc/slice(obj/item/W, mob/user)

@@ -18,6 +18,9 @@
 /obj/effect/temp_visual/target/proc/fall(list/hit_atoms)
 	return
 
+/obj/effect/temp_visual/target/minotaur
+	duration = 1.8 SECONDS
+
 /obj/effect/temp_visual/fireball
 	name = "meteor"
 	desc = "Get out of the way!"

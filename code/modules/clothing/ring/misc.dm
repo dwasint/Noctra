@@ -85,6 +85,46 @@
 	icon_state = "g_ring_ruby"
 	sellprice = 255
 
+/obj/item/clothing/ring/jade
+	name = "joapstone ring"
+	icon_state = "ring_jade"
+	sellprice = 60
+
+/obj/item/clothing/ring/coral
+	name = "aoetal ring"
+	icon_state = "ring_coral"
+	sellprice = 70
+
+/obj/item/clothing/ring/onyxa
+	name = "onyxa ring"
+	icon_state = "ring_onyxa"
+	sellprice = 40
+
+/obj/item/clothing/ring/shell
+	name = "shell ring"
+	icon_state = "ring_shell"
+	sellprice = 20
+
+/obj/item/clothing/ring/amber
+	name = "petriamber ring"
+	icon_state = "ring_amber"
+	sellprice = 20
+
+/obj/item/clothing/ring/turq
+	name = "ceruleabaster ring"
+	icon_state = "ring_turq"
+	sellprice = 85
+
+/obj/item/clothing/ring/rose
+	name = "rosellusk ring"
+	icon_state = "ring_rose"
+	sellprice = 25
+
+/obj/item/clothing/ring/opal
+	name = "opaloise ring"
+	icon_state = "ring_opal"
+	sellprice = 90
+
 /obj/item/clothing/ring/active
 	var/active = FALSE
 	desc = "Unfortunately, like most magic rings, it must be used sparingly. (Right-click me to activate)"
@@ -361,18 +401,55 @@
 	else if(slot & ITEM_SLOT_RING)
 		active_item = TRUE
 		to_chat(user, span_notice("Here be dragons."))
-		user.change_stat("strength", 2)
-		user.change_stat("constitution", 2)
-		user.change_stat("endurance", 2)
+		user.change_stat(STATKEY_STR, 2)
+		user.change_stat(STATKEY_CON, 2)
+		user.change_stat(STATKEY_END, 2)
 	return
 
 /obj/item/clothing/ring/dragon_ring/dropped(mob/living/user)
 	..()
 	if(active_item)
 		to_chat(user, span_notice("Gone is thy hoard."))
-		user.change_stat("strength", -2)
-		user.change_stat("constitution", -2)
-		user.change_stat("endurance", -2)
+		user.change_stat(STATKEY_STR, -2)
+		user.change_stat(STATKEY_CON, -2)
+		user.change_stat(STATKEY_END, -2)
 		active_item = FALSE
 	return
 
+/obj/item/clothing/ring/signet
+	name = "Signet Ring"
+	name = "signet ring"
+	icon_state = "signet"
+	icon_state = "signet"
+	desc = "A large golden ring engraved with the Symbol of Psydon."
+	desc = "A large golden signet ring engraved with the Symbol of Psydon."
+	sellprice = 135
+	sellprice = 135
+	var/tallowed = FALSE
+
+/obj/item/clothing/ring/signet/silver
+	name = "silver signet ring"
+	icon_state = "signet_silver"
+	desc = "A ring of blessed silver, bearing the Archbishop's symbol. By dipping it in melted redtallow, it can seal writs of religious importance."
+	sellprice = 90
+
+/obj/item/clothing/ring/signet/attack_hand_secondary(mob/user, params)
+	. = ..()
+	if(tallowed)
+		if(alert(user, "SCRAPE THE TALLOW OFF?", "SIGNET RING", "YES", "NO") != "NO")
+			tallowed = FALSE
+			update_icon()
+
+/obj/item/clothing/ring/signet/update_icon()
+	. = ..()
+	if(tallowed)
+		icon_state = "[icon_state]_stamp"
+	else
+		icon_state = initial(icon_state)
+
+// ................... The Feldsher's ring .......................
+
+/obj/item/clothing/ring/feldsher_ring
+	name = "feldsher's ring"
+	icon_state = "ring_feldsher"
+	desc = "A hallowed copper ring, ritualistically forged by Pestran clergymen upon the graduation of a feldsher. \n It bears a vulture skull, whose beak is crooked, and the copper was blessed with Pestra's rot: it will corrode in time, yet never lose its resilience. \n Although the wearer may not have Pestra as her patron, this ring is proof of Her blessing. This allows the feldsher to extract and manipulate Lux, so long as they follow Her teachings"

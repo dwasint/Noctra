@@ -43,7 +43,7 @@
 	base_speed = 5
 
 	ai_controller = /datum/ai_controller/mimic
-
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 
 /mob/living/simple_animal/hostile/retaliate/mimic/Initialize(mapload)

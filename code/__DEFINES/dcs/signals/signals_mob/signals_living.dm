@@ -26,6 +26,7 @@
 #define COMSIG_PROCESS_BORGCHARGER_OCCUPANT "living_charge"		//sent from borg recharge stations: (amount, repairs)
 #define COMSIG_BORG_SAFE_DECONSTRUCT "borg_safe_decon"			//sent from borg mobs to itself, for tools to catch an upcoming destroy() due to safe decon (rather than detonation)
 #define COMSIG_MOB_ACTIVE_PERCEPTION "comsig_mob_active_perception"	//sent from mob/living/proc/look_around(): (mob/living/source)
+#define COMSIG_LIVING_WOUND_GAINED "wound_gained"
 
 // Client
 /// sent when a mob/login() finishes: (client)
@@ -73,6 +74,9 @@
 #define COMSIG_LIVING_MANA_CHANGED "living_mana_changed"
 /// from base of [datum/devotion/cleric_holder/update_devotion()]
 #define COMSIG_LIVING_DEVOTION_CHANGED "living_devotion_changed"
+#define COMSIG_LIVING_RAGE_CHANGED "living_devotion_changed"
+#define COMSIG_RAGE_BOTTOMED "living_rage_bottomed"
+#define COMSIG_RAGE_OVERRAGE "living_rage_over"
 
 ///from base of
 #define COMSIG_LIVING_DREAM_END  "living_sleep_advancement_end"
@@ -100,3 +104,5 @@
 
 /// Updating a mob's movespeed when lacking limbs. (list/modifiers)
 #define COMSIG_LIVING_LIMBLESS_MOVESPEED_UPDATE "living_get_movespeed_modifiers"
+
+#define COMSIG_LIVING_ADJUSTED "living_damage_adjusted"

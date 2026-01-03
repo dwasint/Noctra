@@ -19,7 +19,6 @@
 
 	body_parts_covered = HANDS
 	slot_flags = ITEM_SLOT_GLOVES
-	body_parts_covered = HANDS
 	resistance_flags = FIRE_PROOF
 
 	attack_verb = list("challenged")
@@ -41,6 +40,7 @@
 
 	var/transfer_prints = FALSE
 	abstract_type = /obj/item/clothing/gloves
+	var/unarmed_bonus = 1
 
 /obj/item/clothing/gloves/Initialize(mapload, ...)
 	. = ..()

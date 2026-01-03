@@ -9,7 +9,7 @@
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 	sellprice = 15
 
-/obj/item/clothing/neck/mercmedal/zaladian
+/obj/item/clothing/neck/mercmedal/zaladin
 	name = "desert rider chain"
 	desc = "A small, gilded neck-chain. The desert riders rose from humble beginnings as fight pit slaves. A tale now celebrated in their decorations."
 	icon_state = "goldchain"
@@ -48,3 +48,13 @@
 	name = "valorian blade pendant"
 	desc = "A silver pendant shaped as a rapier lined with gems, Worn by Valorian Duelists to honor their mastery of the blade and unyielding pursuit of glory in combat."
 	icon_state = "duelistcharm"
+
+/obj/item/clothing/neck/mercmedal/abyssal
+	name = "sea-tooth amulet"
+	desc = "A tooth left by a horrible sea-beast. A reminder of the sea's wrath, In the abyss, hubris is not a light but a lure."
+	icon_state = "seatooth"
+
+/obj/item/clothing/neck/mercmedal/goldfeather
+	name = "golden feather charm"
+	desc = "a palm-sized charm consisting of four golden feathers. It was once bestowed upon the Pegasus Knights who helped drive back Grenzelhoftian settlers from Lakkari."
+	icon_state = "goldfeather"

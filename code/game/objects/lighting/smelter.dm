@@ -16,7 +16,7 @@
 	var/cooking = 0
 	var/actively_smelting = FALSE // Are we currently smelting?
 	var/max_crucible_temperature = 1850
-	fueluse = 5 MINUTES
+	fueluse = 30 MINUTES
 	crossfire = FALSE
 
 /obj/machinery/light/fueled/smelter/attackby(obj/item/W, mob/living/user, params)
@@ -43,7 +43,7 @@
 					addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/weapon/tongs, make_unhot), tyme), 50)
 					if(istype(T, /obj/item/weapon/tongs/stone))
 						T.take_damage(1, BRUTE, "blunt")
-				T.update_appearance()
+				T.update_appearance(UPDATE_ICON_STATE)
 				return
 
 			for(var/obj/item/storage/crucible/crucible in contents)
@@ -52,7 +52,7 @@
 					return
 				crucible.forceMove(T)
 				T.held_item = crucible
-				T.update_appearance()
+				T.update_appearance(UPDATE_ICON_STATE)
 				return
 			if(on)
 				to_chat(user, "<span class='info'>Nothing to retrieve from inside.</span>")
@@ -198,11 +198,12 @@
 
 					if(steelalloy == 7)
 						maxore = 3
-						alloy = /obj/item/ingot/steel
+						alloy = /obj/item/ingot/steel_slag
 					else if(bronzealloy == 7)
 						alloy = /obj/item/ingot/bronze
 					else if(blacksteelalloy == 7)
 						alloy = /obj/item/ingot/blacksteel
+						maxore = 2
 					else
 						alloy = null
 					if(alloy)

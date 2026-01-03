@@ -24,15 +24,13 @@
 
 	skin_tone_wording = "Clan"
 
+
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, STUBBLE, OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOSTINK)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_DEADNOSE, TRAIT_STINKY)
 
 	allowed_voicetypes_m = VOICE_TYPES_MASCANDRO
 
 	allowed_voicetypes_f = VOICE_TYPES_MASCANDRO
-
-	// horcs are STINKY
-	components_to_add = list(/datum/component/rot/stinky_person)
 
 	use_skintones = 1
 
@@ -110,6 +108,7 @@
 	)
 
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry horcs
+	hygiene_mod = 1.5
 
 /datum/species/halforc/check_roundstart_eligible()
 	return TRUE
@@ -124,6 +123,9 @@
 	..()
 	C.grant_language(/datum/language/orcish)
 	to_chat(C, span_info("I can speak Orcish with ,o before my speech."))
+	if(ishuman(C)) //Horcs are STINKY
+		var/mob/living/carbon/human/stinky_horc = C
+		stinky_horc.hygiene = HYGIENE_LEVEL_DISGUSTING
 
 /datum/species/halforc/on_species_loss(mob/living/carbon/C)
 	. = ..()

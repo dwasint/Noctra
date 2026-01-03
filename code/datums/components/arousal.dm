@@ -57,6 +57,7 @@
 	arousal = clamp(amount, 0, MAX_AROUSAL)
 	update_arousal_effects()
 	try_ejaculate()
+	SEND_SIGNAL(parent, COMSIG_SEX_AROUSAL_CHANGED)
 	return arousal
 
 /datum/component/arousal/proc/adjust_arousal(datum/source, amount)
@@ -208,6 +209,7 @@
 		if(arousal > 60)
 			to_chat(parent, span_warning("I'm too spent!"))
 			adjust_arousal(-20)
+			return
 		adjust_arousal(-dt * SPENT_AROUSAL_RATE)
 
 /datum/component/arousal/proc/is_spent()

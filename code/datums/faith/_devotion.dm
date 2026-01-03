@@ -20,6 +20,11 @@
 	var/list/miracles_extra = list()
 	/// Traits added by this
 	var/list/traits = list()
+	/// Favorite Specie of said god.
+	var/list/favored_species = list()
+	/// Miracles granted to Favored Species
+	var/list/favored_miracles = list()
+	var/devotion_color = "#3C41A4"
 
 /datum/devotion/Destroy(force)
 	remove()
@@ -40,6 +45,8 @@
 		START_PROCESSING(SSprocessing, src)
 	holder_mob = holder
 	holder_mob.cleric = src
+	holder_mob?.hud_used?.initialize_bloodpool()
+	holder_mob?.hud_used?.bloodpool.set_fill_color(devotion_color)
 	for(var/trait as anything in traits)
 		ADD_TRAIT(holder_mob, trait, DEVOTION_TRAIT)
 	for(var/datum/action/miracle as anything in miracles_extra)
@@ -65,7 +72,12 @@
 	. += devotion
 	devotion = clamp(devotion += amount, 0, max_devotion)
 	. -= devotion
-
+	holder_mob?.hud_used?.bloodpool?.name = "Devotion: [devotion]"
+	holder_mob?.hud_used?.bloodpool?.desc = "Devotion: [devotion]/[max_devotion]"
+	if(devotion <= 0)
+		holder_mob?.hud_used?.bloodpool?.set_value(0, 1 SECONDS)
+	else
+		holder_mob?.hud_used?.bloodpool?.set_value((100 / (max_devotion / devotion)) / 100, 1 SECONDS)
 	if(.)
 		SEND_SIGNAL(holder_mob, COMSIG_LIVING_DEVOTION_CHANGED, amount)
 
@@ -98,6 +110,13 @@
 				continue
 			for(var/miracle in miracle_list)
 				grant_miracle(miracle)
+			if(holder_mob.dna?.species?.id in favored_species)
+				var/favored_miracle_list = favored_miracles[tier]
+				if(!islist(favored_miracle_list))
+					favored_miracle_list = list(favored_miracle_list)
+				if(length(favored_miracle_list))
+					for(var/favored_miracle in favored_miracle_list)
+						grant_miracle(favored_miracle)
 
 /datum/devotion/proc/make_priest()
 	devotion = 300
@@ -112,6 +131,12 @@
 	devotion = 50
 	max_devotion = CLERIC_REQ_3
 	progression = CLERIC_REQ_1
+	max_progression = CLERIC_REQ_2
+
+/datum/devotion/proc/make_absolver()
+	devotion = 100
+	max_devotion = CLERIC_REQ_3
+	progression = CLERIC_REQ_3
 	max_progression = CLERIC_REQ_3
 
 /datum/devotion/proc/make_acolyte()

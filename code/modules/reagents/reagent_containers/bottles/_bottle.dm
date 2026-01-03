@@ -7,13 +7,14 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	icon_state = "clear_bottle1"
 	amount_per_transfer_from_this = 5
 	possible_transfer_amounts = list(5,10)
-	volume = 70
+	volume = 75
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 100)
 	dropshrink = 0.8
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	obj_flags = CAN_BE_HIT
 	spillable = FALSE
 	reagent_flags = TRANSPARENT
+	fill_icon_under_override = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 	drinksounds = list('sound/items/drink_bottle (1).ogg','sound/items/drink_bottle (2).ogg')
 	fillsounds = list('sound/items/fillcup.ogg')
@@ -28,9 +29,12 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	var/auto_label_name
 	/// Auto label description, appended to current desc
 	var/auto_label_desc
+	///custom icon?
+	var/custom_icon = FALSE
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
-	icon_state = "clear_bottle[rand(1,4)]"
+	if(!custom_icon)
+		icon_state = "clear_bottle[rand(1,4)]"
 	return ..()
 
 /obj/item/reagent_containers/glass/bottle/apply_initial_label()
@@ -160,7 +164,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = "Inside is a scroll, pop it open and read the ancient wisdoms."
 	icon = 'icons/roguetown/items/glass_reagent_container.dmi'
 	dropshrink = 0.8
-	icon_state = "clear_bottle1"
+	icon_state = "clear_bottle1_message"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/obj/item/paper/contained
 
@@ -182,6 +186,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	btle.closed = FALSE
 	user.dropItemToGround(src, silent=TRUE)
 	user.put_in_active_hand(btle)
+	user.put_in_hands(contained)
 	contained = null
 	qdel(src)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
@@ -194,7 +199,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	icon_state = "clear_vial1"
 	amount_per_transfer_from_this = 5
 	possible_transfer_amounts = list(5)
-	volume = 30
+	volume = 25
 	fill_icon_thresholds = list(0, 10, 25, 50, 75, 100)
 	dropshrink = 0.8
 	slot_flags = ITEM_SLOT_HIP | ITEM_SLOT_MOUTH
@@ -233,79 +238,13 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		spillable = TRUE
 	update_appearance(UPDATE_OVERLAYS)
 
-/obj/item/reagent_containers/glass/bottle/decanter
-	name = "clay decanter"
-	desc = "A decanter fired from clay."
-	icon = 'icons/obj/handmade/decanter.dmi'
-	icon_state = "world"
-	volume = 50
-	amount_per_transfer_from_this = 8
-	possible_transfer_amounts = list(8)
-	dropshrink = 1
-	can_label_container = FALSE
-	spillable = TRUE
-	fill_icon_thresholds = null
-
-/obj/item/reagent_containers/glass/bottle/decanter/Initialize()
-	. = ..()
-	icon_state = "world"
-
-/obj/item/reagent_containers/glass/bottle/decanter/set_material_information()
-	. = ..()
-	name = "[lowertext(initial(main_material.name))] clay decanter"
-
-/obj/item/reagent_containers/glass/bottle/teapot
-	name = "clay teapot"
-	desc = "A teapot fired from clay."
-
-	icon = 'icons/obj/handmade/teapot.dmi'
-	icon_state = "world"
-	volume = 100
-	amount_per_transfer_from_this = 6
-	possible_transfer_amounts = list(6)
-	dropshrink = 1
-	spillable = TRUE
-	fill_icon_thresholds = null
-	can_label_container = FALSE
-
-/obj/item/reagent_containers/glass/bottle/teapot/Initialize()
-	. = ..()
-	icon_state = "world"
-	AddComponent(/datum/component/storage/concrete/grid/teapot)
-	AddComponent(/datum/component/container_craft, subtypesof(/datum/container_craft/cooking/tea), TRUE)
-
-/obj/item/reagent_containers/glass/bottle/teapot/random/Initialize()
-	. = ..()
-	main_material = pick(typesof(/datum/material/clay))
-	set_material_information()
-
-/obj/item/reagent_containers/glass/bottle/teapot/set_material_information()
-	. = ..()
-	name = "[lowertext(initial(main_material.name))] clay teapot"
-
-
-/obj/item/reagent_containers/glass/bottle/glazed_teacup
-	name = "fancy teacup"
-	desc = "A fancy tea cup made out of ceramic. Used to serve tea."
-	icon_state = "cup_fancy"
-	volume = 30
-	dropshrink = 0.7
-	can_label_container = FALSE
-
-/obj/item/reagent_containers/glass/bottle/glazed_teapot
-	name = "fancy teapot"
-	desc = "A fancy tea pot made out of ceramic. Used to hold tea."
-	icon_state = "teapot_fancy"
-	volume = 100
-	dropshrink = 0.7
-	can_label_container = FALSE
-
 /obj/item/reagent_containers/glass/bottle/black
 	name = "wine pot"
 	desc = "A wine pot made of glazed clay."
 	icon_state = "blackbottle"
 	fill_icon_thresholds = null
 	label_prefix = "pot of "
+	custom_icon = TRUE
 
 /obj/item/reagent_containers/glass/bottle/black/Initialize()
 	. = ..()

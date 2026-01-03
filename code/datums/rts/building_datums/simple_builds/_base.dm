@@ -2,6 +2,7 @@ GLOBAL_LIST_INIT(breakable_types, list(
 	/obj/structure/flora,
 ))
 /datum/building_datum/simple
+	stockpile_needed = FALSE
 	var/atom/created_atom
 
 /datum/building_datum/simple/generate_preview()
@@ -70,7 +71,7 @@ GLOBAL_LIST_INIT(breakable_types, list(
 		return
 	building_right_now = TRUE
 
-	new created_atom(center_turf)
+	var/atom/atom = new created_atom(center_turf)
 
-	after_construction()
+	after_construction(atom)
 	master.building_requests -= src

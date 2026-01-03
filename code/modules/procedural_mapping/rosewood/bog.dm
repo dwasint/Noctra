@@ -1,15 +1,15 @@
 
 /obj/effect/landmark/mapGenerator/marsh
-	mapGeneratorType = /datum/mapGenerator/bog
+	mapGeneratorType = /datum/mapGenerator/marsh
 	endTurfX = 200
 	endTurfY = 200
 	startTurfX = 1
 	startTurfY = 1
 
-/datum/mapGenerator/bog
-	modules = list(/datum/mapGeneratorModule/ambushing,/datum/mapGeneratorModule/bog, /datum/mapGeneratorModule/bogwater)
+/datum/mapGenerator/marsh
+	modules = list(/datum/mapGeneratorModule/ambushing,/datum/mapGeneratorModule/marsh, /datum/mapGeneratorModule/marshwater)
 
-/datum/mapGeneratorModule/bog
+/datum/mapGeneratorModule/marsh
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/dirt, /turf/open/floor/grass/cold)
 	spawnableAtoms = list(/obj/structure/flora/tree = 1,
@@ -33,12 +33,12 @@
 							/obj/structure/innocent_bush = 1,
 							)
 	spawnableTurfs = list(/turf/open/water/swamp = 5)
-	allowed_areas = list(/area/rogue/outdoors/bog)
+	allowed_areas = list(/area/outdoors/bog)
 
-/datum/mapGeneratorModule/bogwater
+/datum/mapGeneratorModule/marshwater
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	spawnableAtoms = list(/obj/structure/flora/grass/water = 5,
 						/obj/structure/flora/grass/water/reeds = 80,
 						/obj/structure/kneestingers = 60)
 	allowed_turfs = list(/turf/open/water/swamp, /turf/open/water/swamp/deep)
-	allowed_areas = list(/area/rogue/outdoors/bog)
+	allowed_areas = list(/area/outdoors/bog)

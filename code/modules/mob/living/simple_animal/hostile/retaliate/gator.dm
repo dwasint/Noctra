@@ -59,7 +59,7 @@
 	can_buckle = TRUE
 
 	ai_controller = /datum/ai_controller/gator
-
+	dendor_taming_chance = DENDOR_TAME_PROB_HIGH
 
 
 	var/static/list/pet_commands = list(

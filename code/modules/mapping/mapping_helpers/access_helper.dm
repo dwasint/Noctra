@@ -98,6 +98,10 @@
 /obj/effect/mapping_helpers/access/keyset/garrison/general
 	accesses = list(ACCESS_GARRISON)
 
+/obj/effect/mapping_helpers/access/keyset/garrison/lieutenant
+	accesses = list(ACCESSS_LIEUTENANT)
+	difficulty = 2
+
 /obj/effect/mapping_helpers/access/keyset/garrison/captain
 	accesses = list(ACCESS_CAPTAIN)
 	difficulty = 2
@@ -172,6 +176,18 @@
 
 /obj/effect/mapping_helpers/access/keyset/manor/physician
 	accesses = list(ACCESS_PHYSICIAN)
+
+/obj/effect/mapping_helpers/access/keyset/manor/Noble1
+	accesses = list(ACCESS_NOBLE1)
+	difficulty = 2
+
+/obj/effect/mapping_helpers/access/keyset/manor/Noble2
+	accesses = list(ACCESS_NOBLE2)
+	difficulty = 2
+
+/obj/effect/mapping_helpers/access/keyset/manor/Noble3
+	accesses = list(ACCESS_NOBLE3)
+	difficulty = 2
 
 // Thatchwood
 

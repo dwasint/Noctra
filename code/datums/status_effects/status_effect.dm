@@ -26,6 +26,7 @@
 	var/alert_type = /atom/movable/screen/alert/status_effect
 	/// The alert itself, if it exists
 	var/atom/movable/screen/alert/status_effect/linked_alert = null
+	/// Assoc list of statkey to value
 	var/list/effectedstats = list()
 
 /datum/status_effect/New(list/arguments)
@@ -46,9 +47,10 @@
 		duration = world.time + duration
 	tick_interval = world.time + tick_interval
 	if(alert_type)
-		var/atom/movable/screen/alert/status_effect/A = owner.throw_alert(id, alert_type)
-		A?.attached_effect = src //so the alert can reference us, if it needs to
-		linked_alert = A //so we can reference the alert, if we need to
+		var/atom/movable/screen/alert/status_effect/A = owner?.throw_alert(id, alert_type)
+		if(A)
+			A?.attached_effect = src //so the alert can reference us, if it needs to
+			linked_alert = A //so we can reference the alert, if we need to
 	START_PROCESSING(SSfastprocess, src)
 	return TRUE
 
@@ -60,7 +62,6 @@
 		LAZYREMOVE(owner.status_effects, src)
 		on_remove()
 		owner = null
-	effectedstats = list()
 	return ..()
 
 /datum/status_effect/process()
@@ -81,10 +82,13 @@
 
 	for(var/stat in effectedstats)
 		owner.set_stat_modifier("[id]", stat, effectedstats[stat])
+
 	return TRUE
 
-/// Called every tick.
-/datum/status_effect/proc/tick()
+/// Called before being fully removed (before on_remove)
+/// Returning FALSE will cancel removal
+/datum/status_effect/proc/before_remove()
+	return TRUE
 
 /// Called whenever the buff expires or is removed; do note that at the point this is called, it is out of the owner's status_effects but owner is not yet null
 /datum/status_effect/proc/on_remove()
@@ -94,18 +98,13 @@
 
 /// Called instead of on_remove when a status effect is replaced by itself or when a status effect with on_remove_on_mob_delete = FALSE has its mob deleted
 /datum/status_effect/proc/be_replaced()
-	owner.remove_stat_modifier("[id]")
-	owner.clear_alert(id)
-	LAZYREMOVE(owner.status_effects, src)
-	owner = null
 	qdel(src)
 
-/// Called before being fully removed (before on_remove)
-/// Returning FALSE will cancel removal
-/datum/status_effect/proc/before_remove()
-	return TRUE
+/// Called every tick.
+/datum/status_effect/proc/tick()
+	return
 
-/datum/status_effect/proc/refresh()
+/datum/status_effect/proc/refresh(mob/living/new_owner, duration_override, ...)
 	if(initial_duration == -1)
 		return
 	duration = world.time + initial_duration
@@ -116,6 +115,18 @@
 
 /datum/status_effect/proc/nextmove_adjust()
 	return 0
+
+/// Remove [seconds] of duration from the status effect, qdeling / ending if we eclipse the current world time.
+/datum/status_effect/proc/remove_duration(seconds)
+	if(duration == -1) // Infinite duration
+		return FALSE
+
+	duration -= seconds
+	if(duration <= world.time)
+		qdel(src)
+		return TRUE
+
+	return FALSE
 
 ////////////////
 // ALERT HOOK //
@@ -151,23 +162,40 @@
 //////////////////
 
 /// Applies a given status effect to this mob, returning the effect if it was successful
-/mob/living/proc/apply_status_effect(effect, duration_override, ...)
-	. = FALSE
-	var/datum/status_effect/S1 = effect
-	LAZYINITLIST(status_effects)
-	for(var/datum/status_effect/S in status_effects)
-		if(S.id == initial(S1.id) && S.status_type)
-			if(S.status_type == STATUS_EFFECT_REPLACE)
-				S.be_replaced()
-			else if(S.status_type == STATUS_EFFECT_REFRESH)
-				S.refresh()
-				return
-			else
-				return
+/mob/living/proc/apply_status_effect(datum/status_effect/new_effect, duration_override, ...)
+	RETURN_TYPE(/datum/status_effect)
+
+	// The arguments we pass to the start effect. The 1st argument is this mob.
 	var/list/arguments = args.Copy()
 	arguments[1] = src
-	S1 = new effect(arguments)
-	. = S1
+
+	// If the status effect we're applying doesn't allow multiple effects, we need to handle it
+	if(initial(new_effect.status_type) != STATUS_EFFECT_MULTIPLE)
+		for(var/datum/status_effect/existing_effect as anything in status_effects)
+			if(existing_effect.id != initial(new_effect.id))
+				continue
+
+			switch(existing_effect.status_type)
+				// Multiple are allowed, continue as normal. (Not normally reachable)
+				if(STATUS_EFFECT_MULTIPLE)
+					break
+				// Only one is allowed of this type - early return
+				if(STATUS_EFFECT_UNIQUE)
+					return
+				// Replace the existing instance (deletes it).
+				if(STATUS_EFFECT_REPLACE)
+					existing_effect.be_replaced()
+				// Refresh the existing type, then early return
+				if(STATUS_EFFECT_REFRESH)
+					existing_effect.refresh(arglist(arguments))
+					SEND_SIGNAL(src, COMSIG_MOB_APPLIED_STATUS_EFFECT, existing_effect)
+					return
+
+	// Create the status effect with our mob + our arguments
+	var/datum/status_effect/new_instance = new new_effect(arguments)
+	if(!QDELETED(new_instance))
+		SEND_SIGNAL(src, COMSIG_MOB_APPLIED_STATUS_EFFECT, new_instance)
+		return new_instance
 
 /**
  * Removes all instances of a given status effect from this mob

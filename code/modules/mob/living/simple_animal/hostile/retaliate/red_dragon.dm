@@ -31,10 +31,11 @@
 	deathmessage = "collapses to the floor with a final roar, the impact rocking the ground."
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	void_corruption = FALSE
+	dendor_taming_chance = DENDOR_TAME_PROB_LOW
 
 /mob/living/simple_animal/hostile/retaliate/voiddragon/red/tsere
 	name = "Tsere the Insurmountable"
 	desc = "Her scales shimmer in the blue light, her form is death, her gaze is wisdom, her wings cut all. This is Tsere... The Insurmountable."
-	faction = list("abberant")
+	faction = list("aberrant")
 	health = 4000
 	maxHealth = 4000

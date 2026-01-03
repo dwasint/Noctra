@@ -30,6 +30,9 @@
 
 	SEND_SIGNAL(src, COMSIG_HUMAN_LIFE)
 
+	if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED))
+		adjust_bloodpool(3)
+
 	if (QDELETED(src))
 		return 0
 
@@ -52,6 +55,10 @@
 					mind.sleep_adv.advance_cycle()
 					if(!mind.antag_datums || !mind.antag_datums.len)
 						allmig_reward++
+						var/static/list/towner_jobs
+						towner_jobs = GLOB.serf_positions | GLOB.peasant_positions | GLOB.apprentices_positions | GLOB.youngfolk_positions | GLOB.company_positions
+						if(mind.assigned_role.title in towner_jobs) //If you play a towner-related role, you get triumphs.
+							adjust_triumphs(1)
 						to_chat(src, span_danger("Nights Survived: \Roman[allmig_reward]"))
 						if(allmig_reward > 0 && allmig_reward % 2 == 0)
 							adjust_triumphs(1)
@@ -70,6 +77,7 @@
 		update_stamina()
 		update_energy()
 		handle_environment()
+		handle_hygiene()
 		if(health <= 0)
 			apply_damage(1, OXY)
 		if(dna?.species)
@@ -92,9 +100,31 @@
 		set_typing_indicator(FALSE)
 	//Update our name based on whether our face is obscured/disfigured
 	name = get_visible_name()
+	handle_gas_mask_sound()
 
 	if(stat != DEAD)
 		return 1
+
+/mob/living/carbon/human/proc/handle_gas_mask_sound()
+	if(!istype(wear_mask, /obj/item/clothing/face/facemask/steel/confessor))
+		if(breathe_tick)
+			breathe_tick = 0
+		return
+	if(stat == DEAD)
+		return
+	if(HAS_TRAIT(src, TRAIT_NOBREATH))
+		return
+	breathe_tick++
+	var/mask_sound
+	if(istype(wear_mask, /obj/item/clothing/face/facemask/steel/confessor))
+		if(breathe_tick>=rand(3,5))
+			breathe_tick = 0
+			mask_sound = pick('sound/items/confessormask1.ogg', 'sound/items/confessormask2.ogg', 'sound/items/confessormask3.ogg',
+							'sound/items/confessormask4.ogg', 'sound/items/confessormask5.ogg', 'sound/items/confessormask6.ogg',
+							'sound/items/confessormask7.ogg', 'sound/items/confessormask8.ogg', 'sound/items/confessormask9.ogg',
+					 		'sound/items/confessormask10.ogg')
+			playsound(src, mask_sound, 90, FALSE, 4, 0)
+			return
 
 /mob/living/carbon/human/DeadLife()
 	set invisibility = 0
@@ -131,6 +161,58 @@
 
 /mob/living/carbon/human/handle_environment()
 	dna?.species.handle_environment(src)
+
+/mob/living/carbon/human/proc/handle_hygiene()
+	if(stat == DEAD || HAS_TRAIT(src, TRAIT_NOHYGIENE))
+		return
+	if(HAS_TRAIT(src, TRAIT_ALWAYS_CLEAN))
+		set_hygiene(HYGIENE_LEVEL_CLEAN)
+
+	else
+		var/hygiene_adjustment = 0
+
+		//Are our clothes dirty?
+		var/obj/item/head = get_item_by_slot(ITEM_SLOT_HEAD)
+		if(head && HAS_BLOOD_DNA(head))
+			hygiene_adjustment -= 1 * HYGIENE_FACTOR
+
+		var/obj/item/neck = get_item_by_slot(ITEM_SLOT_NECK)
+		if(neck && HAS_BLOOD_DNA(neck))
+			hygiene_adjustment -= 1 * HYGIENE_FACTOR
+
+		var/obj/item/mask = get_item_by_slot(ITEM_SLOT_MASK)
+		if(mask && HAS_BLOOD_DNA(mask))
+			hygiene_adjustment -= 1 * HYGIENE_FACTOR
+
+		var/obj/item/shirt = get_item_by_slot(ITEM_SLOT_SHIRT)
+		if(shirt && HAS_BLOOD_DNA(shirt))
+			hygiene_adjustment -= 2 * HYGIENE_FACTOR
+
+		var/obj/item/cloak = get_item_by_slot(ITEM_SLOT_CLOAK)
+		if(cloak && HAS_BLOOD_DNA(cloak))
+			hygiene_adjustment -= 2 * HYGIENE_FACTOR
+
+		var/obj/item/pants = get_item_by_slot(ITEM_SLOT_PANTS)
+		if(pants && HAS_BLOOD_DNA(pants))
+			hygiene_adjustment -= 3 * HYGIENE_FACTOR
+
+		var/obj/item/armor = get_item_by_slot(ITEM_SLOT_ARMOR)
+		if(armor && HAS_BLOOD_DNA(armor))
+			hygiene_adjustment -= 3 * HYGIENE_FACTOR
+
+		var/obj/item/shoes = get_item_by_slot(ITEM_SLOT_SHOES)
+		if(shoes && HAS_BLOOD_DNA(shoes))
+			hygiene_adjustment -= 0.5 * HYGIENE_FACTOR
+
+		//Are we bathing?
+		var/current_turf = get_turf(src)
+		if(istype(current_turf, /turf/open/water))
+			var/turf/open/water/bathing_liquid = current_turf
+			hygiene_adjustment += bathing_liquid.cleanliness_factor
+
+
+		adjust_hygiene(hygiene_adjustment)
+	dna?.species.handle_hygiene(src)
 
 ///FIRE CODE
 /mob/living/carbon/human/handle_fire()
@@ -177,8 +259,7 @@
 		last_fire_update = null
 		..()
 
-/mob/living/carbon/human/SoakMob(locations)
-	. = ..()
+/mob/living/carbon/human/SoakMob(locations, dirty_water = FALSE, rain = FALSE)
 	var/coverhead
 	//add belt slots to this for rusting
 	var/list/body_parts = list(head, wear_mask, wear_wrists, wear_shirt, wear_neck, cloak, wear_armor, wear_pants, backr, backl, gloves, shoes, belt, wear_ring)
@@ -191,10 +272,28 @@
 				coverhead = TRUE
 	if(locations & HEAD)
 		if(!coverhead)
-			var/mob/living/carbon/V = src
-			V.add_stress(/datum/stress_event/coldhead)
-//END FIRE CODE
+			add_stress(/datum/stress_event/coldhead)
 
+	if(locations & CHEST)
+		if(!rain)
+			ExtinguishMob()
+		for(var/obj/item/clothing/C in get_equipped_items())
+			if(C.wetable)
+				C.wet.add_water(20, dirty_water)
+		if(locations & HEAD)
+			adjust_fire_stacks(-2)
+		else
+			adjust_fire_stacks(-1)
+	else
+		if(locations == FEET)
+			var/obj/item/clothing/C = shoes
+			if(C && C.wetable)
+				C.wet.add_water(20, dirty_water)
+		else
+			var/list/below_chest = list(wear_pants, shoes)
+			for(var/obj/item/clothing/C in below_chest)
+				if(C.wetable)
+					C.wet.add_water(20, dirty_water)
 
 //This proc returns a number made up of the flags for body parts which you are protected on. (such as HEAD, CHEST, GROIN, etc. See setup.dm for the full list)
 /mob/living/carbon/human/proc/get_heat_protection_flags(temperature) //Temperature is the temperature you're being exposed to.

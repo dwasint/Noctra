@@ -1,16 +1,3 @@
-// Divine
-/datum/devotion/divine/make_templar()
-	. = ..()
-	miracles_extra += list(
-		/datum/action/cooldown/spell/aoe/abrogation,
-	)
-
-/datum/devotion/divine/make_cleric()
-	. = ..()
-	miracles_extra += list(
-		/datum/action/cooldown/spell/aoe/abrogation,
-	)
-
 /datum/devotion/divine/astrata
 	miracles = list(
 		CLERIC_T0 = /datum/action/cooldown/spell/healing,
@@ -37,33 +24,20 @@
 
 /datum/devotion/divine/abyssor
 	miracles = list(
-		CLERIC_T0 = /datum/action/cooldown/spell/healing,
+		CLERIC_T0 = list(/datum/action/cooldown/spell/healing, /datum/action/cooldown/spell/undirected/conjure_item/summon_leech),
 		CLERIC_T1 = /datum/action/cooldown/spell/projectile/swordfish,
-		CLERIC_T2 = /datum/action/cooldown/spell/undirected/conjure_item/summon_trident,
+		CLERIC_T2 = /datum/action/cooldown/spell/undirected/conjure_item/summon_trident/miracle,
 		CLERIC_T3 = /datum/action/cooldown/spell/ocean_embrace,
 	)
 
 /datum/devotion/divine/necra
 	miracles = list(
-		CLERIC_T0 = /datum/action/cooldown/spell/healing,
+		CLERIC_T0 = list(/datum/action/cooldown/spell/healing, /datum/action/cooldown/spell/avert),
 		CLERIC_T1 = /datum/action/cooldown/spell/burial_rites,
-		CLERIC_T2 = /datum/action/cooldown/spell/undirected/soul_speak,
+		CLERIC_T2 = list(/datum/action/cooldown/spell/undirected/locate_dead, /datum/action/cooldown/spell/aoe/abrogation, /datum/action/cooldown/spell/undirected/soul_speak, ),
 		CLERIC_T3 = /datum/action/cooldown/spell/aoe/churn_undead,
 	)
 	traits = list(TRAIT_DEATHSIGHT)
-
-/datum/devotion/divine/necra/make_acolyte()
-	. = ..()
-	miracles_extra += /datum/action/cooldown/spell/avert
-
-/datum/devotion/divine/necra/make_cleric()
-	. = ..()
-	miracles_extra += /datum/action/cooldown/spell/avert
-
-/datum/devotion/divine/necra/make_templar()
-	. = ..()
-	miracles_extra -= /datum/action/cooldown/spell/aoe/abrogation
-	miracles_extra += list(/datum/action/cooldown/spell/aoe/churn_undead, /datum/action/cooldown/spell/avert)
 
 /datum/devotion/divine/ravox
 	miracles = list(
@@ -78,12 +52,13 @@
 		CLERIC_T0 = /datum/action/cooldown/spell/healing,
 		CLERIC_T1 = /datum/action/cooldown/spell/undirected/list_target/vicious_mimicry,
 		CLERIC_T2 = /datum/action/cooldown/spell/status/wheel,
+		CLERIC_T3 = /datum/action/cooldown/spell/undirected/jaunt/illusory_prop,
 	)
 
 /datum/devotion/divine/pestra
 	miracles = list(
-		CLERIC_T0 = /datum/action/cooldown/spell/diagnose/holy,
-		CLERIC_T1 = /datum/action/cooldown/spell/healing,
+		CLERIC_T0 = list(/datum/action/cooldown/spell/healing, /datum/action/cooldown/spell/undirected/conjure_item/summon_leech/pestra),
+		CLERIC_T1 = /datum/action/cooldown/spell/diagnose/holy,
 		CLERIC_T2 = /datum/action/cooldown/spell/attach_bodypart,
 		CLERIC_T3 = /datum/action/cooldown/spell/cure_rot,
 	)
@@ -102,6 +77,10 @@
 		CLERIC_T1 = /datum/action/cooldown/spell/instill_perfection,
 		CLERIC_T2 = /datum/action/cooldown/spell/projectile/eora_curse,
 		CLERIC_T3 = /datum/action/cooldown/spell/eoran_bloom,
+	)
+	favored_species = list(SPEC_ID_HARPY)
+	favored_miracles = list(
+		CLERIC_T3 = /datum/action/cooldown/spell/charm/eoran
 	)
 
 // Inhumen
@@ -131,7 +110,7 @@
 
 /datum/devotion/inhumen/zizo
 	miracles = list(
-		CLERIC_T0 = /datum/action/cooldown/spell/undirected/touch/orison,
+		CLERIC_T0 = list(/datum/action/cooldown/spell/undirected/touch/orison, /datum/action/cooldown/spell/aoe/snuff),
 		CLERIC_T1 = /datum/action/cooldown/spell/projectile/profane,
 		CLERIC_T2 = /datum/action/cooldown/spell/conjure/raise_lesser_undead,
 		CLERIC_T3 = /datum/action/cooldown/spell/undirected/rituos,

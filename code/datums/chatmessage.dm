@@ -119,9 +119,6 @@
 	if(damage < 4)
 		return
 
-	if(damage < 4)
-		return
-
 	premature_end_of_life()
 
 /**
@@ -277,6 +274,23 @@
 				result += entity
 				current_pos = entity_end + 1
 				continue
+		else if(copytext(text, current_pos, current_pos + 1) == "�") // Should handle UTF-8 multi-byte characters
+			var/offset = 1
+			var/failed = FALSE
+			var/entity
+			while(current_pos + offset <= text_length)
+				var/test_char = copytext(text, current_pos, current_pos + offset + 1)
+				if(!findtext(test_char, "�")) // Valid character found
+					entity = test_char
+					break
+				offset++
+				if(offset > 4) // UTF-8 max 4 bytes
+					failed = TRUE
+					break
+			if(!failed)
+				result += entity
+				current_pos += offset + 1
+				continue
 
 		// Not an entity, add single character
 		result += copytext(text, current_pos, current_pos + 1)
@@ -324,13 +338,15 @@
 	if(skip_spelling)
 		add_string()
 
-	animate(
-		message,
-		time = CHAT_SPELLING_DELAY_WITH_EXCLAIMED_MULTIPLIER,
-		pixel_w = 0,
-		pixel_z = 0,
-	)
-	addtimer(CALLBACK(src, PROC_REF(end_of_life)), delay + 2 SECONDS)
+	if(!QDELETED(message))
+		animate(
+			message,
+			time = CHAT_SPELLING_DELAY_WITH_EXCLAIMED_MULTIPLIER,
+			pixel_w = 0,
+			pixel_z = 0,
+		)
+
+		addtimer(CALLBACK(src, PROC_REF(end_of_life)), delay + 2 SECONDS)
 
 /datum/chatmessage/proc/add_string(string = "", direction = 1, audible = TRUE)
 	if(QDELETED(src))

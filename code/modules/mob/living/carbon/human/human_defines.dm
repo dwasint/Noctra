@@ -58,6 +58,8 @@
 	var/obj/item/cloak = null
 	var/obj/item/clothing/wear_shirt = null
 
+	var/hygiene = HYGIENE_LEVEL_NORMAL
+
 	///for the intent of dodge this is your armor class that you have worn (its highest worn)
 	var/worn_armor_class = ARMOR_CLASS_NONE
 
@@ -80,9 +82,6 @@
 	dodgecd = FALSE
 	dodgetime = 0
 
-//	var/alignment = ALIGNMENT_TN
-
-	var/advjob = null
 	var/canseebandits = FALSE
 
 	//Familytree datum
@@ -104,13 +103,20 @@
 	var/funeral = FALSE // Whether the body has received rites or not.
 
 	var/datum/devotion/cleric = null // Used for cleric_holder for priests
+	var/datum/inspiration/inspiration = null
+	var/datum/rage/rage_datum = null //teehee
 
 	var/headshot_link = null
 	var/flavortext = null
+	var/flavortext_display = null
+	var/ooc_notes = null
+	var/ooc_notes_display = null
+	var/ooc_extra_link
+	var/ooc_extra
 
 	var/confession_points = 0 // Used to track how many confessions the Inquisitor has gotten signed. Used to buy items at mailboxes.
 	var/purchase_history = null // Used to track what the Inquisitor has bought from the mailbox.
-	var/has_confessed = FALSE // Used to track if they have confessed it was written onto a confession paper
+	var/breathe_tick = 0 // Used for gas mask delays.
 
 	var/merctype = 0 // Used for mercenary backgrounds - check mail.dm
 	var/tokenclaimed = FALSE // Check for one-time tri reward.

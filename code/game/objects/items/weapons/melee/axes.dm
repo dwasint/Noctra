@@ -2,6 +2,7 @@
 ==========================================================*/
 
 /obj/item/weapon/axe
+	icon = 'icons/roguetown/weapons/32/axes_picks.dmi'
 	item_state = "axe"
 	parrysound = "parrywood"
 	swingsound = BLADEWOOSH_MED
@@ -13,6 +14,8 @@
 	wlength = WLENGTH_NORMAL
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	axe_cut = 10	// bonus damage to trees
+	grid_height = 64
+	grid_width = 32
 
 /*------------\
 | Chop intent |	small AP, fewer protect vs this crit (more delimb?)
@@ -74,6 +77,55 @@
 	swingdelay = 1
 	misscost = 10
 	item_damage_type = "stab"
+
+/*---------------------\
+| Great axe cut intent |	small AP
+\---------------------*/
+
+/datum/intent/axe/cut/battle/greataxe //Decent to cut as well
+	reach = 2
+	damfactor = 1.1
+	swingdelay = 1
+	misscost = 10
+	item_damage_type = "slash"
+
+/*---------------------\
+| Great axe chop intent |	medium AP
+\---------------------*/
+
+/datum/intent/axe/chop/battle/greataxe //Essentially a better polearm chop, this weapon is made to chop people limbs off.
+	penfactor = AP_GREATAXE_CHOP  // Same AP as the polearm CHOP
+	reach = 2
+	chargetime = 2
+	swingdelay = 2
+	no_early_release = TRUE // Needs fo fully charge
+	damfactor = 1.2
+	misscost = 20
+
+/*--------------------------------\
+| Doublehead Great axe cut intent |	small AP
+\--------------------------------*/
+
+/datum/intent/axe/cut/battle/greataxe/doublehead //Better to cut as well
+	reach = 2
+	chargetime = 1.5
+	damfactor = 1.2 // More damage as well
+	swingdelay = 1.5
+	misscost = 15 // Heavier means more stamina loss if you miss
+	item_damage_type = "slash"
+
+/*---------------------------------\
+| Doublehead Great axe chop intent |	medium AP
+\---------------------------------*/
+
+/datum/intent/axe/chop/battle/greataxe/doublehead //Stronger than the one bladed axe but heavier
+	penfactor = AP_GREATAXE_CHOP
+	reach = 2
+	chargetime = 2.5 // Needs more time to fully charge it
+	no_early_release = TRUE // Needs fo fully charge
+	swingdelay = 2.5
+	damfactor = 1.3 // Stronger
+	misscost = 25 // Costs more if you miss
 
 //................ Stone Axe ............... //
 /obj/item/weapon/axe/stone
@@ -144,7 +196,7 @@
 	desc = "Tool, weapon, loyal iron companion."
 	icon_state = "axe"
 	max_blade_int = 200
-	max_integrity = INTEGRITY_STANDARD
+	max_integrity = INTEGRITY_STRONG
 	melting_material = /datum/material/iron
 	melt_amount = 100
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
@@ -174,10 +226,10 @@
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "iron kasuyu"
 	desc = "An iron axe hailing from the nation of Lakkari. Great for felling trees and foes alike."
-	icon = 'icons/roguetown/weapons/lakkari.dmi'
+	icon = 'icons/roguetown/weapons/32/lakkari.dmi'
 	icon_state = "nsapo_iron"
 	max_blade_int = 200
-	max_integrity = INTEGRITY_STANDARD
+	max_integrity = INTEGRITY_STRONG
 	melting_material = /datum/material/iron
 	melt_amount = 75
 	parrysound = "sword"
@@ -209,6 +261,38 @@
 	minstr = 10
 	wdefense = AVERAGE_PARRY
 
+//................ Bronze ............... //
+/obj/item/weapon/axe/bronze
+	force = DAMAGE_AXE
+	force_wielded = DAMAGE_AXE_WIELD
+	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	name = "bronze axe"
+	desc = "Tool, weapon, loyal bronze companion."
+	icon_state = "axe_bronze"
+	max_blade_int = 150
+	max_integrity = INTEGRITY_STANDARD
+	melting_material = /datum/material/bronze
+	melt_amount = 100
+	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
+	parrysound = "sword"
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+
+	wdefense = MEDIOCRE_PARRY
+	minstr = 6
+
+	sellprice = 20
+
+/obj/item/weapon/axe/bronze/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = -10,"nx" = 12,"ny" = -10,"wx" = -8,"wy" = -7,"ex" = 3,"ey" = -9,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -90,"eturn" = 90,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = -12,"sy" = 3,"nx" = 12,"ny" = 2,"wx" = -8,"wy" = 2,"ex" = 4,"ey" = 2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+
 //................ Psydonian Axe ............... //
 /obj/item/weapon/axe/psydon
 	force = DAMAGE_AXE
@@ -216,10 +300,11 @@
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "psydonian axe"
 	desc = "An axe forged of silver with a small psycross attached, Dendor and his foul beastmen be damned."
+	icon = 'icons/roguetown/weapons/32/psydonite.dmi'
 	icon_state = "psyaxe"
 	max_blade_int = 200
 	max_integrity = INTEGRITY_STANDARD
-	melting_material = /datum/material/iron
+	melting_material = /datum/material/silver
 	melt_amount = 75
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	parrysound = "sword"
@@ -230,7 +315,7 @@
 
 /obj/item/weapon/axe/psydon/Initialize(mapload)
 	. = ..()
-	enchant(/datum/enchantment/silver)
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 /obj/item/weapon/axe/psydon/getonmobprop(tag)
 	. = ..()
@@ -252,7 +337,7 @@
 	force_wielded = DAMAGE_AXE_WIELD
 	name = "pickaxe"
 	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/weapons/32/axes_picks.dmi'
 	icon_state = "paxe"
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
@@ -305,18 +390,42 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0)
 
+//.................. Bearded Axe ...............//
+/obj/item/weapon/axe/steel/atgervi
+	name = "bearded axe"
+	desc = "A large axe easily wielded in one hand or two, With a large hooked axe head to tearing into flesh and armor and ripping it away brutally."
+	icon_state = "atgervi_axe"
+	item_state = "atgervi_axe"
+	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/rogue_righthand.dmi'
+	wlength = WLENGTH_LONG
+	experimental_onhip = TRUE
+	max_blade_int = 250 //Trades some durability for weapon length
+
+/obj/item/weapon/axe/steel/atgervi/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -9,"sy" = -8,"nx" = 9,"ny" = -7,"wx" = -7,"wy" = -8,"ex" = 3,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -90,"wturn" = -90,"eturn" = 90,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.8,"sx" = 2,"sy" = -8,"nx" = -6,"ny" = -3,"wx" = 3,"wy" = -4,"ex" = 4,"ey" = -3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -44,"sturn" = 45,"wturn" = 47,"eturn" = 33,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.6,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 180,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
 /obj/item/weapon/axe/nsapo
 	force = DAMAGE_AXE
 	force_wielded = DAMAGE_AXE_WIELD
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
 	name = "steel kasuyu"
-	desc = "An steel axe hailing from the nation of Lakkari. Great for felling trees and foes alike."
-	icon = 'icons/roguetown/weapons/lakkari.dmi'
+	desc = "A steel axe hailing from the nation of Lakkari. Great for felling trees and foes alike."
+	icon = 'icons/roguetown/weapons/32/lakkari.dmi'
 	icon_state = "nsapo_steel"
 	max_blade_int = 300
-	max_integrity = INTEGRITY_STANDARD
-	melting_material = /datum/material/iron
+	max_integrity = INTEGRITY_STRONGEST
+	melting_material = /datum/material/steel
 	melt_amount = 75
 	parrysound = "sword"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
@@ -393,21 +502,16 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 	return ..()
 
-/datum/intent/axe/cut/battle/greataxe
-	reach = 2
-
-/datum/intent/axe/chop/battle/greataxe
-	reach = 2
-
+//................ Great Axe ............... //
 /obj/item/weapon/greataxe
-	force = 15
-	force_wielded = 30
+	name = "greataxe"
+	desc = "An iron great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure.."
+	icon = 'icons/roguetown/weapons/64/axes.dmi'
+	icon_state = "igreataxe"
+	force = DAMAGE_AXE
+	force_wielded = DAMAGE_HEAVYAXE_WIELD - 5
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe,  /datum/intent/spear/bash)
-	name = "greataxe"
-	desc = "A iron great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure.."
-	icon_state = "igreataxe"
-	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -422,7 +526,14 @@
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/axesmaces
 	blade_dulling = DULLING_BASHCHOP
-	wdefense = 6
+	wdefense = AVERAGE_PARRY
+	wbalance = EASY_TO_DODGE
+	max_integrity = INTEGRITY_STRONG
+	slowdown = 1
+	slot_flags = ITEM_SLOT_BACK
+	melting_material = /datum/material/iron
+	melt_amount = 150
+	sellprice = 60
 
 /obj/item/weapon/greataxe/getonmobprop(tag)
 	. = ..()
@@ -435,38 +546,55 @@
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/item/weapon/greataxe/steel
-	force = 15
-	force_wielded = 30
-	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe,  /datum/intent/spear/bash)
-	name = "steel greataxe"
-	desc = "A steel great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure.."
-	icon_state = "sgreataxe"
-	icon = 'icons/roguetown/weapons/64.dmi'
-	minstr = 11
-	max_blade_int = 300
-	smeltresult = /obj/item/ingot/steel
 
-/obj/item/weapon/greataxe/steel/doublehead
+/obj/item/weapon/greataxe/psy
 	force = 15
-	force_wielded = 35
-	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash) //bash is for nonlethal takedowns, only targets limbs
-	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe,  /datum/intent/spear/bash)
-	name = "double-headed steel greataxe"
-	desc = "A steel great axe with a wicked double-bladed head. Perfect for cutting either men or trees into stumps.."
-	icon_state = "doublegreataxe"
-	icon = 'icons/roguetown/weapons/64.dmi'
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike) //When possible, add the longsword's 'alternate grip' mechanic to let people flip this around into a Mace-scaling weapon with swapped damage.
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/mace/strike) //Axe-equivalent to the Godendag or Grand Mace.
+	name = "psydonic poleaxe"
+	desc = "A poleaxe, fitted with a reinforced shaft and a beaked axe head of alloyed silver. As the fragility of swords've become more apparent, the Psydonic Orders - following the disastrous Massacre of Blastenghyll - have shifted their focus towards arming their paladins with longer-lasting greatweapons."
+	icon = 'icons/roguetown/weapons/64/axes.dmi'
+	icon_state = "silverpolearm"
 	minstr = 12
+	max_blade_int = 350
+	smeltresult = /obj/item/ingot/silverblessed
+
+/obj/item/weapon/greataxe/psy/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
+
+/obj/item/weapon/greataxe/steel
+	name = "steel greataxe"
+	desc = "A steel great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure."
+	icon_state = "sgreataxe"
+	force_wielded = DAMAGE_HEAVYAXE_WIELD
+	max_blade_int = 300
+	max_integrity = INTEGRITY_STRONGEST
+	melting_material = /datum/material/steel
+	melt_amount = 150
+	sellprice = 90
+
+/obj/item/weapon/greataxe/steel/doublehead // Trades more damage for being worse to parry with and easier to dodge of.
+	name = "double-headed steel greataxe"
+	desc = "A steel great axe with a wicked double-bladed head. Perfect for cutting either men or trees into stumps."
+	icon_state = "doublegreataxe"
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash) //bash is for nonlethal takedowns, only targets limbs
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe/doublehead, /datum/intent/axe/chop/battle/greataxe/doublehead,  /datum/intent/spear/bash)
+	max_blade_int = 400
+	minstr = 12
+	melt_amount = 180
+	wbalance = VERY_EASY_TO_DODGE
+	wdefense = AVERAGE_PARRY
+	sellprice = 100
 
 /obj/item/weapon/greataxe/steel/doublehead/graggar
 	name = "vicious greataxe"
 	desc = "A greataxe who's edge thrums with the motive force, violence, oh, sweet violence!"
+	icon = 'icons/roguetown/weapons/64/patron.dmi'
 	icon_state = "graggargaxe"
 	blade_dulling = DULLING_BASHCHOP
-	force = 20
-	force_wielded = 40
-	icon = 'icons/roguetown/weapons/64.dmi'
+	sellprice = 0 // Graggarite axe, nobody wants this
 
 /obj/item/weapon/greataxe/dreamscape
 	force = 10
@@ -481,6 +609,7 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	blade_dulling = DULLING_BASHCHOP
 	wdefense = 5
+	sellprice = 0
 
 /obj/item/weapon/greataxe/dreamscape/active
 	// to do, make this burn you if you don't regularly soak it.
@@ -490,4 +619,5 @@
 	icon_state = "dreamaxeactive"
 	max_blade_int = 500
 	wdefense = 6
+	sellprice = 0
 

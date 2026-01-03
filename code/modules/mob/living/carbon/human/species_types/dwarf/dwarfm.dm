@@ -30,7 +30,11 @@
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR, HAIR, FACEHAIR, LIPS, YOUNGBEARD, STUBBLE, OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_POISON_RESILIENCE)
+	inherent_skills = list(
+		/datum/skill/labor/mining = 1,
+	)
+
 	possible_ages = NORMAL_AGES_LIST
 	use_skintones = TRUE
 
@@ -55,7 +59,7 @@
 		OFFSET_FACEMASK = list(0,-4),\
 		OFFSET_HEAD = list(0,-4),\
 		OFFSET_FACE = list(0,-4),\
-		OFFSET_BELT = list(0,-5),\
+		OFFSET_BELT = list(0,0),\
 		OFFSET_BACK = list(0,-4),\
 		OFFSET_NECK = list(0,-4),\
 		OFFSET_MOUTH = list(0,-4),\

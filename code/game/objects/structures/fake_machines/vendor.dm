@@ -36,11 +36,11 @@
 /obj/structure/fake_machine/vendor/on_lock_add()
 	update_appearance(UPDATE_ICON_STATE)
 
-/obj/structure/fake_machine/vendor/on_lock(mob/user, silent)
+/obj/structure/fake_machine/vendor/on_lock(mob/living/user, silent)
 	. = ..()
 	update_appearance(UPDATE_ICON)
 
-/obj/structure/fake_machine/vendor/on_unlock(mob/user, silent)
+/obj/structure/fake_machine/vendor/on_unlock(mob/living/user, silent)
 	. = ..()
 	update_appearance(UPDATE_ICON)
 
@@ -251,8 +251,9 @@
 		next_hawk = world.time + rand(1 MINUTES, 2 MINUTES)
 		if(length(held_items))
 			var/item = pick(held_items)
+			var/sale = LAZYACCESSASSOC(held_items, item, "NAME")
 			var/price = LAZYACCESSASSOC(held_items, item, "PRICE")
-			say("[item] for sale! [price] mammons!")
+			say("[sale] for sale! [price] mammons!")
 
 /obj/structure/fake_machine/vendor/nolock
 	lock = null
@@ -263,15 +264,26 @@
 
 /obj/structure/fake_machine/vendor/inn/Initialize()
 	. = ..()
+	var/obj/I = new /obj/item/key/medroomi(src)
+	held_items[I] = list()
+	held_items[I]["NAME"] = I.name
+	held_items[I]["PRICE"] = 20
+
+/obj/structure/fake_machine/vendor/voyage
+	lockids = list(ACCESS_INN)
+
+/obj/structure/fake_machine/vendor/voyage/Initialize()
+	. = ..()
 	for(var/X in list(/obj/item/key/roomi, /obj/item/key/roomii, /obj/item/key/roomiii))
 		var/obj/I = new X(src)
 		held_items[I] = list()
 		held_items[I]["NAME"] = I.name
 		held_items[I]["PRICE"] = 20
-	var/obj/I = new /obj/item/key/roomhunt(src)
-	held_items[I] = list()
-	held_items[I]["NAME"] = I.name
-	held_items[I]["PRICE"] = 40
+	for(var/X in list(/obj/item/key/luxroomi))
+		var/obj/I = new X(src)
+		held_items[I] = list()
+		held_items[I]["NAME"] = I.name
+		held_items[I]["PRICE"] = 60
 
 /obj/structure/fake_machine/vendor/steward
 	lockids = list(ACCESS_STEWARD)
@@ -280,17 +292,17 @@
 
 /obj/structure/fake_machine/vendor/steward/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/key/shops/shop1, /obj/item/key/shops/shop2, /obj/item/key/shops/shop3, /obj/item/key/shops/shop4))
+	for(var/X in list(/obj/item/key/shops/shop4))
 		var/obj/I = new X(src)
 		held_items[I] = list()
 		held_items[I]["NAME"] = I.name
-		held_items[I]["PRICE"] = 5
-	for(var/X in list(/obj/item/key/houses/house2, /obj/item/key/houses/house3))
+		held_items[I]["PRICE"] = 20
+	for(var/X in list(/obj/item/key/houses/house1, /obj/item/key/houses/house2, /obj/item/key/houses/house3)) ///why was house 1 not here?
 		var/obj/I = new X(src)
 		held_items[I] = list()
 		held_items[I]["NAME"] = I.name
 		held_items[I]["PRICE"] = 100
-	var/obj/I = new /obj/item/key/houses/house7(src)
+	var/obj/I = new /obj/item/key/houses/house7(src) ///house 7 doesn't exist on Vanderlin. need to make map specific peddlers if we want to continue doing this.
 	held_items[I] = list()
 	held_items[I]["NAME"] = I.name
 	held_items[I]["PRICE"] = 120
@@ -308,12 +320,27 @@
 	name = "INNKEEP"
 	lockids = list(ACCESS_INN)
 
+/obj/structure/fake_machine/vendor/voyage
+	name = "SHIPMATE"
+	lockids = list(ACCESS_INN)
+
 /obj/structure/fake_machine/vendor/butcher
+	name = "BUTCHER"
 	lockids = list(ACCESS_BUTCHER)
+	lighting_color = "#8d1818"
+	filled_overlay = "vendor-butcher"
 
 /obj/structure/fake_machine/vendor/soilson
 	name = "FARMHAND"
 	lockids = list(ACCESS_FARM)
+	lighting_color = "#707a24"
+	filled_overlay = "vendor-farm"
+
+/obj/structure/fake_machine/vendor/merchant
+	name = "SHOPHAND"
+	lockids = list(ACCESS_MERCHANT)
+	lighting_color = "#1b7bf1"
+	filled_overlay = "vendor-merch"
 
 /obj/structure/fake_machine/vendor/centcom
 	name = "LANDLORD"
@@ -350,6 +377,3 @@
 				user.adjust_triumphs(1)
 				say("[user] HAS BEEN UPGRADED TO A NOBLE BEDCHAMBER!")
 				playsound(src, 'sound/misc/machinelong.ogg', 100, FALSE, -1)
-
-/obj/structure/fake_machine/vendor/merchant
-	lockids = list(ACCESS_MERCHANT)

@@ -177,6 +177,9 @@
 	user.visible_message(span_info("[user] scrubs [target] with [src]."), span_info("I scrub [target] with [src]."))
 	decreaseUses(5)
 	target.add_stress(/datum/stress_event/clean)
+	target.adjust_hygiene(50)
+	target.ExtinguishMob()
+	target.adjust_fire_stacks(-20)
 
 /obj/item/soap/bath
 	name = "herbal soap"
@@ -187,10 +190,7 @@
 //Only get the buff if you use the good stuff
 /obj/item/soap/bath/scrub_scrub(mob/living/carbon/human/target, mob/living/carbon/user)
 	. = ..()
-	to_chat(target, span_green("I feel so relaxed and clean!"))
-	if(user != target)
-		//Someone else washing you applies the buff, otherwise just the stress event
-		//btw, the buff applies the clean_plus stress_event, keep that in mind
+	if(target.hygiene == HYGIENE_LEVEL_CLEAN)
+		to_chat(target, span_green("I feel so relaxed and clean!"))
 		target.apply_status_effect(/datum/status_effect/buff/clean_plus)
-	else
 		user.add_stress(/datum/stress_event/clean_plus)

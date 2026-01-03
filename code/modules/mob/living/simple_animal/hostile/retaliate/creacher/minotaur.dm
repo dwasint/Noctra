@@ -40,9 +40,9 @@
 	dodgetime = 50
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
-	remains_type = /obj/item/weapon/axe/battle
 
 	ai_controller = /datum/ai_controller/minotaur
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/Initialize()
@@ -61,15 +61,12 @@
 	base_intents = list(/datum/intent/simple/minotaur_axe)
 	melee_damage_lower = 65
 	melee_damage_upper = 85
+	loot = list(/obj/item/weapon/greataxe/steel/doublehead)
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/axe/female
 	icon_state = "MinotaurFem_Axe"
 	icon_living = "MinotaurFem_Axe"
 	icon_dead = "MinotaurFem_dead"
-
-/mob/living/simple_animal/hostile/retaliate/minotaur/death(gibbed)
-	..()
-	update_appearance()
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/taunted(mob/user)
 	emote("aggro")
@@ -232,7 +229,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/effect/temp_visual/minotaur_fury_zone/process(delta_time)
+/obj/effect/temp_visual/minotaur_fury_zone/process()
 	if(!active)
 		return
 
@@ -240,7 +237,7 @@
 		if(L.faction.Find("caves"))
 			continue
 
-		L.adjustFireLoss(damage_per_tick * delta_time)
+		L.adjustFireLoss(damage_per_tick)
 
 		if(!warned && prob(50))
 			to_chat(L, "<span class='danger'>The flames sear your flesh!</span>")

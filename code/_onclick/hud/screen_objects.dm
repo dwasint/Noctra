@@ -11,13 +11,21 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	plane = HUD_PLANE
 	appearance_flags = APPEARANCE_UI
-	var/obj/master = null	//A reference to the object in the slot. Grabs or items, generally.
-	var/datum/hud/hud = null // A reference to the owner HUD, if any.
+	/// A reference to the object in the slot. Grabs or items, generally, but any datum will do.
+	var/datum/weakref/master_ref = null
+	/// A reference to the owner HUD, if any.
+	VAR_PRIVATE/datum/hud/hud = null
 	var/lastclick
 	var/category
 
-/atom/movable/screen/Destroy()
-	master = null
+/atom/movable/screen/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	if(isnull(hud_owner)) //some screens set their hud owners on /new, this prevents overriding them with null post atoms init
+		return
+	set_new_hud(hud_owner)
+
+/atom/movable/screen/Destroy(force)
+	master_ref = null
 	hud = null
 	return ..()
 
@@ -313,21 +321,6 @@
 			I.Click(location, control, params)
 	else
 		user.swap_hand(held_index)
-	return TRUE
-
-/atom/movable/screen/close
-	name = "close"
-	plane = ABOVE_HUD_PLANE
-	icon_state = "backpack_close"
-
-/atom/movable/screen/close/Initialize(mapload, new_master)
-	. = ..()
-	master = new_master
-
-/atom/movable/screen/close/Click()
-	var/datum/component/storage/S = master
-	S.hide_from(usr)
-	SEND_SIGNAL(S.parent, COMSIG_STORAGE_CLOSED, usr)
 	return TRUE
 
 /atom/movable/screen/drop
@@ -656,12 +649,12 @@
 	icon = null
 	icon_state = ""
 
-/atom/movable/screen/advsetup/New(client/C) //TODO: Make this use INITIALIZE_IMMEDIATE, except its not easy
+/atom/movable/screen/advsetup/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(check_mob)), 3 SECONDS)
 
 /atom/movable/screen/advsetup/Destroy()
-	hud.static_inventory -= src
+	hud?.static_inventory -= src
 	return ..()
 
 /atom/movable/screen/advsetup/proc/check_mob()
@@ -711,17 +704,14 @@
 	if(isliving(hud?.mymob))
 		var/mob/living/L = hud.mymob
 		if(L.eyesclosed)
-			L.eyesclosed = 0
-			L.cure_blind("eyelids")
-			update_appearance(UPDATE_ICON)
+			L.set_eyes_closed(FALSE)
 			return
 
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
 		if(_y>=29 || _y<=4)
 			if(isliving(hud.mymob))
 				var/mob/living/L = hud.mymob
-				L.eyesclosed = 1
-				L.become_blind("eyelids")
+				L.set_eyes_closed(TRUE)
 		else
 			toggle(usr)
 
@@ -853,12 +843,13 @@
 	screen_loc = "7,7 to 10,8"
 	plane = HUD_PLANE
 
-/atom/movable/screen/storage/Initialize(mapload, new_master)
+/atom/movable/screen/storage/Initialize(mapload, datum/hud/hud_owner, obj/item/new_master)
 	. = ..()
-	master = new_master
+	master_ref = WEAKREF(new_master)
 
 /atom/movable/screen/storage/Click(location, control, params)
 	var/list/modifiers = params2list(params)
+	var/obj/item/master = master_ref?.resolve()
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		if(master)
 			var/obj/item/flipper = usr.get_active_held_item()
@@ -1396,10 +1387,10 @@
 	plane = SPLASHSCREEN_PLANE
 	fucme = FALSE
 
-/atom/movable/screen/splash/New(client/C, visible, use_previous_title) //TODO: Make this use INITIALIZE_IMMEDIATE, except its not easy
+/atom/movable/screen/splash/Initialize(mapload, datum/hud/hud_owner, client/client, visible, use_previous_title)
 	. = ..()
 
-	holder = C
+	holder = client
 
 	if(!visible)
 		alpha = 0
@@ -1416,6 +1407,12 @@
 
 	holder.screen += src
 
+/atom/movable/screen/splash/Destroy()
+	if(holder)
+		holder.screen -= src
+		holder = null
+	return ..()
+
 /atom/movable/screen/splash/proc/Fade(out, qdel_after = TRUE)
 	if(QDELETED(src))
 		return
@@ -1426,12 +1423,6 @@
 		animate(src, alpha = 255, time = 30)
 	if(qdel_after)
 		QDEL_IN(src, 30)
-
-/atom/movable/screen/splash/Destroy()
-	if(holder)
-		holder.screen -= src
-		holder = null
-	return ..()
 
 /atom/movable/screen/gameover
 	icon = 'icons/gameover.dmi'
@@ -1472,7 +1463,7 @@
 /atom/movable/screen/component_button
 	var/atom/movable/screen/parent
 
-/atom/movable/screen/component_button/Initialize(mapload, atom/movable/screen/parent)
+/atom/movable/screen/component_button/Initialize(mapload, datum/hud/owner_hud, atom/movable/screen/parent)
 	. = ..()
 	src.parent = parent
 
@@ -1622,7 +1613,7 @@
 	for(var/X in M.possible_rmb_intents)
 		if(M.rmb_intent?.type == X)
 			continue
-		var/atom/movable/screen/rintent_selection/R = new(M.client)
+		var/atom/movable/screen/rintent_selection/R = new(null, M.hud_used, M.client)
 		var/datum/rmb_intent/RI = new X
 		R.stored_intent = X
 		R.icon_state = RI.icon_state
@@ -1649,10 +1640,10 @@
 	var/stored_name
 	var/client/holder
 
-/atom/movable/screen/rintent_selection/New(client/C)
-	if(C)
-		holder = C
+/atom/movable/screen/rintent_selection/Initialize(mapload, datum/hud/hud_owner, client/client)
 	. = ..()
+	if(client)
+		holder = client
 	holder.screen += src
 
 /atom/movable/screen/rintent_selection/Destroy()
@@ -1681,7 +1672,7 @@
 		if(type in possible_rmb_intents)
 			rmb_intent = new type()
 			if(hud_used?.rmb_intent)
-				hud_used.rmb_intent.update_appearance()
+				hud_used.rmb_intent.update_appearance(UPDATE_OVERLAYS)
 				hud_used.rmb_intent.collapse_intents()
 	if(num)
 		if(possible_rmb_intents.len < num)
@@ -1690,7 +1681,7 @@
 		if(A)
 			rmb_intent = new A()
 			if(hud_used?.rmb_intent)
-				hud_used.rmb_intent.update_appearance()
+				hud_used.rmb_intent.update_appearance(UPDATE_OVERLAYS)
 				hud_used.rmb_intent.collapse_intents()
 
 /// Cycles through right-mouse-button intents. Loops.
@@ -1710,7 +1701,7 @@
 	rmb_intent = new A()
 
 	if(hud_used?.rmb_intent)
-		hud_used.rmb_intent.update_appearance()
+		hud_used.rmb_intent.update_appearance(UPDATE_OVERLAYS)
 		hud_used.rmb_intent.collapse_intents()
 
 /atom/movable/screen/time
@@ -1825,6 +1816,11 @@
 	var/atom/movable/screen/readtext/textleft
 	var/reading
 
+/atom/movable/screen/read/Destroy()
+	. = ..()
+	textleft = null
+	textright = null
+
 /atom/movable/screen/read/Click(location, control, params)
 	. = ..()
 	destroy_read()
@@ -1888,6 +1884,104 @@
 	icon_state = ""
 	screen_loc = "EAST-2:-14,CENTER-6:16"
 
-/atom/movable/screen/daynight/New(client/C) //TODO: Make this use INITIALIZE_IMMEDIATE, except its not easy
+/atom/movable/screen/daynight/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	icon_state = GLOB.tod
+
+/atom/movable/screen/bloodpool
+	appearance_flags = KEEP_TOGETHER
+	icon_state = "empty"
+	icon = 'icons/mob/rogueheat.dmi'
+	screen_loc = rogueui_vitae
+	var/width = 4
+	var/height = 43
+	var/orientation = NORTH
+	var/atom/movable/screen/bloodpool_maskpart/background
+	var/atom/movable/screen/bloodpool_maskpart/foreground
+	var/atom/movable/screen/bloodpool_maskpart/fill
+	var/atom/movable/screen/bloodpool_maskpart/mask
+
+/atom/movable/screen/bloodpool/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	foreground = new /atom/movable/screen/bloodpool_maskpart/foreground(null, hud_owner, icon, src)
+	background = new /atom/movable/screen/bloodpool_maskpart/background(null, hud_owner, icon, src)
+	fill = new /atom/movable/screen/bloodpool_maskpart/fill(null, hud_owner, icon, src)
+	mask = new /atom/movable/screen/bloodpool_maskpart/mask(null, hud_owner, icon, src)
+
+	background.vis_contents += fill
+	mask.vis_contents += background
+	vis_contents.Add(mask, foreground)
+
+/atom/movable/screen/bloodpool/Destroy()
+	QDEL_NULL(background)
+	QDEL_NULL(foreground)
+	QDEL_NULL(fill)
+	QDEL_NULL(mask)
+	return ..()
+
+/atom/movable/screen/bloodpool/proc/set_fill_color(new_color = "#ffffff")
+	fill.color = new_color
+
+/atom/movable/screen/bloodpool/proc/set_value(ratio = 1.0, duration = 0)
+	//constrain the ratio between 0 and 1
+	ratio = min(max(ratio,0),1)
+
+	//apply orientation factors for fill bar offsets
+	var/fx = 0, fy = 0
+	switch(orientation)
+		if(EAST)
+			fx = -1
+		if(WEST)
+			fx = 1
+		if(SOUTH)
+			fy = 1
+		if(NORTH)
+			fy = -1
+
+	//calculate the offset of the fill bar.
+	var/invratio = 1-ratio
+	var/epx = width * invratio * fx
+	var/epy = height * invratio * fy
+
+	//apply the offset to the fill bar
+	if(duration)
+		//if a time value has been supplied, animate the transition from the current position
+		animate(fill, pixel_w = epx,pixel_z = epy, time = duration)
+	else
+		//if a time value has not been supplied, instantly set to the new position
+		fill.pixel_w = epx
+		fill.pixel_z = epy
+
+	animate(fill, time = duration)
+
+/atom/movable/screen/bloodpool_maskpart
+	layer = FLOAT_LAYER
+	plane = FLOAT_PLANE
+	/// Ref to our parent screem, purely for examine purposes
+	var/atom/movable/screen/parent_screen
+
+/atom/movable/screen/bloodpool_maskpart/Initialize(mapload, datum/hud/owner_hud, icon, parent_screen)
+	. = ..()
+	src.icon = icon
+	src.parent_screen = parent_screen
+
+/atom/movable/screen/bloodpool_maskpart/examine_ui(mob/user)
+	return parent_screen?.examine_ui(user)
+
+/atom/movable/screen/bloodpool_maskpart/Destroy()
+	parent_screen = null
+	return ..()
+
+/atom/movable/screen/bloodpool_maskpart/background
+	icon_state = "mana_bg"
+	appearance_flags = KEEP_TOGETHER
+	blend_mode = BLEND_MULTIPLY
+
+/atom/movable/screen/bloodpool_maskpart/foreground
+	icon_state = "mana_fg"
+
+/atom/movable/screen/bloodpool_maskpart/fill
+	icon_state = "mana_fill"
+
+/atom/movable/screen/bloodpool_maskpart/mask
+	icon_state = "mana_mask"

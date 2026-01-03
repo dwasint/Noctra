@@ -7,7 +7,7 @@
 	metabolization_rate = 1
 
 /datum/reagent/miasmagas/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_NOSTINK))
+	if(!HAS_TRAIT(M, TRAIT_DEADNOSE))
 		if(M.has_flaw(/datum/charflaw/addiction/maniac))
 			M.add_stress(/datum/stress_event/miasmagasmaniac)
 		else

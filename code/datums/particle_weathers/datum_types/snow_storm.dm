@@ -15,12 +15,12 @@
 	transform 			   = null
 
 /datum/particle_weather/snow_gentle
-	name = "Rain"
+	name = "Gentle Snow"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/snow
 
 	scale_vol_with_severity = TRUE
-	weather_sounds = list(/datum/looping_sound/snow)
+	weather_sounds = /datum/looping_sound/snow
 
 	minSeverity = 1
 	maxSeverity = 10
@@ -40,12 +40,12 @@
 
 
 /datum/particle_weather/snow_storm
-	name = "Rain"
+	name = "Snow Storm"
 	desc = "Gentle Rain, la la description."
 	particleEffectType = /particles/weather/snow
 
 	scale_vol_with_severity = TRUE
-	weather_sounds = list(/datum/looping_sound/snow)
+	weather_sounds = /datum/looping_sound/snow
 
 	minSeverity = 40
 	maxSeverity = 100
@@ -169,7 +169,7 @@
 		bordered_snow.update_appearance(UPDATE_OVERLAYS)
 
 
-/obj/structure/snow/process(delta_time)
+/obj/structure/snow/process()
 	if(!SSParticleWeather.runningWeather)
 		damage_act(3)
 	else if(!istype(SSParticleWeather.runningWeather, /datum/weather_effect/snow))

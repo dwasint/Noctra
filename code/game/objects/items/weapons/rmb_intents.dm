@@ -14,7 +14,7 @@
 	var/mob/living/L = target
 	user.changeNext_move(CLICK_CD_FAST)
 	playsound(user, 'sound/combat/feint.ogg', 100, TRUE)
-	user.visible_message("<span class='danger'>[user] feints an attack at [target]!</span>")
+	user.visible_message(span_danger("[user] feints an attack at [target]!"))
 	var/perc = 50
 	if(user.mind)
 		var/obj/item/I = user.get_active_held_item()
@@ -27,9 +27,10 @@
 				I = L.get_active_held_item()
 				if(I?.associated_skill)
 					theirskill = L.get_skill_level(I.associated_skill)
-		perc += (ourskill - theirskill)*15 	//skill is of the essence
-		perc += (user.STAINT - L.STAINT)*10	//but it's also mostly a mindgame
-		perc += (user.STASPD - L.STASPD)*5 	//yet a speedy feint is hard to counter
+		perc += (ourskill - theirskill) * 15 	//skill is of the essence
+		perc += (user.STAINT - L.STAINT) * 10	//but it's also mostly a mindgame
+		perc += (user.STASPD - L.STASPD) * 5 	//yet a speedy feint is hard to counter
+		perc += (user.STAPER - L.STAPER) * 5 	//a good eye helps
 	if(!user.cmode)
 		perc = 0
 	if(L.has_status_effect(/datum/status_effect/debuff/feinted))
@@ -53,23 +54,23 @@
 			to_chat(L, span_danger("I fall for [user]'s feint attack!"))
 	else
 		if(user.client?.prefs.showrolls)
-			to_chat(user, "<span class='warning'>[L] did not fall for my feint... [perc]%</span>")
+			to_chat(user, span_warning("[L] did not fall for my feint... [perc]%"))
 
 /datum/rmb_intent/aimed
 	name = "aimed"
-	desc = "Your attacks are more precise but have a longer recovery time. Higher critrate with precise attacks."
+	desc = "Your attacks are more precise but have a longer recovery time. Higher chance for certain critical hits. Reduced dodge bonus."
 	icon_state = "rmbaimed"
 	def_bonus = -20
 
 /datum/rmb_intent/strong
 	name = "strong"
-	desc = "Your attacks have +1 strength but use more stamina. Higher critrate with brutal attacks. Intentionally fails surgery steps."
+	desc = "Your attacks have increased strength and have increased force but use more stamina. Higher chance for certain critical hits. Intentionally fails surgery steps. Reduced dodge bonus."
 	icon_state = "rmbstrong"
 	def_bonus = -20
 
 /datum/rmb_intent/swift
 	name = "swift"
-	desc = "Your attacks have less recovery time but are less accurate."
+	desc = "Your attacks have less recovery time but are less accurate and have reduced strength."
 	icon_state = "rmbswift"
 
 /datum/rmb_intent/special
@@ -90,7 +91,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/feinted
 	name = "Feinted"
-	desc = "<span class='boldwarning'>I have been tricked, and cannot defend myself!</span>\n"
+	desc = span_boldwarning("I have been tricked, and cannot defend myself!") + "\n"
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/feintcd
@@ -100,7 +101,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/feintcd
 	name = "Feint Cooldown"
-	desc = "<span class='warning'>I have feinted recently, my opponents will be wary.</span>\n"
+	desc = span_warning("I have feinted recently, my opponents will be wary.") + "\n"
 
 /datum/status_effect/debuff/riposted
 	id = "riposted"
@@ -110,6 +111,7 @@
 	name = "defend"
 	desc = "No delay between dodge and parry rolls."
 	icon_state = "rmbdef"
+	def_bonus = 10
 
 /datum/rmb_intent/guard
 	name = "guarde"

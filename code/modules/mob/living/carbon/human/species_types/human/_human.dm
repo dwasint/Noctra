@@ -34,5 +34,6 @@
 	"black - nightsky" = "0a0707",
 	"brown - treebark" = "362e25",
 	"blonde - moonlight" = "dfc999",
-	"red - autumn" = "a34332"
+	"red - autumn" = "a34332",
+	"orange - rust" = "bc5e35"
 	))

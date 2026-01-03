@@ -68,8 +68,8 @@
 		return COMPONENT_INCOMPATIBLE
 	if(master)
 		change_master(master)
-	boxes = new(null, src)
-	closer = new(null, src)
+	boxes = new(null, null, src)
+	closer = new(null, null, src)
 	orient2hud()
 
 	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE, PROC_REF(on_check))
@@ -404,7 +404,7 @@
 	open_storage_on_signal(source, user)
 	return COMPONENT_SECONDARY_CANCEL_ATTACK_CHAIN
 
-/// Signal handler to open up the storage when we recieve a signal.
+/// Signal handler to open up the storage when we receive a signal.
 /datum/component/storage/proc/open_storage_on_signal(datum/source, mob/to_show)
 	SIGNAL_HANDLER
 

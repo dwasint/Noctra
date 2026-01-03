@@ -243,7 +243,7 @@
 	righthand_file = 'icons/roguetown/onmob/righthand.dmi'
 	item_state = "plank"
 	experimental_inhand = FALSE
-	firefuel = 5 MINUTES
+	firefuel = 10 MINUTES
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/fertilizer/ash
 	bundletype = /obj/item/natural/bundle/plank
@@ -260,7 +260,7 @@
 	force = 0
 	throwforce = 0
 	maxamount = 10
-	firefuel = 30 MINUTES
+	firemod = 10 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_BULKY
 	spitoutmouth = FALSE
@@ -274,7 +274,7 @@
 
 /obj/item/grown/log/tree/essence
 	name = "essence of lumber"
-	desc = "A mystical essence embued with the power of Dendor. Very good source of fuel."
+	desc = "A mystical essence imbued with the power of Dendor. Very good source of fuel."
 	icon_state = "lessence"
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	static_debris = null

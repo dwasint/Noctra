@@ -24,7 +24,7 @@
 		// Calculate average freshness
 		var/average_freshness = (ingredient_count > 0) ? (total_freshness / ingredient_count) : 0
 		// Get the user's cooking skill
-		var/cooking_skill = user.get_skill_level(/datum/skill/craft/cooking)
+		var/cooking_skill = user.get_skill_level(/datum/skill/craft/cooking) + user.get_inspirational_bonus()
 		// Apply freshness to the new food item
 		new_item.warming = min(5 MINUTES, average_freshness)
 

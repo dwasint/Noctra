@@ -12,8 +12,13 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			dat += "<br>"
 			dat += ("<div align='center'><img src='[headshot_link]' width='325px' height='325px'></div>")
 		if(flavortext)
+			dat += "<div align='left' style='line-height: 1.2;'>[flavortext_display]</div>"
+		if(ooc_notes)
 			dat += "<br>"
-			dat += "<div align='center'>[flavortext]</div>"
+			dat += "<div align='center'><b>OOC notes</b></div>"
+			dat += "<div align='left' style='line-height: 1.2;'>[ooc_notes_display]</div>"
+		if(ooc_extra)
+			dat += "[ooc_extra]"
 		var/datum/browser/popup = new(user, "[src]", "<center>[src]</center>", 480, 700)
 
 		popup.set_content(dat.Join())

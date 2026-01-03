@@ -31,7 +31,7 @@
 	return BRUTELOSS
 
 /obj/item/kitchen/fork/pre_attack(atom/A, mob/living/user, params)
-	if(istype(A, /obj/item/reagent_containers/food/snacks))
+	if(istype(A, /obj/item/reagent_containers/food/snacks) && user.used_intent.type == /datum/intent/food)
 		var/obj/item/reagent_containers/food/snacks/S = A
 		S.attack(user, user)
 		user.changeNext_move(CLICK_CD_MELEE)
@@ -52,6 +52,7 @@
 		icon_state = "fork"
 		forkload = null
 
+
 	// else if(user.zone_selected == BODY_ZONE_PRECISE_R_EYE)
 	// 	return eyestab(M,user)
 	else
@@ -66,7 +67,7 @@
 	throwforce = 5
 	throw_speed = 1
 	throw_range = 7
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = 5
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood

@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SYNC_TOKEN }}
           
       - name: Configure Git
         run: |
@@ -119,7 +119,7 @@ jobs:
       - name: Create Pull Request
         if: steps.merge_step.outputs.merge_status != 'no_changes'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
         run: |
           # Check if PR already exists
           existing_pr=$(gh pr list --base main --head sync-from-vander --json number --jq '.[0].number' || echo "")

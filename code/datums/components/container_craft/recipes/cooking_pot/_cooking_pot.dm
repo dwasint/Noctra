@@ -56,6 +56,7 @@
 			after_craft(null, crafter, initiator, found_optional_requirements, found_optional_wildcards, found_optional_reagents, removing_items)
 			if(finished_smell)
 				pot_turf.pollute_turf(finished_smell, pollute_amount)
+			initiator.nobles_seen_servant_work()
 		playsound(pot_turf, "bubbles", 30, TRUE)
 	else
 		..()
@@ -104,7 +105,7 @@
 	var/average_freshness = (ingredient_count > 0) ? (total_freshness / ingredient_count) : 0
 
 	// Get the initiator's cooking skill
-	var/cooking_skill = initiator.get_skill_level(/datum/skill/craft/cooking)
+	var/cooking_skill = initiator.get_skill_level(/datum/skill/craft/cooking) + initiator.get_inspirational_bonus()
 
 	// Use the quality calculator to determine final quality
 	var/datum/quality_calculator/cooking/cook_calc = new(
@@ -165,7 +166,7 @@
 			reagent.metabolization_rate *= 1.2 // Metabolizes faster (less effective)
 
 		if(2) // Standard quality
-			// No modifications - baseline
+			EMPTY_BLOCK_GUARD // No modifications - baseline
 
 		if(3) // High quality
 			// High quality is more effective

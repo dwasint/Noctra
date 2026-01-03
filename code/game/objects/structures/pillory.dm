@@ -48,7 +48,7 @@
 	togglelatch(user)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-/obj/structure/pillory/pre_lock_interact(mob/user)
+/obj/structure/pillory/pre_lock_interact(mob/living/user)
 	if(user in buckled_mobs)
 		to_chat(user, span_warning("I can't reach the lock!"))
 		return FALSE

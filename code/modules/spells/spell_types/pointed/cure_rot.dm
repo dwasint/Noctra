@@ -11,10 +11,10 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver)
 
-	charge_time = 5 SECONDS
-	charge_slowdown = 0.7
+	charge_time = 2 SECONDS
+	charge_slowdown = 0.8
 	cooldown_time = 2 MINUTES
-	spell_cost = 100
+	spell_cost = 50
 
 /datum/action/cooldown/spell/cure_rot/is_valid_target(atom/cast_on)
 	. = ..()

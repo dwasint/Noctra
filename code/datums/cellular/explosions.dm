@@ -143,7 +143,7 @@
 // If you need to set vars on the new cell other than the basic ones
 /datum/automata_cell/explosion/proc/setup_new_cell(datum/automata_cell/explosion/E)
 	if(E.shockwave)
-		E.shockwave.alpha = E.power
+		E.shockwave.alpha = max(60, E.power * 6)
 	return
 
 /datum/automata_cell/explosion/proc/power_to_ranges(power_val)
@@ -205,7 +205,6 @@
 		var/atom/target = null
 		var/list/ranges = power_to_ranges(power)
 
-		in_turf.explosion_level = max(in_turf.explosion_level, explosion_severity)
 		INVOKE_ASYNC(in_turf, TYPE_PROC_REF(/atom, ex_act), explosion_severity, target, in_turf, ranges["devastation"], ranges["heavy"], ranges["light"], ranges["flame"])
 
 		for(var/atom/A in in_turf)

@@ -1,13 +1,6 @@
 /proc/random_human_blood_type()
 	var/static/list/human_blood_type_weights = list(
-		/datum/blood_type/human/o_minus = 4,
-		/datum/blood_type/human/o_plus = 36,
-		/datum/blood_type/human/a_minus = 28,
-		/datum/blood_type/human/a_plus = 3,
-		/datum/blood_type/human/b_minus = 20,
-		/datum/blood_type/human/b_plus = 1,
-		/datum/blood_type/human/ab_minus = 5,
-		/datum/blood_type/human/ab_plus = 1
+		/datum/blood_type/human = 10, //bloodtypes aren't real
 	)
 
 	return pickweight(human_blood_type_weights)
@@ -209,10 +202,6 @@ GLOBAL_LIST_INIT(oldhc, sortList(list(
 	var/atom/target_loc = target?.loc
 	var/user_dir = user.dir /* V */
 
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
 	var/holding = user.get_active_held_item()
 
 	if(!(timed_action_flags & IGNORE_SLOWDOWNS))
@@ -238,12 +227,8 @@ GLOBAL_LIST_INIT(oldhc, sortList(list(
 		if(!QDELETED(progbar))
 			progbar.update(world.time - starttime)
 
-		if(drifting && !user.inertia_dir)
-			drifting = FALSE
-			user_loc = user.loc
-
 		if(QDELETED(user) \
-			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc) \
+			|| (!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && user.loc != user_loc) \
 			|| (!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding) \
 			|| (!(timed_action_flags & IGNORE_INCAPACITATED) && HAS_TRAIT(user, TRAIT_INCAPACITATED)) \
 			/* V: */ \

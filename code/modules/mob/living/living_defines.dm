@@ -7,6 +7,7 @@
 	var/resize = 1 //Badminnery resize
 	var/lastattacker = null
 	var/lastattackerckey = null
+	var/datum/weakref/lastattacker_weakref = null
 
 	//Health and life related vars
 	var/maxHealth = 100 //Maximum health that should be possible.
@@ -163,7 +164,8 @@
 	var/defdrain = 5
 	var/encumbrance = 0
 
-	var/eyesclosed = 0
+	/// If the mob's eyes are closed, blinded
+	var/eyesclosed = FALSE
 	var/fallingas = 0
 
 	var/bleed_rate = 0 //how much are we bleeding
@@ -217,6 +219,20 @@
 	var/spell_points
 	/// amount of spell points this mob has used
 	var/used_spell_points
+
+	var/list/affixes = list()
+	var/delve_level = 0
+
+	var/cold_res = 0
+	var/max_cold_res = 75
+	var/fire_res = 0
+	var/max_fire_res = 75
+	var/lightning_res = 0
+	var/max_lightning_res = 75
+
+	var/list/status_modifiers
+
+	var/datum/blood_type/animal_type
 
 	/// cooldown for the next time this person can offer
 	COOLDOWN_DECLARE(offer_cooldown)

@@ -40,6 +40,7 @@
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
+	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 	ai_controller = /datum/ai_controller/zizoid
 
@@ -95,10 +96,6 @@
 	. = ..()
 	gib()
 	qdel(src)
-
-/mob/living/simple_animal/hostile/retaliate/blood/death(gibbed)
-	..()
-	update_appearance()
 
 /mob/living/simple_animal/hostile/retaliate/blood/get_sound(input)
 	switch(input)
@@ -159,3 +156,9 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
+
+/// Very temporary sprite
+/mob/living/simple_animal/hostile/retaliate/blood/weird
+	icon = 'icons/roguetown/underworld/carriageman.dmi'
+	icon_state = "weird"
+	SET_BASE_PIXEL(-16, 0)

@@ -1,6 +1,5 @@
 /*ALL MOB-RELATED DEFINES THAT DON'T BELONG IN ANOTHER FILE GO HERE*/
 
-//This was previously in vampirelord.dm and mob/living/stats.dm, the person defined it twice because vampirelord came in below that stats file, so now both of them can get it here.
 #define STATKEY_STR "strength"
 #define STATKEY_PER "perception"
 #define STATKEY_INT "intelligence"
@@ -105,6 +104,7 @@
 #define COLD_DAMAGE_LEVEL_2 0.1 //Amount of damage applied when your body temperature passes the 200K point
 #define COLD_DAMAGE_LEVEL_3 0.2 //Amount of damage applied when your body temperature passes the 120K point
 
+
 //Note that gas heat damage is only applied once every FOUR ticks.
 #define HEAT_GAS_DAMAGE_LEVEL_1 1 //Amount of damage applied when the current breath's temperature just passes the 360.15k safety point
 #define HEAT_GAS_DAMAGE_LEVEL_2 1 //Amount of damage applied when the current breath's temperature passes the 400K point
@@ -187,6 +187,8 @@
 #define NUTRITION_LEVEL_STARVING 100
 
 #define HYDRATION_LEVEL_FULL 1000
+#define HYDRATION_LEVEL_WATER_LOGGED 850
+#define HYDRATION_LEVEL_HYDRATED 700
 #define HYDRATION_LEVEL_SMALLTHIRST 600
 #define HYDRATION_LEVEL_THIRSTY 350
 #define HYDRATION_LEVEL_DEHYDRATED 100
@@ -203,6 +205,19 @@
 #define DISGUST_LEVEL_VERYGROSS 50
 #define DISGUST_LEVEL_GROSS 25
 #define DISGUST_LEVEL_SLIGHTLYGROSS 10
+
+//Hygiene
+
+#define HYGIENE_LEVEL_CLEAN 250
+#define HYGIENE_LEVEL_NORMAL 200
+#define HYGIENE_LEVEL_DIRTY 75
+#define HYGIENE_LEVEL_DISGUSTING 0
+
+//For washing
+#define HYGIENE_GAIN_CLOTHED 10
+#define HYGIENE_GAIN_UNCLOTHED 25
+
+#define HARPY_PREENING_COOLDOWN 10 MINUTES
 
 //Used as an upper limit for species that continuously gain nutriment
 #define NUTRITION_LEVEL_ALMOST_FULL 995
@@ -311,6 +326,7 @@
 /* Noctra edit END */
 
 #define HUNGER_FACTOR		0.15	//factor at which mob nutrition decreases
+#define	HYGIENE_FACTOR  	0.05  //factor at which hygiene decreases
 #define ETHEREAL_CHARGE_FACTOR	0.12 //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 1	//How many units of reagent are consumed per tick, by default.
 #define REAGENTS_SLOW_METABOLISM 0.1 // needed to have poisons have powerful effect at low doses without making it too fast
@@ -367,15 +383,13 @@
 ///How much a mob's sprite should be moved when they're lying down
 #define PIXEL_Y_OFFSET_LYING -6
 
-/// If gravity must be present to perform action (can't use pens without gravity)
-#define NEED_GRAVITY (1<<0)
 /// If reading is required to perform action (can't read a book if you are illiterate)
-#define NEED_LITERACY (1<<1)
+#define NEED_LITERACY (1<<0)
 /// If lighting must be present to perform action (can't heal someone in the dark)
-#define NEED_LIGHT (1<<2)
+#define NEED_LIGHT (1<<1)
 /// If other mobs (monkeys, aliens, etc) can perform action (can't use computers if you are a monkey)
-#define NEED_DEXTERITY (1<<3)
+#define NEED_DEXTERITY (1<<2)
 /// If telekinesis is forbidden to perform action from a distance (ex. canisters are blacklisted from telekinesis manipulation)
-#define FORBID_TELEKINESIS_REACH (1<<5)
+#define FORBID_TELEKINESIS_REACH (1<<3)
 /// If resting on the floor is allowed to perform action
-#define ALLOW_RESTING (1<<7)
+#define ALLOW_RESTING (1<<4)

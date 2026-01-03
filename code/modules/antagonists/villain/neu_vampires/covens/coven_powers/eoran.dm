@@ -184,6 +184,7 @@
 	desc = "I feel divinely inspired to create something beautiful!"
 	stress_change = 3
 	timer = 5 MINUTES
+	quality_modifier = 4
 
 /datum/stress_event/beautiful
 	desc = "I feel beautiful and radiant!"

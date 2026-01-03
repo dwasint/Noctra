@@ -6,7 +6,7 @@
 	force = 0
 	throwforce = 0
 	color = "#454032"
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -23,7 +23,7 @@
 	force = 0
 	throwforce = 0
 	color = "#e6e3db"
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -56,7 +56,7 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/soak, /datum/intent/wring)
 	force = 0
 	throwforce = 0
-	firefuel = 5 MINUTES
+	firefuel = 3 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP|ITEM_SLOT_MASK|ITEM_SLOT_BELT
 	body_parts_covered = null
@@ -97,7 +97,7 @@
 /obj/item/natural/cloth/proc/on_pre_clean(datum/cleaning_source, atom/atom_to_clean, mob/living/cleaner)
 	if(cleaner?.used_intent?.type != INTENT_USE || ismob(atom_to_clean) || !check_allowed_items(atom_to_clean))
 		return DO_NOT_CLEAN
-	if(istype(atom_to_clean, /turf/open/water) || istype(atom_to_clean, /turf/open/transparent))
+	if(istype(atom_to_clean, /turf/open/water) || istype(atom_to_clean, /turf/open/transparent) || istype(atom_to_clean, /obj/item/plate) || istype(atom_to_clean, /obj/item/reagent_containers/glass/bowl) || istype(atom_to_clean, /obj/item/clothing/shoes))
 		return DO_NOT_CLEAN
 	if(cleaner.client && ((atom_to_clean in cleaner.client.screen) && !cleaner.is_holding(atom_to_clean)))
 		to_chat(cleaner, span_warning("I need to take \the [atom_to_clean] off before cleaning it!"))
@@ -117,6 +117,7 @@
 	cleaner_component.cleaning_effectiveness = (effectiveness * 100) % 100
 	cleaner_component.cleaning_strength = CLEAN_WASH
 	playsound(cleaner, pick('sound/foley/cloth_wipe (1).ogg','sound/foley/cloth_wipe (2).ogg', 'sound/foley/cloth_wipe (3).ogg'), 25, FALSE)
+	cleaner.nobles_seen_servant_work()
 	return TRUE
 
 /obj/item/natural/cloth/proc/on_clean_success(datum/source, atom/target, mob/living/user, clean_succeeded)
@@ -273,7 +274,7 @@
 	force = 10
 	throwforce = 0
 	possible_item_intents = list(/datum/intent/stab)
-	firefuel = 5 MINUTES
+	firefuel = 1 MINUTES
 	embedding = list("embedded_unsafe_removal_time" = 20, "embedded_pain_chance" = 10, "embedded_pain_multiplier" = 1, "embed_chance" = 35, "embedded_fall_chance" = 0)
 	resistance_flags = FLAMMABLE
 	max_integrity = 20
@@ -306,7 +307,7 @@
 	throwforce = 0
 	maxamount = 12
 	color = "#454032"
-	firefuel = 5 MINUTES
+	firemod =  1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -331,7 +332,7 @@
 	throwforce = 0
 	maxamount = 6
 	color = "#e6e3db"
-	firefuel = 5 MINUTES
+	firemod = 1 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20
@@ -350,7 +351,7 @@
 	force = 0
 	throwforce = 0
 	maxamount = 10
-	firefuel = 5 MINUTES
+	firemod = 3 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
@@ -374,7 +375,7 @@
 	maxamount = 10
 	force = 0
 	throwforce = 0
-	firefuel = 5 MINUTES
+	firemod = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_TINY
 	spitoutmouth = FALSE
@@ -426,6 +427,7 @@
 	maxamount = 6
 	color = null
 	firefuel = null
+	firemod = 0
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
 	max_integrity = 20

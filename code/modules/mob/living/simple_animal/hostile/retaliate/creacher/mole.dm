@@ -62,6 +62,8 @@
 
 	dodgetime = 20
 	aggressive = TRUE
+
+	dendor_taming_chance = DENDOR_TAME_PROB_HIGH
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
 	body_eater = TRUE

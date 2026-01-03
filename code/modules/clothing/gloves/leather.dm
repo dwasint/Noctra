@@ -18,17 +18,20 @@
 	color = CLOTHING_SOOT_BLACK
 	misc_flags = CRAFTING_TEST_EXCLUDE
 
+//THE ARMOUR VALUES OF ADVANCED AND MASTERWORK GLOVES ARE INTENDED
+//KEEP THIS IN MIND
+
 /obj/item/clothing/gloves/leather/advanced
 	name = "hardened leather gloves"
 	desc = "Sturdy, durable, flexible. A marvel of the dark ages that exists solely to protect your fingers."
-	max_integrity = 200
+	max_integrity = INTEGRITY_STANDARD
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
 	armor = list("blunt" = 50, "slash" = 40, "stab" = 20, "piercing" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/leather/masterwork
 	name = "masterwork leather gloves"
-	desc = "These gloves are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
-	max_integrity = 300
+	desc = "These gloves are a craftsmanship marvel. Made with the finest leather. Strong, nimble, reliable."
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
 	armor = list("blunt" = 80, "slash" = 60, "stab" = 40, "piercing" = 0, "fire" = 0, "acid" = 0)
 
@@ -43,7 +46,7 @@
 
 /obj/item/clothing/gloves/leather/phys
 	name = "physicker's gloves"
-	desc = "Improved grip for wielding disembowled organs."
+	desc = "Improved grip for wielding disemboweled organs."
 	icon_state = "surggloves"
 
 /obj/item/clothing/gloves/leather/apothecary
@@ -52,8 +55,8 @@
 	icon_state = "apothgloves"
 
 /obj/item/clothing/gloves/leather/otavan
-	name = "otavan leather gloves"
-	desc = "A pair of heavy Otavan leather gloves, commonly used by fencers, renowned for their quality."
+	name = "grenzelhoftian leather gloves"
+	desc = "A pair of heavy Grenzelhoftian leather gloves, commonly used by fencers, renowned for their quality."
 	icon_state = "fencergloves"
 	item_state = "fencergloves"
 	armor = ARMOR_LEATHER_GOOD

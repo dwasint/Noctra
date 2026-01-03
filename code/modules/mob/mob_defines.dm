@@ -85,8 +85,6 @@
 
 	/// Default body temperature
 	var/bodytemperature = BODYTEMP_NORMAL	//310.15K / 98.6F
-	/// Drowsyness level of the mob
-	var/drowsyness = 0//Carbon
 	/// Dizziness level of the mob
 	var/dizziness = 0//Carbon
 	/// Jitteryness level of the mob
@@ -161,7 +159,6 @@
 
 	/// What job does this mob have
 	var/job = null//Living
-	var/migrant_type = null
 
 	/// A list of factions that this mob is currently in, for hostile mob targetting, amongst other things
 	var/list/faction = list(FACTION_NEUTRAL)
@@ -280,3 +277,5 @@
 
 	/// A ref of the area we're taking our ambient loop from.
 	var/area/ambience_tracked_area
+	/// new title given by an admin.
+	var/admin_title = null
